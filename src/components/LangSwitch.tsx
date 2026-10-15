@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { BUSINESS_LOCALES, PRIVATE_LOCALES, PRIVATE_QUERY, type Mode } from '@/lib/site';
@@ -26,6 +26,7 @@ function currentAnchor() {
  */
 export function LangSwitch({ mode, variant }: { mode: Mode; variant: 'dark' | 'light' }) {
   const locale = useLocale() as Locale;
+  const t = useTranslations('a11y');
   const pathname = usePathname();
   const options = mode === 'private' ? PRIVATE_LOCALES : BUSINESS_LOCALES;
 
@@ -44,6 +45,8 @@ export function LangSwitch({ mode, variant }: { mode: Mode; variant: 'dark' | 'l
   const dark = variant === 'dark';
   return (
     <div
+      role="group"
+      aria-label={t('chooseLanguage')}
       className={`flex gap-[2px] p-[3px] rounded-full border ${dark ? 'border-line-d4 bg-night-2' : 'border-stone-200 bg-stone-100'}`}
     >
       {options.map((l) => {

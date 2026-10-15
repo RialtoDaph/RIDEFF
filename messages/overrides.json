@@ -1,0 +1,35 @@
+{
+  "_comment": "Owner-approved translations that are not in the handoff tables.",
+  "a11y.skipToContent": {
+    "en": "Skip to content",
+    "id": "Langsung ke konten"
+  },
+  "a11y.menuOpen": {
+    "en": "Open menu",
+    "id": "Buka menu"
+  },
+  "a11y.menuClose": {
+    "en": "Close menu",
+    "id": "Tutup menu"
+  },
+  "a11y.chooseLanguage": {
+    "en": "Choose language",
+    "id": "Pilih bahasa"
+  },
+  "a11y.mainNav": {
+    "en": "Main navigation",
+    "id": "Navigasi utama"
+  },
+  "a11y.close": {
+    "en": "Close",
+    "id": "Tutup"
+  },
+  "a11y.next": {
+    "en": "Next",
+    "id": "Berikutnya"
+  },
+  "a11y.previous": {
+    "en": "Previous",
+    "id": "Sebelumnya"
+  }
+}

@@ -18,6 +18,7 @@ const PRIVATE_NAV = [
 export async function TopBar({ mode }: { mode: Mode }) {
   const t = await getTranslations('nav');
   const tm = await getTranslations('mode');
+  const ta = await getTranslations('a11y');
   const locale = (await getLocale()) as Locale;
   const biz = mode === 'business';
 
@@ -37,7 +38,7 @@ export async function TopBar({ mode }: { mode: Mode }) {
         </span>
       </Link>
 
-      <nav className={`ml-auto hidden lg:flex gap-7 text-[14px] ${biz ? 'text-zinc-400' : 'text-zinc-600'}`}>
+      <nav aria-label={ta('mainNav')} className={`ml-auto hidden lg:flex gap-7 text-[14px] ${biz ? 'text-zinc-400' : 'text-zinc-600'}`}>
         {biz
           ? BUSINESS_NAV.map((k) => (
               <a key={k} href={`#${k}`} className="hover:text-orange-500 transition-colors">

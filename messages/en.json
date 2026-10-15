@@ -125,5 +125,15 @@
       "datenschutz": "PRIVACY",
       "agb": "TERMS"
     }
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "chooseLanguage": "Choose language",
+    "mainNav": "Main navigation",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous"
   }
 }

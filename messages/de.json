@@ -125,5 +125,15 @@
       "datenschutz": "DATENSCHUTZ",
       "agb": "AGB"
     }
+  },
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "chooseLanguage": "Sprache wählen",
+    "mainNav": "Hauptnavigation",
+    "close": "Schließen",
+    "next": "Weiter",
+    "previous": "Zurück"
   }
 }

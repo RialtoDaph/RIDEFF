@@ -125,5 +125,15 @@
       "datenschutz": "PRIVASI",
       "agb": "S&K"
     }
+  },
+  "a11y": {
+    "skipToContent": "Langsung ke konten",
+    "menuOpen": "Buka menu",
+    "menuClose": "Tutup menu",
+    "chooseLanguage": "Pilih bahasa",
+    "mainNav": "Navigasi utama",
+    "close": "Tutup",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya"
   }
 }
