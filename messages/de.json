@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "siteName": "RIDEFF",
+    "business": {
+      "title": "RIDEFF · Ihr Betrieb bekommt ein Gehirn.",
+      "description": "Website, internes System und KI, gebaut für genau Ihren Betrieb. Ein Team, ein Ansprechpartner, vom ersten Gespräch bis zur monatlichen Betreuung."
+    },
+    "private": {
+      "title": "RIDEFF Life · Ihr Leben bekommt ein Gehirn.",
+      "description": "Jeden Morgen 30 Sekunden: was Geld kostet, was Zeit frisst und was Sie Ihrem Ziel näher bringt. Gebaut um Ihr Leben, nicht um eine Vorlage."
+    }
+  },
+  "mode": {
+    "business": "BUSINESS",
+    "private": "PRIVATE",
+    "productBusiness": "BUSINESS",
+    "productLife": "LIFE"
+  },
+  "nav": {
+    "business": {
+      "plattform": "Plattform",
+      "ablauf": "So arbeiten wir",
+      "projekt": "Projekt",
+      "pakete": "Pakete",
+      "faq": "FAQ"
+    },
+    "private": {
+      "module": "Module",
+      "ablauf": "So funktioniert’s",
+      "daten": "Datenschutz",
+      "preis": "Preis",
+      "faq": "FAQ"
+    },
+    "portal": "Kundenportal",
+    "firstCall": "Erstgespräch",
+    "login": "Anmelden",
+    "tryFree": "Kostenlos testen"
+  },
+  "hero": {
+    "business": {
+      "title": "Ihr Betrieb bekommt ein <accent>Gehirn.</accent>",
+      "lead": "Website, internes System und KI, gebaut für genau Ihren Betrieb. Ein Team, ein Ansprechpartner, vom ersten Gespräch bis zur monatlichen Betreuung.",
+      "cta": "Kostenloses Erstgespräch →",
+      "demo": "Live-Demo ansehen ↗",
+      "tags": {
+        "eu": "GEHOSTET IN DER EU",
+        "dsgvo": "DSGVO & AVV",
+        "custom": "MASSARBEIT"
+      }
+    },
+    "private": {
+      "title": "Ihr Leben bekommt ein <accent>Gehirn.</accent>",
+      "lead": "Jeden Morgen 30 Sekunden: was Geld kostet, was Zeit frisst und was Sie Ihrem Ziel näher bringt. Gebaut um Ihr Leben, nicht um eine Vorlage.",
+      "cta": "14 Tage kostenlos testen →",
+      "tags": {
+        "eu": "DATEN IN DER EU",
+        "consent": "NUR MIT IHRER ERLAUBNIS",
+        "trial": "14 TAGE KOSTENLOS"
+      }
+    }
+  },
+  "intro": {
+    "skip": "Intro überspringen"
+  },
+  "footer": {
+    "business": {
+      "claim": "Ihr Betrieb bekommt ein Gehirn.",
+      "cta": "Erstgespräch vereinbaren →",
+      "platform": {
+        "title": "PLATTFORM",
+        "cockpit": "Cockpit",
+        "teamApp": "Team-App",
+        "website": "Website",
+        "ai": "KI im Alltag"
+      },
+      "company": {
+        "title": "RIDEFF",
+        "ablauf": "So arbeiten wir",
+        "projekt": "Projekt",
+        "pakete": "Pakete",
+        "faq": "FAQ",
+        "portal": "Kundenportal"
+      },
+      "location": "Deutschland"
+    },
+    "private": {
+      "claim": "Ihr Leben bekommt ein Gehirn.",
+      "sub": "Web-App für Handy und Laptop. Geld, Zeit und Ziele an einem Ort.",
+      "life": {
+        "title": "RIDEFF LIFE",
+        "money": "Geld",
+        "time": "Zeit",
+        "goals": "Ziele",
+        "ai": "KI im Alltag"
+      },
+      "more": {
+        "title": "MEHR",
+        "ablauf": "So funktioniert’s",
+        "daten": "Datenschutz",
+        "preis": "Preis",
+        "faq": "FAQ",
+        "tryFree": "Kostenlos testen",
+        "login": "Anmelden",
+        "lifePrivate": "Life Private",
+        "forBusiness": "Für Betriebe →"
+      },
+      "location": "Gehostet in der EU"
+    },
+    "contact": {
+      "title": "KONTAKT",
+      "hours": "Mo–Fr · 9–18 Uhr"
+    },
+    "newsletter": {
+      "title": "Einmal im Monat. Ein Hebel, den kaum jemand kennt.",
+      "sub": "Kurz, konkret, ohne Werbung. Abmelden mit einem Klick.",
+      "placeholder": "name@beispiel.de",
+      "label": "E-Mail",
+      "submit": "Abonnieren",
+      "error": "BITTE EINE GÜLTIGE E-MAIL-ADRESSE EINGEBEN.",
+      "done": "Fast geschafft. Bitte bestätigen Sie die E-Mail in Ihrem Postfach."
+    },
+    "copyright": "© 2026 RIDEFF",
+    "legal": {
+      "impressum": "IMPRESSUM",
+      "datenschutz": "DATENSCHUTZ",
+      "agb": "AGB"
+    }
+  }
+}

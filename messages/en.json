@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "siteName": "RIDEFF",
+    "business": {
+      "title": "RIDEFF · Your business gets a brain.",
+      "description": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care."
+    },
+    "private": {
+      "title": "RIDEFF Life · Your life gets a brain.",
+      "description": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template."
+    }
+  },
+  "mode": {
+    "business": "BUSINESS",
+    "private": "PRIVATE",
+    "productBusiness": "BUSINESS",
+    "productLife": "LIFE"
+  },
+  "nav": {
+    "business": {
+      "plattform": "Platform",
+      "ablauf": "How we work",
+      "projekt": "Project",
+      "pakete": "Plans",
+      "faq": "FAQ"
+    },
+    "private": {
+      "module": "Modules",
+      "ablauf": "How it works",
+      "daten": "Privacy",
+      "preis": "Pricing",
+      "faq": "FAQ"
+    },
+    "portal": "Client portal",
+    "firstCall": "Free call",
+    "login": "Log in",
+    "tryFree": "Try for free"
+  },
+  "hero": {
+    "business": {
+      "title": "Your business gets a <accent>brain.</accent>",
+      "lead": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care.",
+      "cta": "Free intro call →",
+      "demo": "View live demo ↗",
+      "tags": {
+        "eu": "HOSTED IN THE EU",
+        "dsgvo": "GDPR & DPA",
+        "custom": "MADE TO MEASURE"
+      }
+    },
+    "private": {
+      "title": "Your life gets a <accent>brain.</accent>",
+      "lead": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template.",
+      "cta": "Try free for 14 days →",
+      "tags": {
+        "eu": "DATA IN THE EU",
+        "consent": "ONLY WITH YOUR PERMISSION",
+        "trial": "14 DAYS FREE"
+      }
+    }
+  },
+  "intro": {
+    "skip": "Skip intro"
+  },
+  "footer": {
+    "business": {
+      "claim": "Your business gets a brain.",
+      "cta": "Book a free call →",
+      "platform": {
+        "title": "PLATFORM",
+        "cockpit": "Cockpit",
+        "teamApp": "Team app",
+        "website": "Website",
+        "ai": "AI in daily work"
+      },
+      "company": {
+        "title": "RIDEFF",
+        "ablauf": "How we work",
+        "projekt": "Project",
+        "pakete": "Plans",
+        "faq": "FAQ",
+        "portal": "Client portal"
+      },
+      "location": "Germany"
+    },
+    "private": {
+      "claim": "Your life gets a brain.",
+      "sub": "Web app for phone and laptop. Money, time and goals in one place.",
+      "life": {
+        "title": "RIDEFF LIFE",
+        "money": "Money",
+        "time": "Time",
+        "goals": "Goals",
+        "ai": "AI in daily work"
+      },
+      "more": {
+        "title": "MORE",
+        "ablauf": "How it works",
+        "daten": "Privacy",
+        "preis": "Pricing",
+        "faq": "FAQ",
+        "tryFree": "Try for free",
+        "login": "Log in",
+        "lifePrivate": "Life Private",
+        "forBusiness": "For businesses →"
+      },
+      "location": "Hosted in the EU"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "hours": "Mon–Fri · 9 am–6 pm"
+    },
+    "newsletter": {
+      "title": "Once a month. One lever hardly anyone knows.",
+      "sub": "Short, concrete, no ads. Unsubscribe with one click.",
+      "placeholder": "name@example.com",
+      "label": "Email",
+      "submit": "Subscribe",
+      "error": "PLEASE ENTER A VALID EMAIL ADDRESS.",
+      "done": "Almost done. Please confirm the email in your inbox."
+    },
+    "copyright": "© 2026 RIDEFF",
+    "legal": {
+      "impressum": "IMPRESSUM",
+      "datenschutz": "PRIVACY",
+      "agb": "TERMS"
+    }
+  }
+}

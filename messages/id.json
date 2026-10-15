@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "siteName": "RIDEFF",
+    "business": {
+      "title": "RIDEFF · Bisnis Anda mendapat otak.",
+      "description": "Website, sistem internal, dan AI, dibuat khusus untuk bisnis Anda. Satu tim, satu kontak, dari obrolan pertama sampai pendampingan bulanan."
+    },
+    "private": {
+      "title": "RIDEFF Life · Hidup Anda mendapat otak.",
+      "description": "30 detik setiap pagi: apa yang menguras uang, apa yang memakan waktu, dan apa yang mendekatkan Anda ke tujuan. Dibuat untuk hidup Anda, bukan template."
+    }
+  },
+  "mode": {
+    "business": "BUSINESS",
+    "private": "PRIVATE",
+    "productBusiness": "BUSINESS",
+    "productLife": "LIFE"
+  },
+  "nav": {
+    "business": {
+      "plattform": "Platform",
+      "ablauf": "Cara kami bekerja",
+      "projekt": "Proyek",
+      "pakete": "Paket",
+      "faq": "FAQ"
+    },
+    "private": {
+      "module": "Modul",
+      "ablauf": "Cara kerjanya",
+      "daten": "Privasi",
+      "preis": "Harga",
+      "faq": "FAQ"
+    },
+    "portal": "Portal klien",
+    "firstCall": "Konsultasi awal",
+    "login": "Masuk",
+    "tryFree": "Coba gratis"
+  },
+  "hero": {
+    "business": {
+      "title": "Bisnis Anda mendapat <accent>otak.</accent>",
+      "lead": "Website, sistem internal, dan AI, dibuat khusus untuk bisnis Anda. Satu tim, satu kontak, dari obrolan pertama sampai pendampingan bulanan.",
+      "cta": "Konsultasi gratis →",
+      "demo": "Lihat demo langsung ↗",
+      "tags": {
+        "eu": "HOSTING DI UE",
+        "dsgvo": "GDPR & DPA",
+        "custom": "DIBUAT KHUSUS"
+      }
+    },
+    "private": {
+      "title": "Hidup Anda mendapat <accent>otak.</accent>",
+      "lead": "30 detik setiap pagi: apa yang menguras uang, apa yang memakan waktu, dan apa yang mendekatkan Anda ke tujuan. Dibuat untuk hidup Anda, bukan template.",
+      "cta": "Coba gratis 14 hari →",
+      "tags": {
+        "eu": "DATA DI UE",
+        "consent": "HANYA DENGAN IZIN ANDA",
+        "trial": "GRATIS 14 HARI"
+      }
+    }
+  },
+  "intro": {
+    "skip": "Lewati intro"
+  },
+  "footer": {
+    "business": {
+      "claim": "Bisnis Anda mendapat otak.",
+      "cta": "Jadwalkan konsultasi →",
+      "platform": {
+        "title": "PLATFORM",
+        "cockpit": "Cockpit",
+        "teamApp": "App tim",
+        "website": "Website",
+        "ai": "AI sehari-hari"
+      },
+      "company": {
+        "title": "RIDEFF",
+        "ablauf": "Cara kami bekerja",
+        "projekt": "Proyek",
+        "pakete": "Paket",
+        "faq": "FAQ",
+        "portal": "Portal klien"
+      },
+      "location": "Jerman"
+    },
+    "private": {
+      "claim": "Hidup Anda mendapat otak.",
+      "sub": "Web app untuk HP dan laptop. Uang, waktu, dan tujuan di satu tempat.",
+      "life": {
+        "title": "RIDEFF LIFE",
+        "money": "Uang",
+        "time": "Waktu",
+        "goals": "Tujuan",
+        "ai": "AI sehari-hari"
+      },
+      "more": {
+        "title": "LAINNYA",
+        "ablauf": "Cara kerjanya",
+        "daten": "Privasi",
+        "preis": "Harga",
+        "faq": "FAQ",
+        "tryFree": "Coba gratis",
+        "login": "Masuk",
+        "lifePrivate": "Life Private",
+        "forBusiness": "Untuk bisnis →"
+      },
+      "location": "Hosting di UE"
+    },
+    "contact": {
+      "title": "KONTAK",
+      "hours": "Sen–Jum · 09.00–18.00"
+    },
+    "newsletter": {
+      "title": "Sebulan sekali. Satu trik yang jarang diketahui orang.",
+      "sub": "Singkat, konkret, tanpa iklan. Berhenti langganan dengan satu klik.",
+      "placeholder": "nama@contoh.com",
+      "label": "Email",
+      "submit": "Langganan",
+      "error": "MASUKKAN ALAMAT EMAIL YANG VALID.",
+      "done": "Hampir selesai. Silakan konfirmasi email di kotak masuk Anda."
+    },
+    "copyright": "© 2026 RIDEFF",
+    "legal": {
+      "impressum": "IMPRESSUM",
+      "datenschutz": "PRIVASI",
+      "agb": "S&K"
+    }
+  }
+}
