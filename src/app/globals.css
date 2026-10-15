@@ -97,74 +97,76 @@
   --animate-rde-glow: rdeGlow 3.2s ease-in-out infinite;
   --animate-rde-shine: rdeShine 3.2s ease-in-out infinite;
 
-  @keyframes rdeDot {
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(-3px);
-    }
+}
+
+/* Keyframes live outside @theme so they are always emitted (inline styles use them too). */
+@keyframes rdeDot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
   }
-  @keyframes rdeSpin {
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
   }
-  @keyframes rdeGlow {
-    0%,
-    100% {
-      filter: drop-shadow(0 0 0 rgba(255, 106, 0, 0));
-    }
-    50% {
-      filter: drop-shadow(0 0 6px rgba(255, 106, 0, 0.75));
-    }
+}
+@keyframes rdeSpin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
-  @keyframes rdeShine {
-    0%,
-    62% {
-      transform: translateX(-140%) skewX(-20deg);
-    }
-    100% {
-      transform: translateX(240%) skewX(-20deg);
-    }
+}
+@keyframes rdeGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(255, 106, 0, 0));
   }
-  @keyframes rdeQ {
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: translateY(0);
-    }
-    35% {
-      opacity: 1;
-      transform: translateY(-4px);
-    }
-    65% {
-      opacity: 0.7;
-      transform: translateY(0);
-    }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 106, 0, 0.75));
   }
-  @keyframes rdeRoll {
-    from {
-      transform: translateY(70%);
-      opacity: 0;
-    }
-    to {
-      transform: none;
-      opacity: 1;
-    }
+}
+@keyframes rdeShine {
+  0%,
+  62% {
+    transform: translateX(-140%) skewX(-20deg);
   }
-  @keyframes nIn {
-    from {
-      opacity: 0;
-      transform: translateY(-16px) scale(0.96);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
+  100% {
+    transform: translateX(240%) skewX(-20deg);
+  }
+}
+@keyframes rdeQ {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  65% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+@keyframes rdeRoll {
+  from {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes nIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

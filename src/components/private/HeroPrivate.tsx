@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 import { signupUrl } from '@/lib/site';
 import { ModeToggle } from '../ModeToggle';
+import { HeroPhone } from './HeroPhone';
 
 export async function HeroPrivate() {
   const t = await getTranslations('hero.private');
@@ -29,7 +30,7 @@ export async function HeroPrivate() {
             <span>{t('tags.trial')}</span>
           </div>
         </div>
-        {/* Right column (animated phone briefing) follows in step 2. */}
+        <HeroPhone />
       </div>
     </div>
   );

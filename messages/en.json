@@ -135,5 +135,573 @@
     "close": "Close",
     "next": "Next",
     "previous": "Previous"
+  },
+  "life": {
+    "phone": {
+      "notifFrom": "RIDEFF Life · now",
+      "notifs": [
+        "4 new findings in your day.",
+        "Disney+ unused for 4 months. Cancel?",
+        "Workout moved to Thursday, fits the shift.",
+        "Commuter allowance found: about €412 back.",
+        "Bali gets 3 weeks closer."
+      ],
+      "s0": {
+        "label": "TUESDAY · BRIEFING",
+        "title": "Good morning, Lea.",
+        "goalLabel": "GOAL · BALI",
+        "goalValue": "€3,240 of €5,000",
+        "week": "3 things for this week",
+        "items": [
+          [
+            "Cancel Disney+",
+            "+€9.99"
+          ],
+          [
+            "Commuter allowance",
+            "+€412"
+          ],
+          [
+            "Workout on Thursday",
+            "+1 h"
+          ]
+        ]
+      },
+      "s1": {
+        "label": "FOUND TODAY",
+        "title": "4 things, automatically.",
+        "stats": [
+          [
+            "FOUND",
+            "€47"
+          ],
+          [
+            "TIME",
+            "3,5 h"
+          ],
+          [
+            "BALI",
+            "−3 wks"
+          ]
+        ],
+        "rows": [
+          [
+            "MONEY",
+            "Disney+ unused for 4 months"
+          ],
+          [
+            "TIME",
+            "Workout moved to Thursday"
+          ],
+          [
+            "TAX",
+            "About €412 back"
+          ],
+          [
+            "GOAL",
+            "Bali 3 weeks closer"
+          ]
+        ]
+      },
+      "s2": {
+        "label": "MONEY · SEPTEMBER",
+        "title": "3 unused subscriptions.",
+        "subs": [
+          [
+            "Disney+",
+            "Not used in 4 months",
+            "€9.99"
+          ],
+          [
+            "Gym",
+            "2× per quarter",
+            "€24.99"
+          ],
+          [
+            "Cloud twice",
+            "Google & iCloud",
+            "€2.99"
+          ],
+          [
+            "Spotify",
+            "Daily",
+            "€17.99"
+          ]
+        ],
+        "saved": "Saved",
+        "savedValue": "€37.97 /mo"
+      },
+      "s3": {
+        "label": "TIME · THIS WEEK",
+        "title": "3.5 h back.",
+        "days": [
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI"
+        ],
+        "rows": [
+          [
+            "Shifts bundled",
+            "+2 h"
+          ],
+          [
+            "Workout Thu 6 pm",
+            "set"
+          ],
+          [
+            "Groceries moved to Wed",
+            "+1,5 h"
+          ]
+        ]
+      },
+      "s4": {
+        "label": "GOAL · BALI",
+        "title": "March, not June.",
+        "pct": "65 %",
+        "value": "€3,240 of €5,000",
+        "rows": [
+          [
+            "Subscriptions cancelled",
+            "−5 wks"
+          ],
+          [
+            "Tax refund",
+            "−5 wks"
+          ],
+          [
+            "Coffee halved",
+            "−3 wks"
+          ]
+        ]
+      },
+      "cards": [
+        [
+          "GOAL · BALI",
+          "65 %",
+          "€3,240 of €5,000",
+          "TAX",
+          "+€412",
+          "Commuter allowance"
+        ],
+        [
+          "FOUND",
+          "€47 /mo",
+          "Detected automatically",
+          "TIME",
+          "3,5 h",
+          "Back per week"
+        ],
+        [
+          "CANCELLED",
+          "Disney+",
+          "Unused for 4 months",
+          "SAVED",
+          "€37.97",
+          "Every month"
+        ],
+        [
+          "APPOINTMENT",
+          "Workout Thu",
+          "6 pm, fits the shift",
+          "TIME",
+          "+3,5 h",
+          "Per week"
+        ],
+        [
+          "NEW DATE",
+          "March",
+          "instead of June 2027",
+          "GOAL",
+          "−3 wks",
+          "Bali sooner"
+        ]
+      ]
+    },
+    "problem": {
+      "eyebrow": "THE PROBLEM",
+      "title": "Do you know it off the top of your head?",
+      "questions": [
+        "What do your subscriptions cost per month?",
+        "How much overtime this month?",
+        "What will you get back from the tax office?",
+        "When can you reach your goal?"
+      ],
+      "answers": [
+        "€ 47",
+        "12 h",
+        "€ 412",
+        "March 2027"
+      ],
+      "scramblePrefix": [
+        "€ ",
+        "",
+        "€ ",
+        ""
+      ],
+      "scrambleSuffix": [
+        "",
+        " h",
+        "",
+        ""
+      ],
+      "outro": "If you had to guess twice: that’s exactly why there’s <b>RIDEFF Life</b>.",
+      "done": "THIS IS WHAT IT LOOKS LIKE WITH RIDEFF LIFE"
+    },
+    "module": {
+      "eyebrow": "MODULES",
+      "title": "You name the goal. Life finds the levers.",
+      "lead": "First comes what you want. Then Life shows which spending and which hours get you there. Money, time and goals work together.",
+      "goalLabel": "YOUR GOAL",
+      "goal": "Bali, €5,000",
+      "capNone": "WITHOUT CHANGES",
+      "capWith": "WITH LIFE",
+      "dates": [
+        "JUNE 2027",
+        "MAY 2027",
+        "APRIL 2027",
+        "MARCH 2027"
+      ],
+      "today": "TODAY",
+      "withoutLife": "WITHOUT LIFE",
+      "withLife": "WITH LIFE",
+      "months": [
+        "OKT",
+        "NOV",
+        "DEC",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN"
+      ],
+      "hint": "TRY IT: SWITCH LEVERS ON AND OFF",
+      "levers": [
+        [
+          "MONEY",
+          "Cancel 3 subscriptions",
+          "−5 wks"
+        ],
+        [
+          "TAX",
+          "Claim commuter allowance",
+          "−3 wks"
+        ],
+        [
+          "TIME",
+          "Halve coffee on the go",
+          "−2 wks"
+        ]
+      ],
+      "gapSteps": [
+        "",
+        "−5 WK",
+        "−8 WK",
+        "−10 WEEKS"
+      ],
+      "gapWeeks": {
+        "2": "−2 WK.",
+        "3": "−3 WK.",
+        "5": "−5 WK",
+        "7": "−7 WK.",
+        "8": "−8 WK",
+        "10": "−10 WK"
+      },
+      "badgeWeeks": {
+        "2": "2 WEEKS EARLIER",
+        "3": "3 WEEKS EARLIER",
+        "5": "5 WEEKS EARLIER",
+        "7": "7 WEEKS EARLIER",
+        "8": "8 WEEKS EARLIER",
+        "10": "10 WEEKS EARLIER"
+      },
+      "badgeNone": "NO LEVER ACTIVE",
+      "insteadOf": "INSTEAD OF JUNE 2027"
+    },
+    "flowGap": {
+      "line1": "AI is cracking problems humans couldn’t.",
+      "line2": "Imagine what it finds in your life."
+    },
+    "day": {
+      "eyebrow": "A DAY WITH LIFE",
+      "scenes": [
+        {
+          "time": "07:00",
+          "dot": "TOMORROW",
+          "title": "The day starts sorted.",
+          "text": "One briefing instead of five apps. Appointments, budget and goal at a glance, before the coffee is ready.",
+          "label": "BRIEFING",
+          "msg": "Good morning, Lea. 3 appointments today, €18 left for food.",
+          "a1": "See the day",
+          "a2": "Later",
+          "bali": "142 days"
+        },
+        {
+          "time": "12:30",
+          "dot": "MIDDAY",
+          "title": "Small decisions, big effect.",
+          "text": "Life does the maths when it counts. Not with a wagging finger, but with a number.",
+          "label": "SUGGESTION",
+          "msg": "Canteen instead of delivery saves €9 today. Bali moves a day closer.",
+          "a1": "Canteen",
+          "a2": "Not today",
+          "bali": "141 days"
+        },
+        {
+          "time": "18:00",
+          "dot": "EVENING",
+          "title": "Time that belongs to you.",
+          "text": "Life knows shifts and appointments and finds the gaps that would otherwise get lost.",
+          "label": "TIME",
+          "msg": "Thursday 6 pm is free. Add sport?",
+          "a1": "Add",
+          "a2": "No thanks",
+          "bali": "141 days"
+        },
+        {
+          "time": "22:00",
+          "dot": "REVIEW",
+          "title": "Fall asleep knowing: it's on track.",
+          "text": "No anxious check of the banking app. Life tells you briefly where you stand, and then it's quiet.",
+          "label": "TODAY",
+          "msg": "€14 under budget. Already 2 days closer to Bali this week.",
+          "a1": "Good night",
+          "a2": "Details",
+          "bali": "140 days"
+        }
+      ],
+      "phoneBrand": "RIDEFF LIFE",
+      "goal": "Goal Bali",
+      "askTitle": "And in between? Just ask.",
+      "askSub": "FROM YOUR DATA, NOT THE INTERNET",
+      "ask": [
+        [
+          "Where does my money go?",
+          "38 % food and groceries, 12 % subscriptions."
+        ],
+        [
+          "When do I have time to work out?",
+          "Thursday 6 pm, your shift ends at 4."
+        ],
+        [
+          "What will I get back from tax?",
+          "About €412 from the commuter allowance."
+        ],
+        [
+          "Which subscriptions are unnecessary?",
+          "Disney+, gym, the second cloud."
+        ],
+        [
+          "Is there enough for an emergency fund?",
+          "Yes, €150 a month without slowing Bali."
+        ]
+      ],
+      "askOwn": "Your own question…",
+      "askOwnCta": "Try it free for 14 days →"
+    },
+    "weiter": {
+      "eyebrow": "THINKING AHEAD",
+      "title": "Life thinks further than you ask.",
+      "lead": "On your own platform, the AI researches how you can grow your career and finances, based on your data. It finds opportunities you'd never have thought of.",
+      "tags": [
+        "BASED ON YOUR DATA",
+        "YOUR OWN PLATFORM",
+        "BRAINSTORMING"
+      ],
+      "research": "RESEARCH · JUST FOR YOU",
+      "scanning": "SEARCHING …",
+      "found": "3 FINDINGS",
+      "findings": [
+        [
+          "CAREER",
+          "LINKEDIN · SALARY",
+          "With 6 years of experience you're 11% below market pay. Time for that talk in January."
+        ],
+        [
+          "FINANCES",
+          "BANK STATEMENT",
+          "Your emergency fund earns 0% interest. A savings account would bring about €310 a year."
+        ],
+        [
+          "YOU'D HAVE MISSED THIS",
+          "EMPLOYMENT CONTRACT",
+          "Your employer pays up to €1,200 for training. Not used so far."
+        ]
+      ],
+      "brainstorm": "BRAINSTORMING",
+      "user": "Should I start freelancing on the side?",
+      "ai": "Let's play it through. With your savings and 8 free hours a week, there are three realistic paths.",
+      "paths": [
+        "Part-time start",
+        "Test with clients first",
+        "Full launch 2027"
+      ],
+      "input": "Write down an idea…"
+    },
+    "ablauf": {
+      "eyebrow": "HOW IT WORKS",
+      "title": "Shorter than a coffee break.",
+      "lead": "Four steps, once. Then Life reaches out by itself, every morning at 7.",
+      "steps": [
+        [
+          "Create account",
+          "1 MIN"
+        ],
+        [
+          "Upload bank statement",
+          "3 MIN"
+        ],
+        [
+          "Share calendar",
+          "2 MIN"
+        ],
+        [
+          "Add a goal",
+          "4 MIN"
+        ]
+      ],
+      "progress": "4 OF 10 MINUTES",
+      "firstFinds": "FIRST FINDINGS AFTER STEP 2"
+    },
+    "daten": {
+      "eyebrow": "PRIVACY",
+      "title": "It gets to know you. Your data stays yours.",
+      "lead": "Your data sits in your own encrypted space, not on the open internet. What's off, the AI doesn't see. Not even a little.",
+      "tags": [
+        "SERVERS IN GERMANY",
+        "ENCRYPTED",
+        "GDPR"
+      ],
+      "sources": "SHARED SOURCES",
+      "count": "{n} OF 4",
+      "items": [
+        "Bank statement (CSV upload)",
+        "Calendar (Google or iCloud)",
+        "Shift plan (photo or PDF)",
+        "Tax receipts (upload)"
+      ],
+      "wipe": "Delete all data",
+      "wiped": "All deleted. For real: instantly and permanently.",
+      "growTitle": "The longer it knows you, the better it helps.",
+      "growSub": "LEARNS ONLY FROM YOUR DATA, NOT FROM THE INTERNET",
+      "grow": [
+        [
+          "WEEK 1",
+          "You spend €340 a month on food."
+        ],
+        [
+          "MONTH 3",
+          "Thursday is your best day for sport."
+        ],
+        [
+          "YEAR 1",
+          "Hold Bali until March. It's cheaper then and the pot is fuller."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Common questions.",
+      "items": [
+        [
+          "Do I have to connect my bank account?",
+          "No. You can simply upload a statement as CSV. A direct connection is optional."
+        ],
+        [
+          "Who is RIDEFF Life for?",
+          "For anyone who wants to keep money, time and goals in view without updating spreadsheets every evening. For example shift work, family or studies."
+        ],
+        [
+          "Does the AI make decisions for me?",
+          "No. It makes suggestions and shows what they’re based on. Only you cancel, move or save."
+        ],
+        [
+          "How does the AI find career and money opportunities?",
+          "From the data you share, such as bank statements, your employment contract or CV. On your own platform it researches what moves you forward in your career and finances, including things you wouldn't have thought of yourself."
+        ],
+        [
+          "Can I brainstorm ideas with the AI?",
+          "Yes. In the brainstorming space you think out loud and Life does the maths with your real numbers. You end up with possible paths, not a finished decision."
+        ],
+        [
+          "When does it start?",
+          "Right away. Create an account and try it free for 14 days, no payment details. For Life Private, book a short call first."
+        ]
+      ]
+    },
+    "preis": {
+      "eyebrow": "PRICING",
+      "title": "What should Life do for you?",
+      "lead": "Choose your scope. 14 days free, no payment details. Then cancel monthly. Pay yearly: two months free. Prices incl. VAT.",
+      "perMonth": "/ month",
+      "tiers": {
+        "life": {
+          "k": "LIFE",
+          "p": "€12.90",
+          "sub": "For you. The essentials.",
+          "f": [
+            "Money, time and goals",
+            "Morning briefing every day",
+            "Weekly AI review",
+            "Web app on phone and laptop"
+          ]
+        },
+        "plus": {
+          "k": "LIFE PLUS",
+          "p": "€19.90",
+          "sub": "For you. Everything included.",
+          "f": [
+            "Everything in Life",
+            "AI research for career and finances",
+            "Brainstorming with your numbers",
+            "Tax, sport, sleep and learning"
+          ]
+        },
+        "together": {
+          "k": "TOGETHER",
+          "p": "€29.90",
+          "sub": "For couples and families.",
+          "f": [
+            "Everything in Life Plus",
+            "Up to 4 people",
+            "Shared budget and goals",
+            "Private space for each person"
+          ]
+        }
+      },
+      "cta": "Try free for 14 days →",
+      "private": {
+        "badge": "LIFE PRIVATE",
+        "limited": "LIMITED SPOTS",
+        "title": "Your own system. With people behind it.",
+        "text": "For anyone with more than one salary: self-employment, property, family, relocation. We set up Life together with you and stay by your side.",
+        "price": "from €68",
+        "priceSub": "/ month · one-time setup from €449",
+        "f": [
+          "Everything in Life Plus",
+          "1:1 setup, goals set together",
+          "Custom modules, e.g. property or a side business",
+          "Monthly review with a real person"
+        ],
+        "cta": "Book a free call →"
+      }
+    },
+    "start": {
+      "eyebrow": "LET'S GO",
+      "title": "Your first briefing arrives tomorrow morning.",
+      "text": "Account in three minutes. 14 days free, no payment details. Then you decide.",
+      "cta": "Try free for 14 days →",
+      "compare": "Compare plans",
+      "tags": [
+        "NO CARD NEEDED",
+        "DATA IN THE EU",
+        "CANCEL ANY TIME"
+      ]
+    }
+  },
+  "common": {
+    "ai": "AI"
   }
 }

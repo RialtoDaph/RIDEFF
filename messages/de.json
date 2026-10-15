@@ -135,5 +135,573 @@
     "close": "Schließen",
     "next": "Weiter",
     "previous": "Zurück"
+  },
+  "life": {
+    "phone": {
+      "notifFrom": "RIDEFF Life · jetzt",
+      "notifs": [
+        "4 neue Funde in Ihrem Alltag.",
+        "Disney+ seit 4 Monaten ungenutzt. Kündigen?",
+        "Sport auf Donnerstag gelegt, Schicht passt.",
+        "Pendlerpauschale gefunden: ca. 412 € zurück.",
+        "Bali rückt 3 Wochen näher."
+      ],
+      "s0": {
+        "label": "DIENSTAG · BRIEFING",
+        "title": "Guten Morgen, Lea.",
+        "goalLabel": "ZIEL · BALI",
+        "goalValue": "3.240 € von 5.000 €",
+        "week": "3 Dinge für diese Woche",
+        "items": [
+          [
+            "Disney+ kündigen",
+            "+9,99 €"
+          ],
+          [
+            "Pendlerpauschale",
+            "+412 €"
+          ],
+          [
+            "Sport auf Donnerstag",
+            "+1 h"
+          ]
+        ]
+      },
+      "s1": {
+        "label": "HEUTE GEFUNDEN",
+        "title": "4 Dinge, automatisch.",
+        "stats": [
+          [
+            "GEFUNDEN",
+            "47 €"
+          ],
+          [
+            "ZEIT",
+            "3,5 h"
+          ],
+          [
+            "BALI",
+            "−3 Wo."
+          ]
+        ],
+        "rows": [
+          [
+            "GELD",
+            "Disney+ 4 Monate ungenutzt"
+          ],
+          [
+            "ZEIT",
+            "Sport auf Donnerstag gelegt"
+          ],
+          [
+            "STEUER",
+            "Ca. 412 € zurück"
+          ],
+          [
+            "ZIEL",
+            "Bali 3 Wochen näher"
+          ]
+        ]
+      },
+      "s2": {
+        "label": "GELD · SEPTEMBER",
+        "title": "3 Abos ungenutzt.",
+        "subs": [
+          [
+            "Disney+",
+            "4 Monate nicht genutzt",
+            "9,99 €"
+          ],
+          [
+            "Fitnessstudio",
+            "2× im Quartal",
+            "24,99 €"
+          ],
+          [
+            "Cloud doppelt",
+            "Google & iCloud",
+            "2,99 €"
+          ],
+          [
+            "Spotify",
+            "Täglich",
+            "17,99 €"
+          ]
+        ],
+        "saved": "Gespart",
+        "savedValue": "37,97 € /Mon."
+      },
+      "s3": {
+        "label": "ZEIT · DIESE WOCHE",
+        "title": "3,5 h zurück.",
+        "days": [
+          "MO",
+          "DI",
+          "MI",
+          "DO",
+          "FR"
+        ],
+        "rows": [
+          [
+            "Schichten gebündelt",
+            "+2 h"
+          ],
+          [
+            "Sport Do. 18 Uhr",
+            "fix"
+          ],
+          [
+            "Einkauf auf Mi gelegt",
+            "+1,5 h"
+          ]
+        ]
+      },
+      "s4": {
+        "label": "ZIEL · BALI",
+        "title": "März statt Juni.",
+        "pct": "65 %",
+        "value": "3.240 € von 5.000 €",
+        "rows": [
+          [
+            "Abos gekündigt",
+            "−5 Wo."
+          ],
+          [
+            "Steuer zurück",
+            "−5 Wo."
+          ],
+          [
+            "Kaffee halbiert",
+            "−3 Wo."
+          ]
+        ]
+      },
+      "cards": [
+        [
+          "ZIEL · BALI",
+          "65 %",
+          "3.240 € von 5.000 €",
+          "STEUER",
+          "+412 €",
+          "Pendlerpauschale"
+        ],
+        [
+          "GEFUNDEN",
+          "47 € /Mon.",
+          "Automatisch erkannt",
+          "ZEIT",
+          "3,5 h",
+          "Pro Woche zurück"
+        ],
+        [
+          "GEKÜNDIGT",
+          "Disney+",
+          "4 Monate ungenutzt",
+          "GESPART",
+          "37,97 €",
+          "Jeden Monat"
+        ],
+        [
+          "TERMIN",
+          "Sport Do.",
+          "18 Uhr, passt zur Schicht",
+          "ZEIT",
+          "+3,5 h",
+          "Pro Woche"
+        ],
+        [
+          "NEUES DATUM",
+          "März",
+          "statt Juni 2027",
+          "ZIEL",
+          "−3 Wo.",
+          "Schneller in Bali"
+        ]
+      ]
+    },
+    "problem": {
+      "eyebrow": "DAS PROBLEM",
+      "title": "Wissen Sie es aus dem Kopf?",
+      "questions": [
+        "Was kosten Ihre Abos im Monat?",
+        "Wie viele Überstunden diesen Monat?",
+        "Was bekommen Sie vom Finanzamt zurück?",
+        "Wann können Sie Ihr Ziel erreichen?"
+      ],
+      "answers": [
+        "€ 47",
+        "12 h",
+        "€ 412",
+        "März 2027"
+      ],
+      "scramblePrefix": [
+        "€ ",
+        "",
+        "€ ",
+        ""
+      ],
+      "scrambleSuffix": [
+        "",
+        " h",
+        "",
+        ""
+      ],
+      "outro": "Wenn Sie zweimal raten mussten: genau dafür gibt es <b>RIDEFF Life</b>.",
+      "done": "SO SIEHT ES MIT RIDEFF LIFE AUS"
+    },
+    "module": {
+      "eyebrow": "MODULE",
+      "title": "Sie sagen das Ziel. Life findet die Hebel.",
+      "lead": "Erst kommt, was Sie wollen. Dann zeigt Life, welche Ausgaben und welche Stunden Sie dorthin bringen. Geld, Zeit und Ziele arbeiten zusammen.",
+      "goalLabel": "IHR ZIEL",
+      "goal": "Bali, 5.000 €",
+      "capNone": "OHNE ÄNDERUNG",
+      "capWith": "MIT LIFE",
+      "dates": [
+        "JUNI 2027",
+        "MAI 2027",
+        "APRIL 2027",
+        "MÄRZ 2027"
+      ],
+      "today": "HEUTE",
+      "withoutLife": "OHNE LIFE",
+      "withLife": "MIT LIFE",
+      "months": [
+        "OKT",
+        "NOV",
+        "DEZ",
+        "JAN",
+        "FEB",
+        "MÄR",
+        "APR",
+        "MAI",
+        "JUN"
+      ],
+      "hint": "PROBIEREN SIE ES AUS: HEBEL AN- UND AUSSCHALTEN",
+      "levers": [
+        [
+          "GELD",
+          "3 Abos kündigen",
+          "−5 Wo."
+        ],
+        [
+          "STEUER",
+          "Pendlerpauschale nachtragen",
+          "−3 Wo."
+        ],
+        [
+          "ZEIT",
+          "Kaffee unterwegs halbieren",
+          "−2 Wo."
+        ]
+      ],
+      "gapSteps": [
+        "",
+        "−5 WO.",
+        "−8 WO.",
+        "−10 WOCHEN"
+      ],
+      "gapWeeks": {
+        "2": "−2 WO.",
+        "3": "−3 WO.",
+        "5": "−5 WO.",
+        "7": "−7 WO.",
+        "8": "−8 WO.",
+        "10": "−10 WO."
+      },
+      "badgeWeeks": {
+        "2": "2 WOCHEN FRÜHER",
+        "3": "3 WOCHEN FRÜHER",
+        "5": "5 WOCHEN FRÜHER",
+        "7": "7 WOCHEN FRÜHER",
+        "8": "8 WOCHEN FRÜHER",
+        "10": "10 WOCHEN FRÜHER"
+      },
+      "badgeNone": "KEIN HEBEL AKTIV",
+      "insteadOf": "STATT JUNI 2027"
+    },
+    "flowGap": {
+      "line1": "KI löst heute Probleme, an denen Menschen gescheitert sind.",
+      "line2": "Stellen Sie sich vor, was sie in Ihrem Leben findet."
+    },
+    "day": {
+      "eyebrow": "EIN TAG MIT LIFE",
+      "scenes": [
+        {
+          "time": "07:00",
+          "dot": "MORGEN",
+          "title": "Der Tag beginnt sortiert.",
+          "text": "Ein Briefing statt fünf Apps. Termine, Budget und Ziel auf einen Blick, bevor der Kaffee fertig ist.",
+          "label": "BRIEFING",
+          "msg": "Guten Morgen, Lea. 3 Termine heute, 18 € fürs Essen übrig.",
+          "a1": "Tag ansehen",
+          "a2": "Später",
+          "bali": "142 Tage"
+        },
+        {
+          "time": "12:30",
+          "dot": "MITTAG",
+          "title": "Kleine Entscheidungen, großer Effekt.",
+          "text": "Life rechnet mit, wenn es zählt. Nicht mit erhobenem Zeigefinger, sondern mit einer Zahl.",
+          "label": "VORSCHLAG",
+          "msg": "Kantine statt Lieferdienst spart heute 9 €. Bali rückt einen Tag näher.",
+          "a1": "Kantine",
+          "a2": "Heute nicht",
+          "bali": "141 Tage"
+        },
+        {
+          "time": "18:00",
+          "dot": "ABEND",
+          "title": "Zeit, die Ihnen gehört.",
+          "text": "Life kennt Schichten und Termine und findet die Lücken, die sonst verloren gehen.",
+          "label": "ZEIT",
+          "msg": "Donnerstag 18 Uhr ist frei. Sport eintragen?",
+          "a1": "Eintragen",
+          "a2": "Nein danke",
+          "bali": "141 Tage"
+        },
+        {
+          "time": "22:00",
+          "dot": "RÜCKBLICK",
+          "title": "Einschlafen mit dem Gefühl: läuft.",
+          "text": "Kein Kontrollblick ins Banking. Life sagt kurz, wo Sie stehen, und dann ist Ruhe.",
+          "label": "HEUTE",
+          "msg": "14 € unter Budget. Diese Woche schon 2 Tage näher an Bali.",
+          "a1": "Gute Nacht",
+          "a2": "Details",
+          "bali": "140 Tage"
+        }
+      ],
+      "phoneBrand": "RIDEFF LIFE",
+      "goal": "Ziel Bali",
+      "askTitle": "Und zwischendurch? Einfach fragen.",
+      "askSub": "AUS IHREN DATEN, NICHT AUS DEM INTERNET",
+      "ask": [
+        [
+          "Wohin geht mein Geld?",
+          "38 % Essen und Einkauf, 12 % Abos."
+        ],
+        [
+          "Wann habe ich Zeit für Sport?",
+          "Donnerstag 18 Uhr, Schicht endet um 16."
+        ],
+        [
+          "Was bekomme ich vom Finanzamt?",
+          "Ca. 412 € aus der Pendlerpauschale."
+        ],
+        [
+          "Welche Abos sind unnötig?",
+          "Disney+, Fitnessstudio, die zweite Cloud."
+        ],
+        [
+          "Reicht es für einen Notgroschen?",
+          "Ja, 150 € im Monat, ohne Bali zu bremsen."
+        ]
+      ],
+      "askOwn": "Ihre eigene Frage…",
+      "askOwnCta": "14 Tage kostenlos ausprobieren →"
+    },
+    "weiter": {
+      "eyebrow": "WEITERDENKEN",
+      "title": "Life denkt weiter, als Sie fragen.",
+      "lead": "Auf Ihrer eigenen Plattform recherchiert die KI, wie Sie beruflich und finanziell weiterkommen, auf Basis Ihrer Daten. Sie findet Chancen, an die Sie nie gedacht hätten.",
+      "tags": [
+        "AUF IHREN DATEN",
+        "EIGENE PLATTFORM",
+        "BRAINSTORMING"
+      ],
+      "research": "RECHERCHE · NUR FÜR SIE",
+      "scanning": "DURCHSUCHT …",
+      "found": "3 FUNDE",
+      "findings": [
+        [
+          "KARRIERE",
+          "LINKEDIN · GEHALT",
+          "Mit 6 Jahren Erfahrung liegen Sie 11 % unter dem Marktgehalt. Zeit für das Gespräch im Januar."
+        ],
+        [
+          "FINANZEN",
+          "KONTOAUSZUG",
+          "Ihr Notgroschen liegt bei 0 % Zinsen. Ein Tagesgeld bringt rund 310 € im Jahr."
+        ],
+        [
+          "HÄTTEN SIE ÜBERSEHEN",
+          "ARBEITSVERTRAG",
+          "Ihr Arbeitgeber zahlt bis zu 1.200 € für Weiterbildung. Bisher nicht genutzt."
+        ]
+      ],
+      "brainstorm": "BRAINSTORMING",
+      "user": "Soll ich mich nebenbei selbstständig machen?",
+      "ai": "Spielen wir es durch. Mit Ihren Rücklagen und 8 freien Stunden pro Woche gibt es drei realistische Wege.",
+      "paths": [
+        "Teilzeit-Start",
+        "Erst Kunden testen",
+        "Vollstart 2027"
+      ],
+      "input": "Idee aufschreiben…"
+    },
+    "ablauf": {
+      "eyebrow": "SO FUNKTIONIERT’S",
+      "title": "Kürzer als eine Kaffeepause.",
+      "lead": "Vier Schritte, einmal. Danach meldet sich Life von selbst, jeden Morgen um 7.",
+      "steps": [
+        [
+          "Konto anlegen",
+          "1 MIN"
+        ],
+        [
+          "Kontoauszug hochladen",
+          "3 MIN"
+        ],
+        [
+          "Kalender freigeben",
+          "2 MIN"
+        ],
+        [
+          "Ein Ziel eintragen",
+          "4 MIN"
+        ]
+      ],
+      "progress": "4 VON 10 MINUTEN",
+      "firstFinds": "ERSTE FUNDE NACH SCHRITT 2"
+    },
+    "daten": {
+      "eyebrow": "DATENSCHUTZ",
+      "title": "Sie lernt Sie kennen. Ihre Daten bleiben Ihre.",
+      "lead": "Ihre Daten liegen in Ihrem eigenen, verschlüsselten Bereich, nicht im offenen Internet. Was aus ist, sieht die KI nicht. Auch nicht ein bisschen.",
+      "tags": [
+        "SERVER IN DEUTSCHLAND",
+        "VERSCHLÜSSELT",
+        "DSGVO"
+      ],
+      "sources": "FREIGEGEBENE QUELLEN",
+      "count": "{n} VON 4",
+      "items": [
+        "Kontoauszug (CSV-Upload)",
+        "Kalender (Google oder iCloud)",
+        "Schichtplan (Foto oder PDF)",
+        "Steuerbelege (Upload)"
+      ],
+      "wipe": "Alle Daten löschen",
+      "wiped": "Alles gelöscht. In echt: sofort und endgültig.",
+      "growTitle": "Je länger sie Sie kennt, desto besser hilft sie.",
+      "growSub": "LERNT NUR AUS IHREN DATEN, NICHT AUS DEM INTERNET",
+      "grow": [
+        [
+          "WOCHE 1",
+          "Sie geben 340 € im Monat für Essen aus."
+        ],
+        [
+          "MONAT 3",
+          "Donnerstag ist Ihr bester Tag für Sport."
+        ],
+        [
+          "JAHR 1",
+          "Bali lieber erst im März. Dann ist es günstiger und der Topf voller."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Häufige Fragen.",
+      "items": [
+        [
+          "Muss ich mein Bankkonto verbinden?",
+          "Nein. Sie können einfach einen Kontoauszug als CSV hochladen. Eine direkte Verbindung ist optional."
+        ],
+        [
+          "Für wen ist RIDEFF Life gedacht?",
+          "Für alle, die Geld, Zeit und Ziele im Blick haben wollen, ohne jeden Abend Tabellen zu pflegen. Zum Beispiel Schichtarbeit, Familie oder Studium."
+        ],
+        [
+          "Trifft die KI Entscheidungen für mich?",
+          "Nein. Sie macht Vorschläge und zeigt, worauf sie beruhen. Kündigen, verschieben oder sparen tun nur Sie."
+        ],
+        [
+          "Wie findet die KI Chancen für Karriere und Finanzen?",
+          "Aus den Daten, die Sie freigeben, etwa Kontoauszug, Arbeitsvertrag oder Lebenslauf. Daraus recherchiert sie auf Ihrer eigenen Plattform, was Sie beruflich und finanziell weiterbringt, auch Dinge, an die Sie selbst nicht gedacht hätten."
+        ],
+        [
+          "Kann ich mit der KI Ideen durchspielen?",
+          "Ja. Im Brainstorming-Bereich denken Sie laut, und Life rechnet mit Ihren echten Zahlen mit. Am Ende sehen Sie mögliche Wege, keine fertige Entscheidung."
+        ],
+        [
+          "Wann geht es los?",
+          "Sofort. Konto anlegen und 14 Tage kostenlos testen, ohne Zahlungsdaten. Für Life Private buchen Sie zuerst ein kurzes Gespräch."
+        ]
+      ]
+    },
+    "preis": {
+      "eyebrow": "PREIS",
+      "title": "Was soll Life für Sie tun?",
+      "lead": "Wählen Sie den Umfang. 14 Tage kostenlos, ohne Zahlungsdaten. Danach monatlich kündbar. Jährlich zahlen: zwei Monate geschenkt. Preise inkl. MwSt.",
+      "perMonth": "/ Monat",
+      "tiers": {
+        "life": {
+          "k": "LIFE",
+          "p": "€12,90",
+          "sub": "Für Sie. Das Wichtigste.",
+          "f": [
+            "Geld, Zeit und Ziele",
+            "Morgen-Briefing jeden Tag",
+            "Wöchentlicher KI-Rückblick",
+            "Web-App auf Handy und Laptop"
+          ]
+        },
+        "plus": {
+          "k": "LIFE PLUS",
+          "p": "€19,90",
+          "sub": "Für Sie. Alles drin.",
+          "f": [
+            "Alles aus Life",
+            "KI-Recherche für Karriere und Finanzen",
+            "Brainstorming mit Ihren Zahlen",
+            "Steuer, Sport, Schlaf und Lernen"
+          ]
+        },
+        "together": {
+          "k": "TOGETHER",
+          "p": "€29,90",
+          "sub": "Für Paare und Familien.",
+          "f": [
+            "Alles aus Life Plus",
+            "Bis zu 4 Personen",
+            "Gemeinsames Budget und Ziele",
+            "Private Bereiche für jede Person"
+          ]
+        }
+      },
+      "cta": "14 Tage kostenlos testen →",
+      "private": {
+        "badge": "LIFE PRIVATE",
+        "limited": "BEGRENZTE PLÄTZE",
+        "title": "Ihr eigenes System. Mit Menschen dahinter.",
+        "text": "Für alle mit mehr als einem Gehalt: Selbstständigkeit, Immobilien, Familie, Umzug. Wir richten Life gemeinsam mit Ihnen ein und bleiben an Ihrer Seite.",
+        "price": "ab €68",
+        "priceSub": "/ Monat · einmalig ab €449 Einrichtung",
+        "f": [
+          "Alles aus Life Plus",
+          "Einrichtung 1:1, Ziele gemeinsam festgelegt",
+          "Eigene Module, z. B. Immobilien oder Nebengewerbe",
+          "Monatlicher Rückblick mit einem echten Menschen"
+        ],
+        "cta": "Kostenloses Gespräch buchen →"
+      }
+    },
+    "start": {
+      "eyebrow": "LOS GEHT'S",
+      "title": "Morgen früh kommt Ihr erstes Briefing.",
+      "text": "Konto in drei Minuten. 14 Tage kostenlos, ohne Zahlungsdaten. Danach entscheiden Sie.",
+      "cta": "14 Tage kostenlos testen →",
+      "compare": "Pakete vergleichen",
+      "tags": [
+        "KEINE KARTE NÖTIG",
+        "DATEN IN DER EU",
+        "JEDERZEIT KÜNDBAR"
+      ]
+    }
+  },
+  "common": {
+    "ai": "KI"
   }
 }

@@ -135,5 +135,573 @@
     "close": "Tutup",
     "next": "Berikutnya",
     "previous": "Sebelumnya"
+  },
+  "life": {
+    "phone": {
+      "notifFrom": "RIDEFF Life · sekarang",
+      "notifs": [
+        "4 temuan baru di keseharian Anda.",
+        "Disney+ tak dipakai 4 bulan. Batalkan?",
+        "Olahraga dipindah ke Kamis, pas dengan shift.",
+        "Tunjangan komuter ditemukan: sekitar €412 kembali.",
+        "Bali 3 minggu lebih dekat."
+      ],
+      "s0": {
+        "label": "SELASA · BRIEFING",
+        "title": "Selamat pagi, Lea.",
+        "goalLabel": "TUJUAN · BALI",
+        "goalValue": "€3.240 dari €5.000",
+        "week": "3 hal untuk minggu ini",
+        "items": [
+          [
+            "Batalkan Disney+",
+            "+9,99 €"
+          ],
+          [
+            "Tunjangan komuter",
+            "+412 €"
+          ],
+          [
+            "Olahraga hari Kamis",
+            "+1 h"
+          ]
+        ]
+      },
+      "s1": {
+        "label": "DITEMUKAN HARI INI",
+        "title": "4 hal, otomatis.",
+        "stats": [
+          [
+            "DITEMUKAN",
+            "47 €"
+          ],
+          [
+            "WAKTU",
+            "3,5 h"
+          ],
+          [
+            "BALI",
+            "−3 mgg"
+          ]
+        ],
+        "rows": [
+          [
+            "UANG",
+            "Disney+ tak dipakai 4 bulan"
+          ],
+          [
+            "WAKTU",
+            "Olahraga dipindah ke Kamis"
+          ],
+          [
+            "PAJAK",
+            "Sekitar €412 kembali"
+          ],
+          [
+            "TUJUAN",
+            "Bali 3 minggu lebih dekat"
+          ]
+        ]
+      },
+      "s2": {
+        "label": "UANG · SEPTEMBER",
+        "title": "3 langganan tak terpakai.",
+        "subs": [
+          [
+            "Disney+",
+            "Tak dipakai 4 bulan",
+            "9,99 €"
+          ],
+          [
+            "Gym",
+            "2× per kuartal",
+            "24,99 €"
+          ],
+          [
+            "Cloud dobel",
+            "Google & iCloud",
+            "2,99 €"
+          ],
+          [
+            "Spotify",
+            "Harian",
+            "17,99 €"
+          ]
+        ],
+        "saved": "Hemat",
+        "savedValue": "€37,97 /bln"
+      },
+      "s3": {
+        "label": "WAKTU · MINGGU INI",
+        "title": "3,5 jam kembali.",
+        "days": [
+          "SEN",
+          "SEL",
+          "RAB",
+          "KAM",
+          "JUM"
+        ],
+        "rows": [
+          [
+            "Shift digabung",
+            "+2 h"
+          ],
+          [
+            "Olahraga Kam 18.00",
+            "tetap"
+          ],
+          [
+            "Belanja dipindah ke Rabu",
+            "+1,5 h"
+          ]
+        ]
+      },
+      "s4": {
+        "label": "TUJUAN · BALI",
+        "title": "Maret, bukan Juni.",
+        "pct": "65 %",
+        "value": "€3.240 dari €5.000",
+        "rows": [
+          [
+            "Langganan dibatalkan",
+            "−5 mgg"
+          ],
+          [
+            "Pengembalian pajak",
+            "−5 mgg"
+          ],
+          [
+            "Kopi dikurangi separuh",
+            "−3 mgg"
+          ]
+        ]
+      },
+      "cards": [
+        [
+          "TUJUAN · BALI",
+          "65 %",
+          "€3.240 dari €5.000",
+          "PAJAK",
+          "+412 €",
+          "Tunjangan komuter"
+        ],
+        [
+          "DITEMUKAN",
+          "€47 /bln",
+          "Terdeteksi otomatis",
+          "WAKTU",
+          "3,5 h",
+          "Kembali per minggu"
+        ],
+        [
+          "DIBATALKAN",
+          "Disney+",
+          "Tak dipakai 4 bulan",
+          "HEMAT",
+          "37,97 €",
+          "Setiap bulan"
+        ],
+        [
+          "JADWAL",
+          "Olahraga Kam",
+          "18.00, pas dengan shift",
+          "WAKTU",
+          "+3,5 h",
+          "Per minggu"
+        ],
+        [
+          "TANGGAL BARU",
+          "Maret",
+          "bukan Juni 2027",
+          "TUJUAN",
+          "−3 mgg",
+          "Lebih cepat ke Bali"
+        ]
+      ]
+    },
+    "problem": {
+      "eyebrow": "MASALAHNYA",
+      "title": "Anda tahu jawabannya tanpa mengecek?",
+      "questions": [
+        "Berapa biaya langganan Anda per bulan?",
+        "Berapa jam lembur bulan ini?",
+        "Berapa pengembalian pajak Anda?",
+        "Kapan Anda bisa mencapai tujuan?"
+      ],
+      "answers": [
+        "€ 47",
+        "12 jam",
+        "€ 412",
+        "Maret 2027"
+      ],
+      "scramblePrefix": [
+        "€ ",
+        "",
+        "€ ",
+        ""
+      ],
+      "scrambleSuffix": [
+        "",
+        " h",
+        "",
+        ""
+      ],
+      "outro": "Kalau Anda harus menebak dua kali: justru untuk itu ada <b>RIDEFF Life</b>.",
+      "done": "BEGINI JADINYA DENGAN RIDEFF LIFE"
+    },
+    "module": {
+      "eyebrow": "MODUL",
+      "title": "Anda sebut tujuannya. Life cari caranya.",
+      "lead": "Pertama, apa yang Anda mau. Lalu Life menunjukkan pengeluaran dan jam mana yang membawa Anda ke sana. Uang, waktu, dan tujuan bekerja bersama.",
+      "goalLabel": "TUJUAN ANDA",
+      "goal": "Bali, €5.000",
+      "capNone": "TANPA PERUBAHAN",
+      "capWith": "DENGAN LIFE",
+      "dates": [
+        "JUNI 2027",
+        "MEI 2027",
+        "APRIL 2027",
+        "MARET 2027"
+      ],
+      "today": "HARI INI",
+      "withoutLife": "TANPA LIFE",
+      "withLife": "DENGAN LIFE",
+      "months": [
+        "OKT",
+        "NOV",
+        "DES",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MEI",
+        "JUN"
+      ],
+      "hint": "COBA SENDIRI: NYALAKAN DAN MATIKAN TUAS",
+      "levers": [
+        [
+          "UANG",
+          "Batalkan 3 langganan",
+          "−5 mgg"
+        ],
+        [
+          "PAJAK",
+          "Klaim tunjangan komuter",
+          "−3 mgg"
+        ],
+        [
+          "WAKTU",
+          "Kopi di jalan dikurangi separuh",
+          "−2 mgg"
+        ]
+      ],
+      "gapSteps": [
+        "",
+        "−5 MGG",
+        "−8 MGG",
+        "−10 MINGGU"
+      ],
+      "gapWeeks": {
+        "2": "−2 MG.",
+        "3": "−3 MG.",
+        "5": "−5 MGG",
+        "7": "−7 MG.",
+        "8": "−8 MGG",
+        "10": "−10 MGG"
+      },
+      "badgeWeeks": {
+        "2": "2 MINGGU LEBIH CEPAT",
+        "3": "3 MINGGU LEBIH CEPAT",
+        "5": "5 MINGGU LEBIH CEPAT",
+        "7": "7 MINGGU LEBIH CEPAT",
+        "8": "8 MINGGU LEBIH CEPAT",
+        "10": "10 MINGGU LEBIH CEPAT"
+      },
+      "badgeNone": "TIDAK ADA TUAS AKTIF",
+      "insteadOf": "BUKAN JUNI 2027"
+    },
+    "flowGap": {
+      "line1": "AI kini memecahkan masalah yang tak terpecahkan manusia.",
+      "line2": "Bayangkan apa yang ia temukan dalam hidup Anda."
+    },
+    "day": {
+      "eyebrow": "SEHARI BERSAMA LIFE",
+      "scenes": [
+        {
+          "time": "07:00",
+          "dot": "BESOK",
+          "title": "Hari dimulai dengan rapi.",
+          "text": "Satu briefing, bukan lima aplikasi. Janji, anggaran, dan tujuan sekilas, sebelum kopi siap.",
+          "label": "BRIEFING",
+          "msg": "Selamat pagi, Lea. 3 janji hari ini, sisa €18 untuk makan.",
+          "a1": "Lihat hari ini",
+          "a2": "Nanti",
+          "bali": "142 hari"
+        },
+        {
+          "time": "12:30",
+          "dot": "SIANG",
+          "title": "Keputusan kecil, dampak besar.",
+          "text": "Life ikut menghitung saat penting. Bukan dengan menggurui, tapi dengan angka.",
+          "label": "SARAN",
+          "msg": "Kantin, bukan pesan antar, hemat €9 hari ini. Bali sehari lebih dekat.",
+          "a1": "Kantin",
+          "a2": "Hari ini tidak",
+          "bali": "141 hari"
+        },
+        {
+          "time": "18:00",
+          "dot": "SORE",
+          "title": "Waktu yang jadi milik Anda.",
+          "text": "Life tahu shift dan janji Anda, dan menemukan celah waktu yang biasanya hilang.",
+          "label": "WAKTU",
+          "msg": "Kamis jam 18.00 kosong. Jadwalkan olahraga?",
+          "a1": "Jadwalkan",
+          "a2": "Tidak, terima kasih",
+          "bali": "141 hari"
+        },
+        {
+          "time": "22:00",
+          "dot": "RANGKUMAN",
+          "title": "Tidur dengan tenang: semua berjalan.",
+          "text": "Tak perlu cek aplikasi bank dengan cemas. Life memberi tahu singkat posisi Anda, lalu tenang.",
+          "label": "HARI INI",
+          "msg": "€14 di bawah anggaran. Minggu ini sudah 2 hari lebih dekat ke Bali.",
+          "a1": "Selamat malam",
+          "a2": "Detail",
+          "bali": "140 hari"
+        }
+      ],
+      "phoneBrand": "RIDEFF LIFE",
+      "goal": "Tujuan Bali",
+      "askTitle": "Dan di sela-selanya? Tinggal tanya.",
+      "askSub": "DARI DATA ANDA, BUKAN DARI INTERNET",
+      "ask": [
+        [
+          "Ke mana uang saya pergi?",
+          "38 % makan & belanja, 12 % langganan."
+        ],
+        [
+          "Kapan saya sempat olahraga?",
+          "Kamis 18.00, shift selesai jam 16."
+        ],
+        [
+          "Berapa pengembalian pajak saya?",
+          "Sekitar €412 dari tunjangan komuter."
+        ],
+        [
+          "Langganan mana yang mubazir?",
+          "Disney+, gym, cloud kedua."
+        ],
+        [
+          "Cukup untuk dana darurat?",
+          "Ya, €150 per bulan tanpa ganggu Bali."
+        ]
+      ],
+      "askOwn": "Pertanyaan Anda sendiri…",
+      "askOwnCta": "Coba gratis 14 hari →"
+    },
+    "weiter": {
+      "eyebrow": "BERPIKIR LEBIH JAUH",
+      "title": "Life berpikir lebih jauh dari pertanyaan Anda.",
+      "lead": "Di platform milik Anda sendiri, AI meriset cara Anda naik karier dan finansial, berdasarkan data Anda. Ia menemukan peluang yang tak pernah terpikir oleh Anda.",
+      "tags": [
+        "BERDASARKAN DATA ANDA",
+        "PLATFORM MILIK ANDA",
+        "BRAINSTORMING"
+      ],
+      "research": "RISET · KHUSUS UNTUK ANDA",
+      "scanning": "MENCARI …",
+      "found": "3 TEMUAN",
+      "findings": [
+        [
+          "KARIER",
+          "LINKEDIN · GAJI",
+          "Dengan pengalaman 6 tahun, gaji Anda 11% di bawah pasar. Saatnya bicara di bulan Januari."
+        ],
+        [
+          "KEUANGAN",
+          "MUTASI REKENING",
+          "Dana darurat Anda berbunga 0%. Rekening tabungan bisa memberi sekitar €310 per tahun."
+        ],
+        [
+          "PASTI TERLEWAT",
+          "KONTRAK KERJA",
+          "Perusahaan Anda menanggung hingga €1.200 untuk pelatihan. Belum pernah dipakai."
+        ]
+      ],
+      "brainstorm": "BRAINSTORMING",
+      "user": "Haruskah saya mulai usaha sampingan?",
+      "ai": "Mari kita uraikan. Dengan tabungan Anda dan 8 jam luang per minggu, ada tiga jalan yang realistis.",
+      "paths": [
+        "Mulai paruh waktu",
+        "Uji ke klien dulu",
+        "Mulai penuh 2027"
+      ],
+      "input": "Tulis ide…"
+    },
+    "ablauf": {
+      "eyebrow": "CARA KERJANYA",
+      "title": "Lebih singkat dari rehat kopi.",
+      "lead": "Empat langkah, sekali saja. Setelah itu Life yang menghubungi Anda, setiap pagi jam 7.",
+      "steps": [
+        [
+          "Buat akun",
+          "1 MNT"
+        ],
+        [
+          "Unggah mutasi rekening",
+          "3 MNT"
+        ],
+        [
+          "Izinkan kalender",
+          "2 MNT"
+        ],
+        [
+          "Tulis satu tujuan",
+          "4 MNT"
+        ]
+      ],
+      "progress": "4 DARI 10 MENIT",
+      "firstFinds": "TEMUAN PERTAMA SETELAH LANGKAH 2"
+    },
+    "daten": {
+      "eyebrow": "PRIVASI",
+      "title": "Ia makin mengenal Anda. Data Anda tetap milik Anda.",
+      "lead": "Data Anda tersimpan di ruang terenkripsi milik Anda sendiri, bukan di internet terbuka. Yang dimatikan tidak dilihat AI. Sedikit pun tidak.",
+      "tags": [
+        "SERVER DI JERMAN",
+        "TERENKRIPSI",
+        "GDPR"
+      ],
+      "sources": "SUMBER YANG DIIZINKAN",
+      "count": "{n} DARI 4",
+      "items": [
+        "Mutasi rekening (unggah CSV)",
+        "Kalender (Google atau iCloud)",
+        "Jadwal shift (foto atau PDF)",
+        "Bukti pajak (unggah)"
+      ],
+      "wipe": "Hapus semua data",
+      "wiped": "Semua terhapus. Aslinya: seketika dan permanen.",
+      "growTitle": "Makin lama ia mengenal Anda, makin baik bantuannya.",
+      "growSub": "BELAJAR HANYA DARI DATA ANDA, BUKAN DARI INTERNET",
+      "grow": [
+        [
+          "MINGGU 1",
+          "Anda menghabiskan €340 sebulan untuk makan."
+        ],
+        [
+          "BULAN 3",
+          "Kamis adalah hari terbaik Anda untuk olahraga."
+        ],
+        [
+          "TAHUN 1",
+          "Tunda Bali sampai Maret. Lebih murah dan tabungannya lebih penuh."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Pertanyaan umum.",
+      "items": [
+        [
+          "Apakah saya harus menghubungkan rekening bank?",
+          "Tidak. Anda cukup mengunggah mutasi sebagai CSV. Koneksi langsung bersifat opsional."
+        ],
+        [
+          "Untuk siapa RIDEFF Life?",
+          "Untuk siapa saja yang ingin memantau uang, waktu, dan tujuan tanpa mengurus spreadsheet tiap malam. Misalnya kerja shift, keluarga, atau kuliah."
+        ],
+        [
+          "Apakah AI mengambil keputusan untuk saya?",
+          "Tidak. AI memberi saran dan menunjukkan dasarnya. Membatalkan, memindah, atau menabung hanya Anda yang lakukan."
+        ],
+        [
+          "Bagaimana AI menemukan peluang karier dan keuangan?",
+          "Dari data yang Anda bagikan, misalnya mutasi rekening, kontrak kerja, atau CV. Di platform milik Anda sendiri, AI meriset apa yang memajukan karier dan keuangan Anda, termasuk hal yang tak terpikir oleh Anda."
+        ],
+        [
+          "Bisakah saya brainstorming ide dengan AI?",
+          "Bisa. Di ruang brainstorming Anda berpikir bebas, dan Life ikut menghitung dengan angka Anda yang sebenarnya. Hasilnya pilihan jalan, bukan keputusan jadi."
+        ],
+        [
+          "Kapan mulainya?",
+          "Sekarang juga. Buat akun dan coba gratis 14 hari, tanpa data pembayaran. Untuk Life Private, pesan obrolan singkat dulu."
+        ]
+      ]
+    },
+    "preis": {
+      "eyebrow": "HARGA",
+      "title": "Apa yang Anda mau dari Life?",
+      "lead": "Pilih cakupannya. Gratis 14 hari, tanpa data pembayaran. Lalu bisa berhenti tiap bulan. Bayar tahunan: gratis dua bulan. Harga sudah termasuk PPN.",
+      "perMonth": "/ bulan",
+      "tiers": {
+        "life": {
+          "k": "LIFE",
+          "p": "€12,90",
+          "sub": "Untuk Anda. Yang terpenting.",
+          "f": [
+            "Uang, waktu, dan tujuan",
+            "Briefing pagi setiap hari",
+            "Ulasan AI mingguan",
+            "Web app di ponsel dan laptop"
+          ]
+        },
+        "plus": {
+          "k": "LIFE PLUS",
+          "p": "€19,90",
+          "sub": "Untuk Anda. Semua termasuk.",
+          "f": [
+            "Semua dari Life",
+            "Riset AI untuk karier dan keuangan",
+            "Brainstorming dengan angka Anda",
+            "Pajak, olahraga, tidur, dan belajar"
+          ]
+        },
+        "together": {
+          "k": "TOGETHER",
+          "p": "€29,90",
+          "sub": "Untuk pasangan dan keluarga.",
+          "f": [
+            "Semua dari Life Plus",
+            "Hingga 4 orang",
+            "Anggaran dan tujuan bersama",
+            "Ruang pribadi untuk tiap orang"
+          ]
+        }
+      },
+      "cta": "Coba gratis 14 hari →",
+      "private": {
+        "badge": "LIFE PRIVATE",
+        "limited": "KUOTA TERBATAS",
+        "title": "Sistem milik Anda sendiri. Dengan manusia di baliknya.",
+        "text": "Untuk Anda yang lebih dari sekadar satu gaji: usaha sendiri, properti, keluarga, pindah negara. Kami menyiapkan Life bersama Anda dan terus mendampingi.",
+        "price": "mulai €68",
+        "priceSub": "/ bulan · setup sekali mulai €449",
+        "f": [
+          "Semua dari Life Plus",
+          "Setup 1:1, tujuan disusun bersama",
+          "Modul khusus, mis. properti atau usaha sampingan",
+          "Review bulanan dengan manusia sungguhan"
+        ],
+        "cta": "Pesan obrolan gratis →"
+      }
+    },
+    "start": {
+      "eyebrow": "AYO MULAI",
+      "title": "Briefing pertama Anda datang besok pagi.",
+      "text": "Akun dalam tiga menit. Gratis 14 hari, tanpa data pembayaran. Setelah itu Anda yang putuskan.",
+      "cta": "Coba gratis 14 hari →",
+      "compare": "Bandingkan paket",
+      "tags": [
+        "TANPA KARTU",
+        "DATA DI UE",
+        "BISA BERHENTI KAPAN SAJA"
+      ]
+    }
+  },
+  "common": {
+    "ai": "AI"
   }
 }

@@ -55,7 +55,7 @@ export function ScrollBackdrop() {
       raf = 0;
       const page = document.querySelector<HTMLElement>('[data-page-mode]');
       const mode = page?.dataset.pageMode as 'business' | 'private' | undefined;
-      if (!mode) return;
+      if (!page || !mode) return;
       const T = TINT[mode];
       const gapId = mode === 'private' ? 'p-flowgap' : 'flowgap';
       const vh = innerHeight;
@@ -109,6 +109,61 @@ export function ScrollBackdrop() {
         if (!inner) continue;
         const dd = Math.abs((isLight(s.c) ? 1 : 0) - lum);
         inner.style.opacity = (1 - 0.72 * dd).toFixed(3);
+      }
+
+      const clamp = (x: number) => Math.max(0, Math.min(1, x));
+
+      // Flow gap: keep the statement centred and cross-fade its two lines.
+      const gp = document.getElementById(gapId);
+      const ink = gp?.querySelector<HTMLElement>('[data-flow-ink]');
+      const ink2 = gp?.querySelector<HTMLElement>('[data-flow-ink2]');
+      const stick = gp?.querySelector<HTMLElement>('[data-flow-stick]');
+      if (gp && ink && ink2 && stick) {
+        const gr = gp.getBoundingClientRect();
+        const q = clamp((vh * 0.5 - gr.top) / gr.height);
+        const hh = stick.offsetHeight;
+        stick.style.transform = `translateY(${Math.max(0, Math.min(gr.height - hh, vh * 0.5 - gr.top - hh / 2))}px)`;
+        ink.style.opacity = (clamp(q / 0.12) * clamp((0.52 - q) / 0.08)).toFixed(2);
+        ink2.style.opacity = (clamp((q - 0.56) / 0.08) * clamp((1 - q) / 0.12)).toFixed(2);
+      }
+
+      // Flow line: from 180px above section 01 to the last section number.
+      const ln = page.querySelector<HTMLElement>('[data-flow-line]');
+      const fill = ln?.querySelector<HTMLElement>('[data-flow-fill]');
+      const head = ln?.querySelector<HTMLElement>('[data-flow-head]');
+      if (ln && fill && head && secs.length > 1 && getComputedStyle(ln).display !== 'none') {
+        const pageTop = page.getBoundingClientRect().top + sy;
+        const lr = ln.getBoundingClientRect();
+        const pts = secs.slice(1).map((x) => {
+          const sp = x.el.querySelector('[data-sec-num]');
+          const r = (sp ?? x.el).getBoundingClientRect();
+          return { y: (sp ? r.top + r.height / 2 : r.top + 90) + sy, x: sp ? r.left : lr.left + 28 };
+        });
+        const start = secs[1].top - 180;
+        const end = pts[pts.length - 1].y;
+        ln.style.top = `${start - pageTop}px`;
+        ln.style.height = `${end - start}px`;
+        ln.style.opacity = '1';
+        const fh = Math.max(0, Math.min(end - start, probe - start));
+        fill.style.height = `${fh}px`;
+        head.style.top = `${fh - 5}px`;
+        head.style.opacity = fh > 0 && fh < end - start ? '1' : '0';
+        const bg = body.style.backgroundColor;
+        ln.querySelectorAll<HTMLElement>('[data-fn]').forEach((n, i) => {
+          const p = pts[i];
+          n.style.display = p ? '' : 'none';
+          if (!p) return;
+          const reached = probe >= p.y;
+          n.style.top = `${p.y - start - 6}px`;
+          n.style.background = reached ? '#FF6A00' : bg;
+          n.style.borderColor = reached ? '#FF6A00' : 'rgba(140,140,140,0.55)';
+          n.style.boxShadow = reached ? '0 0 12px rgba(255,106,0,0.7)' : 'none';
+          const tick = n.firstElementChild as HTMLElement | null;
+          if (tick) {
+            tick.style.width = `${Math.max(0, p.x - lr.left - 18)}px`;
+            tick.style.background = reached ? '#FF6A00' : 'rgba(140,140,140,0.35)';
+          }
+        });
       }
     };
 

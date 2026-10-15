@@ -1,4 +1,29 @@
 {
   "_comment": "Strings the prototype shows unchanged in every language (brand and product names, labels it never translates).",
-  "strings": ["RIDEFF", "RIDEFF Life", "RIDEFF LIFE", "BUSINESS", "PRIVATE", "LIFE", "FAQ", "Cockpit", "Life Private", "© 2026 RIDEFF", "IMPRESSUM"]
+  "strings": [
+    "RIDEFF",
+    "RIDEFF Life",
+    "RIDEFF LIFE",
+    "BUSINESS",
+    "PRIVATE",
+    "LIFE",
+    "FAQ",
+    "Cockpit",
+    "Life Private",
+    "© 2026 RIDEFF",
+    "IMPRESSUM",
+    "+1 h",
+    "3,5 h",
+    "+2 h",
+    "+1,5 h",
+    "+3,5 h",
+    "h",
+    "BALI",
+    "Disney+",
+    "Spotify",
+    "Google & iCloud",
+    "BRAINSTORMING",
+    "LIFE PLUS",
+    "OKT"
+  ]
 }
