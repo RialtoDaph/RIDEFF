@@ -1648,26 +1648,7 @@
       "text": "30 Minuten, kostenlos, per Video. Sie erzählen, wie Ihr Betrieb heute läuft. Wir zeigen, was Gehirn, Körper und Nerven bei Ihnen sein könnten.",
       "write": "Lieber schreiben?",
       "widget": "ERSTGESPRÄCH · 30 MIN",
-      "month": "OKTOBER",
-      "days": [
-        "MI 15",
-        "DO 16",
-        "FR 17",
-        "MO 20",
-        "DI 21"
-      ],
-      "daysShort": [
-        "Mi 15.",
-        "Do 16.",
-        "Fr 17.",
-        "Mo 20.",
-        "Di 21."
-      ],
-      "book": "{slot} buchen →",
-      "booked": "Termin angefragt.",
-      "bookedMeta": "{day} OKT · {time} · 30 MIN · VIDEO",
-      "confirm": "Sie bekommen gleich eine Bestätigung per E-Mail mit dem Link zum Gespräch.",
-      "other": "Anderen Termin wählen"
+      "emailCta": "Termin per E-Mail anfragen →"
     }
   }
 }

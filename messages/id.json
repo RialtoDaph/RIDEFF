@@ -1045,7 +1045,7 @@
               "€3,90"
             ],
             [
-              "Apfel-Crumble",
+              "Apple crumble",
               "bebas gluten",
               "€4,20",
               "BARU"
@@ -1648,26 +1648,7 @@
       "text": "30 menit, gratis, lewat video. Anda ceritakan bisnis Anda hari ini. Kami tunjukkan seperti apa otak, tubuh, dan sarafnya untuk Anda.",
       "write": "Lebih suka menulis?",
       "widget": "KONSULTASI · 30 MNT",
-      "month": "OKTOBER",
-      "days": [
-        "RAB 15",
-        "KAM 16",
-        "JUM 17",
-        "SEN 20",
-        "SEL 21"
-      ],
-      "daysShort": [
-        "Mi 15.",
-        "Do 16.",
-        "Fr 17.",
-        "Mo 20.",
-        "Di 21."
-      ],
-      "book": "{slot} buchen →",
-      "booked": "Jadwal diajukan.",
-      "bookedMeta": "{day} OKT · {time} · 30 MIN · VIDEO",
-      "confirm": "Anda akan segera menerima konfirmasi email dengan tautan panggilan.",
-      "other": "Pilih jadwal lain"
+      "emailCta": "Minta jadwal lewat email →"
     }
   }
 }

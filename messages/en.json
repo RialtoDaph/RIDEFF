@@ -1045,7 +1045,7 @@
               "€3,90"
             ],
             [
-              "Apfel-Crumble",
+              "Apple crumble",
               "gluten-free",
               "€4,20",
               "NEW"
@@ -1648,26 +1648,7 @@
       "text": "30 minutes, free, by video. You tell us how your business runs today. We show what brain, body and nerves could be for you.",
       "write": "Rather write?",
       "widget": "INTRO CALL · 30 MIN",
-      "month": "OCTOBER",
-      "days": [
-        "WED 15",
-        "THU 16",
-        "FRI 17",
-        "MON 20",
-        "TUE 21"
-      ],
-      "daysShort": [
-        "Mi 15.",
-        "Do 16.",
-        "Fr 17.",
-        "Mo 20.",
-        "Di 21."
-      ],
-      "book": "{slot} buchen →",
-      "booked": "Slot requested.",
-      "bookedMeta": "{day} OKT · {time} · 30 MIN · VIDEO",
-      "confirm": "You’ll get a confirmation email with the call link shortly.",
-      "other": "Pick another slot"
+      "emailCta": "Request a slot by email →"
     }
   }
 }

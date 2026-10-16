@@ -39,5 +39,13 @@
   "biz.pakete.net": {
     "en": "All prices net, plus VAT.",
     "id": "Semua harga belum termasuk PPN."
+  },
+  "biz.kontakt.emailCta": {
+    "en": "Request a slot by email →",
+    "id": "Minta jadwal lewat email →"
+  },
+  "biz.platform.data.1.items.1.0": {
+    "en": "Apple crumble",
+    "id": "Apple crumble"
   }
 }
