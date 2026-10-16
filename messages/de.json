@@ -1650,5 +1650,164 @@
       "widget": "ERSTGESPRÄCH · 30 MIN",
       "emailCta": "Termin per E-Mail anfragen →"
     }
+  },
+  "demo": {
+    "metaTitle": "RIDEFF Business · Cockpit",
+    "back": "← Zur Website",
+    "industry": "BRANCHE (DEMO)",
+    "ask": "Cockpit fragen",
+    "modules": "MODULE",
+    "tools": "WERKZEUGE",
+    "product": "RIDEFF BUSINESS",
+    "nav": {
+      "home": "Übersicht",
+      "fin": "Finanzen",
+      "team": "Team & Schichten",
+      "kunden": "Kunden & Anfragen",
+      "lager": "Lager & Einkauf",
+      "web": "Website",
+      "what": "Was wäre wenn",
+      "data": "Daten & Rechte"
+    },
+    "roles": {
+      "O": "Inhaber/in",
+      "L": "Leitung",
+      "T": "Team"
+    },
+    "locked": {
+      "kicker": "KEIN ZUGRIFF IN DIESER ROLLE",
+      "title": "Dieser Bereich ist nur für die Inhaberin sichtbar.",
+      "text": "Rollen legen Sie einmal fest. Das Team sieht Schichten, Aufgaben und Anfragen, aber keine Finanzen.",
+      "back": "← ZUR ÜBERSICHT"
+    },
+    "dateLine": "DIENSTAG 13. OKTOBER ·",
+    "goodMorning": "Guten Morgen,",
+    "weekUpper": [
+      "DI 13",
+      "MI 14",
+      "DO 15",
+      "FR 16",
+      "SA 17",
+      "SO 18",
+      "MO 19"
+    ],
+    "week": [
+      "Di 13",
+      "Mi 14",
+      "Do 15",
+      "Fr 16",
+      "Sa 17",
+      "So 18",
+      "Mo 19"
+    ],
+    "home": {
+      "next7": "Nächste 7 Tage",
+      "today": "Heute",
+      "tomorrow": "Morgen",
+      "liquidity": "Liquidität",
+      "forecast": "PROGNOSE 90 TAGE",
+      "myTasks": "Meine Aufgaben heute",
+      "three": "3 Dinge diese Woche",
+      "done": "ERLEDIGT",
+      "consent": "NICHTS PASSIERT OHNE IHR OKAY",
+      "goals": "Ziele",
+      "kpiShift": "Meine Schicht",
+      "kpiTasks": "Aufgaben heute",
+      "kpiTasksSub": "in der Team-App",
+      "kpiReq": "Neue Anfragen",
+      "kpiReqSub": "heute",
+      "kpiTeam": "Team heute",
+      "kpiTeamSub": "alle Schichten besetzt"
+    },
+    "fin": {
+      "costs": "Kosten im Oktober",
+      "invoices": "Offene Rechnungen",
+      "vat": "Rücklage Umsatzsteuer Q4",
+      "export": "EXPORT AN STEUERBERATUNG · DATEV · MONATLICH",
+      "reminded": "Erinnerung gesendet heute",
+      "sent": "✓ GESENDET",
+      "remind": "ERINNERN",
+      "view": "ANSEHEN"
+    },
+    "team": {
+      "week": "KW 42",
+      "app": "TEAM-APP · IM BROWSER",
+      "hello": "Hallo",
+      "newFromWeb": "NEU VON DER WEBSITE"
+    },
+    "kunden": {
+      "channels": "WEBSITE · TELEFON · MAIL",
+      "reviews": "Bewertungen",
+      "draft": "KI-ENTWURF",
+      "confirmed": "✓ BESTÄTIGT",
+      "accept": "ANNEHMEN",
+      "published": "✓ VERÖFFENTLICHT",
+      "send": "ANTWORT SENDEN"
+    },
+    "lager": {
+      "range": "REICHWEITE BIS NÄCHSTE LIEFERUNG",
+      "ordered": "Bestellt · Lieferung übermorgen",
+      "orderedBtn": "✓ BESTELLT",
+      "order": "BESTELLEN"
+    },
+    "web": {
+      "name": "Ihr Name",
+      "sent": "Gesendet. Die Anfrage ist jetzt im Cockpit.",
+      "view": "ANSEHEN →",
+      "hint": "ÖFFNUNGSZEITEN UND TEXTE ÄNDERN SIE IM COCKPIT, NICHT IM CODE",
+      "defaultName": "Neue Kundin"
+    },
+    "what": {
+      "title": "Was wäre, wenn …",
+      "lead": "Schieben Sie die Regler. Das Cockpit rechnet mit Ihren echten Zahlen.",
+      "result": "ERGEBNIS",
+      "profitMonth": "Gewinn im Monat",
+      "vsToday": "ZU HEUTE",
+      "profitYear": "Gewinn im Jahr",
+      "liq90": "Liquidität in 90 Tagen",
+      "reset": "↺ ZURÜCKSETZEN",
+      "months": [
+        "Jan",
+        "Feb",
+        "März",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "Aug",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Dez"
+      ],
+      "yes": "ja",
+      "no": "nein"
+    },
+    "data": {
+      "sources": "Verbundene Quellen",
+      "onOf": "VON 6 AN",
+      "roles": "Rollen und Rechte",
+      "ownerPrefix": "Inhaber/in ·",
+      "leadPrefix": "Leitung ·",
+      "teamLabel": "Team",
+      "perm": {
+        "all": "Alles",
+        "home": "Übersicht",
+        "team": "Team",
+        "kunden": "Kunden",
+        "lager": "Lager",
+        "web": "Website",
+        "fin": "Finanzen",
+        "shifts": "Schichten",
+        "tasks": "Aufgaben",
+        "requests": "Anfragen"
+      },
+      "footer": "SERVER IN DEUTSCHLAND · VERSCHLÜSSELT · DSGVO · AVV INKLUSIVE"
+    },
+    "askBox": {
+      "placeholder": "Fragen Sie Ihren Betrieb…",
+      "esc": "ESC",
+      "sources": "QUELLEN ·"
+    }
   }
 }

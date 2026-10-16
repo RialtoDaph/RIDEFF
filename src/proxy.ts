@@ -20,6 +20,13 @@ export default function proxy(req: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // The Business demo exists in DE and EN only.
+  if (locale === 'id' && (rest === '/demo' || rest.startsWith('/demo/'))) {
+    const url = req.nextUrl.clone();
+    url.pathname = `/en${rest}`;
+    return NextResponse.redirect(url, 307);
+  }
+
   // "/de/…" is handled (redirected to "/…") by next-intl first.
   if (rest === '/' && !(prefixed && locale === routing.defaultLocale)) {
     const isPrivate = searchParams.get('for') === 'private';

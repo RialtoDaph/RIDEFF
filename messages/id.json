@@ -1650,5 +1650,164 @@
       "widget": "KONSULTASI · 30 MNT",
       "emailCta": "Minta jadwal lewat email →"
     }
+  },
+  "demo": {
+    "metaTitle": "RIDEFF Business · Cockpit",
+    "back": "← Zur Website",
+    "industry": "INDUSTRY (DEMO)",
+    "ask": "Ask the cockpit",
+    "modules": "MODULES",
+    "tools": "TOOLS",
+    "product": "RIDEFF BUSINESS",
+    "nav": {
+      "home": "Overview",
+      "fin": "Finances",
+      "team": "Team & shifts",
+      "kunden": "Customers & requests",
+      "lager": "Stock & purchasing",
+      "web": "Website",
+      "what": "What if",
+      "data": "Data & permissions"
+    },
+    "roles": {
+      "O": "Owner",
+      "L": "Manager",
+      "T": "Team"
+    },
+    "locked": {
+      "kicker": "NO ACCESS IN THIS ROLE",
+      "title": "This area is only visible to the owner.",
+      "text": "You set roles once. The team sees shifts, tasks and requests, but no finances.",
+      "back": "← TO OVERVIEW"
+    },
+    "dateLine": "TUESDAY 13 OCTOBER ·",
+    "goodMorning": "Good morning,",
+    "weekUpper": [
+      "TUE 13",
+      "WED 14",
+      "THU 15",
+      "FRI 16",
+      "SAT 17",
+      "SUN 18",
+      "MON 19"
+    ],
+    "week": [
+      "Tue 13",
+      "Wed 14",
+      "Thu 15",
+      "Fri 16",
+      "Sat 17",
+      "Sun 18",
+      "Mon 19"
+    ],
+    "home": {
+      "next7": "Next 7 days",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "liquidity": "Cash flow",
+      "forecast": "90-DAY FORECAST",
+      "myTasks": "My tasks today",
+      "three": "3 things this week",
+      "done": "DONE",
+      "consent": "NOTHING HAPPENS WITHOUT YOUR OK",
+      "goals": "Goals",
+      "kpiShift": "My shift",
+      "kpiTasks": "Tasks today",
+      "kpiTasksSub": "in the team app",
+      "kpiReq": "New enquiries",
+      "kpiReqSub": "today",
+      "kpiTeam": "Team today",
+      "kpiTeamSub": "all shifts covered"
+    },
+    "fin": {
+      "costs": "Costs in October",
+      "invoices": "Open invoices",
+      "vat": "VAT reserve Q4",
+      "export": "EXPORT TO TAX ADVISOR · DATEV · MONTHLY",
+      "reminded": "Reminder sent today",
+      "sent": "✓ SENT",
+      "remind": "REMIND",
+      "view": "VIEW"
+    },
+    "team": {
+      "week": "WK 42",
+      "app": "TEAM APP · IN THE BROWSER",
+      "hello": "Hello",
+      "newFromWeb": "NEW FROM THE WEBSITE"
+    },
+    "kunden": {
+      "channels": "WEBSITE · PHONE · EMAIL",
+      "reviews": "Reviews",
+      "draft": "AI DRAFT",
+      "confirmed": "✓ CONFIRMED",
+      "accept": "ACCEPT",
+      "published": "✓ PUBLISHED",
+      "send": "SEND REPLY"
+    },
+    "lager": {
+      "range": "COVERAGE UNTIL NEXT DELIVERY",
+      "ordered": "Ordered · delivery in 2 days",
+      "orderedBtn": "✓ ORDERED",
+      "order": "ORDER"
+    },
+    "web": {
+      "name": "Your name",
+      "sent": "Sent. The request is now in the cockpit.",
+      "view": "VIEW →",
+      "hint": "YOU CHANGE OPENING HOURS AND COPY IN THE COCKPIT, NOT IN CODE",
+      "defaultName": "New customer"
+    },
+    "what": {
+      "title": "What if …",
+      "lead": "Move the sliders. The cockpit calculates with your real numbers.",
+      "result": "RESULT",
+      "profitMonth": "Profit per month",
+      "vsToday": "TO TODAY",
+      "profitYear": "Profit per year",
+      "liq90": "Cash in 90 days",
+      "reset": "↺ RESET",
+      "months": [
+        "Jan",
+        "Feb",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "yes": "ja",
+      "no": "nein"
+    },
+    "data": {
+      "sources": "Connected sources",
+      "onOf": "OF 6 ON",
+      "roles": "Roles and permissions",
+      "ownerPrefix": "Owner ·",
+      "leadPrefix": "Manager ·",
+      "teamLabel": "Team",
+      "perm": {
+        "all": "Everything",
+        "home": "Overview",
+        "team": "Team",
+        "kunden": "Customers",
+        "lager": "Stock",
+        "web": "Website",
+        "fin": "Finances",
+        "shifts": "Shifts",
+        "tasks": "Tasks",
+        "requests": "Requests"
+      },
+      "footer": "SERVERS IN GERMANY · ENCRYPTED · GDPR · DPA INCLUDED"
+    },
+    "askBox": {
+      "placeholder": "Ask your business…",
+      "esc": "ESC",
+      "sources": "SOURCES ·"
+    }
   }
 }

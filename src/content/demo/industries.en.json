@@ -1,0 +1,1992 @@
+{
+ "cafe": {
+  "n": "Café",
+  "ini": "CL",
+  "brand": "Café Linde",
+  "tier": "GROWTH",
+  "city": "REGENSBURG · OLD TOWN + KUMPFMÜHL",
+  "url": "cafe-linde.de",
+  "owner": [
+   "S",
+   "Sabine Linde"
+  ],
+  "lead": [
+   "M",
+   "Mia Kraus"
+  ],
+  "team": [
+   "T",
+   "Tom Berger"
+  ],
+  "claim": "Breakfast until 3 pm, cakes from our own bakery. Two locations, a table online in 30 seconds.",
+  "facts": [
+   "Mon–Sun 8 am–6 pm",
+   "2 locations",
+   "Terrace"
+  ],
+  "form": "Book a table",
+  "cta": "Reserve",
+  "slots": [
+   "Sat 09:00",
+   "Sat 11:30",
+   "Sun 10:00",
+   "Sun 13:00"
+  ],
+  "req": "Table",
+  "legend": [
+   [
+    "Old town",
+    "#FF6A00"
+   ],
+   [
+    "Kumpfmühl",
+    "#0A0A0A"
+   ],
+   [
+    "All",
+    "#A1A1AA"
+   ]
+  ],
+  "brief": [
+   "Yesterday €2,140 revenue, 8% above plan. Oat milk in the old town only lasts until Thursday.",
+   "Saturday 22 °C and sunny. In this weather the terrace was full three times. Schedule one more person?",
+   "Invoice for the city festival catering (€1,860) has been open for 34 days. Reminder is ready."
+  ],
+  "kpis": [
+   [
+    "Revenue yesterday",
+    "€2,140",
+    "▲ 8% above plan",
+    "#15803D"
+   ],
+   [
+    "Cost of goods",
+    "29 %",
+    "Target under 30%",
+    "#52525B"
+   ],
+   [
+    "Open invoices",
+    "€2,420",
+    "1 of them over 30 days",
+    "#C2410C"
+   ]
+  ],
+  "days": [
+   [
+    [
+     "A",
+     "07:00",
+     "Delivery Schmid bakery"
+    ],
+    [
+     "C",
+     "15:00",
+     "Tax adviser Ms Huber"
+    ]
+   ],
+   [
+    [
+     "B",
+     "09:00",
+     "Coffee roaster tasting"
+    ],
+    [
+     "A",
+     "14:00",
+     "Job interview, service"
+    ]
+   ],
+   [
+    [
+     "A",
+     "07:00",
+     "Milk delivery"
+    ],
+    [
+     "C",
+     "19:00",
+     "Team meeting, both shops"
+    ]
+   ],
+   [
+    [
+     "B",
+     "10:00",
+     "Hygiene inspection"
+    ],
+    [
+     "A",
+     "16:00",
+     "Birthday cake Weber"
+    ]
+   ],
+   [
+    [
+     "C",
+     "08:00–18:00",
+     "Terrace open, 3 on service"
+    ],
+    [
+     "A",
+     "12:00",
+     "Reservation 12 ppl"
+    ]
+   ],
+   [
+    [
+     "B",
+     "09:00",
+     "Brunch buffet"
+    ]
+   ],
+   [
+    [
+     "C",
+     "",
+     "Kumpfmühl closed"
+    ],
+    [
+     "A",
+     "08:30",
+     "Espresso machine service"
+    ]
+   ]
+  ],
+  "liq": "€38,400",
+  "liqD": "Lowest point €14,200 on 10 Jan · VAT",
+  "liqC": "#C2410C",
+  "series": [
+   31,
+   33,
+   35,
+   34,
+   37,
+   39,
+   38.4,
+   36,
+   22,
+   14.2
+  ],
+  "liqRows": [
+   [
+    "Business account",
+    24600,
+    "#0A0A0A"
+   ],
+   [
+    "Till and SumUp",
+    3180,
+    "#71717A"
+   ],
+   [
+    "Open receivables",
+    2420,
+    "#FF6A00"
+   ],
+   [
+    "VAT reserve",
+    12400,
+    "#FFB27A"
+   ],
+   [
+    "Espresso machine loan",
+    -4200,
+    "#DC2626"
+   ]
+  ],
+  "todos": [
+   [
+    "Reorder oat milk for both shops",
+    "14-day usage + 9 weekend reservations",
+    "avoids emergency purchase"
+   ],
+   [
+    "One more server on Saturday",
+    "22 °C, terrace was full 3× in the same weather",
+    "+ approx. €320"
+   ],
+   [
+    "Remind: city festival catering",
+    "€1,860 open for 34 days",
+    "+€1,860"
+   ]
+  ],
+  "goals": [
+   [
+    "October revenue €52,000",
+    71,
+    "#0A0A0A",
+    "€36,900 so far",
+    "on track"
+   ],
+   [
+    "Reserve: 3 months' rent",
+    58,
+    "#FF6A00",
+    "€8,700 of €15,000",
+    "March 2027"
+   ],
+   [
+    "Third location",
+    18,
+    "#71717A",
+    "Business plan in progress",
+    "2028"
+   ]
+  ],
+  "revL": "Revenue this week",
+  "revSum": "€14,620",
+  "rev": [
+   1640,
+   1880,
+   1720,
+   2140,
+   2460,
+   2980,
+   1800
+  ],
+  "costs": [
+   [
+    "Staff",
+    14800,
+    15500
+   ],
+   [
+    "Cost of goods",
+    10700,
+    11000
+   ],
+   [
+    "Rent, both shops",
+    6200,
+    6200
+   ],
+   [
+    "Energy",
+    1380,
+    1300
+   ],
+   [
+    "Marketing",
+    420,
+    600
+   ]
+  ],
+  "invs": [
+   [
+    "City festival catering",
+    "34 days overdue",
+    "€1,860",
+    1
+   ],
+   [
+    "Krones company, breakfast",
+    "due in 6 days",
+    "€380",
+    0
+   ],
+   [
+    "Sonnenschein daycare, cakes",
+    "due in 12 days",
+    "€180",
+    0
+   ]
+  ],
+  "vat": "€12,400",
+  "rotaL": "Shift plan, both locations",
+  "rota": [
+   [
+    "Mia",
+    "Shift lead",
+    [
+     "Early A",
+     "Early A",
+     "Off",
+     "Early A",
+     "Late A",
+     "Off",
+     "Early A"
+    ]
+   ],
+   [
+    "Tom",
+    "Service",
+    [
+     "Late A",
+     "Off",
+     "Late A",
+     "Late A",
+     "Early A",
+     "Early A",
+     "Off"
+    ]
+   ],
+   [
+    "Lena",
+    "Barista",
+    [
+     "Early B",
+     "Early B",
+     "Early B",
+     "Off",
+     "Early B",
+     "Early B",
+     "Off"
+    ]
+   ],
+   [
+    "Ali",
+    "Kitchen",
+    [
+     "Early A",
+     "Early A",
+     "Early A",
+     "Early A",
+     "Off",
+     "Off",
+     "Early A"
+    ]
+   ]
+  ],
+  "rotaNote": "Saturday the terrace is short-staffed. Lena offered to switch to the old town.",
+  "staff": "Tom",
+  "staffShift": "Late shift, old town · 12:00–18:30",
+  "tasks": [
+   "Restock cake display",
+   "Set up terrace",
+   "Count oat milk",
+   "Set table 12 for Weber"
+  ],
+  "reqL": "Reservations and requests",
+  "reqs": [
+   [
+    "Weber family",
+    "WEBSITE",
+    "Sat 12:00 · 12 people · birthday"
+   ],
+   [
+    "Krones AG",
+    "EMAIL",
+    "Breakfast for 30, Thu 25 Oct"
+   ],
+   [
+    "Mr Albrecht",
+    "PHONE",
+    "Sun 10:00 · 4 people"
+   ],
+   [
+    "City of Regensburg",
+    "EMAIL",
+    "Christmas market catering, quote requested"
+   ]
+  ],
+  "rating": "4,7 ★ · 312",
+  "reviews": [
+   [
+    "Julia M.",
+    "★★★★★",
+    "Best cheesecake in town, and the cappuccino is perfect.",
+    ""
+   ],
+   [
+    "Markus T.",
+    "★★★☆☆",
+    "Waited 25 minutes for coffee on Saturday. Food was good.",
+    "Thanks, Markus. On Saturday the terrace was busier than planned. From now on we have one more person on service. Your next coffee is on us."
+   ]
+  ],
+  "stockL": "Stock and purchasing",
+  "stock": [
+   [
+    "Oat milk",
+    "until Thu · 18 l",
+    "28",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Espresso beans",
+    "until Mon · 9 kg",
+    "62",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Butter",
+    "until Fri · 12 kg",
+    "40",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Paper cups 0.3 l",
+    "lasts 3 weeks",
+    "85",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Flour type 550",
+    "until Sat · 25 kg",
+    "35",
+    "#FF6A00",
+    1
+   ]
+  ],
+  "sl": [
+   {
+    "n": "Raise prices",
+    "min": 0,
+    "max": 8,
+    "step": 1,
+    "def": 0
+   },
+   {
+    "n": "One more person on Saturdays",
+    "min": 0,
+    "max": 2,
+    "step": 1,
+    "def": 0
+   },
+   {
+    "n": "Open later in the evening",
+    "min": 0,
+    "max": 3,
+    "step": 1,
+    "def": 0
+   }
+  ],
+  "profit": 6800,
+  "ask": [
+   [
+    "Is a third location worth it?",
+    "Not yet. With current profit and reserves it would be viable in early 2028. Before that, reserves should cover 3 months' rent.",
+    "PROFIT 12 MO. · RESERVES · RENT"
+   ],
+   [
+    "Which cake earns the most?",
+    "Cheesecake: 38% margin, 41 pieces a week. Chocolate tart sells well but only has a 22% margin.",
+    "SUMUP TILL · RECIPE COSTS"
+   ],
+   [
+    "Who has too many hours this week?",
+    "Mia is at 44 hours. Tom could take Friday late.",
+    "SHIFT PLAN WK 42"
+   ]
+  ],
+  "srcs": [
+   [
+    "Till · SumUp",
+    "Live, both locations"
+   ],
+   [
+    "Business account · Sparkasse",
+    "CSV, daily"
+   ],
+   [
+    "DATEV tax adviser",
+    "Monthly export"
+   ],
+   [
+    "Google Business",
+    "Reviews and questions"
+   ],
+   [
+    "Shift plan",
+    "Managed in RIDEFF"
+   ],
+   [
+    "Supplier invoices",
+    "Via email forwarding"
+   ]
+  ]
+ },
+ "hotel": {
+  "n": "Hotel",
+  "ini": "HS",
+  "brand": "Hotel Seeblick",
+  "tier": "PRO",
+  "city": "TEGERNSEE",
+  "url": "seeblick-tegernsee.de",
+  "owner": [
+   "K",
+   "Katrin Moser"
+  ],
+  "lead": [
+   "C",
+   "Can Aydin"
+  ],
+  "team": [
+   "E",
+   "Elif Demir"
+  ],
+  "claim": "24 rooms right on the lake. Breakfast with a water view. Book direct, no portal fee.",
+  "facts": [
+   "24 rooms",
+   "Sauna",
+   "Parking"
+  ],
+  "form": "Request a room",
+  "cta": "Check availability",
+  "slots": [
+   "Fri–Sun",
+   "Mon–Wed",
+   "Next week",
+   "November"
+  ],
+  "req": "Room",
+  "legend": [
+   [
+    "Reception",
+    "#FF6A00"
+   ],
+   [
+    "Housekeeping",
+    "#0A0A0A"
+   ],
+   [
+    "All",
+    "#A1A1AA"
+   ]
+  ],
+  "brief": [
+   "Occupancy this week 91%. Room 4 is free again after a Booking cancellation; two direct requests fit.",
+   "Saturday 9 °C and rain. On the last rainy weekend 6 guests booked the sauna package.",
+   "Booking.com share in October 38%. Each direct booking saves €41 commission on average."
+  ],
+  "kpis": [
+   [
+    "Occupancy",
+    "91 %",
+    "2 rooms free until Sun",
+    "#52525B"
+   ],
+   [
+    "Direct bookings",
+    "62 %",
+    "▲ 9 points vs last year",
+    "#15803D"
+   ],
+   [
+    "Avg. room rate",
+    "€148",
+    "▲ €6 vs last year",
+    "#15803D"
+   ]
+  ],
+  "days": [
+   [
+    [
+     "A",
+     "14:00",
+     "5 arrivals"
+    ],
+    [
+     "B",
+     "10:00",
+     "Room 12 deep clean"
+    ]
+   ],
+   [
+    [
+     "C",
+     "09:00",
+     "Sauna maintenance"
+    ],
+    [
+     "A",
+     "16:00",
+     "Kraus group, 3 rooms"
+    ]
+   ],
+   [
+    [
+     "A",
+     "11:00",
+     "7 departures"
+    ],
+    [
+     "B",
+     "13:00",
+     "Linen delivery"
+    ]
+   ],
+   [
+    [
+     "C",
+     "18:00",
+     "Guest wine evening"
+    ],
+    [
+     "A",
+     "15:00",
+     "Wedding arrivals, 6 rooms"
+    ]
+   ],
+   [
+    [
+     "C",
+     "",
+     "Wedding in the hall"
+    ],
+    [
+     "B",
+     "08:00",
+     "Housekeeping double-staffed"
+    ]
+   ],
+   [
+    [
+     "A",
+     "11:00",
+     "Wedding departures"
+    ]
+   ],
+   [
+    [
+     "C",
+     "10:00",
+     "Bank: renovation loan"
+    ],
+    [
+     "B",
+     "09:00",
+     "Minibar stocktake"
+    ]
+   ]
+  ],
+  "liq": "€86,200",
+  "liqD": "Winter dip: lowest point €41,000 in February",
+  "liqC": "#C2410C",
+  "series": [
+   72,
+   78,
+   83,
+   86.2,
+   80,
+   71,
+   63,
+   52,
+   44,
+   41
+  ],
+  "liqRows": [
+   [
+    "Business account",
+    61800,
+    "#0A0A0A"
+   ],
+   [
+    "Guest deposits",
+    14600,
+    "#71717A"
+   ],
+   [
+    "Open receivables",
+    9800,
+    "#FF6A00"
+   ],
+   [
+    "Tax reserve",
+    18400,
+    "#FFB27A"
+   ],
+   [
+    "Renovation loan",
+    -18400,
+    "#DC2626"
+   ]
+  ],
+  "todos": [
+   [
+    "Give room 4 to a direct guest",
+    "Booking.com cancellation, 2 matching direct requests",
+    "saves €41"
+   ],
+   [
+    "Email sauna package to guests",
+    "Rainy weekend, 6 bookings last time",
+    "+ approx. €240"
+   ],
+   [
+    "Publish winter rate",
+    "January bookings 30% below last year",
+    "Fill the winter"
+   ]
+  ],
+  "goals": [
+   [
+    "Direct bookings 70%",
+    62,
+    "#0A0A0A",
+    "October 62%",
+    "Dec 2026"
+   ],
+   [
+    "Renovate floor 2",
+    44,
+    "#FF6A00",
+    "€35,000 of €80,000",
+    "Spring 2027"
+   ],
+   [
+    "Winter occupancy 60%",
+    38,
+    "#71717A",
+    "January 38% booked",
+    "2 mo behind"
+   ]
+  ],
+  "revL": "Revenue this week",
+  "revSum": "€31,480",
+  "rev": [
+   3620,
+   3980,
+   3540,
+   4210,
+   6100,
+   5980,
+   4050
+  ],
+  "costs": [
+   [
+    "Staff",
+    38200,
+    39000
+   ],
+   [
+    "Laundry and cleaning",
+    4600,
+    4200
+   ],
+   [
+    "Energy",
+    5900,
+    6000
+   ],
+   [
+    "Portal commission",
+    5400,
+    4000
+   ],
+   [
+    "Breakfast purchasing",
+    6100,
+    6400
+   ]
+  ],
+  "invs": [
+   [
+    "Gerresheimer company, conference",
+    "21 days overdue",
+    "€4,280",
+    1
+   ],
+   [
+    "Lehner wedding, balance",
+    "due in 4 days",
+    "€3,900",
+    0
+   ],
+   [
+    "Alpenblick travel agency",
+    "due in 9 days",
+    "€1,620",
+    0
+   ]
+  ],
+  "vat": "€18,400",
+  "rotaL": "Rota: reception and housekeeping",
+  "rota": [
+   [
+    "Can",
+    "Head of reception",
+    [
+     "Late",
+     "Late",
+     "Off",
+     "Early",
+     "Early",
+     "Late",
+     "Off"
+    ]
+   ],
+   [
+    "Elif",
+    "Reception",
+    [
+     "Early",
+     "Early",
+     "Late",
+     "Off",
+     "Late",
+     "Early",
+     "Early"
+    ]
+   ],
+   [
+    "Marta",
+    "Housekeeping",
+    [
+     "Early",
+     "Early",
+     "Early",
+     "Early",
+     "Early",
+     "Off",
+     "Off"
+    ]
+   ],
+   [
+    "Jan",
+    "Housekeeping",
+    [
+     "Off",
+     "Early",
+     "Early",
+     "Early",
+     "Early",
+     "Early",
+     "Off"
+    ]
+   ]
+  ],
+  "rotaNote": "Saturday two people are on housekeeping because of the wedding. Sunday is missing a late shift.",
+  "staff": "Elif",
+  "staffShift": "Early shift, reception · 06:30–14:30",
+  "tasks": [
+   "Welcome folder Kraus",
+   "Late check-out room 9",
+   "Reserve parking for the wedding",
+   "Update the sauna list"
+  ],
+  "reqL": "Bookings and requests",
+  "reqs": [
+   [
+    "Kraus family",
+    "WEBSITE",
+    "3 nights from Fri · 2 rooms"
+   ],
+   [
+    "Gerresheimer AG",
+    "EMAIL",
+    "Conference 18 ppl, February"
+   ],
+   [
+    "Mr Lindner",
+    "PHONE",
+    "Room 4, Sat–Sun"
+   ],
+   [
+    "Booking.com",
+    "PORTAL",
+    "Cancellation room 4"
+   ]
+  ],
+  "rating": "4,6 ★ · 488",
+  "reviews": [
+   [
+    "Petra S.",
+    "★★★★★",
+    "The breakfast view is unbeatable. Very warm team.",
+    ""
+   ],
+   [
+    "Thomas K.",
+    "★★★☆☆",
+    "Nice room, but the Wi-Fi on the 2nd floor was weak.",
+    "Thanks, Thomas. We're replacing the routers on the 2nd floor in November. On your next stay we'll happily give you a room on the 1st floor."
+   ]
+  ],
+  "stockL": "Stock: linen, minibar, breakfast",
+  "stock": [
+   [
+    "Double bed linen",
+    "14 sets · wedding needs 18",
+    "30",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Towels",
+    "lasts until Mon",
+    "70",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Minibar water",
+    "until Fri",
+    "35",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Breakfast eggs",
+    "until Thu",
+    "25",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Coffee capsules",
+    "lasts 3 weeks",
+    "80",
+    "#0A0A0A",
+    0
+   ]
+  ],
+  "sl": [
+   {
+    "n": "Raise weekend rate",
+    "min": 0,
+    "max": 20,
+    "step": 5,
+    "def": 0
+   },
+   {
+    "n": "Direct booking share",
+    "min": 62,
+    "max": 80,
+    "step": 2,
+    "def": 62
+   },
+   {
+    "n": "Winter rate discount",
+    "min": 0,
+    "max": 20,
+    "step": 5,
+    "def": 0
+   }
+  ],
+  "profit": 14200,
+  "ask": [
+   [
+    "How much does Booking.com cost us?",
+    "€5,400 commission for 132 nights in October. If 30% had booked direct, that would be €1,620 less.",
+    "PORTAL STATEMENTS · BOOKINGS"
+   ],
+   [
+    "Will the money last through winter?",
+    "Yes. Lowest point €41,000 in February, loan payment included. With the winter rate, closer to €48,000.",
+    "ACCOUNT · BOOKINGS · LOAN"
+   ],
+   [
+    "Which rooms are most popular?",
+    "Lake-view double: 96% occupied. Courtyard rooms are at 71%; a lower price would pay off there.",
+    "OCCUPANCY 12 MO."
+   ]
+  ],
+  "srcs": [
+   [
+    "Hotel software · occupancy",
+    "Live"
+   ],
+   [
+    "Business account · Raiffeisen",
+    "CSV, daily"
+   ],
+   [
+    "Booking.com · Expedia",
+    "Monthly statement"
+   ],
+   [
+    "DATEV tax adviser",
+    "Monthly export"
+   ],
+   [
+    "Google Business",
+    "Reviews"
+   ],
+   [
+    "Duty roster",
+    "Managed in RIDEFF"
+   ]
+  ]
+ },
+ "handwerk": {
+  "n": "Trades",
+  "ini": "BE",
+  "brand": "Bauer Electrical",
+  "tier": "GROWTH",
+  "city": "AUGSBURG",
+  "url": "bauer-elektro.de",
+  "owner": [
+   "M",
+   "Markus Bauer"
+  ],
+  "lead": [
+   "P",
+   "Petra Bauer"
+  ],
+  "team": [
+   "J",
+   "Jonas Wild"
+  ],
+  "claim": "Electrical for homes and business. Wallbox, solar, emergency service. Book online in 2 minutes.",
+  "facts": [
+   "Master craftsman",
+   "6 technicians",
+   "24/7 emergency"
+  ],
+  "form": "Request appointment",
+  "cta": "Request appointment",
+  "slots": [
+   "Mon a.m.",
+   "Tue p.m.",
+   "Thu a.m.",
+   "Fri all day"
+  ],
+  "req": "Appointment",
+  "legend": [
+   [
+    "Team North",
+    "#FF6A00"
+   ],
+   [
+    "Team South",
+    "#0A0A0A"
+   ],
+   [
+    "Office",
+    "#A1A1AA"
+   ]
+  ],
+  "brief": [
+   "Order backlog €86,000, enough for 5.5 weeks. Huber quote (€2,900) has been open for 2 days.",
+   "NYM 3×1.5 cable: 40 m in stock, 120 m planned this week.",
+   "Two invoices open over 30 days, €3,480 in total. Reminders are drafted."
+  ],
+  "kpis": [
+   [
+    "Order backlog",
+    "€86,000",
+    "5.5 weeks of work",
+    "#52525B"
+   ],
+   [
+    "Utilisation",
+    "92 %",
+    "Week 43 full",
+    "#C2410C"
+   ],
+   [
+    "Open invoices",
+    "€11,240",
+    "2 over 30 days",
+    "#C2410C"
+   ]
+  ],
+  "days": [
+   [
+    [
+     "A",
+     "07:00",
+     "Göggingen site, wallbox"
+    ],
+    [
+     "C",
+     "14:00",
+     "Write Huber quote"
+    ]
+   ],
+   [
+    [
+     "B",
+     "07:00",
+     "Solar system, Kern family"
+    ],
+    [
+     "A",
+     "08:00",
+     "Meter cabinet, apartment block"
+    ]
+   ],
+   [
+    [
+     "C",
+     "10:00",
+     "Wholesaler Sonepar"
+    ],
+    [
+     "A",
+     "07:00",
+     "Göggingen, sign-off"
+    ]
+   ],
+   [
+    [
+     "B",
+     "07:00",
+     "Lechhausen commercial hall"
+    ],
+    [
+     "C",
+     "16:00",
+     "Apprentice review"
+    ]
+   ],
+   [
+    [
+     "C",
+     "",
+     "On call: Jonas"
+    ]
+   ],
+   [
+    [
+     "C",
+     "",
+     "On call: Ali"
+    ]
+   ],
+   [
+    [
+     "A",
+     "07:00",
+     "New build Haunstetten"
+    ],
+    [
+     "B",
+     "07:00",
+     "Lechhausen, day 2"
+    ]
+   ]
+  ],
+  "liq": "€54,300",
+  "liqD": "Squeeze end of November if Huber and Kern don't pay",
+  "liqC": "#C2410C",
+  "series": [
+   46,
+   49,
+   52,
+   54.3,
+   58,
+   51,
+   43,
+   39,
+   47,
+   52
+  ],
+  "liqRows": [
+   [
+    "Business account",
+    38900,
+    "#0A0A0A"
+   ],
+   [
+    "Open receivables",
+    11240,
+    "#FF6A00"
+   ],
+   [
+    "Instalments in progress",
+    12600,
+    "#71717A"
+   ],
+   [
+    "Tax reserve",
+    9600,
+    "#FFB27A"
+   ],
+   [
+    "Van lease",
+    -18040,
+    "#DC2626"
+   ]
+  ],
+  "todos": [
+   [
+    "Send Huber quote today",
+    "Open for 2 days, similar jobs avg. €2,900",
+    "+€2,900"
+   ],
+   [
+    "Order NYM cable",
+    "40 m in stock, 120 m planned",
+    "no downtime"
+   ],
+   [
+    "Remind 2 invoices",
+    "€3,480 total, over 30 days",
+    "+€3,480"
+   ]
+  ],
+  "goals": [
+   [
+    "Revenue 2026: €620,000",
+    78,
+    "#0A0A0A",
+    "€483,000 so far",
+    "on track"
+   ],
+   [
+    "Second van",
+    52,
+    "#FF6A00",
+    "€13,000 deposit of €25,000",
+    "Feb 2027"
+   ],
+   [
+    "Two new technicians",
+    50,
+    "#71717A",
+    "1 of 2 hired",
+    "Spring 2027"
+   ]
+  ],
+  "revL": "Invoiced this week",
+  "revSum": "€23,900",
+  "rev": [
+   4200,
+   5100,
+   3800,
+   6400,
+   4400,
+   0,
+   0
+  ],
+  "costs": [
+   [
+    "Staff",
+    41200,
+    42000
+   ],
+   [
+    "Materials",
+    18600,
+    17000
+   ],
+   [
+    "Vehicles",
+    3900,
+    4000
+   ],
+   [
+    "Tools",
+    1100,
+    1500
+   ],
+   [
+    "Insurance",
+    1240,
+    1240
+   ]
+  ],
+  "invs": [
+   [
+    "Prinz property management",
+    "38 days overdue",
+    "€2,140",
+    1
+   ],
+   [
+    "Seitz family, wallbox",
+    "31 days overdue",
+    "€1,340",
+    1
+   ],
+   [
+    "Kern, solar instalment 1",
+    "due in 5 days",
+    "€7,760",
+    0
+   ]
+  ],
+  "vat": "€9,600",
+  "rotaL": "Technician schedule",
+  "rota": [
+   [
+    "Jonas",
+    "Technician North",
+    [
+     "Göggingen",
+     "Apt. block",
+     "Göggingen",
+     "Off",
+     "On call",
+     "Off",
+     "Haunstetten"
+    ]
+   ],
+   [
+    "Ali",
+    "Technician North",
+    [
+     "Göggingen",
+     "Apt. block",
+     "Göggingen",
+     "Stock",
+     "Off",
+     "On call",
+     "Haunstetten"
+    ]
+   ],
+   [
+    "Sven",
+    "Technician South",
+    [
+     "Workshop",
+     "Solar Kern",
+     "Solar Kern",
+     "Lechhausen",
+     "Off",
+     "Off",
+     "Lechhausen"
+    ]
+   ],
+   [
+    "Max",
+    "Apprentice",
+    [
+     "Vocational school",
+     "Solar Kern",
+     "Vocational school",
+     "Lechhausen",
+     "Off",
+     "Off",
+     "Lechhausen"
+    ]
+   ]
+  ],
+  "rotaNote": "Thursday Team North isn't fully booked. A small job would fit.",
+  "staff": "Jonas",
+  "staffShift": "Göggingen site · 07:00–16:00",
+  "tasks": [
+   "Connect wallbox",
+   "Photos for the report",
+   "Reserve materials for Huber",
+   "Log hours"
+  ],
+  "reqL": "Requests and quotes",
+  "reqs": [
+   [
+    "Huber family",
+    "WEBSITE",
+    "Wallbox 11 kW, garage"
+   ],
+   [
+    "Prinz property management",
+    "EMAIL",
+    "Electrical check, 12 flats"
+   ],
+   [
+    "Mr Öztürk",
+    "PHONE",
+    "Sockets dead, emergency?"
+   ],
+   [
+    "Wolf bakery",
+    "WEBSITE",
+    "New lighting, sales floor"
+   ]
+  ],
+  "rating": "4,9 ★ · 126",
+  "reviews": [
+   [
+    "Sandra K.",
+    "★★★★★",
+    "On time, tidy, and explained everything. Wallbox works great.",
+    ""
+   ],
+   [
+    "Dieter H.",
+    "★★★☆☆",
+    "Good work, but the invoice only came after 6 weeks.",
+    "Thanks, Mr H. We now invoice right after sign-off, usually the same day."
+   ]
+  ],
+  "stockL": "Stock and materials",
+  "stock": [
+   [
+    "NYM cable 3×1.5",
+    "40 m · 120 m planned",
+    "25",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Circuit breakers B16",
+    "28 pcs",
+    "70",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Wallbox 11 kW",
+    "1 pc · 2 jobs",
+    "35",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Flush boxes",
+    "lasts 4 weeks",
+    "80",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "RCD switch",
+    "3 pcs · 5 planned",
+    "40",
+    "#FF6A00",
+    1
+   ]
+  ],
+  "sl": [
+   {
+    "n": "Raise hourly rate",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "def": 0
+   },
+   {
+    "n": "One more technician",
+    "min": 0,
+    "max": 2,
+    "step": 1,
+    "def": 0
+   },
+   {
+    "n": "Invoice on sign-off day",
+    "min": 0,
+    "max": 1,
+    "step": 1,
+    "def": 0
+   }
+  ],
+  "profit": 18600,
+  "ask": [
+   [
+    "Can I hire a third technician?",
+    "Yes, from January. The backlog covers 5.5 weeks; a technician brings about €3,200 profit a month after wages.",
+    "JOBS · WAGES · 12 MO."
+   ],
+   [
+    "Which jobs earn the most?",
+    "Wallbox and solar: 34% margin. Small repairs are at 12% because of travel time.",
+    "INVOICES · TIMESHEETS"
+   ],
+   [
+    "Who pays latest?",
+    "Property managers: 41 days on average. Private customers pay after 9 days.",
+    "ACCOUNT · INVOICES"
+   ]
+  ],
+  "srcs": [
+   [
+    "Business account · Stadtsparkasse",
+    "CSV, daily"
+   ],
+   [
+    "Invoices · Lexoffice",
+    "Live"
+   ],
+   [
+    "DATEV tax adviser",
+    "Monthly export"
+   ],
+   [
+    "Wholesaler Sonepar",
+    "Orders"
+   ],
+   [
+    "Timesheets",
+    "Team app"
+   ],
+   [
+    "Google Business",
+    "Reviews"
+   ]
+  ]
+ },
+ "dienst": {
+  "n": "Services",
+  "ini": "NK",
+  "brand": "Nordlicht Communications",
+  "tier": "STARTER",
+  "city": "NÜRNBERG",
+  "url": "nordlicht-kommunikation.de",
+  "owner": [
+   "A",
+   "Anna Roth"
+  ],
+  "lead": [
+   "D",
+   "David Klein"
+  ],
+  "team": [
+   "S",
+   "Sophie Lang"
+  ],
+  "claim": "Communications agency for mid-sized companies. Strategy, copy, campaigns. Book a first call online.",
+  "facts": [
+   "8 people",
+   "since 2014",
+   "Mid-sized firms"
+  ],
+  "form": "Book a first call",
+  "cta": "Request appointment",
+  "slots": [
+   "Mon 10:00",
+   "Tue 14:00",
+   "Thu 09:00",
+   "Fri 11:00"
+  ],
+  "req": "Free call",
+  "legend": [
+   [
+    "Projects",
+    "#FF6A00"
+   ],
+   [
+    "Sales",
+    "#0A0A0A"
+   ],
+   [
+    "Office",
+    "#A1A1AA"
+   ]
+  ],
+  "brief": [
+   "Utilisation next week 104%. David and Sophie are both planned over 40 hours.",
+   "The Stadtwerke project is 18 hours over budget. A change order would be fair; a draft is ready.",
+   "Two quotes awaiting reply: €46,000 in total. Brose decides on Friday."
+  ],
+  "kpis": [
+   [
+    "Utilisation",
+    "87 %",
+    "Next week 104%",
+    "#C2410C"
+   ],
+   [
+    "Pipeline",
+    "€46,000",
+    "2 quotes open",
+    "#52525B"
+   ],
+   [
+    "Open invoices",
+    "€18,600",
+    "all on target",
+    "#15803D"
+   ]
+  ],
+  "days": [
+   [
+    [
+     "A",
+     "10:00",
+     "Stadtwerke workshop"
+    ],
+    [
+     "B",
+     "15:00",
+     "Pitch Brose"
+    ]
+   ],
+   [
+    [
+     "A",
+     "09:00",
+     "Schaeffler website copy"
+    ],
+    [
+     "C",
+     "14:00",
+     "Bookkeeping"
+    ]
+   ],
+   [
+    [
+     "B",
+     "11:00",
+     "First call Wolf bakery"
+    ],
+    [
+     "A",
+     "16:00",
+     "Campaign sign-off"
+    ]
+   ],
+   [
+    [
+     "A",
+     "10:00",
+     "Trade fair photo shoot"
+    ],
+    [
+     "B",
+     "",
+     "Brose decision"
+    ]
+   ],
+   [],
+   [],
+   [
+    [
+     "C",
+     "09:30",
+     "Team-Weekly"
+    ],
+    [
+     "A",
+     "13:00",
+     "Schaeffler kick-off"
+    ]
+   ]
+  ],
+  "liq": "€62,800",
+  "liqD": "Stable · 4.1 months of fixed costs covered",
+  "liqC": "#15803D",
+  "series": [
+   54,
+   57,
+   55,
+   59,
+   61,
+   60,
+   62.8,
+   64,
+   66,
+   67
+  ],
+  "liqRows": [
+   [
+    "Business account",
+    48200,
+    "#0A0A0A"
+   ],
+   [
+    "Open receivables",
+    18600,
+    "#FF6A00"
+   ],
+   [
+    "Tax reserve",
+    11200,
+    "#FFB27A"
+   ],
+   [
+    "Savings account",
+    7000,
+    "#71717A"
+   ],
+   [
+    "Overdraft",
+    0,
+    "#DC2626"
+   ]
+  ],
+  "todos": [
+   [
+    "Send Stadtwerke change order",
+    "18 hours over budget, draft ready",
+    "+€1,710"
+   ],
+   [
+    "Lighten Friday",
+    "David and Sophie planned over 40 h",
+    "no burnout"
+   ],
+   [
+    "Follow up Brose",
+    "Decision on Friday",
+    "+€28,000"
+   ]
+  ],
+  "goals": [
+   [
+    "Revenue 2026: €720,000",
+    74,
+    "#0A0A0A",
+    "€533,000 so far",
+    "on track"
+   ],
+   [
+    "No client over 25%",
+    60,
+    "#FF6A00",
+    "Largest client 31%",
+    "by mid-2027"
+   ],
+   [
+    "4 months of reserves",
+    100,
+    "#71717A",
+    "€62,800 reached",
+    "erreicht"
+   ]
+  ],
+  "revL": "Billed hours this week",
+  "revSum": "186 h",
+  "rev": [
+   38,
+   42,
+   40,
+   36,
+   30,
+   0,
+   0
+  ],
+  "costs": [
+   [
+    "Salaries",
+    44800,
+    45000
+   ],
+   [
+    "Freelancer",
+    6200,
+    5000
+   ],
+   [
+    "Office rent",
+    3400,
+    3400
+   ],
+   [
+    "Software",
+    1180,
+    1200
+   ],
+   [
+    "Travel",
+    860,
+    1000
+   ]
+  ],
+  "invs": [
+   [
+    "Stadtwerke, phase 2",
+    "due in 3 days",
+    "€9,800",
+    0
+   ],
+   [
+    "Schaeffler, deposit",
+    "due in 10 days",
+    "€6,000",
+    0
+   ],
+   [
+    "Wolf bakery, logo",
+    "due in 14 days",
+    "€2,800",
+    0
+   ]
+  ],
+  "vat": "€11,200",
+  "rotaL": "Capacity per person",
+  "rota": [
+   [
+    "David",
+    "Project lead",
+    [
+     "Stadtwerke",
+     "Schaeffler",
+     "Stadtwerke",
+     "Trade fair",
+     "Brose",
+     "Off",
+     "Schaeffler"
+    ]
+   ],
+   [
+    "Sophie",
+    "Copy",
+    [
+     "Stadtwerke",
+     "Schaeffler",
+     "Schaeffler",
+     "Trade fair",
+     "Schaeffler",
+     "Off",
+     "Schaeffler"
+    ]
+   ],
+   [
+    "Lukas",
+    "Design",
+    [
+     "Campaign",
+     "Campaign",
+     "Sign-off",
+     "Trade fair",
+     "Off",
+     "Off",
+     "Kick-off"
+    ]
+   ],
+   [
+    "Anna",
+    "Management",
+    [
+     "Pitch",
+     "Office",
+     "Sales",
+     "Trade fair",
+     "Brose",
+     "Off",
+     "Weekly"
+    ]
+   ]
+  ],
+  "rotaNote": "Lukas is free on Friday. Some of the Schaeffler copy could go to him.",
+  "staff": "Sophie",
+  "staffShift": "Today: Stadtwerke, 6 h planned",
+  "tasks": [
+   "Stadtwerke homepage copy",
+   "Work in feedback",
+   "Log hours",
+   "Read Schaeffler brief"
+  ],
+  "reqL": "Requests and pipeline",
+  "reqs": [
+   [
+    "Wolf bakery",
+    "WEBSITE",
+    "First call, new brand"
+   ],
+   [
+    "Brose",
+    "EMAIL",
+    "Quote €28,000, decision Fri"
+   ],
+   [
+    "IHK Nürnberg",
+    "PHONE",
+    "Talk on communication, March"
+   ],
+   [
+    "Schaeffler",
+    "EMAIL",
+    "Follow-up job, trade fair 2027"
+   ]
+  ],
+  "rating": "4,8 ★ · 41",
+  "reviews": [
+   [
+    "Michael B.",
+    "★★★★★",
+    "Finally made our message clear. Very structured.",
+    ""
+   ],
+   [
+    "Claudia F.",
+    "★★★☆☆",
+    "Good results, but approvals sometimes took long.",
+    "Thanks, Claudia. We've introduced fixed feedback slots so nothing gets stuck."
+   ]
+  ],
+  "stockL": "Licences and subscriptions",
+  "stock": [
+   [
+    "Adobe CC team licence",
+    "8 of 8 in use",
+    "100",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Stock photo quota",
+    "12 images left",
+    "20",
+    "#FF6A00",
+    1
+   ],
+   [
+    "Project software",
+    "runs until 03/2027",
+    "80",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Font licences",
+    "Web for 3 domains",
+    "60",
+    "#0A0A0A",
+    0
+   ],
+   [
+    "Cloud storage",
+    "78% full",
+    "78",
+    "#0A0A0A",
+    0
+   ]
+  ],
+  "sl": [
+   {
+    "n": "Raise day rate",
+    "min": 0,
+    "max": 150,
+    "step": 25,
+    "def": 0
+   },
+   {
+    "n": "One more person",
+    "min": 0,
+    "max": 2,
+    "step": 1,
+    "def": 0
+   },
+   {
+    "n": "Freelancers instead of overtime",
+    "min": 0,
+    "max": 40,
+    "step": 10,
+    "def": 0
+   }
+  ],
+  "profit": 12400,
+  "ask": [
+   [
+    "Which client is too big?",
+    "Stadtwerke: 31% of revenue. If the client drops out, reserves last 4 months.",
+    "INVOICES 12 MO. · ACCOUNT"
+   ],
+   [
+    "Are our day rates too low?",
+    "Probably, yes. Projects run 14% over budget on average. A day rate of €980 instead of €900 would balance it.",
+    "TIME TRACKING · QUOTES"
+   ],
+   [
+    "Who is overloaded next week?",
+    "David (46 h) and Sophie (44 h). Lukas has room on Friday.",
+    "CAPACITY WK 43"
+   ]
+  ],
+  "srcs": [
+   [
+    "Business account · GLS",
+    "CSV, daily"
+   ],
+   [
+    "Time tracking · Clockify",
+    "Live"
+   ],
+   [
+    "Invoices · sevDesk",
+    "Live"
+   ],
+   [
+    "DATEV tax adviser",
+    "Monthly export"
+   ],
+   [
+    "CRM · Pipedrive",
+    "Offers"
+   ],
+   [
+    "Google Calendar",
+    "Team"
+   ]
+  ]
+ }
+}

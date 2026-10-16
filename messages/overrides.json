@@ -47,5 +47,20 @@
   "biz.platform.data.1.items.1.0": {
     "en": "Apple crumble",
     "id": "Apple crumble"
+  },
+  "demo:dienst.slots.1": {
+    "en": "Tue 14:00"
+  },
+  "demo:dienst.slots.2": {
+    "en": "Thu 09:00"
+  },
+  "demo:dienst.slots.3": {
+    "en": "Fri 11:00"
+  },
+  "demo:dienst.goals.0.0": {
+    "en": "Revenue 2026: €720,000"
+  },
+  "demo:dienst.goals.0.3": {
+    "en": "€533,000 so far"
   }
 }

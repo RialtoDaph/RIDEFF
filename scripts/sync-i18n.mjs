@@ -135,9 +135,36 @@ function walk(node, lang, keyPath) {
   return node;
 }
 
+// The Business demo exists in DE and EN only (/id/demo redirects to /en/demo).
+const EN_ONLY = new Set(['demo']);
+let enOut = null;
 for (const lang of ['en', 'id']) {
-  const out = walk(de, lang, []);
+  const out = lang === 'id'
+    ? Object.fromEntries(Object.entries(de).map(([k, v]) => [k, EN_ONLY.has(k) ? enOut[k] : walk(v, lang, [k])]))
+    : walk(de, lang, []);
+  if (lang === 'en') enOut = out;
   fs.writeFileSync(path.join(msgDir, `${lang}.json`), JSON.stringify(out, null, 2) + '\n');
+}
+
+// --- Business demo mock data (DE source → EN; the demo has no Indonesian) ----
+const demoSrc = path.join(root, 'src/content/demo/industries.de.json');
+if (fs.existsSync(demoSrc)) {
+  const SKIP_KEYS = new Set(['url', 'ini', 'tier']);
+  const demoWalk = (node, keyPath) => {
+    if (typeof node === 'string') {
+      if (SKIP_KEYS.has(keyPath[keyPath.length - 1]) || /^#[0-9a-f]{6}$/i.test(node) || /^[A-Z]$/.test(node)) return node;
+      const key = 'demo:' + keyPath.join('.');
+      if (overrides[key]?.en !== undefined) return overrides[key].en;
+      const t = translate(node, 'en');
+      if (t === null) { missing.en.push(`${key}: ${JSON.stringify(node)}`); return node; }
+      return t;
+    }
+    if (Array.isArray(node)) return node.map((v, i) => demoWalk(v, [...keyPath, String(i)]));
+    if (node && typeof node === 'object') return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, demoWalk(v, [...keyPath, k])]));
+    return node;
+  };
+  const demo = JSON.parse(fs.readFileSync(demoSrc, 'utf8'));
+  fs.writeFileSync(path.join(root, 'src/content/demo/industries.en.json'), JSON.stringify(demoWalk(demo, []), null, 1) + '\n');
 }
 
 const total = missing.en.length + missing.id.length;
