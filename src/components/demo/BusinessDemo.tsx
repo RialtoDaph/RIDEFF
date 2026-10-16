@@ -391,7 +391,7 @@ export function BusinessDemo({ data, source }: { data: DemoData; source: DemoDat
               {nav === 'home' ? `${t('goodMorning')} ${me[1].split(' ')[0]}` : navLabel(nav)}
             </h1>
           </div>
-          <div className="flex gap-1 p-[5px] rounded-full bg-white border border-stone-200" role="group" aria-label={roleName(role)}>
+          <div className="flex gap-1 p-[5px] rounded-full bg-white border border-stone-200 max-w-full" role="group" aria-label={roleName(role)}>
             {(['O', 'L', 'T'] as Role[]).map((r) => {
               const p = r === 'O' ? d.owner : r === 'L' ? d.lead : d.team;
               const active = role === r;
@@ -401,7 +401,7 @@ export function BusinessDemo({ data, source }: { data: DemoData; source: DemoDat
                   type="button"
                   aria-pressed={active}
                   onClick={() => setRole(r)}
-                  className="flex gap-2 items-center py-[6px] pr-[14px] pl-[6px] rounded-full cursor-pointer text-[14px] font-semibold whitespace-nowrap"
+                  className="flex gap-2 items-center py-[6px] pr-[10px] min-[400px]:pr-[14px] pl-[6px] rounded-full cursor-pointer text-[13px] min-[400px]:text-[14px] font-semibold whitespace-nowrap"
                   style={{ background: active ? '#0A0A0A' : 'transparent', color: active ? '#fff' : '#0A0A0A' }}
                 >
                   <span
@@ -468,7 +468,7 @@ export function BusinessDemo({ data, source }: { data: DemoData; source: DemoDat
                   </div>
                 </div>
                 {d.days.map((ev, i) => (
-                  <div key={i} className="grid grid-cols-[96px_1fr] gap-[14px] py-[13px] border-b border-stone-300 items-start">
+                  <div key={i} className="grid grid-cols-[72px_minmax(0,1fr)] sm:grid-cols-[96px_minmax(0,1fr)] gap-[14px] py-[13px] border-b border-stone-300 items-start">
                     <div className="flex flex-col gap-[2px] pt-[7px]">
                       <span className="font-mono text-[14px] font-medium">{week[i]}</span>
                       <span className="text-[12px] text-zinc-500">{i === 0 ? t('home.today') : i === 1 ? t('home.tomorrow') : ''}</span>

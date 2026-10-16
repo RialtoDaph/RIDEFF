@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { SectionHead } from '../ui/SectionHead';
@@ -134,6 +134,16 @@ export function PlatformDashboard() {
   const [tab, setTab] = useState(0);
   const [range, setRange] = useState(0);
   const [hover, setHover] = useState<number | null>(null);
+  // Below 1024px the dashboard is a scaled-down picture: the chips and tabs above drive it.
+  const wide = useSyncExternalStore(
+    (cb) => {
+      const mq = matchMedia('(min-width: 1024px)');
+      mq.addEventListener('change', cb);
+      return () => mq.removeEventListener('change', cb);
+    },
+    () => matchMedia('(min-width: 1024px)').matches,
+    () => true,
+  );
 
   const industries = t.raw('industries') as Pair[];
   const tabs = t.raw('tabs') as [string, string, string][];
@@ -192,9 +202,10 @@ export function PlatformDashboard() {
         </div>
       </div>
 
-      <div className="lg:pt-16 order-3 lg:order-none min-w-0 overflow-x-auto lg:overflow-visible">
+      <div className="lg:pt-16 order-3 lg:order-none min-w-0 [zoom:0.41] min-[400px]:[zoom:0.46] min-[480px]:[zoom:0.56] min-[640px]:[zoom:0.71] min-[768px]:[zoom:0.88] lg:[zoom:0.67] xl:[zoom:1]">
         <div
           role="tabpanel"
+          inert={!wide}
           className="w-[780px] max-w-none lg:max-w-full h-[470px] bg-white text-ink border border-[#E7E5E4] rounded-card-md shadow-[0_40px_90px_rgba(0,0,0,0.45)] grid grid-cols-[200px_minmax(0,1fr)] overflow-hidden"
         >
           <div className="bg-[#F7F7F6] border-r border-[#EDEDEC] py-[18px] px-[14px] flex flex-col gap-1 text-[14px]">

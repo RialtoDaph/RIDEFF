@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Mode } from '@/lib/site';
+import { BASE_NAMESPACES, ClientMessages } from './ClientMessages';
 import { TopBar } from './TopBar';
 import { Footer } from './Footer';
 import { IntroVideo } from './IntroVideo';
@@ -16,6 +17,7 @@ export async function HomePage({ mode }: { mode: Mode }) {
   const t = await getTranslations('a11y');
   const biz = mode === 'business';
   return (
+    <ClientMessages namespaces={[...BASE_NAMESPACES, biz ? 'biz' : 'life']}>
     <div data-page-mode={mode} className={`relative ${biz ? 'text-stone-50' : 'text-ink'}`}>
       <a
         href="#main"
@@ -43,5 +45,6 @@ export async function HomePage({ mode }: { mode: Mode }) {
       <FlowLine />
       <Footer mode={mode} />
     </div>
+    </ClientMessages>
   );
 }

@@ -9,7 +9,8 @@ export async function legalSetup(params: Promise<{ locale: string }>) {
   setRequestLocale('de');
 }
 
-export const legalMeta = (title: string, path: string): Metadata => ({
+export const legalMeta = (title: string, path: string, description: string): Metadata => ({
   title: `RIDEFF · ${title}`,
+  description,
   alternates: { canonical: path },
 });

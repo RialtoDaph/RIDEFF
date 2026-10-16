@@ -110,13 +110,18 @@ export async function Footer({ mode, onHome = true }: { mode: Mode; onHome?: boo
           </nav>
         </div>
 
-        {/* Cropped on purpose: 300px at full width, scales with the viewport below that. */}
-        <div
+        {/* Cropped on purpose: 300px at full width, scales with the viewport below that. Decorative SVG text. */}
+        <svg
           aria-hidden="true"
-          className="select-none -mx-2 -mt-6 h-[0.6667em] overflow-hidden text-[clamp(64px,calc((100vw-24px)/3.75),300px)] font-bold tracking-[-0.07em] leading-[0.74] text-night-2"
+          focusable="false"
+          className="block select-none -mx-2 -mt-6 w-[calc(100%+16px)] h-auto"
+          viewBox="0 0 1184 200"
+          preserveAspectRatio="xMinYMin meet"
         >
-          RIDEFF
-        </div>
+          <text x="0" y="222" fill="#141416" fontFamily="var(--font-geist), system-ui, sans-serif" fontWeight={700} fontSize={300} letterSpacing="-21">
+            RIDEFF
+          </text>
+        </svg>
       </div>
     </footer>
   );

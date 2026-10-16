@@ -81,16 +81,16 @@ export function GoalTimeline() {
 
   return (
     <div ref={ref} className="flex flex-col gap-[10px] min-w-0">
-      <div className="pt-6 px-[26px] pb-5 rounded-card-md bg-ink-2 text-white flex flex-col gap-[22px]">
+      <div className="pt-6 px-5 sm:px-[26px] pb-5 rounded-card-md bg-ink-2 text-white flex flex-col gap-[22px]">
         <div className="flex justify-between items-start gap-4">
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[11px] tracking-[0.12em] text-orange-400">{t('goalLabel')}</span>
-            <span className="text-[28px] font-bold tracking-[-0.03em]">{t('goal')}</span>
+            <span className="text-[22px] sm:text-[28px] font-bold tracking-[-0.03em] whitespace-nowrap">{t('goal')}</span>
           </div>
           <div className="flex flex-col items-end gap-1">
             <span className="font-mono text-[10px] tracking-[0.12em] text-zinc-400">{f === 0 ? t('capNone') : t('capWith')}</span>
             <span
-              className="font-mono text-[20px] font-medium h-7 leading-7 overflow-hidden"
+              className="font-mono text-[16px] sm:text-[20px] font-medium h-7 leading-7 overflow-hidden whitespace-nowrap"
               style={{
                 color: fin ? '#FF9A50' : '#F5F5F4',
                 textShadow: fin ? '0 0 14px rgba(255,106,0,0.7)' : 'none',

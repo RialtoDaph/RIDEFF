@@ -1,7 +1,7 @@
 import { legalMeta, legalSetup } from '@/lib/legalPage';
 import { LegalLayout, h1, h2, p, small } from '@/components/legal/LegalLayout';
 
-export const metadata = legalMeta('Datenschutzerklärung', '/datenschutz');
+export const metadata = legalMeta('Datenschutzerklärung', '/datenschutz', 'Datenschutzerklärung von RIDEFF: Hosting und Aufruf der Website, Reichweitenmessung, Schriftarten, Kontakt und Terminbuchung, Newsletter, RIDEFF Life und Kundenportal, Ihre Rechte.');
 
 export default async function Datenschutz({ params }: PageProps<'/[locale]/datenschutz'>) {
   await legalSetup(params);

@@ -2,7 +2,7 @@ import { EMAIL } from '@/lib/site';
 import { legalMeta, legalSetup } from '@/lib/legalPage';
 import { LegalLayout, block, h1, small } from '@/components/legal/LegalLayout';
 
-export const metadata = legalMeta('Impressum', '/impressum');
+export const metadata = legalMeta('Impressum', '/impressum', 'Impressum von RIDEFF. Angaben gemäß § 5 DDG.');
 
 export default async function Impressum({ params }: PageProps<'/[locale]/impressum'>) {
   await legalSetup(params);

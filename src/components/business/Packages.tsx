@@ -22,7 +22,7 @@ export function Packages() {
         <SectionHead id="pakete-title" num="07" label={t('eyebrow')} title={t('title')} titleClassName="text-wrap" />
         <div className="flex flex-col gap-2">
           <span id="pk-where" className="font-mono text-[11px] tracking-[0.1em] text-zinc-500">{t('where')}</span>
-          <div role="group" aria-labelledby="pk-where" className="flex flex-wrap gap-[6px] p-1 rounded-full bg-[#E9E9E6] self-start">
+          <div role="group" aria-labelledby="pk-where" className="flex flex-wrap gap-[6px] p-1 rounded-[22px] sm:rounded-full bg-[#E9E9E6] self-start">
             {stages.map((s, i) => (
               <button
                 key={s}

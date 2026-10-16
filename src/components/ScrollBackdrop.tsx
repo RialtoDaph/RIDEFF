@@ -107,6 +107,12 @@ export function ScrollBackdrop() {
       for (const s of secs) {
         const inner = s.el.firstElementChild as HTMLElement | null;
         if (!inner) continue;
+        // Only sections near the viewport are dimmed; far ones stay fully opaque.
+        const r = s.el.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) {
+          inner.style.opacity = '';
+          continue;
+        }
         const dd = Math.abs((isLight(s.c) ? 1 : 0) - lum);
         inner.style.opacity = (1 - 0.72 * dd).toFixed(3);
       }

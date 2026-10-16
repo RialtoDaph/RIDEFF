@@ -7,7 +7,11 @@ import { BlogHeader } from '@/components/blog/BlogHeader';
 import { TagLabel } from '@/components/blog/TagLabel';
 import { Footer } from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Blog · RIDEFF', alternates: { canonical: '/blog' } };
+export const metadata: Metadata = {
+  title: 'Blog · RIDEFF',
+  description: 'Einmal im Monat. Ein Hebel, den kaum jemand kennt.',
+  alternates: { canonical: '/blog' },
+};
 
 /** Blog list (German only for now). */
 export default async function BlogIndex({ params }: PageProps<'/[locale]/blog'>) {

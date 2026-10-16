@@ -1,7 +1,7 @@
 import { legalMeta, legalSetup } from '@/lib/legalPage';
 import { LegalLayout, h1, p } from '@/components/legal/LegalLayout';
 
-export const metadata = legalMeta('AGB', '/agb');
+export const metadata = legalMeta('AGB', '/agb', 'Die Allgemeinen Geschäftsbedingungen für RIDEFF Business und RIDEFF Life werden vor Vertragsabschluss bereitgestellt.');
 
 export default async function Agb({ params }: PageProps<'/[locale]/agb'>) {
   await legalSetup(params);

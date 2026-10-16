@@ -55,7 +55,7 @@ export function ToolsToPlatform() {
   const one = stage === 2 || stage === 3;
 
   return (
-    <div ref={ref} className="relative h-[390px] w-[700px] max-w-full origin-top-left max-lg:scale-[0.5] max-lg:h-[195px] sm:max-lg:scale-[0.8] sm:max-lg:h-[312px]" aria-hidden="true">
+    <div ref={ref} className="relative h-[390px] w-[700px] max-w-none [zoom:0.45] min-[400px]:[zoom:0.51] min-[480px]:[zoom:0.62] min-[640px]:[zoom:0.8] min-[768px]:[zoom:0.98] lg:[zoom:0.62] xl:[zoom:1]" aria-hidden="true">
       {cards.map(([title, sub], i) => (
         <div
           key={title}

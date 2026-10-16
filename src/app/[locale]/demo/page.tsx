@@ -4,6 +4,7 @@ import type { DemoData } from '@/content/demo/types';
 import de from '@/content/demo/industries.de.json';
 import en from '@/content/demo/industries.en.json';
 import { BusinessDemo } from '@/components/demo/BusinessDemo';
+import { BASE_NAMESPACES, ClientMessages } from '@/components/ClientMessages';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/demo'>): Promise<Metadata> {
   const { locale } = await params;
@@ -17,5 +18,9 @@ export default async function DemoPage({ params }: PageProps<'/[locale]/demo'>) 
   const { locale } = await params;
   setRequestLocale(locale);
   const data = (locale === 'de' ? de : en) as unknown as DemoData;
-  return <BusinessDemo data={data} source={de as unknown as DemoData} />;
+  return (
+    <ClientMessages namespaces={[...BASE_NAMESPACES, 'demo']}>
+      <BusinessDemo data={data} source={de as unknown as DemoData} />
+    </ClientMessages>
+  );
 }

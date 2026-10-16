@@ -24,7 +24,7 @@ function currentAnchor() {
  * DE / EN / ID pill. Switching keeps the reader in the section they were in:
  * the section id and its offset are stored and restored after the new locale renders.
  */
-export function LangSwitch({ mode, variant }: { mode: Mode; variant: 'dark' | 'light' }) {
+export function LangSwitch({ mode, variant, size = 'sm' }: { mode: Mode; variant: 'dark' | 'light'; size?: 'sm' | 'lg' }) {
   const locale = useLocale() as Locale;
   const t = useTranslations('a11y');
   const pathname = usePathname();
@@ -67,7 +67,7 @@ export function LangSwitch({ mode, variant }: { mode: Mode; variant: 'dark' | 'l
                 if (a) sessionStorage.setItem(KEY, JSON.stringify(a));
               } catch {}
             }}
-            className={`font-mono text-[11px] tracking-[0.08em] px-[9px] py-[6px] rounded-full transition-[background,color] duration-200 ${tone}`}
+            className={`font-mono tracking-[0.08em] rounded-full transition-[background,color] duration-200 ${size === 'lg' ? 'text-[13px] px-5 py-3 min-h-[44px] inline-flex items-center' : 'text-[11px] px-[9px] py-[6px]'} ${tone}`}
           >
             {l.toUpperCase()}
           </Link>

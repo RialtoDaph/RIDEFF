@@ -134,7 +134,7 @@ export function HeroPhone() {
   return (
     <div
       ref={ref}
-      className="hidden md:flex relative h-[560px] gap-4 items-center justify-center"
+      className="flex relative h-[560px] w-[560px] max-w-none mx-auto gap-4 items-center justify-center [zoom:0.57] min-[400px]:[zoom:0.64] min-[480px]:[zoom:0.78] min-[640px]:[zoom:1] lg:[zoom:0.78] xl:[zoom:1]"
       aria-hidden="true"
     >
       <div

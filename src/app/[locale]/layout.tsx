@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
@@ -9,6 +9,7 @@ import { SITE_URL } from '@/lib/site';
 import { INTRO_DECIDE_SCRIPT } from '@/lib/intro';
 import { defaultMetadata } from '@/lib/metadata';
 import { ScrollBackdrop } from '@/components/ScrollBackdrop';
+import { BASE_NAMESPACES, ClientMessages } from '@/components/ClientMessages';
 import '../globals.css';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
@@ -46,10 +47,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
         <script dangerouslySetInnerHTML={{ __html: INTRO_DECIDE_SCRIPT }} />
       </head>
       <body>
-        <NextIntlClientProvider>
+        <ClientMessages namespaces={BASE_NAMESPACES}>
           {children}
           <ScrollBackdrop />
-        </NextIntlClientProvider>
+        </ClientMessages>
         <Analytics />
       </body>
     </html>
