@@ -8,6 +8,7 @@
  *   every text segment between them is translated on its own.
  * - Euro amounts without a table entry are reformatted for EN exactly like the
  *   prototype runtime does (12,90 € → €12.90). ID keeps the German format.
+ * - Unit rules approved by the owner (months, hours, weeks) win over the tables.
  * - messages/invariant.json lists brand names and labels the prototype never
  *   translates (RIDEFF, FAQ, …).
  * - messages/overrides.json holds owner-approved translations that are not in
@@ -49,11 +50,36 @@ const INVARIANT = new Set(fs.existsSync(invPath) ? JSON.parse(fs.readFileSync(in
 // --- prototype translation rules (ported from rideff-v7-i18n.js) ------------
 const EUR = /^(\s*)([+−-]?)\s?(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d{1,2}))?\s?€(\s*)$/;
 const EUR2 = /^(\s*)([+−-]?)€\s?(\d{1,3}(?:\.\d{3})+)(?:,(\d{1,2}))?(\s*)$/;
+// --- unit rules approved by the owner (Oct 2026); they win over the tables ---
+const MONTHS = {
+  JAN: ['JAN', 'JAN'], FEB: ['FEB', 'FEB'], 'MÄR': ['MAR', 'MAR'], APR: ['APR', 'APR'],
+  MAI: ['MAY', 'MEI'], JUN: ['JUN', 'JUN'], JUL: ['JUL', 'JUL'], AUG: ['AUG', 'AGU'],
+  SEP: ['SEP', 'SEP'], OKT: ['OCT', 'OKT'], NOV: ['NOV', 'NOV'], DEZ: ['DEC', 'DES'],
+};
+function unitRule(k, lang) {
+  const L = lang === 'en' ? 0 : 1;
+  if (MONTHS[k]) return MONTHS[k][L];
+  // Hours: EN "3.5 h", ID "3,5 jam".
+  if (k === 'h') return lang === 'en' ? 'h' : 'jam';
+  let m = k.match(/^([+−-]?)(\d+)(?:,(\d+))? h$/);
+  if (m) return lang === 'en' ? `${m[1]}${m[2]}${m[3] ? '.' + m[3] : ''} h` : `${m[1]}${m[2]}${m[3] ? ',' + m[3] : ''} jam`;
+  // Weeks, no trailing dot; plural except 1. Timeline uppercase, lever rows lowercase.
+  m = k.match(/^([+−-]?)(\d+) (WO|Wo)\.$/);
+  if (m) {
+    const one = m[2] === '1';
+    const unit = lang === 'en' ? (one ? 'wk' : 'wks') : 'mgg';
+    return `${m[1]}${m[2]} ${m[3] === 'WO' ? unit.toUpperCase() : unit}`;
+  }
+  return null;
+}
+
 function tr(src, lang) {
   const k = norm(src);
   if (!k) return src;
   const lead = src.match(/^\s*/)[0];
   const trail = src.match(/\s*$/)[0];
+  const u = unitRule(k, lang);
+  if (u !== null) return lead + u + trail;
   if (M.has(k)) return lead + M.get(k)[lang] + trail;
   if (INVARIANT.has(k)) return src;
   // Pure punctuation / numbers / symbols need no translation.

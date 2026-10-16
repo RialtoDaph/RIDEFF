@@ -177,7 +177,7 @@
           ],
           [
             "TIME",
-            "3,5 h"
+            "3.5 h"
           ],
           [
             "BALI",
@@ -252,7 +252,7 @@
           ],
           [
             "Groceries moved to Wed",
-            "+1,5 h"
+            "+1.5 h"
           ]
         ]
       },
@@ -290,7 +290,7 @@
           "€47 /mo",
           "Detected automatically",
           "TIME",
-          "3,5 h",
+          "3.5 h",
           "Back per week"
         ],
         [
@@ -306,7 +306,7 @@
           "Workout Thu",
           "6 pm, fits the shift",
           "TIME",
-          "+3,5 h",
+          "+3.5 h",
           "Per week"
         ],
         [
@@ -367,7 +367,7 @@
       "withoutLife": "WITHOUT LIFE",
       "withLife": "WITH LIFE",
       "months": [
-        "OKT",
+        "OCT",
         "NOV",
         "DEC",
         "JAN",
@@ -397,17 +397,17 @@
       ],
       "gapSteps": [
         "",
-        "−5 WK",
-        "−8 WK",
+        "−5 WKS",
+        "−8 WKS",
         "−10 WEEKS"
       ],
       "gapWeeks": {
-        "2": "−2 WK.",
-        "3": "−3 WK.",
-        "5": "−5 WK",
-        "7": "−7 WK.",
-        "8": "−8 WK",
-        "10": "−10 WK"
+        "2": "−2 WKS",
+        "3": "−3 WKS",
+        "5": "−5 WKS",
+        "7": "−7 WKS",
+        "8": "−8 WKS",
+        "10": "−10 WKS"
       },
       "badgeWeeks": {
         "2": "2 WEEKS EARLIER",

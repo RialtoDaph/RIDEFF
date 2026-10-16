@@ -163,7 +163,7 @@
           ],
           [
             "Olahraga hari Kamis",
-            "+1 h"
+            "+1 jam"
           ]
         ]
       },
@@ -177,7 +177,7 @@
           ],
           [
             "WAKTU",
-            "3,5 h"
+            "3,5 jam"
           ],
           [
             "BALI",
@@ -244,7 +244,7 @@
         "rows": [
           [
             "Shift digabung",
-            "+2 h"
+            "+2 jam"
           ],
           [
             "Olahraga Kam 18.00",
@@ -252,7 +252,7 @@
           ],
           [
             "Belanja dipindah ke Rabu",
-            "+1,5 h"
+            "+1,5 jam"
           ]
         ]
       },
@@ -290,7 +290,7 @@
           "€47 /bln",
           "Terdeteksi otomatis",
           "WAKTU",
-          "3,5 h",
+          "3,5 jam",
           "Kembali per minggu"
         ],
         [
@@ -306,7 +306,7 @@
           "Olahraga Kam",
           "18.00, pas dengan shift",
           "WAKTU",
-          "+3,5 h",
+          "+3,5 jam",
           "Per minggu"
         ],
         [
@@ -342,7 +342,7 @@
       ],
       "scrambleSuffix": [
         "",
-        " h",
+        " jam",
         "",
         ""
       ],
@@ -402,10 +402,10 @@
         "−10 MINGGU"
       ],
       "gapWeeks": {
-        "2": "−2 MG.",
-        "3": "−3 MG.",
+        "2": "−2 MGG",
+        "3": "−3 MGG",
         "5": "−5 MGG",
-        "7": "−7 MG.",
+        "7": "−7 MGG",
         "8": "−8 MGG",
         "10": "−10 MGG"
       },
