@@ -20,8 +20,8 @@ export default function proxy(req: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  // Legal pages are German only.
-  if (prefixed && locale !== routing.defaultLocale && ['/impressum', '/datenschutz', '/agb'].includes(rest)) {
+  // Legal pages and the blog are German only (for now).
+  if (prefixed && locale !== routing.defaultLocale && (['/impressum', '/datenschutz', '/agb', '/blog'].includes(rest) || rest.startsWith('/blog/'))) {
     const url = req.nextUrl.clone();
     url.pathname = rest;
     return NextResponse.redirect(url, 308);

@@ -44,3 +44,15 @@ See `.env.example`.
 
 - `public/team/rialto.jpg` (200×200): founder photo for Business section 05. Until it exists a grey circle is shown.
 - `src/content/caseStudies.ts`: TIC Originals result numbers and quote. The "Ergebnis" box stays hidden while both are empty.
+
+## Newsletter (double opt-in)
+
+`POST /api/newsletter` sends a confirmation mail with a signed link (48 h). Only the click on that link (`/api/newsletter/confirm`) adds the address to the provider's list, then redirects to `/newsletter/confirmed` or `/newsletter/expired`. Nothing is stored on our side. Choose the provider with `NEWSLETTER_PROVIDER` (`resend` or `brevo`), see `.env.example`. While it is not configured, the form shows "Das hat gerade nicht geklappt …".
+
+## Blog
+
+Posts are MDX files in `content/blog/` (file name = URL slug) with front matter `title`, `date` (YYYY-MM-DD), `tag` (`business` or `life`) and `excerpt`. German only for now; `/en/blog` and `/id/blog` redirect to `/blog`. The CTA box at the end follows the tag.
+
+## Copy drafts awaiting approval
+
+The `newsletter.*` messages (DE/EN/ID: confirmation mail, confirmed and expired pages, error line) are drafts.

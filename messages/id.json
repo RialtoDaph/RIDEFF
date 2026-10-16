@@ -1809,5 +1809,40 @@
       "esc": "ESC",
       "sources": "SOURCES ·"
     }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "Halaman ini tidak ada. Otak Anda tetap ada.",
+    "home": "Beranda",
+    "try": "Coba gratis"
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} menit baca",
+    "back": "← Semua artikel",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "newsletter": {
+    "unavailable": "Gagal untuk saat ini. Silakan coba lagi nanti.",
+    "confirmed": {
+      "title": "Langganan dikonfirmasi.",
+      "text": "Mulai sekarang, sebulan sekali satu trik masuk ke kotak masuk Anda. Berhenti langganan dengan satu klik.",
+      "back": "Kembali ke website"
+    },
+    "expired": {
+      "title": "Tautan ini sudah kedaluwarsa.",
+      "text": "Tautan konfirmasi berlaku 48 jam. Silakan daftar lagi di bagian bawah website.",
+      "back": "Kembali ke website"
+    },
+    "mail": {
+      "subject": "Mohon konfirmasi langganan Anda",
+      "hello": "Halo,",
+      "body": "mohon konfirmasi bahwa Anda ingin menerima newsletter RIDEFF. Sebulan sekali, satu trik yang jarang diketahui orang.",
+      "button": "Konfirmasi langganan",
+      "ignore": "Jika Anda tidak mendaftar, abaikan saja email ini. Tautan berlaku 48 jam."
+    }
   }
 }

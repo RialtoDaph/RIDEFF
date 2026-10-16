@@ -1809,5 +1809,40 @@
       "esc": "ESC",
       "sources": "QUELLEN ·"
     }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "Diese Seite gibt es nicht. Ihr Gehirn schon.",
+    "home": "Start",
+    "try": "Kostenlos testen"
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} Min. Lesezeit",
+    "back": "← Alle Artikel",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "newsletter": {
+    "unavailable": "Das hat gerade nicht geklappt. Bitte versuchen Sie es später noch einmal.",
+    "confirmed": {
+      "title": "Anmeldung bestätigt.",
+      "text": "Ab jetzt kommt einmal im Monat ein Hebel in Ihr Postfach. Abmelden geht mit einem Klick.",
+      "back": "Zur Website"
+    },
+    "expired": {
+      "title": "Der Link ist abgelaufen.",
+      "text": "Bestätigungslinks gelten 48 Stunden. Melden Sie sich einfach noch einmal unten auf der Website an.",
+      "back": "Zur Website"
+    },
+    "mail": {
+      "subject": "Bitte bestätigen Sie Ihre Anmeldung",
+      "hello": "Hallo,",
+      "body": "bitte bestätigen Sie, dass Sie den RIDEFF-Newsletter erhalten möchten. Einmal im Monat, ein Hebel, den kaum jemand kennt.",
+      "button": "Anmeldung bestätigen",
+      "ignore": "Wenn Sie sich nicht angemeldet haben, ignorieren Sie diese E-Mail einfach. Der Link gilt 48 Stunden."
+    }
   }
 }

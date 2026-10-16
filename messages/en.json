@@ -1809,5 +1809,40 @@
       "esc": "ESC",
       "sources": "SOURCES ·"
     }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "This page doesn't exist. Your brain does.",
+    "home": "Home",
+    "try": "Try for free"
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} min read",
+    "back": "← All articles",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "newsletter": {
+    "unavailable": "That didn't work just now. Please try again later.",
+    "confirmed": {
+      "title": "Subscription confirmed.",
+      "text": "From now on, one lever lands in your inbox once a month. Unsubscribe with one click.",
+      "back": "Back to website"
+    },
+    "expired": {
+      "title": "This link has expired.",
+      "text": "Confirmation links are valid for 48 hours. Just sign up again at the bottom of the website.",
+      "back": "Back to website"
+    },
+    "mail": {
+      "subject": "Please confirm your subscription",
+      "hello": "Hello,",
+      "body": "please confirm that you'd like to receive the RIDEFF newsletter. Once a month, one lever hardly anyone knows.",
+      "button": "Confirm subscription",
+      "ignore": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours."
+    }
   }
 }

@@ -74,5 +74,69 @@
   },
   "demo:dienst.goals.2.4": {
     "en": "reached"
+  },
+  "notFound.text": {
+    "en": "This page doesn't exist. Your brain does.",
+    "id": "Halaman ini tidak ada. Otak Anda tetap ada."
+  },
+  "notFound.home": {
+    "en": "Home",
+    "id": "Beranda"
+  },
+  "blog.readingTime": {
+    "en": "{n} min read",
+    "id": "{n} menit baca"
+  },
+  "blog.back": {
+    "en": "← All articles",
+    "id": "← Semua artikel"
+  },
+  "newsletter.unavailable": {
+    "en": "That didn't work just now. Please try again later.",
+    "id": "Gagal untuk saat ini. Silakan coba lagi nanti."
+  },
+  "newsletter.confirmed.title": {
+    "en": "Subscription confirmed.",
+    "id": "Langganan dikonfirmasi."
+  },
+  "newsletter.confirmed.text": {
+    "en": "From now on, one lever lands in your inbox once a month. Unsubscribe with one click.",
+    "id": "Mulai sekarang, sebulan sekali satu trik masuk ke kotak masuk Anda. Berhenti langganan dengan satu klik."
+  },
+  "newsletter.confirmed.back": {
+    "en": "Back to website",
+    "id": "Kembali ke website"
+  },
+  "newsletter.expired.title": {
+    "en": "This link has expired.",
+    "id": "Tautan ini sudah kedaluwarsa."
+  },
+  "newsletter.expired.text": {
+    "en": "Confirmation links are valid for 48 hours. Just sign up again at the bottom of the website.",
+    "id": "Tautan konfirmasi berlaku 48 jam. Silakan daftar lagi di bagian bawah website."
+  },
+  "newsletter.expired.back": {
+    "en": "Back to website",
+    "id": "Kembali ke website"
+  },
+  "newsletter.mail.subject": {
+    "en": "Please confirm your subscription",
+    "id": "Mohon konfirmasi langganan Anda"
+  },
+  "newsletter.mail.hello": {
+    "en": "Hello,",
+    "id": "Halo,"
+  },
+  "newsletter.mail.body": {
+    "en": "please confirm that you'd like to receive the RIDEFF newsletter. Once a month, one lever hardly anyone knows.",
+    "id": "mohon konfirmasi bahwa Anda ingin menerima newsletter RIDEFF. Sebulan sekali, satu trik yang jarang diketahui orang."
+  },
+  "newsletter.mail.button": {
+    "en": "Confirm subscription",
+    "id": "Konfirmasi langganan"
+  },
+  "newsletter.mail.ignore": {
+    "en": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours.",
+    "id": "Jika Anda tidak mendaftar, abaikan saja email ini. Tautan berlaku 48 jam."
   }
 }

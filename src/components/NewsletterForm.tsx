@@ -11,14 +11,18 @@ const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
  */
 export function NewsletterForm() {
   const t = useTranslations('footer.newsletter');
+  const tn = useTranslations('newsletter');
   const locale = useLocale();
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [company, setCompany] = useState('');
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
 
   async function submit(e: FormEvent) {
     e.preventDefault();
+    setFailed(false);
     if (!EMAIL_RE.test(email)) return setError(true);
     setError(false);
     setBusy(true);
@@ -26,12 +30,13 @@ export function NewsletterForm() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email, locale }),
+        body: JSON.stringify({ email, locale, company }),
       });
       if (res.ok) setDone(true);
-      else setError(true);
+      else if (res.status === 400) setError(true);
+      else setFailed(true);
     } catch {
-      setError(true);
+      setFailed(true);
     } finally {
       setBusy(false);
     }
@@ -47,7 +52,18 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="flex flex-col gap-2 flex-1 min-w-[min(100%,280px)] max-w-[460px]">
+    <form onSubmit={submit} noValidate className="relative flex flex-col gap-2 flex-1 min-w-[min(100%,280px)] max-w-[460px]">
+      {/* Honeypot for bots; hidden from people and assistive tech. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={company}
+        onChange={(e) => setCompany(e.target.value)}
+        className="absolute -left-[9999px] w-px h-px opacity-0"
+      />
       <div
         className={`flex gap-[6px] p-[5px] rounded-full bg-night-2 border transition-colors focus-within:border-zinc-500 ${error ? 'border-orange-400' : 'border-line-d3'}`}
       >
@@ -73,6 +89,11 @@ export function NewsletterForm() {
           {t('submit')}
         </button>
       </div>
+      {failed && (
+        <span role="alert" className="text-[13px] text-orange-400 pl-[14px]">
+          {tn('unavailable')}
+        </span>
+      )}
       {error && (
         <span id="nl-error" role="alert" className="font-mono text-[11px] tracking-[0.06em] text-orange-400 pl-[14px]">
           {t('error')}

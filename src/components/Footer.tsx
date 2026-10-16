@@ -5,15 +5,19 @@ import type { Locale } from '@/i18n/routing';
 import { CAL_LIFE_PRIVATE, EMAIL, lifePrivateHref, loginUrl, signupUrl, type Mode } from '@/lib/site';
 import { PortalLink } from './PortalLink';
 import { NewsletterForm } from './NewsletterForm';
+import { homePath } from '@/lib/metadata';
 
 const colTitle = 'font-mono text-[11px] tracking-[0.12em] text-zinc-550 pb-1';
 const col = 'flex flex-col gap-3 text-[15px] text-zinc-400';
 const link = 'hover:text-orange-500 transition-colors self-start';
 
-export async function Footer({ mode }: { mode: Mode }) {
+/** On pages other than home (blog, …) pass onHome={false}: anchor links then point to the home page. */
+export async function Footer({ mode, onHome = true }: { mode: Mode; onHome?: boolean }) {
   const t = await getTranslations('footer');
   const locale = (await getLocale()) as Locale;
   const biz = mode === 'business';
+  const base = onHome ? '' : homePath(locale, mode);
+  const h = (id: string) => `${base}#${id}`;
 
   return (
     <footer id="footer" className="bg-ink-2 text-stone-50 border-t border-line-d2 overflow-hidden">
@@ -26,7 +30,7 @@ export async function Footer({ mode }: { mode: Mode }) {
             </span>
             {biz ? (
               <a
-                href="#kontakt"
+                href={h('kontakt')}
                 className="text-[14px] font-semibold px-5 py-3 rounded-full bg-orange-500 text-white self-start"
               >
                 {t('business.cta')}
@@ -40,17 +44,17 @@ export async function Footer({ mode }: { mode: Mode }) {
             <>
               <nav className={col} aria-labelledby="f-platform">
                 <span id="f-platform" className={colTitle}>{t('business.platform.title')}</span>
-                <a className={link} href="#plattform">{t('business.platform.cockpit')}</a>
-                <a className={link} href="#plattform">{t('business.platform.teamApp')}</a>
-                <a className={link} href="#plattform">{t('business.platform.website')}</a>
-                <a className={link} href="#nerven">{t('business.platform.ai')}</a>
+                <a className={link} href={h('plattform')}>{t('business.platform.cockpit')}</a>
+                <a className={link} href={h('plattform')}>{t('business.platform.teamApp')}</a>
+                <a className={link} href={h('plattform')}>{t('business.platform.website')}</a>
+                <a className={link} href={h('nerven')}>{t('business.platform.ai')}</a>
               </nav>
               <nav className={col} aria-labelledby="f-company">
                 <span id="f-company" className={colTitle}>{t('business.company.title')}</span>
-                <a className={link} href="#ablauf">{t('business.company.ablauf')}</a>
-                <a className={link} href="#projekt">{t('business.company.projekt')}</a>
-                <a className={link} href="#pakete">{t('business.company.pakete')}</a>
-                <a className={link} href="#faq">{t('business.company.faq')}</a>
+                <a className={link} href={h('ablauf')}>{t('business.company.ablauf')}</a>
+                <a className={link} href={h('projekt')}>{t('business.company.projekt')}</a>
+                <a className={link} href={h('pakete')}>{t('business.company.pakete')}</a>
+                <a className={link} href={h('faq')}>{t('business.company.faq')}</a>
                 <PortalLink className={link} labelClassName="border-line-d4 text-zinc-500" />
               </nav>
             </>
@@ -58,17 +62,17 @@ export async function Footer({ mode }: { mode: Mode }) {
             <>
               <nav className={col} aria-labelledby="f-life">
                 <span id="f-life" className={colTitle}>{t('private.life.title')}</span>
-                <a className={link} href="#p-module">{t('private.life.money')}</a>
-                <a className={link} href="#p-module">{t('private.life.time')}</a>
-                <a className={link} href="#p-module">{t('private.life.goals')}</a>
-                <a className={link} href="#p-module">{t('private.life.ai')}</a>
+                <a className={link} href={h('p-module')}>{t('private.life.money')}</a>
+                <a className={link} href={h('p-module')}>{t('private.life.time')}</a>
+                <a className={link} href={h('p-module')}>{t('private.life.goals')}</a>
+                <a className={link} href={h('p-module')}>{t('private.life.ai')}</a>
               </nav>
               <nav className={col} aria-labelledby="f-more">
                 <span id="f-more" className={colTitle}>{t('private.more.title')}</span>
-                <a className={link} href="#p-ablauf">{t('private.more.ablauf')}</a>
-                <a className={link} href="#p-daten">{t('private.more.daten')}</a>
-                <a className={link} href="#p-preis">{t('private.more.preis')}</a>
-                <a className={link} href="#p-faq">{t('private.more.faq')}</a>
+                <a className={link} href={h('p-ablauf')}>{t('private.more.ablauf')}</a>
+                <a className={link} href={h('p-daten')}>{t('private.more.daten')}</a>
+                <a className={link} href={h('p-preis')}>{t('private.more.preis')}</a>
+                <a className={link} href={h('p-faq')}>{t('private.more.faq')}</a>
                 <a className={link} href={signupUrl('plus', locale)}>{t('private.more.tryFree')}</a>
                 <a className={link} href={loginUrl(locale)}>{t('private.more.login')}</a>
                 <a className={link} href={lifePrivateHref} {...(CAL_LIFE_PRIVATE ? { target: '_blank', rel: 'noopener' } : {})}>
