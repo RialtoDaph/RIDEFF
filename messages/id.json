@@ -1653,7 +1653,7 @@
   },
   "demo": {
     "metaTitle": "RIDEFF Business · Cockpit",
-    "back": "← Zur Website",
+    "back": "← Back to website",
     "industry": "INDUSTRY (DEMO)",
     "ask": "Ask the cockpit",
     "modules": "MODULES",
@@ -1780,8 +1780,8 @@
         "Nov",
         "Dec"
       ],
-      "yes": "ja",
-      "no": "nein"
+      "yes": "yes",
+      "no": "no"
     },
     "data": {
       "sources": "Connected sources",

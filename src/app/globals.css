@@ -184,7 +184,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  body:has([data-page-mode='private']) {
+  body:has([data-page-mode='private']),
+  body:has([data-light-page]) {
     --page-bg: #f4f4f2;
   }
   a {

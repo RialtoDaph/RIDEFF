@@ -62,5 +62,17 @@
   },
   "demo:dienst.goals.0.3": {
     "en": "€533,000 so far"
+  },
+  "demo.back": {
+    "en": "← Back to website"
+  },
+  "demo.what.yes": {
+    "en": "yes"
+  },
+  "demo.what.no": {
+    "en": "no"
+  },
+  "demo:dienst.goals.2.4": {
+    "en": "reached"
   }
 }

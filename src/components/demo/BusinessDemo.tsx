@@ -305,7 +305,7 @@ export function BusinessDemo({ data, source }: { data: DemoData; source: DemoDat
     .filter((x) => !q || x.q.toLowerCase().includes(q.toLowerCase()));
 
   return (
-    <div className="min-h-screen grid grid-cols-1 min-[980px]:grid-cols-[280px_minmax(0,1fr)] bg-stone-100 bg-[radial-gradient(#DADAD6_1px,transparent_1px)] bg-[length:22px_22px] text-ink">
+    <div data-light-page="" className="min-h-screen grid grid-cols-1 min-[980px]:grid-cols-[280px_minmax(0,1fr)] bg-stone-100 bg-[radial-gradient(#DADAD6_1px,transparent_1px)] bg-[length:22px_22px] text-ink">
       {/* Sidebar (wide screens) */}
       <aside className="hidden min-[980px]:flex flex-col gap-[18px] py-[22px] px-[18px] bg-ink-2 text-stone-50 sticky top-0 h-screen overflow-y-auto bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[length:56px_56px]">
         <Link href="/" className="font-mono text-[11px] tracking-[0.06em] text-zinc-400 hover:text-white self-start py-1">

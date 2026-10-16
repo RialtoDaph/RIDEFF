@@ -20,6 +20,13 @@ export default function proxy(req: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // Legal pages are German only.
+  if (prefixed && locale !== routing.defaultLocale && ['/impressum', '/datenschutz', '/agb'].includes(rest)) {
+    const url = req.nextUrl.clone();
+    url.pathname = rest;
+    return NextResponse.redirect(url, 308);
+  }
+
   // The Business demo exists in DE and EN only.
   if (locale === 'id' && (rest === '/demo' || rest.startsWith('/demo/'))) {
     const url = req.nextUrl.clone();
