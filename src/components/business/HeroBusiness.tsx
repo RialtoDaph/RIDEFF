@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ModeToggle } from '../ModeToggle';
+import { HeroSystem } from './HeroSystem';
 
 export async function HeroBusiness() {
   const t = await getTranslations('hero.business');
@@ -22,7 +23,6 @@ export async function HeroBusiness() {
             </a>
             <Link
               href="/demo"
-              target="_blank"
               className="font-semibold text-[15px] px-6 py-[14px] whitespace-nowrap rounded-full border border-line-d4 hover:text-orange-500 transition-colors"
             >
               {t('demo')}
@@ -34,7 +34,7 @@ export async function HeroBusiness() {
             <span>{t('tags.custom')}</span>
           </div>
         </div>
-        {/* Right column (live system visual + notification feed) follows in step 3. */}
+        <HeroSystem />
       </div>
     </div>
   );

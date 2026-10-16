@@ -31,5 +31,13 @@
   "a11y.previous": {
     "en": "Previous",
     "id": "Sebelumnya"
+  },
+  "nav.portalSoon": {
+    "en": "Coming soon",
+    "id": "Segera hadir"
+  },
+  "biz.pakete.net": {
+    "en": "All prices net, plus VAT.",
+    "id": "Semua harga belum termasuk PPN."
   }
 }

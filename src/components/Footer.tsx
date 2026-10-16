@@ -2,7 +2,8 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
-import { CAL_LIFE_PRIVATE_URL, EMAIL, PORTAL_URL, loginUrl, signupUrl, type Mode } from '@/lib/site';
+import { CAL_LIFE_PRIVATE, EMAIL, lifePrivateHref, loginUrl, signupUrl, type Mode } from '@/lib/site';
+import { PortalLink } from './PortalLink';
 import { NewsletterForm } from './NewsletterForm';
 
 const colTitle = 'font-mono text-[11px] tracking-[0.12em] text-zinc-550 pb-1';
@@ -50,7 +51,7 @@ export async function Footer({ mode }: { mode: Mode }) {
                 <a className={link} href="#projekt">{t('business.company.projekt')}</a>
                 <a className={link} href="#pakete">{t('business.company.pakete')}</a>
                 <a className={link} href="#faq">{t('business.company.faq')}</a>
-                <a className={link} href={PORTAL_URL}>{t('business.company.portal')}</a>
+                <PortalLink className={link} labelClassName="border-line-d4 text-zinc-500" />
               </nav>
             </>
           ) : (
@@ -70,7 +71,7 @@ export async function Footer({ mode }: { mode: Mode }) {
                 <a className={link} href="#p-faq">{t('private.more.faq')}</a>
                 <a className={link} href={signupUrl('plus', locale)}>{t('private.more.tryFree')}</a>
                 <a className={link} href={loginUrl(locale)}>{t('private.more.login')}</a>
-                <a className={link} href={CAL_LIFE_PRIVATE_URL} target="_blank" rel="noopener">
+                <a className={link} href={lifePrivateHref} {...(CAL_LIFE_PRIVATE ? { target: '_blank', rel: 'noopener' } : {})}>
                   {t('private.more.lifePrivate')}
                 </a>
                 <Link className={link} href={locale === 'id' ? '/' : '/#top'} locale={locale === 'id' ? 'en' : locale}>

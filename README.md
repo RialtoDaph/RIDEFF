@@ -29,3 +29,18 @@ npm run lint && npm run typecheck
 ## Design tokens
 
 Defined in `src/app/globals.css` under `@theme` (colours, fonts, radii, shadows, keyframes), available as CSS variables and Tailwind utilities.
+
+## Environment
+
+See `.env.example`.
+
+| Variable | Effect |
+|---|---|
+| `NEXT_PUBLIC_CAL_BUSINESS` | Cal.com slug for the Business Erstgespräch (e.g. `rideff/erstgespraech`). Empty: booking opens `mailto:hallo@rideff.com` with the subject "Erstgespräch". |
+| `NEXT_PUBLIC_CAL_LIFE_PRIVATE` | Cal.com slug for Life Private (e.g. `rideff/life-private`). Empty: `mailto:` with the subject "Life Private". |
+| `NEXT_PUBLIC_PORTAL_LIVE` | `true` links "Kundenportal" to portal.rideff.com; otherwise it shows "Bald verfügbar" and is not clickable. |
+
+## Content to fill in later
+
+- `public/team/rialto.jpg` (200×200): founder photo for Business section 05. Until it exists a grey circle is shown.
+- `src/content/caseStudies.ts`: TIC Originals result numbers and quote. The "Ergebnis" box stays hidden while both are empty.

@@ -59,6 +59,9 @@ const MONTHS = {
 function unitRule(k, lang) {
   const L = lang === 'en' ? 0 : 1;
   if (MONTHS[k]) return MONTHS[k][L];
+  // Thousands shorthand: EN "€18.4k", ID keeps the German format.
+  let k1 = k.match(/^€(\d+)(?:,(\d+))?k$/);
+  if (k1) return lang === 'en' ? `€${k1[1]}${k1[2] ? '.' + k1[2] : ''}k` : k;
   // Hours: EN "3.5 h", ID "3,5 jam".
   if (k === 'h') return lang === 'en' ? 'h' : 'jam';
   let m = k.match(/^([+−-]?)(\d+)(?:,(\d+))? h$/);

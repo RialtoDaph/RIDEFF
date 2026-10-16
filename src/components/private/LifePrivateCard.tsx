@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { CAL_LIFE_PRIVATE_URL } from '@/lib/site';
+import { CAL_LIFE_PRIVATE, lifePrivateHref } from '@/lib/site';
 
 /** Full-width Life Private card inside a 2px wrapper with a rotating conic ring. */
 export async function LifePrivateCard() {
@@ -39,9 +39,8 @@ export async function LifePrivateCard() {
             ))}
           </ul>
           <a
-            href={CAL_LIFE_PRIVATE_URL}
-            target="_blank"
-            rel="noopener"
+            href={lifePrivateHref}
+            {...(CAL_LIFE_PRIVATE ? { target: '_blank', rel: 'noopener' } : {})}
             className="text-center text-[15px] font-semibold p-[14px] rounded-full bg-orange-500 text-white hover:bg-orange-450 transition-colors"
           >
             {t('cta')}

@@ -1,9 +1,10 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
-import { PORTAL_URL, PRIVATE_QUERY, loginUrl, signupUrl, type Mode } from '@/lib/site';
+import { PRIVATE_QUERY, loginUrl, signupUrl, type Mode } from '@/lib/site';
 import { RdeMark } from './RdeMark';
 import { LangSwitch } from './LangSwitch';
+import { PortalLink } from './PortalLink';
 
 const BUSINESS_NAV = ['plattform', 'ablauf', 'projekt', 'pakete', 'faq'] as const;
 const PRIVATE_NAV = [
@@ -59,12 +60,12 @@ export async function TopBar({ mode }: { mode: Mode }) {
         </div>
         {biz ? (
           <>
-            <a
-              href={PORTAL_URL}
-              className="hidden md:inline text-[14px] font-semibold text-zinc-300 whitespace-nowrap hover:text-white transition-colors"
-            >
-              {t('portal')}
-            </a>
+            <span className="hidden md:inline-flex">
+              <PortalLink
+                className="text-[14px] font-semibold text-zinc-300 whitespace-nowrap hover:text-white transition-colors"
+                labelClassName="border-line-d4 text-zinc-500"
+              />
+            </span>
             <a
               href="#kontakt"
               className="text-[14px] font-semibold px-[18px] py-[10px] rounded-full bg-orange-500 text-white whitespace-nowrap"

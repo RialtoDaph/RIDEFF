@@ -135,6 +135,11 @@ export function ScrollBackdrop() {
         const pageTop = page.getBoundingClientRect().top + sy;
         const lr = ln.getBoundingClientRect();
         const pts = secs.slice(1).map((x) => {
+          const ph = x.el.querySelector<HTMLElement>('[data-flow-photo]');
+          if (ph) {
+            const r = ph.getBoundingClientRect();
+            return { y: r.top + r.height / 2 + sy, x: r.left + 4, ph };
+          }
           const sp = x.el.querySelector('[data-sec-num]');
           const r = (sp ?? x.el).getBoundingClientRect();
           return { y: (sp ? r.top + r.height / 2 : r.top + 90) + sy, x: sp ? r.left : lr.left + 28 };
@@ -162,6 +167,12 @@ export function ScrollBackdrop() {
           if (tick) {
             tick.style.width = `${Math.max(0, p.x - lr.left - 18)}px`;
             tick.style.background = reached ? '#FF6A00' : 'rgba(140,140,140,0.35)';
+          }
+          if ('ph' in p && p.ph) {
+            p.ph.style.transition = 'box-shadow .6s ease';
+            p.ph.style.boxShadow = reached
+              ? '0 0 0 3px #FF6A00,0 0 0 9px rgba(255,106,0,0.14),0 0 36px rgba(255,106,0,0.45)'
+              : '0 0 0 2px rgba(140,140,140,0.35)';
           }
         });
       }

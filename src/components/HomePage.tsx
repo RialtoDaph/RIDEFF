@@ -4,13 +4,13 @@ import { TopBar } from './TopBar';
 import { Footer } from './Footer';
 import { IntroVideo } from './IntroVideo';
 import { HeroBusiness } from './business/HeroBusiness';
+import { BusinessSections } from './business/BusinessSections';
 import { HeroPrivate } from './private/HeroPrivate';
 import { PrivateSections } from './private/PrivateSections';
 import { FlowLine } from './FlowLine';
 
 /**
  * One page, two modes. BUSINESS is served at "/", PRIVATE at "/?for=private".
- * BUSINESS sections 01–09 follow in step 3.
  */
 export async function HomePage({ mode }: { mode: Mode }) {
   const t = await getTranslations('a11y');
@@ -27,8 +27,12 @@ export async function HomePage({ mode }: { mode: Mode }) {
       <div className="site-x">
         <TopBar mode={mode} />
       </div>
-      <main id="main" tabIndex={-1} className="outline-none">{biz ? (
-          <HeroBusiness />
+      <main id="main" tabIndex={-1} className="outline-none">
+        {biz ? (
+          <>
+            <HeroBusiness />
+            <BusinessSections />
+          </>
         ) : (
           <>
             <HeroPrivate />

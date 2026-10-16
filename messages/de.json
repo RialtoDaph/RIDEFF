@@ -34,7 +34,8 @@
     "portal": "Kundenportal",
     "firstCall": "Erstgespräch",
     "login": "Anmelden",
-    "tryFree": "Kostenlos testen"
+    "tryFree": "Kostenlos testen",
+    "portalSoon": "Bald verfügbar"
   },
   "hero": {
     "business": {
@@ -703,5 +704,970 @@
   },
   "common": {
     "ai": "KI"
+  },
+  "biz": {
+    "viz": {
+      "nerves": "NERVEN",
+      "brain": "GEHIRN",
+      "brainSub": "kennt Ihren Betrieb",
+      "boxes": [
+        [
+          "COCKPIT",
+          "für Sie"
+        ],
+        [
+          "TEAM-APP",
+          "fürs Team"
+        ],
+        [
+          "WEBSITE",
+          "für Kunden"
+        ]
+      ]
+    },
+    "feed": [
+      [
+        "ERLEDIGT",
+        "Milch 12 L nachbestellt"
+      ],
+      [
+        "ERKANNT",
+        "Regen ab 14 Uhr, Backplan −30 %"
+      ],
+      [
+        "ERLEDIGT",
+        "Deniz arbeitet innen, Team informiert"
+      ],
+      [
+        "ERLEDIGT",
+        "Terrasse auf Website geschlossen"
+      ],
+      [
+        "ERKANNT",
+        "Montags bleibt Kuchen übrig"
+      ],
+      [
+        "ERLEDIGT",
+        "17 Vorbestellungen angenommen"
+      ]
+    ],
+    "problem": {
+      "eyebrow": "DAS PROBLEM",
+      "title": "Alles ist da. Nur nicht verbunden.",
+      "lead": "Excel hier, WhatsApp da, ein Zettel an der Kasse. Gehirn und Körper gibt es oft schon. Was fehlt, sind die Nerven dazwischen.",
+      "point": "Wir verbinden, was Sie schon haben, und bauen, was fehlt.",
+      "cards": [
+        [
+          "Excel",
+          "Umsatz, irgendwo"
+        ],
+        [
+          "WhatsApp",
+          "Schichten, 3 Gruppen"
+        ],
+        [
+          "Zettel",
+          "an der Kasse"
+        ],
+        [
+          "ChatGPT",
+          "im Browser-Tab"
+        ],
+        [
+          "Kalender",
+          "Vorbestellungen"
+        ],
+        [
+          "Website",
+          "seit 2019 gleich"
+        ]
+      ],
+      "platformKicker": "RIDEFF",
+      "platform": "Ihre Plattform",
+      "platformSub": "Alles an einem Ort",
+      "poweredBy": "POWERED BY KI",
+      "stages": [
+        "IHRE TOOLS, VERSTREUT",
+        "ALLES AN EINEM ORT",
+        "IHRE PLATTFORM",
+        "+ KI",
+        "UND ES WÄCHST"
+      ]
+    },
+    "platform": {
+      "eyebrow": "KÖRPER",
+      "title": "Drei Teile, ein Gehirn.",
+      "industries": [
+        [
+          "Hotel",
+          "HOTEL SEEBLICK"
+        ],
+        [
+          "Café",
+          "CAFÉ LINDE"
+        ],
+        [
+          "Laden",
+          "LADEN MITTE"
+        ],
+        [
+          "Modelabel",
+          "LABEL NORD"
+        ],
+        [
+          "Praxis",
+          "PRAXIS DR. KOCH"
+        ],
+        [
+          "Handwerk",
+          "TISCHLEREI BRANDT"
+        ]
+      ],
+      "tabs": [
+        [
+          "01",
+          "Cockpit",
+          "Für Sie: Zahlen und Vorschläge."
+        ],
+        [
+          "02",
+          "Team-App",
+          "Fürs Team: Aufgaben und Schichten."
+        ],
+        [
+          "03",
+          "Website",
+          "Für Gäste: bestellen und buchen."
+        ]
+      ],
+      "side": [
+        "Cockpit",
+        "Team-App",
+        "Website",
+        "Lager"
+      ],
+      "brainActive": "Gehirn aktiv",
+      "clock": "DI · 07:42",
+      "revenue": "Umsatz",
+      "suggestion": "KI · VORSCHLAG",
+      "teamToday": "Heute im Team",
+      "tasks": "Aufgaben",
+      "live": "● LIVE",
+      "ranges": [
+        "1W",
+        "1M",
+        "3M",
+        "1J"
+      ],
+      "rangeSub": [
+        "Letzte 7 Tage",
+        "Letzte 30 Tage",
+        "Letzte 3 Monate",
+        "Letzte 12 Monate"
+      ],
+      "rangeCmp": [
+        "ggü. Vorwoche",
+        "ggü. Vormonat",
+        "ggü. Vorquartal",
+        "ggü. Vorjahr"
+      ],
+      "weekdays": [
+        "Mo",
+        "Di",
+        "Mi",
+        "Do",
+        "Fr",
+        "Sa",
+        "So"
+      ],
+      "data": [
+        {
+          "greet": "Guten Morgen, Jana.",
+          "kpis": [
+            [
+              "Belegung",
+              "86 %"
+            ],
+            [
+              "Anreisen heute",
+              "14"
+            ],
+            [
+              "Abreisen",
+              "11"
+            ],
+            [
+              "Ø Zimmerpreis",
+              "€128"
+            ]
+          ],
+          "sug": "Freitag fast ausgebucht. Preis für die letzten 4 Zimmer +15 %?",
+          "todo": [
+            "Zimmer 204 gereinigt",
+            "Late Check-out 112 bestätigen"
+          ],
+          "teamKi": "Anreise-Peak 15–17 Uhr. Tom übernimmt die Rezeption früher.",
+          "shiftLabel": "Schichten",
+          "shifts": [
+            [
+              "Jana",
+              "06–14",
+              "Frühstück"
+            ],
+            [
+              "Tom",
+              "12–20",
+              "Rezeption ab 14"
+            ],
+            [
+              "Sara",
+              "08–16",
+              "Housekeeping"
+            ]
+          ],
+          "tasks": [
+            [
+              "Zimmer 204 gereinigt",
+              "SARA"
+            ],
+            [
+              "Minibar 3. OG aufgefüllt",
+              "SARA"
+            ],
+            [
+              "Late Check-out 112",
+              "TOM"
+            ],
+            [
+              "Fahrräder prüfen",
+              "JANA"
+            ]
+          ],
+          "domain": "hotel-seeblick.de",
+          "eyebrow": "HOTEL SEEBLICK · BINZ",
+          "headline": "Aufwachen mit Blick auf die Ostsee.",
+          "b1": "Zimmer buchen",
+          "b2": "Angebote",
+          "listLabel": "Freie Zimmer heute",
+          "items": [
+            [
+              "Doppelzimmer Meerblick",
+              "noch 2 frei",
+              "€149"
+            ],
+            [
+              "Einzelzimmer",
+              "noch 1 frei",
+              "€89"
+            ],
+            [
+              "Suite Dachgeschoss",
+              "Frühbucher",
+              "€229",
+              "ANGEBOT"
+            ]
+          ],
+          "siteKi": "6 Direktbuchungen diese Woche. Ohne Portal-Provision.",
+          "photoAlt": "Zimmer mit Meerblick"
+        },
+        {
+          "greet": "Guten Morgen, Lena.",
+          "kpis": [
+            [
+              "Umsatz gestern",
+              "€1.284"
+            ],
+            [
+              "Bons",
+              "318"
+            ],
+            [
+              "Wareneinsatz",
+              "29 %"
+            ],
+            [
+              "Vorbestellungen",
+              "17"
+            ]
+          ],
+          "sug": "Montags bleibt Kuchen übrig. Heute 30 % weniger backen?",
+          "todo": [
+            "Milch 12 L nachbestellt",
+            "Vitrine um 15 Uhr auffüllen"
+          ],
+          "teamKi": "Regen ab 14 Uhr. Deniz übernimmt innen, Terrasse bleibt zu.",
+          "shiftLabel": "Schichten",
+          "shifts": [
+            [
+              "Lena",
+              "06–14",
+              "Öffnen"
+            ],
+            [
+              "Deniz",
+              "10–18",
+              "innen statt Terrasse"
+            ],
+            [
+              "Mia",
+              "14–22",
+              "Schließen"
+            ]
+          ],
+          "tasks": [
+            [
+              "Milch 12 L nachbestellt",
+              "LENA"
+            ],
+            [
+              "Backplan −30 % umgesetzt",
+              "LENA"
+            ],
+            [
+              "Vitrine um 15 Uhr auffüllen",
+              "CAN"
+            ],
+            [
+              "Kasse abrechnen",
+              "MIA"
+            ]
+          ],
+          "domain": "cafe-linde.de",
+          "eyebrow": "CAFÉ LINDE · LEIPZIG",
+          "headline": "Frühstück bis 14 Uhr. Kuchen bis keiner mehr da ist.",
+          "b1": "Reservieren",
+          "b2": "Vorbestellen",
+          "listLabel": "Heute in der Vitrine",
+          "items": [
+            [
+              "Käsekuchen",
+              "noch 6 Stück",
+              "€3,90"
+            ],
+            [
+              "Apfel-Crumble",
+              "glutenfrei",
+              "€4,20",
+              "NEU"
+            ],
+            [
+              "Zimtschnecke",
+              "ab 8 Uhr",
+              "€2,80"
+            ]
+          ],
+          "siteKi": "17 Vorbestellungen heute online. Vitrine zeigt automatisch, was noch da ist.",
+          "photoAlt": "Café-Vitrine"
+        },
+        {
+          "greet": "Guten Morgen, Ben.",
+          "kpis": [
+            [
+              "Umsatz gestern",
+              "€2.140"
+            ],
+            [
+              "Bons",
+              "164"
+            ],
+            [
+              "Online-Bestellungen",
+              "23"
+            ],
+            [
+              "Lagerwert",
+              "€18,4k"
+            ]
+          ],
+          "sug": "Olivenöl reicht noch 4 Tage. 24 Flaschen nachbestellen?",
+          "todo": [
+            "Lieferung Kaffee eingebucht",
+            "Schaufenster umdekorieren"
+          ],
+          "teamKi": "Samstag 30 % mehr Kunden erwartet. Elif kommt eine Stunde früher.",
+          "shiftLabel": "Schichten",
+          "shifts": [
+            [
+              "Ben",
+              "09–15",
+              "Öffnen"
+            ],
+            [
+              "Elif",
+              "10–18",
+              "früher, Kasse 2"
+            ],
+            [
+              "Paul",
+              "14–20",
+              "Schließen"
+            ]
+          ],
+          "tasks": [
+            [
+              "Kaffee eingebucht",
+              "BEN"
+            ],
+            [
+              "Click & Collect gepackt",
+              "PAUL"
+            ],
+            [
+              "Schaufenster umdekorieren",
+              "ELIF"
+            ],
+            [
+              "Inventur Regal 3",
+              "PAUL"
+            ]
+          ],
+          "domain": "laden-mitte.de",
+          "eyebrow": "LADEN MITTE · DRESDEN",
+          "headline": "Gutes aus der Region. Online bestellt, in 2 Stunden abholbereit.",
+          "b1": "Online bestellen",
+          "b2": "Öffnungszeiten",
+          "listLabel": "Gerade beliebt",
+          "items": [
+            [
+              "Olivenöl Kreta",
+              "noch 8 auf Lager",
+              "€14,90"
+            ],
+            [
+              "Bergkäse",
+              "regional, 100 g",
+              "€4,20",
+              "NEU"
+            ],
+            [
+              "Kaffee Hausröstung",
+              "500 g",
+              "€12,50"
+            ]
+          ],
+          "siteKi": "23 Online-Bestellungen. Der Lagerbestand auf der Website ist immer aktuell.",
+          "photoAlt": "Ladenregal"
+        },
+        {
+          "greet": "Moin, Ida.",
+          "kpis": [
+            [
+              "Shop-Umsatz",
+              "€3.920"
+            ],
+            [
+              "Bestellungen",
+              "41"
+            ],
+            [
+              "Retourenquote",
+              "12 %"
+            ],
+            [
+              "Lager",
+              "1.284 Teile"
+            ]
+          ],
+          "sug": "Leinenhemd M fast ausverkauft. Nachproduktion von 60 Stück anfragen?",
+          "todo": [
+            "41 Pakete versendet",
+            "Fotos neue Kollektion freigeben"
+          ],
+          "teamKi": "Größe S fällt klein aus, Retouren gestiegen. Hinweis im Shop ist ergänzt.",
+          "shiftLabel": "Heute",
+          "shifts": [
+            [
+              "Ida",
+              "09–17",
+              "Design"
+            ],
+            [
+              "Jonas",
+              "08–16",
+              "Versand +20 Pakete"
+            ],
+            [
+              "Lea",
+              "10–18",
+              "Kundenservice"
+            ]
+          ],
+          "tasks": [
+            [
+              "41 Pakete versendet",
+              "JONAS"
+            ],
+            [
+              "Retouren geprüft",
+              "LEA"
+            ],
+            [
+              "Fotos freigeben",
+              "IDA"
+            ],
+            [
+              "Newsletter Herbst",
+              "LEA"
+            ]
+          ],
+          "domain": "label-nord.de",
+          "eyebrow": "LABEL NORD · HAMBURG",
+          "headline": "Fair genäht in Portugal. Gemacht zum Behalten.",
+          "b1": "Kollektion",
+          "b2": "Größenberater",
+          "listLabel": "Neu im Shop",
+          "items": [
+            [
+              "Leinenhemd Sand",
+              "nur noch M, L",
+              "€89"
+            ],
+            [
+              "Strickjacke Nebel",
+              "Bio-Wolle",
+              "€139",
+              "NEU"
+            ],
+            [
+              "Wide Pants Ton",
+              "alle Größen",
+              "€109"
+            ]
+          ],
+          "siteKi": "Der Größenberater senkt Retouren. Bestand kommt live aus dem System.",
+          "photoAlt": "Kollektion"
+        },
+        {
+          "greet": "Guten Morgen, Dr. Koch.",
+          "kpis": [
+            [
+              "Termine heute",
+              "32"
+            ],
+            [
+              "Absagen",
+              "2"
+            ],
+            [
+              "Ø Wartezeit",
+              "6 min"
+            ],
+            [
+              "Online gebucht",
+              "9"
+            ]
+          ],
+          "sug": "2 Absagen um 11 Uhr. Patienten auf der Warteliste informieren?",
+          "todo": [
+            "Rezepte Frau Berg vorbereitet",
+            "Rückruf Herr Yilmaz"
+          ],
+          "teamKi": "3 Absagen wegen Grippewelle. Warteliste angeschrieben, 2 Termine neu vergeben.",
+          "shiftLabel": "Dienstplan",
+          "shifts": [
+            [
+              "Anna",
+              "07–13",
+              "Empfang"
+            ],
+            [
+              "Max",
+              "08–16",
+              "Labor statt Empfang"
+            ],
+            [
+              "Selin",
+              "12–19",
+              "Empfang"
+            ]
+          ],
+          "tasks": [
+            [
+              "Rezepte vorbereitet",
+              "ANNA"
+            ],
+            [
+              "Laborwerte versendet",
+              "MAX"
+            ],
+            [
+              "Rückruf Herr Yilmaz",
+              "SELIN"
+            ],
+            [
+              "Quartalsabrechnung",
+              "ANNA"
+            ]
+          ],
+          "domain": "praxis-koch.de",
+          "eyebrow": "PRAXIS DR. KOCH · KÖLN",
+          "headline": "Termin online buchen. Ohne Warteschleife.",
+          "b1": "Termin buchen",
+          "b2": "Rezept bestellen",
+          "listLabel": "Freie Termine heute",
+          "items": [
+            [
+              "11:00 Uhr",
+              "Sprechstunde",
+              "frei"
+            ],
+            [
+              "14:30 Uhr",
+              "Vorsorge",
+              "frei"
+            ],
+            [
+              "17:15 Uhr",
+              "Video-Sprechstunde",
+              "frei",
+              "NEU"
+            ]
+          ],
+          "siteKi": "9 Online-Buchungen heute. Das Telefon klingelt spürbar weniger.",
+          "photoAlt": "Praxis-Empfang"
+        },
+        {
+          "greet": "Guten Morgen, Herr Brandt.",
+          "kpis": [
+            [
+              "Offene Aufträge",
+              "12"
+            ],
+            [
+              "Angebote offen",
+              "5"
+            ],
+            [
+              "Auslastung",
+              "92 %"
+            ],
+            [
+              "Rechnungen offen",
+              "€8,6k"
+            ]
+          ],
+          "sug": "Angebot Küche Müller seit 9 Tagen offen. Freundlich nachfassen?",
+          "todo": [
+            "Material Auftrag 118 bestellt",
+            "Aufmaß Familie Kern, 14 Uhr"
+          ],
+          "teamKi": "Montage Weber dauert länger. Lukas fährt direkt zu Kern, der Termin bleibt.",
+          "shiftLabel": "Einsätze heute",
+          "shifts": [
+            [
+              "Brandt",
+              "07–15",
+              "Werkstatt"
+            ],
+            [
+              "Lukas",
+              "07–16",
+              "Kern statt Weber"
+            ],
+            [
+              "Finn",
+              "08–16",
+              "Montage Weber"
+            ]
+          ],
+          "tasks": [
+            [
+              "Material bestellt",
+              "BRANDT"
+            ],
+            [
+              "Baustellenfotos hochgeladen",
+              "FINN"
+            ],
+            [
+              "Aufmaß Familie Kern",
+              "LUKAS"
+            ],
+            [
+              "Rechnung 118 schreiben",
+              "BRANDT"
+            ]
+          ],
+          "domain": "tischlerei-brandt.de",
+          "eyebrow": "TISCHLEREI BRANDT · FREIBURG",
+          "headline": "Möbel nach Maß. Aus Holz aus dem Schwarzwald.",
+          "b1": "Anfrage stellen",
+          "b2": "Projekte",
+          "listLabel": "Neue Anfragen",
+          "items": [
+            [
+              "Einbauschrank",
+              "Fam. Roth, mit Fotos",
+              "heute",
+              "NEU"
+            ],
+            [
+              "Küche Eiche",
+              "Angebot gesendet",
+              "€14k"
+            ],
+            [
+              "Treppe sanieren",
+              "Aufmaß geplant",
+              "Do"
+            ]
+          ],
+          "siteKi": "4 Anfragen diese Woche, mit Maßen und Fotos. Landen direkt im Cockpit.",
+          "photoAlt": "Werkstatt"
+        }
+      ]
+    },
+    "nerven": {
+      "eyebrow": "NERVEN · KI IM ALLTAG",
+      "title": "Sie müssen nicht nachsehen. Es meldet sich.",
+      "lead": "Das Gehirn beobachtet Kasse, Lager, Termine und Anfragen. Wenn etwas auffällt, bekommen Sie einen klaren Vorschlag. Ein Tipp, und es ist erledigt.",
+      "day": "EIN DIENSTAG IM CAFÉ LINDE",
+      "now": "JETZT",
+      "date": "Dienstag, 14. Oktober",
+      "from": "RIDEFF",
+      "justNow": "jetzt",
+      "events": [
+        [
+          "Backplan",
+          "angepasst",
+          "Heute 30 % weniger backen?",
+          "Montags und dienstags bleibt Kuchen übrig."
+        ],
+        [
+          "Regen",
+          "Schicht innen",
+          "Regen ab 14 Uhr",
+          "Deniz übernimmt innen, Schichtplan angepasst."
+        ],
+        [
+          "Gast",
+          "glutenfrei?",
+          "Gast fragt: glutenfrei?",
+          "Antwort gesendet: Apfel-Crumble ist glutenfrei."
+        ],
+        [
+          "17 Vorbestellungen",
+          "online",
+          "17 Vorbestellungen",
+          "Online eingegangen, Vitrine eingeplant."
+        ],
+        [
+          "Vitrine",
+          "Erinnerung",
+          "Vitrine auffüllen",
+          "Käsekuchen fast weg. Deniz ist informiert."
+        ],
+        [
+          "Tagesbericht",
+          "€1.284",
+          "Tagesbericht",
+          "€1.284 Umsatz · Wareneinsatz 29 %"
+        ]
+      ]
+    },
+    "ablauf": {
+      "eyebrow": "SO ARBEITEN WIR",
+      "title": "Erst Ihr Alltag. Dann die Software.",
+      "lead": "Kein Baukasten, keine Agentur-Kette. Ein Ansprechpartner, vom ersten Gespräch bis zum laufenden Betrieb.",
+      "steps": [
+        [
+          "01 · WOCHE 1",
+          "Erstgespräch",
+          "30 Minuten, unverbindlich. Sie erzählen, wie Ihr Tag läuft und wo es hakt.",
+          "KLARHEIT, OB ES PASST"
+        ],
+        [
+          "02 · WOCHE 1–2",
+          "Analyse",
+          "Wir schauen uns Abläufe, Tools und Daten an. Vor Ort oder per Video.",
+          "PLAN UND ANGEBOT"
+        ],
+        [
+          "03 · WOCHE 3–8",
+          "Bauen",
+          "Gehirn, Körper, Nerven. Sie testen jede Woche mit, nichts kommt als Überraschung.",
+          "SYSTEM LIVE"
+        ],
+        [
+          "04 · JEDEN MONAT",
+          "Begleiten",
+          "Pflege, Updates, neue Ideen. Das System wächst mit Ihrem Betrieb.",
+          "WÄCHST MIT"
+        ]
+      ]
+    },
+    "flowGap": {
+      "line1": "KI löst heute Probleme, an denen Menschen gescheitert sind.",
+      "line2": "Stellen Sie sich vor, was sie in Ihrem Betrieb findet."
+    },
+    "wer": {
+      "eyebrow": "WER DAHINTER STEHT",
+      "quote": "„Wir bauen kein System für alle. Wir bauen Ihres.“",
+      "text": "Jeder Betrieb läuft anders. Deshalb fangen wir nicht mit Software an, sondern mit Ihrem Alltag. Dann bauen wir Gehirn, Körper und Nerven dazu, auf Ihrer Plattform, mit Ihren Daten. Und wir bleiben, jeden Monat.",
+      "name": "Rialto Effendy",
+      "role": "GRÜNDER · LEITET JEDES PROJEKT"
+    },
+    "projekt": {
+      "eyebrow": "PROJEKT",
+      "title": "Gebaut, live, betreut.",
+      "read": "Fallstudie lesen →",
+      "kicker": "ECHTER KUNDE · STREETWEAR",
+      "name": "TIC Originals",
+      "text": "Shop und Bestellsystem in einem. Drops, Bundles, Checkout, Sendungsverfolgung und Kundenkonten.",
+      "facts": [
+        [
+          "LIVE SEIT",
+          "April 2026"
+        ],
+        [
+          "BETREUUNG",
+          "monatlich"
+        ],
+        [
+          "UMFANG",
+          "Shop + Backoffice"
+        ]
+      ],
+      "imgAlt": "TIC Originals",
+      "modal": {
+        "kicker": "FALLSTUDIE · STREETWEAR",
+        "facts": [
+          [
+            "LIVE SEIT",
+            "April 2026"
+          ],
+          [
+            "BETREUUNG",
+            "Monatlich"
+          ],
+          [
+            "UMFANG",
+            "Shop + Backoffice"
+          ]
+        ],
+        "builtTitle": "Was gebaut wurde",
+        "built": "Shop und Bestellsystem in einem: Drops, Bundles, Checkout, Sendungsverfolgung und Kundenkonten. Dahinter ein Backoffice für Bestand und Bestellungen.",
+        "resultTitle": "Ergebnis",
+        "cta": "So ein Projekt besprechen →",
+        "imgAlts": [
+          "TIC Originals",
+          "TIC Shop",
+          "TIC Backoffice"
+        ]
+      }
+    },
+    "pakete": {
+      "eyebrow": "PAKETE",
+      "title": "So viel System, wie Sie brauchen.",
+      "where": "WO STEHEN SIE?",
+      "stages": [
+        "Noch nichts da",
+        "Etwas da",
+        "Alles da"
+      ],
+      "fit": "Passt zu Ihnen",
+      "from": "ab",
+      "perMonth": "/ Monat",
+      "plans": [
+        {
+          "k": "CORE",
+          "sub": "Internes System + KI",
+          "price": "€149",
+          "setup": "+ ab €1.290 Setup · 12 Monate Laufzeit",
+          "f": [
+            "Aufgaben & Checklisten",
+            "Abläufe (SOPs) mit KI",
+            "Lager & Bestand",
+            "Inhaber-Cockpit"
+          ],
+          "cta": "Erstgespräch zu Core →"
+        },
+        {
+          "k": "GROWTH",
+          "sub": "Core + Website oder Shop",
+          "price": "€249",
+          "setup": "+ ab €1.990 Setup · 12 Monate Laufzeit",
+          "f": [
+            "Alles aus Core",
+            "Branchenpaket",
+            "Website oder Online-Shop",
+            "Team-App"
+          ],
+          "cta": "Erstgespräch zu Growth →"
+        },
+        {
+          "k": "WHOLE SYSTEM",
+          "sub": "Jeder Teil gebaut und verbunden",
+          "price": "€449",
+          "setup": "+ ab €3.900 Setup · 12 Monate Laufzeit",
+          "f": [
+            "Buchung, Kasse, Lieferanten",
+            "Buchhaltung · DATEV",
+            "Schichten, Bewertungen, CRM",
+            "Alles an einem Gehirn"
+          ],
+          "cta": "Erstgespräch zu Whole system →"
+        }
+      ],
+      "net": "Alle Preise netto, zzgl. MwSt."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Häufige Fragen.",
+      "intro": "Ihre Frage ist nicht dabei? Schreiben Sie uns:",
+      "items": [
+        [
+          "Muss mein Team etwas Neues lernen?",
+          "Kaum. Die Team-App wird nach Ihren Abläufen gebaut, mit Ihren Begriffen. Die meisten Teams arbeiten nach einem Tag damit, ohne Schulung."
+        ],
+        [
+          "Was passiert mit meinen bestehenden Tools?",
+          "Was gut läuft, wird angebunden, zum Beispiel Kasse oder Buchhaltung. Was stört, ersetzen wir Schritt für Schritt. Nichts wird über Nacht abgeschaltet."
+        ],
+        [
+          "Wem gehören meine Daten?",
+          "Ihnen. DSGVO-konform, Hosting in der EU. Sie können alles jederzeit exportieren."
+        ],
+        [
+          "Wie lange dauert es, bis alles läuft?",
+          "Meist vier bis acht Wochen vom Erstgespräch bis live, je nach Umfang."
+        ],
+        [
+          "Was kostet es im Monat?",
+          "Ein fester Monatsbetrag je nach Paket, Pflege und Updates inklusive. Die Pakete finden Sie weiter oben."
+        ],
+        [
+          "Kann ich kündigen?",
+          "Ja. Nach 12 Monaten Mindestlaufzeit monatlich mit 30 Tagen Frist. Ihre Daten nehmen Sie mit."
+        ]
+      ]
+    },
+    "kontakt": {
+      "eyebrow": "KONTAKT",
+      "title": "Was fehlt bei Ihnen? <accent>Finden wir es heraus.</accent>",
+      "text": "30 Minuten, kostenlos, per Video. Sie erzählen, wie Ihr Betrieb heute läuft. Wir zeigen, was Gehirn, Körper und Nerven bei Ihnen sein könnten.",
+      "write": "Lieber schreiben?",
+      "widget": "ERSTGESPRÄCH · 30 MIN",
+      "month": "OKTOBER",
+      "days": [
+        "MI 15",
+        "DO 16",
+        "FR 17",
+        "MO 20",
+        "DI 21"
+      ],
+      "daysShort": [
+        "Mi 15.",
+        "Do 16.",
+        "Fr 17.",
+        "Mo 20.",
+        "Di 21."
+      ],
+      "book": "{slot} buchen →",
+      "booked": "Termin angefragt.",
+      "bookedMeta": "{day} OKT · {time} · 30 MIN · VIDEO",
+      "confirm": "Sie bekommen gleich eine Bestätigung per E-Mail mit dem Link zum Gespräch.",
+      "other": "Anderen Termin wählen"
+    }
   }
 }
