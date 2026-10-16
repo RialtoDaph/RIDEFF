@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
 import { INTRO_DECIDE_SCRIPT } from '@/lib/intro';
+import { defaultMetadata } from '@/lib/metadata';
 import { ScrollBackdrop } from '@/components/ScrollBackdrop';
 import '../globals.css';
 
@@ -20,9 +21,11 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-};
+export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+  const { locale } = await params;
+  const l = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return { metadataBase: new URL(SITE_URL), ...(await defaultMetadata(l)) };
+}
 
 export const viewport: Viewport = {
   themeColor: '#0B0B0C',

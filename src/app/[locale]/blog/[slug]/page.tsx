@@ -6,6 +6,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Link } from '@/i18n/navigation';
 import { formatDate, getPost, getPosts } from '@/lib/blog';
 import { signupUrl } from '@/lib/site';
+import { socialMeta } from '@/lib/og';
 import { BlogHeader } from '@/components/blog/BlogHeader';
 import { TagLabel } from '@/components/blog/TagLabel';
 import { Footer } from '@/components/Footer';
@@ -18,11 +19,13 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/blog/[sl
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  const social = await socialMeta('de');
   return {
+    twitter: social.twitter,
     title: `${post.meta.title} · RIDEFF`,
     description: post.meta.excerpt,
     alternates: { canonical: `/blog/${slug}` },
-    openGraph: { type: 'article', title: post.meta.title, description: post.meta.excerpt, publishedTime: post.meta.date },
+    openGraph: { type: 'article', siteName: 'RIDEFF', locale: 'de_DE', title: post.meta.title, description: post.meta.excerpt, publishedTime: post.meta.date, images: [social.image] },
   };
 }
 
