@@ -2,7 +2,7 @@ import type { Locale } from '@/i18n/routing';
 
 export const SITE_URL = 'https://rideff.com';
 export const APP_URL = 'https://app.rideff.com';
-export const PORTAL_URL = 'https://portal.rideff.com';
+export const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://portal.rideff.com';
 export const EMAIL = 'hallo@rideff.com';
 
 export type Mode = 'business' | 'private';

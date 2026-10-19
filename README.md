@@ -38,7 +38,8 @@ See `.env.example`.
 |---|---|
 | `NEXT_PUBLIC_CAL_BUSINESS` | Cal.com slug for the Business Erstgespräch (e.g. `rideff/erstgespraech`). Empty: booking opens `mailto:hallo@rideff.com` with the subject "Erstgespräch". |
 | `NEXT_PUBLIC_CAL_LIFE_PRIVATE` | Cal.com slug for Life Private (e.g. `rideff/life-private`). Empty: `mailto:` with the subject "Life Private". |
-| `NEXT_PUBLIC_PORTAL_LIVE` | `true` links "Kundenportal" to portal.rideff.com; otherwise it shows "Bald verfügbar" and is not clickable. |
+| `NEXT_PUBLIC_PORTAL_LIVE` | `true` links "Kundenportal" to the portal; otherwise it shows "Bald verfügbar" and is not clickable. |
+| `NEXT_PUBLIC_PORTAL_URL` | Portal address. Empty: `https://portal.rideff.com`. Use e.g. `https://rideff-portal.vercel.app` until the subdomain is set up. |
 
 ## Content to fill in later
 
