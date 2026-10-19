@@ -1,0 +1,142 @@
+{
+  "_comment": "Owner-approved translations that are not in the handoff tables.",
+  "a11y.skipToContent": {
+    "en": "Skip to content",
+    "id": "Langsung ke konten"
+  },
+  "a11y.menuOpen": {
+    "en": "Open menu",
+    "id": "Buka menu"
+  },
+  "a11y.menuClose": {
+    "en": "Close menu",
+    "id": "Tutup menu"
+  },
+  "a11y.chooseLanguage": {
+    "en": "Choose language",
+    "id": "Pilih bahasa"
+  },
+  "a11y.mainNav": {
+    "en": "Main navigation",
+    "id": "Navigasi utama"
+  },
+  "a11y.close": {
+    "en": "Close",
+    "id": "Tutup"
+  },
+  "a11y.next": {
+    "en": "Next",
+    "id": "Berikutnya"
+  },
+  "a11y.previous": {
+    "en": "Previous",
+    "id": "Sebelumnya"
+  },
+  "nav.portalSoon": {
+    "en": "Coming soon",
+    "id": "Segera hadir"
+  },
+  "biz.pakete.net": {
+    "en": "All prices net, plus VAT.",
+    "id": "Semua harga belum termasuk PPN."
+  },
+  "biz.kontakt.emailCta": {
+    "en": "Request a slot by email →",
+    "id": "Minta jadwal lewat email →"
+  },
+  "biz.platform.data.1.items.1.0": {
+    "en": "Apple crumble",
+    "id": "Apple crumble"
+  },
+  "demo:dienst.slots.1": {
+    "en": "Tue 14:00"
+  },
+  "demo:dienst.slots.2": {
+    "en": "Thu 09:00"
+  },
+  "demo:dienst.slots.3": {
+    "en": "Fri 11:00"
+  },
+  "demo:dienst.goals.0.0": {
+    "en": "Revenue 2026: €720,000"
+  },
+  "demo:dienst.goals.0.3": {
+    "en": "€533,000 so far"
+  },
+  "demo.back": {
+    "en": "← Back to website"
+  },
+  "demo.what.yes": {
+    "en": "yes"
+  },
+  "demo.what.no": {
+    "en": "no"
+  },
+  "demo:dienst.goals.2.4": {
+    "en": "reached"
+  },
+  "notFound.text": {
+    "en": "This page doesn't exist. Your brain does.",
+    "id": "Halaman ini tidak ada. Otak Anda tetap ada."
+  },
+  "notFound.home": {
+    "en": "Home",
+    "id": "Beranda"
+  },
+  "blog.readingTime": {
+    "en": "{n} min read",
+    "id": "{n} menit baca"
+  },
+  "blog.back": {
+    "en": "← All articles",
+    "id": "← Semua artikel"
+  },
+  "newsletter.unavailable": {
+    "en": "That didn't work just now. Please try again later.",
+    "id": "Gagal untuk saat ini. Silakan coba lagi nanti."
+  },
+  "newsletter.confirmed.title": {
+    "en": "Subscription confirmed.",
+    "id": "Langganan dikonfirmasi."
+  },
+  "newsletter.confirmed.text": {
+    "en": "From now on, one lever lands in your inbox once a month. Unsubscribe with one click.",
+    "id": "Mulai sekarang, sebulan sekali satu trik masuk ke kotak masuk Anda. Berhenti langganan dengan satu klik."
+  },
+  "newsletter.confirmed.back": {
+    "en": "Back to website",
+    "id": "Kembali ke website"
+  },
+  "newsletter.expired.title": {
+    "en": "This link has expired.",
+    "id": "Tautan ini sudah kedaluwarsa."
+  },
+  "newsletter.expired.text": {
+    "en": "Confirmation links are valid for 48 hours. Just sign up again at the bottom of the website.",
+    "id": "Tautan konfirmasi berlaku 48 jam. Silakan daftar lagi di bagian bawah website."
+  },
+  "newsletter.expired.back": {
+    "en": "Back to website",
+    "id": "Kembali ke website"
+  },
+  "newsletter.mail.subject": {
+    "en": "Please confirm your subscription",
+    "id": "Mohon konfirmasi langganan Anda"
+  },
+  "newsletter.mail.hello": {
+    "en": "Hello,",
+    "id": "Halo,"
+  },
+  "newsletter.mail.body": {
+    "en": "please confirm that you'd like to receive the RIDEFF newsletter. Once a month, one lever hardly anyone knows.",
+    "id": "mohon konfirmasi bahwa Anda ingin menerima newsletter RIDEFF. Sebulan sekali, satu trik yang jarang diketahui orang."
+  },
+  "newsletter.mail.button": {
+    "en": "Confirm subscription",
+    "id": "Konfirmasi langganan"
+  },
+  "newsletter.mail.ignore": {
+    "en": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours.",
+    "id": "Jika Anda tidak mendaftar, abaikan saja email ini. Tautan berlaku 48 jam."
+  }
+}

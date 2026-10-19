@@ -1,0 +1,1848 @@
+{
+  "meta": {
+    "siteName": "RIDEFF",
+    "business": {
+      "title": "RIDEFF · Bisnis Anda mendapat otak.",
+      "description": "Website, sistem internal, dan AI, dibuat khusus untuk bisnis Anda. Satu tim, satu kontak, dari obrolan pertama sampai pendampingan bulanan."
+    },
+    "private": {
+      "title": "RIDEFF Life · Hidup Anda mendapat otak.",
+      "description": "30 detik setiap pagi: apa yang menguras uang, apa yang memakan waktu, dan apa yang mendekatkan Anda ke tujuan. Dibuat untuk hidup Anda, bukan template."
+    }
+  },
+  "mode": {
+    "business": "BUSINESS",
+    "private": "PRIVATE",
+    "productBusiness": "BUSINESS",
+    "productLife": "LIFE"
+  },
+  "nav": {
+    "business": {
+      "plattform": "Platform",
+      "ablauf": "Cara kami bekerja",
+      "projekt": "Proyek",
+      "pakete": "Paket",
+      "faq": "FAQ"
+    },
+    "private": {
+      "module": "Modul",
+      "ablauf": "Cara kerjanya",
+      "daten": "Privasi",
+      "preis": "Harga",
+      "faq": "FAQ"
+    },
+    "portal": "Portal klien",
+    "firstCall": "Konsultasi awal",
+    "login": "Masuk",
+    "tryFree": "Coba gratis",
+    "portalSoon": "Segera hadir"
+  },
+  "hero": {
+    "business": {
+      "title": "Bisnis Anda mendapat <accent>otak.</accent>",
+      "lead": "Website, sistem internal, dan AI, dibuat khusus untuk bisnis Anda. Satu tim, satu kontak, dari obrolan pertama sampai pendampingan bulanan.",
+      "cta": "Konsultasi gratis →",
+      "demo": "Lihat demo langsung ↗",
+      "tags": {
+        "eu": "HOSTING DI UE",
+        "dsgvo": "GDPR & DPA",
+        "custom": "DIBUAT KHUSUS"
+      }
+    },
+    "private": {
+      "title": "Hidup Anda mendapat <accent>otak.</accent>",
+      "lead": "30 detik setiap pagi: apa yang menguras uang, apa yang memakan waktu, dan apa yang mendekatkan Anda ke tujuan. Dibuat untuk hidup Anda, bukan template.",
+      "cta": "Coba gratis 14 hari →",
+      "tags": {
+        "eu": "DATA DI UE",
+        "consent": "HANYA DENGAN IZIN ANDA",
+        "trial": "GRATIS 14 HARI"
+      }
+    }
+  },
+  "intro": {
+    "skip": "Lewati intro"
+  },
+  "footer": {
+    "business": {
+      "claim": "Bisnis Anda mendapat otak.",
+      "cta": "Jadwalkan konsultasi →",
+      "platform": {
+        "title": "PLATFORM",
+        "cockpit": "Cockpit",
+        "teamApp": "App tim",
+        "website": "Website",
+        "ai": "AI sehari-hari"
+      },
+      "company": {
+        "title": "RIDEFF",
+        "ablauf": "Cara kami bekerja",
+        "projekt": "Proyek",
+        "pakete": "Paket",
+        "faq": "FAQ",
+        "portal": "Portal klien"
+      },
+      "location": "Jerman"
+    },
+    "private": {
+      "claim": "Hidup Anda mendapat otak.",
+      "sub": "Web app untuk HP dan laptop. Uang, waktu, dan tujuan di satu tempat.",
+      "life": {
+        "title": "RIDEFF LIFE",
+        "money": "Uang",
+        "time": "Waktu",
+        "goals": "Tujuan",
+        "ai": "AI sehari-hari"
+      },
+      "more": {
+        "title": "LAINNYA",
+        "ablauf": "Cara kerjanya",
+        "daten": "Privasi",
+        "preis": "Harga",
+        "faq": "FAQ",
+        "tryFree": "Coba gratis",
+        "login": "Masuk",
+        "lifePrivate": "Life Private",
+        "forBusiness": "Untuk bisnis →"
+      },
+      "location": "Hosting di UE"
+    },
+    "contact": {
+      "title": "KONTAK",
+      "hours": "Sen–Jum · 09.00–18.00"
+    },
+    "newsletter": {
+      "title": "Sebulan sekali. Satu trik yang jarang diketahui orang.",
+      "sub": "Singkat, konkret, tanpa iklan. Berhenti langganan dengan satu klik.",
+      "placeholder": "nama@contoh.com",
+      "label": "Email",
+      "submit": "Langganan",
+      "error": "MASUKKAN ALAMAT EMAIL YANG VALID.",
+      "done": "Hampir selesai. Silakan konfirmasi email di kotak masuk Anda."
+    },
+    "copyright": "© 2026 RIDEFF",
+    "legal": {
+      "impressum": "IMPRESSUM",
+      "datenschutz": "PRIVASI",
+      "agb": "S&K"
+    }
+  },
+  "a11y": {
+    "skipToContent": "Langsung ke konten",
+    "menuOpen": "Buka menu",
+    "menuClose": "Tutup menu",
+    "chooseLanguage": "Pilih bahasa",
+    "mainNav": "Navigasi utama",
+    "close": "Tutup",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya"
+  },
+  "life": {
+    "phone": {
+      "notifFrom": "RIDEFF Life · sekarang",
+      "notifs": [
+        "4 temuan baru di keseharian Anda.",
+        "Disney+ tak dipakai 4 bulan. Batalkan?",
+        "Olahraga dipindah ke Kamis, pas dengan shift.",
+        "Tunjangan komuter ditemukan: sekitar €412 kembali.",
+        "Bali 3 minggu lebih dekat."
+      ],
+      "s0": {
+        "label": "SELASA · BRIEFING",
+        "title": "Selamat pagi, Lea.",
+        "goalLabel": "TUJUAN · BALI",
+        "goalValue": "€3.240 dari €5.000",
+        "week": "3 hal untuk minggu ini",
+        "items": [
+          [
+            "Batalkan Disney+",
+            "+9,99 €"
+          ],
+          [
+            "Tunjangan komuter",
+            "+412 €"
+          ],
+          [
+            "Olahraga hari Kamis",
+            "+1 jam"
+          ]
+        ]
+      },
+      "s1": {
+        "label": "DITEMUKAN HARI INI",
+        "title": "4 hal, otomatis.",
+        "stats": [
+          [
+            "DITEMUKAN",
+            "47 €"
+          ],
+          [
+            "WAKTU",
+            "3,5 jam"
+          ],
+          [
+            "BALI",
+            "−3 mgg"
+          ]
+        ],
+        "rows": [
+          [
+            "UANG",
+            "Disney+ tak dipakai 4 bulan"
+          ],
+          [
+            "WAKTU",
+            "Olahraga dipindah ke Kamis"
+          ],
+          [
+            "PAJAK",
+            "Sekitar €412 kembali"
+          ],
+          [
+            "TUJUAN",
+            "Bali 3 minggu lebih dekat"
+          ]
+        ]
+      },
+      "s2": {
+        "label": "UANG · SEPTEMBER",
+        "title": "3 langganan tak terpakai.",
+        "subs": [
+          [
+            "Disney+",
+            "Tak dipakai 4 bulan",
+            "9,99 €"
+          ],
+          [
+            "Gym",
+            "2× per kuartal",
+            "24,99 €"
+          ],
+          [
+            "Cloud dobel",
+            "Google & iCloud",
+            "2,99 €"
+          ],
+          [
+            "Spotify",
+            "Harian",
+            "17,99 €"
+          ]
+        ],
+        "saved": "Hemat",
+        "savedValue": "€37,97 /bln"
+      },
+      "s3": {
+        "label": "WAKTU · MINGGU INI",
+        "title": "3,5 jam kembali.",
+        "days": [
+          "SEN",
+          "SEL",
+          "RAB",
+          "KAM",
+          "JUM"
+        ],
+        "rows": [
+          [
+            "Shift digabung",
+            "+2 jam"
+          ],
+          [
+            "Olahraga Kam 18.00",
+            "tetap"
+          ],
+          [
+            "Belanja dipindah ke Rabu",
+            "+1,5 jam"
+          ]
+        ]
+      },
+      "s4": {
+        "label": "TUJUAN · BALI",
+        "title": "Maret, bukan Juni.",
+        "pct": "65 %",
+        "value": "€3.240 dari €5.000",
+        "rows": [
+          [
+            "Langganan dibatalkan",
+            "−5 mgg"
+          ],
+          [
+            "Pengembalian pajak",
+            "−5 mgg"
+          ],
+          [
+            "Kopi dikurangi separuh",
+            "−3 mgg"
+          ]
+        ]
+      },
+      "cards": [
+        [
+          "TUJUAN · BALI",
+          "65 %",
+          "€3.240 dari €5.000",
+          "PAJAK",
+          "+412 €",
+          "Tunjangan komuter"
+        ],
+        [
+          "DITEMUKAN",
+          "€47 /bln",
+          "Terdeteksi otomatis",
+          "WAKTU",
+          "3,5 jam",
+          "Kembali per minggu"
+        ],
+        [
+          "DIBATALKAN",
+          "Disney+",
+          "Tak dipakai 4 bulan",
+          "HEMAT",
+          "37,97 €",
+          "Setiap bulan"
+        ],
+        [
+          "JADWAL",
+          "Olahraga Kam",
+          "18.00, pas dengan shift",
+          "WAKTU",
+          "+3,5 jam",
+          "Per minggu"
+        ],
+        [
+          "TANGGAL BARU",
+          "Maret",
+          "bukan Juni 2027",
+          "TUJUAN",
+          "−3 mgg",
+          "Lebih cepat ke Bali"
+        ]
+      ]
+    },
+    "problem": {
+      "eyebrow": "MASALAHNYA",
+      "title": "Anda tahu jawabannya tanpa mengecek?",
+      "questions": [
+        "Berapa biaya langganan Anda per bulan?",
+        "Berapa jam lembur bulan ini?",
+        "Berapa pengembalian pajak Anda?",
+        "Kapan Anda bisa mencapai tujuan?"
+      ],
+      "answers": [
+        "€ 47",
+        "12 jam",
+        "€ 412",
+        "Maret 2027"
+      ],
+      "scramblePrefix": [
+        "€ ",
+        "",
+        "€ ",
+        ""
+      ],
+      "scrambleSuffix": [
+        "",
+        " jam",
+        "",
+        ""
+      ],
+      "outro": "Kalau Anda harus menebak dua kali: justru untuk itu ada <b>RIDEFF Life</b>.",
+      "done": "BEGINI JADINYA DENGAN RIDEFF LIFE"
+    },
+    "module": {
+      "eyebrow": "MODUL",
+      "title": "Anda sebut tujuannya. Life cari caranya.",
+      "lead": "Pertama, apa yang Anda mau. Lalu Life menunjukkan pengeluaran dan jam mana yang membawa Anda ke sana. Uang, waktu, dan tujuan bekerja bersama.",
+      "goalLabel": "TUJUAN ANDA",
+      "goal": "Bali, €5.000",
+      "capNone": "TANPA PERUBAHAN",
+      "capWith": "DENGAN LIFE",
+      "dates": [
+        "JUNI 2027",
+        "MEI 2027",
+        "APRIL 2027",
+        "MARET 2027"
+      ],
+      "today": "HARI INI",
+      "withoutLife": "TANPA LIFE",
+      "withLife": "DENGAN LIFE",
+      "months": [
+        "OKT",
+        "NOV",
+        "DES",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MEI",
+        "JUN"
+      ],
+      "hint": "COBA SENDIRI: NYALAKAN DAN MATIKAN TUAS",
+      "levers": [
+        [
+          "UANG",
+          "Batalkan 3 langganan",
+          "−5 mgg"
+        ],
+        [
+          "PAJAK",
+          "Klaim tunjangan komuter",
+          "−3 mgg"
+        ],
+        [
+          "WAKTU",
+          "Kopi di jalan dikurangi separuh",
+          "−2 mgg"
+        ]
+      ],
+      "gapSteps": [
+        "",
+        "−5 MGG",
+        "−8 MGG",
+        "−10 MINGGU"
+      ],
+      "gapWeeks": {
+        "2": "−2 MGG",
+        "3": "−3 MGG",
+        "5": "−5 MGG",
+        "7": "−7 MGG",
+        "8": "−8 MGG",
+        "10": "−10 MGG"
+      },
+      "badgeWeeks": {
+        "2": "2 MINGGU LEBIH CEPAT",
+        "3": "3 MINGGU LEBIH CEPAT",
+        "5": "5 MINGGU LEBIH CEPAT",
+        "7": "7 MINGGU LEBIH CEPAT",
+        "8": "8 MINGGU LEBIH CEPAT",
+        "10": "10 MINGGU LEBIH CEPAT"
+      },
+      "badgeNone": "TIDAK ADA TUAS AKTIF",
+      "insteadOf": "BUKAN JUNI 2027"
+    },
+    "flowGap": {
+      "line1": "AI kini memecahkan masalah yang tak terpecahkan manusia.",
+      "line2": "Bayangkan apa yang ia temukan dalam hidup Anda."
+    },
+    "day": {
+      "eyebrow": "SEHARI BERSAMA LIFE",
+      "scenes": [
+        {
+          "time": "07:00",
+          "dot": "BESOK",
+          "title": "Hari dimulai dengan rapi.",
+          "text": "Satu briefing, bukan lima aplikasi. Janji, anggaran, dan tujuan sekilas, sebelum kopi siap.",
+          "label": "BRIEFING",
+          "msg": "Selamat pagi, Lea. 3 janji hari ini, sisa €18 untuk makan.",
+          "a1": "Lihat hari ini",
+          "a2": "Nanti",
+          "bali": "142 hari"
+        },
+        {
+          "time": "12:30",
+          "dot": "SIANG",
+          "title": "Keputusan kecil, dampak besar.",
+          "text": "Life ikut menghitung saat penting. Bukan dengan menggurui, tapi dengan angka.",
+          "label": "SARAN",
+          "msg": "Kantin, bukan pesan antar, hemat €9 hari ini. Bali sehari lebih dekat.",
+          "a1": "Kantin",
+          "a2": "Hari ini tidak",
+          "bali": "141 hari"
+        },
+        {
+          "time": "18:00",
+          "dot": "SORE",
+          "title": "Waktu yang jadi milik Anda.",
+          "text": "Life tahu shift dan janji Anda, dan menemukan celah waktu yang biasanya hilang.",
+          "label": "WAKTU",
+          "msg": "Kamis jam 18.00 kosong. Jadwalkan olahraga?",
+          "a1": "Jadwalkan",
+          "a2": "Tidak, terima kasih",
+          "bali": "141 hari"
+        },
+        {
+          "time": "22:00",
+          "dot": "RANGKUMAN",
+          "title": "Tidur dengan tenang: semua berjalan.",
+          "text": "Tak perlu cek aplikasi bank dengan cemas. Life memberi tahu singkat posisi Anda, lalu tenang.",
+          "label": "HARI INI",
+          "msg": "€14 di bawah anggaran. Minggu ini sudah 2 hari lebih dekat ke Bali.",
+          "a1": "Selamat malam",
+          "a2": "Detail",
+          "bali": "140 hari"
+        }
+      ],
+      "phoneBrand": "RIDEFF LIFE",
+      "goal": "Tujuan Bali",
+      "askTitle": "Dan di sela-selanya? Tinggal tanya.",
+      "askSub": "DARI DATA ANDA, BUKAN DARI INTERNET",
+      "ask": [
+        [
+          "Ke mana uang saya pergi?",
+          "38 % makan & belanja, 12 % langganan."
+        ],
+        [
+          "Kapan saya sempat olahraga?",
+          "Kamis 18.00, shift selesai jam 16."
+        ],
+        [
+          "Berapa pengembalian pajak saya?",
+          "Sekitar €412 dari tunjangan komuter."
+        ],
+        [
+          "Langganan mana yang mubazir?",
+          "Disney+, gym, cloud kedua."
+        ],
+        [
+          "Cukup untuk dana darurat?",
+          "Ya, €150 per bulan tanpa ganggu Bali."
+        ]
+      ],
+      "askOwn": "Pertanyaan Anda sendiri…",
+      "askOwnCta": "Coba gratis 14 hari →"
+    },
+    "weiter": {
+      "eyebrow": "BERPIKIR LEBIH JAUH",
+      "title": "Life berpikir lebih jauh dari pertanyaan Anda.",
+      "lead": "Di platform milik Anda sendiri, AI meriset cara Anda naik karier dan finansial, berdasarkan data Anda. Ia menemukan peluang yang tak pernah terpikir oleh Anda.",
+      "tags": [
+        "BERDASARKAN DATA ANDA",
+        "PLATFORM MILIK ANDA",
+        "BRAINSTORMING"
+      ],
+      "research": "RISET · KHUSUS UNTUK ANDA",
+      "scanning": "MENCARI …",
+      "found": "3 TEMUAN",
+      "findings": [
+        [
+          "KARIER",
+          "LINKEDIN · GAJI",
+          "Dengan pengalaman 6 tahun, gaji Anda 11% di bawah pasar. Saatnya bicara di bulan Januari."
+        ],
+        [
+          "KEUANGAN",
+          "MUTASI REKENING",
+          "Dana darurat Anda berbunga 0%. Rekening tabungan bisa memberi sekitar €310 per tahun."
+        ],
+        [
+          "PASTI TERLEWAT",
+          "KONTRAK KERJA",
+          "Perusahaan Anda menanggung hingga €1.200 untuk pelatihan. Belum pernah dipakai."
+        ]
+      ],
+      "brainstorm": "BRAINSTORMING",
+      "user": "Haruskah saya mulai usaha sampingan?",
+      "ai": "Mari kita uraikan. Dengan tabungan Anda dan 8 jam luang per minggu, ada tiga jalan yang realistis.",
+      "paths": [
+        "Mulai paruh waktu",
+        "Uji ke klien dulu",
+        "Mulai penuh 2027"
+      ],
+      "input": "Tulis ide…"
+    },
+    "ablauf": {
+      "eyebrow": "CARA KERJANYA",
+      "title": "Lebih singkat dari rehat kopi.",
+      "lead": "Empat langkah, sekali saja. Setelah itu Life yang menghubungi Anda, setiap pagi jam 7.",
+      "steps": [
+        [
+          "Buat akun",
+          "1 MNT"
+        ],
+        [
+          "Unggah mutasi rekening",
+          "3 MNT"
+        ],
+        [
+          "Izinkan kalender",
+          "2 MNT"
+        ],
+        [
+          "Tulis satu tujuan",
+          "4 MNT"
+        ]
+      ],
+      "progress": "4 DARI 10 MENIT",
+      "firstFinds": "TEMUAN PERTAMA SETELAH LANGKAH 2"
+    },
+    "daten": {
+      "eyebrow": "PRIVASI",
+      "title": "Ia makin mengenal Anda. Data Anda tetap milik Anda.",
+      "lead": "Data Anda tersimpan di ruang terenkripsi milik Anda sendiri, bukan di internet terbuka. Yang dimatikan tidak dilihat AI. Sedikit pun tidak.",
+      "tags": [
+        "SERVER DI JERMAN",
+        "TERENKRIPSI",
+        "GDPR"
+      ],
+      "sources": "SUMBER YANG DIIZINKAN",
+      "count": "{n} DARI 4",
+      "items": [
+        "Mutasi rekening (unggah CSV)",
+        "Kalender (Google atau iCloud)",
+        "Jadwal shift (foto atau PDF)",
+        "Bukti pajak (unggah)"
+      ],
+      "wipe": "Hapus semua data",
+      "wiped": "Semua terhapus. Aslinya: seketika dan permanen.",
+      "growTitle": "Makin lama ia mengenal Anda, makin baik bantuannya.",
+      "growSub": "BELAJAR HANYA DARI DATA ANDA, BUKAN DARI INTERNET",
+      "grow": [
+        [
+          "MINGGU 1",
+          "Anda menghabiskan €340 sebulan untuk makan."
+        ],
+        [
+          "BULAN 3",
+          "Kamis adalah hari terbaik Anda untuk olahraga."
+        ],
+        [
+          "TAHUN 1",
+          "Tunda Bali sampai Maret. Lebih murah dan tabungannya lebih penuh."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Pertanyaan umum.",
+      "items": [
+        [
+          "Apakah saya harus menghubungkan rekening bank?",
+          "Tidak. Anda cukup mengunggah mutasi sebagai CSV. Koneksi langsung bersifat opsional."
+        ],
+        [
+          "Untuk siapa RIDEFF Life?",
+          "Untuk siapa saja yang ingin memantau uang, waktu, dan tujuan tanpa mengurus spreadsheet tiap malam. Misalnya kerja shift, keluarga, atau kuliah."
+        ],
+        [
+          "Apakah AI mengambil keputusan untuk saya?",
+          "Tidak. AI memberi saran dan menunjukkan dasarnya. Membatalkan, memindah, atau menabung hanya Anda yang lakukan."
+        ],
+        [
+          "Bagaimana AI menemukan peluang karier dan keuangan?",
+          "Dari data yang Anda bagikan, misalnya mutasi rekening, kontrak kerja, atau CV. Di platform milik Anda sendiri, AI meriset apa yang memajukan karier dan keuangan Anda, termasuk hal yang tak terpikir oleh Anda."
+        ],
+        [
+          "Bisakah saya brainstorming ide dengan AI?",
+          "Bisa. Di ruang brainstorming Anda berpikir bebas, dan Life ikut menghitung dengan angka Anda yang sebenarnya. Hasilnya pilihan jalan, bukan keputusan jadi."
+        ],
+        [
+          "Kapan mulainya?",
+          "Sekarang juga. Buat akun dan coba gratis 14 hari, tanpa data pembayaran. Untuk Life Private, pesan obrolan singkat dulu."
+        ]
+      ]
+    },
+    "preis": {
+      "eyebrow": "HARGA",
+      "title": "Apa yang Anda mau dari Life?",
+      "lead": "Pilih cakupannya. Gratis 14 hari, tanpa data pembayaran. Lalu bisa berhenti tiap bulan. Bayar tahunan: gratis dua bulan. Harga sudah termasuk PPN.",
+      "perMonth": "/ bulan",
+      "tiers": {
+        "life": {
+          "k": "LIFE",
+          "p": "€12,90",
+          "sub": "Untuk Anda. Yang terpenting.",
+          "f": [
+            "Uang, waktu, dan tujuan",
+            "Briefing pagi setiap hari",
+            "Ulasan AI mingguan",
+            "Web app di ponsel dan laptop"
+          ]
+        },
+        "plus": {
+          "k": "LIFE PLUS",
+          "p": "€19,90",
+          "sub": "Untuk Anda. Semua termasuk.",
+          "f": [
+            "Semua dari Life",
+            "Riset AI untuk karier dan keuangan",
+            "Brainstorming dengan angka Anda",
+            "Pajak, olahraga, tidur, dan belajar"
+          ]
+        },
+        "together": {
+          "k": "TOGETHER",
+          "p": "€29,90",
+          "sub": "Untuk pasangan dan keluarga.",
+          "f": [
+            "Semua dari Life Plus",
+            "Hingga 4 orang",
+            "Anggaran dan tujuan bersama",
+            "Ruang pribadi untuk tiap orang"
+          ]
+        }
+      },
+      "cta": "Coba gratis 14 hari →",
+      "private": {
+        "badge": "LIFE PRIVATE",
+        "limited": "KUOTA TERBATAS",
+        "title": "Sistem milik Anda sendiri. Dengan manusia di baliknya.",
+        "text": "Untuk Anda yang lebih dari sekadar satu gaji: usaha sendiri, properti, keluarga, pindah negara. Kami menyiapkan Life bersama Anda dan terus mendampingi.",
+        "price": "mulai €68",
+        "priceSub": "/ bulan · setup sekali mulai €449",
+        "f": [
+          "Semua dari Life Plus",
+          "Setup 1:1, tujuan disusun bersama",
+          "Modul khusus, mis. properti atau usaha sampingan",
+          "Review bulanan dengan manusia sungguhan"
+        ],
+        "cta": "Pesan obrolan gratis →"
+      }
+    },
+    "start": {
+      "eyebrow": "AYO MULAI",
+      "title": "Briefing pertama Anda datang besok pagi.",
+      "text": "Akun dalam tiga menit. Gratis 14 hari, tanpa data pembayaran. Setelah itu Anda yang putuskan.",
+      "cta": "Coba gratis 14 hari →",
+      "compare": "Bandingkan paket",
+      "tags": [
+        "TANPA KARTU",
+        "DATA DI UE",
+        "BISA BERHENTI KAPAN SAJA"
+      ]
+    }
+  },
+  "common": {
+    "ai": "AI"
+  },
+  "biz": {
+    "viz": {
+      "nerves": "SARAF",
+      "brain": "OTAK",
+      "brainSub": "mengenal bisnis Anda",
+      "boxes": [
+        [
+          "COCKPIT",
+          "untuk Anda"
+        ],
+        [
+          "APP TIM",
+          "untuk tim"
+        ],
+        [
+          "WEBSITE",
+          "untuk pelanggan"
+        ]
+      ]
+    },
+    "feed": [
+      [
+        "SELESAI",
+        "Susu 12 L dipesan ulang"
+      ],
+      [
+        "TERDETEKSI",
+        "Hujan mulai 14.00, rencana baking −30 %"
+      ],
+      [
+        "SELESAI",
+        "Deniz kerja di dalam, tim diberi tahu"
+      ],
+      [
+        "SELESAI",
+        "Teras ditutup di website"
+      ],
+      [
+        "TERDETEKSI",
+        "Kue tersisa tiap Senin"
+      ],
+      [
+        "SELESAI",
+        "17 pre-order diterima"
+      ]
+    ],
+    "problem": {
+      "eyebrow": "MASALAHNYA",
+      "title": "Semuanya ada. Hanya belum terhubung.",
+      "lead": "Excel di sini, WhatsApp di sana, catatan di kasir. Otak dan tubuh sering sudah ada. Yang kurang adalah saraf di antaranya.",
+      "point": "Kami hubungkan yang sudah ada dan bangun yang kurang.",
+      "cards": [
+        [
+          "Excel",
+          "Omzet, entah di mana"
+        ],
+        [
+          "WhatsApp",
+          "Shift, 3 grup"
+        ],
+        [
+          "Catatan",
+          "di kasir"
+        ],
+        [
+          "ChatGPT",
+          "di tab browser"
+        ],
+        [
+          "Kalender",
+          "Pre-order"
+        ],
+        [
+          "Website",
+          "sama sejak 2019"
+        ]
+      ],
+      "platformKicker": "RIDEFF",
+      "platform": "Platform Anda",
+      "platformSub": "Semua di satu tempat",
+      "poweredBy": "DIDUKUNG AI",
+      "stages": [
+        "TOOLS ANDA, TERPENCAR",
+        "SEMUA DI SATU TEMPAT",
+        "PLATFORM ANDA",
+        "+ AI",
+        "DAN TERUS TUMBUH"
+      ]
+    },
+    "platform": {
+      "eyebrow": "TUBUH",
+      "title": "Tiga bagian, satu otak.",
+      "industries": [
+        [
+          "Hotel",
+          "HOTEL SEEBLICK"
+        ],
+        [
+          "Café",
+          "CAFÉ LINDE"
+        ],
+        [
+          "Toko",
+          "LADEN MITTE"
+        ],
+        [
+          "Label fashion",
+          "LABEL NORD"
+        ],
+        [
+          "Klinik",
+          "PRAXIS DR. KOCH"
+        ],
+        [
+          "Pertukangan",
+          "TISCHLEREI BRANDT"
+        ]
+      ],
+      "tabs": [
+        [
+          "01",
+          "Cockpit",
+          "Untuk Anda: angka dan saran."
+        ],
+        [
+          "02",
+          "App tim",
+          "Untuk tim: tugas dan shift."
+        ],
+        [
+          "03",
+          "Website",
+          "Untuk tamu: pesan dan booking."
+        ]
+      ],
+      "side": [
+        "Cockpit",
+        "App tim",
+        "Website",
+        "Stok"
+      ],
+      "brainActive": "Otak aktif",
+      "clock": "SEL · 07:42",
+      "revenue": "Omzet",
+      "suggestion": "AI · SARAN",
+      "teamToday": "Tim hari ini",
+      "tasks": "Tugas",
+      "live": "● LIVE",
+      "ranges": [
+        "1Mg",
+        "1B",
+        "3B",
+        "1T"
+      ],
+      "rangeSub": [
+        "7 hari terakhir",
+        "30 hari terakhir",
+        "3 bulan terakhir",
+        "12 bulan terakhir"
+      ],
+      "rangeCmp": [
+        "vs minggu lalu",
+        "vs bulan lalu",
+        "vs kuartal lalu",
+        "vs tahun lalu"
+      ],
+      "weekdays": [
+        "Sen",
+        "Sel",
+        "Rab",
+        "Kam",
+        "Jum",
+        "Sab",
+        "Min"
+      ],
+      "data": [
+        {
+          "greet": "Selamat pagi, Jana.",
+          "kpis": [
+            [
+              "Okupansi",
+              "86 %"
+            ],
+            [
+              "Kedatangan hari ini",
+              "14"
+            ],
+            [
+              "Keberangkatan",
+              "11"
+            ],
+            [
+              "Rata-rata harga kamar",
+              "€128"
+            ]
+          ],
+          "sug": "Jumat hampir penuh. Naikkan harga 4 kamar terakhir +15 %?",
+          "todo": [
+            "Kamar 204 dibersihkan",
+            "Konfirmasi late check-out 112"
+          ],
+          "teamKi": "Puncak kedatangan 15–17. Tom pegang resepsionis lebih awal.",
+          "shiftLabel": "Shift",
+          "shifts": [
+            [
+              "Jana",
+              "06–14",
+              "Sarapan"
+            ],
+            [
+              "Tom",
+              "12–20",
+              "Resepsionis mulai 14"
+            ],
+            [
+              "Sara",
+              "08–16",
+              "Housekeeping"
+            ]
+          ],
+          "tasks": [
+            [
+              "Kamar 204 dibersihkan",
+              "SARA"
+            ],
+            [
+              "Minibar lantai 3 diisi",
+              "SARA"
+            ],
+            [
+              "Late check-out 112",
+              "TOM"
+            ],
+            [
+              "Cek sepeda",
+              "JANA"
+            ]
+          ],
+          "domain": "hotel-seeblick.de",
+          "eyebrow": "HOTEL SEEBLICK · BINZ",
+          "headline": "Bangun dengan pemandangan Laut Baltik.",
+          "b1": "Pesan kamar",
+          "b2": "Penawaran",
+          "listLabel": "Kamar tersedia hari ini",
+          "items": [
+            [
+              "Kamar double, pemandangan laut",
+              "sisa 2",
+              "€149"
+            ],
+            [
+              "Kamar single",
+              "sisa 1",
+              "€89"
+            ],
+            [
+              "Suite lantai atas",
+              "Early bird",
+              "€229",
+              "PROMO"
+            ]
+          ],
+          "siteKi": "6 booking langsung minggu ini. Tanpa komisi portal.",
+          "photoAlt": "Kamar dengan pemandangan laut"
+        },
+        {
+          "greet": "Selamat pagi, Lena.",
+          "kpis": [
+            [
+              "Omzet kemarin",
+              "€1.284"
+            ],
+            [
+              "Struk",
+              "318"
+            ],
+            [
+              "HPP",
+              "29 %"
+            ],
+            [
+              "Pre-order",
+              "17"
+            ]
+          ],
+          "sug": "Kue tersisa tiap Senin. Hari ini baking 30 % lebih sedikit?",
+          "todo": [
+            "Susu 12 L dipesan ulang",
+            "Isi etalase jam 15.00"
+          ],
+          "teamKi": "Hujan mulai 14.00. Deniz pindah ke dalam, teras tetap tutup.",
+          "shiftLabel": "Shift",
+          "shifts": [
+            [
+              "Lena",
+              "06–14",
+              "Buka"
+            ],
+            [
+              "Deniz",
+              "10–18",
+              "di dalam, bukan teras"
+            ],
+            [
+              "Mia",
+              "14–22",
+              "Tutup"
+            ]
+          ],
+          "tasks": [
+            [
+              "Susu 12 L dipesan ulang",
+              "LENA"
+            ],
+            [
+              "Rencana baking −30 % dijalankan",
+              "LENA"
+            ],
+            [
+              "Isi etalase jam 15.00",
+              "CAN"
+            ],
+            [
+              "Tutup kasir",
+              "MIA"
+            ]
+          ],
+          "domain": "cafe-linde.de",
+          "eyebrow": "CAFÉ LINDE · LEIPZIG",
+          "headline": "Sarapan sampai 14.00. Kue sampai habis.",
+          "b1": "Reservasi",
+          "b2": "Pre-order",
+          "listLabel": "Di etalase hari ini",
+          "items": [
+            [
+              "Cheesecake",
+              "sisa 6 potong",
+              "€3,90"
+            ],
+            [
+              "Apple crumble",
+              "bebas gluten",
+              "€4,20",
+              "BARU"
+            ],
+            [
+              "Cinnamon roll",
+              "mulai 08.00",
+              "€2,80"
+            ]
+          ],
+          "siteKi": "17 pre-order online hari ini. Etalase otomatis menampilkan yang masih ada.",
+          "photoAlt": "Etalase kafe"
+        },
+        {
+          "greet": "Selamat pagi, Ben.",
+          "kpis": [
+            [
+              "Omzet kemarin",
+              "€2.140"
+            ],
+            [
+              "Struk",
+              "164"
+            ],
+            [
+              "Pesanan online",
+              "23"
+            ],
+            [
+              "Nilai stok",
+              "€18,4k"
+            ]
+          ],
+          "sug": "Minyak zaitun cukup 4 hari lagi. Pesan ulang 24 botol?",
+          "todo": [
+            "Pengiriman kopi dicatat",
+            "Dekor ulang etalase depan"
+          ],
+          "teamKi": "Sabtu diprediksi 30 % lebih ramai. Elif datang sejam lebih awal.",
+          "shiftLabel": "Shift",
+          "shifts": [
+            [
+              "Ben",
+              "09–15",
+              "Buka"
+            ],
+            [
+              "Elif",
+              "10–18",
+              "lebih awal, kasir 2"
+            ],
+            [
+              "Paul",
+              "14–20",
+              "Tutup"
+            ]
+          ],
+          "tasks": [
+            [
+              "Kopi dicatat",
+              "BEN"
+            ],
+            [
+              "Click & collect dikemas",
+              "PAUL"
+            ],
+            [
+              "Dekor ulang etalase depan",
+              "ELIF"
+            ],
+            [
+              "Stok opname rak 3",
+              "PAUL"
+            ]
+          ],
+          "domain": "laden-mitte.de",
+          "eyebrow": "LADEN MITTE · DRESDEN",
+          "headline": "Produk lokal terbaik. Pesan online, siap diambil dalam 2 jam.",
+          "b1": "Pesan online",
+          "b2": "Jam buka",
+          "listLabel": "Sedang populer",
+          "items": [
+            [
+              "Minyak zaitun Kreta",
+              "stok 8",
+              "€14,90"
+            ],
+            [
+              "Keju gunung",
+              "lokal, 100 g",
+              "€4,20",
+              "BARU"
+            ],
+            [
+              "Kopi sangrai sendiri",
+              "500 g",
+              "€12,50"
+            ]
+          ],
+          "siteKi": "23 pesanan online. Stok di website selalu terbaru.",
+          "photoAlt": "Rak toko"
+        },
+        {
+          "greet": "Pagi, Ida.",
+          "kpis": [
+            [
+              "Omzet toko",
+              "€3.920"
+            ],
+            [
+              "Pesanan",
+              "41"
+            ],
+            [
+              "Tingkat retur",
+              "12 %"
+            ],
+            [
+              "Stok",
+              "1.284 item"
+            ]
+          ],
+          "sug": "Kemeja linen M hampir habis. Minta produksi ulang 60 pcs?",
+          "todo": [
+            "41 paket dikirim",
+            "Setujui foto koleksi baru"
+          ],
+          "teamKi": "Ukuran S kekecilan, retur naik. Catatan di toko sudah ditambahkan.",
+          "shiftLabel": "Hari ini",
+          "shifts": [
+            [
+              "Ida",
+              "09–17",
+              "Design"
+            ],
+            [
+              "Jonas",
+              "08–16",
+              "Pengiriman +20 paket"
+            ],
+            [
+              "Lea",
+              "10–18",
+              "Layanan pelanggan"
+            ]
+          ],
+          "tasks": [
+            [
+              "41 paket dikirim",
+              "JONAS"
+            ],
+            [
+              "Retur dicek",
+              "LEA"
+            ],
+            [
+              "Setujui foto",
+              "IDA"
+            ],
+            [
+              "Newsletter musim gugur",
+              "LEA"
+            ]
+          ],
+          "domain": "label-nord.de",
+          "eyebrow": "LABEL NORD · HAMBURG",
+          "headline": "Dijahit secara adil di Portugal. Dibuat untuk awet.",
+          "b1": "Koleksi",
+          "b2": "Panduan ukuran",
+          "listLabel": "Baru di toko",
+          "items": [
+            [
+              "Kemeja linen Sand",
+              "tinggal M, L",
+              "€89"
+            ],
+            [
+              "Kardigan Nebel",
+              "Wol organik",
+              "€139",
+              "BARU"
+            ],
+            [
+              "Wide Pants Ton",
+              "semua ukuran",
+              "€109"
+            ]
+          ],
+          "siteKi": "Panduan ukuran menekan retur. Stok tampil langsung dari sistem.",
+          "photoAlt": "Koleksi"
+        },
+        {
+          "greet": "Selamat pagi, Dr. Koch.",
+          "kpis": [
+            [
+              "Janji temu hari ini",
+              "32"
+            ],
+            [
+              "Pembatalan",
+              "2"
+            ],
+            [
+              "Rata-rata tunggu",
+              "6 min"
+            ],
+            [
+              "Dipesan online",
+              "9"
+            ]
+          ],
+          "sug": "2 pembatalan jam 11.00. Kabari pasien di daftar tunggu?",
+          "todo": [
+            "Resep Ibu Berg disiapkan",
+            "Telepon balik Bpk. Yilmaz"
+          ],
+          "teamKi": "3 pembatalan karena musim flu. Daftar tunggu dihubungi, 2 slot diisi ulang.",
+          "shiftLabel": "Jadwal dinas",
+          "shifts": [
+            [
+              "Anna",
+              "07–13",
+              "Resepsionis"
+            ],
+            [
+              "Max",
+              "08–16",
+              "Lab, bukan resepsionis"
+            ],
+            [
+              "Selin",
+              "12–19",
+              "Resepsionis"
+            ]
+          ],
+          "tasks": [
+            [
+              "Resep disiapkan",
+              "ANNA"
+            ],
+            [
+              "Hasil lab dikirim",
+              "MAX"
+            ],
+            [
+              "Telepon balik Bpk. Yilmaz",
+              "SELIN"
+            ],
+            [
+              "Penagihan kuartalan",
+              "ANNA"
+            ]
+          ],
+          "domain": "praxis-koch.de",
+          "eyebrow": "KLINIK DR. KOCH · KÖLN",
+          "headline": "Booking online. Tanpa antre telepon.",
+          "b1": "Buat janji",
+          "b2": "Pesan resep",
+          "listLabel": "Slot kosong hari ini",
+          "items": [
+            [
+              "11.00",
+              "Konsultasi",
+              "kosong"
+            ],
+            [
+              "14.30",
+              "Pemeriksaan rutin",
+              "kosong"
+            ],
+            [
+              "17.15",
+              "Konsultasi video",
+              "kosong",
+              "BARU"
+            ]
+          ],
+          "siteKi": "9 booking online hari ini. Telepon jauh lebih jarang berdering.",
+          "photoAlt": "Resepsionis klinik"
+        },
+        {
+          "greet": "Selamat pagi, Bpk. Brandt.",
+          "kpis": [
+            [
+              "Order terbuka",
+              "12"
+            ],
+            [
+              "Penawaran terbuka",
+              "5"
+            ],
+            [
+              "Utilisasi",
+              "92 %"
+            ],
+            [
+              "Tagihan belum dibayar",
+              "€8,6k"
+            ]
+          ],
+          "sug": "Penawaran dapur Müller terbuka 9 hari. Kirim follow-up sopan?",
+          "todo": [
+            "Material order 118 dipesan",
+            "Pengukuran keluarga Kern, 14.00"
+          ],
+          "teamKi": "Pemasangan Weber molor. Lukas langsung ke Kern, jadwal tetap.",
+          "shiftLabel": "Pekerjaan hari ini",
+          "shifts": [
+            [
+              "Brandt",
+              "07–15",
+              "Bengkel"
+            ],
+            [
+              "Lukas",
+              "07–16",
+              "Kern, bukan Weber"
+            ],
+            [
+              "Finn",
+              "08–16",
+              "Pemasangan Weber"
+            ]
+          ],
+          "tasks": [
+            [
+              "Material dipesan",
+              "BRANDT"
+            ],
+            [
+              "Foto lokasi diunggah",
+              "FINN"
+            ],
+            [
+              "Pengukuran keluarga Kern",
+              "LUKAS"
+            ],
+            [
+              "Buat tagihan 118",
+              "BRANDT"
+            ]
+          ],
+          "domain": "tischlerei-brandt.de",
+          "eyebrow": "TISCHLEREI BRANDT · FREIBURG",
+          "headline": "Furnitur custom. Dari kayu Black Forest.",
+          "b1": "Kirim permintaan",
+          "b2": "Proyek",
+          "listLabel": "Permintaan baru",
+          "items": [
+            [
+              "Lemari tanam",
+              "Kel. Roth, dengan foto",
+              "hari ini",
+              "BARU"
+            ],
+            [
+              "Dapur kayu ek",
+              "Penawaran terkirim",
+              "€14k"
+            ],
+            [
+              "Renovasi tangga",
+              "Pengukuran dijadwalkan",
+              "Kam"
+            ]
+          ],
+          "siteKi": "4 permintaan minggu ini, lengkap dengan ukuran dan foto. Langsung masuk kokpit.",
+          "photoAlt": "Bengkel"
+        }
+      ]
+    },
+    "nerven": {
+      "eyebrow": "SARAF · AI SEHARI-HARI",
+      "title": "Anda tak perlu mengecek. Sistem yang memberi tahu.",
+      "lead": "Otak memantau kasir, stok, jadwal, dan permintaan. Saat ada yang janggal, Anda dapat saran yang jelas. Satu ketuk, beres.",
+      "day": "SELASA DI CAFÉ LINDE",
+      "now": "SEKARANG",
+      "date": "Selasa, 14 Oktober",
+      "from": "RIDEFF",
+      "justNow": "sekarang",
+      "events": [
+        [
+          "Rencana baking",
+          "disesuaikan",
+          "Hari ini baking 30 % lebih sedikit?",
+          "Kue tersisa tiap Senin dan Selasa."
+        ],
+        [
+          "Hujan",
+          "Shift di dalam",
+          "Hujan mulai 14.00",
+          "Deniz pindah ke dalam, jadwal shift disesuaikan."
+        ],
+        [
+          "Tamu",
+          "bebas gluten?",
+          "Tamu bertanya: bebas gluten?",
+          "Jawaban terkirim: apple crumble bebas gluten."
+        ],
+        [
+          "17 pre-order",
+          "online",
+          "17 pre-order",
+          "Masuk online, etalase sudah direncanakan."
+        ],
+        [
+          "Etalase",
+          "Pengingat",
+          "Isi ulang etalase",
+          "Cheesecake hampir habis. Deniz sudah diberi tahu."
+        ],
+        [
+          "Laporan harian",
+          "€1.284",
+          "Laporan harian",
+          "Omzet €1.284 · HPP 29 %"
+        ]
+      ]
+    },
+    "ablauf": {
+      "eyebrow": "CARA KAMI BEKERJA",
+      "title": "Keseharian Anda dulu. Baru software-nya.",
+      "lead": "Tanpa website builder, tanpa rantai agensi. Satu kontak, dari obrolan pertama sampai operasional berjalan.",
+      "steps": [
+        [
+          "01 · MINGGU 1",
+          "Konsultasi awal",
+          "30 menit, tanpa komitmen. Anda ceritakan hari Anda dan di mana macetnya.",
+          "JELAS COCOK ATAU TIDAK"
+        ],
+        [
+          "02 · MINGGU 1–2",
+          "Analisis",
+          "Kami pelajari alur kerja, tools, dan data. Di lokasi atau lewat video.",
+          "RENCANA DAN PENAWARAN"
+        ],
+        [
+          "03 · MINGGU 3–8",
+          "Membangun",
+          "Otak, tubuh, saraf. Anda ikut menguji tiap minggu, tidak ada kejutan.",
+          "SYSTEM LIVE"
+        ],
+        [
+          "04 · SETIAP BULAN",
+          "Mendampingi",
+          "Perawatan, update, ide baru. Sistem tumbuh bersama bisnis Anda.",
+          "IKUT TUMBUH"
+        ]
+      ]
+    },
+    "flowGap": {
+      "line1": "AI kini memecahkan masalah yang tak terpecahkan manusia.",
+      "line2": "Bayangkan apa yang ia temukan di bisnis Anda."
+    },
+    "wer": {
+      "eyebrow": "SIAPA DI BALIKNYA",
+      "quote": "“Kami tidak membuat sistem untuk semua orang. Kami membuat milik Anda.”",
+      "text": "Setiap bisnis berjalan berbeda. Karena itu kami tidak mulai dari software, tapi dari keseharian Anda. Lalu kami bangun otak, tubuh, dan sarafnya, di platform Anda, dengan data Anda. Dan kami tetap mendampingi, setiap bulan.",
+      "name": "Rialto Effendy",
+      "role": "PENDIRI · MEMIMPIN SETIAP PROYEK"
+    },
+    "projekt": {
+      "eyebrow": "PROYEK",
+      "title": "Dibangun, live, didampingi.",
+      "read": "Baca studi kasus →",
+      "kicker": "KLIEN NYATA · STREETWEAR",
+      "name": "TIC Originals",
+      "text": "Toko dan sistem pesanan jadi satu. Drop, bundle, checkout, pelacakan, dan akun pelanggan.",
+      "facts": [
+        [
+          "LIVE SEJAK",
+          "April 2026"
+        ],
+        [
+          "PENDAMPINGAN",
+          "bulanan"
+        ],
+        [
+          "CAKUPAN",
+          "Shop + Backoffice"
+        ]
+      ],
+      "imgAlt": "TIC Originals",
+      "modal": {
+        "kicker": "STUDI KASUS · STREETWEAR",
+        "facts": [
+          [
+            "LIVE SEJAK",
+            "April 2026"
+          ],
+          [
+            "PENDAMPINGAN",
+            "Bulanan"
+          ],
+          [
+            "CAKUPAN",
+            "Shop + Backoffice"
+          ]
+        ],
+        "builtTitle": "Apa yang dibangun",
+        "built": "Toko dan sistem pesanan jadi satu: drop, bundle, checkout, pelacakan, dan akun pelanggan. Di baliknya, back office untuk stok dan pesanan.",
+        "resultTitle": "Hasil",
+        "cta": "Diskusikan proyek seperti ini →",
+        "imgAlts": [
+          "TIC Originals",
+          "TIC Shop",
+          "TIC Backoffice"
+        ]
+      }
+    },
+    "pakete": {
+      "eyebrow": "PAKET",
+      "title": "Sistem sebanyak yang Anda butuhkan.",
+      "where": "POSISI ANDA SEKARANG?",
+      "stages": [
+        "Belum ada apa-apa",
+        "Sudah ada sebagian",
+        "Sudah ada semua"
+      ],
+      "fit": "Cocok untuk Anda",
+      "from": "mulai",
+      "perMonth": "/ bulan",
+      "plans": [
+        {
+          "k": "CORE",
+          "sub": "Sistem internal + AI",
+          "price": "€149",
+          "setup": "+ mulai €1.290 setup · kontrak 12 bulan",
+          "f": [
+            "Tugas & checklist",
+            "Alur kerja (SOP) dengan AI",
+            "Gudang & stok",
+            "Kokpit pemilik"
+          ],
+          "cta": "Diskusi Core →"
+        },
+        {
+          "k": "GROWTH",
+          "sub": "Core + website atau toko",
+          "price": "€249",
+          "setup": "+ mulai €1.990 setup · kontrak 12 bulan",
+          "f": [
+            "Semua dari Core",
+            "Paket industri",
+            "Website atau toko online",
+            "App tim"
+          ],
+          "cta": "Diskusi Growth →"
+        },
+        {
+          "k": "WHOLE SYSTEM",
+          "sub": "Setiap bagian dibangun dan terhubung",
+          "price": "€449",
+          "setup": "+ mulai €3.900 setup · kontrak 12 bulan",
+          "f": [
+            "Booking, kasir, pemasok",
+            "Akuntansi · DATEV",
+            "Shift, ulasan, CRM",
+            "Semua di satu otak"
+          ],
+          "cta": "Diskusi Whole system →"
+        }
+      ],
+      "net": "Semua harga belum termasuk PPN."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Pertanyaan umum.",
+      "intro": "Pertanyaan Anda tidak ada? Tulis ke kami:",
+      "items": [
+        [
+          "Apakah tim saya harus belajar hal baru?",
+          "Hampir tidak. App tim dibuat sesuai alur dan istilah Anda. Kebanyakan tim langsung memakainya setelah sehari, tanpa pelatihan."
+        ],
+        [
+          "Bagaimana dengan tools yang sudah saya pakai?",
+          "Yang sudah berjalan baik akan dihubungkan, misalnya kasir atau akuntansi. Yang mengganggu kami ganti bertahap. Tidak ada yang dimatikan mendadak."
+        ],
+        [
+          "Siapa pemilik data saya?",
+          "Anda. Sesuai GDPR, hosting di UE. Anda bisa ekspor semuanya kapan saja."
+        ],
+        [
+          "Berapa lama sampai semuanya berjalan?",
+          "Biasanya empat sampai delapan minggu dari konsultasi awal sampai live, tergantung cakupan."
+        ],
+        [
+          "Berapa biayanya per bulan?",
+          "Biaya bulanan tetap sesuai paket, termasuk perawatan dan update. Paketnya ada di atas."
+        ],
+        [
+          "Bisakah saya berhenti?",
+          "Bisa. Setelah kontrak minimal 12 bulan, bulanan dengan pemberitahuan 30 hari. Data Anda ikut Anda bawa."
+        ]
+      ]
+    },
+    "kontakt": {
+      "eyebrow": "KONTAK",
+      "title": "Apa yang kurang di bisnis Anda? <accent>Mari kita cari tahu.</accent>",
+      "text": "30 menit, gratis, lewat video. Anda ceritakan bisnis Anda hari ini. Kami tunjukkan seperti apa otak, tubuh, dan sarafnya untuk Anda.",
+      "write": "Lebih suka menulis?",
+      "widget": "KONSULTASI · 30 MNT",
+      "emailCta": "Minta jadwal lewat email →"
+    }
+  },
+  "demo": {
+    "metaTitle": "RIDEFF Business · Cockpit",
+    "back": "← Back to website",
+    "industry": "INDUSTRY (DEMO)",
+    "ask": "Ask the cockpit",
+    "modules": "MODULES",
+    "tools": "TOOLS",
+    "product": "RIDEFF BUSINESS",
+    "nav": {
+      "home": "Overview",
+      "fin": "Finances",
+      "team": "Team & shifts",
+      "kunden": "Customers & requests",
+      "lager": "Stock & purchasing",
+      "web": "Website",
+      "what": "What if",
+      "data": "Data & permissions"
+    },
+    "roles": {
+      "O": "Owner",
+      "L": "Manager",
+      "T": "Team"
+    },
+    "locked": {
+      "kicker": "NO ACCESS IN THIS ROLE",
+      "title": "This area is only visible to the owner.",
+      "text": "You set roles once. The team sees shifts, tasks and requests, but no finances.",
+      "back": "← TO OVERVIEW"
+    },
+    "dateLine": "TUESDAY 13 OCTOBER ·",
+    "goodMorning": "Good morning,",
+    "weekUpper": [
+      "TUE 13",
+      "WED 14",
+      "THU 15",
+      "FRI 16",
+      "SAT 17",
+      "SUN 18",
+      "MON 19"
+    ],
+    "week": [
+      "Tue 13",
+      "Wed 14",
+      "Thu 15",
+      "Fri 16",
+      "Sat 17",
+      "Sun 18",
+      "Mon 19"
+    ],
+    "home": {
+      "next7": "Next 7 days",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "liquidity": "Cash flow",
+      "forecast": "90-DAY FORECAST",
+      "myTasks": "My tasks today",
+      "three": "3 things this week",
+      "done": "DONE",
+      "consent": "NOTHING HAPPENS WITHOUT YOUR OK",
+      "goals": "Goals",
+      "kpiShift": "My shift",
+      "kpiTasks": "Tasks today",
+      "kpiTasksSub": "in the team app",
+      "kpiReq": "New enquiries",
+      "kpiReqSub": "today",
+      "kpiTeam": "Team today",
+      "kpiTeamSub": "all shifts covered"
+    },
+    "fin": {
+      "costs": "Costs in October",
+      "invoices": "Open invoices",
+      "vat": "VAT reserve Q4",
+      "export": "EXPORT TO TAX ADVISOR · DATEV · MONTHLY",
+      "reminded": "Reminder sent today",
+      "sent": "✓ SENT",
+      "remind": "REMIND",
+      "view": "VIEW"
+    },
+    "team": {
+      "week": "WK 42",
+      "app": "TEAM APP · IN THE BROWSER",
+      "hello": "Hello",
+      "newFromWeb": "NEW FROM THE WEBSITE"
+    },
+    "kunden": {
+      "channels": "WEBSITE · PHONE · EMAIL",
+      "reviews": "Reviews",
+      "draft": "AI DRAFT",
+      "confirmed": "✓ CONFIRMED",
+      "accept": "ACCEPT",
+      "published": "✓ PUBLISHED",
+      "send": "SEND REPLY"
+    },
+    "lager": {
+      "range": "COVERAGE UNTIL NEXT DELIVERY",
+      "ordered": "Ordered · delivery in 2 days",
+      "orderedBtn": "✓ ORDERED",
+      "order": "ORDER"
+    },
+    "web": {
+      "name": "Your name",
+      "sent": "Sent. The request is now in the cockpit.",
+      "view": "VIEW →",
+      "hint": "YOU CHANGE OPENING HOURS AND COPY IN THE COCKPIT, NOT IN CODE",
+      "defaultName": "New customer"
+    },
+    "what": {
+      "title": "What if …",
+      "lead": "Move the sliders. The cockpit calculates with your real numbers.",
+      "result": "RESULT",
+      "profitMonth": "Profit per month",
+      "vsToday": "TO TODAY",
+      "profitYear": "Profit per year",
+      "liq90": "Cash in 90 days",
+      "reset": "↺ RESET",
+      "months": [
+        "Jan",
+        "Feb",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "yes": "yes",
+      "no": "no"
+    },
+    "data": {
+      "sources": "Connected sources",
+      "onOf": "OF 6 ON",
+      "roles": "Roles and permissions",
+      "ownerPrefix": "Owner ·",
+      "leadPrefix": "Manager ·",
+      "teamLabel": "Team",
+      "perm": {
+        "all": "Everything",
+        "home": "Overview",
+        "team": "Team",
+        "kunden": "Customers",
+        "lager": "Stock",
+        "web": "Website",
+        "fin": "Finances",
+        "shifts": "Shifts",
+        "tasks": "Tasks",
+        "requests": "Requests"
+      },
+      "footer": "SERVERS IN GERMANY · ENCRYPTED · GDPR · DPA INCLUDED"
+    },
+    "askBox": {
+      "placeholder": "Ask your business…",
+      "esc": "ESC",
+      "sources": "SOURCES ·"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "Halaman ini tidak ada. Otak Anda tetap ada.",
+    "home": "Beranda",
+    "try": "Coba gratis"
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} menit baca",
+    "back": "← Semua artikel",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "newsletter": {
+    "unavailable": "Gagal untuk saat ini. Silakan coba lagi nanti.",
+    "confirmed": {
+      "title": "Langganan dikonfirmasi.",
+      "text": "Mulai sekarang, sebulan sekali satu trik masuk ke kotak masuk Anda. Berhenti langganan dengan satu klik.",
+      "back": "Kembali ke website"
+    },
+    "expired": {
+      "title": "Tautan ini sudah kedaluwarsa.",
+      "text": "Tautan konfirmasi berlaku 48 jam. Silakan daftar lagi di bagian bawah website.",
+      "back": "Kembali ke website"
+    },
+    "mail": {
+      "subject": "Mohon konfirmasi langganan Anda",
+      "hello": "Halo,",
+      "body": "mohon konfirmasi bahwa Anda ingin menerima newsletter RIDEFF. Sebulan sekali, satu trik yang jarang diketahui orang.",
+      "button": "Konfirmasi langganan",
+      "ignore": "Jika Anda tidak mendaftar, abaikan saja email ini. Tautan berlaku 48 jam."
+    }
+  }
+}

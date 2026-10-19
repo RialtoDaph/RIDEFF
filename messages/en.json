@@ -1,0 +1,1848 @@
+{
+  "meta": {
+    "siteName": "RIDEFF",
+    "business": {
+      "title": "RIDEFF · Your business gets a brain.",
+      "description": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care."
+    },
+    "private": {
+      "title": "RIDEFF Life · Your life gets a brain.",
+      "description": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template."
+    }
+  },
+  "mode": {
+    "business": "BUSINESS",
+    "private": "PRIVATE",
+    "productBusiness": "BUSINESS",
+    "productLife": "LIFE"
+  },
+  "nav": {
+    "business": {
+      "plattform": "Platform",
+      "ablauf": "How we work",
+      "projekt": "Project",
+      "pakete": "Plans",
+      "faq": "FAQ"
+    },
+    "private": {
+      "module": "Modules",
+      "ablauf": "How it works",
+      "daten": "Privacy",
+      "preis": "Pricing",
+      "faq": "FAQ"
+    },
+    "portal": "Client portal",
+    "firstCall": "Free call",
+    "login": "Log in",
+    "tryFree": "Try for free",
+    "portalSoon": "Coming soon"
+  },
+  "hero": {
+    "business": {
+      "title": "Your business gets a <accent>brain.</accent>",
+      "lead": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care.",
+      "cta": "Free intro call →",
+      "demo": "View live demo ↗",
+      "tags": {
+        "eu": "HOSTED IN THE EU",
+        "dsgvo": "GDPR & DPA",
+        "custom": "MADE TO MEASURE"
+      }
+    },
+    "private": {
+      "title": "Your life gets a <accent>brain.</accent>",
+      "lead": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template.",
+      "cta": "Try free for 14 days →",
+      "tags": {
+        "eu": "DATA IN THE EU",
+        "consent": "ONLY WITH YOUR PERMISSION",
+        "trial": "14 DAYS FREE"
+      }
+    }
+  },
+  "intro": {
+    "skip": "Skip intro"
+  },
+  "footer": {
+    "business": {
+      "claim": "Your business gets a brain.",
+      "cta": "Book a free call →",
+      "platform": {
+        "title": "PLATFORM",
+        "cockpit": "Cockpit",
+        "teamApp": "Team app",
+        "website": "Website",
+        "ai": "AI in daily work"
+      },
+      "company": {
+        "title": "RIDEFF",
+        "ablauf": "How we work",
+        "projekt": "Project",
+        "pakete": "Plans",
+        "faq": "FAQ",
+        "portal": "Client portal"
+      },
+      "location": "Germany"
+    },
+    "private": {
+      "claim": "Your life gets a brain.",
+      "sub": "Web app for phone and laptop. Money, time and goals in one place.",
+      "life": {
+        "title": "RIDEFF LIFE",
+        "money": "Money",
+        "time": "Time",
+        "goals": "Goals",
+        "ai": "AI in daily work"
+      },
+      "more": {
+        "title": "MORE",
+        "ablauf": "How it works",
+        "daten": "Privacy",
+        "preis": "Pricing",
+        "faq": "FAQ",
+        "tryFree": "Try for free",
+        "login": "Log in",
+        "lifePrivate": "Life Private",
+        "forBusiness": "For businesses →"
+      },
+      "location": "Hosted in the EU"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "hours": "Mon–Fri · 9 am–6 pm"
+    },
+    "newsletter": {
+      "title": "Once a month. One lever hardly anyone knows.",
+      "sub": "Short, concrete, no ads. Unsubscribe with one click.",
+      "placeholder": "name@example.com",
+      "label": "Email",
+      "submit": "Subscribe",
+      "error": "PLEASE ENTER A VALID EMAIL ADDRESS.",
+      "done": "Almost done. Please confirm the email in your inbox."
+    },
+    "copyright": "© 2026 RIDEFF",
+    "legal": {
+      "impressum": "IMPRESSUM",
+      "datenschutz": "PRIVACY",
+      "agb": "TERMS"
+    }
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "chooseLanguage": "Choose language",
+    "mainNav": "Main navigation",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "life": {
+    "phone": {
+      "notifFrom": "RIDEFF Life · now",
+      "notifs": [
+        "4 new findings in your day.",
+        "Disney+ unused for 4 months. Cancel?",
+        "Workout moved to Thursday, fits the shift.",
+        "Commuter allowance found: about €412 back.",
+        "Bali gets 3 weeks closer."
+      ],
+      "s0": {
+        "label": "TUESDAY · BRIEFING",
+        "title": "Good morning, Lea.",
+        "goalLabel": "GOAL · BALI",
+        "goalValue": "€3,240 of €5,000",
+        "week": "3 things for this week",
+        "items": [
+          [
+            "Cancel Disney+",
+            "+€9.99"
+          ],
+          [
+            "Commuter allowance",
+            "+€412"
+          ],
+          [
+            "Workout on Thursday",
+            "+1 h"
+          ]
+        ]
+      },
+      "s1": {
+        "label": "FOUND TODAY",
+        "title": "4 things, automatically.",
+        "stats": [
+          [
+            "FOUND",
+            "€47"
+          ],
+          [
+            "TIME",
+            "3.5 h"
+          ],
+          [
+            "BALI",
+            "−3 wks"
+          ]
+        ],
+        "rows": [
+          [
+            "MONEY",
+            "Disney+ unused for 4 months"
+          ],
+          [
+            "TIME",
+            "Workout moved to Thursday"
+          ],
+          [
+            "TAX",
+            "About €412 back"
+          ],
+          [
+            "GOAL",
+            "Bali 3 weeks closer"
+          ]
+        ]
+      },
+      "s2": {
+        "label": "MONEY · SEPTEMBER",
+        "title": "3 unused subscriptions.",
+        "subs": [
+          [
+            "Disney+",
+            "Not used in 4 months",
+            "€9.99"
+          ],
+          [
+            "Gym",
+            "2× per quarter",
+            "€24.99"
+          ],
+          [
+            "Cloud twice",
+            "Google & iCloud",
+            "€2.99"
+          ],
+          [
+            "Spotify",
+            "Daily",
+            "€17.99"
+          ]
+        ],
+        "saved": "Saved",
+        "savedValue": "€37.97 /mo"
+      },
+      "s3": {
+        "label": "TIME · THIS WEEK",
+        "title": "3.5 h back.",
+        "days": [
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI"
+        ],
+        "rows": [
+          [
+            "Shifts bundled",
+            "+2 h"
+          ],
+          [
+            "Workout Thu 6 pm",
+            "set"
+          ],
+          [
+            "Groceries moved to Wed",
+            "+1.5 h"
+          ]
+        ]
+      },
+      "s4": {
+        "label": "GOAL · BALI",
+        "title": "March, not June.",
+        "pct": "65 %",
+        "value": "€3,240 of €5,000",
+        "rows": [
+          [
+            "Subscriptions cancelled",
+            "−5 wks"
+          ],
+          [
+            "Tax refund",
+            "−5 wks"
+          ],
+          [
+            "Coffee halved",
+            "−3 wks"
+          ]
+        ]
+      },
+      "cards": [
+        [
+          "GOAL · BALI",
+          "65 %",
+          "€3,240 of €5,000",
+          "TAX",
+          "+€412",
+          "Commuter allowance"
+        ],
+        [
+          "FOUND",
+          "€47 /mo",
+          "Detected automatically",
+          "TIME",
+          "3.5 h",
+          "Back per week"
+        ],
+        [
+          "CANCELLED",
+          "Disney+",
+          "Unused for 4 months",
+          "SAVED",
+          "€37.97",
+          "Every month"
+        ],
+        [
+          "APPOINTMENT",
+          "Workout Thu",
+          "6 pm, fits the shift",
+          "TIME",
+          "+3.5 h",
+          "Per week"
+        ],
+        [
+          "NEW DATE",
+          "March",
+          "instead of June 2027",
+          "GOAL",
+          "−3 wks",
+          "Bali sooner"
+        ]
+      ]
+    },
+    "problem": {
+      "eyebrow": "THE PROBLEM",
+      "title": "Do you know it off the top of your head?",
+      "questions": [
+        "What do your subscriptions cost per month?",
+        "How much overtime this month?",
+        "What will you get back from the tax office?",
+        "When can you reach your goal?"
+      ],
+      "answers": [
+        "€ 47",
+        "12 h",
+        "€ 412",
+        "March 2027"
+      ],
+      "scramblePrefix": [
+        "€ ",
+        "",
+        "€ ",
+        ""
+      ],
+      "scrambleSuffix": [
+        "",
+        " h",
+        "",
+        ""
+      ],
+      "outro": "If you had to guess twice: that’s exactly why there’s <b>RIDEFF Life</b>.",
+      "done": "THIS IS WHAT IT LOOKS LIKE WITH RIDEFF LIFE"
+    },
+    "module": {
+      "eyebrow": "MODULES",
+      "title": "You name the goal. Life finds the levers.",
+      "lead": "First comes what you want. Then Life shows which spending and which hours get you there. Money, time and goals work together.",
+      "goalLabel": "YOUR GOAL",
+      "goal": "Bali, €5,000",
+      "capNone": "WITHOUT CHANGES",
+      "capWith": "WITH LIFE",
+      "dates": [
+        "JUNE 2027",
+        "MAY 2027",
+        "APRIL 2027",
+        "MARCH 2027"
+      ],
+      "today": "TODAY",
+      "withoutLife": "WITHOUT LIFE",
+      "withLife": "WITH LIFE",
+      "months": [
+        "OCT",
+        "NOV",
+        "DEC",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN"
+      ],
+      "hint": "TRY IT: SWITCH LEVERS ON AND OFF",
+      "levers": [
+        [
+          "MONEY",
+          "Cancel 3 subscriptions",
+          "−5 wks"
+        ],
+        [
+          "TAX",
+          "Claim commuter allowance",
+          "−3 wks"
+        ],
+        [
+          "TIME",
+          "Halve coffee on the go",
+          "−2 wks"
+        ]
+      ],
+      "gapSteps": [
+        "",
+        "−5 WKS",
+        "−8 WKS",
+        "−10 WEEKS"
+      ],
+      "gapWeeks": {
+        "2": "−2 WKS",
+        "3": "−3 WKS",
+        "5": "−5 WKS",
+        "7": "−7 WKS",
+        "8": "−8 WKS",
+        "10": "−10 WKS"
+      },
+      "badgeWeeks": {
+        "2": "2 WEEKS EARLIER",
+        "3": "3 WEEKS EARLIER",
+        "5": "5 WEEKS EARLIER",
+        "7": "7 WEEKS EARLIER",
+        "8": "8 WEEKS EARLIER",
+        "10": "10 WEEKS EARLIER"
+      },
+      "badgeNone": "NO LEVER ACTIVE",
+      "insteadOf": "INSTEAD OF JUNE 2027"
+    },
+    "flowGap": {
+      "line1": "AI is cracking problems humans couldn’t.",
+      "line2": "Imagine what it finds in your life."
+    },
+    "day": {
+      "eyebrow": "A DAY WITH LIFE",
+      "scenes": [
+        {
+          "time": "07:00",
+          "dot": "TOMORROW",
+          "title": "The day starts sorted.",
+          "text": "One briefing instead of five apps. Appointments, budget and goal at a glance, before the coffee is ready.",
+          "label": "BRIEFING",
+          "msg": "Good morning, Lea. 3 appointments today, €18 left for food.",
+          "a1": "See the day",
+          "a2": "Later",
+          "bali": "142 days"
+        },
+        {
+          "time": "12:30",
+          "dot": "MIDDAY",
+          "title": "Small decisions, big effect.",
+          "text": "Life does the maths when it counts. Not with a wagging finger, but with a number.",
+          "label": "SUGGESTION",
+          "msg": "Canteen instead of delivery saves €9 today. Bali moves a day closer.",
+          "a1": "Canteen",
+          "a2": "Not today",
+          "bali": "141 days"
+        },
+        {
+          "time": "18:00",
+          "dot": "EVENING",
+          "title": "Time that belongs to you.",
+          "text": "Life knows shifts and appointments and finds the gaps that would otherwise get lost.",
+          "label": "TIME",
+          "msg": "Thursday 6 pm is free. Add sport?",
+          "a1": "Add",
+          "a2": "No thanks",
+          "bali": "141 days"
+        },
+        {
+          "time": "22:00",
+          "dot": "REVIEW",
+          "title": "Fall asleep knowing: it's on track.",
+          "text": "No anxious check of the banking app. Life tells you briefly where you stand, and then it's quiet.",
+          "label": "TODAY",
+          "msg": "€14 under budget. Already 2 days closer to Bali this week.",
+          "a1": "Good night",
+          "a2": "Details",
+          "bali": "140 days"
+        }
+      ],
+      "phoneBrand": "RIDEFF LIFE",
+      "goal": "Goal Bali",
+      "askTitle": "And in between? Just ask.",
+      "askSub": "FROM YOUR DATA, NOT THE INTERNET",
+      "ask": [
+        [
+          "Where does my money go?",
+          "38 % food and groceries, 12 % subscriptions."
+        ],
+        [
+          "When do I have time to work out?",
+          "Thursday 6 pm, your shift ends at 4."
+        ],
+        [
+          "What will I get back from tax?",
+          "About €412 from the commuter allowance."
+        ],
+        [
+          "Which subscriptions are unnecessary?",
+          "Disney+, gym, the second cloud."
+        ],
+        [
+          "Is there enough for an emergency fund?",
+          "Yes, €150 a month without slowing Bali."
+        ]
+      ],
+      "askOwn": "Your own question…",
+      "askOwnCta": "Try it free for 14 days →"
+    },
+    "weiter": {
+      "eyebrow": "THINKING AHEAD",
+      "title": "Life thinks further than you ask.",
+      "lead": "On your own platform, the AI researches how you can grow your career and finances, based on your data. It finds opportunities you'd never have thought of.",
+      "tags": [
+        "BASED ON YOUR DATA",
+        "YOUR OWN PLATFORM",
+        "BRAINSTORMING"
+      ],
+      "research": "RESEARCH · JUST FOR YOU",
+      "scanning": "SEARCHING …",
+      "found": "3 FINDINGS",
+      "findings": [
+        [
+          "CAREER",
+          "LINKEDIN · SALARY",
+          "With 6 years of experience you're 11% below market pay. Time for that talk in January."
+        ],
+        [
+          "FINANCES",
+          "BANK STATEMENT",
+          "Your emergency fund earns 0% interest. A savings account would bring about €310 a year."
+        ],
+        [
+          "YOU'D HAVE MISSED THIS",
+          "EMPLOYMENT CONTRACT",
+          "Your employer pays up to €1,200 for training. Not used so far."
+        ]
+      ],
+      "brainstorm": "BRAINSTORMING",
+      "user": "Should I start freelancing on the side?",
+      "ai": "Let's play it through. With your savings and 8 free hours a week, there are three realistic paths.",
+      "paths": [
+        "Part-time start",
+        "Test with clients first",
+        "Full launch 2027"
+      ],
+      "input": "Write down an idea…"
+    },
+    "ablauf": {
+      "eyebrow": "HOW IT WORKS",
+      "title": "Shorter than a coffee break.",
+      "lead": "Four steps, once. Then Life reaches out by itself, every morning at 7.",
+      "steps": [
+        [
+          "Create account",
+          "1 MIN"
+        ],
+        [
+          "Upload bank statement",
+          "3 MIN"
+        ],
+        [
+          "Share calendar",
+          "2 MIN"
+        ],
+        [
+          "Add a goal",
+          "4 MIN"
+        ]
+      ],
+      "progress": "4 OF 10 MINUTES",
+      "firstFinds": "FIRST FINDINGS AFTER STEP 2"
+    },
+    "daten": {
+      "eyebrow": "PRIVACY",
+      "title": "It gets to know you. Your data stays yours.",
+      "lead": "Your data sits in your own encrypted space, not on the open internet. What's off, the AI doesn't see. Not even a little.",
+      "tags": [
+        "SERVERS IN GERMANY",
+        "ENCRYPTED",
+        "GDPR"
+      ],
+      "sources": "SHARED SOURCES",
+      "count": "{n} OF 4",
+      "items": [
+        "Bank statement (CSV upload)",
+        "Calendar (Google or iCloud)",
+        "Shift plan (photo or PDF)",
+        "Tax receipts (upload)"
+      ],
+      "wipe": "Delete all data",
+      "wiped": "All deleted. For real: instantly and permanently.",
+      "growTitle": "The longer it knows you, the better it helps.",
+      "growSub": "LEARNS ONLY FROM YOUR DATA, NOT FROM THE INTERNET",
+      "grow": [
+        [
+          "WEEK 1",
+          "You spend €340 a month on food."
+        ],
+        [
+          "MONTH 3",
+          "Thursday is your best day for sport."
+        ],
+        [
+          "YEAR 1",
+          "Hold Bali until March. It's cheaper then and the pot is fuller."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Common questions.",
+      "items": [
+        [
+          "Do I have to connect my bank account?",
+          "No. You can simply upload a statement as CSV. A direct connection is optional."
+        ],
+        [
+          "Who is RIDEFF Life for?",
+          "For anyone who wants to keep money, time and goals in view without updating spreadsheets every evening. For example shift work, family or studies."
+        ],
+        [
+          "Does the AI make decisions for me?",
+          "No. It makes suggestions and shows what they’re based on. Only you cancel, move or save."
+        ],
+        [
+          "How does the AI find career and money opportunities?",
+          "From the data you share, such as bank statements, your employment contract or CV. On your own platform it researches what moves you forward in your career and finances, including things you wouldn't have thought of yourself."
+        ],
+        [
+          "Can I brainstorm ideas with the AI?",
+          "Yes. In the brainstorming space you think out loud and Life does the maths with your real numbers. You end up with possible paths, not a finished decision."
+        ],
+        [
+          "When does it start?",
+          "Right away. Create an account and try it free for 14 days, no payment details. For Life Private, book a short call first."
+        ]
+      ]
+    },
+    "preis": {
+      "eyebrow": "PRICING",
+      "title": "What should Life do for you?",
+      "lead": "Choose your scope. 14 days free, no payment details. Then cancel monthly. Pay yearly: two months free. Prices incl. VAT.",
+      "perMonth": "/ month",
+      "tiers": {
+        "life": {
+          "k": "LIFE",
+          "p": "€12.90",
+          "sub": "For you. The essentials.",
+          "f": [
+            "Money, time and goals",
+            "Morning briefing every day",
+            "Weekly AI review",
+            "Web app on phone and laptop"
+          ]
+        },
+        "plus": {
+          "k": "LIFE PLUS",
+          "p": "€19.90",
+          "sub": "For you. Everything included.",
+          "f": [
+            "Everything in Life",
+            "AI research for career and finances",
+            "Brainstorming with your numbers",
+            "Tax, sport, sleep and learning"
+          ]
+        },
+        "together": {
+          "k": "TOGETHER",
+          "p": "€29.90",
+          "sub": "For couples and families.",
+          "f": [
+            "Everything in Life Plus",
+            "Up to 4 people",
+            "Shared budget and goals",
+            "Private space for each person"
+          ]
+        }
+      },
+      "cta": "Try free for 14 days →",
+      "private": {
+        "badge": "LIFE PRIVATE",
+        "limited": "LIMITED SPOTS",
+        "title": "Your own system. With people behind it.",
+        "text": "For anyone with more than one salary: self-employment, property, family, relocation. We set up Life together with you and stay by your side.",
+        "price": "from €68",
+        "priceSub": "/ month · one-time setup from €449",
+        "f": [
+          "Everything in Life Plus",
+          "1:1 setup, goals set together",
+          "Custom modules, e.g. property or a side business",
+          "Monthly review with a real person"
+        ],
+        "cta": "Book a free call →"
+      }
+    },
+    "start": {
+      "eyebrow": "LET'S GO",
+      "title": "Your first briefing arrives tomorrow morning.",
+      "text": "Account in three minutes. 14 days free, no payment details. Then you decide.",
+      "cta": "Try free for 14 days →",
+      "compare": "Compare plans",
+      "tags": [
+        "NO CARD NEEDED",
+        "DATA IN THE EU",
+        "CANCEL ANY TIME"
+      ]
+    }
+  },
+  "common": {
+    "ai": "AI"
+  },
+  "biz": {
+    "viz": {
+      "nerves": "NERVES",
+      "brain": "BRAIN",
+      "brainSub": "knows your business",
+      "boxes": [
+        [
+          "COCKPIT",
+          "for you"
+        ],
+        [
+          "TEAM APP",
+          "for the team"
+        ],
+        [
+          "WEBSITE",
+          "for customers"
+        ]
+      ]
+    },
+    "feed": [
+      [
+        "DONE",
+        "Milk 12 L reordered"
+      ],
+      [
+        "DETECTED",
+        "Rain from 2 pm, baking plan −30 %"
+      ],
+      [
+        "DONE",
+        "Deniz works inside, team informed"
+      ],
+      [
+        "DONE",
+        "Terrace closed on website"
+      ],
+      [
+        "DETECTED",
+        "Cake is left over on Mondays"
+      ],
+      [
+        "DONE",
+        "17 pre-orders accepted"
+      ]
+    ],
+    "problem": {
+      "eyebrow": "THE PROBLEM",
+      "title": "It’s all there. Just not connected.",
+      "lead": "Excel here, WhatsApp there, a note by the till. The brain and body often already exist. What’s missing are the nerves in between.",
+      "point": "We connect what you have and build what’s missing.",
+      "cards": [
+        [
+          "Excel",
+          "Revenue, somewhere"
+        ],
+        [
+          "WhatsApp",
+          "Shifts, 3 groups"
+        ],
+        [
+          "Notes",
+          "by the till"
+        ],
+        [
+          "ChatGPT",
+          "in a browser tab"
+        ],
+        [
+          "Calendar",
+          "Pre-orders"
+        ],
+        [
+          "Website",
+          "unchanged since 2019"
+        ]
+      ],
+      "platformKicker": "RIDEFF",
+      "platform": "Your platform",
+      "platformSub": "Everything in one place",
+      "poweredBy": "POWERED BY AI",
+      "stages": [
+        "YOUR TOOLS, SCATTERED",
+        "ALL IN ONE PLACE",
+        "YOUR PLATFORM",
+        "+ AI",
+        "AND IT GROWS"
+      ]
+    },
+    "platform": {
+      "eyebrow": "BODY",
+      "title": "Three parts, one brain.",
+      "industries": [
+        [
+          "Hotel",
+          "HOTEL SEEBLICK"
+        ],
+        [
+          "Café",
+          "CAFÉ LINDE"
+        ],
+        [
+          "Shop",
+          "LADEN MITTE"
+        ],
+        [
+          "Fashion label",
+          "LABEL NORD"
+        ],
+        [
+          "Clinic",
+          "PRAXIS DR. KOCH"
+        ],
+        [
+          "Trades",
+          "TISCHLEREI BRANDT"
+        ]
+      ],
+      "tabs": [
+        [
+          "01",
+          "Cockpit",
+          "For you: numbers and suggestions."
+        ],
+        [
+          "02",
+          "Team app",
+          "For the team: tasks and shifts."
+        ],
+        [
+          "03",
+          "Website",
+          "For guests: order and book."
+        ]
+      ],
+      "side": [
+        "Cockpit",
+        "Team app",
+        "Website",
+        "Stock"
+      ],
+      "brainActive": "Brain active",
+      "clock": "TUE · 07:42",
+      "revenue": "Revenue",
+      "suggestion": "AI · SUGGESTION",
+      "teamToday": "Team today",
+      "tasks": "Tasks",
+      "live": "● LIVE",
+      "ranges": [
+        "1W",
+        "1M",
+        "3M",
+        "1Y"
+      ],
+      "rangeSub": [
+        "Last 7 days",
+        "Last 30 days",
+        "Last 3 months",
+        "Last 12 months"
+      ],
+      "rangeCmp": [
+        "vs last week",
+        "vs last month",
+        "vs last quarter",
+        "vs last year"
+      ],
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "data": [
+        {
+          "greet": "Good morning, Jana.",
+          "kpis": [
+            [
+              "Occupancy",
+              "86 %"
+            ],
+            [
+              "Arrivals today",
+              "14"
+            ],
+            [
+              "Departures",
+              "11"
+            ],
+            [
+              "Avg. room rate",
+              "€128"
+            ]
+          ],
+          "sug": "Friday almost fully booked. Raise the last 4 rooms by 15 %?",
+          "todo": [
+            "Room 204 cleaned",
+            "Confirm late check-out 112"
+          ],
+          "teamKi": "Arrival peak 3–5 pm. Tom takes reception earlier.",
+          "shiftLabel": "Shifts",
+          "shifts": [
+            [
+              "Jana",
+              "06–14",
+              "Breakfast"
+            ],
+            [
+              "Tom",
+              "12–20",
+              "Reception from 2 pm"
+            ],
+            [
+              "Sara",
+              "08–16",
+              "Housekeeping"
+            ]
+          ],
+          "tasks": [
+            [
+              "Room 204 cleaned",
+              "SARA"
+            ],
+            [
+              "Minibar 3rd floor restocked",
+              "SARA"
+            ],
+            [
+              "Late check-out 112",
+              "TOM"
+            ],
+            [
+              "Check bikes",
+              "JANA"
+            ]
+          ],
+          "domain": "hotel-seeblick.de",
+          "eyebrow": "HOTEL SEEBLICK · BINZ",
+          "headline": "Wake up to a view of the Baltic Sea.",
+          "b1": "Book a room",
+          "b2": "Offers",
+          "listLabel": "Rooms available today",
+          "items": [
+            [
+              "Double room, sea view",
+              "2 left",
+              "€149"
+            ],
+            [
+              "Single room",
+              "1 left",
+              "€89"
+            ],
+            [
+              "Rooftop suite",
+              "Early bird",
+              "€229",
+              "OFFER"
+            ]
+          ],
+          "siteKi": "6 direct bookings this week. No portal commission.",
+          "photoAlt": "Room with sea view"
+        },
+        {
+          "greet": "Good morning, Lena.",
+          "kpis": [
+            [
+              "Revenue yesterday",
+              "€1,284"
+            ],
+            [
+              "Receipts",
+              "318"
+            ],
+            [
+              "Cost of goods",
+              "29 %"
+            ],
+            [
+              "Pre-orders",
+              "17"
+            ]
+          ],
+          "sug": "Cake is left over on Mondays. Bake 30 % less today?",
+          "todo": [
+            "Milk 12 L reordered",
+            "Refill display case at 3 pm"
+          ],
+          "teamKi": "Rain from 2 pm. Deniz takes over inside, terrace stays closed.",
+          "shiftLabel": "Shifts",
+          "shifts": [
+            [
+              "Lena",
+              "06–14",
+              "Opening"
+            ],
+            [
+              "Deniz",
+              "10–18",
+              "inside, not terrace"
+            ],
+            [
+              "Mia",
+              "14–22",
+              "Closing"
+            ]
+          ],
+          "tasks": [
+            [
+              "Milk 12 L reordered",
+              "LENA"
+            ],
+            [
+              "Baking plan −30 % done",
+              "LENA"
+            ],
+            [
+              "Refill display case at 3 pm",
+              "CAN"
+            ],
+            [
+              "Cash up till",
+              "MIA"
+            ]
+          ],
+          "domain": "cafe-linde.de",
+          "eyebrow": "CAFÉ LINDE · LEIPZIG",
+          "headline": "Breakfast until 2 pm. Cake until it’s gone.",
+          "b1": "Reserve",
+          "b2": "Pre-order",
+          "listLabel": "In the display case today",
+          "items": [
+            [
+              "Cheesecake",
+              "6 pieces left",
+              "€3,90"
+            ],
+            [
+              "Apple crumble",
+              "gluten-free",
+              "€4,20",
+              "NEW"
+            ],
+            [
+              "Cinnamon roll",
+              "from 8 am",
+              "€2,80"
+            ]
+          ],
+          "siteKi": "17 pre-orders online today. The display case shows what’s left automatically.",
+          "photoAlt": "Café display case"
+        },
+        {
+          "greet": "Good morning, Ben.",
+          "kpis": [
+            [
+              "Revenue yesterday",
+              "€2,140"
+            ],
+            [
+              "Receipts",
+              "164"
+            ],
+            [
+              "Online orders",
+              "23"
+            ],
+            [
+              "Stock value",
+              "€18.4k"
+            ]
+          ],
+          "sug": "Olive oil lasts 4 more days. Reorder 24 bottles?",
+          "todo": [
+            "Coffee delivery logged",
+            "Redecorate shop window"
+          ],
+          "teamKi": "30 % more customers expected Saturday. Elif comes in an hour early.",
+          "shiftLabel": "Shifts",
+          "shifts": [
+            [
+              "Ben",
+              "09–15",
+              "Opening"
+            ],
+            [
+              "Elif",
+              "10–18",
+              "earlier, till 2"
+            ],
+            [
+              "Paul",
+              "14–20",
+              "Closing"
+            ]
+          ],
+          "tasks": [
+            [
+              "Coffee logged",
+              "BEN"
+            ],
+            [
+              "Click & collect packed",
+              "PAUL"
+            ],
+            [
+              "Redecorate shop window",
+              "ELIF"
+            ],
+            [
+              "Stock count shelf 3",
+              "PAUL"
+            ]
+          ],
+          "domain": "laden-mitte.de",
+          "eyebrow": "LADEN MITTE · DRESDEN",
+          "headline": "Good things from the region. Ordered online, ready for pickup in 2 hours.",
+          "b1": "Order online",
+          "b2": "Opening hours",
+          "listLabel": "Popular now",
+          "items": [
+            [
+              "Cretan olive oil",
+              "8 in stock",
+              "€14,90"
+            ],
+            [
+              "Mountain cheese",
+              "local, 100 g",
+              "€4,20",
+              "NEW"
+            ],
+            [
+              "House-roast coffee",
+              "500 g",
+              "€12,50"
+            ]
+          ],
+          "siteKi": "23 online orders. Stock on the website is always up to date.",
+          "photoAlt": "Shop shelf"
+        },
+        {
+          "greet": "Morning, Ida.",
+          "kpis": [
+            [
+              "Shop revenue",
+              "€3,920"
+            ],
+            [
+              "Orders",
+              "41"
+            ],
+            [
+              "Return rate",
+              "12 %"
+            ],
+            [
+              "Stock",
+              "1,284 items"
+            ]
+          ],
+          "sug": "Linen shirt M almost sold out. Request a rerun of 60 pieces?",
+          "todo": [
+            "41 parcels shipped",
+            "Approve new collection photos"
+          ],
+          "teamKi": "Size S runs small, returns are up. A note has been added to the shop.",
+          "shiftLabel": "Today",
+          "shifts": [
+            [
+              "Ida",
+              "09–17",
+              "Design"
+            ],
+            [
+              "Jonas",
+              "08–16",
+              "Shipping +20 parcels"
+            ],
+            [
+              "Lea",
+              "10–18",
+              "Customer service"
+            ]
+          ],
+          "tasks": [
+            [
+              "41 parcels shipped",
+              "JONAS"
+            ],
+            [
+              "Returns checked",
+              "LEA"
+            ],
+            [
+              "Approve photos",
+              "IDA"
+            ],
+            [
+              "Autumn newsletter",
+              "LEA"
+            ]
+          ],
+          "domain": "label-nord.de",
+          "eyebrow": "LABEL NORD · HAMBURG",
+          "headline": "Fairly sewn in Portugal. Made to keep.",
+          "b1": "Collection",
+          "b2": "Size advisor",
+          "listLabel": "New in the shop",
+          "items": [
+            [
+              "Linen shirt Sand",
+              "only M, L left",
+              "€89"
+            ],
+            [
+              "Cardigan Nebel",
+              "Organic wool",
+              "€139",
+              "NEW"
+            ],
+            [
+              "Wide Pants Ton",
+              "all sizes",
+              "€109"
+            ]
+          ],
+          "siteKi": "The size advisor cuts returns. Stock comes live from the system.",
+          "photoAlt": "Collection"
+        },
+        {
+          "greet": "Good morning, Dr. Koch.",
+          "kpis": [
+            [
+              "Appointments today",
+              "32"
+            ],
+            [
+              "Cancellations",
+              "2"
+            ],
+            [
+              "Avg. wait",
+              "6 min"
+            ],
+            [
+              "Booked online",
+              "9"
+            ]
+          ],
+          "sug": "2 cancellations at 11 am. Notify patients on the waitlist?",
+          "todo": [
+            "Prescriptions for Ms Berg ready",
+            "Call back Mr Yilmaz"
+          ],
+          "teamKi": "3 cancellations due to flu season. Waitlist contacted, 2 slots reassigned.",
+          "shiftLabel": "Duty roster",
+          "shifts": [
+            [
+              "Anna",
+              "07–13",
+              "Reception"
+            ],
+            [
+              "Max",
+              "08–16",
+              "Lab, not reception"
+            ],
+            [
+              "Selin",
+              "12–19",
+              "Reception"
+            ]
+          ],
+          "tasks": [
+            [
+              "Prescriptions ready",
+              "ANNA"
+            ],
+            [
+              "Lab results sent",
+              "MAX"
+            ],
+            [
+              "Call back Mr Yilmaz",
+              "SELIN"
+            ],
+            [
+              "Quarterly billing",
+              "ANNA"
+            ]
+          ],
+          "domain": "praxis-koch.de",
+          "eyebrow": "DR. KOCH CLINIC · COLOGNE",
+          "headline": "Book online. No hold music.",
+          "b1": "Book appointment",
+          "b2": "Order prescription",
+          "listLabel": "Free slots today",
+          "items": [
+            [
+              "11:00 am",
+              "Consultation",
+              "free"
+            ],
+            [
+              "2:30 pm",
+              "Check-up",
+              "free"
+            ],
+            [
+              "5:15 pm",
+              "Video consultation",
+              "free",
+              "NEW"
+            ]
+          ],
+          "siteKi": "9 online bookings today. The phone rings noticeably less.",
+          "photoAlt": "Clinic reception"
+        },
+        {
+          "greet": "Good morning, Mr Brandt.",
+          "kpis": [
+            [
+              "Open jobs",
+              "12"
+            ],
+            [
+              "Open quotes",
+              "5"
+            ],
+            [
+              "Utilisation",
+              "92 %"
+            ],
+            [
+              "Unpaid invoices",
+              "€8.6k"
+            ]
+          ],
+          "sug": "Müller kitchen quote open for 9 days. Send a friendly follow-up?",
+          "todo": [
+            "Materials for job 118 ordered",
+            "Measure-up Kern family, 2 pm"
+          ],
+          "teamKi": "Weber installation runs long. Lukas goes straight to Kern, the appointment stays.",
+          "shiftLabel": "Jobs today",
+          "shifts": [
+            [
+              "Brandt",
+              "07–15",
+              "Workshop"
+            ],
+            [
+              "Lukas",
+              "07–16",
+              "Kern, not Weber"
+            ],
+            [
+              "Finn",
+              "08–16",
+              "Installation Weber"
+            ]
+          ],
+          "tasks": [
+            [
+              "Materials ordered",
+              "BRANDT"
+            ],
+            [
+              "Site photos uploaded",
+              "FINN"
+            ],
+            [
+              "Measure-up Kern family",
+              "LUKAS"
+            ],
+            [
+              "Write invoice 118",
+              "BRANDT"
+            ]
+          ],
+          "domain": "tischlerei-brandt.de",
+          "eyebrow": "BRANDT JOINERY · FREIBURG",
+          "headline": "Made-to-measure furniture. From Black Forest wood.",
+          "b1": "Send enquiry",
+          "b2": "Projects",
+          "listLabel": "New enquiries",
+          "items": [
+            [
+              "Built-in wardrobe",
+              "Roth family, with photos",
+              "today",
+              "NEW"
+            ],
+            [
+              "Oak kitchen",
+              "Quote sent",
+              "€14k"
+            ],
+            [
+              "Stair renovation",
+              "Measure-up planned",
+              "Thu"
+            ]
+          ],
+          "siteKi": "4 enquiries this week, with measurements and photos. Straight into the cockpit.",
+          "photoAlt": "Workshop"
+        }
+      ]
+    },
+    "nerven": {
+      "eyebrow": "NERVES · AI IN DAILY WORK",
+      "title": "You don’t have to check. It tells you.",
+      "lead": "The brain watches till, stock, bookings and enquiries. When something stands out, you get a clear suggestion. One tap and it’s done.",
+      "day": "A TUESDAY AT CAFÉ LINDE",
+      "now": "NOW",
+      "date": "Tuesday, 14 October",
+      "from": "RIDEFF",
+      "justNow": "now",
+      "events": [
+        [
+          "Baking plan",
+          "adjusted",
+          "Bake 30 % less today?",
+          "Cake is left over on Mondays and Tuesdays."
+        ],
+        [
+          "Rain",
+          "Shift inside",
+          "Rain from 2 pm",
+          "Deniz takes over inside, shift plan adjusted."
+        ],
+        [
+          "Guest",
+          "gluten-free?",
+          "Guest asks: gluten-free?",
+          "Reply sent: apple crumble is gluten-free."
+        ],
+        [
+          "17 pre-orders",
+          "online",
+          "17 pre-orders",
+          "Received online, display case planned."
+        ],
+        [
+          "Display case",
+          "Reminder",
+          "Refill display case",
+          "Cheesecake almost gone. Deniz is informed."
+        ],
+        [
+          "Daily report",
+          "€1,284",
+          "Daily report",
+          "€1,284 revenue · cost of goods 29 %"
+        ]
+      ]
+    },
+    "ablauf": {
+      "eyebrow": "HOW WE WORK",
+      "title": "Your day first. Then the software.",
+      "lead": "No site builder, no agency chain. One contact, from the first call to running operations.",
+      "steps": [
+        [
+          "01 · WEEK 1",
+          "Free call",
+          "30 minutes, no obligation. You tell us how your day runs and where it gets stuck.",
+          "CLARITY ON FIT"
+        ],
+        [
+          "02 · WEEK 1–2",
+          "Analysis",
+          "We look at processes, tools and data. On site or by video.",
+          "PLAN AND QUOTE"
+        ],
+        [
+          "03 · WEEK 3–8",
+          "Build",
+          "Brain, body, nerves. You test along every week, nothing comes as a surprise.",
+          "SYSTEM LIVE"
+        ],
+        [
+          "04 · EVERY MONTH",
+          "Support",
+          "Maintenance, updates, new ideas. The system grows with your business.",
+          "GROWS WITH YOU"
+        ]
+      ]
+    },
+    "flowGap": {
+      "line1": "AI is cracking problems humans couldn’t.",
+      "line2": "Imagine what it finds in your business."
+    },
+    "wer": {
+      "eyebrow": "WHO’S BEHIND IT",
+      "quote": "“We don’t build a system for everyone. We build yours.”",
+      "text": "Every business runs differently. So we don’t start with software, we start with your day. Then we build the brain, body and nerves around it, on your platform, with your data. And we stay, every month.",
+      "name": "Rialto Effendy",
+      "role": "FOUNDER · LEADS EVERY PROJECT"
+    },
+    "projekt": {
+      "eyebrow": "PROJECT",
+      "title": "Built, live, supported.",
+      "read": "Read case study →",
+      "kicker": "REAL CLIENT · STREETWEAR",
+      "name": "TIC Originals",
+      "text": "Shop and ordering system in one. Drops, bundles, checkout, tracking and customer accounts.",
+      "facts": [
+        [
+          "LIVE SINCE",
+          "April 2026"
+        ],
+        [
+          "SUPPORT",
+          "monthly"
+        ],
+        [
+          "SCOPE",
+          "Shop + Backoffice"
+        ]
+      ],
+      "imgAlt": "TIC Originals",
+      "modal": {
+        "kicker": "CASE STUDY · STREETWEAR",
+        "facts": [
+          [
+            "LIVE SINCE",
+            "April 2026"
+          ],
+          [
+            "SUPPORT",
+            "Monthly"
+          ],
+          [
+            "SCOPE",
+            "Shop + Backoffice"
+          ]
+        ],
+        "builtTitle": "What was built",
+        "built": "Shop and ordering system in one: drops, bundles, checkout, tracking and customer accounts. Behind it, a back office for stock and orders.",
+        "resultTitle": "Result",
+        "cta": "Discuss a project like this →",
+        "imgAlts": [
+          "TIC Originals",
+          "TIC Shop",
+          "TIC Backoffice"
+        ]
+      }
+    },
+    "pakete": {
+      "eyebrow": "PLANS",
+      "title": "As much system as you need.",
+      "where": "WHERE ARE YOU NOW?",
+      "stages": [
+        "Nothing yet",
+        "Something there",
+        "Everything there"
+      ],
+      "fit": "Fits you",
+      "from": "from",
+      "perMonth": "/ month",
+      "plans": [
+        {
+          "k": "CORE",
+          "sub": "Internal system + AI",
+          "price": "€149",
+          "setup": "+ from €1,290 setup · 12-month term",
+          "f": [
+            "Tasks & checklists",
+            "Processes (SOPs) with AI",
+            "Stock & inventory",
+            "Owner cockpit"
+          ],
+          "cta": "Talk about Core →"
+        },
+        {
+          "k": "GROWTH",
+          "sub": "Core + website or shop",
+          "price": "€249",
+          "setup": "+ from €1,990 setup · 12-month term",
+          "f": [
+            "Everything in Core",
+            "Industry pack",
+            "Website or online shop",
+            "Team app"
+          ],
+          "cta": "Talk about Growth →"
+        },
+        {
+          "k": "WHOLE SYSTEM",
+          "sub": "Every part built and connected",
+          "price": "€449",
+          "setup": "+ from €3,900 setup · 12-month term",
+          "f": [
+            "Booking, till, suppliers",
+            "Accounting · DATEV",
+            "Shifts, reviews, CRM",
+            "All on one brain"
+          ],
+          "cta": "Talk about Whole system →"
+        }
+      ],
+      "net": "All prices net, plus VAT."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Common questions.",
+      "intro": "Question not listed? Write to us:",
+      "items": [
+        [
+          "Does my team have to learn something new?",
+          "Hardly. The team app is built around your processes, in your words. Most teams use it after one day, without training."
+        ],
+        [
+          "What happens to my existing tools?",
+          "What works gets connected, for example till or accounting. What gets in the way we replace step by step. Nothing is switched off overnight."
+        ],
+        [
+          "Who owns my data?",
+          "You. GDPR-compliant, hosted in the EU. You can export everything anytime."
+        ],
+        [
+          "How long until everything runs?",
+          "Usually four to eight weeks from first call to live, depending on scope."
+        ],
+        [
+          "What does it cost per month?",
+          "A fixed monthly fee depending on the plan, maintenance and updates included. You’ll find the plans above."
+        ],
+        [
+          "Can I cancel?",
+          "Yes. After the 12-month minimum term, monthly with 30 days’ notice. You take your data with you."
+        ]
+      ]
+    },
+    "kontakt": {
+      "eyebrow": "CONTACT",
+      "title": "What’s missing for you? <accent>Let’s find out.</accent>",
+      "text": "30 minutes, free, by video. You tell us how your business runs today. We show what brain, body and nerves could be for you.",
+      "write": "Rather write?",
+      "widget": "INTRO CALL · 30 MIN",
+      "emailCta": "Request a slot by email →"
+    }
+  },
+  "demo": {
+    "metaTitle": "RIDEFF Business · Cockpit",
+    "back": "← Back to website",
+    "industry": "INDUSTRY (DEMO)",
+    "ask": "Ask the cockpit",
+    "modules": "MODULES",
+    "tools": "TOOLS",
+    "product": "RIDEFF BUSINESS",
+    "nav": {
+      "home": "Overview",
+      "fin": "Finances",
+      "team": "Team & shifts",
+      "kunden": "Customers & requests",
+      "lager": "Stock & purchasing",
+      "web": "Website",
+      "what": "What if",
+      "data": "Data & permissions"
+    },
+    "roles": {
+      "O": "Owner",
+      "L": "Manager",
+      "T": "Team"
+    },
+    "locked": {
+      "kicker": "NO ACCESS IN THIS ROLE",
+      "title": "This area is only visible to the owner.",
+      "text": "You set roles once. The team sees shifts, tasks and requests, but no finances.",
+      "back": "← TO OVERVIEW"
+    },
+    "dateLine": "TUESDAY 13 OCTOBER ·",
+    "goodMorning": "Good morning,",
+    "weekUpper": [
+      "TUE 13",
+      "WED 14",
+      "THU 15",
+      "FRI 16",
+      "SAT 17",
+      "SUN 18",
+      "MON 19"
+    ],
+    "week": [
+      "Tue 13",
+      "Wed 14",
+      "Thu 15",
+      "Fri 16",
+      "Sat 17",
+      "Sun 18",
+      "Mon 19"
+    ],
+    "home": {
+      "next7": "Next 7 days",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "liquidity": "Cash flow",
+      "forecast": "90-DAY FORECAST",
+      "myTasks": "My tasks today",
+      "three": "3 things this week",
+      "done": "DONE",
+      "consent": "NOTHING HAPPENS WITHOUT YOUR OK",
+      "goals": "Goals",
+      "kpiShift": "My shift",
+      "kpiTasks": "Tasks today",
+      "kpiTasksSub": "in the team app",
+      "kpiReq": "New enquiries",
+      "kpiReqSub": "today",
+      "kpiTeam": "Team today",
+      "kpiTeamSub": "all shifts covered"
+    },
+    "fin": {
+      "costs": "Costs in October",
+      "invoices": "Open invoices",
+      "vat": "VAT reserve Q4",
+      "export": "EXPORT TO TAX ADVISOR · DATEV · MONTHLY",
+      "reminded": "Reminder sent today",
+      "sent": "✓ SENT",
+      "remind": "REMIND",
+      "view": "VIEW"
+    },
+    "team": {
+      "week": "WK 42",
+      "app": "TEAM APP · IN THE BROWSER",
+      "hello": "Hello",
+      "newFromWeb": "NEW FROM THE WEBSITE"
+    },
+    "kunden": {
+      "channels": "WEBSITE · PHONE · EMAIL",
+      "reviews": "Reviews",
+      "draft": "AI DRAFT",
+      "confirmed": "✓ CONFIRMED",
+      "accept": "ACCEPT",
+      "published": "✓ PUBLISHED",
+      "send": "SEND REPLY"
+    },
+    "lager": {
+      "range": "COVERAGE UNTIL NEXT DELIVERY",
+      "ordered": "Ordered · delivery in 2 days",
+      "orderedBtn": "✓ ORDERED",
+      "order": "ORDER"
+    },
+    "web": {
+      "name": "Your name",
+      "sent": "Sent. The request is now in the cockpit.",
+      "view": "VIEW →",
+      "hint": "YOU CHANGE OPENING HOURS AND COPY IN THE COCKPIT, NOT IN CODE",
+      "defaultName": "New customer"
+    },
+    "what": {
+      "title": "What if …",
+      "lead": "Move the sliders. The cockpit calculates with your real numbers.",
+      "result": "RESULT",
+      "profitMonth": "Profit per month",
+      "vsToday": "TO TODAY",
+      "profitYear": "Profit per year",
+      "liq90": "Cash in 90 days",
+      "reset": "↺ RESET",
+      "months": [
+        "Jan",
+        "Feb",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "yes": "yes",
+      "no": "no"
+    },
+    "data": {
+      "sources": "Connected sources",
+      "onOf": "OF 6 ON",
+      "roles": "Roles and permissions",
+      "ownerPrefix": "Owner ·",
+      "leadPrefix": "Manager ·",
+      "teamLabel": "Team",
+      "perm": {
+        "all": "Everything",
+        "home": "Overview",
+        "team": "Team",
+        "kunden": "Customers",
+        "lager": "Stock",
+        "web": "Website",
+        "fin": "Finances",
+        "shifts": "Shifts",
+        "tasks": "Tasks",
+        "requests": "Requests"
+      },
+      "footer": "SERVERS IN GERMANY · ENCRYPTED · GDPR · DPA INCLUDED"
+    },
+    "askBox": {
+      "placeholder": "Ask your business…",
+      "esc": "ESC",
+      "sources": "SOURCES ·"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "This page doesn't exist. Your brain does.",
+    "home": "Home",
+    "try": "Try for free"
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} min read",
+    "back": "← All articles",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "newsletter": {
+    "unavailable": "That didn't work just now. Please try again later.",
+    "confirmed": {
+      "title": "Subscription confirmed.",
+      "text": "From now on, one lever lands in your inbox once a month. Unsubscribe with one click.",
+      "back": "Back to website"
+    },
+    "expired": {
+      "title": "This link has expired.",
+      "text": "Confirmation links are valid for 48 hours. Just sign up again at the bottom of the website.",
+      "back": "Back to website"
+    },
+    "mail": {
+      "subject": "Please confirm your subscription",
+      "hello": "Hello,",
+      "body": "please confirm that you'd like to receive the RIDEFF newsletter. Once a month, one lever hardly anyone knows.",
+      "button": "Confirm subscription",
+      "ignore": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours."
+    }
+  }
+}
