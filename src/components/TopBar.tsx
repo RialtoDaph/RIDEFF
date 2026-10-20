@@ -39,13 +39,13 @@ export async function TopBar({ mode }: { mode: Mode }) {
     ? BUSINESS_NAV.map((k) => [t(`business.${k}`), k] as const)
     : PRIVATE_NAV.map(([k, id]) => [t(`private.${k}`), id] as const);
   const cta = biz ? (
-    <a href="#kontakt" className="text-[14px] font-semibold px-[18px] py-[10px] max-xl:min-h-[44px] inline-flex items-center rounded-full bg-orange-500 text-white whitespace-nowrap">
+    <a href="#kontakt" className="text-[14px] font-semibold px-[18px] py-[10px] max-lg:min-h-[44px] inline-flex items-center rounded-full bg-orange-500 text-white whitespace-nowrap">
       {t('firstCall')}
     </a>
   ) : (
     <a
       href={signupUrl('plus', locale)}
-      className="text-[14px] font-semibold px-[18px] py-[10px] max-xl:min-h-[44px] inline-flex items-center rounded-full bg-orange-500 text-white whitespace-nowrap hover:bg-orange-450 transition-colors"
+      className="text-[14px] font-semibold px-[18px] py-[10px] max-lg:min-h-[44px] inline-flex items-center rounded-full bg-orange-500 text-white whitespace-nowrap hover:bg-orange-450 transition-colors"
     >
       {t('tryFree')}
     </a>
@@ -53,33 +53,33 @@ export async function TopBar({ mode }: { mode: Mode }) {
 
   return (
     <header
-      className={`flex items-center gap-4 md:gap-8 py-6 border-b ${biz ? 'border-line-d2 text-stone-50' : 'border-stone-350 text-ink'}`}
+      className={`flex items-center gap-4 xl:gap-8 py-6 border-b ${biz ? 'border-line-d2 text-stone-50' : 'border-stone-350 text-ink'}`}
     >
       {brand}
 
-      <nav aria-label={ta('mainNav')} className={`ml-auto hidden xl:flex gap-7 text-[14px] ${biz ? 'text-zinc-400' : 'text-zinc-600'}`}>
+      <nav aria-label={ta('mainNav')} className={`ml-auto hidden lg:flex gap-5 xl:gap-7 text-[14px] ${biz ? 'text-zinc-400' : 'text-zinc-600'}`}>
         {links.map(([label, id]) => (
-          <a key={id} href={`#${id}`} className="hover:text-orange-500 transition-colors">
+          <a key={id} href={`#${id}`} className="whitespace-nowrap hover:text-orange-500 transition-colors">
             {label}
           </a>
         ))}
       </nav>
 
-      <div className="ml-auto xl:ml-0 flex items-center gap-3 xl:gap-8">
-        <div className="hidden xl:block">
+      <div className="ml-auto lg:ml-0 flex items-center gap-3 lg:gap-4 xl:gap-8">
+        <div className="hidden lg:block">
           <LangSwitch mode={mode} variant={biz ? 'dark' : 'light'} />
         </div>
         {biz ? (
-          <span className="hidden xl:inline-flex">
+          <span className="hidden lg:inline-flex">
             <PortalLink
               className="text-[14px] font-semibold text-zinc-300 whitespace-nowrap hover:text-white transition-colors"
-              labelClassName="border-line-d4 text-zinc-500"
+              labelClassName="border-line-d4 text-zinc-500 max-xl:hidden"
             />
           </span>
         ) : (
           <a
             href={loginUrl(locale)}
-            className="hidden xl:inline text-[14px] font-semibold text-ink whitespace-nowrap hover:text-orange-500 transition-colors"
+            className="hidden lg:inline text-[14px] font-semibold text-ink whitespace-nowrap hover:text-orange-500 transition-colors"
           >
             {t('login')}
           </a>

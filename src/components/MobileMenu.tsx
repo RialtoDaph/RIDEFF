@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 /**
- * Hamburger menu below 1280px. Full-screen panel in the page's tone; closes
+ * Hamburger menu below 1024px. Full-screen panel in the page's tone; closes
  * on Esc, on a link click and on the close button. Focus stays inside while
  * open and returns to the menu button afterwards.
  */
@@ -47,7 +47,7 @@ export function MobileMenu({
         first.focus();
       }
     };
-    const onResize = () => window.innerWidth >= 1280 && setOpen(false);
+    const onResize = () => window.innerWidth >= 1024 && setOpen(false);
     window.addEventListener('keydown', onKey);
     window.addEventListener('resize', onResize);
     const btn = button.current;
@@ -76,7 +76,7 @@ export function MobileMenu({
         aria-label={openLabel}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className={`xl:hidden w-11 h-11 flex-none rounded-full border flex items-center justify-center cursor-pointer ${dark ? 'border-line-d4 bg-night-2 text-stone-50' : 'border-stone-200 bg-white text-ink'}`}
+        className={`lg:hidden w-11 h-11 flex-none rounded-full border flex items-center justify-center cursor-pointer ${dark ? 'border-line-d4 bg-night-2 text-stone-50' : 'border-stone-200 bg-white text-ink'}`}
       >
         {bars}
       </button>
@@ -87,7 +87,7 @@ export function MobileMenu({
           role="dialog"
           aria-modal="true"
           aria-label={openLabel}
-          className={`xl:hidden fixed inset-0 z-[150] overflow-y-auto flex flex-col ${dark ? 'bg-ink-2 text-stone-50' : 'bg-stone-100 text-ink'}`}
+          className={`lg:hidden fixed inset-0 z-[150] overflow-y-auto flex flex-col ${dark ? 'bg-ink-2 text-stone-50' : 'bg-stone-100 text-ink'}`}
           onClick={(e) => {
             if ((e.target as HTMLElement).closest('a')) setOpen(false);
           }}
