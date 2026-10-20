@@ -7,8 +7,10 @@ import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
 import { INTRO_DECIDE_SCRIPT } from '@/lib/intro';
+import { TABLET_VIEWPORT_SCRIPT } from '@/lib/tabletViewport';
 import { defaultMetadata } from '@/lib/metadata';
 import { ScrollBackdrop } from '@/components/ScrollBackdrop';
+import { TabletViewport } from '@/components/TabletViewport';
 import { BASE_NAMESPACES, ClientMessages } from '@/components/ClientMessages';
 import '../globals.css';
 
@@ -44,12 +46,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   return (
     <html lang={locale} className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: TABLET_VIEWPORT_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: INTRO_DECIDE_SCRIPT }} />
       </head>
       <body>
         <ClientMessages namespaces={BASE_NAMESPACES}>
           {children}
           <ScrollBackdrop />
+          <TabletViewport />
         </ClientMessages>
         <Analytics />
       </body>
