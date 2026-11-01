@@ -50,22 +50,25 @@ Nana is mounted once in the layout (`src/components/nana/NanaMount.tsx`), so a r
 
 - Source of truth: `rideff_handoff/i18n/rideff-en-de.json` (English source → German, formal "Sie").
 - `npm run i18n` (`scripts/gen-messages.mjs`) generates `messages/en.json` and `messages/de.json`: one namespace per page, camelCase keys from the English text, `{x}` → ICU arguments. It also writes `src/i18n/keymap.json`.
-- `messages/custom.json`: strings that are not in the handoff (meta tags, 404, newsletter, Journal article, Nana errors and labels), `{de, en}` per key.
+- `messages/custom.json`: strings that are not in the handoff (meta tags, 404, newsletter, Journal article, Nana errors and labels), `{de, en}` per key. It also overrides handoff strings where the owner decided differently, e.g. the free first call is **15 minutes** (handoff: 30) in `RideffNana.*` and `Pricing.*`.
 - `/demo`: `messages/demo-source.json` (German → English, made once from the demo string tables by `scripts/extract-demo-strings.mjs`) becomes the `Demo` namespace.
 - Each page sends only its own namespaces to the browser (`src/components/site/Messages.tsx`).
 
 Edit the handoff JSON or `custom.json`, then run `npm run i18n`. Do not edit `messages/en.json` / `de.json` by hand.
 
-## Nana API (mocked)
+## Nana (ElevenLabs Agents)
 
-Contract from the handoff README, types in `src/lib/nana/types.ts`. All routes answer with mock data until the providers are wired (see `TODO.md`).
+Nana's chat and voice call run on one ElevenLabs agent. The server only mints short-lived credentials (`src/lib/nana/elevenlabs.ts`, API key never reaches the browser); the browser talks to ElevenLabs with `@elevenlabs/client` (`src/components/nana/elevenlabs-client.ts`): WebRTC for the call, a text-only session for the chat. Without `ELEVENLABS_API_KEY` + `ELEVENLABS_AGENT_ID` every route answers with mock data, so the site works without an account.
+
+The agent (prompt with plans and prices, DE/EN first message, allowed overrides, data collection for the summary, privacy) is defined in `scripts/elevenlabs-agent.mjs`; run it to create or update the agent (setup steps in `TODO.md`).
 
 | Route | Purpose |
 |---|---|
-| `POST /api/nana/chat` | `{ sessionId, page, locale, messages[] }` → streamed `text/plain`, actions in `x-nana-actions` |
-| `POST /api/nana/voice/session` | realtime token for the voice provider (mock: scripted call) |
-| `POST /api/nana/summary` | `{ sessionId, locale, kind, duration, transcript[], consent }` → `{ kind, duration, need, interest, next, text, stored }` (WhatsApp template) |
-| `POST /api/nana/whatsapp` | `{ sessionId, phone, text, optIn: true }` → WhatsApp Business template message |
+| `POST /api/nana/chat/session` | signed URL for a text-only session (or `{ provider: 'mock' }`) |
+| `POST /api/nana/chat` | mock chat: streamed `text/plain`, actions in `x-nana-actions` |
+| `POST /api/nana/voice/session` | WebRTC conversation token (mock: scripted call) |
+| `POST /api/nana/summary` | `{ sessionId, locale, kind, duration, transcript[], consent, conversationId? }` → WhatsApp template; with a conversation id, need / interest / next come from ElevenLabs' post-call analysis |
+| `POST /api/nana/whatsapp` | `{ sessionId, phone, text, optIn: true }` → WhatsApp Business template message (still mock) |
 
 Analytics (Vercel Web Analytics, no cookies): `nana_open`, `nana_call_click`, `nana_call_start`, `nana_call_end`, `nana_summary_created`, `nana_summary_wa_rialto`, `nana_summary_wa_self`, `nana_summary_copy` (`src/lib/analytics.ts`). No message text or phone numbers are sent.
 

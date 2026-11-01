@@ -1,7 +1,8 @@
 /**
  * Nana API contract (rideff_handoff/README.md → "Suggested API contract").
- * The routes under src/app/api/nana answer with mock data until the owner
- * wires the AI, voice and WhatsApp Business providers (see TODO.md).
+ * Voice and chat run on an ElevenLabs agent when ELEVENLABS_API_KEY and
+ * ELEVENLABS_AGENT_ID are set (src/lib/nana/elevenlabs.ts); otherwise the
+ * routes answer with mock data. WhatsApp Business is still a mock (TODO.md).
  */
 import type { Locale } from '@/i18n/routing';
 
@@ -14,14 +15,23 @@ export type ChatRequest = { sessionId: string; page: NanaPage; locale: Locale; m
 
 /** POST /api/nana/voice/session */
 export type VoiceSessionRequest = { sessionId: string; locale: Locale; page: NanaPage };
-export type VoiceSessionResponse = {
-  provider: 'mock' | string;
-  /** Short-lived realtime token for the voice provider (null in mock mode). */
-  token: string | null;
-  expiresAt: string;
-  /** Mock mode only: the scripted conversation the call panel plays. */
-  script?: { who: 'nana' | 'you'; text: string }[];
-};
+export type VoiceSessionResponse =
+  | {
+      provider: 'elevenlabs';
+      /** WebRTC conversation token for @elevenlabs/client (short-lived). */
+      token: string;
+      /** LiveKit endpoint of the configured region (EU residency or default). */
+      livekitUrl: string;
+    }
+  | {
+      provider: 'mock';
+      token: null;
+      /** The scripted conversation the call panel plays. */
+      script: { who: 'nana' | 'you'; text: string }[];
+    };
+
+/** POST /api/nana/chat/session → a text-only session with the same agent, or mock mode. */
+export type ChatSessionResponse = { provider: 'elevenlabs'; signedUrl: string } | { provider: 'mock' };
 
 /** POST /api/nana/summary */
 export type SummaryRequest = {
@@ -33,6 +43,8 @@ export type SummaryRequest = {
   transcript: { from: 'nana' | 'you'; text: string }[];
   /** "Save the transcript and summary to my RIDEFF client portal." */
   consent: boolean;
+  /** ElevenLabs conversation id: the summary then uses ElevenLabs' post-call analysis. */
+  conversationId?: string;
 };
 export type SummaryResponse = {
   kind: string;
