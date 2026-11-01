@@ -9,6 +9,10 @@
  *
  * Optional: ELEVENLABS_REGION=eu (EU data residency workspace), NANA_VOICE_ID (an
  * ElevenLabs voice id; otherwise the agent keeps its current / default voice).
+ * Voice tuning, as set in ElevenLabs → Text to Speech:
+ *   NANA_TTS_MODEL   eleven_flash_v2_5 (default, fastest) | eleven_turbo_v2_5 |
+ *                    eleven_multilingual_v2 | eleven_v3_conversational | eleven_v4 | eleven_v4_turbo
+ *   NANA_STABILITY   0–1 or 0–100 (%), NANA_SIMILARITY  0–1 or 0–100 (%)
  *
  * Then set ELEVENLABS_API_KEY, ELEVENLABS_AGENT_ID (and ELEVENLABS_REGION) in Vercel.
  * The site needs these agent settings, which this script sets:
@@ -22,6 +26,27 @@ const API = process.env.ELEVENLABS_REGION?.trim().toLowerCase() === 'eu' ? 'http
 const KEY = process.env.ELEVENLABS_API_KEY?.trim();
 const AGENT = process.env.ELEVENLABS_AGENT_ID?.trim();
 const VOICE = process.env.NANA_VOICE_ID?.trim();
+// Voice tuning (optional). Find good values in ElevenLabs → Text to Speech with the same voice.
+const MODELS = ['eleven_flash_v2_5', 'eleven_turbo_v2_5', 'eleven_multilingual_v2', 'eleven_v3_conversational', 'eleven_v4', 'eleven_v4_turbo'];
+const MODEL = process.env.NANA_TTS_MODEL?.trim() || 'eleven_flash_v2_5';
+if (!MODELS.includes(MODEL)) {
+  console.error(`NANA_TTS_MODEL must be one of: ${MODELS.join(', ')}`);
+  process.exit(1);
+}
+/** "0.5" or "50" (percent) → 0.5; undefined when not set. */
+const unit = (name) => {
+  const raw = process.env[name]?.trim();
+  if (!raw) return undefined;
+  const n = Number(raw);
+  const v = n > 1 ? n / 100 : n;
+  if (!Number.isFinite(v) || v < 0 || v > 1) {
+    console.error(`${name} must be between 0 and 1 (or 0–100 %)`);
+    process.exit(1);
+  }
+  return v;
+};
+const STABILITY = unit('NANA_STABILITY');
+const SIMILARITY = unit('NANA_SIMILARITY');
 const DRY = process.argv.includes('--dry-run');
 
 // Facts Nana may use. Keep in sync with the site (Pricing page, rideff_handoff/README.md).
@@ -72,7 +97,12 @@ const payload = {
       dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de' } },
     },
     // German needs a multilingual voice model.
-    tts: { model_id: 'eleven_flash_v2_5', ...(VOICE ? { voice_id: VOICE } : {}) },
+    tts: {
+      model_id: MODEL,
+      ...(VOICE ? { voice_id: VOICE } : {}),
+      ...(STABILITY !== undefined ? { stability: STABILITY } : {}),
+      ...(SIMILARITY !== undefined ? { similarity_boost: SIMILARITY } : {}),
+    },
     language_presets: {
       en: { overrides: { agent: { language: 'en', first_message: FIRST_EN } } },
     },

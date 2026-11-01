@@ -36,7 +36,7 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 - [ ] **ElevenLabs setup** (owner):
   1. ElevenLabs account; for EU data residency an EU-residency workspace (then `ELEVENLABS_REGION=eu`).
   2. API key with Agents access.
-  3. Choose a voice that sounds good in German and English; optional `NANA_VOICE_ID`.
+  3. Voice: for now the Instant Voice Clone "Nana" (recorded in Indonesian, so German has an accent). For more natural German, re-record ~1–2 min in German and re-run the script with the new `NANA_VOICE_ID`. Optional tuning: `NANA_TTS_MODEL`, `NANA_STABILITY`, `NANA_SIMILARITY` (try values in ElevenLabs → Text to Speech first).
   4. Run `ELEVENLABS_API_KEY=… node scripts/elevenlabs-agent.mjs` (creates the agent: prompt with plans and prices, DE/EN first message, overrides, data collection, no voice recording, 30-day transcript retention). It prints the agent id.
   5. In Vercel → Environment Variables: `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID` (and `ELEVENLABS_REGION`), then redeploy.
   6. Test a call and a chat in DE and EN on the preview; adjust the prompt in `scripts/elevenlabs-agent.mjs` and re-run with `ELEVENLABS_AGENT_ID` set to update.
