@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Build.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -651,9 +651,9 @@ class Logic extends DCLogic {
           idUi: 'build-case-' + i + '-ui',
           idSys: 'build-case-' + i + '-sys',
           idMob: 'build-case-' + i + '-mob',
-          srcUi: ["/images/tic-shop.png", "/images/portal-client.png", "/images/life-cockpit.png"][i],
-          srcSys: ["/images/tic-backoffice.png", "/images/portal-admin.png", "/images/life-briefing.png"][i],
-          srcMob: ["/images/tic-shopall.png", "/images/portal-client.png", "/images/life-cockpit.png"][i],
+          srcUi: [opt("/images/tic-shop.png"), opt("/images/portal-client.png"), opt("/images/life-cockpit.png")][i],
+          srcSys: [opt("/images/tic-backoffice.png"), opt("/images/portal-admin.png"), opt("/images/life-briefing.png")][i],
+          srcMob: [opt("/images/tic-shopall.png"), opt("/images/portal-client.png"), opt("/images/life-cockpit.png")][i],
           spec: c.spec.map(x => ({
             k: x[0],
             v: x[1]

@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Storefront.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -25,7 +25,7 @@ class Logic extends DCLogic {
         url: p[4],
         id: p[5],
         ph: p[6],
-        src: ["/images/tic-hero.png", "/images/tic-shopall.png", "/images/mami-hero.png"][k],
+        src: [opt("/images/tic-hero.png"), opt("/images/tic-shopall.png"), opt("/images/mami-hero.png")][k],
         z: k === s.front ? 3 : k === 1 ? 2 : 1,
         y: k === s.front ? '-14px' : '0',
         sh: k === s.front ? '.22' : '.1',
@@ -189,11 +189,11 @@ Logic.prototype.render = function render() {
             </>) : null}
             {" "}
             {v.isUi ? (<>
-              <ImageSlot src="/images/tic-checkout.png" alt={v.t("Storefront.tICInterfaceScreenshot")} shape="rect" />
+              <ImageSlot src={opt("/images/tic-checkout.png")} alt={v.t("Storefront.tICInterfaceScreenshot")} shape="rect" />
             </>) : null}
             {" "}
             {v.isSys ? (<>
-              <ImageSlot src="/images/tic-orders.png" alt={v.t("Storefront.tICSystemBehindTheShop")} shape="rect" />
+              <ImageSlot src={opt("/images/tic-orders.png")} alt={v.t("Storefront.tICSystemBehindTheShop")} shape="rect" />
             </>) : null}
             {" "}
           </div>

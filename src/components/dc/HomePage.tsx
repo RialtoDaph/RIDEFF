@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Home.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 
@@ -598,7 +598,7 @@ class Logic extends DCLogic {
         dur: k === s.i ? this.DUR + 'ms' : '0ms',
         op: k === s.i ? 1 : 0.6,
         zoom: k === s.i ? 'scale(1.08)' : 'scale(1)',
-        img: ["/images/rialto-understand-v2.jpg", "/images/tic-backoffice.png", "/images/rialto-run-v2.jpg"][k],
+        img: [opt("/images/rialto-understand-v2.jpg"), opt("/images/tic-backoffice.png"), opt("/images/rialto-run-v2.jpg")][k],
         go: () => {
           this.setState({
             i: k
@@ -639,7 +639,7 @@ class Logic extends DCLogic {
         });
         this.start();
       },
-      avatars: [["/images/site-cafe.jpg", this.props.t("Home.cafeClient")], ["/images/site-hotel.jpg", this.props.t("Home.hotelClient")], ["/images/tic-shop.png", this.props.t("Home.shopClient")]].map(v => ({
+      avatars: [[opt("/images/site-cafe.jpg"), this.props.t("Home.cafeClient")], [opt("/images/site-hotel.jpg"), this.props.t("Home.hotelClient")], [opt("/images/tic-shop.png"), this.props.t("Home.shopClient")]].map(v => ({
         src: v[0],
         ph: v[1]
       })),
@@ -843,7 +843,7 @@ Logic.prototype.render = function render() {
         {" "}
         <div style={{ position: "fixed", inset: "0", zIndex: "100", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 32px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-            <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "26px", width: "auto", display: "block" }} />
+            <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "26px", width: "auto", display: "block" }} />
             <span>
               {v.t("Home.showreel2026X", { x: v.vidTime })}
             </span>
@@ -947,7 +947,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div style={{ position: "absolute", inset: "0", opacity: `${v.op0 ?? ''}`, transform: `${v.tf0 ?? ''}`, filter: `${v.fl0 ?? ''}`, transition: `${v.tr0 ?? ''}` }}>
               {" "}
-              <img src="/images/rialto-understand-v2.jpg" alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
+              <img src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
               {" "}
               <div style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
@@ -1073,7 +1073,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div style={{ position: "absolute", inset: "0", opacity: `${v.op2 ?? ''}`, transform: `${v.tf2 ?? ''}`, filter: `${v.fl2 ?? ''}`, transition: `${v.tr2 ?? ''}` }}>
               {" "}
-              <img src="/images/rialto-run-v2.jpg" alt={v.t("Home.rialtoAtHisDesk")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 12s ease-in-out infinite alternate" }} />
+              <img src={opt("/images/rialto-run-v2.jpg")} alt={v.t("Home.rialtoAtHisDesk")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 12s ease-in-out infinite alternate" }} />
               {" "}
               <div style={{ position: "absolute", left: "12%", top: "20%", width: "min(340px,50%)", display: "flex", flexDirection: "column", gap: "8px", pointerEvents: "none" }}>
                 {(v.runFeed ?? []).map((f, $index) => (<Fragment key={$index}>
@@ -1220,7 +1220,7 @@ Logic.prototype.render = function render() {
             {v.t("Home.n01Thesis")}
           </div>
           <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", aspectRatio: "4/5", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", transition: "transform .25s ease-out", willChange: "transform", boxShadow: "0 40px 80px -40px rgba(10,10,10,.45)" }}>
-            <img src="/images/rialto-about-v3.jpg" alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src={opt("/images/rialto-about-v3.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             <span data-glare="1" style={{ position: "absolute", inset: "0", borderRadius: "22px", pointerEvents: "none", opacity: "0", transition: "opacity .3s", zIndex: "2", mixBlendMode: "soft-light" }} />
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
@@ -1566,24 +1566,24 @@ Logic.prototype.render = function render() {
                   </span>
                 </div>
                 {" "}
-                <img src="/images/tic-shop.png" alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", display: "block", aspectRatio: "16/11", objectFit: "cover", objectPosition: "top" }} />
+                <img src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", display: "block", aspectRatio: "16/11", objectFit: "cover", objectPosition: "top" }} />
                 {" "}
               </div>
               {" "}
               <div style={{ position: "absolute", right: "0", bottom: "0", width: "62%", borderRadius: "14px", overflow: "hidden", border: "1px solid #2A2A2C", boxShadow: "0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,106,0,.2)", transform: "rotate(2deg)" }}>
                 {" "}
-                <img src="/images/tic-backoffice.png" alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "4/3", objectFit: "cover", objectPosition: "top left" }} />
+                <img src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "4/3", objectFit: "cover", objectPosition: "top left" }} />
                 {" "}
               </div>
               {" "}
               <div style={{ position: "absolute", left: "-4%", top: "58%", width: "30%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6s ease-in-out 0s infinite" }}>
-                <img src="/images/hf/tic1.jpg" alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img src={opt("/images/hf/tic1.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", left: "30%", top: "-6%", width: "22%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 7s ease-in-out .8s infinite" }}>
-                <img src="/images/hf/tic2.jpg" alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img src={opt("/images/hf/tic2.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", left: "84%", top: "-2%", width: "20%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6.5s ease-in-out 1.6s infinite" }}>
-                <img src="/images/hf/tic3.jpg" alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img src={opt("/images/hf/tic3.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               {" "}
             </div>
@@ -1934,7 +1934,7 @@ Logic.prototype.render = function render() {
                 </span>
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img src="/images/tic-shop.png" alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
+                <img src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
                   {v.t("Home.n01TheShopStripePayPalDE")}
                 </span>
@@ -1968,15 +1968,15 @@ Logic.prototype.render = function render() {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img src="/images/tic-backoffice.png" alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
+                <img src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
                   {v.t("Home.n02TheBackOfficeTodayS")}
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: "14px" }}>
-                <img src="/images/hf/tic1.jpg" alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img src="/images/hf/tic2.jpg" alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img src="/images/hf/tic3.jpg" alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img src={opt("/images/hf/tic1.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img src={opt("/images/hf/tic2.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img src={opt("/images/hf/tic3.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", borderTop: "1px solid #1F1F21", paddingTop: "28px" }}>
                 <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#B8B3AA" }}>

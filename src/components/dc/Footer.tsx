@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RideffFooter.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 
 
 class Logic extends DCLogic {
@@ -385,7 +385,7 @@ Logic.prototype.render = function render() {
         <div style={{ padding: "64px clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: "32px", fontSize: "14px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             <a href={v.href("/")} style={{ alignSelf: "flex-start" }}>
-              <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "30px", width: "auto", display: "block" }} />
+              <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "30px", width: "auto", display: "block" }} />
             </a>
             <span style={{ color: "#8C877E", lineHeight: "1.5" }}>
               {v.t("RideffFooter.understandBuildRunOneOperatorFrom")}

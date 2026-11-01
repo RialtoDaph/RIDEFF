@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Rechtliches.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 
 
 class Logic extends DCLogic {}
@@ -14,7 +14,7 @@ Logic.prototype.render = function render() {
       <div style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 20px 96px", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
           <a href={v.href("/")} style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "26px", width: "auto" }} />
+            <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "26px", width: "auto" }} />
             <span style={{ fontWeight: "700", fontSize: "17px", letterSpacing: "0.02em" }}>
               {"RIDEFF"}
             </span>

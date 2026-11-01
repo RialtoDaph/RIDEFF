@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Work.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 
@@ -30,7 +30,7 @@ Logic.prototype.render = function render() {
       <div data-screen-label="Projects" style={{ padding: "0 clamp(20px,3vw,40px) 140px", maxWidth: "1360px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,520px),1fr))", gap: "72px 32px" }}>
         <a href="https://ticoriginals.com" target="_blank" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#0E0E10" }}>
-            <img src="/images/tic-hero.png" alt={v.t("Work.tICOriginalsShop")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img src={opt("/images/tic-hero.png")} alt={v.t("Work.tICOriginalsShop")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -46,7 +46,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("/contact")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#A8183F" }}>
-            <img src="/images/mami-hero.png" alt={v.t("Work.mamiIPatisserieWebsite")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img src={opt("/images/mami-hero.png")} alt={v.t("Work.mamiIPatisserieWebsite")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -80,7 +80,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("/life")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#F6E9DC" }}>
-            <img src="/images/rialto-life-morning.jpg" alt="RIDEFF Life" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img src={opt("/images/rialto-life-morning.jpg")} alt="RIDEFF Life" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>

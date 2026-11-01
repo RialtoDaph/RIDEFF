@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Workbench.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -61,7 +61,7 @@ class Logic extends DCLogic {
         ph: w[1],
         t: w[2],
         d: w[3],
-        src: ["/images/site-laden.jpg", "/images/site-handwerk.jpg", "/images/site-hotel.jpg", "/images/site-praxis.jpg"][k]
+        src: [opt("/images/site-laden.jpg"), opt("/images/site-handwerk.jpg"), opt("/images/site-hotel.jpg"), opt("/images/site-praxis.jpg")][k]
       }))
     };
   }
@@ -132,7 +132,7 @@ Logic.prototype.render = function render() {
         </div>
         <div style={{ position: "relative", minHeight: "600px", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ position: "absolute", inset: "0", borderRadius: "28px", overflow: "hidden", opacity: ".9" }}>
-            <ImageSlot src="/images/site-cafe.jpg" alt={v.t("Workbench.teamAtWorkPhoto")} shape="rounded" radius={28} />
+            <ImageSlot src={opt("/images/site-cafe.jpg")} alt={v.t("Workbench.teamAtWorkPhoto")} shape="rounded" radius={28} />
           </div>
           <div style={{ position: "relative", width: "290px", height: "580px", borderRadius: "44px", background: "#0A0A0A", padding: "14px", boxSizing: "border-box", boxShadow: "0 40px 80px rgba(10,10,10,.3)", display: "flex", flexDirection: "column", gap: "10px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", padding: "8px 14px 4px", color: "#F4F4F2", fontSize: "12px", fontWeight: "600" }}>

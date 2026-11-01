@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RideffNav.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC, useSwitchLocale } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC, useSwitchLocale } from '@/lib/dc';
 
 
 class Logic extends DCLogic {
@@ -125,7 +125,7 @@ Logic.prototype.render = function render() {
           {" "}
           <div style={{ display: "flex", alignItems: "center", justifyContent: `${v.justify ?? ''}`, gap: "20px", padding: "22px clamp(20px,3vw,40px)", pointerEvents: `${v.topPe ?? ''}`, background: `${v.topBg ?? ''}` }}>
             <a href={v.href("/")} style={{ pointerEvents: "auto", fontWeight: "700", fontSize: "21px", letterSpacing: "-0.03em", color: `${v.fg ?? ''}`, textDecoration: "none", display: "flex", alignItems: "baseline", gap: "2px" }}>
-              <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
+              <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             </a>
             {v.showLinks ? (<>
               {" "}
@@ -172,7 +172,7 @@ Logic.prototype.render = function render() {
           <div style={{ display: "flex", justifyContent: "center", padding: "14px 16px" }}>
             <div style={{ pointerEvents: "auto", display: "flex", alignItems: "center", gap: "6px", padding: "6px 6px 6px 18px", borderRadius: "999px", background: `${v.cBg ?? ''}`, border: `1px solid ${v.pillBd ?? ''}`, backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", boxShadow: "0 12px 40px rgba(0,0,0,.25)" }}>
               <a href={v.href("/")} style={{ fontWeight: "700", fontSize: "18px", letterSpacing: "-0.03em", color: `${v.fg ?? ''}`, textDecoration: "none", display: "flex", alignItems: "baseline", gap: "2px", marginRight: "10px" }}>
-                <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "20px", width: "auto", display: "block" }} />
+                <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "20px", width: "auto", display: "block" }} />
               </a>
               {v.showLinks ? (<>
                 <div style={{ display: "flex", gap: "2px" }}>
@@ -207,7 +207,7 @@ Logic.prototype.render = function render() {
         {" "}
         <div data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <img src="/images/rideff-mark.png" alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
+            <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             <button onClick={v.toggle} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
               {v.t("RideffNav.close")}
             </button>

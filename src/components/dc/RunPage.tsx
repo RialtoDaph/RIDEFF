@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Run.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 
@@ -1266,7 +1266,7 @@ Logic.prototype.render = function render() {
             </span>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <span style={{ position: "relative", width: "76px", height: "76px", flexShrink: "0" }}>
-                <img src="/images/rialto-about-v3.jpg" alt="Rialto" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "50% 25%", display: "block" }} />
+                <img src={opt("/images/rialto-about-v3.jpg")} alt="Rialto" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "50% 25%", display: "block" }} />
                 <span style={{ position: "absolute", right: "2px", bottom: "2px", width: "16px", height: "16px", borderRadius: "50%", background: "#61CC80", border: "3px solid #0B0B0C", animation: "rdPulse 1.6s infinite" }} />
               </span>
               <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>

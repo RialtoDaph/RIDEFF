@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Journal.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -13,7 +13,7 @@ class Logic extends DCLogic {
     sent: false
   };
   POSTS = [[this.props.t("Journal.build"), this.props.t("Journal.whyYourAIAgentNeedsA"), this.props.t("Journal.sixAgentsOneRuleNothingLeaves"), this.props.t("Journal.date"), 7], [this.props.t("Journal.understand"), this.props.t("Journal.the45MinuteCallThatSaves"), this.props.t("Journal.whatIAskInTheFirst"), this.props.t("Journal.date"), 5], [this.props.t("Journal.run"), this.props.t("Journal.whatAMondayReportActuallyContains"), this.props.t("Journal.fiveNumbersOneSentenceEachWhy"), this.props.t("Journal.date"), 4], [this.props.t("Journal.build"), this.props.t("Journal.shopStockInvoicesOneSourceOf"), this.props.t("Journal.aCafeInBavariaHadStock"), this.props.t("Journal.date"), 8], [this.props.t("Journal.run"), this.props.t("Journal.somethingBrokeAt3amNobodyNoticed"), this.props.t("Journal.selfHealingIsnTMagicIt"), this.props.t("Journal.date"), 6], [this.props.t("Journal.notes"), this.props.t("Journal.dSGVOForSmallBusinessesUsingAI"), this.props.t("Journal.frankfurtHostingDataProcessingAgreementsAnd"), this.props.t("Journal.date"), 9], [this.props.t("Journal.understand"), this.props.t("Journal.stopBuyingToolsMapFirst"), this.props.t("Journal.theOnePageMapIDraw"), this.props.t("Journal.date"), 5]].map((p, k) => ({
-    src: ["/images/tic-insights.png", "/images/rialto-understand.jpg", "/images/tic-today.png", "/images/site-cafe.jpg", "/images/rialto-run.jpg", "/images/site-praxis.jpg", "/images/rialto-about.jpg"][k % 7],
+    src: [opt("/images/tic-insights.png"), opt("/images/rialto-understand.jpg"), opt("/images/tic-today.png"), opt("/images/site-cafe.jpg"), opt("/images/rialto-run.jpg"), opt("/images/site-praxis.jpg"), opt("/images/rialto-about.jpg")][k % 7],
     id: 'journal-post-' + k,
     tag: p[0],
     t: p[1],
@@ -25,7 +25,7 @@ class Logic extends DCLogic {
   // Real posts (content/journal/*.mdx) come first; the designed placeholder posts follow until replaced.
   CAT = { understand: this.props.t("Journal.understand"), build: this.props.t("Journal.build"), run: this.props.t("Journal.run"), notes: this.props.t("Journal.notes") };
   ALL = [...(this.props.posts || []).map(p => ({
-    src: p.cover,
+    src: opt(p.cover),
     id: 'journal-' + p.slug,
     tag: this.CAT[p.category],
     t: p.title,
@@ -125,7 +125,7 @@ Logic.prototype.render = function render() {
           {" "}
           <a href={v.feat?.href} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "40px", alignItems: "center", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "28px", padding: "clamp(20px,3vw,40px)" }}>
             <div style={{ aspectRatio: "16/10", borderRadius: "18px", overflow: "hidden" }}>
-              <ImageSlot src={v.feat?.href !== '#' ? v.feat?.src : "/images/tic-backoffice.png"} alt={v.t("Journal.featuredPostCoverImage")} shape="rounded" radius={18} />
+              <ImageSlot src={v.feat?.href !== '#' ? v.feat?.src : opt("/images/tic-backoffice.png")} alt={v.t("Journal.featuredPostCoverImage")} shape="rounded" radius={18} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ display: "flex", gap: "14px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#FF6A00" }}>

@@ -116,3 +116,6 @@ export function useSwitchLocale() {
     [pathname, params, router, current],
   );
 }
+
+
+export { opt } from './img';

@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF About.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -62,7 +62,7 @@ Logic.prototype.render = function render() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <div style={{ aspectRatio: "4/5", borderRadius: "24px", overflow: "hidden" }}>
-            <ImageSlot src="/images/rialto-about-v2.jpg" alt={v.t("About.rialtoPortraitWarmLight")} shape="rounded" radius={24} />
+            <ImageSlot src={opt("/images/rialto-about-v2.jpg")} alt={v.t("About.rialtoPortraitWarmLight")} shape="rounded" radius={24} />
           </div>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
             {v.t("About.rialtoFounderOperatorRIDEFF")}
@@ -136,13 +136,13 @@ Logic.prototype.render = function render() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "14px", paddingTop: "24px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden" }}>
-            <ImageSlot src="/images/rialto-run.jpg" alt={v.t("About.atWorkPhoto")} shape="rounded" radius={20} />
+            <ImageSlot src={opt("/images/rialto-run.jpg")} alt={v.t("About.atWorkPhoto")} shape="rounded" radius={20} />
           </div>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden" }}>
-            <ImageSlot src="/images/rialto-about.jpg" alt={v.t("About.eichstattPhoto")} shape="rounded" radius={20} />
+            <ImageSlot src={opt("/images/rialto-about.jpg")} alt={v.t("About.eichstattPhoto")} shape="rounded" radius={20} />
           </div>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden" }}>
-            <ImageSlot src="/images/rialto-understand.jpg" alt={v.t("About.withAClientPhoto")} shape="rounded" radius={20} />
+            <ImageSlot src={opt("/images/rialto-understand.jpg")} alt={v.t("About.withAClientPhoto")} shape="rounded" radius={20} />
           </div>
         </div>
       </div>

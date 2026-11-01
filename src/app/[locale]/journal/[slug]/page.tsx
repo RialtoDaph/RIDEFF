@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Link } from '@/i18n/navigation';
 import { formatDate, getPost, getPosts } from '@/lib/journal';
+import { opt } from '@/lib/img';
 import { WHATSAPP_URL } from '@/lib/site';
 import { socialMeta } from '@/lib/og';
 import { Messages } from '@/components/site/Messages';
@@ -75,7 +76,7 @@ export default async function JournalPost({ params }: PageProps<'/[locale]/journ
           <p className="mt-6 text-[19px] leading-[1.55] text-body">{meta.excerpt}</p>
           {meta.cover ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={meta.cover} alt="" className="mt-10 block aspect-[16/10] w-full rounded-[20px] object-cover" />
+            <img src={opt(meta.cover)} alt="" className="mt-10 block aspect-[16/10] w-full rounded-[20px] object-cover" />
           ) : null}
           <div className="mt-10 text-[18px] leading-[1.65] text-body">
             <MDXRemote source={content} components={mdx} />

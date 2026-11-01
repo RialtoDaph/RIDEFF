@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Life.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 
@@ -29,7 +29,7 @@ class Logic extends DCLogic {
     h: '06–10',
     a: 7,
     b: 9.5,
-    img: "/images/rialto-life-morning.jpg",
+    img: opt("/images/rialto-life-morning.jpg"),
     pos: '50% 8%',
     alt: this.props.t("Life.rialtoWithCoffeeInTheMorning"),
     temp: '12°',
@@ -41,7 +41,7 @@ class Logic extends DCLogic {
     h: '10–18',
     a: 12,
     b: 16,
-    img: "/images/rialto-about-v3.jpg",
+    img: opt("/images/rialto-about-v3.jpg"),
     pos: '50% 30%',
     alt: this.props.t("Life.rialtoOutInTheOldTown"),
     temp: '19°',
@@ -53,7 +53,7 @@ class Logic extends DCLogic {
     h: '18–23',
     a: 19,
     b: 22,
-    img: "/images/rialto-life-evening.jpg",
+    img: opt("/images/rialto-life-evening.jpg"),
     pos: '70% 40%',
     alt: this.props.t("Life.rialtoRelaxingOnTheSofaIn"),
     temp: '14°',
@@ -1139,7 +1139,7 @@ Logic.prototype.render = function render() {
         </div>
       </div>
       <div data-screen-label="Start" style={{ position: "relative", minHeight: "min(86vh,760px)", overflow: "hidden", display: "flex", alignItems: "center", background: "#2A1E14" }}>
-        <img src="/images/rialto-life-evening.jpg" alt={v.t("Life.rialtoRelaxingAtHomeInThe")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        <img src={opt("/images/rialto-life-evening.jpg")} alt={v.t("Life.rialtoRelaxingAtHomeInThe")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
         <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg,rgba(42,30,20,.92) 0%,rgba(42,30,20,.6) 45%,rgba(42,30,20,0) 75%)" }} />
         <div style={{ position: "relative", padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", width: "100%", margin: "0 auto", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "28px", alignItems: "flex-start", color: "#FFF3E6" }}>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF9A50" }}>
