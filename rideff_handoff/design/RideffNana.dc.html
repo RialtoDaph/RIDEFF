@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@keyframes nnRing{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
+@keyframes nnDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes nnIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="position:fixed;right:{{ oR }};bottom:{{ oB }};z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-family:Geist,system-ui,sans-serif">
+  <sc-if value="{{ openChat }}" hint-placeholder-val="{{ false }}">
+    <div style="width:{{ pW }};height:{{ pHc }};background:#F7F5F1;color:#0A0A0A;border-radius:{{ pR }};box-shadow:0 30px 80px rgba(10,10,10,.3);overflow:hidden;display:flex;flex-direction:column;animation:nnIn .35s cubic-bezier(.16,1,.3,1) both">
+      <div style="background:#0A0A0A;color:#F4F4F2;padding:14px 14px 14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="position:relative;width:34px;height:34px;border-radius:50%;background:#FF6A00"><span style="position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border-radius:50%;background:#61C784;border:2px solid #0A0A0A"></span></span><span style="display:flex;flex-direction:column;gap:2px"><b style="font-size:15px">Nana</b><span style="font-size:11px;color:#8C877E">{{ status }}</span></span></div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <button onClick="{{ callNana }}" style="display:flex;align-items:center;gap:6px;border:none;background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:8px 14px;font:600 13px Geist,sans-serif;cursor:pointer">{{ callBtnT2 }}</button>
+          <button onClick="{{ toggle }}" style="width:32px;height:32px;border-radius:50%;background:#1C1C1E;border:none;color:#8C877E;cursor:pointer;font-size:16px">×</button>
+        </div>
+      </div>
+      <div data-nn-list="1" style="flex:1;padding:16px;display:flex;flex-direction:column;gap:10px;overflow:auto">
+        <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="1">
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:{{ m.align }};animation:nnIn .3s both">
+            <sc-if value="{{ m.isSys }}" hint-placeholder-val="{{ false }}"><span style="align-self:center;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;padding:4px 0">{{ m.t }}</span></sc-if>
+            <sc-if value="{{ m.isTxt }}" hint-placeholder-val="{{ true }}"><div style="max-width:86%;background:{{ m.bg }};color:{{ m.fg }};border-radius:{{ m.rad }};padding:11px 14px;font-size:14px;line-height:1.45;text-wrap:pretty">{{ m.t }}</div></sc-if>
+            <sc-if value="{{ m.choice }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;flex-wrap:wrap"><button onClick="{{ focusInput }}" style="border:1px solid #BDB6AA;background:#F7F5F1;color:#0A0A0A;border-radius:999px;padding:8px 14px;font:500 13px Geist,sans-serif;white-space:nowrap;cursor:pointer" style-hover="border-color:#0A0A0A">Type a question</button><button onClick="{{ callNana }}" style="display:flex;align-items:center;gap:8px;border:none;background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:8px 14px;font:600 13px Geist,sans-serif;cursor:pointer"><span style="width:6px;height:6px;border-radius:50%;background:#0A0A0A"></span>Call Nana · voice</button></div></sc-if>
+            <sc-if value="{{ m.acts }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;flex-wrap:wrap"><a href="RIDEFF Contact.dc.html" style="background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:8px 14px;font:600 13px Geist,sans-serif;text-decoration:none">Book a call with Rialto</a><a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style="border:1px solid #BDB6AA;color:#0A0A0A;border-radius:999px;padding:8px 14px;font:500 13px Geist,sans-serif;text-decoration:none">WhatsApp</a></div></sc-if>
+            <sc-if value="{{ m.isSum }}" hint-placeholder-val="{{ false }}">
+              <div style="align-self:stretch;background:#FFFFFF;border:1px solid #E2DDD4;border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #EFEBE4">
+                  <span style="display:flex;flex-direction:column;gap:2px"><b style="font-size:14px">Your summary</b><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E">{{ sumMeta }}</span></span>
+                  <button onClick="{{ toggleEdit }}" style="border:1px solid #BDB6AA;background:transparent;border-radius:999px;padding:6px 12px;font:500 12px Geist,sans-serif;color:#0A0A0A;cursor:pointer">{{ editT }}</button>
+                </div>
+                <div style="padding:12px 14px;display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E">WhatsApp message</span>
+                  <sc-if value="{{ notEditing }}" hint-placeholder-val="{{ true }}">
+                    <div style="background:#F3EFE8;border-radius:4px 14px 14px 14px;padding:12px 14px;display:flex;flex-direction:column;font-size:13.5px;line-height:1.45;color:#0A0A0A">
+                      <sc-for list="{{ sumLines }}" as="l" hint-placeholder-count="8"><span style="display:block;min-height:{{ l.h }};font-weight:{{ l.fw }};font-style:{{ l.fi }};color:{{ l.c }};font-size:{{ l.fs }};text-wrap:pretty">{{ l.t }}</span></sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+                    <textarea value="{{ sumText }}" onChange="{{ onSumText }}" rows="12" style="width:100%;box-sizing:border-box;resize:vertical;background:#F3EFE8;border:1px solid #FF6A00;outline:none;border-radius:12px;padding:12px;font:400 13px/1.5 'Geist Mono',monospace;color:#0A0A0A"></textarea>
+                    <span style="font-size:11px;color:#8C877E">*bold* and _italic_ show as formatting in WhatsApp.</span>
+                  </sc-if>
+                </div>
+                <div style="padding:0 14px 14px;display:flex;flex-direction:column;gap:8px">
+                  <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:flex;justify-content:center;align-items:center;gap:8px;background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:12px 16px;font:600 14px Geist,sans-serif;text-decoration:none" style-hover="background:#2A2A2C">Send to Rialto on WhatsApp →</a>
+                  <div style="display:flex;gap:6px">
+                    <button onClick="{{ copySum }}" style="flex:1;border:1px solid #BDB6AA;background:transparent;border-radius:999px;padding:9px 12px;font:500 13px Geist,sans-serif;color:#0A0A0A;cursor:pointer">{{ copyT }}</button>
+                    <button onClick="{{ toggleMine }}" style="flex:1;border:1px solid #BDB6AA;background:{{ mineBg }};border-radius:999px;padding:9px 12px;font:500 13px Geist,sans-serif;color:#0A0A0A;cursor:pointer">Send to my WhatsApp</button>
+                  </div>
+                  <sc-if value="{{ mineOpen }}" hint-placeholder-val="{{ false }}">
+                    <sc-if value="{{ mineSent }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#2E8B57;padding:4px 2px">Sent to {{ phone }} ✓</span></sc-if>
+                    <sc-if value="{{ mineForm }}" hint-placeholder-val="{{ true }}">
+                      <form onSubmit="{{ sendMine }}" style="display:flex;gap:6px;margin:0">
+                        <input value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+49 …" inputmode="tel" style="flex:1;min-width:0;background:#F3EFE8;border:none;outline:none;border-radius:999px;padding:10px 14px;font:400 14px Geist,sans-serif;color:#0A0A0A"/>
+                        <button type="submit" style="border:none;background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:0 16px;font:600 13px Geist,sans-serif;cursor:pointer">Send</button>
+                      </form>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;display:flex;gap:4px;background:#ECE8E1;border-radius:14px 14px 14px 4px;padding:14px 16px"><span style="width:6px;height:6px;border-radius:50%;background:#5A5650;animation:nnDot 1.1s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#5A5650;animation:nnDot 1.1s .15s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#5A5650;animation:nnDot 1.1s .3s infinite"></span></div></sc-if>
+      </div>
+      <div style="display:flex;gap:6px;overflow-x:auto;padding:0 12px 10px">
+        <sc-for list="{{ chips }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.go }}" style="flex-shrink:0;cursor:pointer;border:1px solid {{ c.bd }};background:{{ c.bg }};border-radius:999px;padding:7px 12px;font:500 13px Geist,sans-serif;white-space:nowrap;color:#0A0A0A" style-hover="border-color:#FF6A00">{{ c.q }}</button></sc-for>
+      </div>
+      <form onSubmit="{{ send }}" style="display:flex;gap:8px;padding:12px;border-top:1px solid #E2DDD4;margin:0">
+        <input ref="{{ inputRef }}" value="{{ draft }}" onChange="{{ onDraft }}" placeholder="Ask Nana anything…" style="flex:1;min-width:0;background:#ECE8E1;border:none;outline:none;border-radius:999px;padding:12px 16px;font:400 14px Geist,sans-serif;color:#0A0A0A"/>
+        <button type="submit" style="width:44px;height:44px;flex-shrink:0;border:none;background:#0A0A0A;color:#F4F4F2;border-radius:50%;cursor:pointer;font-size:16px">↑</button>
+      </form>
+    </div>
+  </sc-if>
+  <sc-if value="{{ openPre }}" hint-placeholder-val="{{ false }}">
+    <div style="width:{{ pW }};max-height:{{ pMax }};height:{{ pHp }};background:#0B0B0C;color:#F4F4F2;border-radius:{{ pR }};box-shadow:0 30px 80px rgba(10,10,10,.45);overflow:auto;display:flex;flex-direction:column;animation:nnIn .35s cubic-bezier(.16,1,.3,1) both">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 18px"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Voice call · preview</span><button onClick="{{ cancelPre }}" style="width:32px;height:32px;border-radius:50%;background:#1C1C1E;border:none;color:#8C877E;cursor:pointer;font-size:16px">×</button></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 24px 22px;text-align:center">
+        <span style="width:72px;height:72px;border-radius:50%;background:#FF6A00"></span>
+        <b style="font-size:22px;letter-spacing:-0.02em">Talk to Nana</b>
+        <span style="font-size:14px;line-height:1.45;color:#B5AFA5;max-width:280px;text-wrap:pretty">Ask out loud, the way you’d ask Rialto. Nana answers right away.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;margin:0 18px;border-top:1px solid #1F1F21">
+        <div style="display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #1F1F21"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;padding-top:2px">Mic</span><span style="font-size:13px;line-height:1.45">Your browser asks for the microphone. Used only during the call.</span></div>
+        <div style="display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #1F1F21"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;padding-top:2px">Length</span><span style="font-size:13px;line-height:1.45">About 2 minutes. Switch to chat any time.</span></div>
+        <div style="display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;padding-top:2px">After</span><span style="font-size:13px;line-height:1.45">You get a summary you can send to Rialto on WhatsApp.</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;padding:18px">
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#B5AFA5;cursor:pointer;padding:0 2px 6px"><input type="checkbox" checked="{{ consent }}" onChange="{{ toggleConsent }}" style="accent-color:#FF6A00;width:16px;height:16px;margin:1px 0 0;flex-shrink:0"/><span>Save the transcript and summary to my RIDEFF client portal. <a href="RIDEFF Rechtliches.dc.html#datenschutz" style="color:#FF9A50">Privacy</a></span></label>
+        <button onClick="{{ beginCall }}" style="border:none;background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:14px;font:600 15px Geist,sans-serif;cursor:pointer">Start call</button>
+        <button onClick="{{ cancelPre }}" style="border:none;background:transparent;color:#8C877E;padding:8px;font:500 13px Geist,sans-serif;cursor:pointer">Not now — type instead</button>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ openCall }}" hint-placeholder-val="{{ false }}">
+    <div style="width:{{ pW }};height:{{ pHk }};background:#0B0B0C;color:#F4F4F2;border-radius:{{ pR }};box-shadow:0 30px 80px rgba(10,10,10,.45);overflow:hidden;display:flex;flex-direction:column;animation:nnIn .35s cubic-bezier(.16,1,.3,1) both">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 18px"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Voice · preview</span><span style="font-family:'Geist Mono',monospace;font-size:13px;color:{{ timerC }}">{{ timer }}</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;padding:18px 0 10px">
+        <div style="position:relative;width:112px;height:112px">
+          <sc-if value="{{ ringing }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;border-radius:50%;border:2px solid #FF6A00;animation:nnRing 1.6s ease-out infinite"></span><span style="position:absolute;inset:0;border-radius:50%;border:2px solid #FF6A00;animation:nnRing 1.6s .8s ease-out infinite"></span></sc-if>
+          <span style="position:absolute;inset:0;border-radius:50%;background:#FF6A00;transform:scale({{ pulse }});transition:transform .14s ease-out"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><b style="font-size:22px;letter-spacing:-0.02em">Nana</b><span style="font-size:13px;color:#8C877E">{{ callState }}</span></div>
+        <div style="display:flex;gap:4px;align-items:center;height:28px"><sc-for list="{{ bars }}" as="b" hint-placeholder-count="7"><span style="width:4px;border-radius:2px;background:{{ b.c }};height:{{ b.h }};transition:height .12s"></span></sc-for></div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:0 20px 16px;overflow:hidden">
+        <sc-for list="{{ lines }}" as="l" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px;opacity:{{ l.op }};animation:nnIn .4s both"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:{{ l.c }}">{{ l.who }}</span><span style="font-size:14px;line-height:1.45">{{ l.t }}</span></div></sc-for>
+      </div>
+      <div style="display:flex;justify-content:center;gap:16px;padding:16px 0 22px;border-top:1px solid #1F1F21">
+        <button onClick="{{ toggleMute }}" style="width:56px;height:56px;border-radius:50%;border:1px solid #2A2A2C;background:{{ muteBg }};color:{{ muteFg }};cursor:pointer;font:600 11px 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase">{{ muteT }}</button>
+        <button onClick="{{ toChat }}" style="width:56px;height:56px;border-radius:50%;border:1px solid #2A2A2C;background:transparent;color:#F4F4F2;cursor:pointer;font:600 11px 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Chat</button>
+        <button onClick="{{ endCall }}" style="width:56px;height:56px;border-radius:50%;border:none;background:#E5484D;color:#FFFFFF;cursor:pointer;font:600 11px 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase">End</button>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ showLauncher }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:10px;align-items:center">
+    <div style="display:flex;align-items:center;gap:6px;background:#F4F1EC;border:1px solid rgba(10,10,10,.08);border-radius:999px;padding:6px;box-shadow:0 12px 30px rgba(10,10,10,.2)">
+      <button onClick="{{ toggle }}" style="display:flex;align-items:center;gap:10px;background:transparent;color:#0A0A0A;border:none;border-radius:999px;padding:1px 10px 1px 1px;font:600 15px Geist,sans-serif;white-space:nowrap;cursor:pointer"><span style="position:relative;width:36px;height:36px;border-radius:50%;background:#FF6A00"><span style="position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#61C784;border:2px solid #F4F1EC"></span></span>{{ launcherT }}</button>
+      <span style="width:1px;height:22px;background:#D9D3C9"></span>
+      <button onClick="{{ callNana }}" title="Call Nana" style="display:flex;align-items:center;gap:6px;border:none;background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:10px 14px;font:600 13px Geist,sans-serif;white-space:nowrap;cursor:pointer" style-hover="background:#FF6A00;color:#0A0A0A"><span style="width:6px;height:6px;border-radius:50%;background:#FF6A00"></span>{{ callBtnT }}</button>
+    </div>
+    <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style="width:52px;height:52px;border-radius:50%;background:#0A0A0A;color:#F4F4F2;display:flex;align-items:center;justify-content:center;font:700 12px 'Geist Mono',monospace;text-decoration:none;box-shadow:0 12px 30px rgba(10,10,10,.2)">WA</a>
+  </div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:720},&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;pricing&quot;,&quot;work&quot;,&quot;life&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home'|'pricing'|'work'|'life'|'contact'&quot;},&quot;callSheet&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  WA = '4917632572420';
+  state = { open: false, mode: 'chat', msgs: this.greet(), typing: false, draft: '', call: 'idle', sec: 0, line: 0, muted: false, lv: 0, t0: 0, sum: null, editing: false, copied: false, mineOpen: false, mineSent: false, phone: '' };
+  componentDidMount() {
+    this.onR = () => this.setState({ vw: window.innerWidth }); window.addEventListener('resize', this.onR); this.onR(); if (this.state.call !== 'idle' || this.state.mode !== 'chat') this.setState({ call: 'idle', mode: 'chat', sec: 0, line: 0 }); }
+  listRef = React.createRef();
+  setList = el => { this.listEl = el; if (el) el.scrollTop = el.scrollHeight; };
+  inputRef = React.createRef();
+  CHIPS = {
+    pricing: ['Which plan fits me?', 'Why a setup fee?', 'Is VAT included?'],
+    work: ['How was TIC built?', 'Can you build mine?', 'How long until live?'],
+    life: ['What is RIDEFF Life?', 'Is the trial free?', 'Can my family use it?'],
+    contact: ['How long until live?', 'What does Growth include?', 'Book a call with Rialto'],
+    home: ['What does Growth include?', 'How long until live?', 'Book a call with Rialto']
+  };
+  A = [
+    [/plan|fit/i, 'Most businesses start with Growth — €249 a month, setup from €1,990. Tick your areas in the configurator on this page and it shows the right plan live.'],
+    [/setup/i, 'The setup pays for analysis, build, testing and go-live — once. The monthly fee keeps it running: hosting, AI, updates and Rialto’s time.', 1],
+    [/vat|tax|mwst/i, 'Business prices are net, plus 19% VAT. Life prices already include VAT.'],
+    [/tic/i, 'TIC Originals got a shop built around limited drops, plus an owner dashboard — orders, DHL labels, insights. Rialto still runs it.'],
+    [/build|mine/i, 'Yes — it starts with a free 30-minute call. After that you get a fixed offer in your client portal.', 1],
+    [/long|live|timeline|when/i, 'Three steps: Understand, Build, Run. It starts with a free 30-minute call — Rialto gives you a timeline right after.', 1],
+    [/family|together|people/i, 'Together covers up to 4 people for €29,90 a month, with a shared calendar and budget.'],
+    [/trial|free/i, '14 days free, no card needed.'],
+    [/life/i, 'RIDEFF Life is a personal assistant: morning briefing, money, time and goals — based on your own data. 14 days free.'],
+    [/growth/i, 'Growth connects customers, sales, team and operations — €249 a month plus setup from €1,990.', 1],
+    [/call|book|talk|rialto/i, 'Happy to set that up — pick a time with Rialto, or message him on WhatsApp.', 1]
+  ];
+  SCRIPT = [
+    ['nana', 'Hi, this is Nana from RIDEFF. How can I help?'],
+    ['you', 'What would a system for my café cost?'],
+    ['nana', 'Most cafés start with Growth — €249 a month, setup from €1,990.'],
+    ['you', 'Can I talk to Rialto about it?'],
+    ['nana', 'Of course. I’ll send you a link to pick a time with him.']
+  ];
+  page() {
+    if (this.props.page) return this.props.page;
+    const p = decodeURIComponent(location.pathname).toLowerCase();
+    return p.includes('pricing') ? 'pricing' : p.includes('work') ? 'work' : p.includes('life') ? 'life' : p.includes('contact') ? 'contact' : 'home';
+  }
+  greet() { return [{ from: 'bot', t: 'Hi, I’m Nana. Ask me about plans, timelines or what RIDEFF could build for you — by text or by voice.', choice: true }]; }
+  ask = q => {
+    q = (q || '').trim(); if (!q) return;
+    this.setState(s => ({ msgs: [...s.msgs, { from: 'me', t: q }], typing: true, draft: '' }));
+    const hit = this.A.find(a => a[0].test(q));
+    clearTimeout(this.tt);
+    this.tt = setTimeout(() => this.setState(s => ({ typing: false, msgs: [...s.msgs, hit ? { from: 'bot', t: hit[1], acts: !!hit[2] } : { from: 'bot', t: 'I’m still a preview, so I can’t answer that yet. Rialto can — want to talk to him?', acts: true }] })), 900 + Math.random() * 600);
+  };
+  callNana = () => {
+    if (this.state.call !== 'idle') return this.setState({ open: true, mode: 'call' });
+    if (this.props.callSheet === false) { this.setState({ open: true }); return this.startCall(); }
+    this.setState({ open: true, mode: 'pre' });
+  };
+  startCall = () => {
+    clearInterval(this.ci);
+    this.setState({ mode: 'call', call: 'ringing', sec: 0, line: 0, muted: false, t0: 0 });
+    clearTimeout(this.ct);
+    this.ct = setTimeout(() => { if (this.state.call === 'ringing') this.setState({ call: 'live', t0: Date.now() }); }, 2200);
+    this.ci = setInterval(() => this.setState(s => {
+      if (s.call !== 'live') return { lv: Math.random() };
+      const sec = Math.floor((Date.now() - s.t0) / 1000);
+      return { lv: Math.random(), sec, line: Math.min(this.SCRIPT.length, Math.floor(sec / 3)) };
+    }), 140);
+  };
+  endCall = () => {
+    clearInterval(this.ci); clearTimeout(this.ct);
+    const d = this.fmt(this.state.sec), heard = this.state.line >= 2;
+    const sum = heard ? this.makeSum({ kind: 'Voice call', dur: d, need: 'A system for my café', interest: 'Growth — €249/month, setup from €1,990', next: 'Pick a time for a free 30-min call with Rialto' }) : null;
+    this.setState(s => ({ mode: 'chat', call: 'idle', t0: 0, ...this.resetSum(sum), msgs: [...s.msgs.filter(m => m.from !== 'sum'), { from: 'sys', t: (window.rideffSiteLang ? window.rideffSiteLang.t : (x => x))('Voice call ended · ') + d }, ...(sum ? [{ from: 'bot', t: 'Thanks for calling. Here’s a summary — send it to Rialto on WhatsApp and he’ll pick it up from there.' }, { from: 'sum' }] : [{ from: 'bot', t: 'Call ended early. Want to try again or continue with Rialto directly?', acts: true }])] }));
+  };
+  chatSum = () => {
+    const mine = this.state.msgs.filter(m => m.from === 'me').map(m => m.t), all = mine.join(' ');
+    const interest = /growth|plan|fit|setup/i.test(all) ? 'Growth — €249/month, setup from €1,990' : /family|together/i.test(all) ? 'RIDEFF Life Together — €29,90/month' : /life|trial/i.test(all) ? 'RIDEFF Life — 14 days free' : 'Not decided yet';
+    const next = /call|book|talk|rialto|build|mine|live|long/i.test(all) ? 'A free 30-min call with Rialto' : 'Rialto replies here on WhatsApp';
+    const sum = this.makeSum({ kind: 'Chat', dur: mine.length + ' questions', need: mine[0] || '—', interest, next });
+    this.setState(s => ({ ...this.resetSum(sum), msgs: [...s.msgs.filter(m => m.from !== 'sum'), { from: 'bot', t: 'Here’s what we covered. Check it, then send it to Rialto.' }, { from: 'sum' }] }));
+  };
+  resetSum = sum => ({ sum, editing: false, copied: false, mineOpen: false, mineSent: false });
+  makeSum({ kind, dur, need, interest, next }) {
+    const L = window.rideffSiteLang, T = x => L ? L.t(x) : x, de = L && L.get() === 'de';
+    const date = new Date().toLocaleDateString(de ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    if (de) dur = dur.replace(' questions', ' Fragen');
+    const text = [T('*Hi Rialto — summary from Nana*'), T(kind) + ' · ' + date + ' · ' + dur, '', T('*What I need*'), T(need), '', T('*Interested in*'), T(interest), '', T('*Next step*'), T(next), '', T('_Sent from Nana on rideff_')].join('\n');
+    return { meta: T(kind) + ' · ' + dur, text };
+  }
+  sumLines(text) {
+    return text.split('\n').map(t => {
+      const b = /^\*(.+)\*$/.exec(t), i = /^_(.+)_$/.exec(t);
+      return { t: b ? b[1] : i ? i[1] : t, fw: b ? 600 : 400, fi: i ? 'italic' : 'normal', c: i ? '#8C877E' : '#0A0A0A', fs: i ? '12px' : '13.5px', h: t === '' ? '8px' : 'auto' };
+    });
+  }
+  fmt = n => Math.floor(n / 60) + ':' + String(n % 60).padStart(2, '0');
+  componentDidUpdate(pp, ps) {
+    if (ps.msgs !== this.state.msgs || ps.typing !== this.state.typing || ps.mode !== this.state.mode) {
+      const go = () => document.querySelectorAll('[data-nn-list]').forEach(el => { el.scrollTop = el.scrollHeight; });
+      go(); requestAnimationFrame(go); clearTimeout(this.st); this.st = setTimeout(go, 120);
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); clearInterval(this.ci); clearTimeout(this.ct); clearTimeout(this.tt); clearTimeout(this.cpt); }
+  renderVals() {
+    const key = this.state.open + '|' + this.state.mode + '|' + this.state.msgs.length + '|' + this.state.typing;
+    if (key !== this.scrollKey) { this.scrollKey = key; const go = () => document.querySelectorAll('[data-nn-list]').forEach(el => { el.scrollTop = el.scrollHeight; }); setTimeout(go, 30); setTimeout(go, 200); }
+    const s = this.state, chat = s.open && s.mode === 'chat', call = s.open && s.mode === 'call', live = s.call === 'live';
+    const msgs = s.msgs.map((m, i) => ({ t: m.t, acts: !!m.acts, choice: !!m.choice && !s.msgs.some(x => x.from !== 'bot') && s.call === 'idle', isSys: m.from === 'sys', isSum: m.from === 'sum' && !!s.sum, isTxt: m.from !== 'sys' && m.from !== 'sum', align: m.from === 'me' ? 'flex-end' : 'flex-start', bg: m.from === 'me' ? '#0A0A0A' : '#ECE8E1', fg: m.from === 'me' ? '#F4F4F2' : '#0A0A0A', rad: m.from === 'me' ? '14px 14px 4px 14px' : '14px 14px 14px 4px' }));
+    const speaking = live && s.line > 0 && this.SCRIPT[s.line - 1][0] === 'nana';
+    const amp = live && !s.muted ? (speaking ? 1 : .45) : .12;
+    const bars = Array.from({ length: 7 }, (_, i) => ({ h: Math.max(4, Math.round(28 * amp * (0.35 + 0.65 * Math.abs(Math.sin((s.lv + i * .37) * 6.28))))) + 'px', c: speaking ? '#FF6A00' : '#5A5650' }));
+    const meCount = s.msgs.filter(m => m.from === 'me').length;
+    const chips = this.CHIPS[this.page()].map(q => ({ q, go: () => this.ask(q), bg: '#F7F5F1', bd: '#BDB6AA' }));
+    if (meCount >= 2 && !s.sum && s.call === 'idle') chips.unshift({ q: 'Summarize for WhatsApp', go: this.chatSum, bg: '#FFE3CC', bd: '#FF6A00' });
+    const text = s.sum ? s.sum.text : '';
+    return {
+      ...(() => { const m = (s.vw || window.innerWidth) < 560 && s.open; return { oR: m ? '0px' : '20px', oB: m ? '0px' : '20px', pW: m ? '100vw' : 'min(380px,calc(100vw - 40px))', pR: m ? '0px' : '24px', pHc: m ? '100dvh' : 'min(600px,calc(100vh - 120px))', pHk: m ? '100dvh' : 'min(560px,calc(100vh - 120px))', pHp: m ? '100dvh' : 'auto', pMax: m ? '100dvh' : 'calc(100vh - 120px)', showLauncher: !m }; })(),
+      openChat: chat, openCall: call, openPre: s.open && s.mode === 'pre', listRef: this.setList, inputRef: this.inputRef,
+      launcherT: s.call !== 'idle' ? (window.rideffSiteLang ? window.rideffSiteLang.t : (x => x))('On call · ') + this.fmt(s.sec) : 'Ask Nana',
+      callBtnT: s.call !== 'idle' ? 'Back to call' : (window.rideffSiteLang && window.rideffSiteLang.get() === 'de' ? 'Anrufen' : 'Call'),
+      toggle: () => this.setState(st => ({ open: !st.open, mode: st.call !== 'idle' ? 'call' : 'chat' })),
+      status: s.call !== 'idle' ? (window.rideffSiteLang ? window.rideffSiteLang.t : (x => x))('On a call · ') + this.fmt(s.sec) : s.typing ? 'typing…' : 'Text or voice · preview',
+      msgs, typing: s.typing, chips,
+      draft: s.draft, onDraft: e => this.setState({ draft: e.target.value }),
+      send: e => { e.preventDefault(); this.ask(s.draft); },
+      focusInput: () => this.inputRef.current && this.inputRef.current.focus(),
+      consent: s.consent !== false, toggleConsent: () => this.setState(st => ({ consent: st.consent === false })),
+      callBtnT2: window.rideffSiteLang && window.rideffSiteLang.get() === 'de' ? 'Anrufen' : 'Call',
+      callNana: this.callNana, beginCall: this.startCall, cancelPre: () => this.setState({ mode: 'chat' }),
+      ringing: s.call === 'ringing', callState: s.call === 'ringing' ? 'Connecting…' : s.muted ? 'Muted' : speaking ? 'Speaking' : 'Listening',
+      timer: this.fmt(s.sec), timerC: live ? '#F4F4F2' : '#5A5650',
+      pulse: (1 + (speaking ? s.lv * .08 : 0)).toFixed(3), bars,
+      lines: this.SCRIPT.slice(0, s.line).slice(-3).map((l, i, a) => ({ who: l[0] === 'nana' ? 'Nana' : 'You', t: l[1], c: l[0] === 'nana' ? '#FF9A50' : '#8C877E', op: i === a.length - 1 ? 1 : .45 })),
+      muteT: s.muted ? 'Unmute' : 'Mute', muteBg: s.muted ? '#F4F4F2' : 'transparent', muteFg: s.muted ? '#0A0A0A' : '#F4F4F2',
+      toggleMute: () => this.setState(st => ({ muted: !st.muted })),
+      toChat: () => this.setState({ mode: 'chat' }), endCall: this.endCall,
+      sumMeta: s.sum ? s.sum.meta : '', sumText: text, sumLines: this.sumLines(text),
+      editing: s.editing, notEditing: !s.editing, editT: s.editing ? 'Done' : 'Edit',
+      toggleEdit: () => this.setState(st => ({ editing: !st.editing })),
+      onSumText: e => this.setState({ sum: { ...s.sum, text: e.target.value } }),
+      waHref: 'https://wa.me/' + this.WA + '?text=' + encodeURIComponent(text),
+      copyT: s.copied ? 'Copied ✓' : 'Copy text',
+      copySum: () => { try { navigator.clipboard.writeText(text); } catch (e) {} this.setState({ copied: true }); clearTimeout(this.cpt); this.cpt = setTimeout(() => this.setState({ copied: false }), 1800); },
+      mineOpen: s.mineOpen, mineSent: s.mineSent, mineForm: !s.mineSent, mineBg: s.mineOpen ? '#F3EFE8' : 'transparent',
+      toggleMine: () => this.setState(st => ({ mineOpen: !st.mineOpen })),
+      phone: s.phone, onPhone: e => this.setState({ phone: e.target.value }),
+      sendMine: e => { e.preventDefault(); if (s.phone.trim().length > 5) this.setState({ mineSent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

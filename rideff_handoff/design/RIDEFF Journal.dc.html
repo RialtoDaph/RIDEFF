@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}</style>
+</helmet>
+<dc-import name="RideffNav" active="journal" hint-size="100%,72px"></dc-import>
+
+<div data-screen-label="Hero" style="padding:140px clamp(20px,3vw,40px) 56px;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+  <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Home / <span style="color:#0A0A0A">Journal</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end">
+    <h1 style="margin:0;font-size:clamp(56px,7.4vw,116px);line-height:.92;letter-spacing:-0.055em;font-weight:600;text-wrap:balance">Notes from the <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">workbench.</span></h1>
+    <p style="margin:0;max-width:460px;font-size:19px;line-height:1.55;color:#3A3731;text-wrap:pretty">What I learn building systems for real businesses — what worked, what broke, and what I'd do differently. Written by me, not by a content team.</p>
+  </div>
+</div>
+
+<div data-screen-label="Filter" style="padding:0 clamp(20px,3vw,40px) 40px;max-width:1480px;margin:0 auto">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #0A0A0A;padding-top:20px">
+    <sc-for list="{{ tags }}" as="t" hint-placeholder-count="5">
+      <button onClick="{{ t.pick }}" style="border:1px solid #0A0A0A;background:{{ t.bg }};color:{{ t.c }};border-radius:999px;padding:9px 16px;font:500 14px Geist,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap">{{ t.t }}<span style="font-family:'Geist Mono',monospace;font-size:11px;opacity:.6">{{ t.n }}</span></button>
+    </sc-for>
+  </div>
+</div>
+
+<sc-if value="{{ showFeat }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Featured" style="padding:0 clamp(20px,3vw,40px) 80px;max-width:1480px;margin:0 auto">
+  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:center;background:#0B0B0C;color:#F4F4F2;border-radius:28px;padding:clamp(20px,3vw,40px)">
+    <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden"><image-slot src="assets/tic-backoffice.png" id="journal-feat" placeholder="Featured post — cover image" shape="rounded" radius="18"></image-slot></div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;gap:14px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FF6A00"><span>{{ feat.tag }}</span><span style="color:#8C877E">{{ feat.date }} · {{ feat.min }} min</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,3.6vw,54px);line-height:1;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">{{ feat.t }}</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B8B3AA;max-width:520px">{{ feat.d }}</p>
+      <span style="font-weight:600;font-size:15px;color:#FF6A00">Read the note →</span>
+    </div>
+  </a>
+</div>
+</sc-if>
+
+<div data-screen-label="Posts" style="padding:0 clamp(20px,3vw,40px) 120px;max-width:1480px;margin:0 auto">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:48px 28px">
+    <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+      <a href="#" style="display:flex;flex-direction:column;gap:14px">
+        <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden"><image-slot src="{{ p.src }}" id="{{ p.id }}" placeholder="Post cover" shape="rounded" radius="20"></image-slot></div>
+        <div style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5A5650"><span style="color:#FF6A00">{{ p.tag }}</span><span>{{ p.date }} · {{ p.min }} min</span></div>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-0.03em;line-height:1.15;text-wrap:balance">{{ p.t }}</span>
+        <span style="font-size:15px;line-height:1.55;color:#3A3731">{{ p.d }}</span>
+      </a>
+    </sc-for>
+  </div>
+</div>
+
+<div data-screen-label="Subscribe" style="background:#0B0B0C;color:#F4F4F2">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(—) One email a month</div>
+      <h2 style="margin:0;font-size:clamp(42px,5.6vw,88px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">New note? <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">You'll know.</span></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input placeholder="you@business.de" value="{{ email }}" onChange="{{ setEmail }}" style="flex:1;min-width:220px;background:transparent;border:1px solid #3A3A3C;border-radius:999px;padding:16px 22px;color:#F4F4F2;font:400 15px Geist,sans-serif;outline:none">
+          <button onClick="{{ send }}" style="background:#FF6A00;color:#0A0A0A;border:none;border-radius:999px;padding:16px 26px;font:600 15px Geist,sans-serif;cursor:pointer">Subscribe</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sent }}"><div style="font-size:17px;color:#F4F4F2">Thanks — first note lands next month.</div></sc-if>
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#8C877E">No tracking pixels. Unsubscribe in one click.</span>
+    </div>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tag: 'All', email: '', sent: false };
+  POSTS = [
+    ['Build', 'Why your AI agent needs a boss', 'Six agents, one rule: nothing leaves the system without you seeing it. How I set up approvals.', '[date]', 7],
+    ['Understand', 'The 45-minute call that saves 3 months', 'What I ask in the first call — and why I spend more time on handoffs than on tools.', '[date]', 5],
+    ['Run', 'What a Monday report actually contains', 'Five numbers, one sentence each. Why I stopped sending dashboards.', '[date]', 4],
+    ['Build', 'Shop, stock, invoices — one source of truth', 'A café in Bavaria had stock in three places. Here\u2019s how it became one.', '[date]', 8],
+    ['Run', 'Something broke at 3am. Nobody noticed.', 'Self-healing isn\u2019t magic — it\u2019s retries, alerts and a person who reads them.', '[date]', 6],
+    ['Notes', 'DSGVO for small businesses using AI', 'Frankfurt hosting, data processing agreements, and what you can safely tell a chatbot.', '[date]', 9],
+    ['Understand', 'Stop buying tools. Map first.', 'The one-page map I draw for every client before writing a single line of code.', '[date]', 5]
+  ].map((p, k) => ({ src: ['assets/tic-insights.png', 'assets/rialto-understand.jpg', 'assets/tic-today.png', 'assets/site-cafe.jpg', 'assets/rialto-run.jpg', 'assets/site-praxis.jpg', 'assets/rialto-about.jpg'][k % 7], id: 'journal-post-' + k, tag: p[0], t: p[1], d: p[2], date: p[3], min: p[4] }));
+  renderVals() {
+    const s = this.state, all = s.tag === 'All';
+    const list = all ? this.POSTS : this.POSTS.filter(p => p.tag === s.tag);
+    const tags = ['All', 'Understand', 'Build', 'Run', 'Notes'].map(t => ({
+      t, n: t === 'All' ? this.POSTS.length : this.POSTS.filter(p => p.tag === t).length,
+      bg: s.tag === t ? '#0A0A0A' : 'transparent', c: s.tag === t ? '#F4F4F2' : '#0A0A0A',
+      pick: () => this.setState({ tag: t })
+    }));
+    return {
+      tags, feat: list[0] || this.POSTS[0], showFeat: list.length > 0, posts: list.slice(1),
+      email: s.email, setEmail: e => this.setState({ email: e.target.value }),
+      send: () => { if (s.email.includes('@')) this.setState({ sent: true }); },
+      sent: s.sent, notSent: !s.sent
+    };
+  }
+}
+</script>
+</body>
+</html>

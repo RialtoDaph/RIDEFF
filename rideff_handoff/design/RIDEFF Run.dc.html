@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}
+@keyframes rdIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes rdTrack{0%{left:0%}100%{left:100%}}
+@keyframes rdScanX{0%{left:-20%}100%{left:110%}}
+</style>
+</helmet>
+<dc-import name="RideffNav" active="run" hint-size="100%,80px"></dc-import>
+
+<div ref="{{ dialRef }}" data-screen-label="24h stage" style="height:520vh;position:relative">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:{{ skyBg }};color:{{ skyFg }}">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,{{ glow }} 0%,transparent 60%)"></div>
+    <sc-for list="{{ stars }}" as="s" hint-placeholder-count="30"><span style="position:absolute;left:{{ s.x }};top:{{ s.y }};width:{{ s.z }};height:{{ s.z }};border-radius:50%;background:#F4F4F2;opacity:{{ s.o }}"></span></sc-for>
+    <div style="position:absolute;left:clamp(20px,3vw,40px);top:110px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7">Home / Run · Pillar 03</div>
+    <div style="position:absolute;right:clamp(20px,3vw,40px);top:96px;z-index:3;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:6px 18px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85">
+      <span style="white-space:nowrap">Handled <b style="color:#FF6A00;font-weight:500">{{ handled }}</b> / 10</span><span style="white-space:nowrap">Status <b style="color:#FF6A00;font-weight:500">normal</b></span><span style="white-space:nowrap">Sample day <b style="color:#FF6A00;font-weight:500">{{ hourLabel }}</b></span>
+    </div>
+    <div style="position:absolute;inset:0;padding:clamp(96px,14vh,140px) clamp(20px,3vw,40px) clamp(80px,12vh,110px);box-sizing:border-box;display:flex;align-items:center">
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:20px;max-width:min(600px,calc(100% - min(64vh,40vw,540px) - 240px))">
+        <div style="display:flex;gap:12px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase"><span style="opacity:.55">{{ phNum }}</span><span>{{ phLabel }}</span></div>
+        <h1 style="margin:0;font-size:clamp(46px,6.4vw,104px);line-height:.94;letter-spacing:-0.055em;font-weight:600;text-wrap:balance">{{ phHead }}</h1>
+        <p style="margin:0;font-size:clamp(16px,1.4vw,20px);line-height:1.5;opacity:.75;max-width:500px;text-wrap:pretty">{{ phBody }}</p>
+        <sc-if value="{{ phLast }}"><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="RIDEFF Portal.dc.html" style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:14px 22px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Open the portal demo ↗</a></div></sc-if>
+      </div>
+      <div style="position:absolute;right:clamp(140px,12vw,200px);top:calc(50% + 30px);transform:translateY(-50%);z-index:1;opacity:{{ dialO }};display:flex;justify-content:center;align-items:center">
+        <div style="position:relative;width:min(64vh,40vw,540px,calc(100vh - 300px));aspect-ratio:1">
+          <div style="position:absolute;inset:0;border-radius:50%;border:1px solid {{ ringC }}"></div>
+          <div style="position:absolute;inset:14%;border-radius:50%;border:1px dashed {{ ringC }}"></div>
+          <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="24"><div style="position:absolute;left:50%;top:0;height:50%;width:1px;transform-origin:50% 100%;transform:translateX(-50%) rotate({{ t.r }})"><span style="display:block;width:1px;height:{{ t.h }};background:{{ ringC }}"></span></div></sc-for>
+          <sc-for list="{{ hours }}" as="t" hint-placeholder-count="4"><span style="position:absolute;left:{{ t.x }};top:{{ t.y }};transform:translate(-50%,-50%);font-family:'Geist Mono',monospace;font-size:11px;opacity:.55">{{ t.t }}</span></sc-for>
+          <div style="position:absolute;left:50%;top:50%;width:2px;height:44%;background:#FF6A00;transform-origin:50% 100%;transform:translate(-50%,-100%) rotate({{ handDeg }});border-radius:2px;box-shadow:0 0 14px rgba(255,106,0,.6)"><span style="position:absolute;left:-5px;top:-5px;width:12px;height:12px;border-radius:50%;background:#FF6A00"></span></div>
+          <sc-for list="{{ events }}" as="e" hint-placeholder-count="10">
+            <div style="position:absolute;left:{{ e.x }};top:{{ e.y }};transform:{{ e.tf }};display:flex;align-items:center;gap:8px;flex-direction:{{ e.dir }}">
+              <span style="width:{{ e.dot }};height:{{ e.dot }};border-radius:50%;background:{{ e.dc }};box-shadow:{{ e.glow }};transition:all .3s;flex-shrink:0"></span>
+              <span style="font-size:12px;white-space:nowrap;padding:5px 10px;border-radius:999px;background:{{ e.bg }};color:{{ e.fg }};border:1px solid {{ e.bd }};opacity:{{ e.o }};transition:all .3s">{{ e.t }}</span>
+            </div>
+          </sc-for>
+          <div style="position:absolute;inset:30%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center">
+            <span style="font-size:clamp(40px,5vw,76px);font-weight:600;letter-spacing:-0.05em;line-height:1;font-variant-numeric:tabular-nums">{{ hourLabel }}</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.6">{{ dayPart }}</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.45">24 h dial · scroll</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:clamp(20px,3vw,40px);right:clamp(20px,3vw,40px);bottom:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+      <sc-for list="{{ psegs }}" as="g" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:10px"><div style="height:2px;background:{{ ringC }};overflow:hidden"><div style="height:100%;width:{{ g.w }};background:#FF6A00"></div></div><span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:{{ g.o }}">{{ g.t }}</span></div></sc-for>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ watchRef }}" data-screen-label="01 What I watch" style="background:#0B0B0C;color:#F4F4F2">
+  <div style="padding:140px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(01) <span style="color:#F4F4F2">What I watch</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Six layers. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">Checked every night.</span></h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B8B3AA;max-width:500px">The platform I built for you is the platform I look after. Every layer gets checked while you sleep — and if something looks off, I fix it before you notice.</p>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #232325">
+        <sc-for list="{{ wLayers }}" as="l" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #1C1C1E;opacity:{{ l.rowOp }};transition:opacity .3s">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ l.c }}">{{ l.n }}</span>
+            <span style="font-size:17px;font-weight:500">{{ l.t }}</span>
+            <span style="display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:12px;color:{{ l.sc }};white-space:nowrap"><span style="width:8px;height:8px;border-radius:50%;background:{{ l.sc }};animation:rdPulse 1.6s infinite"></span>{{ l.status }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#6B675F">Example figures.</span>
+    </div>
+    <div style="position:relative;height:clamp(460px,46vw,620px);perspective:2200px;contain:paint">
+      <div style="position:absolute;left:14%;right:14%;top:36%;bottom:36%;transform-style:preserve-3d;transform:{{ wStackTf }}">
+        <sc-for list="{{ wLayers }}" as="l" hint-placeholder-count="6">
+          <div style="position:absolute;inset:0;border-radius:18px;border:1px solid {{ l.bd }};background:{{ l.bg }};transform:{{ l.tf }};transition:transform .6s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s;overflow:hidden;box-shadow:0 30px 50px -20px rgba(0,0,0,.8)">
+            <div style="position:absolute;left:18px;right:18px;bottom:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px"><sc-for list="{{ l.cells }}" as="x" hint-placeholder-count="4"><span style="height:24px;border-radius:6px;background:{{ x }}"></span></sc-for></div>
+            <div style="position:absolute;left:18px;right:18px;top:14px;display:flex;justify-content:space-between;gap:10px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase"><span style="color:{{ l.tc }}">{{ l.n }} · {{ l.t }}</span><span style="color:{{ l.sc }}">{{ l.mark }}</span></div>
+            <sc-if value="{{ l.on }}"><span style="position:absolute;top:0;bottom:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,106,0,.25),transparent);animation:rdScanX 1s linear infinite"></span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Nightly check · <span style="color:#FF9A50;margin-left:6px">{{ wNow }}</span></div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="02 Portal" style="background:#DCD5CA">
+  <div style="padding:140px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(02) <span style="color:#0A0A0A">Your portal</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">One place. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">One thread</span> per topic.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#3A3731;max-width:480px">Scroll and watch the group chat sort itself. Requests, invoices, project phases and files live in your client portal — every topic gets its own thread, so nothing scrolls away and nothing gets lost.</p>
+      <div style="display:flex"><a href="RIDEFF Portal.dc.html" style="border-bottom:1px solid #0A0A0A;padding-bottom:2px;font-size:15px">Open the real portal demo ↗</a></div>
+    </div>
+    <div ref="{{ portalRef }}" style="position:relative;height:clamp(520px,50vw,660px);perspective:1600px;contain:paint">
+      <div style="position:absolute;inset:0;transform-style:preserve-3d;transform:{{ pStageTf }}">
+        <div style="position:absolute;inset:0;border-radius:26px;background:#0B0B0C;box-shadow:0 40px 80px rgba(10,10,10,.28);opacity:{{ pFrameOp }};transform:translateZ(-20px)">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #1C1C1E;color:#F4F4F2">
+            <span style="display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600">RIDEFF <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8C877E">PORTAL</span></span>
+            <span style="display:flex;gap:6px;align-items:center;font-family:'Geist Mono',monospace;font-size:11px;color:#FF9A50"><span style="width:6px;height:6px;border-radius:50%;background:#FF6A00;animation:rdPulse 2s infinite"></span>4 threads · 0 lost</span>
+          </div>
+          <div style="position:absolute;left:2.5%;right:2.5%;top:13%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2%">
+            <sc-for list="{{ pTopics }}" as="t" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:12px;background:#151516;border-top:2px solid {{ t.c }}"><b style="font-size:13px;color:#F4F4F2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.t }}</b><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:{{ t.c }}">{{ t.s }}</span></div></sc-for>
+          </div>
+        </div>
+        <div style="position:absolute;left:50%;top:6%;transform:translate(-50%,0) translateZ(60px);opacity:{{ pChaosOp }};background:#25D366;color:#0A0A0A;border-radius:999px;padding:9px 16px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;box-shadow:0 14px 30px rgba(10,10,10,.2)">Group chat · 214 unread</div>
+        <sc-for list="{{ pBubbles }}" as="b" hint-placeholder-count="10">
+          <div style="position:absolute;left:{{ b.x }};top:{{ b.y }};width:22.5%;box-sizing:border-box;transform:{{ b.tf }};border-radius:12px;padding:9px 11px;background:{{ b.bg }};color:{{ b.fg }};box-shadow:0 12px 28px -10px rgba(10,10,10,.35);display:flex;flex-direction:column;gap:3px;border-left:3px solid {{ b.c }}">
+            <span style="font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;opacity:.6">{{ b.from }}</span>
+            <span style="font-size:clamp(11px,.95vw,13px);line-height:1.35">{{ b.t }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+</div>
+  </div>
+</div>
+
+<div data-screen-label="02 When it breaks" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:18px"><div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(03) <span style="color:#0A0A0A">When something breaks</span></div><h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;max-width:900px;text-wrap:balance">Go on. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">Break it.</span></h2></div>
+    <button onClick="{{ breakIt }}" style="border:none;cursor:pointer;border-radius:999px;padding:18px 28px;font:700 13px Geist,sans-serif;letter-spacing:.06em;text-transform:uppercase;background:{{ brkBtnBg }};color:{{ brkBtnFg }};box-shadow:0 14px 30px rgba(255,106,0,.25)">{{ brkLabel }}</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px">
+    <div style="position:relative;background:#FFFFFF;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px rgba(10,10,10,.1);transform:rotate({{ shopRot }});transition:transform .3s">
+      <div style="display:flex;gap:6px;align-items:center;padding:12px 16px;background:#ECE8E1"><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="margin-left:10px;font-family:'Geist Mono',monospace;font-size:11px;color:#5A5650">your-shop.de</span></div>
+      <div style="padding:22px;display:flex;flex-direction:column;gap:14px;filter:{{ shopFilter }};transition:filter .3s">
+        <div style="height:120px;border-radius:14px;background:{{ heroBg }};display:flex;align-items:flex-end;padding:16px;box-sizing:border-box"><b style="font-size:22px;letter-spacing:-0.02em;color:#0A0A0A">New season is in.</b></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+          <sc-for list="{{ prods }}" as="p" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:6px;transform:translate({{ p.tx }}) rotate({{ p.r }});transition:transform .4s"><span style="aspect-ratio:1;border-radius:10px;background:#ECE8E1"></span><span style="font-size:12px">{{ p.t }}</span></div></sc-for>
+        </div>
+        <span style="align-self:flex-end;border-radius:999px;padding:12px 20px;font-size:13px;font-weight:600;background:{{ ckBg }};color:#F4F4F2;transition:background .3s">{{ ckLabel }}</span>
+      </div>
+      <sc-if value="{{ isBroken }}"><div style="position:absolute;left:16px;right:16px;bottom:16px;background:#2A1A0E;color:#FFD9BF;border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center;font-family:'Geist Mono',monospace;font-size:12px;animation:rdIn .3s both"><span style="width:9px;height:9px;border-radius:50%;background:#FF6A00;animation:rdPulse .7s infinite"></span>Error 500 · checkout not responding</div></sc-if>
+    </div>
+    <div style="background:#0B0B0C;color:#F4F4F2;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E;padding-bottom:12px"><span>Fix timeline</span><span style="color:{{ brkStateC }}">{{ brkState }}</span></div>
+      <sc-for list="{{ fixTl }}" as="f" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:22px 70px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-top:1px solid #1C1C1E;opacity:{{ f.o }};transition:opacity .4s">
+          <span style="width:12px;height:12px;border-radius:50%;background:{{ f.dot }};box-shadow:{{ f.glow }};transition:all .4s"></span>
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF9A50">{{ f.time }}</span>
+          <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:500">{{ f.t }}</span><span style="font-size:13px;color:#8C877E">{{ f.d }}</span></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ growRef }}" data-screen-label="04 Grows with you" style="height:{{ gH }};position:relative;margin-top:140px">
+  <div style="position:{{ gPos }};top:0;height:{{ gInnerH }};box-sizing:border-box;padding:40px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(04) <span style="color:#0A0A0A">It grows with you</span></div>
+      <h2 style="margin:0;font-size:clamp(38px,4.4vw,70px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Your platform <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">keeps growing.</span></h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#3A3731;max-width:480px">New idea, new process, new location? Ask in your portal. It gets built into the same platform — not stacked on the pile as another tool.</p>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #BDB6AA">
+        <sc-for list="{{ months }}" as="m" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid #D3CCC0;opacity:{{ m.op }};transition:opacity .4s">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:{{ m.mc }};padding-top:3px">{{ m.m }}</span>
+            <span style="display:flex;flex-direction:column;gap:3px"><b style="font-size:17px;letter-spacing:-0.02em">{{ m.t }}</b><span style="font-size:14px;color:#5A5650">{{ m.d }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:relative;height:clamp(420px,44vw,580px);perspective:2000px;contain:paint">
+      <div style="position:absolute;left:18%;right:18%;top:30%;bottom:30%;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-40deg)">
+        <div style="position:absolute;inset:-6%;border-radius:22px;background:#D3CCC0;box-shadow:0 40px 80px -30px rgba(10,10,10,.35)"></div>
+        <div style="position:absolute;inset:-6%;border-radius:22px;background-image:linear-gradient(#C4BCAF 1px,transparent 1px),linear-gradient(90deg,#C4BCAF 1px,transparent 1px);background-size:33.333% 50%;opacity:.6"></div>
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="6">
+          <div style="position:absolute;left:{{ b.x }};top:{{ b.y }};width:29%;height:42%;transform-style:preserve-3d;transform:{{ b.tf }};opacity:{{ b.op }}">
+            <sc-for list="{{ b.slices }}" as="sl" hint-placeholder-count="6"><span style="position:absolute;inset:0;border-radius:10px;background:{{ sl.bg }};transform:{{ sl.tf }}"></span></sc-for>
+            <span style="position:absolute;inset:0;border-radius:10px;background:{{ b.c }};transform:{{ b.topTf }};display:flex;align-items:flex-end;padding:10px;box-sizing:border-box;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#0A0A0A;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">{{ b.t }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Modules live <b style="color:#FF6A00">{{ gCount }}</b> / 06 · same platform</div>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ mailRef }}" data-screen-label="04 Every Monday" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:64px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(05) <span style="color:#0A0A0A">Every Monday</span></div>
+    <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">One email that tells you <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">it's running.</span></h2>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#3A3731;max-width:460px">What the system handled, what changed and what needs you — written from your own numbers, so you never have to log in just to check.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px"><sc-for list="{{ inbox }}" as="x" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:14px;background:#F4F1EC;font-size:14px;color:#8C877E;opacity:{{ x.o }}"><span>{{ x.a }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px">{{ x.b }}</span></div></sc-for><div style="background:#FFFFFF;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 70px rgba(10,10,10,{{ mailSh }});transform:translateY({{ mailY }}) scale({{ mailS }});opacity:{{ mailO }};border:2px solid {{ mailBd }}">
+    <div style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:12px;color:#5A5650"><span>From: RIDEFF · weekly</span><span>Mon 07:00</span></div>
+    <b style="font-size:26px;letter-spacing:-0.03em">Your week, in one read.</b>
+    <sc-for list="{{ weekly }}" as="w" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid #ECE8E1;font-size:16px"><span style="color:#3A3731">{{ w.a }}</span><b style="font-variant-numeric:tabular-nums">{{ w.b }}</b></div></sc-for>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;background:#FFF3EA;border-radius:14px;padding:14px 16px;font-size:15px"><span>2 offers waiting for your approval</span><span style="background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600">Review</span></div>
+    <span style="font-size:12px;color:#8C877E">Example figures.</span>
+  </div></div>
+</div>
+
+<div ref="{{ rcRef }}" id="run-included" data-screen-label="04 Included" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px;position:sticky;top:120px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(06) <span style="color:#0A0A0A">What's included</span></div>
+    <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">One receipt. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">No surprises.</span></h2>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#3A3731;max-width:440px">Everything that keeps your system running is on it. Limits like domains or change requests are written into your offer before you approve.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="width:min(100%,420px);height:30px;border-radius:12px;background:#0B0B0C;position:relative;z-index:2"></div>
+    <div style="width:min(92%,380px);overflow:hidden;margin-top:-8px;max-height:{{ rcH }}">
+      <div style="background:#FFFFFF;padding:30px 26px 22px;font-family:'Geist Mono',monospace;font-size:13px;color:#0A0A0A;display:flex;flex-direction:column;gap:6px">
+        <div style="text-align:center;display:flex;flex-direction:column;gap:4px;padding-bottom:14px;border-bottom:1px dashed #BDB6AA"><b style="font-family:Geist,sans-serif;font-size:20px;letter-spacing:-0.02em">RIDEFF</b><span style="font-size:11px;color:#5A5650">Growth · monthly · Eichstätt</span></div>
+        <sc-for list="{{ incl }}" as="i" hint-placeholder-count="7"><div style="display:flex;justify-content:space-between;gap:12px;padding:7px 0"><span>✓ {{ i }}</span><span style="color:#8C877E">incl.</span></div></sc-for>
+        <div style="border-top:1px dashed #BDB6AA;margin-top:8px;padding-top:12px;display:flex;flex-direction:column;gap:6px;color:#5A5650">
+          <sc-for list="{{ offerSet }}" as="i" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:12px"><span>{{ i.a }}</span><span>{{ i.b }}</span></div></sc-for>
+        </div>
+        <div style="border-top:2px solid #0A0A0A;margin-top:10px;padding-top:12px;display:flex;justify-content:space-between;font-size:16px"><b>TOTAL</b><b>€249.00 / mo</b></div>
+        <span style="font-size:11px;color:#8C877E">net · plus 19% VAT · 12-month term</span>
+        <div style="text-align:center;padding-top:16px;font-size:11px;color:#5A5650">one person · one invoice · thank you</div>
+      </div>
+      <div style="height:14px;background:linear-gradient(-45deg,transparent 9px,#FFFFFF 0) 0 0/18px 14px repeat-x,linear-gradient(45deg,transparent 9px,#FFFFFF 0) 0 0/18px 14px repeat-x"></div>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ promRef }}" data-screen-label="06 Promise" style="padding:140px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(07) <span style="color:#0A0A0A">The promise</span></div>
+    <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600">Measured, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">not described.</span></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px">
+    <div style="background:#F4F1EC;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:22px;min-height:320px;box-sizing:border-box">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">First reply</span>
+      <div style="position:relative;width:120px;height:120px;border-radius:50%;background:conic-gradient(#FF6A00 {{ prRing }},#DCD5CA 0)">
+        <div style="position:absolute;inset:10px;border-radius:50%;background:#F4F1EC;display:flex;flex-direction:column;align-items:center;justify-content:center"><b style="font-size:34px;letter-spacing:-0.04em;line-height:1">{{ prReply }}</b><span style="font-family:'Geist Mono',monospace;font-size:10px;color:#8C877E">hours max</span></div>
+      </div>
+      <span style="font-size:15px;line-height:1.5;color:#3A3731;margin-top:auto">On working days, every message in your portal gets a real answer — from me.</span>
+    </div>
+    <div style="background:#F4F1EC;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:22px;min-height:320px;box-sizing:border-box">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Uptime · last 30 days</span>
+      <b style="font-size:clamp(48px,4.6vw,72px);font-weight:600;letter-spacing:-0.055em;line-height:1;font-variant-numeric:tabular-nums">{{ prUp }}%</b>
+      <div style="display:flex;gap:3px;align-items:flex-end;height:44px">
+        <sc-for list="{{ prBars }}" as="x" hint-placeholder-count="30"><span style="flex:1;height:{{ x.h }};border-radius:2px;background:{{ x.c }};opacity:{{ x.o }};transition:opacity .3s,height .4s"></span></sc-for>
+      </div>
+      <span style="font-size:15px;line-height:1.5;color:#3A3731;margin-top:auto">Monitored around the clock. You see the same chart in your portal.</span>
+    </div>
+    <div style="background:#F4F1EC;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:22px;min-height:320px;box-sizing:border-box">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Backups</span>
+      <b style="font-size:clamp(48px,4.6vw,72px);font-weight:600;letter-spacing:-0.055em;line-height:1">Daily</b>
+      <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px">
+        <sc-for list="{{ prDays }}" as="d" hint-placeholder-count="7"><span style="display:flex;flex-direction:column;align-items:center;gap:6px"><span style="width:100%;aspect-ratio:1;border-radius:8px;background:{{ d.bg }};box-shadow:{{ d.sh }};transition:all .4s"></span><span style="font-family:'Geist Mono',monospace;font-size:10px;color:#8C877E">{{ d.t }}</span></span></sc-for>
+      </div>
+      <span style="font-size:15px;line-height:1.5;color:#3A3731;margin-top:auto">Every night, kept in the EU. Restored by me if you ever need it.</span>
+    </div>
+    <div style="background:#0B0B0C;color:#F4F4F2;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:22px;min-height:320px;box-sizing:border-box">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Your contact</span>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="position:relative;width:76px;height:76px;flex-shrink:0"><img src="assets/rialto-about-v3.jpg" alt="Rialto" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 25%;display:block"><span style="position:absolute;right:2px;bottom:2px;width:16px;height:16px;border-radius:50%;background:#61CC80;border:3px solid #0B0B0C;animation:rdPulse 1.6s infinite"></span></span>
+        <span style="display:flex;flex-direction:column;gap:2px"><b style="font-size:clamp(40px,3.6vw,56px);letter-spacing:-0.05em;line-height:1">1</b><span style="font-size:14px;color:#B8B3AA">person</span></span>
+      </div>
+      <span style="font-size:15px;line-height:1.5;color:#B8B3AA;margin-top:auto">Rialto — the same person from first call to every update. No ticket queue, no handoffs.</span>
+    </div>
+  </div>
+  <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#8C877E">Example figures — final reply time and uptime are set with you in your offer.</span>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid #BDB6AA">
+    <span style="font-size:18px">That's the whole loop: <b>Understand → Build → Run.</b></span>
+    <a href="RIDEFF Contact.dc.html" style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:15px 24px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase">Start a project →</a>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { rp: 0, brk: 0, tab: 0, cyc: 0, ev: 0, wp: 0, mail: 0, clock: '', dp: 0 };
+  dialRef = React.createRef(); rcRef = React.createRef(); watchRef = React.createRef(); growRef = React.createRef(); portalRef = React.createRef(); promRef = React.createRef();
+  PT = [['Website', 'New version up', '#FF6A00'], ['Booking form', 'Live tomorrow', '#54B0E6'], ['Invoices', 'All paid', '#61CC80'], ['Team app', 'Shift swap live', '#9E8CF2']];
+  PB = [['Can you change the homepage photo?', 0, 'You'], ['New version is up ✓', 0, 'Rialto'], ['Font a bit bigger?', 0, 'You'], ['Can we add a guest-count field?', 1, 'You'], ['Added — live tomorrow', 1, 'Rialto'], ['Did the October invoice go out?', 2, 'You'], ['Paid by SEPA on 02.11', 2, 'Rialto'], ['Can staff swap shifts in the app?', 3, 'You'], ['Shift swap is live', 3, 'Rialto'], ['Perfect, thanks!', 3, 'You']];
+  PS = [[8, 18, -9, 80], [55, 14, 7, 40], [30, 34, -4, 120], [68, 38, 10, 20], [4, 52, 6, 60], [44, 56, -8, 140], [72, 64, 5, 30], [16, 74, -6, 100], [52, 80, 9, 70], [32, 12, 3, 160]];
+  WL = [['Apps', 'pages 0.8 s', '#FF6A00'], ['AI agents', '12 drafts ok', '#9E8CF2'], ['Automations', '214 runs ok', '#61CC80'], ['Data core', 'backup 03:00', '#54B0E6'], ['Entry points', '0 unanswered', '#E0B842'], ['Integrations', 'all synced', '#EB7AAB']];
+  MONTHS = [['Month 1', 'Go live', 'Website, inbox and customers — the core.', 0, 0, 3], ['Month 2', 'Booking form', 'Asked for in the portal, live a few days later.', 1, 0, 2], ['Month 4', 'Team app', 'Shifts and checklists on every phone.', 2, 0, 4], ['Month 6', 'Offer agent', 'Drafts offers from your own prices.', 0, 1, 5], ['Month 9', 'Shop', 'Same customers, same stock — now online.', 1, 1, 3], ['Month 12', 'Finance flows', 'Invoices, reminders, export for your accountant.', 2, 1, 4]];
+  tiltMove = e => { const el = e.currentTarget, r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; el.style.transform = 'perspective(1000px) rotateY(' + (x * 10).toFixed(2) + 'deg) rotateX(' + (-y * 10).toFixed(2) + 'deg) scale(1.02)'; };
+  tiltLeave = e => { e.currentTarget.style.transform = ''; };
+  EV24 = [[9.2, 'Inquiry answered'], [11, 'Offer drafted'], [13.5, 'Invoice paid'], [16, 'Shift plan sent'], [19, 'Shop orders synced'], [22.5, 'Reminders sent'], [25, 'Security update'], [27, 'Backup complete'], [29, 'Report written'], [31, 'Briefing ready']];
+  beatRef = React.createRef(); weekRef = React.createRef(); mailRef = React.createRef();
+  EVENTS = [['Backup', 'Nightly backup completed', '#5A5650'], ['Customers', 'Inquiry answered in 2 min', '#FF6A00'], ['Finance', 'Invoice R-2026-041 paid', '#5A5650'], ['Update', 'Security update deployed', '#5A5650'], ['Sales', 'Offer drafted · waiting for you', '#FF6A00'], ['Team', 'Shift plan published', '#5A5650'], ['Monitor', 'Response time 180 ms', '#5A5650'], ['Customers', 'Booking confirmed', '#FF6A00']];
+  DAYS = [['Mon', [['07:00', 'Weekly report sent'], ['09:12', '6 inquiries answered'], ['16:40', 'Offer approved by you']]], ['Tue', [['03:00', 'Backup completed'], ['10:05', 'Invoice reminders sent'], ['14:22', 'New request: booking form']]], ['Wed', [['02:30', 'Security update deployed'], ['11:48', 'Booking form field added'], ['15:10', '4 payments matched']]], ['Thu', [['08:30', 'Shift swap handled'], ['12:00', 'Stock reorder list written'], ['18:05', '9 inquiries answered']]], ['Fri', [['09:00', 'Invoice run · 12 sent'], ['13:30', 'Small fix · menu typo'], ['17:00', 'Week closed']]], ['Sat', [['03:00', 'Backup completed'], ['10:20', '5 bookings confirmed'], ['20:15', 'Shop orders synced']]], ['Sun', [['03:00', 'Backup completed'], ['21:00', 'Report prepared'], ['23:59', 'All systems normal']]]];
+  TABS = [
+    ['Threads', [['Startseite, draft 2', 'Rialto: new version is up', 'New', '#FF9A50'], ['New request: booking form', 'You: can we add a field?', 'Open', '#FF9A50'], ['Invoice October', 'Paid by SEPA', 'Done', '#8C877E'], ['Team app update', 'Shift swap is live', 'Done', '#8C877E'], ['Weekly report', '42 inquiries handled', 'Mon', '#8C877E']]],
+    ['Invoices', [['R-2026-052', 'Monthly · due 01 Nov', 'Upcoming', '#FF9A50'], ['R-2026-041', 'Monthly · Growth', '€249 · paid', '#8C877E'], ['R-2026-032', 'Monthly · Growth', '€249 · paid', '#8C877E'], ['R-2026-018', 'Setup', '€1,990 · paid', '#8C877E']]],
+    ['Project', [['01 First call', 'Done', '✓', '#FF9A50'], ['02 Analysis', 'Done', '✓', '#FF9A50'], ['03 Build', 'Done', '✓', '#FF9A50'], ['04 Test', 'Done', '✓', '#FF9A50'], ['05 Live', 'Running · maintained', 'Now', '#FF9A50']]],
+    ['Files', [['Offer · approved.pdf', 'Approval stored with hash', 'PDF', '#8C877E'], ['Brand assets.zip', 'Uploaded by you', 'ZIP', '#8C877E'], ['Menu photos', '12 images', 'IMG', '#8C877E'], ['Terms v1.2.pdf', 'Accepted', 'PDF', '#8C877E']]]
+  ];
+  componentDidMount() {
+    this.alive = true;
+    this.wt = setInterval(() => this.setState(s => ({ wl: ((s.wl || 0) + 1) % 7 })), 1100);
+    this.calcPin = () => { let rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {} const pin = !rm && innerWidth >= 1000 && innerHeight >= 640; if (pin !== !!(this.state || {}).pin) this.setState({ pin }); }; this.calcPin(); window.addEventListener('resize', this.calcPin);
+    this.t1 = setInterval(() => this.setState(s => ({ cyc: s.cyc + 1, ev: s.ev + 1 })), 2600);
+    const tick = () => this.setState({ clock: new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) }); tick(); this.t2 = setInterval(tick, 30000);
+    this.onScroll = () => { const dr = this.dialRef.current; if (dr) { const r = dr.getBoundingClientRect(), dp = Math.max(0, Math.min(1, -r.top / (r.height - innerHeight))); if (Math.abs(dp - this.state.dp) > .002) this.setState({ dp }); } const rc = this.rcRef.current; if (rc) { const b2 = rc.getBoundingClientRect(), rp = Math.max(0, Math.min(1, (innerHeight * .85 - b2.top) / (innerHeight * .9))); if (Math.abs(rp - this.state.rp) > .004) this.setState({ rp }); } const w = this.weekRef.current; if (w) { const r = w.getBoundingClientRect(), wp = Math.max(0, Math.min(1, -r.top / (r.height - innerHeight))); if (Math.abs(wp - this.state.wp) > .004) this.setState({ wp }); }
+      const cl = v => Math.max(0, Math.min(1, +v || 0)), st = this.state || {}; const wr = this.watchRef.current; if (wr) { const wq = cl((innerHeight * .85 - wr.getBoundingClientRect().top) / (innerHeight * .8)); if (Math.abs(wq - (st.wq || 0)) > .004) this.setState({ wq }); } const gr = this.growRef.current; if (gr) { const r = gr.getBoundingClientRect(), gp = st.pin ? cl(-r.top / (r.height - innerHeight)) : cl((innerHeight * .9 - r.top) / (innerHeight * .9)); if (Math.abs(gp - (st.gp || 0)) > .004) this.setState({ gp }); }
+      const pm = this.promRef.current; if (pm) { const pv = cl((innerHeight * .95 - pm.getBoundingClientRect().top) / (innerHeight * .6)); if (pv > (st.pv || 0) + .004) this.setState({ pv }); }
+      const pr = this.portalRef.current; if (pr) { const pq = cl((innerHeight * .9 - pr.getBoundingClientRect().top) / (innerHeight * .7)); if (Math.abs(pq - (st.pq || 0)) > .004) this.setState({ pq }); }
+      const m = this.mailRef.current; if (m && !this.mailGo && m.getBoundingClientRect().top < innerHeight * .75) { this.mailGo = true; const t0 = performance.now(); const step = n => { const k = Math.min(1, (n - t0) / 1400); this.setState({ mail: 1 - Math.pow(1 - k, 3) }); if (k < 1 && this.alive) requestAnimationFrame(step); }; requestAnimationFrame(step); } };
+    window.addEventListener('scroll', this.onScroll, { passive: true }); this.onScroll();
+    const cv = this.beatRef.current; if (!cv) return; const ctx = cv.getContext('2d');
+    const loop = now => { if (!this.alive) return; this.raf = requestAnimationFrame(loop);
+      const dpr = Math.min(devicePixelRatio || 1, 2), W = cv.clientWidth, H = cv.clientHeight; if (cv.width !== W * dpr) { cv.width = W * dpr; cv.height = H * dpr; }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = '#E2DDD4'; ctx.lineWidth = 1; for (let x = 0; x < W; x += 48) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      const t = now / 1000, mid = H * .55, speed = 90, period = 260;
+      const yAt = x => { const ph = ((x + t * speed) % period + period) % period; let y = Math.sin((x + t * speed) * .03) * 3; if (ph > 120 && ph < 160) { const u = (ph - 120) / 40; y -= Math.sin(u * Math.PI) * (u < .5 ? 46 : -18) * (u < .5 ? 1 : .6); } return mid + y; };
+      const g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, 'rgba(255,106,0,0)'); g.addColorStop(.25, 'rgba(255,106,0,.55)'); g.addColorStop(1, '#FF6A00');
+      ctx.strokeStyle = g; ctx.lineWidth = 2.2; ctx.beginPath(); for (let x = 0; x <= W; x += 2) { const y = yAt(x); x ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
+      const hx = W - 30, hy = yAt(hx); ctx.fillStyle = '#FF6A00'; ctx.beginPath(); ctx.arc(hx, hy, 5, 0, 7); ctx.fill(); ctx.fillStyle = 'rgba(255,106,0,.18)'; ctx.beginPath(); ctx.arc(hx, hy, 12 + Math.sin(t * 4) * 3, 0, 7); ctx.fill();
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { clearInterval(this.bt); clearInterval(this.wt); window.removeEventListener('resize', this.calcPin); this.alive = false; clearInterval(this.t1); clearInterval(this.t2); cancelAnimationFrame(this.raf); window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const s = this.state, E = this.EVENTS, n = E.length;
+    const base = new Date(); base.setHours(8, 0, 0, 0);
+    const feed = [0, 1, 2, 3].map(k => { const i = (s.ev + 3 - k) % n, e = E[i], d = new Date(base.getTime() + (s.ev * 7 + 3 - k) * 7 * 60000); return { k: e[0], t: e[1], c: e[2], time: d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }) }; });
+    const di = Math.min(6, Math.floor(s.wp * 7)), wf = s.wp;
+    const rows = this.TABS[s.tab][1], rot = s.tab === 0 ? rows.map((_, k) => rows[(k - (s.cyc % rows.length) + rows.length) % rows.length]) : rows;
+    const m = s.mail;
+    const dp = s.dp, hr = 8 + dp * 24, hh = hr % 24;
+    const lerp = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+    const K = [[8, [236, 232, 225]], [16.5, [233, 214, 190]], [18.2, [52, 36, 28]], [20.5, [30, 22, 18]], [23, [11, 11, 12]], [29, [13, 13, 16]], [31, [70, 52, 40]], [32, [236, 232, 225]]];
+    let col = K[0][1]; for (let i = 0; i < K.length - 1; i++) if (hr >= K[i][0] && hr <= K[i + 1][0]) { col = lerp(K[i][1], K[i + 1][1], (hr - K[i][0]) / (K[i + 1][0] - K[i][0])); break; }
+    const lum = (col[0] * .3 + col[1] * .59 + col[2] * .11) / 255, dark = lum < .62;
+    const night = Math.max(0, Math.min(1, (hr - 20.5) / 2)) * Math.max(0, Math.min(1, (31 - hr) / 1.5));
+    const phI = hr < 17 ? 0 : hr < 22 ? 1 : hr < 29.5 ? 2 : 3;
+    const PH = [['01', 'Day', 'You run the business.', 'Customers, team, the counter. Meanwhile inquiries get answered and offers get drafted in the background.'], ['02', 'Evening', 'You close the shop.', 'Orders sync, reminders go out, the day gets tidied up — without you staying late.'], ['03', 'Night', 'You sleep. It doesn\'t.', 'Updates are installed, backups are made, the system is checked. Quietly, in Frankfurt.'], ['04', 'Morning', 'You wake up to a report.', 'A short briefing: what happened, what needs you. Everything else is already done.']][phI];
+    const pos = (h, rr) => { const a = (h % 24) / 24 * Math.PI * 2 - Math.PI / 2; return [50 + Math.cos(a) * rr, 50 + Math.sin(a) * rr]; };
+    let seed = 3; const Rn = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+    const dialVals = {
+      dialRef: this.dialRef, dialO: (typeof window !== 'undefined' && window.innerWidth < 820) ? .35 : 1, skyBg: 'rgb(' + col.join(',') + ')', skyFg: dark ? '#F4F4F2' : '#0A0A0A', glow: dark ? 'rgba(255,106,0,.10)' : 'rgba(255,255,255,.5)', ringC: dark ? 'rgba(244,244,242,.18)' : 'rgba(10,10,10,.16)',
+      stars: [...Array(40)].map(() => ({ x: (Rn() * 100) + '%', y: (Rn() * 70) + '%', z: (1 + Rn() * 2) + 'px', o: (night * (.3 + Rn() * .6)).toFixed(2) })),
+      hourLabel: String(Math.floor(hh)).padStart(2, '0') + ':' + String(Math.floor((hh % 1) * 60)).padStart(2, '0'), dayPart: PH[1],
+      handDeg: (hh / 24 * 360) + 'deg', handled: this.EV24.filter(e => e[0] <= hr).length,
+      ticks: [...Array(48)].map((_, i) => ({ r: (i * 7.5) + 'deg', h: i % 2 ? '6px' : '12px' })),
+      hours: [0, 3, 6, 9, 12, 15, 18, 21].map(x => { const q = pos(x, 41); return { t: String(x).padStart(2, '0'), x: q[0] + '%', y: q[1] + '%' }; }),
+      events: this.EV24.map(e => { const on = e[0] <= hr, q = pos(e[0], 50), right = q[0] >= 50, ny = q[1] < 18 ? -14 : q[1] > 82 ? 14 : 0; return { t: e[1], x: q[0] + '%', y: q[1] + '%', dir: right ? 'row' : 'row-reverse', tf: (right ? 'translate(-6px,' : 'translate(calc(-100% + 6px),') + 'calc(-50% + ' + ny + 'px))', dot: on ? '12px' : '8px', dc: on ? '#FF6A00' : (dark ? '#3A3A3C' : '#BDB6AA'), glow: on ? '0 0 0 5px rgba(255,106,0,.18)' : 'none', bg: on ? (dark ? '#1C1C1E' : '#FFFFFF') : 'transparent', fg: dark ? '#F4F4F2' : '#0A0A0A', bd: on ? 'rgba(255,106,0,.5)' : 'transparent', o: on ? 1 : .35 }; }),
+      phNum: PH[0], phLabel: PH[1], phHead: PH[2], phBody: PH[3], phLast: phI === 3,
+      psegs: ['Day', 'Evening', 'Night', 'Morning'].map((t, i) => { const b = [[8, 17], [17, 22], [22, 29.5], [29.5, 32]][i]; return { t, w: Math.max(0, Math.min(1, (hr - b[0]) / (b[1] - b[0]))) * 100 + '%', o: i === phI ? 1 : .5 }; })
+    };
+    const wq = +s.wq || 0, we = wq < .5 ? 4 * wq ** 3 : 1 - Math.pow(-2 * wq + 2, 3) / 2, wsp = 14 + 34 * we, wl = s.wl || 0;
+    const gp = +s.gp || 0, gn = gp * 6.4;
+    const shade = (hex, f) => { const n = parseInt(hex.slice(1), 16), c = [n >> 16, (n >> 8) & 255, n & 255].map(v => Math.round(v * f)); return 'rgb(' + c.join(',') + ')'; };
+    return {
+      ...dialVals,
+      portalRef: this.portalRef, promRef: this.promRef,
+      ...(() => { const v = +s.pv || 0, ev = 1 - Math.pow(1 - v, 3), tick = s.cyc || 0;
+        return { prRing: (ev * 100 * (4 / 24) * 6).toFixed(1) + '%', prReply: Math.max(1, Math.round(4 * ev)), prUp: (99.9 * ev).toFixed(1),
+          prBars: [...Array(30)].map((_, k) => ({ h: (k === 17 ? 60 : 80 + ((k * 37) % 20)) + '%', c: k === 17 ? '#E0B842' : '#61CC80', o: k / 30 < ev ? 1 : .15 })),
+          prDays: ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((t, k) => { const lit = k / 7 < ev, cur = lit && k === tick % 7; return { t, bg: cur ? '#FF6A00' : lit ? '#0A0A0A' : '#DCD5CA', sh: cur ? '0 0 0 5px rgba(255,106,0,.2)' : 'none' }; }) }; })(),
+      ...(() => { const q = +s.pq || 0, pe = q < .5 ? 4 * q ** 3 : 1 - Math.pow(-2 * q + 2, 3) / 2, cnt = [0, 0, 0, 0];
+        return { pFrameOp: (.3 + .7 * Math.min(1, pe * 1.4)).toFixed(3), pChaosOp: Math.max(0, 1 - pe * 2.2).toFixed(3), pStageTf: 'rotateX(' + (14 * (1 - pe)).toFixed(2) + 'deg) rotateY(' + (-12 * (1 - pe)).toFixed(2) + 'deg)',
+          pTopics: this.PT.map(t => ({ t: t[0], s: t[1], c: t[2] })),
+          pBubbles: this.PB.map((b, k) => { const row = cnt[b[1]]++, sc = this.PS[k], fx = 2.5 + b[1] * 24.25, fy = 30 + row * 15.5, x = sc[0] + (fx - sc[0]) * pe, y = sc[1] + (fy - sc[1]) * pe, mine = b[2] === 'You';
+            return { t: b[0], from: b[2], c: this.PT[b[1]][2], x: x.toFixed(2) + '%', y: y.toFixed(2) + '%', tf: 'translateZ(' + (sc[3] * (1 - pe)).toFixed(1) + 'px) rotate(' + (sc[2] * (1 - pe)).toFixed(2) + 'deg)', bg: mine ? (pe > .6 ? '#1F1F21' : '#DCF8C6') : (pe > .6 ? '#151516' : '#FFFFFF'), fg: pe > .6 ? '#F4F4F2' : '#0A0A0A' }; }) }; })(),
+      watchRef: this.watchRef, growRef: this.growRef, tiltMove: this.tiltMove, tiltLeave: this.tiltLeave,
+      wStackTf: 'rotateX(58deg) rotateZ(-38deg) translateZ(' + (-2.5 * wsp).toFixed(1) + 'px)',
+      wNow: wl < 6 ? 'checking ' + this.WL[wl][0].toLowerCase() + '…' : 'all layers ok',
+      wLayers: this.WL.map((l, i) => { const on = i === wl, done = i < wl || wl === 6; return { n: '0' + (i + 1), t: l[0], c: l[2], on, status: on ? 'checking…' : l[1], sc: on ? '#FF9A50' : '#61CC80', mark: on ? '…' : done ? '✓ ok' : 'ok',
+        tf: 'translateZ(' + ((5 - i) * wsp + (on ? 30 : 0)).toFixed(1) + 'px)', bd: on ? '#FF6A00' : '#2A2A2C', bg: on ? 'rgba(30,22,16,.97)' : 'rgba(20,20,21,.96)', tc: on ? '#F4F4F2' : '#8C877E',
+        cells: [0, 1, 2, 3].map(j => on ? (j === 0 ? l[2] : l[2] + '44') : '#1F1F21'), rowOp: on ? 1 : .7 }; }),
+      gH: s.pin ? '260vh' : 'auto', gPos: s.pin ? 'sticky' : 'relative', gInnerH: s.pin ? '100vh' : 'auto',
+      gCount: '0' + Math.max(1, Math.min(6, Math.floor(gn + .2))),
+      months: this.MONTHS.map((m, k) => { const on = gn >= k + .2; return { m: m[0], t: m[1], d: m[2], op: on ? 1 : .35, mc: on ? '#FF6A00' : '#8C877E' }; }),
+      blocks: this.MONTHS.map((m, k) => { const col = ['#FF6A00', '#E0B842', '#54B0E6', '#9E8CF2', '#EB7AAB', '#61CC80'][k], d = k === 0 ? 1 : Math.max(0, Math.min(1, gn - k)), de = 1 - Math.pow(1 - d, 3), H = m[5] * 12;
+        return { t: m[1], c: col, x: (m[3] * 33.333 + 2.2) + '%', y: (m[4] * 50 + 4) + '%', op: Math.min(1, d * 2).toFixed(2), tf: 'translateZ(' + ((1 - de) * 320).toFixed(1) + 'px)', topTf: 'translateZ(' + H + 'px)',
+          slices: [0, 1, 2, 3, 4, 5].map(j => ({ bg: shade(col, .55 + j * .05), tf: 'translateZ(' + (j * H / 6).toFixed(1) + 'px)' })) }; }),
+      rcRef: this.rcRef, rcH: (90 + s.rp * 760) + 'px',
+      inbox: [['Newsletter · supplier', 'Sun'], ['Order confirmation', 'Sun'], ['Calendar: dentist', 'Sat']].map(x => ({ a: x[0], b: x[1], o: .5 + (1 - m) * .5 })),
+      mailY: ((1 - m) * -60) + 'px', mailS: .96 + m * .04, mailO: Math.min(1, m * 1.5), mailSh: (.04 + m * .08).toFixed(2), mailBd: m > .99 ? '#FF6A0033' : 'transparent',
+      ...(() => { const b = s.brk, broken = b >= 1 && b <= 3, T = ['14:02', '14:02', '14:06', '14:31', '14:33'];
+        const steps = [['You report', 'One message, a screenshot is enough'], ['Thread opens', '"Checkout broken" · priority'], ['Fixed', 'Payment webhook restarted'], ['Deployed', 'Tested, backups untouched'], ['Confirmed', 'Short note: what it was, what changed']];
+        return { isBroken: broken, shopRot: broken ? '-1.2deg' : '0deg', shopFilter: broken ? 'saturate(.2) contrast(.9)' : 'none', heroBg: broken ? 'repeating-linear-gradient(135deg,#E2DDD4 0 8px,#D3CCC0 8px 16px)' : 'linear-gradient(120deg,#FFE3CC,#F4F1EC)',
+          prods: ['Linen shirt · €69', 'Tote bag · €29', 'Cap · €24'].map((t, i) => ({ t, tx: broken ? ((i - 1) * 6) + 'px,' + (i * 5) + 'px' : '0,0', r: broken ? ((i - 1) * 4) + 'deg' : '0deg' })),
+          ckBg: broken ? '#8C877E' : '#0A0A0A', ckLabel: broken ? 'Checkout ✕' : 'Checkout →',
+          brkBtnBg: b === 0 || b === 6 ? '#FF6A00' : '#DCD5CA', brkBtnFg: '#0A0A0A', brkLabel: b === 0 ? 'Break something ⚡' : b === 6 ? 'Break it again ⚡' : 'Fixing…',
+          brkState: b === 0 ? 'all normal' : b === 6 ? 'resolved' : broken ? 'incident open' : 'deploying', brkStateC: broken ? '#FF6A00' : '#8C877E',
+          fixTl: steps.map((x, i) => { const on = b >= i + 2 || (i === 0 && b >= 1); return { t: x[0], d: x[1], time: on ? T[i] : '—', o: on ? 1 : .3, dot: on ? '#FF6A00' : '#3A3A3C', glow: on ? '0 0 0 5px rgba(255,106,0,.2)' : 'none' }; }),
+          breakIt: () => { if (b !== 0 && b !== 6) return; clearInterval(this.bt); this.setState({ brk: 1 }); this.bt = setInterval(() => this.setState(x => { if (x.brk >= 6) { clearInterval(this.bt); return null; } return { brk: x.brk + 1 }; }), 1100); } }; })(),
+      beatRef: this.beatRef, weekRef: this.weekRef, mailRef: this.mailRef, clock: s.clock,
+      evCount: 96 + s.ev, feed,
+      dayName: this.DAYS[di][0], dayLog: this.DAYS[di][1].map(l => ({ time: l[0], t: l[1] })),
+      days: this.DAYS.map((d, k) => ({ t: d[0], bar: k <= di ? '#FF6A00' : '#CFC8BC', c: k === di ? '#0A0A0A' : '#8C877E' })),
+      tallies: [['Inquiries answered', 46], ['Invoices sent', 18], ['Backups', 7], ['Updates deployed', 3]].map(t => ({ t: t[0], v: Math.round(t[1] * wf) })),
+      ptabs: this.TABS.map((t, k) => ({ t: t[0], bg: k === s.tab ? '#FF6A00' : '#1C1C1E', fg: k === s.tab ? '#0A0A0A' : '#B8B3AA', go: () => this.setState({ tab: k }) })),
+      rows: rot.map((r, k) => ({ a: r[0], b: r[1], s: r[2], c: r[3], bg: k === 0 && s.tab === 0 ? '#1F1A16' : '#161618' })),
+      fixChain: ['You report', 'Thread opens', 'Fixed', 'Deployed', 'Confirmed'],
+      fixSteps: ['One message in the portal — a screenshot is enough.', 'It gets its own thread, so it never drowns in chat.', 'I fix it, usually without you needing to explain twice.', 'Tested and deployed. Backups stay untouched.', 'You get a short note: what it was, what changed.'].map((d, k) => ({ n: '0' + (k + 1), d })),
+      weekly: [['Inquiries handled', Math.round(42 * m)], ['Offers sent', Math.round(9 * m)], ['Invoices paid', '€' + Math.round(6480 * m).toLocaleString('en')], ['Hours saved (est.)', Math.round(14 * m) + ' h']].map(w => ({ a: w[0], b: w[1] })),
+      incl: ['EU hosting in Frankfurt', 'Your own domain & SSL', 'Daily backups', 'Security & software updates', 'Fixes when something breaks', 'Support through your client portal', 'Weekly summary'],
+      offerSet: [['Number of domains', 'in your offer'], ['Mailboxes', 'in your offer'], ['Change requests / month', 'in your offer'], ['New features', 'quoted separately']].map(i => ({ a: i[0], b: i[1] })),
+      promise: [['First reply', '— h', 'On working days · to be set'], ['Uptime', '—%', 'Measured monthly · to be set'], ['Backups', 'Daily', 'Kept in the EU'], ['Contact', '1', 'Person, from build to every update']].map(p => ({ k: p[0], v: p[1], d: p[2] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

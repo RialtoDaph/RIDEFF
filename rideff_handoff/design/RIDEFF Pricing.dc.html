@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>RIDEFF Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}</style>
+</helmet>
+<dc-import name="RideffNav" active="pricing" hint-size="100%,72px"></dc-import>
+
+<div data-pin="hero" style="height:{{ heroH }};position:relative"><div data-pinbox="1" data-screen-label="01 Hero" style="position:{{ pinPos }};top:0;min-height:{{ pinH }};box-sizing:border-box;padding:{{ heroPad }};max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:40px;align-items:center;transform-origin:50% 0">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Home / <span style="color:#0A0A0A">Pricing</span></div>
+    <h1 style="margin:0;font-size:clamp(56px,7.6vw,124px);line-height:.92;letter-spacing:-0.055em;font-weight:600">One price. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.02em;color:#FF6A00">Every month.</span></h1>
+    <p style="margin:0;max-width:500px;font-size:18px;line-height:1.55;color:#3A3731;text-wrap:pretty">{{ heroSub }}</p>
+    <div style="display:flex;gap:4px;padding:4px;border-radius:999px;background:#DCD5CA;align-self:flex-start;max-width:100%;overflow-x:auto">
+      <button onClick="{{ setBiz }}" style="border:none;cursor:pointer;border-radius:999px;padding:12px 22px;font:500 14px Geist,sans-serif;white-space:nowrap;background:{{ bBg }};color:{{ bFg }};transition:background .3s,color .3s">For businesses</button>
+      <button onClick="{{ setLife }}" style="border:none;cursor:pointer;border-radius:999px;padding:12px 22px;font:500 14px Geist,sans-serif;white-space:nowrap;background:{{ lBg }};color:{{ lFg }};transition:background .3s,color .3s">For you · Life</button>
+    </div>
+    <div key="{{ curKey }}" style="display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;border-top:1px solid #C9C1B4;padding-top:20px;max-width:520px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">{{ curN }}</span><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em">{{ curName }}</span><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;color:#FF6A00">{{ curPrice }}</span><span style="width:100%;font-size:15px;line-height:1.5;color:#3A3731">{{ curFor }}</span></div>
+    <span style="font-size:13px;color:#5A5650">{{ vatNote }}</span>
+    <sc-if value="{{ pin }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:14px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650"><span>Scroll to add layers</span><span style="position:relative;width:140px;height:2px;background:#C9C1B4;overflow:hidden"><span data-hbar="1" style="position:absolute;inset:0;background:#FF6A00;transform-origin:0 50%;transform:scaleX(0)"></span></span></div></sc-if>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+    <div onMouseMove="{{ stackMove }}" onMouseLeave="{{ stackLeave }}" style="position:relative;width:100%;height:clamp(440px,44vw,580px);display:flex;align-items:center;justify-content:center">
+      <div data-stackrot="1" style="transform-style:preserve-3d;will-change:transform"><div style="position:relative;width:min(300px,62vw);aspect-ratio:1;transform-style:preserve-3d;transform:translateY({{ stackY }}) rotateX(58deg) rotateZ({{ rz }});transition:transform .6s cubic-bezier(.16,1,.3,1)">
+        <sc-for list="{{ slabs }}" as="s" hint-placeholder-count="4"><div onClick="{{ s.go }}" style="position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ({{ s.z }});transition:transform .8s cubic-bezier(.16,1,.3,1);cursor:pointer">
+          <div style="position:absolute;inset:0;border-radius:24px;transform:translateZ(-16px);background:{{ s.side }};transition:background .5s"></div>
+          <div style="position:absolute;inset:0;border-radius:24px;box-sizing:border-box;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:{{ s.bg }};color:{{ s.fg }};border:1.5px {{ s.bs }} {{ s.bd }};box-shadow:{{ s.sh }};transition:background .5s,color .5s,border-color .5s,box-shadow .5s">
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75">{{ s.n }} · {{ s.sub }}</span>
+            <span style="font-size:30px;font-weight:600;letter-spacing:-0.03em;opacity:{{ s.tOp }};transition:opacity .4s">{{ s.t }}</span>
+          </div>
+        </div></sc-for>
+      </div></div>
+      <div style="position:absolute;left:0;bottom:8px;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:10px 16px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase"><span style="width:7px;height:7px;border-radius:50%;background:#FF6A00"></span>{{ curName }} · {{ layerCount }} layers</div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+      <sc-for list="{{ planPills }}" as="p" hint-placeholder-count="3"><button onClick="{{ p.go }}" style="border:1px solid {{ p.bd }};cursor:pointer;border-radius:999px;padding:10px 18px;font:500 14px Geist,sans-serif;white-space:nowrap;background:{{ p.bg }};color:{{ p.fg }};transition:background .3s,color .3s">{{ p.t }}</button></sc-for>
+    </div>
+  </div>
+</div>
+</div>
+
+<div data-screen-label="02 Plans" style="padding:40px clamp(20px,3vw,40px) 120px;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+  <sc-if value="{{ isLife }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:4px;padding:4px;border-radius:999px;background:#DCD5CA;align-self:flex-end"><button onClick="{{ setMonthly }}" style="border:none;cursor:pointer;border-radius:999px;padding:9px 18px;font:500 13px Geist,sans-serif;white-space:nowrap;background:{{ mBg }};color:{{ mFg }}">Monthly</button><button onClick="{{ setYearly }}" style="border:none;cursor:pointer;border-radius:999px;padding:9px 18px;font:500 13px Geist,sans-serif;white-space:nowrap;background:{{ yBg }};color:{{ yFg }}">Yearly · 2 months free</button></div></sc-if>
+  <div data-rv="0" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px">
+    <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+      <div onClick="{{ p.go }}" style="cursor:pointer;border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:24px;background:{{ p.bg }};color:{{ p.fg }};transform:translateY({{ p.ty }});transition:background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">{{ p.n }}</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7">{{ p.tag }}</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em">{{ p.name }}</span><span style="font-size:15px;line-height:1.5;opacity:.75">{{ p.for }}</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:54px;font-weight:600;letter-spacing:-0.05em;line-height:1">{{ p.price }}</span><span style="font-size:14px;opacity:.7">{{ p.unit }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;color:{{ p.dayC }}">≈ {{ p.day }} a day</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid {{ p.line }};padding-top:20px">
+          <sc-for list="{{ p.items }}" as="i" hint-placeholder-count="4"><span style="font-size:15px;display:flex;gap:10px"><span style="color:#FF6A00">+</span>{{ i }}</span></sc-for>
+        </div>
+        <a href="{{ p.href }}" style="margin-top:auto;text-align:center;border-radius:999px;padding:14px 20px;font-weight:600;font-size:15px;background:{{ p.btnBg }};color:{{ p.btnFg }}" style-hover="opacity:.88">{{ p.cta }}</a>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<div data-screen-label="02b Why" style="padding:80px clamp(20px,3vw,40px) 150px;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+  <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(00) <span style="color:#0A0A0A">Why this price</span></div>
+  <p data-words="1" style="margin:0;max-width:1240px;font-size:clamp(32px,4vw,64px);line-height:1.08;letter-spacing:-0.04em;font-weight:500;text-wrap:pretty"><sc-for list="{{ words }}" as="w" hint-placeholder-count="30"><span data-wd="{{ w.m }}" style="color:#D3CCC0;transition:color .25s">{{ w.t }}</span></sc-for></p>
+</div>
+
+<div data-screen-label="03 Configurator" style="background:#0B0B0C;color:#F4F4F2">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(01) <span style="color:#F4F4F2">Find your plan</span></div>
+      <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">{{ cfgH }} <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">{{ cfgH2 }}</span></h2>
+      <sc-if value="{{ isLife }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">How many people</span><div style="display:flex;gap:6px"><sc-for list="{{ people }}" as="p" hint-placeholder-count="4"><button onClick="{{ p.go }}" style="width:56px;height:48px;border-radius:14px;border:1px solid {{ p.bd }};cursor:pointer;font:600 16px Geist,sans-serif;background:{{ p.bg }};color:{{ p.fg }};transition:background .3s">{{ p.t }}</button></sc-for></div></div></sc-if>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:10px">
+        <sc-for list="{{ cOpts }}" as="o" hint-placeholder-count="7"><button onClick="{{ o.toggle }}" style="display:flex;gap:14px;align-items:flex-start;text-align:left;padding:18px;border-radius:16px;border:1px solid {{ o.bd }};background:{{ o.bg }};color:#F4F4F2;cursor:pointer;transition:background .3s,border-color .3s"><span style="flex-shrink:0;width:22px;height:22px;border-radius:7px;border:1.5px solid {{ o.cb }};background:{{ o.cbg }};color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:background .3s">{{ o.mark }}</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font:600 15px Geist,sans-serif">{{ o.t }}</span><span style="font:400 13px/1.45 Geist,sans-serif;color:#8C877E">{{ o.d }}</span></span></button></sc-for>
+      </div>
+    </div>
+    <div style="position:sticky;top:110px;border-radius:24px;background:#F4F1EC;color:#0A0A0A;padding:32px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Recommended</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#FF6A00">{{ cfgN }}</span></div>
+      <span key="{{ cfgKey }}" style="font-size:clamp(48px,5vw,76px);font-weight:600;letter-spacing:-0.05em;line-height:.95">{{ cfgName }}</span>
+      <span style="font-size:15px;line-height:1.5;color:#3A3731">{{ cfgWhy }}</span>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #D3CCC0">
+        <sc-for list="{{ cfgRows }}" as="r" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #D3CCC0;font-size:15px"><span style="color:#3A3731">{{ r.l }}</span><span style="font-family:'Geist Mono',monospace;font-weight:500;color:{{ r.c }}">{{ r.v }}</span></div></sc-for>
+      </div>
+      <button onClick="{{ useCfg }}" style="border:none;cursor:pointer;border-radius:999px;padding:16px 22px;font:600 15px Geist,sans-serif;background:#0A0A0A;color:#F4F4F2" style-hover="background:#FF6A00;color:#0A0A0A">Show me {{ cfgName }} ↑</button>
+      <span style="font-size:12px;color:#5A5650">{{ vatNote }}</span>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="04 Where it goes" style="padding:130px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 56px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(02) <span style="color:#0A0A0A">Where the money goes</span></div>
+      <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600">Where your <span style="color:#FF6A00">{{ curPrice }}</span> <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">goes.</span></h2>
+    </div>
+    <p style="margin:0;max-width:520px;font-size:17px;line-height:1.55;color:#3A3731;text-wrap:pretty">{{ bdIntro }}</p>
+  </div>
+  <div data-seen="bd" style="display:flex;height:clamp(88px,10vw,128px);border-radius:22px;overflow:hidden;background:#DCD5CA">
+    <sc-for list="{{ bd }}" as="b" hint-placeholder-count="5"><div style="width:{{ b.w }};background:{{ b.col }};color:{{ b.fg }};display:flex;align-items:flex-end;padding:0 0 14px 16px;box-sizing:border-box;overflow:hidden;transition:width 1.1s cubic-bezier(.16,1,.3,1)"><span style="font-family:'Geist Mono',monospace;font-size:12px;white-space:nowrap">{{ b.pct }}%</span></div></sc-for>
+  </div>
+  <div data-rv="120" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+    <sc-for list="{{ bd }}" as="b" hint-placeholder-count="5"><div style="border-radius:18px;background:#F4F1EC;padding:22px;display:flex;flex-direction:column;gap:12px"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="width:12px;height:12px;border-radius:4px;background:{{ b.col }}"></span><span style="font-family:'Geist Mono',monospace;font-size:13px">{{ b.eur }}</span></div><span style="font-size:17px;font-weight:600;letter-spacing:-0.02em">{{ b.t }}</span><span style="font-size:14px;line-height:1.5;color:#3A3731">{{ b.d }}</span></div></sc-for>
+  </div>
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><span style="font-size:22px;font-weight:600;letter-spacing:-0.02em">That's <span style="color:#FF6A00">{{ curDay }}</span> a day.</span><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;border:1px dashed #BDB6AA;border-radius:999px;padding:8px 14px">Placeholder split — to be confirmed</span></div>
+</div>
+
+<div data-screen-label="05 Setup / Trial" style="background:#E3DED5">
+  <div style="padding:130px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 56px;align-items:end">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(03) <span style="color:#0A0A0A">{{ phK }}</span></div>
+        <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">{{ phH }} <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">{{ phH2 }}</span></h2>
+      </div>
+      <p style="margin:0;max-width:520px;font-size:17px;line-height:1.55;color:#3A3731;text-wrap:pretty">{{ phIntro }}</p>
+    </div>
+    <div data-seen="ph" data-rv="0" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px">
+      <sc-for list="{{ phases }}" as="p" hint-placeholder-count="5"><button onClick="{{ p.go }}" style="text-align:left;cursor:pointer;border:none;border-radius:22px;padding:24px;min-height:300px;display:flex;flex-direction:column;gap:14px;background:{{ p.bg }};color:{{ p.fg }};transform:translateY({{ p.ty }});transition:background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)">
+        <div style="display:flex;justify-content:space-between;align-items:center;width:100%"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">{{ p.n }}</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.65">{{ p.when }}</span></div>
+        <span style="font:600 22px Geist,sans-serif;letter-spacing:-0.02em">{{ p.t }}</span>
+        <span style="font:400 14px/1.5 Geist,sans-serif;opacity:.8">{{ p.d }}</span>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;width:100%"><span style="font-family:'Geist Mono',monospace;font-size:20px;font-weight:500">{{ p.amt }}</span><span style="height:4px;border-radius:2px;background:{{ p.track }};overflow:hidden;display:flex"><span style="width:{{ p.w }};background:#FF6A00;transition:width 1s cubic-bezier(.16,1,.3,1)"></span></span></div>
+      </button></sc-for>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><span style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ phSum }}</span><sc-if value="{{ isBizPh }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;border:1px dashed #BDB6AA;border-radius:999px;padding:8px 14px">Split and timing are placeholders — to be confirmed</span></sc-if></div>
+  </div>
+</div>
+
+<div data-pin="flow" data-screen-label="06 Flow" style="background:#0B0B0C;color:#F4F4F2;height:{{ flowH }};position:relative">
+  <div data-pinbox="1" style="position:{{ pinPos }};top:0;min-height:{{ pinH }};box-sizing:border-box;padding:{{ flowPad }};max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center;transform-origin:50% 0">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(04) <span style="color:#F4F4F2">{{ flK }}</span></div>
+      <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">{{ flH }} <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">{{ flH2 }}</span></h2>
+      <div onMouseEnter="{{ flHold }}" onMouseLeave="{{ flRelease }}" style="display:flex;flex-direction:column;border-top:1px solid #2A2A2C">
+        <sc-for list="{{ steps }}" as="g" hint-placeholder-count="6"><button onClick="{{ g.go }}" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:16px 0;border:none;border-bottom:1px solid #2A2A2C;background:none;cursor:pointer;text-align:left;color:{{ g.fg }};transition:color .3s"><span style="font-family:'Geist Mono',monospace;font-size:12px;padding-top:3px;color:{{ g.nc }}">{{ g.n }}</span><span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 18px Geist,sans-serif">{{ g.t }}</span><sc-if value="{{ g.on }}" hint-placeholder-val="{{ false }}"><span style="font:400 15px/1.5 Geist,sans-serif;color:#B8B3AA;max-width:440px">{{ g.d }}</span></sc-if></span><span data-fl="1" style="position:absolute;left:0;bottom:-1px;height:1px;width:{{ g.w }};background:#FF6A00"></span></button></sc-for>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;perspective:1400px">
+      <div key="{{ mkKey }}" style="width:100%;max-width:520px;border-radius:22px;overflow:hidden;background:#141416;border:1px solid #2A2A2C;box-shadow:0 60px 120px -40px rgba(255,106,0,.35);transform:rotateY(-8deg) rotateX(4deg)">
+        <div style="display:flex;align-items:center;gap:6px;padding:12px 16px;background:#1C1C1E"><span style="width:9px;height:9px;border-radius:50%;background:#3A3A3C"></span><span style="width:9px;height:9px;border-radius:50%;background:#3A3A3C"></span><span style="width:9px;height:9px;border-radius:50%;background:#3A3A3C"></span><span style="margin-left:10px;font-family:'Geist Mono',monospace;font-size:11px;color:#8C877E">{{ mk.url }}</span></div>
+        <div style="padding:32px;display:flex;flex-direction:column;gap:24px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Step {{ mk.n }}</span><span style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:6px 12px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase">{{ mk.st }}</span></div>
+          <span style="font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-0.04em;line-height:1.05">{{ mk.mt }}</span>
+          <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2C">
+            <sc-for list="{{ mk.rows }}" as="r" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #2A2A2C;font-size:15px"><span style="color:#8C877E">{{ r.l }}</span><span style="font-family:'Geist Mono',monospace;color:#F4F4F2;text-align:right">{{ r.v }}</span></div></sc-for>
+          </div>
+          <span style="align-self:flex-start;background:#F4F4F2;color:#0A0A0A;border-radius:999px;padding:13px 22px;font-weight:600;font-size:14px">{{ mk.btn }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="07 Compare" style="padding:130px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 56px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(05) <span style="color:#0A0A0A">Year one, compared</span></div>
+      <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">{{ cmH }} <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">{{ cmH2 }}</span></h2>
+    </div>
+    <p style="margin:0;max-width:520px;font-size:17px;line-height:1.55;color:#3A3731;text-wrap:pretty">{{ cmIntro }}</p>
+  </div>
+  <div data-seen="cm" data-rv="0" style="display:flex;flex-direction:column;gap:28px;background:#F4F1EC;border-radius:28px;padding:clamp(24px,3vw,44px)">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline"><span style="font-size:18px;font-weight:600">{{ cmUsualT }}</span><span style="font-family:'Geist Mono',monospace;font-size:18px;color:#5A5650">{{ cmUsual }}</span></div>
+      <div style="display:flex;height:56px;border-radius:14px;overflow:hidden;background:#E3DED5;width:{{ cmUsualW }};transition:width 1.1s cubic-bezier(.16,1,.3,1)"><sc-for list="{{ cmRows }}" as="c" hint-placeholder-count="4"><span style="width:{{ c.w }};background:{{ c.col }};border-right:2px solid #F4F1EC"></span></sc-for></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline"><span style="font-size:18px;font-weight:600">RIDEFF {{ curName }}</span><span style="font-family:'Geist Mono',monospace;font-size:18px;color:#FF6A00">{{ cmRid }}</span></div>
+      <div style="height:56px;border-radius:14px;background:#FF6A00;width:{{ cmRidW }};transition:width 1.1s cubic-bezier(.16,1,.3,1)"></div>
+      <span style="font-size:13px;color:#5A5650">{{ cmRidNote }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px;border-top:1px solid #D3CCC0;padding-top:24px">
+      <sc-for list="{{ cmRows }}" as="c" hint-placeholder-count="4"><div style="display:flex;gap:12px;align-items:flex-start"><span style="flex-shrink:0;margin-top:5px;width:12px;height:12px;border-radius:4px;background:{{ c.col }}"></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px">{{ c.t }}</span><span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A5650">{{ c.v }}</span></span></div></sc-for>
+    </div>
+    <span style="align-self:flex-start;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E;border:1px dashed #BDB6AA;border-radius:999px;padding:8px 14px">“Usual way” figures are placeholders — to be confirmed</span>
+  </div>
+</div>
+
+<div data-screen-label="08 Every detail" style="background:#E3DED5">
+  <div style="padding:130px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(06) <span style="color:#0A0A0A">Every detail</span></div>
+      <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-0.05em;font-weight:600">What's in <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">each plan.</span></h2>
+    </div>
+    <div data-rv="0" style="overflow-x:auto;border-radius:24px;background:#F4F1EC">
+      <div style="min-width:680px;display:flex;flex-direction:column;padding:8px 28px 28px">
+        <div style="position:sticky;top:0;display:grid;grid-template-columns:{{ tCols }};gap:8px;padding:20px 0;border-bottom:1px solid #0A0A0A;background:#F4F1EC"><span></span><sc-for list="{{ tHead }}" as="h" hint-placeholder-count="3"><button onClick="{{ h.go }}" style="border:none;cursor:pointer;border-radius:14px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;background:{{ h.bg }};color:{{ h.fg }};transition:background .3s"><span style="font:600 16px Geist,sans-serif">{{ h.t }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px;opacity:.75">{{ h.p }}</span></button></sc-for></div>
+        <sc-for list="{{ tGroups }}" as="g" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:12px;padding:28px 0 10px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#FF6A00">{{ g.t }}</span><sc-if value="{{ g.ph }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#8C877E;border:1px dashed #BDB6AA;border-radius:999px;padding:4px 10px">Proposed — to be confirmed</span></sc-if></div>
+            <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:{{ tCols }};gap:8px;align-items:center;border-bottom:1px solid #DCD5CA"><span style="font-size:15px;padding:14px 0">{{ r.t }}</span><sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3"><span style="text-align:center;padding:14px 6px;font-family:'Geist Mono',monospace;font-size:13px;color:{{ c.fg }};background:{{ c.bg }};transition:background .3s">{{ c.v }}</span></sc-for></div></sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="09 FAQ" style="padding:130px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:18px;position:sticky;top:110px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">(07) <span style="color:#0A0A0A">Questions</span></div>
+    <h2 data-rv="0" style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600">The <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">small print,</span> in plain words.</h2>
+  </div>
+  <div data-rv="0" style="display:flex;flex-direction:column;border-top:1px solid #D3CCC0">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+      <div style="border-bottom:1px solid #D3CCC0">
+        <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:none;cursor:pointer;text-align:left;font:500 19px Geist,sans-serif;color:#0A0A0A">{{ f.q }}<span style="font-size:22px;color:#FF6A00">{{ f.sign }}</span></button>
+        <sc-if value="{{ f.open }}"><p style="margin:0 0 22px;font-size:16px;line-height:1.6;color:#3A3731;max-width:620px">{{ f.a }}</p></sc-if>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<div data-screen-label="10 CTA" style="background:#FF6A00;color:#0A0A0A">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 data-rv="0" style="margin:0;font-size:clamp(44px,6vw,96px);line-height:.95;letter-spacing:-0.055em;font-weight:600;max-width:1000px;text-wrap:balance">{{ ctaH }} <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">{{ ctaH2 }}</span></h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a href="{{ cta1H }}" style="background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:17px 28px;font-weight:600;font-size:15px" style-hover="background:#F4F4F2;color:#0A0A0A">{{ cta1 }}</a><a href="{{ cta2H }}" style="border:1.5px solid #0A0A0A;border-radius:999px;padding:17px 28px;font-weight:500;font-size:15px" style-hover="color:#F4F4F2;background:#0A0A0A">{{ cta2 }}</a></div>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { life: false, plan: 1, lplan: 1, yearly: false, mx: 0, pin: false, sn_bd: false, sn_ph: false, sn_cm: false, areas: ['cust', 'web', 'team'], wants: ['brief', 'money', 'goals'], people: 1, phase: 2, step: 0, fp: 0, hold: false, faq: 0 };
+  BIZ = [
+    { n: '01', name: 'Core', tag: 'Start here', for: 'One area connected — usually customers and sales.', mo: 149, setup: 1290, items: ['Website or core system', 'AI inbox for inquiries', 'Client portal', 'Hosting, backups, updates'] },
+    { n: '02', name: 'Growth', tag: 'Most chosen', for: 'Customers, sales, team and operations in one system.', mo: 249, setup: 1990, items: ['Everything in Core', 'Team app', 'Automated offers & follow-ups', 'Monthly report'] },
+    { n: '03', name: 'Whole system', tag: 'Full brain', for: 'Every area connected, finance and marketing included.', mo: 449, setup: 3900, items: ['Everything in Growth', 'Finance & invoicing flows', 'Marketing automation', 'Priority support'] }
+  ];
+  LIFE = [
+    { n: '01', name: 'Life', tag: '', for: 'Just you, the essentials.', mo: 12.9, items: ['Morning briefing', 'Money overview', 'Calendar', '14 days free'] },
+    { n: '02', name: 'Life Plus', tag: 'Most chosen', for: 'Everything, for one person.', mo: 19.9, items: ['Everything in Life', 'Goals & habits', 'AI research & brainstorm', '14 days free'] },
+    { n: '03', name: 'Together', tag: 'Up to 4', for: 'Shared, for a household.', mo: 29.9, items: ['Everything in Plus', 'Up to 4 people', 'Shared calendar & budget', '14 days free'] },
+    { n: '04', name: 'Life Private', tag: 'By call', for: 'Set up personally, with Rialto.', mo: 68, setup: 449, priv: true, items: ['Personal setup', 'Your own data sources', 'Direct line', 'Started by a call'] }
+  ];
+  SLABS_B = [['00', 'Foundation', 'Hosting · domain · backups'], ['01', 'Core', 'Website · inbox · portal'], ['02', 'Growth', 'Team · offers · reports'], ['03', 'Whole', 'Finance · marketing']];
+  SLABS_L = [['00', 'Foundation', 'Your data · EU'], ['01', 'Life', 'Briefing · money · calendar'], ['02', 'Plus', 'Goals · AI'], ['03', 'Together', 'Up to 4 people'], ['04', 'Private', 'Set up with Rialto']];
+  COL_B = [['#DCD5CA', '#0A0A0A', '#BDB6AA'], ['#F4F1EC', '#0A0A0A', '#CFC8BC'], ['#0B0B0C', '#F4F4F2', '#000000'], ['#FF6A00', '#0A0A0A', '#B84C00']];
+  COL_L = [['#DCD5CA', '#0A0A0A', '#BDB6AA'], ['#F6E9DC', '#2A1E14', '#E2CDB6'], ['#F4F1EC', '#0A0A0A', '#CFC8BC'], ['#0B0B0C', '#F4F4F2', '#000000'], ['#FF6A00', '#0A0A0A', '#B84C00']];
+  AREAS = [
+    { k: 'cust', t: 'Customers & inquiries', d: 'AI inbox, contact forms, client portal', l: 0 },
+    { k: 'web', t: 'Website or shop', d: 'Your site, on your own domain', l: 0 },
+    { k: 'sales', t: 'Offers & follow-ups', d: 'Offers and reminders that send themselves', l: 1 },
+    { k: 'team', t: 'Team & shifts', d: 'Team app, schedules, leave', l: 1 },
+    { k: 'ops', t: 'Operations & reports', d: 'Orders, stock, a monthly report', l: 1 },
+    { k: 'fin', t: 'Finance & invoicing', d: 'Invoices, payments, bookkeeping export', l: 2 },
+    { k: 'mkt', t: 'Marketing', d: 'Campaigns, newsletter, reviews', l: 2 }
+  ];
+  WANTS = [
+    { k: 'brief', t: 'Morning briefing', d: 'Your day in one screen', l: 0 },
+    { k: 'money', t: 'Money overview', d: 'Accounts, spending, what’s left', l: 0 },
+    { k: 'cal', t: 'Calendar', d: 'Everything in one timeline', l: 0 },
+    { k: 'goals', t: 'Goals & habits', d: 'Track what you want to change', l: 1 },
+    { k: 'ai', t: 'AI research & brainstorm', d: 'Based on your own data', l: 1 },
+    { k: 'priv', t: 'Set up personally', d: 'Rialto connects your own sources', l: 3 }
+  ];
+  BD_B = [
+    ['EU hosting & database', 18, 'Servers in Frankfurt, database, file storage.'],
+    ['AI usage', 22, 'Every AI answer, summary and report costs compute.'],
+    ['Updates, fixes & security', 25, 'Keeping everything current, patched and working.'],
+    ['Support & my hours', 30, 'Changes, questions and chat — with me, not a ticket queue.'],
+    ['Backups & monitoring', 5, 'Daily backups and alerts before you notice a problem.']
+  ];
+  BD_L = [
+    ['EU hosting & database', 20, 'Your data stays in Frankfurt.'],
+    ['AI usage', 35, 'Briefings, research and brainstorms run on AI.'],
+    ['New features', 25, 'Life keeps getting better while you use it.'],
+    ['Support', 12, 'A real person when something feels off.'],
+    ['Payment fees', 8, 'Card, SEPA and Klarna cost a little each month.']
+  ];
+  BDCOL = [['#0A0A0A', '#F4F4F2'], ['#FF6A00', '#0A0A0A'], ['#FF9A50', '#0A0A0A'], ['#FFB27A', '#0A0A0A'], ['#BDB6AA', '#0A0A0A']];
+  PH_B = [
+    ['First call', 'Day 1', '30 minutes. We talk about how your business runs today. Free.', 0],
+    ['Analysis', 'Week 1–2', 'I map your tools, steps and people, then write a fixed offer.', 20],
+    ['Build', 'Week 2–5', 'I build your system and connect every part end to end.', 55],
+    ['Test', 'Week 5–6', 'Your team uses it for real. I fix what feels wrong.', 15],
+    ['Live', 'Week 6', 'Switch-over, data moved, team shown how it works.', 10]
+  ];
+  PH_L = [
+    ['Sign up', 'Day 0', 'Email and a 6-digit code. No card, no password.', 0],
+    ['Connect', 'Day 1', 'Calendar and accounts — only what you want to share.', 0],
+    ['First briefing', 'Day 2', 'Your morning, money and goals on one screen.', 0],
+    ['Make it yours', 'Day 3–12', 'Goals, habits, AI research on your own data.', 0],
+    ['Decide', 'Day 14', 'Pick a plan — or simply leave. Nothing is charged.', 0]
+  ];
+  CM_B = [['Agency website, one-off', 4500], ['Freelancer for automations', 4800, '€400 / mo'], ['4–6 separate tools', 2160, '€180 / mo'], ['Your time holding it together', 3840, '8 h / mo × €40']];
+  CM_L = [['Budgeting app', 60], ['Calendar / planner pro', 48], ['AI subscription', 240], ['Habit tracker', 30]];
+  CMCOL = ['#3A3731', '#5A5650', '#8C877E', '#BDB6AA'];
+  TB = [
+    { t: 'Built for you', rows: [['Website or core system', 1, 1, 1], ['AI inbox for inquiries', 1, 1, 1], ['Client portal', 1, 1, 1], ['Team app', 0, 1, 1], ['Automated offers & follow-ups', 0, 1, 1], ['Monthly report', 0, 1, 1], ['Finance & invoicing flows', 0, 0, 1], ['Marketing automation', 0, 0, 1]] },
+    { t: 'Running it', rows: [['EU hosting in Frankfurt', 1, 1, 1], ['Own domain & SSL', 1, 1, 1], ['Daily backups', 1, 1, 1], ['Updates & fixes', 1, 1, 1], ['Support through your portal', 1, 1, 1], ['Priority support', 0, 0, 1]] },
+    { t: 'Limits', ph: true, rows: [['Domains', '1', '1', '3'], ['Email mailboxes', '3', '10', '25'], ['Changes per month', '2 h', '5 h', '10 h'], ['Support reply', '2 work days', 'Next work day', 'Same day'], ['Team app users', '—', '15', 'Unlimited'], ['Backup history', '30 days', '90 days', '180 days']] }
+  ];
+  TL = [
+    { t: 'In the app', rows: [['Morning briefing', 1, 1, 1, 1], ['Money overview', 1, 1, 1, 1], ['Calendar', 1, 1, 1, 1], ['Goals & habits', 0, 1, 1, 1], ['AI research & brainstorm', 0, 1, 1, 1], ['Shared calendar & budget', 0, 0, 1, 1]] },
+    { t: 'Personal', rows: [['Set up by Rialto', 0, 0, 0, 1], ['Your own data sources', 0, 0, 0, 1], ['Direct line', 0, 0, 0, 1]] },
+    { t: 'Running it', rows: [['EU hosting in Frankfurt', 1, 1, 1, 1], ['14 days free, no card', 1, 1, 1, 0], ['Cancel any month', 1, 1, 1, 1]] },
+    { t: 'Limits', ph: true, rows: [['People', '1', '1', 'Up to 4', 'Custom'], ['Connected accounts', '3', '10', '10 each', 'Custom'], ['AI requests per day', '20', '100', '100 each', 'Custom'], ['Storage', '1 GB', '5 GB', '20 GB', 'Custom']] }
+  ];
+  FAQ_B = [
+    ['Why a setup fee and a monthly fee?', 'The setup pays for analysing and building your system — it is real work, done once. The monthly fee keeps it running: hosting, AI, updates, backups and my time for changes and support.'],
+    ['What does the setup fee cover?', 'Analysis, build, testing and go-live. The exact amount is in your offer after the first call, before you commit to anything.'],
+    ['How long is the contract?', 'Business plans run for 12 months.'],
+    ['How do I pay?', 'Card, SEPA direct debit or Klarna. The setup can also be paid by bank transfer; monthly fees run as a subscription.'],
+    ['Are prices net or gross?', 'Business prices are net, plus 19% VAT.'],
+    ['What if I need more than my limits?', 'We talk first. Either we add a bit of time for that month, or moving up a plan makes more sense — your choice.'],
+    ['Can I change plans later?', 'Yes. Most clients start with Core or Growth and add areas once the first ones run.'],
+    ['How do I approve the offer?', 'In your client portal: tick the terms and click approve. That counts as the contract and the setup invoice is created automatically.']
+  ];
+  FAQ_L = [
+    ['Do I need a card for the trial?', 'No. 14 days free, no card.'],
+    ['Can I cancel any month?', 'Yes. Life plans can be cancelled any month.'],
+    ['Is yearly cheaper?', 'Yes — pay yearly and get 2 months free.'],
+    ['Are prices final?', 'Yes. Life prices include VAT.'],
+    ['Who can use Together?', 'Up to 4 people in one household, with a shared calendar and budget.'],
+    ['How does Life Private start?', 'With a call. After that you receive a payment link, and Rialto sets everything up personally.'],
+    ['Where is my data?', 'In the EU, in Frankfurt.'],
+    ['How do I pay?', 'Card, SEPA direct debit or Klarna.']
+  ];
+  eur = (n, dec) => '€' + (dec ? n.toFixed(2).replace('.', ',') : Math.round(n).toLocaleString('en-US'));
+  toggleIn = (key, k) => this.setState(s => ({ [key]: s[key].includes(k) ? s[key].filter(x => x !== k) : [...s[key], k] }));
+  pick = i => this.setState(s => s.life ? { lplan: i } : { plan: i });
+  sTo = top => { if (window.__lenis) window.__lenis.scrollTo(top, { duration: 1.3, easing: x => 1 - Math.pow(1 - x, 4) }); else window.scrollTo({ top, behavior: 'smooth' }); };
+  nP = () => (this.state.life ? this.LIFE : this.BIZ).length;
+  pinTop = (sel, frac) => { const el = document.querySelector('[data-pin="' + sel + '"]'); if (!el) return null; return el.getBoundingClientRect().top + scrollY + frac * (el.offsetHeight - innerHeight); };
+  pickHero = (i, toTop) => { const y = this.state.pin ? this.pinTop('hero', (i + .5) / this.nP()) : null; if (y != null) this.sTo(y); else { this.pick(i); if (toTop) this.sTo(0); } };
+  goStep = k => { const y = this.state.pin ? this.pinTop('flow', (k + .5) / 6) : null; if (y != null) this.sTo(y); else this.setState({ step: k, fp: 0 }); };
+  after = () => setTimeout(() => { this.fitPins && this.fitPins(); this.scrollFx && this.scrollFx(); }, 60);
+  fxInit() {
+    try { this.rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (this.rm || !('IntersectionObserver' in window)) this.setState({ sn_bd: true, sn_ph: true, sn_cm: true });
+    else {
+      this.io = new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) return; const el = en.target, d = +(el.dataset.rv || 0);
+        el.style.transition = 'opacity 1s cubic-bezier(.16,1,.3,1) ' + d + 'ms, transform 1.2s cubic-bezier(.16,1,.3,1) ' + d + 'ms'; el.style.opacity = 1; el.style.transform = 'none'; this.io.unobserve(el); }), { threshold: .12 });
+      document.querySelectorAll('[data-rv]').forEach(el => { if (el.getBoundingClientRect().top < innerHeight * .9) return; el.style.opacity = 0; el.style.transformOrigin = '50% 100%'; el.style.transform = 'perspective(1200px) translateY(70px) rotateX(18deg)'; this.io.observe(el); });
+      this.io2 = new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) return; this.setState({ ['sn_' + en.target.dataset.seen]: true }); this.io2.unobserve(en.target); }), { threshold: .35 });
+      document.querySelectorAll('[data-seen]').forEach(el => this.io2.observe(el));
+    }
+    this.fitPins = () => document.querySelectorAll('[data-pinbox]').forEach(b => { b.style.transform = ''; if (!this.state.pin) return; const k = Math.min(1, (innerHeight - 8) / b.scrollHeight); b.style.transform = k < 1 ? 'scale(' + k.toFixed(4) + ')' : ''; });
+    this.calcPin = () => { const pin = !this.rm && innerWidth >= 1000 && innerHeight >= 640; if (pin !== this.state.pin) this.setState({ pin }, this.after); else this.fitPins(); };
+    this.calcPin(); addEventListener('resize', this.calcPin);
+    this.lastY = scrollY;
+    this.onFx = () => { if (this.raf) return; this.raf = requestAnimationFrame(() => { this.raf = 0; this.scrollFx(); }); };
+    addEventListener('scroll', this.onFx, { passive: true }); addEventListener('resize', this.onFx); this.scrollFx();
+  }
+  scrollFx() {
+    const vh = innerHeight, cl = (v, a, b) => Math.max(a, Math.min(b, v)), s = this.state, pin = s.pin;
+    const hp = document.querySelector('[data-pin="hero"]');
+    if (hp) { const r = hp.getBoundingClientRect(), t = pin ? cl(-r.top / Math.max(1, r.height - vh), 0, .999) : cl(-r.top / vh, 0, 1);
+      const bar = hp.querySelector('[data-hbar]'); if (bar) bar.style.transform = 'scaleX(' + t.toFixed(4) + ')';
+      const st = hp.querySelector('[data-stackrot]'); if (st && !this.rm) st.style.transform = 'translateY(' + ((.5 - t) * 50).toFixed(1) + 'px) scale(' + (.94 + t * .1).toFixed(3) + ')';
+      if (pin && r.top <= 0 && r.bottom >= vh * .5) { const i = Math.floor(t * this.nP()), cur = s.life ? s.lplan : s.plan; if (i !== cur) this.pick(i); } }
+    const words = document.querySelector('[data-words]');
+    if (words) { const r = words.getBoundingClientRect(), t = cl((vh * .85 - r.top) / (r.height + vh * .35), 0, 1), sp = words.querySelectorAll('[data-wd]'), lit = Math.round(t * sp.length);
+      sp.forEach((x, k) => { x.style.color = k < lit ? (x.dataset.wd === '1' ? '#8C877E' : '#0A0A0A') : '#D3CCC0'; }); }
+    const fp = document.querySelector('[data-pin="flow"]');
+    if (fp && pin) { const r = fp.getBoundingClientRect(), t = cl(-r.top / Math.max(1, r.height - vh), 0, .9999), k = Math.floor(t * 6), fr = t * 6 - k;
+      if (k !== s.step) this.setState({ step: k });
+      fp.querySelectorAll('[data-fl]').forEach((x, j) => { x.style.width = (j < k ? 100 : j === k ? fr * 100 : 0).toFixed(1) + '%'; }); }
+  }
+  componentDidMount() {
+    this.t0 = setTimeout(() => this.fxInit(), 60);
+    this.iv = setInterval(() => this.setState(s => { if (s.hold || s.pin) return null; const fp = s.fp + 0.03; return fp >= 1 ? { fp: 0, step: (s.step + 1) % 6 } : { fp }; }), 100);
+  }
+  componentWillUnmount() { clearTimeout(this.t0); clearInterval(this.iv); removeEventListener('scroll', this.onFx); removeEventListener('resize', this.onFx); if (this.calcPin) removeEventListener('resize', this.calcPin); if (this.io) this.io.disconnect(); if (this.io2) this.io2.disconnect(); }
+  renderVals() {
+    const s = this.state, L = s.life, P = L ? this.LIFE : this.BIZ, pi = L ? s.lplan : s.plan, cur = P[pi];
+    const dec = L, yr = L && s.yearly && !cur.priv;
+    const moOf = p => (L && s.yearly && !p.priv) ? p.mo * 10 / 12 : p.mo;
+    const priceOf = p => (p.priv ? 'from ' : '') + this.eur(moOf(p), dec);
+    const curMo = moOf(cur), curPrice = priceOf(cur);
+    const slabsSrc = L ? this.SLABS_L : this.SLABS_B, COL = L ? this.COL_L : this.COL_B, gap = L ? 54 : 74;
+    const slabs = slabsSrc.map((x, i) => { const on = i <= pi + 1, c = COL[i];
+      return { n: x[0], t: x[1], sub: x[2], z: (i * gap + (on ? 0 : 46)) + 'px', tOp: on ? 1 : 0, bg: on ? c[0] : 'rgba(236,232,225,.82)', fg: on ? c[1] : '#8C877E', side: on ? c[2] : 'transparent', bd: on ? (i === pi + 1 ? '#FF6A00' : 'transparent') : '#A39B8E', bs: on ? 'solid' : 'dashed', sh: on ? '0 40px 60px -30px rgba(10,10,10,.45)' : 'none', go: () => this.pickHero(Math.max(0, i - 1)) }; });
+    // config
+    const opts = L ? this.WANTS : this.AREAS, sel = L ? s.wants : s.areas;
+    let rec = Math.max(0, ...opts.filter(o => sel.includes(o.k)).map(o => o.l));
+    if (L && s.people > 1) rec = Math.max(rec, 2);
+    rec = Math.min(rec, P.length - 1);
+    const R = P[rec], rMo = moOf(R);
+    const cfgRows = L ? (R.priv
+        ? [{ l: 'Monthly', v: 'from ' + this.eur(R.mo, 1) }, { l: 'Setup', v: 'from ' + this.eur(R.setup, 1) }, { l: 'Starts with', v: 'A call' }, { l: 'Per day', v: '≈ ' + this.eur(R.mo * 12 / 365, 1) }]
+        : [{ l: s.yearly ? 'Per month, billed yearly' : 'Per month', v: this.eur(rMo, 1) }, { l: 'Per year', v: this.eur(s.yearly ? R.mo * 10 : R.mo * 12, 1) }, { l: 'Per day', v: '≈ ' + this.eur(rMo * 12 / 365, 1) }, { l: 'First 14 days', v: 'Free', c: '#FF6A00' }])
+      : [{ l: 'Monthly', v: this.eur(R.mo) + ' / mo' }, { l: 'Setup', v: 'from ' + this.eur(R.setup) }, { l: 'Year one, total', v: 'from ' + this.eur(R.setup + 12 * R.mo), c: '#FF6A00' }, { l: 'Per day after setup', v: '≈ ' + this.eur(R.mo * 12 / 365, 1) }];
+    const picked = opts.filter(o => sel.includes(o.k)).map(o => o.t.toLowerCase());
+    const cfgWhy = picked.length ? 'Covers ' + picked.slice(0, 4).join(', ') + (picked.length > 4 ? ' and more' : '') + (L && s.people > 1 ? ' — for ' + s.people + ' people.' : '.') : 'Tick at least one area to see a plan.';
+    // breakdown
+    const BD = L ? this.BD_L : this.BD_B;
+    const bd = BD.map((b, i) => ({ t: b[0], pct: b[1], d: b[2], w: s.sn_bd ? b[1] + '%' : '0%', eur: this.eur(curMo * b[1] / 100, 1), col: this.BDCOL[i][0], fg: this.BDCOL[i][1] }));
+    // phases
+    const PH = L ? this.PH_L : this.PH_B;
+    const phases = PH.map((p, i) => { const on = i === s.phase;
+      return { n: '0' + (i + 1), t: p[0], when: p[1], d: p[2], amt: L ? p[1] : (p[3] ? '≈ ' + this.eur(cur.setup * p[3] / 100) : 'Free'), w: L ? (s.sn_ph ? ((i + 1) / 5 * 100) + '%' : '0%') : (s.sn_ph ? p[3] + '%' : '0%'), bg: on ? '#0A0A0A' : '#F4F1EC', fg: on ? '#F4F4F2' : '#0A0A0A', track: on ? '#2A2A2C' : '#DCD5CA', ty: on ? '-8px' : '0px', go: () => this.setState({ phase: i }) }; });
+    // flow
+    const vat = (cur.setup || 0) * 0.19;
+    const STEPS = L ? [
+      ['Start free', 'Sign up with your email and a 6-digit code. No card.', 'app.rideff.com/start', 'Start your 14 days', [['Trial', '14 days'], ['Card', 'Not needed'], ['Login', '6-digit code']], 'Start free', 'Day 0'],
+      ['Connect your day', 'Add your calendar and accounts — only what you want.', 'app.rideff.com/connect', 'Connect', [['Calendar', 'Connected'], ['Money', '2 accounts'], ['Goals', '3 set']], 'Continue', 'Day 1'],
+      ['Your first briefing', 'Every morning: your day, your money, your goals.', 'app.rideff.com', 'Good morning.', [['Today', '4 events'], ['Money', 'On track'], ['Goal', 'Run 3× this week']], 'Open briefing', 'Day 2'],
+      ['Choose a plan', 'Pick what fits — or leave. Nothing is charged.', 'app.rideff.com/plan', 'Choose a plan', [['Life', '€12,90'], ['Life Plus', '€19,90'], ['Together', '€29,90']], 'Choose', 'Day 14'],
+      ['Pay your way', 'Card, SEPA or Klarna. Yearly gets 2 months free.', 'app.rideff.com/billing', cur.name, [['Plan', curPrice + (yr ? ' / mo, yearly' : ' / mo')], ['Pay by', 'Card · SEPA · Klarna'], ['VAT', 'Included']], 'Confirm', 'Plan'],
+      ['Cancel any month', 'No lock-in. Stay because it helps.', 'app.rideff.com/settings', 'Your plan', [['Billing', s.yearly ? 'Yearly' : 'Monthly'], ['Cancel', 'Any month'], ['Data', 'EU · Frankfurt']], 'Manage plan', 'Free to go']
+    ] : [
+      ['Book a call', '30 minutes, free. We talk about how your business runs today.', 'cal.com/rideff', 'First call', [['Length', '30 min'], ['Cost', 'Free'], ['Where', 'Video call']], 'Pick a time', 'Booked'],
+      ['Get your offer', 'A fixed offer in your client portal: plan, setup, monthly — nothing hidden.', 'portal.rideff.com/angebot', 'Offer · ' + cur.name, [['Setup', 'from ' + this.eur(cur.setup)], ['Monthly', this.eur(cur.mo) + ' / mo'], ['Term', '12 months']], 'Review offer', 'New'],
+      ['Approve in the portal', 'Tick the terms and click approve. That counts as the contract — no paper.', 'portal.rideff.com/angebot', 'Approve', [['Terms (AGB)', '✓ accepted'], ['Approved by', 'Owner'], ['Saved', 'PDF + timestamp']], 'Approve', 'Approved'],
+      ['Pay the setup', 'The setup invoice appears by itself. Card, SEPA, Klarna or transfer.', 'portal.rideff.com/rechnungen', 'Invoice R-2026-014', [['Setup, net', this.eur(cur.setup)], ['VAT 19%', this.eur(vat)], ['Pay by', 'Card · SEPA · Klarna · Transfer']], 'Pay now', 'Due'],
+      ['I build it', 'Analyse, build, test — follow every phase and chat in the portal.', 'portal.rideff.com/projekt', 'Project · Build', [['Analysis', 'Done'], ['Build', 'In progress'], ['Test', 'Next']], 'Open chat', 'Phase 3/5'],
+      ['Live — and kept running', 'Your system goes live. The monthly fee starts and I keep it running.', 'portal.rideff.com', 'Live', [['Status', 'Running'], ['Monthly', this.eur(cur.mo) + ' / mo'], ['Support', 'Through the portal']], 'Open dashboard', 'Live']
+    ];
+    const M = STEPS[s.step];
+    const steps = STEPS.map((x, i) => ({ n: '0' + (i + 1), t: x[0], d: x[1], on: i === s.step, fg: i === s.step ? '#F4F4F2' : '#8C877E', nc: i === s.step ? '#FF6A00' : '#5A5650', w: s.pin ? '0%' : i < s.step ? '100%' : i === s.step ? (s.fp * 100).toFixed(1) + '%' : '0%', go: () => this.goStep(i) }));
+    // compare
+    const CM = L ? this.CM_L : this.CM_B, usual = CM.reduce((a, c) => a + c[1], 0);
+    const rid = L ? (cur.priv ? cur.setup + 12 * cur.mo : (s.yearly ? cur.mo * 10 : cur.mo * 12)) : cur.setup + 12 * cur.mo;
+    const mx = Math.max(usual, rid);
+    // table
+    const TG = L ? this.TL : this.TB, nC = P.length;
+    const tGroups = TG.map(g => ({ t: g.t, ph: !!g.ph, rows: g.rows.map(r => ({ t: r[0], cells: r.slice(1).map((v, i) => ({ v: v === 1 ? '✓' : v === 0 ? '—' : v, fg: v === 0 ? '#BDB6AA' : v === 1 ? '#FF6A00' : '#0A0A0A', bg: i === pi ? 'rgba(255,106,0,.08)' : 'transparent' })) })) }));
+    return {
+      isLife: L, isBizPh: !L,
+      heroSub: L ? 'One monthly price for a life assistant that knows your days. 14 days free, no card.' : 'You pay once to have your system built, then one fixed monthly fee to keep it running — hosting, AI, updates and me.',
+      vatNote: L ? 'Final prices incl. VAT. Cancel any month. Pay yearly, get 2 months free.' : 'Prices net, plus 19% VAT. 12-month term.',
+      bBg: L ? 'transparent' : '#0A0A0A', bFg: L ? '#3A3731' : '#F4F4F2', lBg: L ? '#0A0A0A' : 'transparent', lFg: L ? '#F4F4F2' : '#3A3731',
+      setBiz: () => this.setState({ life: false, phase: 2, step: 0, fp: 0, faq: 0 }, this.after), setLife: () => this.setState({ life: true, phase: 2, step: 0, fp: 0, faq: 0 }, this.after),
+      pin: s.pin, pinPos: s.pin ? 'sticky' : 'relative', pinH: s.pin ? '100vh' : '0px',
+      heroH: s.pin ? (P.length * 70 + 100) + 'vh' : 'auto', heroPad: s.pin ? '96px clamp(20px,3vw,40px) 24px' : '140px clamp(20px,3vw,40px) 40px',
+      flowH: s.pin ? '420vh' : 'auto', flowPad: s.pin ? '72px clamp(20px,3vw,40px) 32px' : '130px clamp(20px,3vw,40px)',
+      curN: cur.n, curFor: cur.for, curKey: 'cur' + L + pi,
+      words: (L ? [['You’re not paying for another app.', 1], ['You’re paying for one place that knows your days — private, hosted in the EU, and a little better every month.', 0]]
+        : [['You’re not paying for software.', 1], ['You’re paying for a system that is built for you, hosted in Frankfurt, fixed when it breaks and changed when you grow — by one person who answers.', 0]])
+        .flatMap(([txt, m]) => txt.split(' ').map(w => ({ t: w + ' ', m: String(m) }))),
+      mBg: s.yearly ? 'transparent' : '#0A0A0A', mFg: s.yearly ? '#3A3731' : '#F4F4F2', yBg: s.yearly ? '#0A0A0A' : 'transparent', yFg: s.yearly ? '#F4F4F2' : '#3A3731',
+      setMonthly: () => this.setState({ yearly: false }), setYearly: () => this.setState({ yearly: true }),
+      slabs, rz: (-42 + s.mx * 10) + 'deg', stackY: (L ? 60 : 50) + 'px',
+      stackMove: e => { const r = e.currentTarget.getBoundingClientRect(); this.setState({ mx: (e.clientX - r.left) / r.width * 2 - 1 }); },
+      stackLeave: () => this.setState({ mx: 0 }),
+      curName: cur.name, layerCount: String(pi + 2), curPrice, curDay: this.eur(curMo * 12 / 365, 1),
+      planPills: P.map((p, i) => ({ t: p.name, go: () => this.pickHero(i), bg: i === pi ? '#0A0A0A' : 'transparent', fg: i === pi ? '#F4F4F2' : '#3A3731', bd: i === pi ? '#0A0A0A' : '#BDB6AA' })),
+      plans: P.map((p, i) => { const on = i === pi;
+        return { ...p, price: priceOf(p), day: this.eur(moOf(p) * 12 / 365, 1),
+          unit: L ? (p.priv ? '/ month · setup from €449' : (s.yearly ? '/ month, billed yearly · incl. VAT' : '/ month incl. VAT')) : '/ month · setup from ' + this.eur(p.setup),
+          cta: L ? (p.priv ? 'Book a call' : 'Start free') : 'Ask about ' + p.name, href: L ? (p.priv ? 'RIDEFF Contact.dc.html' : 'RIDEFF Life Demo.dc.html') : 'RIDEFF Contact.dc.html',
+          go: () => this.pick(i), bg: on ? '#0B0B0C' : '#F4F1EC', fg: on ? '#F4F4F2' : '#0A0A0A', line: on ? '#2A2A2C' : '#D3CCC0', btnBg: on ? '#FF6A00' : '#0A0A0A', btnFg: on ? '#0A0A0A' : '#F4F4F2', dayC: on ? '#FF9A50' : '#8C877E', ty: on ? '-10px' : '0px' }; }),
+      cfgH: L ? 'Tell me' : 'Tick what your', cfgH2: L ? 'what you need.' : 'business needs.',
+      people: [1, 2, 3, 4].map(n => ({ t: n === 4 ? '4' : String(n), go: () => this.setState({ people: n }), bg: s.people === n ? '#FF6A00' : 'transparent', fg: s.people === n ? '#0A0A0A' : '#F4F4F2', bd: s.people === n ? '#FF6A00' : '#2A2A2C' })),
+      cOpts: opts.map(o => { const on = sel.includes(o.k); return { t: o.t, d: o.d, toggle: () => this.toggleIn(L ? 'wants' : 'areas', o.k), bd: on ? '#FF6A00' : '#2A2A2C', bg: on ? 'rgba(255,106,0,.08)' : 'transparent', cb: on ? '#FF6A00' : '#5A5650', cbg: on ? '#FF6A00' : 'transparent', mark: on ? '✓' : '' }; }),
+      cfgN: R.n, cfgName: R.name, cfgKey: 'cfg' + L + rec, cfgWhy, cfgRows: cfgRows.map(r => ({ c: '#0A0A0A', ...r })),
+      useCfg: () => this.pickHero(rec, true),
+      bdIntro: L ? 'No ads, no selling your data. The monthly price pays for running Life and making it better.' : 'No hidden extras. The monthly fee pays for keeping your system alive, safe and changing with your business.',
+      bd,
+      phK: L ? 'The trial' : 'The setup fee', phH: L ? '14 days,' : 'What the setup', phH2: L ? 'before you pay anything.' : 'pays for.',
+      phIntro: L ? 'Use everything for two weeks. If it doesn’t help your days, you leave — nothing is charged.' : 'Building a system is real work, done once: understanding how you work, building it, testing it with your team, going live.',
+      phases, phSum: L ? 'Then ' + curPrice + ' a month — or nothing.' : 'Setup for ' + cur.name + ': from ' + this.eur(cur.setup) + ', once.',
+      flK: L ? 'How it works' : 'How buying works', flH: L ? 'Start free,' : 'From first call', flH2: L ? 'stay if it helps.' : 'to live.',
+      steps, flHold: () => this.setState({ hold: true }), flRelease: () => this.setState({ hold: false }),
+      mkKey: 'mk' + L + s.step, mk: { n: '0' + (s.step + 1), url: M[2], mt: M[3], rows: M[4].map(r => ({ l: r[0], v: r[1] })), btn: M[5], st: M[6] },
+      cmH: L ? 'Versus a drawer' : 'Versus doing it', cmH2: L ? 'of separate apps.' : 'the usual way.',
+      cmIntro: L ? 'Separate apps for money, calendar, habits and AI — none of them talk to each other.' : 'An agency for the website, a freelancer for automations, a stack of tools — and you in the middle, holding it together.',
+      cmUsualT: L ? 'Separate apps, one year' : 'The usual way, year one', cmUsual: this.eur(usual), cmUsualW: s.sn_cm ? (usual / mx * 100) + '%' : '0%',
+      cmRows: CM.map((c, i) => ({ t: c[0], v: this.eur(c[1]) + (c[2] ? ' · ' + c[2] : ''), w: (c[1] / usual * 100) + '%', col: this.CMCOL[i] })),
+      cmRid: this.eur(rid, L), cmRidW: s.sn_cm ? (rid / mx * 100) + '%' : '0%',
+      cmRidNote: L ? (cur.priv ? 'Setup plus 12 months.' : (s.yearly ? 'Paid yearly — 2 months free.' : '12 monthly payments.')) : 'Setup from ' + this.eur(cur.setup) + ' + 12 × ' + this.eur(cur.mo) + '. Built, hosted, maintained.',
+      tCols: 'minmax(180px,2fr) repeat(' + nC + ',minmax(0,1fr))',
+      tHead: P.map((p, i) => ({ t: p.name, p: priceOf(p), go: () => this.pick(i), bg: i === pi ? '#0A0A0A' : 'transparent', fg: i === pi ? '#F4F4F2' : '#0A0A0A' })),
+      tGroups,
+      faqs: (L ? this.FAQ_L : this.FAQ_B).map((f, k) => ({ q: f[0], a: f[1], open: s.faq === k, sign: s.faq === k ? '−' : '+', toggle: () => this.setState({ faq: s.faq === k ? -1 : k }) })),
+      ctaH: L ? 'Try it for' : 'Not sure which plan?', ctaH2: L ? '14 days, free.' : 'Ask me.',
+      cta1: L ? 'Start free' : 'Book a free call', cta1H: L ? 'RIDEFF Life Demo.dc.html' : 'RIDEFF Contact.dc.html',
+      cta2: L ? 'Book a call for Private' : 'See the work', cta2H: L ? 'RIDEFF Contact.dc.html' : 'RIDEFF Work.dc.html'
+    };
+  }
+}
+</script>
+</body>
+</html>

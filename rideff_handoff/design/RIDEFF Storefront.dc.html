@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}</style>
+</helmet>
+<dc-import name="RideffNav" active="build" hint-size="100%,72px"></dc-import>
+
+<div data-screen-label="Hero" style="padding:140px clamp(20px,3vw,40px) 60px;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:40px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Home / <a href="RIDEFF Build.dc.html">Build</a> / <span style="color:#0A0A0A">Web &amp; shops</span> · 02.3</div>
+      <h1 style="margin:0;font-size:clamp(50px,6.6vw,104px);line-height:.94;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">A shop window that never <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">closes.</span></h1>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <p style="margin:0;font-size:19px;line-height:1.5;color:#3A3731;max-width:480px;text-wrap:pretty">Websites and online shops on EU hosting — fast, findable, and connected to the rest of your system instead of standing alone.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="RIDEFF Contact.dc.html" style="background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:15px 24px;font-weight:600;font-size:15px">Start your site</a>
+        <a href="#sf-case" style="border:1px solid #0A0A0A;border-radius:999px;padding:15px 24px;font-weight:500;font-size:15px">See TIC Originals</a>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;height:clamp(380px,48vw,640px)">
+    <sc-for list="{{ windows }}" as="w" hint-placeholder-count="3">
+      <div onMouseEnter="{{ w.go }}" style="position:absolute;left:{{ w.l }};top:{{ w.t }};width:{{ w.w }};height:{{ w.h }};border-radius:16px;overflow:hidden;background:#F7F5F1;box-shadow:0 30px 70px rgba(10,10,10,{{ w.sh }});z-index:{{ w.z }};transform:translateY({{ w.y }});transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;display:flex;flex-direction:column">
+        <div style="display:flex;gap:6px;align-items:center;padding:10px 14px;background:#E2DDD4;flex-shrink:0"><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="width:9px;height:9px;border-radius:50%;background:#C9C2B6"></span><span style="margin-left:10px;font-family:'Geist Mono',monospace;font-size:11px;color:#5A5650">{{ w.url }}</span></div>
+        <div style="flex:1"><image-slot src="{{ w.src }}" id="{{ w.id }}" placeholder="{{ w.ph }}" shape="rect"></image-slot></div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<div id="sf-case" data-screen-label="01 Case layers" style="padding:100px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(01) Taken apart</div>
+      <h2 style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600;text-wrap:balance">TIC Originals, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">layer by layer.</span></h2>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.55;color:#3A3731;max-width:480px">[Case summary placeholder — what TIC Originals needed, what was built, and what it does for them now.]</p>
+  </div>
+  <div style="display:flex;gap:4px;padding:4px;border-radius:999px;background:#DCD5CA;width:max-content;max-width:100%;flex-wrap:wrap">
+    <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3"><button onClick="{{ l.go }}" style="border:none;cursor:pointer;border-radius:999px;padding:10px 20px;font:500 14px Geist,sans-serif;background:{{ l.bg }};color:{{ l.fg }}">{{ l.n }} · {{ l.t }}</button></sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:center">
+    <div style="aspect-ratio:16/10;border-radius:22px;overflow:hidden;background:#0B0B0C">
+      <sc-if value="{{ isSpec }}">
+        <div style="height:100%;box-sizing:border-box;padding:32px;font-family:'Geist Mono',monospace;font-size:14px;line-height:2;color:#B8B3AA;display:flex;flex-direction:column;justify-content:center"><span><span style="color:#FF9A50">site</span>      ticoriginals.com</span><span><span style="color:#FF9A50">pages</span>     [n] + shop</span><span><span style="color:#FF9A50">payments</span>  card · SEPA · Klarna</span><span><span style="color:#FF9A50">hosting</span>   EU · Frankfurt · SSL</span><span><span style="color:#FF9A50">linked</span>    orders → stock → invoice</span></div>
+      </sc-if>
+      <sc-if value="{{ isUi }}"><image-slot src="assets/tic-checkout.png" id="sf-layer-ui" placeholder="TIC — interface screenshot" shape="rect"></image-slot></sc-if>
+      <sc-if value="{{ isSys }}"><image-slot src="assets/tic-orders.png" id="sf-layer-sys" placeholder="TIC — system behind the shop" shape="rect"></image-slot></sc-if>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5A5650">{{ layerNum }} / 03</span>
+      <h3 style="margin:0;font-size:clamp(28px,3vw,42px);letter-spacing:-0.035em;line-height:1.05;font-weight:600">{{ layerHead }}</h3>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#3A3731">{{ layerBody }}</p>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:8px">
+        <div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:32px;letter-spacing:-0.03em">—</b><span style="font-size:13px;color:#5A5650">Load time · placeholder</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:32px;letter-spacing:-0.03em">—</b><span style="font-size:13px;color:#5A5650">Orders / month · placeholder</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:32px;letter-spacing:-0.03em">EU</b><span style="font-size:13px;color:#5A5650">Hosted in Frankfurt</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="02 Included" style="background:#E3DED5">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(02) What's in it</div>
+      <h2 style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600;max-width:900px;text-wrap:balance">Not just a website. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">The front door</span> of your system.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
+      <sc-for list="{{ included }}" as="f" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #0A0A0A;padding-top:22px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5A5650">{{ f.n }}</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">{{ f.t }}</span><span style="font-size:15px;line-height:1.55;color:#3A3731">{{ f.d }}</span></div>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding-top:16px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5A5650;margin-right:8px">Connected</span>
+      <sc-for list="{{ chain }}" as="c" hint-placeholder-count="5"><span style="display:flex;gap:8px;align-items:center"><span style="background:#ECE8E1;border-radius:999px;padding:8px 14px;font-size:14px">{{ c.t }}</span><span style="color:#FF6A00">{{ c.a }}</span></span></sc-for>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Start" style="background:#0B0B0C;color:#F4F4F2">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">Start here</div>
+    <h2 style="margin:0;font-size:clamp(42px,5.6vw,88px);line-height:.98;letter-spacing:-0.05em;font-weight:600;max-width:1000px;text-wrap:balance">Your next customer is already searching. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">Be there.</span></h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27m%20interested%20in%20a%20website%20or%20shop." style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:16px 26px;font-weight:600;font-size:15px">WhatsApp Rialto</a>
+      <a href="RIDEFF Pricing.dc.html" style="border:1px solid #F4F4F2;border-radius:999px;padding:16px 26px;font-weight:500;font-size:15px">See pricing</a>
+    </div>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { front: 1, layer: 0 };
+  LAYERS = [['Interface', 'What your customers see.', 'Clean pages, clear products, a checkout that works on every phone. Designed around what your customers are looking for.'], ['System', 'What happens behind it.', 'Every order flows into your RIDEFF system — stock, invoice and confirmation, without copying anything by hand.'], ['Spec', 'What it runs on.', 'Fast pages, EU hosting in Frankfurt, SSL, backups and updates. Card, SEPA and Klarna payments built in.']];
+  renderVals() {
+    const s = this.state, L = this.LAYERS[s.layer];
+    const pos = [['0%', '10%', '52%', '78%', 'ticoriginals.com', 'sf-win-1', 'TIC Originals — homepage'], ['26%', '0%', '50%', '82%', 'shop.ticoriginals.com', 'sf-win-2', 'TIC Originals — shop'], ['50%', '14%', '50%', '76%', 'your-business.de', 'sf-win-3', 'Your next site — placeholder']];
+    return {
+      windows: pos.map((p, k) => ({ l: p[0], t: p[1], w: p[2], h: p[3], url: p[4], id: p[5], ph: p[6], src: ['assets/tic-hero.png', 'assets/tic-shopall.png', 'assets/mami-hero.png'][k], z: k === s.front ? 3 : k === 1 ? 2 : 1, y: k === s.front ? '-14px' : '0', sh: k === s.front ? '.22' : '.1', go: () => this.setState({ front: k }) })),
+      layers: this.LAYERS.map((l, k) => ({ n: '0' + (k + 1), t: l[0], bg: k === s.layer ? '#0A0A0A' : 'transparent', fg: k === s.layer ? '#F4F4F2' : '#3A3731', go: () => this.setState({ layer: k }) })),
+      isUi: s.layer === 0, isSys: s.layer === 1, isSpec: s.layer === 2, layerNum: '0' + (s.layer + 1), layerHead: L[1], layerBody: L[2],
+      included: [['Design', 'Built around your business, not a template. Your colours, your words.'], ['Shop & payments', 'Products, bookings or both. Card, SEPA and Klarna.'], ['Speed & search', 'Fast pages and clean structure, so people and search engines find you.'], ['Hosting & domain', 'EU hosting in Frankfurt, your own domain, SSL, backups, updates.']].map((f, k) => ({ n: '0' + (k + 1), t: f[0], d: f[1] })),
+      chain: ['Visit', 'Product', 'Checkout', 'Stock update', 'Invoice'].map((t, k, a) => ({ t, a: k < a.length - 1 ? '→' : '' }))
+    };
+  }
+}
+</script>
+</body>
+</html>
