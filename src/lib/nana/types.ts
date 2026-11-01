@@ -1,7 +1,7 @@
 /**
  * Nana API contract (rideff_handoff/README.md → "Suggested API contract").
- * Voice and chat run on an ElevenLabs agent when ELEVENLABS_API_KEY and
- * ELEVENLABS_AGENT_ID are set (src/lib/nana/elevenlabs.ts); otherwise the
+ * Voice and chat run on an ElevenLabs agent when ELEVENLABS_API_KEY is set
+ * (src/lib/nana/elevenlabs.ts, agent defined in ./agent-config.ts); otherwise the
  * routes answer with mock data. WhatsApp Business is still a mock (TODO.md).
  */
 import type { Locale } from '@/i18n/routing';

@@ -44,7 +44,7 @@ export async function mockCallScript(locale: Locale) {
 
 const fmt = (sec: number) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
 
-/** Fields ElevenLabs' post-call analysis fills (data collection ids in scripts/elevenlabs-agent.mjs). */
+/** Fields ElevenLabs' post-call analysis fills (data collection ids in ./agent-config.ts). */
 export type SummaryFields = { need?: string; interest?: string; next?: string };
 
 /**

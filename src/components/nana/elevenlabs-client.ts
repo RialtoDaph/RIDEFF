@@ -7,7 +7,7 @@ import type { Locale } from '@/i18n/routing';
  * Browser side of Nana on ElevenLabs Agents. The server hands out a short-lived
  * credential (src/app/api/nana/*); the SDK is loaded only when a session starts.
  *
- * The agent must allow these per-session overrides (scripts/elevenlabs-agent.mjs
+ * The agent must allow these per-session overrides (src/lib/nana/agent-config.ts
  * sets them): language, first message, text only.
  */
 type Common = {
