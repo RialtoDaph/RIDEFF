@@ -2,6 +2,7 @@
 'use client';
 import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { nanaEvent } from '@/lib/analytics';
 
 
 class Logic extends DCLogic {
@@ -117,6 +118,7 @@ class Logic extends DCLogic {
     }
   };
   callNana = () => {
+    if (this.state.call === 'idle') nanaEvent('nana_call_click', { page: this.page() });
     if (this.state.call !== 'idle') return this.setState({
       open: true,
       mode: 'call'
@@ -169,10 +171,13 @@ class Logic extends DCLogic {
     } catch (e) {}
     clearTimeout(this.ct);
     this.ct = setTimeout(() => {
-      if (this.state.call === 'ringing') this.setState({
-        call: 'live',
-        t0: Date.now()
-      });
+      if (this.state.call === 'ringing') {
+        nanaEvent('nana_call_start', { page: this.page(), consent: this.state.consent !== false });
+        this.setState({
+          call: 'live',
+          t0: Date.now()
+        });
+      }
     }, 1400);
     this.ci = setInterval(() => this.setState(s => {
       if (s.call !== 'live') return {
@@ -199,12 +204,14 @@ class Logic extends DCLogic {
     });
     if (!res.ok) throw new Error(String(res.status));
     const d = await res.json();
+    nanaEvent('nana_summary_created', { kind });
     return { meta: d.kind + ' · ' + d.duration, text: d.text };
   };
   endCall = async () => {
     clearInterval(this.ci);
     clearTimeout(this.ct);
     this.stopMic();
+    nanaEvent('nana_call_end', { seconds: this.state.sec });
     const sec = this.state.sec,
       d = this.fmt(sec),
       heard = this.state.line >= 2,
@@ -368,10 +375,13 @@ class Logic extends DCLogic {
       inputRef: this.inputRef,
       launcherT: s.call !== 'idle' ? this.props.t("RideffNana.onCall") + this.fmt(s.sec) : this.props.t("RideffNana.askNana"),
       callBtnT: s.call !== 'idle' ? this.props.t("RideffNana.backToCall") : this.props.t("nana.call"),
-      toggle: () => this.setState(st => ({
-        open: !st.open,
-        mode: st.call !== 'idle' ? 'call' : 'chat'
-      })),
+      toggle: () => {
+        if (!s.open) nanaEvent('nana_open', { page: this.page() });
+        this.setState(st => ({
+          open: !st.open,
+          mode: st.call !== 'idle' ? 'call' : 'chat'
+        }));
+      },
       status: s.call !== 'idle' ? this.props.t("RideffNana.onACall") + this.fmt(s.sec) : s.typing ? this.props.t("RideffNana.typing") : this.props.t("RideffNana.textOrVoicePreview"),
       msgs,
       typing: s.typing,
@@ -432,12 +442,14 @@ class Logic extends DCLogic {
           text: e.target.value
         }
       }),
+      onWaRialto: () => nanaEvent('nana_summary_wa_rialto'),
       waHref: 'https://wa.me/' + this.WA + '?text=' + encodeURIComponent(text),
       copyT: s.copied ? this.props.t("RideffNana.copied") : this.props.t("RideffNana.copyText"),
       copySum: () => {
         try {
           navigator.clipboard.writeText(text);
         } catch (e) {}
+        nanaEvent('nana_summary_copy');
         this.setState({
           copied: true
         });
@@ -469,6 +481,7 @@ class Logic extends DCLogic {
             body: JSON.stringify({ sessionId: this.sid, phone: s.phone, text, optIn: true })
           });
           if (!res.ok) throw new Error(String(res.status));
+          nanaEvent('nana_summary_wa_self');
           this.setState({ mineSent: true, mineBusy: false });
         } catch (er) {
           this.setState({ mineBusy: false, mineErr: this.props.t("nana.sendFailed") });
@@ -589,7 +602,7 @@ Logic.prototype.render = function render() {
                         </>) : null}
                       </div>
                       <div style={{ padding: "0 14px 14px", display: "flex", flexDirection: "column", gap: "8px" }}>
-                        <a href={v.waHref} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "12px 16px", font: "600 14px var(--font-sans)", textDecoration: "none" }} className="hv-b9fc66e">
+                        <a href={v.waHref} onClick={v.onWaRialto} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "12px 16px", font: "600 14px var(--font-sans)", textDecoration: "none" }} className="hv-b9fc66e">
                           {v.t("RideffNana.sendToRialtoOnWhatsApp")}
                         </a>
                         <div style={{ display: "flex", gap: "6px" }}>
