@@ -91,7 +91,7 @@ The Journal form calls `POST /api/newsletter`, which sends a confirmation mail w
 
 ## Images and assets
 
-Handoff assets are in `public/images` (video: `public/media/rideff-intro.mp4`). The ported pages reference them through `opt()` (`src/lib/img.ts`), which serves resized WebP/AVIF via the Next.js image optimizer. Fonts are self-hosted by `next/font` and three.js is bundled, so pages make no third-party requests.
+Handoff assets are in `public/images` (video: `public/media/rideff-intro.mp4`). The ported pages reference them through `opt()` (`src/lib/img.ts`), which serves resized WebP/AVIF via the Next.js image optimizer. Fonts ship with the repo (`src/fonts`, SIL OFL, loaded with `next/font/local`), so builds never download them from Google Fonts. three.js is bundled, so pages make no third-party requests.
 
 ## SEO
 
