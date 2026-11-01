@@ -1,17 +1,6 @@
-import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
-import type { Locale } from '@/i18n/routing';
-import { homeMetadata } from '@/lib/metadata';
-import { HomePage } from '@/components/HomePage';
+import HomePage from '@/components/dc/HomePage';
+import { sitePage } from '@/lib/page';
 
-export async function generateMetadata({ params }: PageProps<'/[locale]'>): Promise<Metadata> {
-  const { locale } = await params;
-  return homeMetadata(locale as Locale, 'business');
-}
-
-/** BUSINESS (default). Served at /, /en. */
-export default async function BusinessHome({ params }: PageProps<'/[locale]'>) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return <HomePage mode="business" />;
-}
+const p = sitePage('/', ['Home'], HomePage);
+export const generateMetadata = p.generateMetadata;
+export default p.Page;

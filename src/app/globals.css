@@ -1,241 +1,172 @@
 @import 'tailwindcss';
+@import '../styles/dc-hover.css';
 
 /*
- * RIDEFF design tokens (rideff_web_handoff/README.md → Design Tokens).
- * Exact hex values from the prototype; Tailwind exposes each as a CSS variable
- * (--color-orange-500 …) and as utilities (bg-orange-500, text-ink …).
+ * RIDEFF design tokens (rideff_handoff/README.md → Design tokens).
+ * Exact hex values from the prototypes. Tailwind exposes each as a CSS variable
+ * (--color-orange …) and as utilities (bg-orange, text-ink …). The ported page
+ * components (src/components/dc) use the same values inline, as in the design.
  */
 @theme {
-  /* Orange */
-  --color-orange-50: #fff4ec;
-  --color-orange-100: #ffd9bf;
-  --color-orange-200: #ffd2b0;
-  --color-orange-300: #ffb27a;
-  --color-orange-400: #ff9a50;
-  --color-orange-450: #ff7a1a; /* hover of orange buttons */
-  --color-orange-500: #ff6a00; /* brand */
-  --color-orange-700: #c2410c;
-  --color-orange-900: #7c2d12;
-  --color-orange-950: #5a2a0a;
-  --color-brand: #ff6a00;
+  /* Brand */
+  --color-orange: #ff6a00;
+  --color-orange-soft: #ff9a50;
+  --color-orange-warm: #ff7a1a;
+  --color-orange-deep: #e25f00;
 
   /* Ink and dark surfaces */
   --color-ink: #0a0a0a;
-  --color-ink-2: #0b0b0c;
-  --color-night-1: #111113;
-  --color-night-2: #141416;
-  --color-night-3: #18181b;
-  --color-night-card: #161618;
+  --color-night: #0b0b0c;
+  --color-night-card: #111112;
+  --color-night-surface: #1c1c1e;
+  --color-night-line-1: #1f1f21;
+  --color-night-line-2: #232325;
+  --color-night-line-3: #2a2a2c;
+  --color-night-line-4: #3a3a3c;
 
-  /* Dark borders and dividers */
-  --color-line-d1: #1c1c1f;
-  --color-line-d2: #1f1f22;
-  --color-line-d3: #26262a;
-  --color-line-d4: #2a2a2e;
-  --color-line-d5: #3a3a40;
+  /* Light */
+  --color-paper: #ece8e1;
+  --color-paper-pill: #f4f1ec;
+  --color-paper-surface: #f7f5f1;
+  --color-on-dark: #f4f4f2;
+  --color-line-1: #e2ddd4;
+  --color-line-2: #d3ccc0;
+  --color-line-3: #bdb6aa;
+  --color-line-4: #dcd5ca;
 
-  /* Zinc (text) */
-  --color-zinc-700: #3f3f46;
-  --color-zinc-600: #52525b;
-  --color-zinc-550: #6b6b73; /* footer column labels */
-  --color-zinc-500: #71717a;
-  --color-zinc-450: #8a8a93;
-  --color-zinc-400: #a1a1aa;
-  --color-zinc-300: #d4d4d8;
-  --color-muted: #6b6b6b;
+  /* Muted text */
+  --color-muted: #5a5650;
+  --color-body: #3a3731;
+  --color-mono: #8c877e;
+  --color-muted-dark: #b8b3aa;
+  --color-muted-dark-2: #6b675f;
 
-  /* Stone (light surfaces and borders) */
-  --color-stone-50: #f5f5f4;
-  --color-stone-100: #f4f4f2;
-  --color-stone-150: #f1f1ef;
-  --color-stone-200: #e4e4e1;
-  --color-stone-250: #e4e4e0;
-  --color-stone-300: #ededeb;
-  --color-stone-350: #ececea;
+  /* Warm dark accents (Life / Run) */
+  --color-warm-1: #2a1e14;
+  --color-warm-2: #140d08;
+  --color-warm-3: #5a4636;
+  --color-warm-4: #9a7354;
+  --color-cream-1: #fffaf4;
+  --color-cream-2: #fff8f0;
+  --color-cream-3: #fff3e6;
 
-  /* Status */
-  --color-success: #15803d;
-  --color-success-2: #22a355;
-  --color-success-ink: #14532d;
-  --color-success-bg: #e8f7ee;
-  --color-success-dark: #86efac;
-  --color-danger: #dc2626;
-  --color-danger-dark: #fca5a5;
+  /* Status and data */
+  --color-success: #61c784;
+  --color-online: #61cc80;
+  --color-danger: #e5484d;
+  --color-data-violet: #9e8cf2;
+  --color-data-blue: #54b0e6;
+  --color-data-gold: #e0b842;
 
-  /* Type */
+  /* Type (next/font variables are set on <html>) */
   --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --font-serif: var(--font-instrument-serif), Georgia, serif;
 
   /* Radius */
   --radius-tag: 4px;
-  --radius-input: 12px;
   --radius-card-sm: 14px;
   --radius-card: 16px;
   --radius-card-md: 18px;
-  --radius-card-lg: 22px;
+  --radius-card-lg: 20px;
   --radius-card-xl: 24px;
+  --radius-card-2xl: 28px;
+  --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-ring: 0 0 0 3px rgba(255, 106, 0, 0.18);
-  --shadow-glow: 0 0 0 4px rgba(255, 106, 0, 0.12), 0 0 24px rgba(255, 106, 0, 0.25);
-  --shadow-dark-card: 0 30px 60px rgba(10, 10, 10, 0.18);
-  --shadow-life-private: 0 0 0 6px rgba(255, 106, 0, 0.06), 0 20px 50px rgba(255, 106, 0, 0.12);
+  --shadow-pill: 0 12px 30px rgba(10, 10, 10, 0.2);
+  --shadow-panel: 0 30px 80px rgba(10, 10, 10, 0.35);
+  --shadow-glow: 0 0 0 6px rgba(255, 106, 0, 0.18), 0 0 24px rgba(255, 106, 0, 0.5);
 
-  /* Layout */
-  --container-site: 1280px;
-  --spacing-section-y: 88px;
-  --spacing-section-x: 56px;
-
-  /* Motion */
-  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --ease-in-out-strong: cubic-bezier(0.65, 0, 0.35, 1);
-
-  /* Keyframes from the prototype */
-  --animate-rde-dot: rdeDot 1s ease-in-out infinite;
-  --animate-rde-spin: rdeSpin 4.5s linear infinite;
-  --animate-rde-glow: rdeGlow 3.2s ease-in-out infinite;
-  --animate-rde-shine: rdeShine 3.2s ease-in-out infinite;
-
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-slat: cubic-bezier(0.77, 0, 0.18, 1);
 }
 
-/* Keyframes live outside @theme so they are always emitted (inline styles use them too). */
-@keyframes rdeDot {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-3px);
-  }
-}
-@keyframes rdeSpin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-@keyframes rdeGlow {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 0 rgba(255, 106, 0, 0));
-  }
-  50% {
-    filter: drop-shadow(0 0 6px rgba(255, 106, 0, 0.75));
-  }
-}
-@keyframes rdeShine {
-  0%,
-  62% {
-    transform: translateX(-140%) skewX(-20deg);
-  }
-  100% {
-    transform: translateX(240%) skewX(-20deg);
-  }
-}
-@keyframes rdeQ {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: translateY(0);
-  }
-  35% {
-    opacity: 1;
-    transform: translateY(-4px);
-  }
-  65% {
-    opacity: 0.7;
-    transform: translateY(0);
-  }
-}
-@keyframes rdeRoll {
-  from {
-    transform: translateY(70%);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-@keyframes nIn {
-  from {
-    opacity: 0;
-    transform: translateY(-16px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+:root {
+  --content-max: 1480px;
+  --content-pad: clamp(20px, 3vw, 40px);
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-  body {
-    margin: 0;
-    /* Initial tint; ScrollBackdrop interpolates it per section on scroll. */
-    background-color: var(--page-bg, #0b0b0c);
-    font-family: var(--font-sans);
-    color: var(--color-ink);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  body:has([data-page-mode='private']),
-  body:has([data-light-page]) {
-    --page-bg: #f4f4f2;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  :focus-visible {
-    outline: 2px solid var(--color-orange-500);
-    outline-offset: 3px;
-  }
-  /* Anchor targets clear the viewport edge a little. */
-  [id] {
-    scroll-margin-top: 16px;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+}
+/* Decorative overhang (e.g. the Life orbit on phones) must not cause sideways
+   scrolling. `clip` (unlike `hidden`) keeps position: sticky pins working. */
+html,
+body {
+  overflow-x: clip;
+}
+body {
+  margin: 0;
+  background: #ece8e1;
+  color: #0a0a0a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+img,
+video {
+  max-width: 100%;
+}
+button {
+  font: inherit;
+}
+::selection {
+  background: #ff6a00;
+  color: #0a0a0a;
+}
+:focus-visible {
+  outline: 2px solid #ff6a00;
+  outline-offset: 3px;
 }
 
-@utility font-mono-label {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-/* Centered 1280px content column with the prototype's 56px side padding. */
-@utility site-x {
-  width: 100%;
-  max-width: var(--container-site);
-  margin-inline: auto;
-  padding-inline: 20px;
-  @media (width >= 768px) {
-    padding-inline: 40px;
-  }
-  @media (width >= 1100px) {
-    padding-inline: var(--spacing-section-x);
-  }
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-/* Intro overlay: only rendered for first visits on desktop (see IntroVideo). */
-html:not([data-intro='1']) [data-intro-overlay] {
-  display: none;
-}
-
+/* Reduced motion: final states, no loops (JS effects check the same query). */
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

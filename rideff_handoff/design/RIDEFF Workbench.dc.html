@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#E4DED4;color:#0A0A0A;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}@keyframes rdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}</style>
+</helmet>
+<dc-import name="RideffNav" active="build" hint-size="100%,72px"></dc-import>
+
+<div data-screen-label="Hero" style="padding:140px clamp(20px,3vw,40px) 80px;max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:26px">
+    <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5A5650">Home / <a href="RIDEFF Build.dc.html">Build</a> / <span style="color:#0A0A0A">Team apps</span> · 02.2</div>
+    <h1 style="margin:0;font-size:clamp(50px,6.4vw,100px);line-height:.94;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Team apps. Built around how your team <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">works.</span></h1>
+    <p style="margin:0;max-width:480px;font-size:19px;line-height:1.5;color:#3A3731;text-wrap:pretty">Shifts, tasks, checklists and chat in one app your team actually opens — on the floor, in the field or at the counter.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="RIDEFF Contact.dc.html" style="background:#0A0A0A;color:#F4F4F2;border-radius:999px;padding:15px 24px;font-weight:600;font-size:15px">Bring your team's chaos</a>
+      <a href="#wb-inside" style="border:1px solid #0A0A0A;border-radius:999px;padding:15px 24px;font-weight:500;font-size:15px">See inside the app</a>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;padding-top:12px">
+      <div style="display:flex;align-items:baseline;gap:6px"><b style="font-size:28px;letter-spacing:-0.03em">1</b><span style="font-size:14px;color:#5A5650">/ app, whole team</span></div>
+      <div style="display:flex;align-items:baseline;gap:6px"><b style="font-size:28px;letter-spacing:-0.03em">iOS</b><span style="font-size:14px;color:#5A5650">/ Android · web</span></div>
+      <div style="display:flex;align-items:baseline;gap:6px"><b style="font-size:28px;letter-spacing:-0.03em">Growth</b><span style="font-size:14px;color:#5A5650">/ included from</span></div>
+    </div>
+  </div>
+  <div style="position:relative;min-height:600px;display:flex;align-items:center;justify-content:center">
+    <div style="position:absolute;inset:0;border-radius:28px;overflow:hidden;opacity:.9"><image-slot src="assets/site-cafe.jpg" id="wb-hero-bg" placeholder="Team at work — photo" shape="rounded" radius="28"></image-slot></div>
+    <div style="position:relative;width:290px;height:580px;border-radius:44px;background:#0A0A0A;padding:14px;box-sizing:border-box;box-shadow:0 40px 80px rgba(10,10,10,.3);display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;padding:8px 14px 4px;color:#F4F4F2;font-size:12px;font-weight:600"><span>08:02</span><span style="font-family:'Geist Mono',monospace;font-size:10px;color:#8C877E">RIDEFF TEAM</span></div>
+      <div style="padding:6px 12px 10px;color:#F4F4F2;font-size:24px;font-weight:600;letter-spacing:-0.02em">Good morning, Lena</div>
+      <sc-for list="{{ notes }}" as="n" hint-placeholder-count="4">
+        <div style="background:{{ n.bg }};color:{{ n.fg }};border-radius:16px;padding:13px 14px;display:flex;flex-direction:column;gap:3px;animation:rdIn .5s both;animation-delay:{{ n.delay }}">
+          <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;opacity:.7">{{ n.k }}</span><span style="font-size:14px;font-weight:500">{{ n.t }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="01 What it does" style="padding:100px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(01) What it does</div>
+    <h2 style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600;max-width:900px;text-wrap:balance">Four things every team needs. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">Nothing it doesn't.</span></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
+    <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #0A0A0A;padding-top:22px">
+        <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5A5650">{{ f.n }}</span>
+        <span style="font-size:28px;font-weight:600;letter-spacing:-0.03em">{{ f.t }}</span>
+        <span style="font-size:15px;line-height:1.55;color:#3A3731">{{ f.d }}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<div id="wb-inside" data-screen-label="02 Inside" style="background:#ECE8E1">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(02) Inside the app</div>
+      <h2 style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600;text-wrap:balance">Tap through it.</h2>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #D3CCC0">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.go }}" style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;text-align:left;padding:20px 0;background:none;border:none;border-bottom:1px solid #D3CCC0;cursor:pointer;font-family:Geist,sans-serif;color:#0A0A0A;opacity:{{ t.op }}">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00;padding-top:6px">{{ t.n }}</span>
+            <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ t.t }}</span><span style="font-size:15px;color:#3A3731">{{ t.d }}</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center">
+      <div style="width:300px;height:600px;border-radius:46px;background:#0A0A0A;padding:14px;box-sizing:border-box;box-shadow:0 40px 80px rgba(10,10,10,.22);display:flex;flex-direction:column;gap:10px">
+        <div style="padding:10px 12px 6px;color:#F4F4F2;font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ screenTitle }}</div>
+        <sc-for list="{{ screenRows }}" as="r" hint-placeholder-count="5">
+          <div style="background:#1C1C1E;border-radius:14px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#F4F4F2;animation:rdIn .4s both;animation-delay:{{ r.delay }}">
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:500">{{ r.a }}</span><span style="font-size:12px;color:#8C877E">{{ r.b }}</span></span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;color:{{ r.c }}">{{ r.s }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="03 Who" style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">(03) Made for</div>
+    <h2 style="margin:0;font-size:clamp(38px,4.6vw,68px);line-height:1;letter-spacing:-0.045em;font-weight:600;max-width:900px;text-wrap:balance">Teams that don't sit at a desk all day.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px">
+    <sc-for list="{{ who }}" as="w" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="aspect-ratio:4/5;border-radius:20px;overflow:hidden"><image-slot src="{{ w.src }}" id="{{ w.id }}" placeholder="{{ w.ph }}" shape="rounded" radius="20"></image-slot></div>
+        <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em">{{ w.t }}</span><span style="font-size:14px;color:#3A3731;line-height:1.5">{{ w.d }}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<div data-screen-label="Start" style="background:#0B0B0C;color:#F4F4F2">
+  <div style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">Start here</div>
+    <h2 style="margin:0;font-size:clamp(42px,5.6vw,88px);line-height:.98;letter-spacing:-0.05em;font-weight:600;max-width:1000px;text-wrap:balance">Bring the WhatsApp groups and paper lists. Leave with <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">one app.</span></h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27m%20interested%20in%20a%20team%20app." style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:16px 26px;font-weight:600;font-size:15px">WhatsApp Rialto</a>
+      <a href="RIDEFF Pricing.dc.html" style="border:1px solid #F4F4F2;border-radius:999px;padding:16px 26px;font-weight:500;font-size:15px">See pricing</a>
+    </div>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 0, cyc: 0 };
+  SCREENS = [
+    ['Today', 'Everything for this shift on one screen.', [['Morning shift', '08:00 – 14:00', 'Now', '#FF9A50'], ['Open checklist', '6 of 9 done', '67%', '#B8B3AA'], ['Delivery expected', '10:30', 'Soon', '#B8B3AA'], ['Team meeting', 'Fri 15:00', 'Fri', '#B8B3AA'], ['Message from Rialto', 'New feature live', 'New', '#FF9A50']]],
+    ['Shifts', 'Plan, swap and confirm — no group chat needed.', [['Mon · Lena', '08:00 – 14:00', 'OK', '#B8B3AA'], ['Mon · Jonas', '14:00 – 20:00', 'OK', '#B8B3AA'], ['Tue · Mira', 'Swap requested', 'Ask', '#FF9A50'], ['Wed · Lena', '08:00 – 14:00', 'OK', '#B8B3AA'], ['Thu · open', 'Needs cover', 'Open', '#FF9A50']]],
+    ['Tasks', 'Checklists with photos and notes attached.', [['Open up', 'Done by Lena · 07:58', '✓', '#FF9A50'], ['Check stock', 'Done by Jonas', '✓', '#FF9A50'], ['Clean station 2', 'Photo attached', '✓', '#FF9A50'], ['Order supplies', 'Due 12:00', '—', '#B8B3AA'], ['Close down', 'Due 20:00', '—', '#B8B3AA']]],
+    ['Chat', 'One thread per topic, not one endless group.', [['Shift swap Tue', 'Mira: can anyone take it?', '2', '#FF9A50'], ['Delivery', 'Jonas: arrived, all good', '', '#B8B3AA'], ['New menu', 'Photos uploaded', '5', '#FF9A50'], ['Holiday plan', 'Lena: August?', '', '#B8B3AA'], ['General', 'Have a good weekend', '', '#B8B3AA']]]
+  ];
+  NOTES = [['Shift', 'Mira swapped Tue → Thu'], ['Tasks', '3 of 4 opening tasks done'], ['Check-in', 'Jonas checked in · 07:56'], ['Chat', 'New photo in "Delivery"']];
+  componentDidMount() { this.t = setInterval(() => this.setState(s => ({ cyc: s.cyc + 1 })), 3200); }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    const s = this.state, sc = this.SCREENS[s.tab];
+    const notes = [0, 1, 2, 3].map(k => this.NOTES[(k + s.cyc) % 4]);
+    return {
+      notes: notes.map((n, k) => ({ k: n[0], t: n[1], bg: k === 0 ? '#FF6A00' : '#1C1C1E', fg: k === 0 ? '#0A0A0A' : '#F4F4F2', delay: k * 80 + 'ms', key: s.cyc + '-' + k })),
+      features: [['Shifts', 'Plan the week, swap shifts, see who is in — on every phone.'], ['Tasks & checklists', 'Opening, closing, quality checks. Photos and notes attached.'], ['Check-in', 'One tap when work starts. Hours tracked without paper.'], ['Team chat', 'One thread per topic, so nothing gets lost in a group chat.']].map((f, k) => ({ n: '0' + (k + 1), t: f[0], d: f[1] })),
+      tabs: this.SCREENS.map((x, k) => ({ n: '0' + (k + 1), t: x[0], d: x[1], op: k === s.tab ? 1 : 0.45, go: () => this.setState({ tab: k }) })),
+      screenTitle: sc[0], screenRows: sc[2].map((r, k) => ({ a: r[0], b: r[1], s: r[2], c: r[3], delay: k * 60 + 'ms' })),
+      who: [['wb-who-1', 'Retail team — photo', 'At the counter', 'Shops and showrooms with changing shifts.'], ['wb-who-2', 'Field crew — photo', 'In the field', 'Crews on the road who need jobs and photos in one place.'], ['wb-who-3', 'Hospitality team — photo', 'On the floor', 'Hospitality and service teams running on checklists.'], ['wb-who-4', 'Practice team — photo', 'In the practice', 'Small offices where everyone wears three hats.']].map((w, k) => ({ id: w[0], ph: w[1], t: w[2], d: w[3], src: ['assets/site-laden.jpg', 'assets/site-handwerk.jpg', 'assets/site-hotel.jpg', 'assets/site-praxis.jpg'][k] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="theme-color" content="#0B0B0C">
+<title>RIDEFF Build — From six tools to one platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#0B0B0C;color:#F4F4F2;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{color:#FF9A50}
+@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes rdBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes rdMarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes rdMarqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes rdScanX{0%{left:-20%}100%{left:110%}}
+@keyframes rdGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,106,0,.45)}50%{box-shadow:0 0 0 12px rgba(255,106,0,0)}}
+</style>
+</helmet>
+<dc-import name="RideffNav" active="build" dark="{{ true }}" hint-size="100%,80px"></dc-import>
+
+<div ref="{{ stageRef }}" data-screen-label="Hero story" style="height:420vh;position:relative">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:radial-gradient(ellipse at 66% 48%,#15120F 0%,#0B0B0C 62%)">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div style="position:absolute;left:clamp(20px,3vw,40px);top:110px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E;pointer-events:none">Home <span style="color:#4A4A4C">/</span> <span style="color:#B8B3AA">Build</span></div>
+    <div style="position:absolute;right:clamp(20px,3vw,40px);top:110px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6B675F;pointer-events:none">
+      <span>Particles <b style="color:#FF9A50;font-weight:500">{{ count }}</b></span><span>Stage <b style="color:#FF9A50;font-weight:500">{{ formName }}</b></span>
+    </div>
+    <div style="position:absolute;left:clamp(20px,3vw,40px);top:150px;bottom:120px;max-width:min(620px,calc(100% - 40px));display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2.4vh,22px);pointer-events:none;overflow:hidden">
+      <div style="display:flex;gap:12px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase"><span style="color:#6B675F">{{ capNum }}</span><span style="color:#F4F4F2">{{ capLabel }}</span></div>
+      <h1 style="margin:0;font-size:clamp(36px,min(5.6vw,8vh),92px);line-height:.95;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">{{ capHead }}</h1>
+      <p style="margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:#B8B3AA;text-wrap:pretty;max-width:540px">{{ capBody }}</p>
+      <sc-if value="{{ isFirst }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto;padding-top:8px">
+          <a href="#inside" style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:15px 24px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase">See inside the platform ↓</a>
+          <a href="RIDEFF Contact.dc.html" style="border:1px solid #3A3A3C;border-radius:999px;padding:15px 24px;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase">Start a project</a>
+        </div>
+      </sc-if>
+    </div>
+    <div style="position:absolute;left:clamp(20px,3vw,40px);right:clamp(20px,3vw,40px);bottom:28px;display:flex;flex-direction:column;gap:16px;pointer-events:none">
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px">
+        <sc-for list="{{ segs }}" as="g" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="height:2px;background:#232325;overflow:hidden"><div style="height:100%;width:{{ g.w }};background:#FF6A00"></div></div>
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:{{ g.c }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ g.t }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B675F">Scroll to watch it come together — move your cursor through the field</span>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ collapseRef }}" data-screen-label="01 Tool tax" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(01) <span style="color:#F4F4F2">The tool tax</span></div>
+    <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Six apps you rent. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">One platform you own.</span></h2>
+    <p style="margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:#B8B3AA;max-width:560px;text-wrap:pretty">Every tool solves one problem and adds another — one more login, one more bill, one more place your data hides. I replace the patchwork with one system shaped around how your business actually works.</p>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #232325">
+      <sc-for list="{{ counters }}" as="k" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #1C1C1E">
+          <span style="font-size:17px;color:#D8D3CA">{{ k.t }}</span>
+          <span style="text-align:right;font-size:clamp(30px,3vw,44px);font-weight:500;letter-spacing:-0.04em;line-height:1;color:{{ k.c }}">{{ k.v }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="position:relative;height:clamp(460px,46vw,620px);perspective:1600px;contain:paint">
+    <div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(16deg) rotateY(-14deg)">
+      <sc-for list="{{ toolCards }}" as="t" hint-placeholder-count="6">
+        <div style="position:absolute;left:50%;top:50%;width:clamp(180px,19vw,250px);border-radius:18px;background:#141415;border:1px solid #2A2A2C;padding:16px 18px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;transform:{{ t.tf }};opacity:{{ t.op }};box-shadow:0 30px 60px -20px rgba(0,0,0,.75)">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:30px;height:30px;border-radius:8px;background:{{ t.c }};color:#0A0A0A;display:flex;align-items:center;justify-content:center;font:600 12px 'Geist Mono',monospace;flex-shrink:0">{{ t.ini }}</span><b style="font-size:15px;white-space:nowrap">{{ t.name }}</b><span style="margin-left:auto;font-family:'Geist Mono',monospace;font-size:11px;color:#8C877E;white-space:nowrap">{{ t.price }}</span></div>
+          <span style="font-size:13px;color:#B8B3AA">{{ t.use }}</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="height:6px;border-radius:3px;background:#232325;width:90%"></span><span style="height:6px;border-radius:3px;background:#232325;width:62%"></span><span style="height:6px;border-radius:3px;background:#232325;width:76%"></span></div>
+          <span style="align-self:flex-start;border:1px solid #4A2A1C;color:#FF9A50;border-radius:999px;padding:4px 10px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase">{{ t.tag }}</span>
+        </div>
+      </sc-for>
+      <div style="position:absolute;left:50%;top:50%;width:clamp(260px,28vw,380px);border-radius:22px;background:radial-gradient(ellipse at 30% 0%,#2A1A0E,#121213 70%);border:1px solid #FF6A00;padding:22px;box-sizing:border-box;display:flex;flex-direction:column;gap:16px;transform:{{ platTf }};opacity:{{ platOp }};box-shadow:0 0 60px rgba(255,106,0,.25),0 40px 80px -20px rgba(0,0,0,.8)">
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;border-radius:11px;background:#FF6A00;color:#0A0A0A;display:flex;align-items:center;justify-content:center;font:700 16px Geist,sans-serif">Y</span><span style="display:flex;flex-direction:column;gap:2px"><b style="font-size:18px">Your platform</b><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#8C877E">app.yourbusiness.de</span></span><span style="margin-left:auto;display:flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;color:#61CC80"><span style="width:7px;height:7px;border-radius:50%;background:#61CC80;animation:rdPulse 1.6s infinite"></span>live</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+          <sc-for list="{{ modules }}" as="m" hint-placeholder-count="6"><span style="border:1px solid #3A2A1C;background:rgba(255,106,0,.06);border-radius:10px;padding:10px 8px;font-size:12px;text-align:center">{{ m }}</span></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#FF9A50;border-top:1px solid #2A2A2C;padding-top:12px"><span>1 login</span><span>1 database</span><span>1 price</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="inside" ref="{{ layersRef }}" data-screen-label="02 Inside the platform" style="padding:160px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(02) <span style="color:#F4F4F2">Inside your platform</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Six layers. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">Built as one.</span></h2>
+    </div>
+    <p style="margin:0;font-size:18px;line-height:1.55;color:#B8B3AA;max-width:520px">You only see the top — the apps. Underneath, every layer is designed together, so a message on WhatsApp can end up as a paid invoice without anyone copying a thing.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:40px;align-items:center">
+    <div style="position:relative;height:clamp(460px,48vw,640px);perspective:2200px;contain:paint">
+      <div style="position:absolute;left:14%;right:14%;top:36%;bottom:36%;transform-style:preserve-3d;transform:{{ stackTf }};transition:transform .2s linear">
+        <sc-for list="{{ layers }}" as="l" hint-placeholder-count="6">
+          <div onClick="{{ l.go }}" style="position:absolute;inset:0;border-radius:18px;border:1px solid {{ l.bd }};background:{{ l.bg }};transform:{{ l.tf }};transition:transform .6s cubic-bezier(.16,1,.3,1),background .4s,border-color .4s;cursor:pointer;overflow:hidden;box-shadow:0 30px 50px -20px rgba(0,0,0,.8)">
+            <div style="position:absolute;left:18px;right:18px;top:14px;display:flex;gap:10px;align-items:center;font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:{{ l.tc }}"><span style="width:9px;height:9px;border-radius:2px;background:{{ l.c }}"></span>{{ l.n }} · {{ l.t }}</div>
+            <div style="position:absolute;left:18px;right:18px;bottom:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+              <sc-for list="{{ l.cells }}" as="x" hint-placeholder-count="4"><span style="height:26px;border-radius:6px;background:{{ x }}"></span></sc-for>
+            </div>
+            <sc-if value="{{ l.on }}"><span style="position:absolute;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:rdScanX 1.8s linear infinite"></span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #232325">
+      <sc-for list="{{ layers }}" as="l" hint-placeholder-count="6">
+        <button onClick="{{ l.go }}" style="display:flex;flex-direction:column;gap:12px;text-align:left;background:none;border:none;border-bottom:1px solid #1C1C1E;padding:20px 0;cursor:pointer;color:#F4F4F2;font-family:Geist,sans-serif;opacity:{{ l.rowOp }};transition:opacity .3s">
+          <span style="display:flex;gap:16px;align-items:center"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ l.c }}">{{ l.n }}</span><span style="font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:-0.03em">{{ l.t }}</span></span>
+          <sc-if value="{{ l.on }}">
+            <span style="display:flex;flex-direction:column;gap:12px;padding-left:36px">
+              <span style="font-size:16px;line-height:1.55;color:#B8B3AA;max-width:520px">{{ l.d }}</span>
+              <span style="display:flex;gap:8px;flex-wrap:wrap"><sc-for list="{{ l.chips }}" as="k" hint-placeholder-count="4"><span style="border:1px solid #3A3A3C;border-radius:999px;padding:7px 13px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase">{{ k }}</span></sc-for></span>
+            </span>
+          </sc-if>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ journeyRef }}" data-screen-label="03 One request" style="height:{{ jH }};position:relative;margin-top:140px">
+  <div style="position:{{ jPos }};top:0;height:{{ jInnerH }};display:flex;flex-direction:column;justify-content:center;gap:48px;padding:40px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(03) <span style="color:#F4F4F2">One request, start to finish</span></div>
+        <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;max-width:900px;text-wrap:balance">From website form <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">to paid invoice.</span></h2>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:10px;font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8C877E"><b style="font-size:40px;color:#F4F4F2;font-family:Geist,sans-serif;letter-spacing:-0.04em;font-weight:500">{{ jNum }}</b>/ 06 · your input: <span style="color:#FF9A50">1 tap</span></div>
+    </div>
+    <div style="position:relative">
+      <sc-if value="{{ jPin }}">
+        <div style="position:absolute;left:calc(100% / 12);right:calc(100% / 12);top:9px;height:2px;background:#232325">
+          <div style="height:100%;width:{{ jFill }};background:#FF6A00;box-shadow:0 0 12px #FF6A00"></div>
+          <span style="position:absolute;top:-7px;left:{{ jFill }};width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#FF6A00;box-shadow:0 0 0 6px rgba(255,106,0,.2),0 0 24px #FF6A00"></span>
+        </div>
+      </sc-if>
+      <div style="display:grid;grid-template-columns:{{ jCols }};gap:16px">
+        <sc-for list="{{ steps }}" as="p" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+            <span style="position:relative;width:20px;height:20px;display:{{ jNode }};border-radius:50%;box-sizing:border-box;border:2px solid {{ p.nodeBd }};background:{{ p.nodeBg }};transition:all .4s"></span>
+            <div style="width:100%;box-sizing:border-box;border-radius:20px;border:1px solid {{ p.bd }};background:#111112;padding:20px;display:flex;flex-direction:column;gap:12px;opacity:{{ p.op }};transform:{{ p.tf }};transition:opacity .5s,transform .6s cubic-bezier(.16,1,.3,1),border-color .4s">
+              <div style="display:flex;justify-content:space-between;gap:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase"><span style="color:#8C877E">{{ p.time }}</span><span style="color:{{ p.c }}">{{ p.layer }}</span></div>
+              <b style="font-size:19px;letter-spacing:-0.02em;line-height:1.2">{{ p.t }}</b>
+              <span style="font-size:14px;line-height:1.55;color:#B8B3AA">{{ p.d }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="04 What I build" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px;align-items:end">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(04) <span style="color:#F4F4F2">What I build</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">If it runs your business, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">I can build it.</span></h2>
+    </div>
+    <p style="margin:0;font-size:18px;line-height:1.55;color:#B8B3AA;max-width:520px">Custom software used to mean an agency and six months. With AI-assisted engineering I design, code and ship it myself — in weeks, on one stack I host and maintain.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+    <sc-for list="{{ caps }}" as="k" hint-placeholder-count="8">
+      <a href="{{ k.href }}" style="color:#F4F4F2;text-decoration:none;background:#111112;border:1px solid #232325;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:40px;min-height:200px;box-sizing:border-box;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s" style-hover="transform:translateY(-6px) rotateX(4deg);border-color:#FF6A00;background:#161210">
+        <div style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:12px;color:#6B675F"><span style="color:{{ k.c }}">{{ k.n }}</span><span style="color:{{ k.ac }}">{{ k.arrow }}</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto"><b style="font-size:22px;letter-spacing:-0.03em">{{ k.t }}</b><span style="font-size:15px;line-height:1.5;color:#B8B3AA">{{ k.d }}</span></div>
+      </a>
+    </sc-for>
+  </div>
+  <div ref="{{ termRef }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:40px;align-items:start">
+    <div style="background:#0F0F10;border:1px solid #232325;border-radius:22px;overflow:hidden;font-family:'Geist Mono',monospace;font-size:clamp(12px,1vw,14px)">
+      <div style="display:flex;gap:7px;align-items:center;padding:14px 18px;border-bottom:1px solid #1C1C1E;color:#6B675F;font-size:12px"><span style="width:10px;height:10px;border-radius:50%;background:#2E2E30"></span><span style="width:10px;height:10px;border-radius:50%;background:#2E2E30"></span><span style="width:10px;height:10px;border-radius:50%;background:#2E2E30"></span><span style="margin-left:12px">rialto@rideff — ~/your-platform</span></div>
+      <div style="padding:24px 22px;display:flex;flex-direction:column;gap:10px;line-height:1.6;min-height:260px">
+        <sc-for list="{{ term }}" as="l" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span><span style="color:#6B675F">$ </span><span style="color:#F4F4F2">{{ l.cmd }}</span><sc-if value="{{ l.cursor }}"><span style="display:inline-block;width:8px;height:15px;background:#FF6A00;vertical-align:-2px;margin-left:2px;animation:rdBlink 1s infinite"></span></sc-if></span>
+            <sc-if value="{{ l.showOut }}"><span style="color:#FF9A50">{{ l.out }}</span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #232325">
+      <sc-for list="{{ stack }}" as="k" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:20px 0;border-bottom:1px solid #1C1C1E">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">{{ k.t }}</span>
+          <span style="font-size:16px;line-height:1.55">{{ k.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Connects with the tools you already use</span>
+    <div style="overflow:hidden;display:flex;flex-direction:column;gap:10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+      <div style="display:flex;gap:10px;width:max-content;animation:rdMarq 38s linear infinite">
+        <sc-for list="{{ int1 }}" as="i" hint-placeholder-count="12"><span style="border:1px solid #2A2A2C;border-radius:999px;padding:12px 20px;font-size:15px;white-space:nowrap;color:#D8D3CA">{{ i }}</span></sc-for>
+      </div>
+      <div style="display:flex;gap:10px;width:max-content;animation:rdMarqR 44s linear infinite">
+        <sc-for list="{{ int2 }}" as="i" hint-placeholder-count="12"><span style="border:1px solid #2A2A2C;border-radius:999px;padding:12px 20px;font-size:15px;white-space:nowrap;color:#D8D3CA">{{ i }}</span></sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ref="{{ casesRef }}" data-screen-label="05 Builds taken apart" style="padding:140px clamp(20px,3vw,40px) 0;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(05) <span style="color:#F4F4F2">Builds, taken apart</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600;max-width:960px;text-wrap:balance">Three builds. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">Layer by layer.</span></h2>
+    </div>
+    <p style="margin:0;font-size:17px;line-height:1.55;color:#B8B3AA;max-width:420px">Each one split into what you see, what runs behind it, what it's built on — and how it looks on a phone.</p>
+  </div>
+  <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+    <div data-case="{{ c.i }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center;padding:72px 0;border-top:1px solid #232325">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;gap:12px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase"><span style="color:#6B675F">{{ c.n }} / 03</span><span style="color:#F4F4F2">{{ c.kind }}</span></div>
+        <h3 style="margin:0;font-size:clamp(44px,5.2vw,84px);line-height:.95;letter-spacing:-0.05em;font-weight:600">{{ c.t }}</h3>
+        <p style="margin:0;font-size:clamp(17px,1.5vw,22px);line-height:1.5;color:#B8B3AA;max-width:560px">{{ c.d }}</p>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #3A3A3C">
+          <sc-for list="{{ c.bullets }}" as="b" hint-placeholder-count="4"><div style="display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #1C1C1E;font-size:16px;line-height:1.5;color:#D8D3CA"><span style="width:9px;height:9px;background:#FF6A00;border-radius:2px;flex-shrink:0;transform:translateY(1px)"></span>{{ b }}</div></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><sc-for list="{{ c.chips }}" as="k" hint-placeholder-count="4"><span style="border:1px solid #3A3A3C;border-radius:999px;padding:8px 14px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase">{{ k }}</span></sc-for></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+          <sc-for list="{{ c.stats }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid #232325"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">{{ s.k }}</span><span style="font-size:clamp(34px,3.4vw,52px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ s.v }}</span></div></sc-for>
+        </div>
+        <a href="{{ c.href }}" style="display:flex;gap:14px;align-items:center;font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase"><span style="color:#FF6A00">⟶</span><span style="border-bottom:1px solid #F4F4F2;padding-bottom:3px">{{ c.link }}</span></a>
+      </div>
+      <div style="position:relative;height:clamp(420px,46vw,660px);perspective:1800px;margin-top:clamp(40px,6vw,80px);contain:paint">
+        <div style="position:absolute;left:8%;right:8%;top:18%;bottom:18%;transform-style:preserve-3d;transform:{{ c.stage }}">
+          <div style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#EDEAE4;transform:{{ c.l0 }};box-shadow:0 40px 80px rgba(0,0,0,.5)"><image-slot src="{{ c.srcSys }}" id="{{ c.idSys }}" placeholder="{{ c.phSys }}" shape="rect"></image-slot><span style="position:absolute;left:14px;top:12px;background:rgba(11,11,12,.8);color:#F4F4F2;border-radius:999px;padding:5px 11px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase">02 · System</span></div>
+          <div style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1A1A1C;transform:{{ c.l1 }};box-shadow:0 40px 80px rgba(0,0,0,.45)"><image-slot src="{{ c.srcUi }}" id="{{ c.idUi }}" placeholder="{{ c.phUi }}" shape="rect"></image-slot><span style="position:absolute;left:14px;bottom:12px;background:rgba(11,11,12,.8);color:#F4F4F2;border-radius:999px;padding:5px 11px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase">01 · Interface</span></div>
+          <div style="position:absolute;right:6%;top:8%;width:58%;border-radius:16px;background:rgba(11,11,12,.94);border:1px solid #2A2A2C;padding:22px 24px;box-sizing:border-box;font-family:'Geist Mono',monospace;font-size:clamp(11px,1vw,14px);line-height:1.9;transform:{{ c.l2 }};opacity:{{ c.op2 }};box-shadow:0 30px 60px rgba(0,0,0,.5)">
+            <sc-for list="{{ c.spec }}" as="x" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px"><span style="color:#FF9A50">{{ x.k }}</span><span style="color:#D8D3CA">{{ x.v }}</span></div></sc-for>
+            <span style="display:block;padding-top:8px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6B675F">03 · Spec</span>
+          </div>
+          <div style="position:absolute;left:4%;bottom:4%;width:19%;aspect-ratio:9/18;border-radius:22px;overflow:hidden;background:#0A0A0A;border:5px solid #0A0A0A;transform:{{ c.l3 }};opacity:{{ c.op3 }};box-shadow:0 30px 60px rgba(0,0,0,.55)"><image-slot src="{{ c.srcMob }}" id="{{ c.idMob }}" placeholder="Mobile" shape="rect"></image-slot></div>
+        </div>
+      </div>
+    </div>
+  </sc-for>
+</div>
+
+<div data-screen-label="06 Process" style="padding:140px clamp(20px,3vw,40px) 100px;max-width:1480px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">(06) <span style="color:#F4F4F2">Process</span></div>
+    <h2 style="margin:0;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-0.05em;font-weight:600">From first call to <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">your own platform.</span></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
+    <sc-for list="{{ process }}" as="p" hint-placeholder-count="5">
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #3A3A3C;padding-top:22px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF6A00">{{ p.n }}</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">{{ p.t }}</span><span style="font-size:16px;line-height:1.5;color:#B8B3AA">{{ p.d }}</span></div>
+    </sc-for>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid #232325">
+    <span style="font-size:18px;color:#B8B3AA">Next pillar → <b style="color:#F4F4F2">Run</b>. What happens after launch.</span>
+    <a href="RIDEFF Run.dc.html" style="border:1px solid #F4F4F2;border-radius:999px;padding:14px 22px;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase">Enter Run →</a>
+  </div>
+</div>
+
+<div data-screen-label="Start" style="padding:120px clamp(20px,3vw,40px);max-width:1480px;margin:0 auto;border-top:1px solid #1C1C1E;display:flex;flex-direction:column;gap:36px">
+  <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8C877E">Start here</div>
+  <h2 style="margin:0;font-size:clamp(46px,6vw,100px);line-height:.96;letter-spacing:-0.05em;font-weight:600;max-width:1100px;text-wrap:balance">Bring your six tools. Leave with <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FF6A00">one platform.</span></h2>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27d%20like%20my%20own%20platform." style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:16px 26px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase">WhatsApp Rialto</a>
+    <a href="RIDEFF Contact.dc.html" style="border:1px solid #F4F4F2;border-radius:999px;padding:16px 26px;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase">Book 15 min</a>
+  </div>
+</div>
+<dc-import name="RideffFooter" hint-size="100%,320px"></dc-import>
+<dc-import name="RideffNana" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cap: 0, prog: 0, typed: 0, ce: [0, 0, 0], cp: 0, lp: 0, jp: 0, al: 0, pin: false };
+  canvasRef = React.createRef(); stageRef = React.createRef(); termRef = React.createRef(); casesRef = React.createRef();
+  collapseRef = React.createRef(); layersRef = React.createRef(); journeyRef = React.createRef();
+  COL = ['#FF9E47', '#9E8CF2', '#61CC80', '#54B0E6', '#E0B842', '#EB7AAB'];
+  TOOLS = [['SP', 'Spreadsheet', 'free*', 'Customers & prices', '3 versions'], ['IN', 'Inbox', '€8/mo', 'Inquiries & offers', 'lost threads'], ['CH', 'Chat app', '—', 'Orders on WhatsApp', 'no history'], ['BK', 'Booking tool', '€39/mo', 'Appointments', "doesn't sync"], ['IV', 'Invoicing app', '€19/mo', 'Invoices & reminders', 'typed twice'], ['SH', 'Shop software', '€49/mo', 'Products & stock', 'own login']];
+  FAN = [[-95, -85, -60, -8], [15, -120, 50, 6], [95, -35, -30, 10], [-100, 55, 40, -6], [-5, 85, 90, -3], [90, 100, -40, 8]];
+  LAYERS = [
+    ['Apps', 'What your team, your clients and you actually open — on phone and desktop.', ['Team app', 'Client portal', 'Dashboard', 'Website']],
+    ['AI agents', 'They read, sort, draft and summarise on your own data. Nothing leaves with your name on it until you approve.', ['Reply agent', 'Offer agent', 'Report agent']],
+    ['Automations', 'Rules that move routine work on their own — triggers, reminders, schedules and approvals.', ['Triggers', 'Reminders', 'Schedules', 'Approvals']],
+    ['Data core', 'One database for customers, orders, jobs and money. Every app and agent reads the same truth.', ['Customers', 'Orders', 'Jobs', 'Invoices']],
+    ['Entry points', 'Every way a customer reaches you lands here — already linked to the right person.', ['Website', 'Shop', 'WhatsApp', 'Email', 'Forms']],
+    ['Integrations', 'The services you keep using, wired in instead of copied from.', ['Stripe', 'DATEV', 'DHL', 'Google', 'Microsoft']]
+  ];
+  LCOL = ['#FF6A00', '#9E8CF2', '#61CC80', '#54B0E6', '#E0B842', '#EB7AAB'];
+  STEPS = [
+    ['09:12', 4, 'Request comes in', '“Can you cater 40 people on Saturday?” — sent through your website form.'],
+    ['09:12', 3, 'Matched to customer', 'Known customer: Café Lindner. Three past orders, prefers vegetarian.'],
+    ['09:13', 1, 'Reply & offer drafted', 'An agent writes the answer in your tone and prepares an offer: €1,840.'],
+    ['09:20', -1, 'You approve', 'One tap in your dashboard. It goes out with your logo and terms.'],
+    ['Sat', 0, 'Team scheduled', 'Shift for three created, packing list on every phone in the team app.'],
+    ['Mon', 2, 'Invoice & report', 'Invoice R-2026-052 sent, paid by card, and it shows up in Monday’s report.']
+  ];
+  CASES = [
+    { kind: 'Fashion label · Germany', t: 'TIC Originals', d: '[Case summary placeholder — what TIC Originals needed and what the site and system do for them now.]', bullets: ['[Highlight 1 — e.g. storefront with card, SEPA and Klarna]', '[Highlight 2 — e.g. orders flow into stock and invoices]', '[Highlight 3 — e.g. fast pages, EU hosting]', '[Highlight 4 — e.g. maintained monthly through the portal]'], chips: ['Next.js', 'Stripe', 'Klarna', 'Supabase'], stats: [['Pages', '—'], ['Orders / mo', '—'], ['Hosting', 'EU']], link: 'ticoriginals.com', href: 'RIDEFF Storefront.dc.html', phUi: 'TIC — homepage screenshot', phSys: 'TIC — shop / admin screenshot', spec: [['client', 'TIC Originals'], ['scope', 'site · shop · flows'], ['payments', 'card · SEPA · Klarna'], ['hosting', 'EU · Frankfurt'], ['status', 'live · maintained']] },
+    { kind: 'Own product · client portal', t: 'RIDEFF Portal', d: 'Where every client approves offers, pays invoices and talks to me — one thread per topic, never a chat that scrolls away.', bullets: ['Email login with a 6-digit code — no passwords to forget.', 'Offer approval stores time, IP, terms version and a hashed PDF.', 'Invoices R-YYYY-NNN — card, SEPA, Klarna or bank transfer.', 'Owner, Support, Finance and Builder roles, read from the database.'], chips: ['Next.js', 'Supabase', 'Stripe', 'Resend'], stats: [['Roles', '6'], ['Languages', '3'], ['Passwords', '0']], link: 'Open the portal demo', href: 'RIDEFF Portal.dc.html', phUi: 'Portal — client dashboard', phSys: 'Portal — admin inbox', spec: [['auth', 'email · 6-digit code'], ['staff', '2FA · TOTP'], ['approval', 'ip · time · pdf hash'], ['invoices', '§14 UStG · R-YYYY-NNN'], ['region', 'supabase · frankfurt']] },
+    { kind: 'Own product · consumer', t: 'RIDEFF Life', d: 'A personal brain for your day — morning briefing, money, time and goals, for one person or a household of four.', bullets: ['Morning briefing written from your calendar and accounts.', 'Money and time in one calm cockpit.', 'Together plan for up to 4 people.', '14 days free, no card, cancel any month.'], chips: ['Next.js', 'Supabase', 'Stripe', 'AI'], stats: [['Plans', '4'], ['Trial', '14 d'], ['Languages', '3']], link: 'Try the Life demo', href: 'RIDEFF Life Demo.dc.html', phUi: 'Life — cockpit screenshot', phSys: 'Life — briefing screenshot', spec: [['product', 'app.rideff.com'], ['users', '1 – 4 per plan'], ['trial', '14 days · no card'], ['billing', 'monthly · yearly'], ['data', 'EU · Frankfurt']] }
+  ];
+  NAMES = ['Scattered', 'Platform', 'Inbound', 'Agents', 'Apps'];
+  SEGS = ['Six tools', 'One platform', 'Every door', 'Flows & agents', 'Apps'];
+  CAPS = [
+    ['Pillar 02', 'From six tools to one platform — yours.', 'Spreadsheet, inbox, chat, booking tool, invoicing, shop software. I merge them into one system built around how you work — then add automation and AI on top.'],
+    ['01 · One platform', 'Everything in one place.', 'Customers, orders, jobs and numbers in one database — with your logo, your workflow and your rules. No more copy-paste between apps.'],
+    ['02 · Every door leads in', 'Web, shop, WhatsApp, email — one inbox.', 'Whatever the channel, every request lands in the same system, already sorted and linked to the right customer.'],
+    ['03 · Automation & agents', 'Flows run it. Agents think it through.', 'Rules move the routine work on their own. AI agents read, draft, sort and report — and you approve what matters.'],
+    ['04 · Apps for everyone', 'Your team, your clients, your dashboard.', 'A team app on every phone, a portal for your clients, one dashboard for you — all on the same platform, hosted in Frankfurt.']
+  ];
+  AREAS = [[1, .62, .28], [.38, .80, .50], [.33, .69, .90], [.62, .55, .95], [.88, .72, .26], [.92, .48, .67]];
+  TERM = [
+    ['rideff map --your-business', '✓ 6 tools found · 14 h / week of copy-paste'],
+    ['rideff build platform --modules customers,orders,jobs,invoices', '✓ one database · your logo · your rules'],
+    ['rideff connect website whatsapp stripe datev', '✓ 4 doors in · 0 copy-paste'],
+    ['rideff agents add reply offer report && deploy --region fra1', '✓ live · SSL · daily backups']
+  ];
+  fxScroll = () => {
+    const vh = innerHeight, cl = v => Math.max(0, Math.min(1, v)), n = {};
+    const root = this.casesRef.current; if (root) n.ce = [...root.querySelectorAll('[data-case]')].map(el => cl((vh * 0.9 - el.getBoundingClientRect().top) / (vh * 0.65)));
+    const c = this.collapseRef.current; if (c) n.cp = cl((vh * .8 - c.getBoundingClientRect().top) / (vh * .9));
+    const l = this.layersRef.current; if (l) n.lp = cl((vh * .85 - l.getBoundingClientRect().top) / (vh * .8));
+    const j = this.journeyRef.current; if (j) { const r = j.getBoundingClientRect(); n.jp = this.state.pin ? cl(-r.top / (r.height - vh)) : 1; }
+    const s = this.state || {}, ch = Object.keys(n).some(k => Array.isArray(n[k]) ? n[k].some((v, i) => Math.abs(v - ((s[k] || [])[i] || 0)) > .004) : Math.abs(n[k] - (s[k] || 0)) > .004);
+    if (ch) this.setState(n);
+  };
+  calcPin = () => { let rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {} const pin = !rm && innerWidth >= 1000 && innerHeight >= 640; if (pin !== (this.state || {}).pin) this.setState({ pin }, this.fxScroll); };
+  async componentDidMount() {
+    this.alive = true;
+    this.setState(x => ({ cp: 0, lp: 0, jp: 0, ce: [0, 0, 0], al: 0, ...x })); this.calcPin(); window.addEventListener('resize', this.calcPin); setTimeout(this.fxScroll, 100);
+    window.addEventListener('scroll', this.fxScroll, { passive: true }); this.fxScroll();
+    this.lt = setInterval(() => { if (!this.lockL) this.setState(s => ({ al: (s.al + 1) % 6 })); }, 2800);
+    const tr = this.termRef.current;
+    if (tr && 'IntersectionObserver' in window) { this.io = new IntersectionObserver(es => { if (es[0].isIntersecting && !this.ty) { this.ty = setInterval(() => { const tot = this.TERM.reduce((a, t) => a + t[0].length + 14, 0); if (this.state.typed >= tot) { clearInterval(this.ty); return; } this.setState(s => ({ typed: s.typed + 1 })); }, 28); } }, { threshold: 0.3 }); this.io.observe(tr); }
+    let THREE; try { THREE = await import('https://unpkg.com/three@0.160.0/build/three.module.js'); } catch (e) { console.warn('three failed', e); return; }
+    const cv = this.canvasRef.current; if (!cv || !this.alive) return;
+    this.N = window.innerWidth < 760 ? 9000 : 26000; this.forceUpdate();
+    const N = this.N, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const renderer = this.renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); renderer.setPixelRatio(dpr);
+    const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100); camera.position.set(0, 0, 6.4);
+    const group = this.group = new THREE.Group(); scene.add(group);
+    this.F = this.forms(N);
+    const geo = this.geo = new THREE.BufferGeometry();
+    const aD = new Float32Array(N), aS = new Float32Array(N);
+    for (let i = 0; i < N; i++) { aD[i] = Math.random(); aS[i] = 1.4 + Math.random() * 2.2; }
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(this.F[0].p), 3));
+    geo.setAttribute('aA', new THREE.BufferAttribute(new Float32Array(this.F[0].p), 3)); geo.setAttribute('aB', new THREE.BufferAttribute(new Float32Array(this.F[1].p), 3));
+    geo.setAttribute('cA', new THREE.BufferAttribute(new Float32Array(this.F[0].c), 3)); geo.setAttribute('cB', new THREE.BufferAttribute(new Float32Array(this.F[1].c), 3));
+    geo.setAttribute('aL', new THREE.BufferAttribute(this.F[2].l, 4));
+    geo.setAttribute('aD', new THREE.BufferAttribute(aD, 1)); geo.setAttribute('aS', new THREE.BufferAttribute(aS, 1));
+    this.k = 0;
+    const mat = this.mat = new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+      uniforms: { uT: { value: 0 }, uTime: { value: 0 }, uPix: { value: dpr }, uScatter: { value: 0 }, uAF: { value: 0 }, uBF: { value: 0 } },
+      vertexShader: `attribute vec3 aA; attribute vec3 aB; attribute vec3 cA; attribute vec3 cB; attribute vec4 aL; attribute float aD; attribute float aS;
+        uniform float uT,uTime,uPix,uScatter,uAF,uBF; varying vec3 vC; varying float vA;
+        vec3 fl(vec3 p){ if(aL.w<0.5) return p; float f=fract(aD*13.0+uTime*0.32); return vec3(mix(aL.x,aL.y,f), aL.z+sin(f*14.0+aD*30.0)*0.025, p.z); }
+        void main(){ float t=clamp(uT*1.5-aD*0.5,0.0,1.0); t=t<0.5?4.0*t*t*t:1.0-pow(-2.0*t+2.0,3.0)/2.0;
+          vec3 A=uAF>0.5?fl(aA):aA; vec3 B=uBF>0.5?fl(aB):aB; vec3 p=mix(A,B,t); float w=sin(t*3.14159);
+          p+=vec3(sin(uTime*0.9+aD*40.0),cos(uTime*0.7+aD*31.0),sin(uTime*0.8+aD*23.0))*(0.01+w*0.5*aD+uScatter*0.3*aD);
+          vec4 mv=modelViewMatrix*vec4(p,1.0); gl_PointSize=aS*uPix*(5.0/-mv.z); gl_Position=projectionMatrix*mv;
+          vC=mix(cA,cB,t); vA=0.5+0.5*smoothstep(-2.0,1.5,p.z); }`,
+      fragmentShader: `varying vec3 vC; varying float vA; void main(){ float d=length(gl_PointCoord-0.5); if(d>0.5) discard; float a=pow(1.0-d*2.0,1.5); gl_FragColor=vec4(vC,a*vA*0.9); }`
+    });
+    group.add(new THREE.Points(geo, mat));
+    this.mouse = { x: 0, y: 0, tx: 0, ty: 0, v: 0, lx: 0, ly: 0 };
+    this.onMove = e => { const m = this.mouse, nx = e.clientX / innerWidth * 2 - 1, ny = e.clientY / innerHeight * 2 - 1; m.v = Math.min(1, m.v + Math.hypot(nx - m.lx, ny - m.ly) * 3); m.lx = nx; m.ly = ny; m.tx = nx; m.ty = ny; };
+    this.onResize = () => { const w = cv.clientWidth, h = cv.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+      const vw = 2 * 6.4 * Math.tan(20 * Math.PI / 180) * camera.aspect, wide = w > 900; group.scale.setScalar(Math.min(1, vw / (wide ? 11 : 6))); group.position.set(wide ? vw * 0.2 : 0, wide ? 0.1 : 0.9, 0); };
+    window.addEventListener('mousemove', this.onMove); window.addEventListener('resize', this.onResize); this.onResize();
+    const t0 = performance.now();
+    const loop = now => { if (!this.alive) return; this.raf = requestAnimationFrame(loop); if (now - (this._fs || 0) > 120) { this._fs = now; this.fxScroll(); } this.frame((now - t0) / 1000); renderer.render(scene, camera); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { this.alive = false; window.removeEventListener('scroll', this.fxScroll); window.removeEventListener('resize', this.calcPin); cancelAnimationFrame(this.raf); clearInterval(this.lt); clearInterval(this.ty); this.io && this.io.disconnect(); window.removeEventListener('mousemove', this.onMove); window.removeEventListener('resize', this.onResize); this.renderer && this.renderer.dispose(); }
+  forms(N) {
+    const R = Math.random, CR = [0.93, 0.91, 0.87], GR = [0.55, 0.53, 0.5], OR = [1, 0.42, 0.04];
+    const dir = () => { let x, y, z, l; do { x = R() * 2 - 1; y = R() * 2 - 1; z = R() * 2 - 1; l = x * x + y * y + z * z; } while (l > 1 || l < .01); l = Math.sqrt(l); return [x / l, y / l, z / l]; };
+    const ball = (c, r) => { const d = dir(), q = r * Math.cbrt(R()); return [c[0] + d[0] * q, c[1] + d[1] * q, c[2] + d[2] * q]; };
+    const box = (cx, cy, cz, w, h, d) => { const f = (R() * 6) | 0, u = R() - .5, v = R() - .5; let p; if (f < 2) p = [(f ? .5 : -.5) * w, u * h, v * d]; else if (f < 4) p = [u * w, (f - 2 ? .5 : -.5) * h, v * d]; else p = [u * w, v * h, (f - 4 ? .5 : -.5) * d]; return [cx + p[0], cy + p[1], cz + p[2]]; };
+    const seg = (a, b, j) => { const t = R(); return [a[0] + (b[0] - a[0]) * t + (R() - .5) * j, a[1] + (b[1] - a[1]) * t + (R() - .5) * j, a[2] + (b[2] - a[2]) * t + (R() - .5) * j]; };
+    const rect = (cx, cy, w, h, j) => { const per = 2 * (w + h), s = R() * per; let x, y; if (s < w) { x = s; y = 0; } else if (s < w + h) { x = w; y = s - w; } else if (s < 2 * w + h) { x = s - w - h; y = h; } else { x = 0; y = s - 2 * w - h; } return [cx - w / 2 + x + (R() - .5) * j, cy - h / 2 + y + (R() - .5) * j]; };
+    const mk = fn => { const p = new Float32Array(N * 3), c = new Float32Array(N * 3); for (let i = 0; i < N; i++) { const r = fn(i); p.set(r[0], i * 3); c.set(r[1], i * 3); } return { p, c }; };
+    const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+    const rotF = (ry, rx) => p => { let [x, y, z] = p; const cy = Math.cos(ry), sy = Math.sin(ry); [x, z] = [x * cy + z * sy, -x * sy + z * cy]; const cx = Math.cos(rx), sx = Math.sin(rx); [y, z] = [y * cx - z * sx, y * sx + z * cx]; return [x, y, z]; };
+    const A = this.AREAS;
+    const cubes = [[-2.4, 1.1, -.5, .7], [-.6, 1.5, .5, .5], [1.5, 1.2, -.3, .75], [-1.8, -1.1, .4, .6], [.2, -1.2, -.6, .8], [2.1, -.8, .5, .52]];
+    const tools = mk(() => { if (R() < .08) return [[(R() - .5) * 6, (R() - .5) * 3.8, (R() - .5) * 2.4], GR]; const k = (R() * 6) | 0, c = cubes[k]; return [box(c[0], c[1], c[2], c[3], c[3], c[3]), R() < .25 ? A[k] : GR]; });
+    const rp = rotF(-.5, .3);
+    const plat = mk(() => { const r = R();
+      if (r < .42) return [rp(box(0, 0, 0, 3.2, 2, 1.2)), CR];
+      if (r < .56) return [rp(ball([0, 0, 0], .42)), OR];
+      if (r < .82) { const k = (R() * 3) | 0; return [rp([(R() - .5) * 3.1, -.5 + k * .5, (R() - .5) * 1.1]), k === 1 ? mix(GR, OR, .4) : GR]; }
+      const k = (R() * 6) | 0, q = rect(-1.05 + (k % 3) * 1.05, k < 3 ? .45 : -.45, .8, .5, .01); return [rp([q[0], q[1], .61]), A[k]]; });
+    const ys = [.95, .32, -.32, -.95], L = new Float32Array(N * 4);
+    const inbound = mk(i => { const r = R();
+      if (r < .26) { const k = (R() * 4) | 0; return [box(-2.55, ys[k], 0, .55, .42, .3), A[k]]; }
+      if (r < .6) return [box(1.35, 0, 0, 1.9, 2.6, 1.1), R() < .14 ? OR : CR];
+      if (r < .66) return [ball([1.35, 0, 0], .32), OR];
+      const k = (R() * 4) | 0, y = ys[k] * (1 - R() * .0) + (R() - .5) * .05; L.set([-2.25, .38, y, 1], i * 4); return [[-1, y, (R() - .5) * .08], mix(A[k], OR, .5)]; });
+    inbound.l = L;
+    const chief = [0, 1.45, 0], hubs = [...Array(6)].map((_, k) => [-2.75 + k * 1.1, .15, (k % 2 ? .2 : -.2)]);
+    const agents = mk(() => { const r = R(); if (r < .1) return [ball(chief, .3), OR]; const k = (R() * 6) | 0, h = hubs[k], col = A[k];
+      if (r < .3) return [ball(h, .17), col];
+      if (r < .5) { const j = (R() * 3) | 0, ag = [h[0] + (j - 1) * .32, -.95, h[2]]; return [R() < .5 ? ball(ag, .07) : ball([ag[0], -1.6, ag[2]], .05), col]; }
+      if (r < .72) return [seg(chief, h, .025), mix(OR, col, R())];
+      const j = (R() * 3) | 0, ag = [h[0] + (j - 1) * .32, -.95, h[2]]; return [R() < .6 ? seg(h, ag, .02) : seg(ag, [ag[0], -1.6, ag[2]], .02), col]; });
+    const rw = rotF(-.55, .22);
+    const web = mk(() => { const r = R(); let p, c = CR;
+      if (r < .3) { const q = rect(0, 0, 3.4, 2.2, .02); p = [q[0], q[1], -.8]; }
+      else if (r < .36) { const k = (R() * 3) | 0; p = [...ball([-1.5 + k * .16, .92, -.8], .05)]; c = OR; }
+      else if (r < .42) { p = [(R() - .5) * 3.4, .76 + (R() - .5) * .02, -.8]; }
+      else if (r < .6) { const k = (R() * 4) | 0, w = [1.6, 1.3, 1.5, .9][k]; p = [-1.4 + R() * w, .45 - k * .2 + (R() - .5) * .04, -.25]; }
+      else if (r < .8) { const k = (R() * 3) | 0, q = rect(-1.05 + k * 1.05, -.55, .9, .6, .015); p = [q[0], q[1], .3]; }
+      else { const q = R() < .8 ? rect(1.9, .05, .72, 1.4, .015) : [1.9 + (R() - .5) * .5, .4 - R() * .7]; p = [q[0], q[1], .85]; c = R() < .7 ? OR : CR; }
+      return [rw(p), c]; });
+    return [tools, plat, inbound, agents, web];
+  }
+  frame(time) {
+    const st = this.stageRef.current; if (!st) return;
+    const r = st.getBoundingClientRect(), span = r.height - innerHeight;
+    const p01 = Math.max(0, Math.min(1, -r.top / span)), p = p01 * 4;
+    const k = Math.min(3, Math.floor(p)), t = p - k;
+    if (k !== this.k) { const g = this.geo.attributes; g.aA.array.set(this.F[k].p); g.aB.array.set(this.F[k + 1].p); g.cA.array.set(this.F[k].c); g.cB.array.set(this.F[k + 1].c); g.aA.needsUpdate = g.aB.needsUpdate = g.cA.needsUpdate = g.cB.needsUpdate = true; this.k = k; }
+    const m = this.mouse; m.x += (m.tx - m.x) * .05; m.y += (m.ty - m.y) * .05; m.v *= .94;
+    const u = this.mat.uniforms; u.uT.value = t; u.uTime.value = time; u.uScatter.value = m.v; u.uAF.value = k === 2 ? 1 : 0; u.uBF.value = k + 1 === 2 ? 1 : 0;
+    const calm = (p > 1.6 && p < 2.4) || p > 3.2 ? 0.25 : 1;
+    this.group.rotation.y = Math.sin(time * .2) * .35 * calm + m.x * .3;
+    this.group.rotation.x = Math.sin(time * .15) * .08 * calm + m.y * .15;
+    const cap = Math.min(4, Math.round(p));
+    if (cap !== this.state.cap || Math.abs(p01 - this.state.prog) > .003) this.setState({ cap, prog: p01 });
+  }
+  renderVals() {
+    const s0 = this.state || {}, s = { cap: 0, prog: 0, typed: 0, ce: [0, 0, 0], cp: 0, lp: 0, jp: 0, al: 0, pin: false, ...s0 }, c = this.CAPS[s.cap || 0], E = x => { x = +x || 0; return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }, cl = v => Math.max(0, Math.min(1, +v || 0));
+    let rem = s.typed;
+    const term = this.TERM.map((t, i) => { const cmdLen = t[0].length, n = Math.max(0, Math.min(cmdLen, rem)); const showOut = rem >= cmdLen + 6; const started = rem > 0 || i === 0; rem -= cmdLen + 14; return { cmd: t[0].slice(0, n), out: t[1], showOut, cursor: false, vis: started }; }).filter((l, i) => i === 0 || l.vis && l.cmd.length > 0);
+    const last = term[term.length - 1]; if (last) last.cursor = true;
+    const e = E(s.cp), fade = 1 - cl((e - .5) / .3), pe = cl((e - .62) / .3);
+    const le = E(s.lp), sp = 14 + 34 * le;
+    const jn = (+s.jp || 0) * 6, cur = Math.min(5, Math.floor(jn));
+    return {
+      canvasRef: this.canvasRef, stageRef: this.stageRef, termRef: this.termRef, casesRef: this.casesRef, collapseRef: this.collapseRef, layersRef: this.layersRef, journeyRef: this.journeyRef,
+      count: (this.N || 26000).toLocaleString('en'), formName: this.NAMES[s.cap],
+      capNum: c[0].split(' · ')[0], capLabel: c[0].split(' · ')[1] || 'Build', capHead: c[1], capBody: c[2], isFirst: s.cap === 0,
+      segs: this.SEGS.map((t, i) => ({ t, w: Math.max(0, Math.min(1, s.prog * 5 - i)) * 100 + '%', c: i === s.cap ? '#F4F4F2' : '#6B675F' })),
+      toolCards: this.TOOLS.map((t, k) => { const f = this.FAN[k], q = 1 - e; return { ini: t[0], name: t[1], price: t[2], use: t[3], tag: t[4], c: this.COL[k],
+        tf: `translate(-50%,-50%) translate3d(${(f[0] * q).toFixed(1)}%, ${(f[1] * q).toFixed(1)}%, ${(f[2] * q + k * 5).toFixed(1)}px) rotateZ(${(f[3] * q).toFixed(2)}deg)`, op: fade.toFixed(3) }; }),
+      platTf: `translate(-50%,-50%) translateZ(${(60 * pe).toFixed(1)}px) scale(${(.82 + .18 * pe).toFixed(3)})`, platOp: pe.toFixed(3),
+      modules: ['Customers', 'Orders', 'Jobs', 'Invoices', 'Stock', 'Reports'],
+      counters: [['Apps to open', 6, 1], ['Logins', 6, 1], ['Places your data lives', 6, 1], ['Hours of copy-paste / week', 14, 0]].map(x => { const v = Math.round(x[1] + (x[2] - x[1]) * e); return { t: x[0], v, c: e > .95 ? '#FF6A00' : '#F4F4F2' }; }),
+      stackTf: `rotateX(58deg) rotateZ(-38deg) translateZ(${(-2.5 * sp).toFixed(1)}px)`,
+      layers: this.LAYERS.map((l, i) => { const on = i === s.al, col = this.LCOL[i]; return { n: '0' + (i + 1), t: l[0], d: l[1], chips: l[2], on, c: col,
+        tf: `translateZ(${((5 - i) * sp + (on ? 34 : 0)).toFixed(1)}px)`, bd: on ? col : '#2A2A2C', bg: on ? 'rgba(30,22,16,.97)' : 'rgba(20,20,21,.96)', tc: on ? '#F4F4F2' : '#6B675F',
+        cells: [0, 1, 2, 3].map(j => on ? (j === 0 ? col : col + '44') : '#1F1F21'), rowOp: on ? 1 : .55,
+        go: () => { this.lockL = true; this.setState({ al: i }); } }; }),
+      jPin: s.pin, jNode: s.pin ? 'block' : 'none', jH: s.pin ? '300vh' : 'auto', jPos: s.pin ? 'sticky' : 'relative', jInnerH: s.pin ? '100vh' : 'auto', jCols: s.pin ? 'repeat(6,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,220px),1fr))',
+      jFill: (cl((jn - .5) / 5) * 100).toFixed(2) + '%', jNum: '0' + (s.pin ? cur + 1 : 6),
+      steps: this.STEPS.map((x, k) => { const reached = !s.pin || jn >= k + .3, now = s.pin && k === cur, col = x[1] < 0 ? '#F4F4F2' : this.LCOL[x[1]];
+        return { time: x[0], layer: x[1] < 0 ? 'You' : this.LAYERS[x[1]][0], c: col, t: x[2], d: x[3], op: reached ? 1 : .18, tf: reached ? 'none' : 'translateY(24px)', bd: now ? '#FF6A00' : '#232325', nodeBd: reached ? col : '#3A3A3C', nodeBg: reached ? col : '#0B0B0C' }; }),
+      caps: [['Custom platforms', 'Your own system instead of rented tools.'], ['Team apps', 'Phone and desktop — shifts, tasks, checklists.'], ['Client portals', 'Offers, payments, files — one thread per topic.'], ['AI agents', 'Reply, sort, draft and report on your data.'], ['Automations', 'Triggers, reminders, schedules, approvals.'], ['Dashboards', 'Live numbers, alerts and a Monday report.'], ['Websites & shops', 'Fast, findable, wired into the platform.'], ['APIs & integrations', 'Connect anything with an API — or build one.']].map((x, k) => { const href = { 'Team apps': 'RIDEFF Workbench.dc.html', 'Client portals': 'RIDEFF Portal.dc.html', 'Websites & shops': 'RIDEFF Storefront.dc.html' }[x[0]]; return { n: '0' + (k + 1), t: x[0], d: x[1], c: this.COL[k % 6], href, arrow: href ? 'See it ↗' : '', ac: '#FF9A50' }; }),
+      term,
+      stack: [['Interface', 'Next.js · React · TypeScript — fast on every phone'], ['Data & hosting', 'Supabase Postgres in Frankfurt · daily backups'], ['Payments & mail', 'Stripe · SEPA · Klarna · invoices that meet German law'], ['AI & agents', 'LLM agents with tool access · human approval built in']].map(k => ({ t: k[0], d: k[1] })),
+      int1: [0, 1].flatMap(() => ['Stripe', 'PayPal', 'Klarna', 'SEPA', 'DATEV', 'lexoffice', 'sevDesk', 'DHL', 'DPD', 'Shopify', 'WooCommerce', 'Etsy']),
+      int2: [0, 1].flatMap(() => ['Google Workspace', 'Microsoft 365', 'Gmail', 'Outlook', 'WhatsApp Business', 'Instagram', 'Calendly', 'Slack', 'Notion', 'Airtable', 'OpenAI', 'Anthropic']),
+      cases: this.CASES.map((c, i) => { const raw = s.ce[i] || 0, ee = E(raw), z = 70 * ee;
+        return { ...c, i, n: '0' + (i + 1), idUi: 'build-case-' + i + '-ui', idSys: 'build-case-' + i + '-sys', idMob: 'build-case-' + i + '-mob', srcUi: ['assets/tic-shop.png', 'assets/portal-client.png', 'assets/life-cockpit.png'][i], srcSys: ['assets/tic-backoffice.png', 'assets/portal-admin.png', 'assets/life-briefing.png'][i], srcMob: ['assets/tic-shopall.png', 'assets/portal-client.png', 'assets/life-cockpit.png'][i],
+          spec: c.spec.map(x => ({ k: x[0], v: x[1] })), stats: c.stats.map(x => ({ k: x[0], v: x[1] })),
+          stage: `rotateX(${50 * ee}deg) rotateZ(${-26 * ee}deg) scale(${1 - .08 * ee})`,
+          l0: `translateZ(${-z}px) translate(${4 * ee}%, ${8 * ee}%)`, l1: `translateZ(${z * .3}px)`,
+          l2: `translateZ(${z * 1.6}px) translate(${4 * ee}%, ${-2 * ee}%)`, op2: Math.min(1, ee * 1.6),
+          l3: `translateZ(${z * 2.1}px) translate(${-4 * ee}%, ${2 * ee}%)`, op3: Math.min(1, Math.max(0, ee * 1.6 - .3)) }; }),
+      process: [['First call', '15 minutes. You show me the tools you use today.'], ['Analysis', 'I map what repeats and what one platform should do.'], ['Build', 'I build it. You watch progress in your portal.'], ['Test', 'Your team tries it in a test run.'], ['Live', 'Old tools switched off — and I keep it running.']].map((x, k) => ({ n: '0' + (k + 1), t: x[0], d: x[1] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+{
+  "newsletter": {
+    "unavailable": {
+      "de": "Das hat gerade nicht geklappt. Bitte versuchen Sie es später noch einmal.",
+      "en": "That didn't work just now. Please try again later."
+    },
+    "confirmed": {
+      "title": {
+        "de": "Anmeldung bestätigt.",
+        "en": "Subscription confirmed."
+      },
+      "text": {
+        "de": "Ab jetzt kommt einmal im Monat ein Hebel in Ihr Postfach. Abmelden geht mit einem Klick.",
+        "en": "From now on, one lever lands in your inbox once a month. Unsubscribe with one click."
+      },
+      "back": {
+        "de": "Zur Website",
+        "en": "Back to website"
+      }
+    },
+    "expired": {
+      "title": {
+        "de": "Der Link ist abgelaufen.",
+        "en": "This link has expired."
+      },
+      "text": {
+        "de": "Bestätigungslinks gelten 48 Stunden. Melden Sie sich einfach noch einmal unten auf der Website an.",
+        "en": "Confirmation links are valid for 48 hours. Just sign up again at the bottom of the website."
+      },
+      "back": {
+        "de": "Zur Website",
+        "en": "Back to website"
+      }
+    },
+    "mail": {
+      "subject": {
+        "de": "Bitte bestätigen Sie Ihre Anmeldung",
+        "en": "Please confirm your subscription"
+      },
+      "hello": {
+        "de": "Hallo,",
+        "en": "Hello,"
+      },
+      "body": {
+        "de": "bitte bestätigen Sie, dass Sie den RIDEFF-Newsletter erhalten möchten. Einmal im Monat, ein Hebel, den kaum jemand kennt.",
+        "en": "please confirm that you'd like to receive the RIDEFF newsletter. Once a month, one lever hardly anyone knows."
+      },
+      "button": {
+        "de": "Anmeldung bestätigen",
+        "en": "Confirm subscription"
+      },
+      "ignore": {
+        "de": "Wenn Sie sich nicht angemeldet haben, ignorieren Sie diese E-Mail einfach. Der Link gilt 48 Stunden.",
+        "en": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours."
+      }
+    }
+  },
+  "notFound": {
+    "code": {
+      "de": "404",
+      "en": "404"
+    },
+    "kicker": {
+      "de": "(404) Nicht gefunden",
+      "en": "(404) Not found"
+    },
+    "title": {
+      "de": "Diese Seite gibt es nicht.",
+      "en": "This page doesn’t exist."
+    },
+    "accent": {
+      "de": "Ihr Projekt schon.",
+      "en": "Your project does."
+    },
+    "text": {
+      "de": "Vielleicht wurde sie verschoben. Alles andere läuft — überwacht, sogar diese Seite.",
+      "en": "Maybe it moved. Everything else is running — monitored, even this page."
+    },
+    "home": {
+      "de": "Zur Startseite",
+      "en": "Back home"
+    },
+    "contact": {
+      "de": "Projekt starten →",
+      "en": "Start a project →"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": {
+        "de": "RIDEFF — Verstehen, bauen, betreiben. Ein Mensch.",
+        "en": "RIDEFF — Understand, build, run. One person."
+      },
+      "description": {
+        "de": "Rialto aus Eichstätt versteht, wie Ihr Betrieb läuft, baut KI-Agenten, Team-Apps, Websites und Shops darum herum und betreut alles nach dem Livegang.",
+        "en": "Rialto from Eichstätt maps how your business runs, builds the AI agents, team apps, websites and shops around it, and keeps it all running after launch."
+      }
+    },
+    "understand": {
+      "title": {
+        "de": "Verstehen · RIDEFF",
+        "en": "Understand · RIDEFF"
+      },
+      "description": {
+        "de": "Säule 01: ein kostenloses Erstgespräch, Ihre Woche auf einer Karte und ein klares Festpreisangebot im Kundenportal.",
+        "en": "Pillar 01: a free first call, your week on one map, and one clear fixed-price offer in your client portal."
+      }
+    },
+    "build": {
+      "title": {
+        "de": "Bauen · RIDEFF",
+        "en": "Build · RIDEFF"
+      },
+      "description": {
+        "de": "Säule 02: aus sechs gemieteten Tools wird eine Plattform — Apps, KI-Agenten, Automationen, Daten und Integrationen.",
+        "en": "Pillar 02: six rented tools become one platform — apps, AI agents, automations, data and integrations."
+      }
+    },
+    "storefront": {
+      "title": {
+        "de": "Websites & Shops · RIDEFF",
+        "en": "Websites & shops · RIDEFF"
+      },
+      "description": {
+        "de": "Websites und Shops, gebaut um Ihren Betrieb: Design, Zahlung, Tempo, Hosting — verbunden mit Lager und Rechnung.",
+        "en": "Websites and shops built around your business: design, payments, speed, hosting — connected to stock and invoices."
+      }
+    },
+    "workbench": {
+      "title": {
+        "de": "Team-Apps · RIDEFF",
+        "en": "Team apps · RIDEFF"
+      },
+      "description": {
+        "de": "Eine App für Ihr Team: Schichten, Aufgaben und Chat an einem Ort, für Teams, die nicht den ganzen Tag am Schreibtisch sitzen.",
+        "en": "One app for your team: shifts, tasks and chat in one place, for teams that don’t sit at a desk all day."
+      }
+    },
+    "run": {
+      "title": {
+        "de": "Betreiben · RIDEFF",
+        "en": "Run · RIDEFF"
+      },
+      "description": {
+        "de": "Säule 03: Rialto überwacht Ihr System rund um die Uhr, behebt Fehler, bevor Sie sie merken, und schickt jeden Montag einen Bericht.",
+        "en": "Pillar 03: Rialto watches your system around the clock, fixes what breaks before you notice, and sends a report every Monday."
+      }
+    },
+    "work": {
+      "title": {
+        "de": "Projekte · RIDEFF",
+        "en": "Work · RIDEFF"
+      },
+      "description": {
+        "de": "Gebaut, live, im Betrieb: TIC Originals, Mami I Patisserie, das RIDEFF-Kundenportal und RIDEFF Life.",
+        "en": "Built, live, running: TIC Originals, Mami I Patisserie, the RIDEFF client portal and RIDEFF Life."
+      }
+    },
+    "life": {
+      "title": {
+        "de": "RIDEFF Life — Ihr Leben. Erinnert. Sortiert. Gelebt.",
+        "en": "RIDEFF Life — Your life. Remembered. Sorted. Lived."
+      },
+      "description": {
+        "de": "Ein persönlicher Assistent für Geld, Zeit, Ziele und Familie — auf Basis Ihrer eigenen Daten. 14 Tage kostenlos, keine Karte nötig.",
+        "en": "A personal assistant for money, time, goals and family — based on your own data. 14 days free, no card needed."
+      }
+    },
+    "pricing": {
+      "title": {
+        "de": "Preise · RIDEFF",
+        "en": "Pricing · RIDEFF"
+      },
+      "description": {
+        "de": "Business ab 149 €/Monat netto plus Einrichtung, Life ab 12,90 € inkl. MwSt. Alle Pakete, Konfigurator und Vergleich.",
+        "en": "Business from €149/month net plus setup, Life from €12,90 incl. VAT. All plans, a configurator and a full comparison."
+      }
+    },
+    "about": {
+      "title": {
+        "de": "Über mich · RIDEFF",
+        "en": "About · RIDEFF"
+      },
+      "description": {
+        "de": "Ich bin Rialto. Ich verstehe die KI, damit Sie es nicht müssen — ein Mensch, vom Erstgespräch bis zum Betrieb.",
+        "en": "I’m Rialto. I get the AI, so you don’t have to — one person, from the first call to keeping it running."
+      }
+    },
+    "contact": {
+      "title": {
+        "de": "Kontakt · RIDEFF",
+        "en": "Contact · RIDEFF"
+      },
+      "description": {
+        "de": "WhatsApp, 15 Minuten buchen oder E-Mail: Rialto antwortet persönlich.",
+        "en": "WhatsApp, book 15 minutes or email: Rialto replies himself."
+      }
+    },
+    "journal": {
+      "title": {
+        "de": "Journal · RIDEFF",
+        "en": "Journal · RIDEFF"
+      },
+      "description": {
+        "de": "Was ich beim Bauen von Systemen für echte Betriebe lerne — was funktioniert hat, was kaputtging und was ich anders machen würde.",
+        "en": "What I learn building systems for real businesses — what worked, what broke, and what I’d do differently."
+      }
+    },
+    "impressum": {
+      "title": {
+        "de": "Impressum · RIDEFF",
+        "en": "Impressum · RIDEFF"
+      },
+      "description": {
+        "de": "Anbieterkennzeichnung von RIDEFF, Eichstätt.",
+        "en": "Legal notice of RIDEFF, Eichstätt."
+      }
+    },
+    "datenschutz": {
+      "title": {
+        "de": "Datenschutz · RIDEFF",
+        "en": "Datenschutz · RIDEFF"
+      },
+      "description": {
+        "de": "Datenschutzerklärung von RIDEFF: Hosting in Frankfurt, Nana, WhatsApp, Newsletter, Analyse ohne Cookies.",
+        "en": "Privacy policy of RIDEFF."
+      }
+    },
+    "agb": {
+      "title": {
+        "de": "AGB · RIDEFF",
+        "en": "AGB · RIDEFF"
+      },
+      "description": {
+        "de": "Allgemeine Geschäftsbedingungen von RIDEFF.",
+        "en": "Terms of RIDEFF."
+      }
+    },
+    "demo": {
+      "title": {
+        "de": "Business-Demo · RIDEFF",
+        "en": "Business demo · RIDEFF"
+      },
+      "description": {
+        "de": "Interaktive Demo eines RIDEFF-Systems mit Beispieldaten.",
+        "en": "Interactive demo of a RIDEFF system with sample data."
+      }
+    }
+  },
+  "common": {
+    "waIntro": {
+      "en": "Hi Rialto, I'm {name} ({contact}). I'm interested in: {need}.",
+      "de": "Hallo Rialto, ich bin {name} ({contact}). Ich interessiere mich für: {need}."
+    },
+    "waSlot": {
+      "en": " Could we talk on {slot}?",
+      "de": " Können wir am {slot} sprechen?"
+    },
+    "waNotSure": {
+      "en": "not sure yet",
+      "de": "noch unklar"
+    }
+  },
+  "nana": {
+    "call": {
+      "de": "Anrufen",
+      "en": "Call"
+    },
+    "questions": {
+      "en": "{n, plural, one {# question} other {# questions}}",
+      "de": "{n, plural, one {# Frage} other {# Fragen}}"
+    },
+    "micBlocked": {
+      "en": "Microphone blocked — allow it in your browser, or type instead.",
+      "de": "Mikrofon blockiert — erlauben Sie es im Browser oder tippen Sie lieber."
+    },
+    "sendFailed": {
+      "en": "That didn’t go through. Please try again, or message Rialto on WhatsApp.",
+      "de": "Das hat nicht geklappt. Bitte noch einmal versuchen oder Rialto auf WhatsApp schreiben."
+    },
+    "phoneLabel": {
+      "en": "Your WhatsApp number",
+      "de": "Ihre WhatsApp-Nummer"
+    },
+    "messageLabel": {
+      "en": "Message to Nana",
+      "de": "Nachricht an Nana"
+    },
+    "close": {
+      "en": "Close",
+      "de": "Schließen"
+    }
+  },
+  "journal": {
+    "invalidEmail": {
+      "de": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "en": "Please enter a valid email address."
+    },
+    "emailLabel": {
+      "de": "E-Mail-Adresse",
+      "en": "Email address"
+    },
+    "confirmHint": {
+      "de": "Bitte bestätigen Sie die Anmeldung über den Link in der E-Mail, die gerade unterwegs ist.",
+      "en": "Please confirm via the link in the email that is on its way."
+    },
+    "readingTime": {
+      "de": "{n} Min. Lesezeit",
+      "en": "{n} min read"
+    },
+    "back": {
+      "de": "← Alle Notizen",
+      "en": "← All notes"
+    },
+    "ctaKicker": {
+      "de": "Projekt starten",
+      "en": "Start a project"
+    },
+    "ctaTitle": {
+      "de": "Erkennen Sie Ihren Betrieb wieder?",
+      "en": "Sounds like your business?"
+    },
+    "ctaText": {
+      "de": "15 Minuten mit Rialto. Er hört zu, stellt Fragen und sagt Ihnen ehrlich, ob sich ein System lohnt.",
+      "en": "15 minutes with Rialto. He listens, asks questions and tells you honestly whether a system is worth it."
+    },
+    "ctaWhatsApp": {
+      "de": "Rialto auf WhatsApp",
+      "en": "WhatsApp Rialto"
+    },
+    "ctaBook": {
+      "de": "15 Min. buchen",
+      "en": "Book 15 min"
+    }
+  }
+}

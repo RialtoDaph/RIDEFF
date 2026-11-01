@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:fixed;top:0;left:0;right:0;z-index:50;pointer-events:none;font-family:Geist,system-ui,sans-serif">
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;justify-content:{{ justify }};gap:20px;padding:22px clamp(20px,3vw,40px);pointer-events:{{ topPe }};background:{{ topBg }}">
+      <a href="RIDEFF Home.dc.html" style="pointer-events:auto;font-weight:700;font-size:21px;letter-spacing:-0.03em;color:{{ fg }};text-decoration:none;display:flex;align-items:baseline;gap:2px"><img src="assets/rideff-mark.png" alt="RIDEFF" style="height:24px;width:auto;display:block"></a>
+      <sc-if value="{{ showLinks }}" hint-placeholder-val="{{ true }}">
+        <div style="pointer-events:auto;display:flex;gap:2px;align-items:center;padding:5px;border-radius:999px;border:1px solid {{ pillBd }};background:{{ pillBg }};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="7"><a href="{{ l.href }}" style="font-size:{{ linkFs }};padding:{{ linkPad }};white-space:nowrap;border-radius:999px;background:{{ l.bg }};color:{{ l.c }};text-decoration:none;font-family:{{ l.ff }};font-style:{{ l.fs }};transition:background .2s">{{ l.t }}</a></sc-for>
+        </div>
+      </sc-if>
+      <div style="pointer-events:auto;display:flex;align-items:center;gap:14px">
+        <div style="pointer-events:auto;display:flex;gap:2px;padding:4px;border-radius:999px;border:1px solid {{ pillBd }};background:{{ pillBg }}"><sc-for list="{{ langs }}" as="g" hint-placeholder-count="2"><button onClick="{{ g.go }}" style="border:none;cursor:pointer;border-radius:999px;padding:6px 10px;font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;background:{{ g.bg }};color:{{ g.c }}">{{ g.t }}</button></sc-for></div>
+        <sc-if value="{{ showStatus }}"><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:{{ muted }}"><span style="width:7px;height:7px;border-radius:50%;background:#FF6A00"></span>Taking on select clients</div></sc-if>
+        <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}"><a href="RIDEFF Contact.dc.html" style="background:{{ ctaBg }};color:{{ ctaFg }};border-radius:999px;padding:12px 20px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none">Start a project →</a></sc-if>
+        <sc-if value="{{ showMenuBtn }}"><button onClick="{{ toggle }}" style="background:none;border:1px solid {{ fg }};color:{{ fg }};border-radius:999px;padding:10px 16px;font:500 14px Geist,sans-serif;cursor:pointer">Menu</button></sc-if>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ compact }}">
+    <div style="display:flex;justify-content:center;padding:14px 16px">
+      <div style="pointer-events:auto;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 18px;border-radius:999px;background:{{ cBg }};border:1px solid {{ pillBd }};backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,.25)">
+        <a href="RIDEFF Home.dc.html" style="font-weight:700;font-size:18px;letter-spacing:-0.03em;color:{{ fg }};text-decoration:none;display:flex;align-items:baseline;gap:2px;margin-right:10px"><img src="assets/rideff-mark.png" alt="RIDEFF" style="height:20px;width:auto;display:block"></a>
+        <sc-if value="{{ showLinks }}"><div style="display:flex;gap:2px">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="7"><a href="{{ l.href }}" style="font-size:14px;padding:9px 14px;border-radius:999px;background:{{ l.bg }};color:{{ l.c }};text-decoration:none;font-family:{{ l.ff }};font-style:{{ l.fs }}">{{ l.t }}</a></sc-for>
+        </div></sc-if>
+        <sc-if value="{{ showMenuBtn }}"><button onClick="{{ toggle }}" style="background:none;border:none;color:{{ fg }};padding:9px 12px;font:500 14px Geist,sans-serif;cursor:pointer">Menu</button></sc-if>
+        <div style="pointer-events:auto;display:flex;gap:2px;padding:4px;border-radius:999px;border:1px solid {{ pillBd }};background:{{ pillBg }}"><sc-for list="{{ langs }}" as="g" hint-placeholder-count="2"><button onClick="{{ g.go }}" style="border:none;cursor:pointer;border-radius:999px;padding:6px 10px;font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;background:{{ g.bg }};color:{{ g.c }}">{{ g.t }}</button></sc-for></div>
+        <a href="RIDEFF Contact.dc.html" style="background:#FF6A00;color:#0A0A0A;border-radius:999px;padding:11px 18px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;margin-left:6px">Start a project</a>
+      </div>
+    </div>
+  </sc-if>
+</div>
+<sc-if value="{{ open }}">
+  <div data-lenis-prevent="1" style="position:fixed;inset:0;z-index:90;background:#0B0B0C;color:#F4F4F2;display:flex;flex-direction:column;padding:22px clamp(20px,3vw,40px) 32px;overflow:auto;font-family:Geist,system-ui,sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <img src="assets/rideff-mark.png" alt="RIDEFF" style="height:24px;width:auto;display:block">
+      <button onClick="{{ toggle }}" style="background:none;border:1px solid #3A3A3C;color:#F4F4F2;border-radius:999px;padding:10px 18px;font:500 14px Geist,sans-serif;cursor:pointer">Close</button>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:40px 0">
+      <sc-for list="{{ menu }}" as="m" hint-placeholder-count="9">
+        <a href="{{ m.href }}" style="display:flex;align-items:baseline;gap:18px;font-size:clamp(32px,5vw,60px);font-weight:600;letter-spacing:-0.04em;line-height:1.12;color:{{ m.c }};text-decoration:none">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.06em;color:#8C877E">{{ m.n }}</span>{{ m.t }}
+        </a>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:#B8B3AA">
+      <a href="https://wa.me/4917632572420" style="color:#B8B3AA;text-decoration:none">WhatsApp — Rialto</a><a href="RIDEFF Contact.dc.html" style="color:#B8B3AA;text-decoration:none">Book 15 min</a><a href="mailto:hallo@rideff.com" style="color:#B8B3AA;text-decoration:none">hallo@rideff.com</a><span>Eichstätt, Germany</span>
+      <div style="display:flex;gap:6px"><sc-for list="{{ langsMenu }}" as="g" hint-placeholder-count="2"><button onClick="{{ g.go }}" style="border:1px solid #3A3A3C;cursor:pointer;border-radius:999px;padding:6px 12px;font:500 12px 'Geist Mono',monospace;letter-spacing:.06em;background:{{ g.bg }};color:{{ g.c }}">{{ g.t }}</button></sc-for></div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;understand&quot;,&quot;build&quot;,&quot;run&quot;,&quot;work&quot;,&quot;pricing&quot;,&quot;about&quot;,&quot;contact&quot;,&quot;life&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;heroCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { open: false, w: typeof window !== 'undefined' ? window.innerWidth : 1400, sc: false };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onS = () => { const sc = window.scrollY > 80; if (sc !== this.state.sc) this.setState({ sc }); };
+    window.addEventListener('resize', this.onR); window.addEventListener('scroll', this.onS, { passive: true }); this.onS(); this.siteFx();
+    if (!window.rideffSiteLang && !document.querySelector('script[data-rd-lang]')) { const s = document.createElement('script'); s.src = 'rideff-de.js'; s.setAttribute('data-rd-lang', '1'); s.onload = () => this.forceUpdate(); document.head.appendChild(s); }
+  }
+  overlay(cover) {
+    const o = document.createElement('div'); o.setAttribute('data-rdx', '1');
+    o.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;pointer-events:' + (cover ? 'auto' : 'none');
+    for (let k = 0; k < 7; k++) { const s = document.createElement('div'); s.setAttribute('data-s', '1');
+      s.style.cssText = 'flex:1;height:100%;background:#0B0B0C;border-right:1px solid #18181A;transform-origin:' + (cover ? '50% 100%' : '50% 0') + ';transform:scaleY(' + (cover ? 0 : 1) + ');box-shadow:inset 0 ' + (cover ? '2px' : '-2px') + ' 0 #FF6A00'; o.appendChild(s); }
+    const l = document.createElement('div'); l.setAttribute('data-l', '1');
+    l.style.cssText = 'position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#F4F4F2;font:700 clamp(32px,4vw,56px) Geist,system-ui,sans-serif;letter-spacing:-0.04em;display:flex;align-items:baseline;gap:4px;transition:opacity .3s;opacity:' + (cover ? 0 : 1);
+    l.innerHTML = '<img src="assets/rideff-mark.png" alt="RIDEFF" style="height:clamp(44px,6vw,80px);width:auto;display:block">'; o.appendChild(l);
+    document.body.appendChild(o); return o;
+  }
+  leave(href) {
+    const o = this.overlay(true); o.getBoundingClientRect();
+    o.querySelectorAll('[data-s]').forEach((s, k) => { s.style.transition = 'transform .6s cubic-bezier(.77,0,.18,1) ' + (k * 45) + 'ms'; s.style.transform = 'scaleY(1)'; });
+    setTimeout(() => { const l = o.querySelector('[data-l]'); if (l) l.style.opacity = 1; }, 320);
+    try { sessionStorage.setItem('rdx', '1'); } catch (e) {}
+    setTimeout(() => { location.href = href; }, 820);
+  }
+  siteFx() {
+    if (window.__rdSite) return; window.__rdSite = true;
+    let rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    const st = document.createElement('style'); st.textContent = 'html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}'; document.head.appendChild(st);
+    let came = false; try { came = sessionStorage.getItem('rdx') === '1'; sessionStorage.removeItem('rdx'); } catch (e) {}
+    if (came && !rm) { const o = this.overlay(false); setTimeout(() => { o.querySelectorAll('[data-s]').forEach((s, k) => { s.style.transition = 'transform .8s cubic-bezier(.77,0,.18,1) ' + (k * 50) + 'ms'; s.style.transform = 'scaleY(0)'; }); const l = o.querySelector('[data-l]'); if (l) l.style.opacity = 0; }, 120); setTimeout(() => o.remove(), 1400); }
+    addEventListener('pageshow', e => { if (e.persisted) document.querySelectorAll('[data-rdx]').forEach(x => x.remove()); });
+    const bar = document.createElement('div');
+    bar.style.cssText = 'position:fixed;left:0;top:0;height:2px;width:100%;background:#FF6A00;transform-origin:0 50%;transform:scaleX(0);z-index:9998;pointer-events:none;box-shadow:0 0 10px rgba(255,106,0,.6)'; document.body.appendChild(bar);
+    const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; bar.style.transform = 'scaleX(' + (m > 0 ? scrollY / m : 0) + ')'; };
+    addEventListener('scroll', upd, { passive: true }); upd();
+    if (!rm) { const s = document.createElement('script'); s.src = 'https://unpkg.com/lenis@1.1.13/dist/lenis.min.js';
+      s.onload = () => { try { const L = new window.Lenis({ lerp: .075, wheelMultiplier: .9, smoothWheel: true }); window.__lenis = L; const f = t => { L.raf(t); requestAnimationFrame(f); }; requestAnimationFrame(f); } catch (e) {} };
+      document.head.appendChild(s); }
+    document.addEventListener('click', e => {
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a) return; const href = a.getAttribute('href') || '';
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') return;
+      if (href.length > 1 && href[0] === '#') { let t = null; try { t = document.querySelector(href); } catch (er) {} if (!t) return; e.preventDefault();
+        if (window.__lenis) window.__lenis.scrollTo(t, { duration: 1.8, easing: x => 1 - Math.pow(1 - x, 4) }); else scrollTo({ top: t.getBoundingClientRect().top + scrollY, behavior: 'smooth' }); return; }
+      if (!rm && /\.dc\.html(\?|#|$)/.test(href) && !/^https?:/.test(href)) { e.preventDefault(); this.setState({ open: false }); this.leave(href); }
+    });
+    if (!rm && matchMedia('(pointer:fine)').matches) {
+      const c = document.createElement('div');
+      c.style.cssText = 'position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid #FF6A00;pointer-events:none;z-index:9997;opacity:0;transition:width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1),background .3s,opacity .3s';
+      const d = document.createElement('div'); d.style.cssText = 'position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#FF6A00;pointer-events:none;z-index:9997;opacity:0;transition:opacity .3s';
+      document.body.appendChild(c); document.body.appendChild(d);
+      let mx = -100, my = -100, cx = -100, cy = -100, big = false;
+      addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; c.style.opacity = 1; d.style.opacity = 1;
+        const h = !!(e.target.closest && e.target.closest('a,button,[onclick],input,textarea,select,label'));
+        if (h !== big) { big = h; c.style.width = c.style.height = big ? '64px' : '34px'; c.style.margin = big ? '-32px 0 0 -32px' : '-17px 0 0 -17px'; c.style.background = big ? 'rgba(255,106,0,.14)' : 'transparent'; } }, { passive: true });
+      document.addEventListener('mouseleave', () => { c.style.opacity = 0; d.style.opacity = 0; });
+      const loop = () => { cx += (mx - cx) * .16; cy += (my - cy) * .16; c.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; d.style.transform = 'translate(' + mx + 'px,' + my + 'px)'; requestAnimationFrame(loop); }; loop();
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); window.removeEventListener('scroll', this.onS); }
+  PAGES = [
+    ['home', 'Home', 'RIDEFF Home.dc.html'], ['understand', 'Understand', 'RIDEFF Understand.dc.html'], ['build', 'Build', 'RIDEFF Build.dc.html'],
+    ['run', 'Run', 'RIDEFF Run.dc.html'], ['work', 'Work', 'RIDEFF Work.dc.html'], ['pricing', 'Pricing', 'RIDEFF Pricing.dc.html'],
+    ['about', 'About', 'RIDEFF About.dc.html'], ['life', 'Life', 'RIDEFF Life.dc.html'], ['contact', 'Contact', 'RIDEFF Contact.dc.html'], ['journal', 'Journal', 'RIDEFF Journal.dc.html']
+  ];
+  renderVals() {
+    const a = this.props.active ?? 'home', dark = this.props.dark ?? false, s = this.state;
+    const fg = dark ? '#F4F4F2' : '#0A0A0A', muted = dark ? '#B8B3AA' : '#5A5650';
+    const wide = s.w > 1100, heroMode = (this.props.heroCta ?? false) && s.w > 1120 && !s.sc;
+    return {
+      fg, muted, full: !s.sc, compact: s.sc,
+      justify: heroMode ? 'flex-start' : 'space-between', topPe: heroMode ? 'none' : 'auto',
+      topBg: heroMode ? 'transparent' : dark ? 'linear-gradient(#0B0B0C,rgba(11,11,12,0))' : 'linear-gradient(#ECE8E1,rgba(236,232,225,0))',
+      pillBg: dark ? 'rgba(28,28,30,.6)' : 'rgba(255,255,255,.45)', pillBd: dark ? 'rgba(255,255,255,.08)' : 'rgba(10,10,10,.08)', cBg: dark ? 'rgba(20,20,22,.82)' : 'rgba(244,241,236,.86)',
+      ctaBg: dark ? '#F4F4F2' : '#0A0A0A', ctaFg: dark ? '#0A0A0A' : '#F4F4F2',
+      linkFs: heroMode && s.w <= 1480 ? '13px' : '14px', linkPad: heroMode && s.w <= 1480 ? '8px 12px' : '9px 16px',
+      links: this.PAGES.slice(0, 8).filter(p => s.sc ? p[0] !== 'home' : !(heroMode && s.w <= 1480 && (p[0] === 'home' || p[0] === 'life'))).map(p => { const on = p[0] === a, life = p[0] === 'life'; return { t: p[1], href: p[2], bg: on ? (dark ? '#F4F4F2' : '#0A0A0A') : 'transparent', c: on ? (dark ? '#0A0A0A' : '#F4F4F2') : fg, ff: life ? "'Instrument Serif',serif" : 'Geist,sans-serif', fs: life ? 'italic' : 'normal' }; }),
+      menu: this.PAGES.map((p, k) => ({ n: '0' + (k + 1), t: p[1], href: p[2], c: p[0] === a ? '#FF6A00' : '#F4F4F2' })),
+      showLinks: wide, showMenuBtn: !wide, showStatus: s.w > 1480, showCta: s.w > 560 && !heroMode,
+      langs: ['de', 'en'].map(l => { const on = (window.rideffSiteLang ? window.rideffSiteLang.get() : 'de') === l; return { t: l.toUpperCase(), go: () => window.rideffSiteLang && window.rideffSiteLang.set(l), bg: on ? (dark ? '#F4F4F2' : '#0A0A0A') : 'transparent', c: on ? (dark ? '#0A0A0A' : '#F4F4F2') : fg }; }),
+      langsMenu: ['de', 'en'].map(l => { const on = (window.rideffSiteLang ? window.rideffSiteLang.get() : 'de') === l; return { t: l.toUpperCase(), go: () => window.rideffSiteLang && window.rideffSiteLang.set(l), bg: on ? '#F4F4F2' : 'transparent', c: on ? '#0A0A0A' : '#B8B3AA' }; }),
+      open: s.open, toggle: () => this.setState(x => ({ open: !x.open }))
+    };
+  }
+}
+</script>
+</body>
+</html>
