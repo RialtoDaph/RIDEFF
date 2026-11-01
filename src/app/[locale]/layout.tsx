@@ -6,16 +6,13 @@ import { setRequestLocale } from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
-import { INTRO_DECIDE_SCRIPT } from '@/lib/intro';
-import { TABLET_VIEWPORT_SCRIPT } from '@/lib/tabletViewport';
 import { defaultMetadata } from '@/lib/metadata';
-import { ScrollBackdrop } from '@/components/ScrollBackdrop';
-import { TabletViewport } from '@/components/TabletViewport';
-import { BASE_NAMESPACES, ClientMessages } from '@/components/ClientMessages';
+import { Messages } from '@/components/site/Messages';
+import { SiteFx } from '@/components/site/SiteFx';
 import '../globals.css';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' });
+const geist = Geist({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-geist', display: 'swap' });
+const geistMono = Geist_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-geist-mono', display: 'swap' });
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
@@ -31,7 +28,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0B0B0C',
+  themeColor: '#ECE8E1',
 };
 
 export function generateStaticParams() {
@@ -45,16 +42,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 
   return (
     <html lang={locale} className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: TABLET_VIEWPORT_SCRIPT }} />
-        <script dangerouslySetInnerHTML={{ __html: INTRO_DECIDE_SCRIPT }} />
-      </head>
       <body>
-        <ClientMessages namespaces={BASE_NAMESPACES}>
-          {children}
-          <ScrollBackdrop />
-          <TabletViewport />
-        </ClientMessages>
+        <Messages namespaces={[]}>
+          <SiteFx />
+        </Messages>
+        {children}
         <Analytics />
       </body>
     </html>

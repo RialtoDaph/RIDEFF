@@ -3,31 +3,22 @@ import type { Locale } from '@/i18n/routing';
 export const SITE_URL = 'https://rideff.com';
 export const APP_URL = 'https://app.rideff.com';
 export const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://portal.rideff.com';
+/** Design reference for the Life app (RIDEFF Life Demo.dc.html). TODO: confirm the public URL. */
+export const LIFE_DEMO_URL = process.env.NEXT_PUBLIC_LIFE_DEMO_URL || `${APP_URL}/demo`;
 export const EMAIL = 'hallo@rideff.com';
+export const WHATSAPP_NUMBER = '4917632572420';
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const waText = (text: string) => `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
 
-export type Mode = 'business' | 'private';
-export type Plan = 'life' | 'plus' | 'together';
-
-/** The prototype offers Indonesian only for RIDEFF Life (PRIVATE). */
-export const BUSINESS_LOCALES: readonly Locale[] = ['de', 'en'];
-export const PRIVATE_LOCALES: readonly Locale[] = ['de', 'en', 'id'];
-
-export const signupUrl = (plan: Plan, locale: Locale) => `${APP_URL}/signup?plan=${plan}&lang=${locale}`;
+export type LifePlan = 'life' | 'plus' | 'together';
+export const signupUrl = (plan: LifePlan, locale: Locale) => `${APP_URL}/signup?plan=${plan}&lang=${locale}`;
 export const loginUrl = (locale: Locale) => `${APP_URL}/login?lang=${locale}`;
 
-/** Query used for the PRIVATE page: rideff.com/?for=private */
-export const PRIVATE_QUERY = { for: 'private' } as const;
-
 /**
- * Booking. Set NEXT_PUBLIC_CAL_BUSINESS (e.g. "rideff/erstgespraech") and
- * NEXT_PUBLIC_CAL_LIFE_PRIVATE (e.g. "rideff/life-private") once the Cal.com
- * account exists. While empty, booking buttons open an email instead.
+ * Booking (Cal.com). Set NEXT_PUBLIC_CAL_BUSINESS (e.g. "rideff/15min") and
+ * NEXT_PUBLIC_CAL_LIFE_PRIVATE once the account exists. While empty, the slot
+ * pickers hand the chosen slot over to WhatsApp instead.
  */
 export const CAL_BUSINESS = process.env.NEXT_PUBLIC_CAL_BUSINESS?.trim() ?? '';
 export const CAL_LIFE_PRIVATE = process.env.NEXT_PUBLIC_CAL_LIFE_PRIVATE?.trim() ?? '';
-const mailto = (subject: string) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
-export const businessBookingHref = CAL_BUSINESS ? `https://cal.com/${CAL_BUSINESS}` : mailto('Erstgespräch');
-export const lifePrivateHref = CAL_LIFE_PRIVATE ? `https://cal.com/${CAL_LIFE_PRIVATE}` : mailto('Life Private');
-
-/** Client portal: shown as "Bald verfügbar" until NEXT_PUBLIC_PORTAL_LIVE=true. */
-export const PORTAL_LIVE = process.env.NEXT_PUBLIC_PORTAL_LIVE === 'true';
+export const calUrl = (slug: string) => (slug ? `https://cal.com/${slug}` : '');

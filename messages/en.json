@@ -1,1829 +1,1997 @@
 {
-  "meta": {
-    "siteName": "RIDEFF",
-    "business": {
-      "title": "RIDEFF · Your business gets a brain.",
-      "description": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care."
-    },
-    "private": {
-      "title": "RIDEFF Life · Your life gets a brain.",
-      "description": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template."
-    }
-  },
-  "mode": {
-    "business": "BUSINESS",
-    "private": "PRIVATE",
-    "productBusiness": "BUSINESS",
-    "productLife": "LIFE"
-  },
-  "nav": {
-    "business": {
-      "plattform": "Platform",
-      "ablauf": "How we work",
-      "projekt": "Project",
-      "pakete": "Plans",
-      "faq": "FAQ"
-    },
-    "private": {
-      "module": "Modules",
-      "ablauf": "How it works",
-      "daten": "Privacy",
-      "preis": "Pricing",
-      "faq": "FAQ"
-    },
-    "portal": "Client portal",
-    "firstCall": "Free call",
-    "login": "Log in",
-    "tryFree": "Try for free",
-    "portalSoon": "Coming soon"
-  },
-  "hero": {
-    "business": {
-      "title": "Your business gets a <accent>brain.</accent>",
-      "lead": "Website, internal system and AI, built for exactly your business. One team, one contact, from the first call to monthly care.",
-      "cta": "Free intro call →",
-      "demo": "View live demo ↗",
-      "tags": {
-        "eu": "HOSTED IN THE EU",
-        "dsgvo": "GDPR & DPA",
-        "custom": "MADE TO MEASURE"
-      }
-    },
-    "private": {
-      "title": "Your life gets a <accent>brain.</accent>",
-      "lead": "30 seconds every morning: what costs money, what eats time and what brings you closer to your goal. Built around your life, not a template.",
-      "cta": "Try free for 14 days →",
-      "tags": {
-        "eu": "DATA IN THE EU",
-        "consent": "ONLY WITH YOUR PERMISSION",
-        "trial": "14 DAYS FREE"
-      }
-    }
-  },
-  "intro": {
-    "skip": "Skip intro"
-  },
-  "footer": {
-    "business": {
-      "claim": "Your business gets a brain.",
-      "cta": "Book a free call →",
-      "platform": {
-        "title": "PLATFORM",
-        "cockpit": "Cockpit",
-        "teamApp": "Team app",
-        "website": "Website",
-        "ai": "AI in daily work"
-      },
-      "company": {
-        "title": "RIDEFF",
-        "ablauf": "How we work",
-        "projekt": "Project",
-        "pakete": "Plans",
-        "faq": "FAQ",
-        "portal": "Client portal"
-      },
-      "location": "Germany"
-    },
-    "private": {
-      "claim": "Your life gets a brain.",
-      "sub": "Web app for phone and laptop. Money, time and goals in one place.",
-      "life": {
-        "title": "RIDEFF LIFE",
-        "money": "Money",
-        "time": "Time",
-        "goals": "Goals",
-        "ai": "AI in daily work"
-      },
-      "more": {
-        "title": "MORE",
-        "ablauf": "How it works",
-        "daten": "Privacy",
-        "preis": "Pricing",
-        "faq": "FAQ",
-        "tryFree": "Try for free",
-        "login": "Log in",
-        "lifePrivate": "Life Private",
-        "forBusiness": "For businesses →"
-      },
-      "location": "Hosted in the EU"
-    },
-    "contact": {
-      "title": "CONTACT",
-      "hours": "Mon–Fri · 9 am–6 pm"
-    },
-    "newsletter": {
-      "title": "Once a month. One lever hardly anyone knows.",
-      "sub": "Short, concrete, no ads. Unsubscribe with one click.",
-      "placeholder": "name@example.com",
-      "label": "Email",
-      "submit": "Subscribe",
-      "error": "PLEASE ENTER A VALID EMAIL ADDRESS.",
-      "done": "Almost done. Please confirm the email in your inbox."
-    },
-    "copyright": "© 2026 RIDEFF",
-    "legal": {
-      "impressum": "IMPRESSUM",
-      "datenschutz": "PRIVACY",
-      "agb": "TERMS"
-    }
-  },
-  "a11y": {
-    "skipToContent": "Skip to content",
-    "menuOpen": "Open menu",
-    "menuClose": "Close menu",
-    "chooseLanguage": "Choose language",
-    "mainNav": "Main navigation",
+  "RideffNav": {
+    "takingOnSelectClients": "Taking on select clients",
+    "startAProject": "Start a project →",
+    "menu": "Menu",
+    "startAProject2": "Start a project",
     "close": "Close",
-    "next": "Next",
-    "previous": "Previous"
-  },
-  "life": {
-    "phone": {
-      "notifFrom": "RIDEFF Life · now",
-      "notifs": [
-        "4 new findings in your day.",
-        "Disney+ unused for 4 months. Cancel?",
-        "Workout moved to Thursday, fits the shift.",
-        "Commuter allowance found: about €412 back.",
-        "Bali gets 3 weeks closer."
-      ],
-      "s0": {
-        "label": "TUESDAY · BRIEFING",
-        "title": "Good morning, Lea.",
-        "goalLabel": "GOAL · BALI",
-        "goalValue": "€3,240 of €5,000",
-        "week": "3 things for this week",
-        "items": [
-          [
-            "Cancel Disney+",
-            "+€9.99"
-          ],
-          [
-            "Commuter allowance",
-            "+€412"
-          ],
-          [
-            "Workout on Thursday",
-            "+1 h"
-          ]
-        ]
-      },
-      "s1": {
-        "label": "FOUND TODAY",
-        "title": "4 things, automatically.",
-        "stats": [
-          [
-            "FOUND",
-            "€47"
-          ],
-          [
-            "TIME",
-            "3.5 h"
-          ],
-          [
-            "BALI",
-            "−3 wks"
-          ]
-        ],
-        "rows": [
-          [
-            "MONEY",
-            "Disney+ unused for 4 months"
-          ],
-          [
-            "TIME",
-            "Workout moved to Thursday"
-          ],
-          [
-            "TAX",
-            "About €412 back"
-          ],
-          [
-            "GOAL",
-            "Bali 3 weeks closer"
-          ]
-        ]
-      },
-      "s2": {
-        "label": "MONEY · SEPTEMBER",
-        "title": "3 unused subscriptions.",
-        "subs": [
-          [
-            "Disney+",
-            "Not used in 4 months",
-            "€9.99"
-          ],
-          [
-            "Gym",
-            "2× per quarter",
-            "€24.99"
-          ],
-          [
-            "Cloud twice",
-            "Google & iCloud",
-            "€2.99"
-          ],
-          [
-            "Spotify",
-            "Daily",
-            "€17.99"
-          ]
-        ],
-        "saved": "Saved",
-        "savedValue": "€37.97 /mo"
-      },
-      "s3": {
-        "label": "TIME · THIS WEEK",
-        "title": "3.5 h back.",
-        "days": [
-          "MON",
-          "TUE",
-          "WED",
-          "THU",
-          "FRI"
-        ],
-        "rows": [
-          [
-            "Shifts bundled",
-            "+2 h"
-          ],
-          [
-            "Workout Thu 6 pm",
-            "set"
-          ],
-          [
-            "Groceries moved to Wed",
-            "+1.5 h"
-          ]
-        ]
-      },
-      "s4": {
-        "label": "GOAL · BALI",
-        "title": "March, not June.",
-        "pct": "65 %",
-        "value": "€3,240 of €5,000",
-        "rows": [
-          [
-            "Subscriptions cancelled",
-            "−5 wks"
-          ],
-          [
-            "Tax refund",
-            "−5 wks"
-          ],
-          [
-            "Coffee halved",
-            "−3 wks"
-          ]
-        ]
-      },
-      "cards": [
-        [
-          "GOAL · BALI",
-          "65 %",
-          "€3,240 of €5,000",
-          "TAX",
-          "+€412",
-          "Commuter allowance"
-        ],
-        [
-          "FOUND",
-          "€47 /mo",
-          "Detected automatically",
-          "TIME",
-          "3.5 h",
-          "Back per week"
-        ],
-        [
-          "CANCELLED",
-          "Disney+",
-          "Unused for 4 months",
-          "SAVED",
-          "€37.97",
-          "Every month"
-        ],
-        [
-          "APPOINTMENT",
-          "Workout Thu",
-          "6 pm, fits the shift",
-          "TIME",
-          "+3.5 h",
-          "Per week"
-        ],
-        [
-          "NEW DATE",
-          "March",
-          "instead of June 2027",
-          "GOAL",
-          "−3 wks",
-          "Bali sooner"
-        ]
-      ]
-    },
-    "problem": {
-      "eyebrow": "THE PROBLEM",
-      "title": "Do you know it off the top of your head?",
-      "questions": [
-        "What do your subscriptions cost per month?",
-        "How much overtime this month?",
-        "What will you get back from the tax office?",
-        "When can you reach your goal?"
-      ],
-      "answers": [
-        "€ 47",
-        "12 h",
-        "€ 412",
-        "March 2027"
-      ],
-      "scramblePrefix": [
-        "€ ",
-        "",
-        "€ ",
-        ""
-      ],
-      "scrambleSuffix": [
-        "",
-        " h",
-        "",
-        ""
-      ],
-      "outro": "If you had to guess twice: that’s exactly why there’s <b>RIDEFF Life</b>.",
-      "done": "THIS IS WHAT IT LOOKS LIKE WITH RIDEFF LIFE"
-    },
-    "module": {
-      "eyebrow": "MODULES",
-      "title": "You name the goal. Life finds the levers.",
-      "lead": "First comes what you want. Then Life shows which spending and which hours get you there. Money, time and goals work together.",
-      "goalLabel": "YOUR GOAL",
-      "goal": "Bali, €5,000",
-      "capNone": "WITHOUT CHANGES",
-      "capWith": "WITH LIFE",
-      "dates": [
-        "JUNE 2027",
-        "MAY 2027",
-        "APRIL 2027",
-        "MARCH 2027"
-      ],
-      "today": "TODAY",
-      "withoutLife": "WITHOUT LIFE",
-      "withLife": "WITH LIFE",
-      "months": [
-        "OCT",
-        "NOV",
-        "DEC",
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN"
-      ],
-      "hint": "TRY IT: SWITCH LEVERS ON AND OFF",
-      "levers": [
-        [
-          "MONEY",
-          "Cancel 3 subscriptions",
-          "−5 wks"
-        ],
-        [
-          "TAX",
-          "Claim commuter allowance",
-          "−3 wks"
-        ],
-        [
-          "TIME",
-          "Halve coffee on the go",
-          "−2 wks"
-        ]
-      ],
-      "gapSteps": [
-        "",
-        "−5 WKS",
-        "−8 WKS",
-        "−10 WEEKS"
-      ],
-      "gapWeeks": {
-        "2": "−2 WKS",
-        "3": "−3 WKS",
-        "5": "−5 WKS",
-        "7": "−7 WKS",
-        "8": "−8 WKS",
-        "10": "−10 WKS"
-      },
-      "badgeWeeks": {
-        "2": "2 WEEKS EARLIER",
-        "3": "3 WEEKS EARLIER",
-        "5": "5 WEEKS EARLIER",
-        "7": "7 WEEKS EARLIER",
-        "8": "8 WEEKS EARLIER",
-        "10": "10 WEEKS EARLIER"
-      },
-      "badgeNone": "NO LEVER ACTIVE",
-      "insteadOf": "INSTEAD OF JUNE 2027"
-    },
-    "flowGap": {
-      "line1": "AI is cracking problems humans couldn’t.",
-      "line2": "Imagine what it finds in your life."
-    },
-    "day": {
-      "eyebrow": "A DAY WITH LIFE",
-      "scenes": [
-        {
-          "time": "07:00",
-          "dot": "TOMORROW",
-          "title": "The day starts sorted.",
-          "text": "One briefing instead of five apps. Appointments, budget and goal at a glance, before the coffee is ready.",
-          "label": "BRIEFING",
-          "msg": "Good morning, Lea. 3 appointments today, €18 left for food.",
-          "a1": "See the day",
-          "a2": "Later",
-          "bali": "142 days"
-        },
-        {
-          "time": "12:30",
-          "dot": "MIDDAY",
-          "title": "Small decisions, big effect.",
-          "text": "Life does the maths when it counts. Not with a wagging finger, but with a number.",
-          "label": "SUGGESTION",
-          "msg": "Canteen instead of delivery saves €9 today. Bali moves a day closer.",
-          "a1": "Canteen",
-          "a2": "Not today",
-          "bali": "141 days"
-        },
-        {
-          "time": "18:00",
-          "dot": "EVENING",
-          "title": "Time that belongs to you.",
-          "text": "Life knows shifts and appointments and finds the gaps that would otherwise get lost.",
-          "label": "TIME",
-          "msg": "Thursday 6 pm is free. Add sport?",
-          "a1": "Add",
-          "a2": "No thanks",
-          "bali": "141 days"
-        },
-        {
-          "time": "22:00",
-          "dot": "REVIEW",
-          "title": "Fall asleep knowing: it's on track.",
-          "text": "No anxious check of the banking app. Life tells you briefly where you stand, and then it's quiet.",
-          "label": "TODAY",
-          "msg": "€14 under budget. Already 2 days closer to Bali this week.",
-          "a1": "Good night",
-          "a2": "Details",
-          "bali": "140 days"
-        }
-      ],
-      "phoneBrand": "RIDEFF LIFE",
-      "goal": "Goal Bali",
-      "askTitle": "And in between? Just ask.",
-      "askSub": "FROM YOUR DATA, NOT THE INTERNET",
-      "ask": [
-        [
-          "Where does my money go?",
-          "38 % food and groceries, 12 % subscriptions."
-        ],
-        [
-          "When do I have time to work out?",
-          "Thursday 6 pm, your shift ends at 4."
-        ],
-        [
-          "What will I get back from tax?",
-          "About €412 from the commuter allowance."
-        ],
-        [
-          "Which subscriptions are unnecessary?",
-          "Disney+, gym, the second cloud."
-        ],
-        [
-          "Is there enough for an emergency fund?",
-          "Yes, €150 a month without slowing Bali."
-        ]
-      ],
-      "askOwn": "Your own question…",
-      "askOwnCta": "Try it free for 14 days →"
-    },
-    "weiter": {
-      "eyebrow": "THINKING AHEAD",
-      "title": "Life thinks further than you ask.",
-      "lead": "On your own platform, the AI researches how you can grow your career and finances, based on your data. It finds opportunities you'd never have thought of.",
-      "tags": [
-        "BASED ON YOUR DATA",
-        "YOUR OWN PLATFORM",
-        "BRAINSTORMING"
-      ],
-      "research": "RESEARCH · JUST FOR YOU",
-      "scanning": "SEARCHING …",
-      "found": "3 FINDINGS",
-      "findings": [
-        [
-          "CAREER",
-          "LINKEDIN · SALARY",
-          "With 6 years of experience you're 11% below market pay. Time for that talk in January."
-        ],
-        [
-          "FINANCES",
-          "BANK STATEMENT",
-          "Your emergency fund earns 0% interest. A savings account would bring about €310 a year."
-        ],
-        [
-          "YOU'D HAVE MISSED THIS",
-          "EMPLOYMENT CONTRACT",
-          "Your employer pays up to €1,200 for training. Not used so far."
-        ]
-      ],
-      "brainstorm": "BRAINSTORMING",
-      "user": "Should I start freelancing on the side?",
-      "ai": "Let's play it through. With your savings and 8 free hours a week, there are three realistic paths.",
-      "paths": [
-        "Part-time start",
-        "Test with clients first",
-        "Full launch 2027"
-      ],
-      "input": "Write down an idea…"
-    },
-    "ablauf": {
-      "eyebrow": "HOW IT WORKS",
-      "title": "Shorter than a coffee break.",
-      "lead": "Four steps, once. Then Life reaches out by itself, every morning at 7.",
-      "steps": [
-        [
-          "Create account",
-          "1 MIN"
-        ],
-        [
-          "Upload bank statement",
-          "3 MIN"
-        ],
-        [
-          "Share calendar",
-          "2 MIN"
-        ],
-        [
-          "Add a goal",
-          "4 MIN"
-        ]
-      ],
-      "progress": "4 OF 10 MINUTES",
-      "firstFinds": "FIRST FINDINGS AFTER STEP 2"
-    },
-    "daten": {
-      "eyebrow": "PRIVACY",
-      "title": "It gets to know you. Your data stays yours.",
-      "lead": "Your data sits in your own encrypted space, not on the open internet. What's off, the AI doesn't see. Not even a little.",
-      "tags": [
-        "SERVERS IN GERMANY",
-        "ENCRYPTED",
-        "GDPR"
-      ],
-      "sources": "SHARED SOURCES",
-      "count": "{n} OF 4",
-      "items": [
-        "Bank statement (CSV upload)",
-        "Calendar (Google or iCloud)",
-        "Shift plan (photo or PDF)",
-        "Tax receipts (upload)"
-      ],
-      "wipe": "Delete all data",
-      "wiped": "All deleted. For real: instantly and permanently.",
-      "growTitle": "The longer it knows you, the better it helps.",
-      "growSub": "LEARNS ONLY FROM YOUR DATA, NOT FROM THE INTERNET",
-      "grow": [
-        [
-          "WEEK 1",
-          "You spend €340 a month on food."
-        ],
-        [
-          "MONTH 3",
-          "Thursday is your best day for sport."
-        ],
-        [
-          "YEAR 1",
-          "Hold Bali until March. It's cheaper then and the pot is fuller."
-        ]
-      ]
-    },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Common questions.",
-      "items": [
-        [
-          "Do I have to connect my bank account?",
-          "No. You can simply upload a statement as CSV. A direct connection is optional."
-        ],
-        [
-          "Who is RIDEFF Life for?",
-          "For anyone who wants to keep money, time and goals in view without updating spreadsheets every evening. For example shift work, family or studies."
-        ],
-        [
-          "Does the AI make decisions for me?",
-          "No. It makes suggestions and shows what they’re based on. Only you cancel, move or save."
-        ],
-        [
-          "How does the AI find career and money opportunities?",
-          "From the data you share, such as bank statements, your employment contract or CV. On your own platform it researches what moves you forward in your career and finances, including things you wouldn't have thought of yourself."
-        ],
-        [
-          "Can I brainstorm ideas with the AI?",
-          "Yes. In the brainstorming space you think out loud and Life does the maths with your real numbers. You end up with possible paths, not a finished decision."
-        ],
-        [
-          "When does it start?",
-          "Right away. Create an account and try it free for 14 days, no payment details. For Life Private, book a short call first."
-        ]
-      ]
-    },
-    "preis": {
-      "eyebrow": "PRICING",
-      "title": "What should Life do for you?",
-      "lead": "Choose your scope. 14 days free, no payment details. Then cancel monthly. Pay yearly: two months free. Prices incl. VAT.",
-      "perMonth": "/ month",
-      "tiers": {
-        "life": {
-          "k": "LIFE",
-          "p": "€12.90",
-          "sub": "For you. The essentials.",
-          "f": [
-            "Money, time and goals",
-            "Morning briefing every day",
-            "Weekly AI review",
-            "Web app on phone and laptop"
-          ]
-        },
-        "plus": {
-          "k": "LIFE PLUS",
-          "p": "€19.90",
-          "sub": "For you. Everything included.",
-          "f": [
-            "Everything in Life",
-            "AI research for career and finances",
-            "Brainstorming with your numbers",
-            "Tax, sport, sleep and learning"
-          ]
-        },
-        "together": {
-          "k": "TOGETHER",
-          "p": "€29.90",
-          "sub": "For couples and families.",
-          "f": [
-            "Everything in Life Plus",
-            "Up to 4 people",
-            "Shared budget and goals",
-            "Private space for each person"
-          ]
-        }
-      },
-      "cta": "Try free for 14 days →",
-      "private": {
-        "badge": "LIFE PRIVATE",
-        "limited": "LIMITED SPOTS",
-        "title": "Your own system. With people behind it.",
-        "text": "For anyone with more than one salary: self-employment, property, family, relocation. We set up Life together with you and stay by your side.",
-        "price": "from €68",
-        "priceSub": "/ month · one-time setup from €449",
-        "f": [
-          "Everything in Life Plus",
-          "1:1 setup, goals set together",
-          "Custom modules, e.g. property or a side business",
-          "Monthly review with a real person"
-        ],
-        "cta": "Book a free call →"
-      }
-    },
-    "start": {
-      "eyebrow": "LET'S GO",
-      "title": "Your first briefing arrives tomorrow morning.",
-      "text": "Account in three minutes. 14 days free, no payment details. Then you decide.",
-      "cta": "Try free for 14 days →",
-      "compare": "Compare plans",
-      "tags": [
-        "NO CARD NEEDED",
-        "DATA IN THE EU",
-        "CANCEL ANY TIME"
-      ]
-    }
-  },
-  "common": {
-    "ai": "AI"
-  },
-  "biz": {
-    "viz": {
-      "nerves": "NERVES",
-      "brain": "BRAIN",
-      "brainSub": "knows your business",
-      "boxes": [
-        [
-          "COCKPIT",
-          "for you"
-        ],
-        [
-          "TEAM APP",
-          "for the team"
-        ],
-        [
-          "WEBSITE",
-          "for customers"
-        ]
-      ]
-    },
-    "feed": [
-      [
-        "DONE",
-        "Milk 12 L reordered"
-      ],
-      [
-        "DETECTED",
-        "Rain from 2 pm, baking plan −30 %"
-      ],
-      [
-        "DONE",
-        "Deniz works inside, team informed"
-      ],
-      [
-        "DONE",
-        "Terrace closed on website"
-      ],
-      [
-        "DETECTED",
-        "Cake is left over on Mondays"
-      ],
-      [
-        "DONE",
-        "17 pre-orders accepted"
-      ]
-    ],
-    "problem": {
-      "eyebrow": "THE PROBLEM",
-      "title": "It’s all there. Just not connected.",
-      "lead": "Excel here, WhatsApp there, a note by the till. The brain and body often already exist. What’s missing are the nerves in between.",
-      "point": "We connect what you have and build what’s missing.",
-      "cards": [
-        [
-          "Excel",
-          "Revenue, somewhere"
-        ],
-        [
-          "WhatsApp",
-          "Shifts, 3 groups"
-        ],
-        [
-          "Notes",
-          "by the till"
-        ],
-        [
-          "ChatGPT",
-          "in a browser tab"
-        ],
-        [
-          "Calendar",
-          "Pre-orders"
-        ],
-        [
-          "Website",
-          "unchanged since 2019"
-        ]
-      ],
-      "platformKicker": "RIDEFF",
-      "platform": "Your platform",
-      "platformSub": "Everything in one place",
-      "poweredBy": "POWERED BY AI",
-      "stages": [
-        "YOUR TOOLS, SCATTERED",
-        "ALL IN ONE PLACE",
-        "YOUR PLATFORM",
-        "+ AI",
-        "AND IT GROWS"
-      ]
-    },
-    "platform": {
-      "eyebrow": "BODY",
-      "title": "Three parts, one brain.",
-      "industries": [
-        [
-          "Hotel",
-          "HOTEL SEEBLICK"
-        ],
-        [
-          "Café",
-          "CAFÉ LINDE"
-        ],
-        [
-          "Shop",
-          "LADEN MITTE"
-        ],
-        [
-          "Fashion label",
-          "LABEL NORD"
-        ],
-        [
-          "Clinic",
-          "PRAXIS DR. KOCH"
-        ],
-        [
-          "Trades",
-          "TISCHLEREI BRANDT"
-        ]
-      ],
-      "tabs": [
-        [
-          "01",
-          "Cockpit",
-          "For you: numbers and suggestions."
-        ],
-        [
-          "02",
-          "Team app",
-          "For the team: tasks and shifts."
-        ],
-        [
-          "03",
-          "Website",
-          "For guests: order and book."
-        ]
-      ],
-      "side": [
-        "Cockpit",
-        "Team app",
-        "Website",
-        "Stock"
-      ],
-      "brainActive": "Brain active",
-      "clock": "TUE · 07:42",
-      "revenue": "Revenue",
-      "suggestion": "AI · SUGGESTION",
-      "teamToday": "Team today",
-      "tasks": "Tasks",
-      "live": "● LIVE",
-      "ranges": [
-        "1W",
-        "1M",
-        "3M",
-        "1Y"
-      ],
-      "rangeSub": [
-        "Last 7 days",
-        "Last 30 days",
-        "Last 3 months",
-        "Last 12 months"
-      ],
-      "rangeCmp": [
-        "vs last week",
-        "vs last month",
-        "vs last quarter",
-        "vs last year"
-      ],
-      "weekdays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ],
-      "data": [
-        {
-          "greet": "Good morning, Jana.",
-          "kpis": [
-            [
-              "Occupancy",
-              "86 %"
-            ],
-            [
-              "Arrivals today",
-              "14"
-            ],
-            [
-              "Departures",
-              "11"
-            ],
-            [
-              "Avg. room rate",
-              "€128"
-            ]
-          ],
-          "sug": "Friday almost fully booked. Raise the last 4 rooms by 15 %?",
-          "todo": [
-            "Room 204 cleaned",
-            "Confirm late check-out 112"
-          ],
-          "teamKi": "Arrival peak 3–5 pm. Tom takes reception earlier.",
-          "shiftLabel": "Shifts",
-          "shifts": [
-            [
-              "Jana",
-              "06–14",
-              "Breakfast"
-            ],
-            [
-              "Tom",
-              "12–20",
-              "Reception from 2 pm"
-            ],
-            [
-              "Sara",
-              "08–16",
-              "Housekeeping"
-            ]
-          ],
-          "tasks": [
-            [
-              "Room 204 cleaned",
-              "SARA"
-            ],
-            [
-              "Minibar 3rd floor restocked",
-              "SARA"
-            ],
-            [
-              "Late check-out 112",
-              "TOM"
-            ],
-            [
-              "Check bikes",
-              "JANA"
-            ]
-          ],
-          "domain": "hotel-seeblick.de",
-          "eyebrow": "HOTEL SEEBLICK · BINZ",
-          "headline": "Wake up to a view of the Baltic Sea.",
-          "b1": "Book a room",
-          "b2": "Offers",
-          "listLabel": "Rooms available today",
-          "items": [
-            [
-              "Double room, sea view",
-              "2 left",
-              "€149"
-            ],
-            [
-              "Single room",
-              "1 left",
-              "€89"
-            ],
-            [
-              "Rooftop suite",
-              "Early bird",
-              "€229",
-              "OFFER"
-            ]
-          ],
-          "siteKi": "6 direct bookings this week. No portal commission.",
-          "photoAlt": "Room with sea view"
-        },
-        {
-          "greet": "Good morning, Lena.",
-          "kpis": [
-            [
-              "Revenue yesterday",
-              "€1,284"
-            ],
-            [
-              "Receipts",
-              "318"
-            ],
-            [
-              "Cost of goods",
-              "29 %"
-            ],
-            [
-              "Pre-orders",
-              "17"
-            ]
-          ],
-          "sug": "Cake is left over on Mondays. Bake 30 % less today?",
-          "todo": [
-            "Milk 12 L reordered",
-            "Refill display case at 3 pm"
-          ],
-          "teamKi": "Rain from 2 pm. Deniz takes over inside, terrace stays closed.",
-          "shiftLabel": "Shifts",
-          "shifts": [
-            [
-              "Lena",
-              "06–14",
-              "Opening"
-            ],
-            [
-              "Deniz",
-              "10–18",
-              "inside, not terrace"
-            ],
-            [
-              "Mia",
-              "14–22",
-              "Closing"
-            ]
-          ],
-          "tasks": [
-            [
-              "Milk 12 L reordered",
-              "LENA"
-            ],
-            [
-              "Baking plan −30 % done",
-              "LENA"
-            ],
-            [
-              "Refill display case at 3 pm",
-              "CAN"
-            ],
-            [
-              "Cash up till",
-              "MIA"
-            ]
-          ],
-          "domain": "cafe-linde.de",
-          "eyebrow": "CAFÉ LINDE · LEIPZIG",
-          "headline": "Breakfast until 2 pm. Cake until it’s gone.",
-          "b1": "Reserve",
-          "b2": "Pre-order",
-          "listLabel": "In the display case today",
-          "items": [
-            [
-              "Cheesecake",
-              "6 pieces left",
-              "€3,90"
-            ],
-            [
-              "Apple crumble",
-              "gluten-free",
-              "€4,20",
-              "NEW"
-            ],
-            [
-              "Cinnamon roll",
-              "from 8 am",
-              "€2,80"
-            ]
-          ],
-          "siteKi": "17 pre-orders online today. The display case shows what’s left automatically.",
-          "photoAlt": "Café display case"
-        },
-        {
-          "greet": "Good morning, Ben.",
-          "kpis": [
-            [
-              "Revenue yesterday",
-              "€2,140"
-            ],
-            [
-              "Receipts",
-              "164"
-            ],
-            [
-              "Online orders",
-              "23"
-            ],
-            [
-              "Stock value",
-              "€18.4k"
-            ]
-          ],
-          "sug": "Olive oil lasts 4 more days. Reorder 24 bottles?",
-          "todo": [
-            "Coffee delivery logged",
-            "Redecorate shop window"
-          ],
-          "teamKi": "30 % more customers expected Saturday. Elif comes in an hour early.",
-          "shiftLabel": "Shifts",
-          "shifts": [
-            [
-              "Ben",
-              "09–15",
-              "Opening"
-            ],
-            [
-              "Elif",
-              "10–18",
-              "earlier, till 2"
-            ],
-            [
-              "Paul",
-              "14–20",
-              "Closing"
-            ]
-          ],
-          "tasks": [
-            [
-              "Coffee logged",
-              "BEN"
-            ],
-            [
-              "Click & collect packed",
-              "PAUL"
-            ],
-            [
-              "Redecorate shop window",
-              "ELIF"
-            ],
-            [
-              "Stock count shelf 3",
-              "PAUL"
-            ]
-          ],
-          "domain": "laden-mitte.de",
-          "eyebrow": "LADEN MITTE · DRESDEN",
-          "headline": "Good things from the region. Ordered online, ready for pickup in 2 hours.",
-          "b1": "Order online",
-          "b2": "Opening hours",
-          "listLabel": "Popular now",
-          "items": [
-            [
-              "Cretan olive oil",
-              "8 in stock",
-              "€14,90"
-            ],
-            [
-              "Mountain cheese",
-              "local, 100 g",
-              "€4,20",
-              "NEW"
-            ],
-            [
-              "House-roast coffee",
-              "500 g",
-              "€12,50"
-            ]
-          ],
-          "siteKi": "23 online orders. Stock on the website is always up to date.",
-          "photoAlt": "Shop shelf"
-        },
-        {
-          "greet": "Morning, Ida.",
-          "kpis": [
-            [
-              "Shop revenue",
-              "€3,920"
-            ],
-            [
-              "Orders",
-              "41"
-            ],
-            [
-              "Return rate",
-              "12 %"
-            ],
-            [
-              "Stock",
-              "1,284 items"
-            ]
-          ],
-          "sug": "Linen shirt M almost sold out. Request a rerun of 60 pieces?",
-          "todo": [
-            "41 parcels shipped",
-            "Approve new collection photos"
-          ],
-          "teamKi": "Size S runs small, returns are up. A note has been added to the shop.",
-          "shiftLabel": "Today",
-          "shifts": [
-            [
-              "Ida",
-              "09–17",
-              "Design"
-            ],
-            [
-              "Jonas",
-              "08–16",
-              "Shipping +20 parcels"
-            ],
-            [
-              "Lea",
-              "10–18",
-              "Customer service"
-            ]
-          ],
-          "tasks": [
-            [
-              "41 parcels shipped",
-              "JONAS"
-            ],
-            [
-              "Returns checked",
-              "LEA"
-            ],
-            [
-              "Approve photos",
-              "IDA"
-            ],
-            [
-              "Autumn newsletter",
-              "LEA"
-            ]
-          ],
-          "domain": "label-nord.de",
-          "eyebrow": "LABEL NORD · HAMBURG",
-          "headline": "Fairly sewn in Portugal. Made to keep.",
-          "b1": "Collection",
-          "b2": "Size advisor",
-          "listLabel": "New in the shop",
-          "items": [
-            [
-              "Linen shirt Sand",
-              "only M, L left",
-              "€89"
-            ],
-            [
-              "Cardigan Nebel",
-              "Organic wool",
-              "€139",
-              "NEW"
-            ],
-            [
-              "Wide Pants Ton",
-              "all sizes",
-              "€109"
-            ]
-          ],
-          "siteKi": "The size advisor cuts returns. Stock comes live from the system.",
-          "photoAlt": "Collection"
-        },
-        {
-          "greet": "Good morning, Dr. Koch.",
-          "kpis": [
-            [
-              "Appointments today",
-              "32"
-            ],
-            [
-              "Cancellations",
-              "2"
-            ],
-            [
-              "Avg. wait",
-              "6 min"
-            ],
-            [
-              "Booked online",
-              "9"
-            ]
-          ],
-          "sug": "2 cancellations at 11 am. Notify patients on the waitlist?",
-          "todo": [
-            "Prescriptions for Ms Berg ready",
-            "Call back Mr Yilmaz"
-          ],
-          "teamKi": "3 cancellations due to flu season. Waitlist contacted, 2 slots reassigned.",
-          "shiftLabel": "Duty roster",
-          "shifts": [
-            [
-              "Anna",
-              "07–13",
-              "Reception"
-            ],
-            [
-              "Max",
-              "08–16",
-              "Lab, not reception"
-            ],
-            [
-              "Selin",
-              "12–19",
-              "Reception"
-            ]
-          ],
-          "tasks": [
-            [
-              "Prescriptions ready",
-              "ANNA"
-            ],
-            [
-              "Lab results sent",
-              "MAX"
-            ],
-            [
-              "Call back Mr Yilmaz",
-              "SELIN"
-            ],
-            [
-              "Quarterly billing",
-              "ANNA"
-            ]
-          ],
-          "domain": "praxis-koch.de",
-          "eyebrow": "DR. KOCH CLINIC · COLOGNE",
-          "headline": "Book online. No hold music.",
-          "b1": "Book appointment",
-          "b2": "Order prescription",
-          "listLabel": "Free slots today",
-          "items": [
-            [
-              "11:00 am",
-              "Consultation",
-              "free"
-            ],
-            [
-              "2:30 pm",
-              "Check-up",
-              "free"
-            ],
-            [
-              "5:15 pm",
-              "Video consultation",
-              "free",
-              "NEW"
-            ]
-          ],
-          "siteKi": "9 online bookings today. The phone rings noticeably less.",
-          "photoAlt": "Clinic reception"
-        },
-        {
-          "greet": "Good morning, Mr Brandt.",
-          "kpis": [
-            [
-              "Open jobs",
-              "12"
-            ],
-            [
-              "Open quotes",
-              "5"
-            ],
-            [
-              "Utilisation",
-              "92 %"
-            ],
-            [
-              "Unpaid invoices",
-              "€8.6k"
-            ]
-          ],
-          "sug": "Müller kitchen quote open for 9 days. Send a friendly follow-up?",
-          "todo": [
-            "Materials for job 118 ordered",
-            "Measure-up Kern family, 2 pm"
-          ],
-          "teamKi": "Weber installation runs long. Lukas goes straight to Kern, the appointment stays.",
-          "shiftLabel": "Jobs today",
-          "shifts": [
-            [
-              "Brandt",
-              "07–15",
-              "Workshop"
-            ],
-            [
-              "Lukas",
-              "07–16",
-              "Kern, not Weber"
-            ],
-            [
-              "Finn",
-              "08–16",
-              "Installation Weber"
-            ]
-          ],
-          "tasks": [
-            [
-              "Materials ordered",
-              "BRANDT"
-            ],
-            [
-              "Site photos uploaded",
-              "FINN"
-            ],
-            [
-              "Measure-up Kern family",
-              "LUKAS"
-            ],
-            [
-              "Write invoice 118",
-              "BRANDT"
-            ]
-          ],
-          "domain": "tischlerei-brandt.de",
-          "eyebrow": "BRANDT JOINERY · FREIBURG",
-          "headline": "Made-to-measure furniture. From Black Forest wood.",
-          "b1": "Send enquiry",
-          "b2": "Projects",
-          "listLabel": "New enquiries",
-          "items": [
-            [
-              "Built-in wardrobe",
-              "Roth family, with photos",
-              "today",
-              "NEW"
-            ],
-            [
-              "Oak kitchen",
-              "Quote sent",
-              "€14k"
-            ],
-            [
-              "Stair renovation",
-              "Measure-up planned",
-              "Thu"
-            ]
-          ],
-          "siteKi": "4 enquiries this week, with measurements and photos. Straight into the cockpit.",
-          "photoAlt": "Workshop"
-        }
-      ]
-    },
-    "nerven": {
-      "eyebrow": "NERVES · AI IN DAILY WORK",
-      "title": "You don’t have to check. It tells you.",
-      "lead": "The brain watches till, stock, bookings and enquiries. When something stands out, you get a clear suggestion. One tap and it’s done.",
-      "day": "A TUESDAY AT CAFÉ LINDE",
-      "now": "NOW",
-      "date": "Tuesday, 14 October",
-      "from": "RIDEFF",
-      "justNow": "now",
-      "events": [
-        [
-          "Baking plan",
-          "adjusted",
-          "Bake 30 % less today?",
-          "Cake is left over on Mondays and Tuesdays."
-        ],
-        [
-          "Rain",
-          "Shift inside",
-          "Rain from 2 pm",
-          "Deniz takes over inside, shift plan adjusted."
-        ],
-        [
-          "Guest",
-          "gluten-free?",
-          "Guest asks: gluten-free?",
-          "Reply sent: apple crumble is gluten-free."
-        ],
-        [
-          "17 pre-orders",
-          "online",
-          "17 pre-orders",
-          "Received online, display case planned."
-        ],
-        [
-          "Display case",
-          "Reminder",
-          "Refill display case",
-          "Cheesecake almost gone. Deniz is informed."
-        ],
-        [
-          "Daily report",
-          "€1,284",
-          "Daily report",
-          "€1,284 revenue · cost of goods 29 %"
-        ]
-      ]
-    },
-    "ablauf": {
-      "eyebrow": "HOW WE WORK",
-      "title": "Your day first. Then the software.",
-      "lead": "No site builder, no agency chain. One contact, from the first call to running operations.",
-      "steps": [
-        [
-          "01 · WEEK 1",
-          "Free call",
-          "30 minutes, no obligation. You tell us how your day runs and where it gets stuck.",
-          "CLARITY ON FIT"
-        ],
-        [
-          "02 · WEEK 1–2",
-          "Analysis",
-          "We look at processes, tools and data. On site or by video.",
-          "PLAN AND QUOTE"
-        ],
-        [
-          "03 · WEEK 3–8",
-          "Build",
-          "Brain, body, nerves. You test along every week, nothing comes as a surprise.",
-          "SYSTEM LIVE"
-        ],
-        [
-          "04 · EVERY MONTH",
-          "Support",
-          "Maintenance, updates, new ideas. The system grows with your business.",
-          "GROWS WITH YOU"
-        ]
-      ]
-    },
-    "flowGap": {
-      "line1": "AI is cracking problems humans couldn’t.",
-      "line2": "Imagine what it finds in your business."
-    },
-    "wer": {
-      "eyebrow": "WHO’S BEHIND IT",
-      "quote": "“We don’t build a system for everyone. We build yours.”",
-      "text": "Every business runs differently. So we don’t start with software, we start with your day. Then we build the brain, body and nerves around it, on your platform, with your data. And we stay, every month.",
-      "name": "Rialto Effendy",
-      "role": "FOUNDER · LEADS EVERY PROJECT"
-    },
-    "projekt": {
-      "eyebrow": "PROJECT",
-      "title": "Built, live, supported.",
-      "read": "Read case study →",
-      "kicker": "REAL CLIENT · STREETWEAR",
-      "name": "TIC Originals",
-      "text": "Shop and ordering system in one. Drops, bundles, checkout, tracking and customer accounts.",
-      "facts": [
-        [
-          "LIVE SINCE",
-          "April 2026"
-        ],
-        [
-          "SUPPORT",
-          "monthly"
-        ],
-        [
-          "SCOPE",
-          "Shop + Backoffice"
-        ]
-      ],
-      "imgAlt": "TIC Originals",
-      "modal": {
-        "kicker": "CASE STUDY · STREETWEAR",
-        "facts": [
-          [
-            "LIVE SINCE",
-            "April 2026"
-          ],
-          [
-            "SUPPORT",
-            "Monthly"
-          ],
-          [
-            "SCOPE",
-            "Shop + Backoffice"
-          ]
-        ],
-        "builtTitle": "What was built",
-        "built": "Shop and ordering system in one: drops, bundles, checkout, tracking and customer accounts. Behind it, a back office for stock and orders.",
-        "resultTitle": "Result",
-        "cta": "Discuss a project like this →",
-        "imgAlts": [
-          "TIC Originals",
-          "TIC Shop",
-          "TIC Backoffice"
-        ]
-      }
-    },
-    "pakete": {
-      "eyebrow": "PLANS",
-      "title": "As much system as you need.",
-      "where": "WHERE ARE YOU NOW?",
-      "stages": [
-        "Nothing yet",
-        "Something there",
-        "Everything there"
-      ],
-      "fit": "Fits you",
-      "from": "from",
-      "perMonth": "/ month",
-      "plans": [
-        {
-          "k": "CORE",
-          "sub": "Internal system + AI",
-          "price": "€149",
-          "setup": "+ from €1,290 setup · 12-month term",
-          "f": [
-            "Tasks & checklists",
-            "Processes (SOPs) with AI",
-            "Stock & inventory",
-            "Owner cockpit"
-          ],
-          "cta": "Talk about Core →"
-        },
-        {
-          "k": "GROWTH",
-          "sub": "Core + website or shop",
-          "price": "€249",
-          "setup": "+ from €1,990 setup · 12-month term",
-          "f": [
-            "Everything in Core",
-            "Industry pack",
-            "Website or online shop",
-            "Team app"
-          ],
-          "cta": "Talk about Growth →"
-        },
-        {
-          "k": "WHOLE SYSTEM",
-          "sub": "Every part built and connected",
-          "price": "€449",
-          "setup": "+ from €3,900 setup · 12-month term",
-          "f": [
-            "Booking, till, suppliers",
-            "Accounting · DATEV",
-            "Shifts, reviews, CRM",
-            "All on one brain"
-          ],
-          "cta": "Talk about Whole system →"
-        }
-      ],
-      "net": "All prices net, plus VAT."
-    },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Common questions.",
-      "intro": "Question not listed? Write to us:",
-      "items": [
-        [
-          "Does my team have to learn something new?",
-          "Hardly. The team app is built around your processes, in your words. Most teams use it after one day, without training."
-        ],
-        [
-          "What happens to my existing tools?",
-          "What works gets connected, for example till or accounting. What gets in the way we replace step by step. Nothing is switched off overnight."
-        ],
-        [
-          "Who owns my data?",
-          "You. GDPR-compliant, hosted in the EU. You can export everything anytime."
-        ],
-        [
-          "How long until everything runs?",
-          "Usually four to eight weeks from first call to live, depending on scope."
-        ],
-        [
-          "What does it cost per month?",
-          "A fixed monthly fee depending on the plan, maintenance and updates included. You’ll find the plans above."
-        ],
-        [
-          "Can I cancel?",
-          "Yes. After the 12-month minimum term, monthly with 30 days’ notice. You take your data with you."
-        ]
-      ]
-    },
-    "kontakt": {
-      "eyebrow": "CONTACT",
-      "title": "What’s missing for you? <accent>Let’s find out.</accent>",
-      "text": "30 minutes, free, by video. You tell us how your business runs today. We show what brain, body and nerves could be for you.",
-      "write": "Rather write?",
-      "widget": "INTRO CALL · 30 MIN",
-      "emailCta": "Request a slot by email →"
-    }
-  },
-  "demo": {
-    "metaTitle": "RIDEFF Business · Cockpit",
-    "back": "← Back to website",
-    "industry": "INDUSTRY (DEMO)",
-    "ask": "Ask the cockpit",
-    "modules": "MODULES",
-    "tools": "TOOLS",
-    "product": "RIDEFF BUSINESS",
-    "nav": {
-      "home": "Overview",
-      "fin": "Finances",
-      "team": "Team & shifts",
-      "kunden": "Customers & requests",
-      "lager": "Stock & purchasing",
-      "web": "Website",
-      "what": "What if",
-      "data": "Data & permissions"
-    },
-    "roles": {
-      "O": "Owner",
-      "L": "Manager",
-      "T": "Team"
-    },
-    "locked": {
-      "kicker": "NO ACCESS IN THIS ROLE",
-      "title": "This area is only visible to the owner.",
-      "text": "You set roles once. The team sees shifts, tasks and requests, but no finances.",
-      "back": "← TO OVERVIEW"
-    },
-    "dateLine": "TUESDAY 13 OCTOBER ·",
-    "goodMorning": "Good morning,",
-    "weekUpper": [
-      "TUE 13",
-      "WED 14",
-      "THU 15",
-      "FRI 16",
-      "SAT 17",
-      "SUN 18",
-      "MON 19"
-    ],
-    "week": [
-      "Tue 13",
-      "Wed 14",
-      "Thu 15",
-      "Fri 16",
-      "Sat 17",
-      "Sun 18",
-      "Mon 19"
-    ],
-    "home": {
-      "next7": "Next 7 days",
-      "today": "Today",
-      "tomorrow": "Tomorrow",
-      "liquidity": "Cash flow",
-      "forecast": "90-DAY FORECAST",
-      "myTasks": "My tasks today",
-      "three": "3 things this week",
-      "done": "DONE",
-      "consent": "NOTHING HAPPENS WITHOUT YOUR OK",
-      "goals": "Goals",
-      "kpiShift": "My shift",
-      "kpiTasks": "Tasks today",
-      "kpiTasksSub": "in the team app",
-      "kpiReq": "New enquiries",
-      "kpiReqSub": "today",
-      "kpiTeam": "Team today",
-      "kpiTeamSub": "all shifts covered"
-    },
-    "fin": {
-      "costs": "Costs in October",
-      "invoices": "Open invoices",
-      "vat": "VAT reserve Q4",
-      "export": "EXPORT TO TAX ADVISOR · DATEV · MONTHLY",
-      "reminded": "Reminder sent today",
-      "sent": "✓ SENT",
-      "remind": "REMIND",
-      "view": "VIEW"
-    },
-    "team": {
-      "week": "WK 42",
-      "app": "TEAM APP · IN THE BROWSER",
-      "hello": "Hello",
-      "newFromWeb": "NEW FROM THE WEBSITE"
-    },
-    "kunden": {
-      "channels": "WEBSITE · PHONE · EMAIL",
-      "reviews": "Reviews",
-      "draft": "AI DRAFT",
-      "confirmed": "✓ CONFIRMED",
-      "accept": "ACCEPT",
-      "published": "✓ PUBLISHED",
-      "send": "SEND REPLY"
-    },
-    "lager": {
-      "range": "COVERAGE UNTIL NEXT DELIVERY",
-      "ordered": "Ordered · delivery in 2 days",
-      "orderedBtn": "✓ ORDERED",
-      "order": "ORDER"
-    },
-    "web": {
-      "name": "Your name",
-      "sent": "Sent. The request is now in the cockpit.",
-      "view": "VIEW →",
-      "hint": "YOU CHANGE OPENING HOURS AND COPY IN THE COCKPIT, NOT IN CODE",
-      "defaultName": "New customer"
-    },
-    "what": {
-      "title": "What if …",
-      "lead": "Move the sliders. The cockpit calculates with your real numbers.",
-      "result": "RESULT",
-      "profitMonth": "Profit per month",
-      "vsToday": "TO TODAY",
-      "profitYear": "Profit per year",
-      "liq90": "Cash in 90 days",
-      "reset": "↺ RESET",
-      "months": [
-        "Jan",
-        "Feb",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "yes": "yes",
-      "no": "no"
-    },
-    "data": {
-      "sources": "Connected sources",
-      "onOf": "OF 6 ON",
-      "roles": "Roles and permissions",
-      "ownerPrefix": "Owner ·",
-      "leadPrefix": "Manager ·",
-      "teamLabel": "Team",
-      "perm": {
-        "all": "Everything",
-        "home": "Overview",
-        "team": "Team",
-        "kunden": "Customers",
-        "lager": "Stock",
-        "web": "Website",
-        "fin": "Finances",
-        "shifts": "Shifts",
-        "tasks": "Tasks",
-        "requests": "Requests"
-      },
-      "footer": "SERVERS IN GERMANY · ENCRYPTED · GDPR · DPA INCLUDED"
-    },
-    "askBox": {
-      "placeholder": "Ask your business…",
-      "esc": "ESC",
-      "sources": "SOURCES ·"
-    }
-  },
-  "notFound": {
-    "code": "404",
-    "text": "This page doesn't exist. Your brain does.",
+    "whatsAppRialto": "WhatsApp — Rialto",
+    "book15Min": "Book 15 min",
+    "eichstattGermany": "Eichstätt, Germany",
     "home": "Home",
-    "try": "Try for free"
+    "understand": "Understand",
+    "build": "Build",
+    "run": "Run",
+    "work": "Work",
+    "pricing": "Pricing",
+    "about": "About",
+    "life": "Life",
+    "contact": "Contact",
+    "journal": "Journal"
   },
-  "blog": {
-    "title": "Blog",
-    "readingTime": "{n} min read",
-    "back": "← All articles",
-    "tags": {
-      "business": "BUSINESS",
-      "life": "LIFE"
-    }
+  "RideffFooter": {
+    "understandBuildRunOneOperatorFrom": "Understand, build, run — one operator, from Eichstätt to wherever you are.",
+    "pillars": "Pillars",
+    "n01Understand": "01 Understand",
+    "n02Build": "02 Build",
+    "n03Run": "03 Run",
+    "pages": "Pages",
+    "work": "Work",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "reachRialto": "Reach Rialto",
+    "legal": "Legal",
+    "n2026RIDEFFRialtoEichstattGermany": "© 2026 RIDEFF — Rialto. Eichstätt, Germany.",
+    "hostedInTheEUFrankfurt": "Hosted in the EU · Frankfurt",
+    "updateInstalled": "Update installed",
+    "securityPatch": "Security patch ✓",
+    "sSLRenewed": "SSL renewed",
+    "bugFixed": "Bug fixed ✓",
+    "checkoutBugSquashed": "Checkout bug squashed",
+    "fixedBeforeYouNoticed": "Fixed before you noticed",
+    "all6LayersOk": "All 6 layers ok",
+    "uptimeCheck": "Uptime check ✓",
+    "inquiryAnswered": "Inquiry answered",
+    "invoiceSent": "Invoice sent",
+    "mondayReportSent": "Monday report sent",
+    "whoopsLoggedFixed": "Whoops. Logged & fixed.",
+    "caughtIt": "Caught it.",
+    "monitoredEvenMe": "Monitored, even me.",
+    "allSystemsNormal": "All systems normal",
+    "hostedInFrankfurt": "Hosted in Frankfurt",
+    "runningWhileYouSleep": "Running while you sleep",
+    "hiIKeepRIDEFFRunning": "Hi! I keep RIDEFF running."
+  },
+  "RideffNana": {
+    "typeAQuestion": "Type a question",
+    "callNanaVoice": "Call Nana · voice",
+    "bookACallWithRialto": "Book a call with Rialto",
+    "yourSummary": "Your summary",
+    "whatsAppMessage": "WhatsApp message",
+    "boldAndItalicShowAsFormatting": "*bold* and _italic_ show as formatting in WhatsApp.",
+    "sendToRialtoOnWhatsApp": "Send to Rialto on WhatsApp →",
+    "sendToMyWhatsApp": "Send to my WhatsApp",
+    "sentToX": "Sent to {x} ✓",
+    "send": "Send",
+    "voiceCallPreview": "Voice call · preview",
+    "talkToNana": "Talk to Nana",
+    "askOutLoudTheWayYou": "Ask out loud, the way you’d ask Rialto. Nana answers right away.",
+    "mic": "Mic",
+    "yourBrowserAsksForTheMicrophone": "Your browser asks for the microphone. Used only during the call.",
+    "length": "Length",
+    "about2MinutesSwitchToChat": "About 2 minutes. Switch to chat any time.",
+    "after": "After",
+    "youGetASummaryYouCan": "You get a summary you can send to Rialto on WhatsApp.",
+    "saveTheTranscriptAndSummaryTo": "Save the transcript and summary to my RIDEFF client portal.",
+    "privacy": "Privacy",
+    "startCall": "Start call",
+    "notNowTypeInstead": "Not now — type instead",
+    "voicePreview": "Voice · preview",
+    "chat": "Chat",
+    "end": "End",
+    "askNanaAnything": "Ask Nana anything…",
+    "callNana": "Call Nana",
+    "whichPlanFitsMe": "Which plan fits me?",
+    "whyASetupFee": "Why a setup fee?",
+    "isVATIncluded": "Is VAT included?",
+    "howWasTICBuilt": "How was TIC built?",
+    "canYouBuildMine": "Can you build mine?",
+    "howLongUntilLive": "How long until live?",
+    "whatIsRIDEFFLife": "What is RIDEFF Life?",
+    "isTheTrialFree": "Is the trial free?",
+    "canMyFamilyUseIt": "Can my family use it?",
+    "whatDoesGrowthInclude": "What does Growth include?",
+    "mostBusinessesStartWithGrowth249": "Most businesses start with Growth — €249 a month, setup from €1,990. Tick your areas in the configurator on this page and it shows the right plan live.",
+    "theSetupPaysForAnalysisBuild": "The setup pays for analysis, build, testing and go-live — once. The monthly fee keeps it running: hosting, AI, updates and Rialto’s time.",
+    "businessPricesAreNetPlus19": "Business prices are net, plus 19% VAT. Life prices already include VAT.",
+    "tICOriginalsGotAShopBuilt": "TIC Originals got a shop built around limited drops, plus an owner dashboard — orders, DHL labels, insights. Rialto still runs it.",
+    "yesItStartsWithAFree": "Yes — it starts with a free 30-minute call. After that you get a fixed offer in your client portal.",
+    "threeStepsUnderstandBuildRunIt": "Three steps: Understand, Build, Run. It starts with a free 30-minute call — Rialto gives you a timeline right after.",
+    "togetherCoversUpTo4People": "Together covers up to 4 people for €29,90 a month, with a shared calendar and budget.",
+    "n14DaysFreeNoCardNeeded": "14 days free, no card needed.",
+    "rIDEFFLifeIsAPersonalAssistant": "RIDEFF Life is a personal assistant: morning briefing, money, time and goals — based on your own data. 14 days free.",
+    "growthConnectsCustomersSalesTeamAnd": "Growth connects customers, sales, team and operations — €249 a month plus setup from €1,990.",
+    "happyToSetThatUpPick": "Happy to set that up — pick a time with Rialto, or message him on WhatsApp.",
+    "hiThisIsNanaFromRIDEFF": "Hi, this is Nana from RIDEFF. How can I help?",
+    "whatWouldASystemForMy": "What would a system for my café cost?",
+    "mostCafesStartWithGrowth249": "Most cafés start with Growth — €249 a month, setup from €1,990.",
+    "canITalkToRialtoAbout": "Can I talk to Rialto about it?",
+    "ofCourseILlSendYou": "Of course. I’ll send you a link to pick a time with him.",
+    "hiIMNanaAskMe": "Hi, I’m Nana. Ask me about plans, timelines or what RIDEFF could build for you — by text or by voice.",
+    "iMStillAPreviewSo": "I’m still a preview, so I can’t answer that yet. Rialto can — want to talk to him?",
+    "voiceCall": "Voice call",
+    "aSystemForMyCafe": "A system for my café",
+    "growth249MonthSetupFrom1": "Growth — €249/month, setup from €1,990",
+    "pickATimeForAFree": "Pick a time for a free 30-min call with Rialto",
+    "voiceCallEnded": "Voice call ended · ",
+    "thanksForCallingHereSA": "Thanks for calling. Here’s a summary — send it to Rialto on WhatsApp and he’ll pick it up from there.",
+    "callEndedEarlyWantToTry": "Call ended early. Want to try again or continue with Rialto directly?",
+    "rIDEFFLifeTogether2990Month": "RIDEFF Life Together — €29,90/month",
+    "rIDEFFLife14DaysFree": "RIDEFF Life — 14 days free",
+    "notDecidedYet": "Not decided yet",
+    "aFree30MinCallWith": "A free 30-min call with Rialto",
+    "rialtoRepliesHereOnWhatsApp": "Rialto replies here on WhatsApp",
+    "questions": " questions",
+    "hereSWhatWeCoveredCheck": "Here’s what we covered. Check it, then send it to Rialto.",
+    "hiRialtoSummaryFromNana": "*Hi Rialto — summary from Nana*",
+    "whatINeed": "*What I need*",
+    "interestedIn": "*Interested in*",
+    "nextStep": "*Next step*",
+    "sentFromNanaOnRideff": "_Sent from Nana on rideff_",
+    "summarizeForWhatsApp": "Summarize for WhatsApp",
+    "onCall": "On call · ",
+    "askNana": "Ask Nana",
+    "backToCall": "Back to call",
+    "onACall": "On a call · ",
+    "typing": "typing…",
+    "textOrVoicePreview": "Text or voice · preview",
+    "connecting": "Connecting…",
+    "muted": "Muted",
+    "speaking": "Speaking",
+    "listening": "Listening",
+    "you": "You",
+    "unmute": "Unmute",
+    "mute": "Mute",
+    "done": "Done",
+    "edit": "Edit",
+    "copied": "Copied ✓",
+    "copyText": "Copy text"
+  },
+  "Home": {
+    "showreel2026X": "Showreel 2026 · {x}",
+    "skip": "Skip ↗",
+    "yourBusinessGetsA": "Your business gets a",
+    "brain": "brain.",
+    "enterSite": "Enter site →",
+    "aISystemsAppsWebEichstattDE": "AI systems · Apps · Web — Eichstätt, DE",
+    "onePerson": "One person.",
+    "understandsIt": "Understands it.",
+    "buildsIt": "Builds it.",
+    "keepsItRunning": "Keeps it running.",
+    "iMRialtoIMapHow": "I'm Rialto — I map how your business runs, build the AI agents, apps and web around it, and stay on after launch. From Eichstätt, for a short list of clients.",
+    "seeTheWork": "See the work →",
+    "plansPricing": "Plans & pricing",
+    "intro": "Intro",
+    "weekFoundRepeatable": "/ week found repeatable",
+    "n15Min": "15 min",
+    "firstCallFree": "/ first call, free",
+    "chiefAgentOnline": "chief agent online",
+    "n6AreasMappedApprovalsOn": "6 areas mapped · approvals on",
+    "n18AgentsToolsConnected": "18 agents · tools connected",
+    "areasOneBrain": "/ areas, one brain",
+    "mon": "Mon",
+    "reportEveryWeek": "/ report, every week",
+    "startAProject": "Start a project →",
+    "pillarXX": "Pillar {x} — {y}",
+    "personFirstCallToLive": "/ person, first call to live",
+    "phasesToGoLive": "/ phases to go live",
+    "hostedInFrankfurt": "/ hosted in Frankfurt",
+    "fixedMonthlyPrice": "/ fixed monthly price",
+    "n01Thesis": "(01) Thesis",
+    "rialtoFounderOperatorRIDEFF": "Rialto · founder & operator, RIDEFF",
+    "whyMe": "Why me",
+    "iRanTradeMarketingAndAn": "I ran trade, marketing and an online shop myself — I build for how a business really runs",
+    "based": "Based",
+    "eichstattGermanyClientsAcrossTheEU": "Eichstätt, Germany → clients across the EU",
+    "how": "How",
+    "builtPutLiveAndMaintainedBy": "Built, put live and maintained — by the same person",
+    "n02ThreePillars": "(02) Three pillars",
+    "threeDisciplines": "Three disciplines.",
+    "onePerson2": "One person",
+    "theWholeWay": "the whole way.",
+    "notSureWhichAskMe": "Not sure which? Ask me →",
+    "enterX": "Enter {x} →",
+    "exampleFlow": "Example flow",
+    "n03YourBusinessBrain": "(03) Your business brain",
+    "sixAreasOneSystemThat": "Six areas. One system that",
+    "connects": "connects",
+    "them": "them.",
+    "mostBusinessesRunSixThingsOn": "Most businesses run six things on six tools. Slide through the plans to see what gets wired into one brain.",
+    "yourBrain": "Your brain",
+    "x6Live": "{x} / 6 live",
+    "n6AreasConnectedX": "/ 6 areas connected · {x}",
+    "illustrativeExactScopeIsSetAfter": "Illustrative. Exact scope is set after the first call.",
+    "n04Proof": "(04) Proof",
+    "donTTakeMyWordFor": "Don't take my word for it.",
+    "clickAround": "Click around.",
+    "flagshipCaseTICOriginals": "Flagship case · TIC Originals",
+    "aStreetwearLabelThatRunsBetween": "A streetwear label that runs between drops —",
+    "withoutTheBusywork": "without the busywork.",
+    "tillICollapseSellsLimitedDrops": "Till I Collapse sells limited drops online. I built the shop and the back office behind it — orders, DHL labels, refunds, restocks and the small-business tax limit, on one screen every morning.",
+    "openTheCase": "Open the case →",
+    "seeAllWork": "See all work",
+    "n05WaysToWorkTogether": "(05) Ways to work together",
+    "threePlans": "Three plans.",
+    "includedInEveryPlanEUHosting": "Included in every plan: EU hosting, your own domain, SSL, backups, updates and support through your client portal. Prices net, plus 19% VAT, 12-month term.",
+    "monthSetupFromX": "/ month · setup from {x}",
+    "askAboutX": "Ask about {x}",
+    "alsoFromRIDEFFLife": "Also from RIDEFF · Life",
+    "yourLifeGetsABrainToo": "Your life gets a brain, too.",
+    "morningBriefingMoneyTimeAndGoals": "Morning briefing, money, time and goals for you or your family. From €12.90 a month incl. VAT, cancel monthly, 14 days free — no card.",
+    "enterRIDEFFLife": "Enter RIDEFF Life →",
+    "onCostPlaceholderFigures": "On cost · placeholder figures",
+    "rIDEFFGrowthOnePersonOneInvoice": "RIDEFF Growth — one person, one invoice",
+    "n249Mo": "€249 / mo",
+    "n06HowItWorks": "(06) How it works",
+    "fromFirstCallToASystem": "From first call to a system that",
+    "runs": "runs.",
+    "n07Questions": "(07) Questions",
+    "beforeYou": "Before you",
+    "message": "message.",
+    "stillUnsureWhatsAppIsTheFastest": "Still unsure? WhatsApp is the fastest way in — or ask Nana, bottom right.",
+    "n08StartAProject": "(08) Start a project",
+    "bringTheBusyworkILlMake": "Bring the busywork. I'll make it",
+    "runItself": "run itself.",
+    "rialtoDirectLine": "Rialto · direct line",
+    "book15Minutes": "Book 15 minutes",
+    "freeFirstCallCalComLink": "Free first call · Cal.com link placeholder",
+    "forLongerBriefs": "For longer briefs",
+    "eichstattX": "Eichstätt — {x}",
+    "remoteEU": "Remote · EU",
+    "germanEnglish": "German · English",
+    "freeCall15Min11": "Free call · 15 min · 1:1 with Rialto",
+    "threeQuickQuestionsILlReply": "Three quick questions. I'll reply on WhatsApp.",
+    "whatDoYouNeed": "What do you need?",
+    "pickATimeForTheCall": "Pick a time for the call",
+    "centralEuropeanTime": "· Central European Time",
+    "bookMyFreeSlot": "Book my free slot →",
+    "noPitchNoObligationYourDetails": "No pitch, no obligation. Your details are only used to reply.",
+    "caseTICOriginalsTillICollapse": "Case · TIC Originals · Till I Collapse",
+    "close": "Close ×",
+    "fromDropToDoorstep": "From drop to doorstep —",
+    "oneSystem": "one system.",
+    "n01TheShopStripePayPalDE": "01 · The shop — Stripe & PayPal, DE / EN, 14-day returns",
+    "whatIBuilt": "What I built",
+    "everyMorningOneList": "Every morning, one list",
+    "n02TheBackOfficeTodayS": "02 · The back office — today's orders, refunds, restocks and payments",
+    "hosting": "hosting",
+    "eUFrankfurt": "EU · Frankfurt",
+    "phase": "phase",
+    "liveMaintained": "live · maintained",
+    "builtBy": "built by",
+    "onePerson3": "one person",
+    "iWantThisForMyBrand": "I want this for my brand →",
+    "rIDEFFAssistantPreview": "RIDEFF assistant · preview",
+    "hiIMNanaAskMe": "Hi, I'm Nana. Ask me about plans, timelines or what RIDEFF could do for your business.",
+    "askNana": "Ask Nana",
+    "rialtoWithANotebook": "Rialto with a notebook",
+    "rialtoAtHisDesk": "Rialto at his desk",
+    "rialtoFounderOfRIDEFF": "Rialto, founder of RIDEFF",
+    "tICOriginalsOnlineShop": "TIC Originals online shop",
+    "tICBackOfficeTodayList": "TIC back office — today list",
+    "tICProduct": "TIC product",
+    "yourName": "Your name",
+    "whatsAppNumberOrEmail": "WhatsApp number or email",
+    "tICBackOffice": "TIC back office",
+    "tICOriginalsProduct": "TIC Originals product",
+    "liveChatComingSoon": "Live chat coming soon",
+    "understand": "Understand",
+    "analysis": "Analysis",
+    "firstCallFree2": "first call, free",
+    "map": "Map",
+    "audit": "Audit",
+    "offer": "Offer",
+    "build": "Build",
+    "systems": "Systems",
+    "runsWhileYouSleep": "runs while you sleep",
+    "agents": "Agents",
+    "apps": "Apps",
+    "web": "Web",
+    "shops": "Shops",
+    "run": "Run",
+    "care": "Care",
+    "portalForEverything": "portal for everything",
+    "hosting2": "Hosting",
+    "updates": "Updates",
+    "reports": "Reports",
+    "support": "Support",
+    "iLearnHowYourBusinessActually": "I learn how your business actually runs.",
+    "beforeAnythingIsBuiltAFree": "Before anything is built: a free first call, then an analysis of how work moves, where it repeats and what it costs you. You get one clear offer — not a pitch.",
+    "firstCall": "First call",
+    "processMap": "Process map",
+    "step1": "Step 1",
+    "n15MinutesFreeNoPitch": "15 minutes, free, no pitch",
+    "mapTheWeek": "Map the week",
+    "everyStepToolAndPerson": "Every step, tool and person",
+    "findWhatRepeats": "Find what repeats",
+    "thatIsWhereASystemPays": "That is where a system pays off",
+    "offerInYourPortal": "Offer in your portal",
+    "approveWithOneClickOrDon": "Approve with one click — or don't",
+    "thePlanBecomesARunningSystem": "The plan becomes a running system.",
+    "aISystemsTeamAppsWebsitesAnd": "AI systems, team apps, websites and shops — built by me, on one foundation, hosted in Frankfurt. Each piece talks to the others.",
+    "aISystems": "AI systems",
+    "teamApps": "Team apps",
+    "webShops": "Web & shops",
+    "integrations": "Integrations",
+    "live": "Live",
+    "inquiryComesIn": "Inquiry comes in",
+    "emailWebsiteOrWhatsApp": "Email, website or WhatsApp",
+    "aISortsAndAnswers": "AI sorts and answers",
+    "draftsAReplyInYourTone": "Drafts a reply in your tone",
+    "offerPrepared": "Offer prepared",
+    "youApproveWithOneTap": "You approve with one tap",
+    "followUpRunsItself": "Follow-up runs itself",
+    "remindersInvoiceReport": "Reminders, invoice, report",
+    "liveIsWhereAgenciesLeaveI": "Live is where agencies leave. I stay.",
+    "hostingUpdatesBackupsFixesAndNew": "Hosting, updates, backups, fixes and new requests — all through your client portal, all handled by the person who built it.",
+    "portalSupport": "Portal support",
+    "weeklyReport": "Weekly report",
+    "ongoing": "Ongoing",
+    "hostedInFrankfurt2": "Hosted in Frankfurt",
+    "fastMonitoredEUOnly": "Fast, monitored, EU only",
+    "updatesBackups": "Updates & backups",
+    "dailyTestedDoneForYou": "Daily, tested, done for you",
+    "requestsViaPortal": "Requests via portal",
+    "oneThreadPerTopic": "One thread per topic",
+    "reportEveryMonday": "Report every Monday",
+    "knowItRunsWithoutChecking": "Know it runs without checking",
+    "core149Mo": "Core · €149 / mo",
+    "growth249Mo": "Growth · €249 / mo",
+    "wholeSystem": "Whole system",
+    "wholeSystem449Mo": "Whole system · €449 / mo",
+    "customers": "Customers",
+    "inquiriesAnsweredBookingsConfirmed": "Inquiries answered, bookings confirmed",
+    "sales": "Sales",
+    "offersDraftedFollowUpsSent": "Offers drafted, follow-ups sent",
+    "team": "Team",
+    "shiftsTasksCheckIns": "Shifts, tasks, check-ins",
+    "operations": "Operations",
+    "ordersStockSuppliers": "Orders, stock, suppliers",
+    "finance": "Finance",
+    "invoicesPaymentsReminders": "Invoices, payments, reminders",
+    "marketing": "Marketing",
+    "postsNewslettersReviews": "Posts, newsletters, reviews",
+    "whoIsBehindRIDEFF": "Who is behind RIDEFF?",
+    "meRialtoBasedInEichstattI": "Me — Rialto, based in Eichstätt. I worked in export and import, social media and e-commerce before building RIDEFF. You talk to the person who builds your system.",
+    "doINeedToUnderstandAI": "Do I need to understand AI?",
+    "noThatIsThePointYou": "No. That is the point. You tell me how your business runs; I decide what to automate, build it and explain only what you need to use it.",
+    "whatDoesItCost": "What does it cost?",
+    "core149Growth249WholeSystem": "Core €149, Growth €249, Whole system €449 per month, plus a one-off setup from €1,290. Net prices plus 19% VAT, 12-month term. The exact setup is quoted after the first call.",
+    "whereIsMyData": "Where is my data?",
+    "hostedInTheEUInFrankfurt": "Hosted in the EU, in Frankfurt. Backups, updates and SSL are included in every plan.",
+    "whatHappensAfterLaunch": "What happens after launch?",
+    "iKeepItRunningUpdatesFixes": "I keep it running. Updates, fixes and new requests go through your client portal, with one thread per topic.",
+    "howSoonCanWeStart": "How soon can we start?",
+    "iKeepTheNumberOfClients": "I keep the number of clients small on purpose. WhatsApp is the fastest way to check when the next slot opens.",
+    "whatDoesGrowthInclude": "What does Growth include?",
+    "growthConnectsFourAreasUsuallyCustomers": "Growth connects four areas — usually customers, sales, team and operations — for €249 a month plus setup from €1,990. Want me to book a call with Rialto?",
+    "howLongUntilLive": "How long until live?",
+    "fivePhasesFirstCallAnalysisBuild": "Five phases: first call, analysis, build, test, live. Rialto gives you a timeline after the first call.",
+    "bookACall": "Book a call",
+    "useTheFormUnderStartA": "Use the form under \"Start a project\", or WhatsApp Rialto directly at +49 176 32572420.",
+    "pillar0": "Pillar 0",
+    "aISystem": "AI system",
+    "teamApp": "Team app",
+    "websiteShop": "Website / shop",
+    "notSureYet": "Not sure yet",
+    "sun": "Sun",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "jan": "Jan",
+    "feb": "Feb",
+    "mar": "Mar",
+    "apr": "Apr",
+    "may": "May",
+    "jun": "Jun",
+    "jul": "Jul",
+    "aug": "Aug",
+    "sep": "Sep",
+    "oct": "Oct",
+    "nov": "Nov",
+    "dec": "Dec",
+    "soundOff": "Sound off",
+    "soundOn": "Sound on",
+    "shopDEEN": "Shop · DE / EN",
+    "stripePayPal": "Stripe & PayPal",
+    "backOffice": "Back office",
+    "dHLLabels": "DHL labels",
+    "restockAlerts": "Restock alerts",
+    "onlineShopInGermanAndEnglish": "Online shop in German and English, with Stripe and PayPal",
+    "backOfficeThatOpensOnA": "Back office that opens on a “today” list",
+    "dHLShippingLabelsForAllOpen": "DHL shipping labels for all open orders in one click",
+    "restockTrackingWithCustomerWaitingLists": "Restock tracking with customer waiting lists",
+    "smallBusinessTaxLimitTrackedLive": "Small-business tax limit tracked live",
+    "abandonedCartWinBack": "Abandoned-cart win-back",
+    "n4OrdersToShip": "4 orders to ship",
+    "n1RefundToProcess": "1 refund to process",
+    "n2ProductsToRestock": "2 products to restock",
+    "n1PaymentToChase": "1 payment to chase",
+    "n4AbandonedCartsToWinBack": "4 abandoned carts to win back",
+    "home": "Home",
+    "theControlRoom": "The Control Room",
+    "theWorkbench": "The Workbench",
+    "theStorefront": "The Storefront",
+    "everyday": "Everyday",
+    "work": "Work",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "inquiries": "Inquiries",
+    "offers": "Offers",
+    "shifts": "Shifts",
+    "invoices": "Invoices",
+    "dataEntry": "Data entry",
+    "cafeClient": "Café client",
+    "hotelClient": "Hotel client",
+    "shopClient": "Shop client",
+    "backupCompleted": "Backup completed",
+    "inquiryAnswered": "Inquiry answered",
+    "invoiceR2026041Paid": "Invoice R-2026-041 paid",
+    "weeklyReportSent": "Weekly report sent",
+    "gDPRByDefault": "GDPR by default",
+    "oneFixedMonthlyPrice": "One fixed monthly price",
+    "builtLiveMaintained": "Built · live · maintained",
+    "germanEnglish2": "German & English",
+    "onePersonNoHandoffs": "One person, no handoffs",
+    "iVeStoodWhereYouStand": "I've stood where you stand — chasing invoices, answering the same questions, juggling five tools that never talk to each other.",
+    "soIBuildWhatIWished": "So I build what I wished I'd had: one system that runs the busywork, so you can run the business.",
+    "repeat": "Repeat",
+    "noHandoffs": "no handoffs",
+    "oneBrain": "one brain",
+    "alwaysOn": "always on",
+    "connected": "Connected",
+    "notInPlan": "Not in plan",
+    "businessDemo": "Business demo",
+    "aSampleBusinessBrainDashboardFlows": "A sample business brain — dashboard, flows and AI reports you can click through.",
+    "lifeDemo": "Life demo",
+    "theRIDEFFLifeCockpitWithA": "The RIDEFF Life cockpit with a morning briefing, money and goals.",
+    "clientPortal": "Client portal",
+    "whereEveryClientApprovesOffersPays": "Where every client approves offers, pays and talks to me — one thread per topic.",
+    "startHere": "Start here",
+    "oneAreaConnectedUsuallyCustomersAnd": "One area connected — usually customers and sales.",
+    "websiteOrCoreSystem": "Website or core system",
+    "aIInboxForInquiries": "AI inbox for inquiries",
+    "hostingBackupsUpdates": "Hosting, backups, updates",
+    "mostChosen": "Most chosen",
+    "customersSalesTeamAndOperationsIn": "Customers, sales, team and operations in one system.",
+    "everythingInCore": "Everything in Core",
+    "automatedOffersFollowUps": "Automated offers & follow-ups",
+    "monthlyReport": "Monthly report",
+    "fullBrain": "Full brain",
+    "everyAreaConnectedFinanceAndMarketing": "Every area connected, finance and marketing included.",
+    "everythingInGrowth": "Everything in Growth",
+    "financeInvoicingFlows": "Finance & invoicing flows",
+    "marketingAutomation": "Marketing automation",
+    "prioritySupport": "Priority support",
+    "agencyWebsiteOneOff": "Agency website, one-off",
+    "freelancerForAutomations": "Freelancer for automations",
+    "mo": "€ — / mo",
+    "n46SeparateTools": "4–6 separate tools",
+    "yourTimeKeepingItTogether": "Your time keeping it together",
+    "hMo": "— h / mo",
+    "n15MinutesYouTellMeHow": "15 minutes. You tell me how the business runs.",
+    "iMapWhatRepeatsAndWhat": "I map what repeats and what to connect.",
+    "iBuildItYouSeeProgress": "I build it. You see progress in your portal.",
+    "test": "Test",
+    "yourTeamTriesItInA": "Your team tries it in a test run.",
+    "itGoesLiveAndIKeep": "It goes live — and I keep it running."
+  },
+  "Understand": {
+    "yourBusinessUnderstood": "Your business · understood",
+    "areas": "areas ·",
+    "tasks": "tasks ·",
+    "repeat": "repeat ·",
+    "week": "/ week",
+    "home": "Home",
+    "understand": "Understand",
+    "pillar01": "· Pillar 01",
+    "clarity": "Clarity",
+    "lens": "Lens",
+    "bookTheFirstCall": "Book the first call →",
+    "theFirstCall": "The first call",
+    "fifteenMinutes": "Fifteen minutes.",
+    "iListenYouWatchItTake": "I listen, you watch it take shape.",
+    "firstCallExample": "First call · example",
+    "whatIHear": "What I hear",
+    "n6Areas": "/ 6 areas",
+    "yourWeek": "Your week",
+    "fortyHours": "Forty hours.",
+    "howManyAreReallyYours": "How many are really yours?",
+    "tapWhatEatsYourWeekEvery": "Tap what eats your week. Every coloured block is an hour spent on work that repeats. Then hand it over.",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "hWeek": "h / week",
+    "whatYouGet": "What you get",
+    "aPlanOnPaper": "A plan on paper.",
+    "notAPitch": "Not a pitch.",
+    "theMapBecomesOneClearOffer": "The map becomes one clear offer in your client portal: which areas, which phases, one fixed price. Approve it with a click — or don't. Go on, try it.",
+    "nextPillar": "Next pillar →",
+    "build": "Build",
+    "enterBuild": "Enter Build →",
+    "rIDEFFOffer": "RIDEFF · offer",
+    "offerYourBusiness": "Offer · [your business]",
+    "yourBusinessBrainPhaseOne": "Your business brain, phase one.",
+    "n249Mo": "€249 / mo",
+    "iAcceptTheTerms": "I accept the terms",
+    "approved": "Approved",
+    "xHashStored": "{x} · hash stored",
+    "answeringInquiries": "Answering inquiries",
+    "writingOffers": "Writing offers",
+    "chasingInvoices": "Chasing invoices",
+    "invoiceFINALV3Xlsx": "invoice_FINAL_v3.xlsx",
+    "whoCoversSaturday": "Who covers Saturday??",
+    "callBackWeber": "call back Weber",
+    "stockAskJonas": "stock — ask Jonas",
+    "whatsApp87": "WhatsApp (87)",
+    "kundenlisteAltCsv": "Kundenliste_alt.csv",
+    "sendInvoice": "send invoice!!",
+    "bookingPhoneOrMail": "booking — phone or mail?",
+    "passwordOnAPostIt": "password on a post-it",
+    "n3UnpaidCheck": "3 unpaid — check",
+    "newInquiryViaInstagram": "new inquiry via Instagram",
+    "excelCrashedAgain": "Excel crashed again",
+    "copyPricesToShop": "copy prices to shop",
+    "terminVerschoben": "Termin verschoben",
+    "whereIsTheOfferTemplate": "where is the offer template?",
+    "pasteIntoBookkeeping": "paste into bookkeeping",
+    "supplierRaisedPrices": "supplier raised prices",
+    "replyLater": "reply later",
+    "n2ReviewAnswerIt": "2★ review — answer it",
+    "newsletterNotSent": "newsletter (not sent)",
+    "lenaSickSwap": "Lena sick — swap",
+    "printSignScan": "print, sign, scan",
+    "n14Unread": "14 unread",
+    "asItFeels": "As it feels",
+    "yourBusinessFromTheInside": "Your business, from the inside.",
+    "threeInboxesASpreadsheetNobodyTrusts": "Three inboxes, a spreadsheet nobody trusts, a chat group for shifts. Move the lens over it.",
+    "underneath": "Underneath",
+    "iLookUnderneath": "I look underneath.",
+    "inTheAnalysisITraceHow": "In the analysis I trace how work really moves — every tool, every handoff, everything that repeats.",
+    "understood": "Understood",
+    "understood2": "Understood.",
+    "sixAreasTheTasksThatRepeat": "Six areas, the tasks that repeat, and the hours they cost. That map becomes your offer.",
+    "customers": "Customers",
+    "inquiriesFrom3Inboxes": "Inquiries from 3 inboxes",
+    "bookings": "Bookings",
+    "reviewReplies": "Review replies",
+    "sales": "Sales",
+    "offers": "Offers",
+    "followUps": "Follow-ups",
+    "priceList": "Price list",
+    "team": "Team",
+    "shiftPlan": "Shift plan",
+    "sickDaySwaps": "Sick-day swaps",
+    "onboarding": "Onboarding",
+    "operations": "Operations",
+    "stockChecks": "Stock checks",
+    "supplierOrders": "Supplier orders",
+    "copyToShop": "Copy to shop",
+    "finance": "Finance",
+    "invoices": "Invoices",
+    "reminders": "Reminders",
+    "bookkeepingExport": "Bookkeeping export",
+    "marketing": "Marketing",
+    "newsletter": "Newsletter",
+    "socialPosts": "Social posts",
+    "googleReviews": "Google reviews",
+    "followingUp": "Following up",
+    "planningShifts": "Planning shifts",
+    "updatingStock": "Updating stock",
+    "copyingDataBetweenTools": "Copying data between tools",
+    "postingOnSocial": "Posting on social",
+    "howDoesANewCustomerUsually": "How does a new customer usually reach you?",
+    "you": "You",
+    "emailInstagramSometimesTheyJustCall": "Email, Instagram, sometimes they just call. It is a mess.",
+    "andWhoWritesTheOfferAnd": "And who writes the offer — and how long does one take?",
+    "meEveningsMostlyMaybe40Minutes": "Me. Evenings, mostly. Maybe 40 minutes each.",
+    "thenThatIsWhereWeStart": "Then that is where we start. Inbox and offers — about 7 hours a week back.",
+    "inquiriesArriveIn3Channels": "Inquiries arrive in 3 channels",
+    "offersTake40MinWrittenAt": "Offers take 40 min, written at night",
+    "startWithInboxOffers7H": "Start with inbox + offers · ≈7 h back",
+    "phase1": "Phase 1",
+    "repeats": "↻ repeats · ",
+    "hWk": " h / wk",
+    "customersAIInbox": "Customers · AI inbox",
+    "salesOffersFollowUps": "Sales · offers & follow-ups",
+    "teamApp": "Team · app",
+    "phase2": "Phase 2",
+    "setup": "Setup",
+    "from1990": "from €1,990",
+    "approved2": "Approved ✓",
+    "approve": "Approve",
+    "showMyWeekAgain": "↺ Show my week again",
+    "handItToRIDEFF": "Hand it to RIDEFF →",
+    "backInYourWeek": "Back in your week",
+    "spentOnWorkThatRepeats": "Spent on work that repeats"
+  },
+  "Build": {
+    "home": "Home",
+    "build": "Build",
+    "particles": "Particles",
+    "stage": "Stage",
+    "seeInsideThePlatform": "See inside the platform ↓",
+    "startAProject": "Start a project",
+    "scrollToWatchItComeTogether": "Scroll to watch it come together — move your cursor through the field",
+    "theToolTax": "The tool tax",
+    "sixAppsYouRent": "Six apps you rent.",
+    "onePlatformYouOwn": "One platform you own.",
+    "everyToolSolvesOneProblemAnd": "Every tool solves one problem and adds another — one more login, one more bill, one more place your data hides. I replace the patchwork with one system shaped around how your business actually works.",
+    "yourPlatform": "Your platform",
+    "appYourbusinessDe": "app.yourbusiness.de",
+    "live": "live",
+    "n1Login": "1 login",
+    "n1Database": "1 database",
+    "n1Price": "1 price",
+    "insideYourPlatform": "Inside your platform",
+    "sixLayers": "Six layers.",
+    "builtAsOne": "Built as one.",
+    "youOnlySeeTheTopThe": "You only see the top — the apps. Underneath, every layer is designed together, so a message on WhatsApp can end up as a paid invoice without anyone copying a thing.",
+    "oneRequestStartToFinish": "One request, start to finish",
+    "fromWebsiteForm": "From website form",
+    "toPaidInvoice": "to paid invoice.",
+    "n06YourInput": "/ 06 · your input:",
+    "n1Tap": "1 tap",
+    "whatIBuild": "What I build",
+    "ifItRunsYourBusiness": "If it runs your business,",
+    "iCanBuildIt": "I can build it.",
+    "customSoftwareUsedToMeanAn": "Custom software used to mean an agency and six months. With AI-assisted engineering I design, code and ship it myself — in weeks, on one stack I host and maintain.",
+    "connectsWithTheToolsYouAlready": "Connects with the tools you already use",
+    "buildsTakenApart": "Builds, taken apart",
+    "threeBuilds": "Three builds.",
+    "layerByLayer": "Layer by layer.",
+    "eachOneSplitIntoWhatYou": "Each one split into what you see, what runs behind it, what it's built on — and how it looks on a phone.",
+    "n02System": "02 · System",
+    "n01Interface": "01 · Interface",
+    "n03Spec": "03 · Spec",
+    "process": "Process",
+    "fromFirstCallTo": "From first call to",
+    "yourOwnPlatform": "your own platform.",
+    "nextPillar": "Next pillar →",
+    "run": "Run",
+    "whatHappensAfterLaunch": ". What happens after launch.",
+    "enterRun": "Enter Run →",
+    "startHere": "Start here",
+    "bringYourSixToolsLeaveWith": "Bring your six tools. Leave with",
+    "onePlatform": "one platform.",
+    "whatsAppRialto": "WhatsApp Rialto",
+    "book15Min": "Book 15 min",
+    "mobile": "Mobile",
+    "spreadsheet": "Spreadsheet",
+    "free": "free*",
+    "customersPrices": "Customers & prices",
+    "n3Versions": "3 versions",
+    "inbox": "Inbox",
+    "n8Mo": "€8/mo",
+    "inquiriesOffers": "Inquiries & offers",
+    "lostThreads": "lost threads",
+    "chatApp": "Chat app",
+    "ordersOnWhatsApp": "Orders on WhatsApp",
+    "noHistory": "no history",
+    "bookingTool": "Booking tool",
+    "n39Mo": "€39/mo",
+    "appointments": "Appointments",
+    "doesnTSync": "doesn't sync",
+    "invoicingApp": "Invoicing app",
+    "n19Mo": "€19/mo",
+    "invoicesReminders": "Invoices & reminders",
+    "typedTwice": "typed twice",
+    "shopSoftware": "Shop software",
+    "n49Mo": "€49/mo",
+    "productsStock": "Products & stock",
+    "ownLogin": "own login",
+    "apps": "Apps",
+    "whatYourTeamYourClientsAnd": "What your team, your clients and you actually open — on phone and desktop.",
+    "teamApp": "Team app",
+    "clientPortal": "Client portal",
+    "dashboard": "Dashboard",
+    "website": "Website",
+    "aIAgents": "AI agents",
+    "theyReadSortDraftAndSummarise": "They read, sort, draft and summarise on your own data. Nothing leaves with your name on it until you approve.",
+    "replyAgent": "Reply agent",
+    "offerAgent": "Offer agent",
+    "reportAgent": "Report agent",
+    "automations": "Automations",
+    "rulesThatMoveRoutineWorkOn": "Rules that move routine work on their own — triggers, reminders, schedules and approvals.",
+    "triggers": "Triggers",
+    "reminders": "Reminders",
+    "schedules": "Schedules",
+    "approvals": "Approvals",
+    "dataCore": "Data core",
+    "oneDatabaseForCustomersOrdersJobs": "One database for customers, orders, jobs and money. Every app and agent reads the same truth.",
+    "customers": "Customers",
+    "orders": "Orders",
+    "jobs": "Jobs",
+    "invoices": "Invoices",
+    "entryPoints": "Entry points",
+    "everyWayACustomerReachesYou": "Every way a customer reaches you lands here — already linked to the right person.",
+    "shop": "Shop",
+    "email": "Email",
+    "forms": "Forms",
+    "integrations": "Integrations",
+    "theServicesYouKeepUsingWired": "The services you keep using, wired in instead of copied from.",
+    "requestComesIn": "Request comes in",
+    "canYouCater40PeopleOn": "“Can you cater 40 people on Saturday?” — sent through your website form.",
+    "matchedToCustomer": "Matched to customer",
+    "knownCustomerCafeLindnerThreePast": "Known customer: Café Lindner. Three past orders, prefers vegetarian.",
+    "replyOfferDrafted": "Reply & offer drafted",
+    "anAgentWritesTheAnswerIn": "An agent writes the answer in your tone and prepares an offer: €1,840.",
+    "youApprove": "You approve",
+    "oneTapInYourDashboardIt": "One tap in your dashboard. It goes out with your logo and terms.",
+    "sat": "Sat",
+    "teamScheduled": "Team scheduled",
+    "shiftForThreeCreatedPackingList": "Shift for three created, packing list on every phone in the team app.",
+    "mon": "Mon",
+    "invoiceReport": "Invoice & report",
+    "invoiceR2026052SentPaid": "Invoice R-2026-052 sent, paid by card, and it shows up in Monday’s report.",
+    "fashionLabelGermany": "Fashion label · Germany",
+    "caseSummaryPlaceholderWhatTICOriginals": "[Case summary placeholder — what TIC Originals needed and what the site and system do for them now.]",
+    "highlight1EGStorefrontWith": "[Highlight 1 — e.g. storefront with card, SEPA and Klarna]",
+    "highlight2EGOrdersFlow": "[Highlight 2 — e.g. orders flow into stock and invoices]",
+    "highlight3EGFastPages": "[Highlight 3 — e.g. fast pages, EU hosting]",
+    "highlight4EGMaintainedMonthly": "[Highlight 4 — e.g. maintained monthly through the portal]",
+    "pages": "Pages",
+    "ordersMo": "Orders / mo",
+    "hosting": "Hosting",
+    "tICHomepageScreenshot": "TIC — homepage screenshot",
+    "tICShopAdminScreenshot": "TIC — shop / admin screenshot",
+    "siteShopFlows": "site · shop · flows",
+    "cardSEPAKlarna": "card · SEPA · Klarna",
+    "eUFrankfurt": "EU · Frankfurt",
+    "liveMaintained": "live · maintained",
+    "ownProductClientPortal": "Own product · client portal",
+    "whereEveryClientApprovesOffersPays": "Where every client approves offers, pays invoices and talks to me — one thread per topic, never a chat that scrolls away.",
+    "emailLoginWithA6Digit": "Email login with a 6-digit code — no passwords to forget.",
+    "offerApprovalStoresTimeIPTerms": "Offer approval stores time, IP, terms version and a hashed PDF.",
+    "invoicesRYYYYNNNCardSEPA": "Invoices R-YYYY-NNN — card, SEPA, Klarna or bank transfer.",
+    "ownerSupportFinanceAndBuilderRoles": "Owner, Support, Finance and Builder roles, read from the database.",
+    "roles": "Roles",
+    "languages": "Languages",
+    "passwords": "Passwords",
+    "openThePortalDemo": "Open the portal demo",
+    "portalClientDashboard": "Portal — client dashboard",
+    "portalAdminInbox": "Portal — admin inbox",
+    "email6DigitCode": "email · 6-digit code",
+    "ipTimePdfHash": "ip · time · pdf hash",
+    "n14UStGRYYYYNNN": "§14 UStG · R-YYYY-NNN",
+    "supabaseFrankfurt": "supabase · frankfurt",
+    "ownProductConsumer": "Own product · consumer",
+    "aPersonalBrainForYourDay": "A personal brain for your day — morning briefing, money, time and goals, for one person or a household of four.",
+    "morningBriefingWrittenFromYourCalendar": "Morning briefing written from your calendar and accounts.",
+    "moneyAndTimeInOneCalm": "Money and time in one calm cockpit.",
+    "togetherPlanForUpTo4": "Together plan for up to 4 people.",
+    "n14DaysFreeNoCardCancel": "14 days free, no card, cancel any month.",
+    "plans": "Plans",
+    "trial": "Trial",
+    "tryTheLifeDemo": "Try the Life demo",
+    "lifeCockpitScreenshot": "Life — cockpit screenshot",
+    "lifeBriefingScreenshot": "Life — briefing screenshot",
+    "n14PerPlan": "1 – 4 per plan",
+    "n14DaysNoCard": "14 days · no card",
+    "monthlyYearly": "monthly · yearly",
+    "scattered": "Scattered",
+    "platform": "Platform",
+    "inbound": "Inbound",
+    "agents": "Agents",
+    "sixTools": "Six tools",
+    "onePlatform2": "One platform",
+    "everyDoor": "Every door",
+    "flowsAgents": "Flows & agents",
+    "pillar02": "Pillar 02",
+    "fromSixToolsToOnePlatform": "From six tools to one platform — yours.",
+    "spreadsheetInboxChatBookingToolInvoicing": "Spreadsheet, inbox, chat, booking tool, invoicing, shop software. I merge them into one system built around how you work — then add automation and AI on top.",
+    "n01OnePlatform": "01 · One platform",
+    "everythingInOnePlace": "Everything in one place.",
+    "customersOrdersJobsAndNumbersIn": "Customers, orders, jobs and numbers in one database — with your logo, your workflow and your rules. No more copy-paste between apps.",
+    "n02EveryDoorLeadsIn": "02 · Every door leads in",
+    "webShopWhatsAppEmailOneInbox": "Web, shop, WhatsApp, email — one inbox.",
+    "whateverTheChannelEveryRequestLands": "Whatever the channel, every request lands in the same system, already sorted and linked to the right customer.",
+    "n03AutomationAgents": "03 · Automation & agents",
+    "flowsRunItAgentsThinkIt": "Flows run it. Agents think it through.",
+    "rulesMoveTheRoutineWorkOn": "Rules move the routine work on their own. AI agents read, draft, sort and report — and you approve what matters.",
+    "n04AppsForEveryone": "04 · Apps for everyone",
+    "yourTeamYourClientsYourDashboard": "Your team, your clients, your dashboard.",
+    "aTeamAppOnEveryPhone": "A team app on every phone, a portal for your clients, one dashboard for you — all on the same platform, hosted in Frankfurt.",
+    "n6ToolsFound14HWeek": "✓ 6 tools found · 14 h / week of copy-paste",
+    "oneDatabaseYourLogoYourRules": "✓ one database · your logo · your rules",
+    "n4DoorsIn0CopyPaste": "✓ 4 doors in · 0 copy-paste",
+    "liveSSLDailyBackups": "✓ live · SSL · daily backups",
+    "threeFailed": "three failed",
+    "stock": "Stock",
+    "reports": "Reports",
+    "appsToOpen": "Apps to open",
+    "logins": "Logins",
+    "placesYourDataLives": "Places your data lives",
+    "hoursOfCopyPasteWeek": "Hours of copy-paste / week",
+    "you": "You",
+    "customPlatforms": "Custom platforms",
+    "yourOwnSystemInsteadOfRented": "Your own system instead of rented tools.",
+    "teamApps": "Team apps",
+    "phoneAndDesktopShiftsTasksChecklists": "Phone and desktop — shifts, tasks, checklists.",
+    "clientPortals": "Client portals",
+    "offersPaymentsFilesOneThreadPer": "Offers, payments, files — one thread per topic.",
+    "replySortDraftAndReportOn": "Reply, sort, draft and report on your data.",
+    "triggersRemindersSchedulesApprovals": "Triggers, reminders, schedules, approvals.",
+    "dashboards": "Dashboards",
+    "liveNumbersAlertsAndAMonday": "Live numbers, alerts and a Monday report.",
+    "websitesShops": "Websites & shops",
+    "fastFindableWiredIntoThePlatform": "Fast, findable, wired into the platform.",
+    "aPIsIntegrations": "APIs & integrations",
+    "connectAnythingWithAnAPIOr": "Connect anything with an API — or build one.",
+    "seeIt": "See it ↗",
+    "interface": "Interface",
+    "nextJsReactTypeScriptFastOn": "Next.js · React · TypeScript — fast on every phone",
+    "dataHosting": "Data & hosting",
+    "supabasePostgresInFrankfurtDailyBackups": "Supabase Postgres in Frankfurt · daily backups",
+    "paymentsMail": "Payments & mail",
+    "stripeSEPAKlarnaInvoicesThatMeet": "Stripe · SEPA · Klarna · invoices that meet German law",
+    "aIAgents2": "AI & agents",
+    "lLMAgentsWithToolAccessHuman": "LLM agents with tool access · human approval built in",
+    "firstCall": "First call",
+    "n15MinutesYouShowMeThe": "15 minutes. You show me the tools you use today.",
+    "analysis": "Analysis",
+    "iMapWhatRepeatsAndWhat": "I map what repeats and what one platform should do.",
+    "iBuildItYouWatchProgress": "I build it. You watch progress in your portal.",
+    "test": "Test",
+    "yourTeamTriesItInA": "Your team tries it in a test run.",
+    "live2": "Live",
+    "oldToolsSwitchedOffAndI": "Old tools switched off — and I keep it running."
+  },
+  "Run": {
+    "homeRunPillar03": "Home / Run · Pillar 03",
+    "handled": "Handled",
+    "normal": "normal",
+    "sampleDay": "Sample day",
+    "openThePortalDemo": "Open the portal demo ↗",
+    "n24HDialScroll": "24 h dial · scroll",
+    "whatIWatch": "What I watch",
+    "sixLayers": "Six layers.",
+    "checkedEveryNight": "Checked every night.",
+    "thePlatformIBuiltForYou": "The platform I built for you is the platform I look after. Every layer gets checked while you sleep — and if something looks off, I fix it before you notice.",
+    "exampleFigures": "Example figures.",
+    "nightlyCheck": "Nightly check ·",
+    "yourPortal": "Your portal",
+    "onePlace": "One place.",
+    "oneThread": "One thread",
+    "perTopic": "per topic.",
+    "scrollAndWatchTheGroupChat": "Scroll and watch the group chat sort itself. Requests, invoices, project phases and files live in your client portal — every topic gets its own thread, so nothing scrolls away and nothing gets lost.",
+    "openTheRealPortalDemo": "Open the real portal demo ↗",
+    "n4Threads0Lost": "4 threads · 0 lost",
+    "groupChat214Unread": "Group chat · 214 unread",
+    "whenSomethingBreaks": "When something breaks",
+    "goOn": "Go on.",
+    "breakIt": "Break it.",
+    "yourShopDe": "your-shop.de",
+    "newSeasonIsIn": "New season is in.",
+    "error500CheckoutNotResponding": "Error 500 · checkout not responding",
+    "fixTimeline": "Fix timeline",
+    "itGrowsWithYou": "It grows with you",
+    "yourPlatform": "Your platform",
+    "keepsGrowing": "keeps growing.",
+    "newIdeaNewProcessNewLocation": "New idea, new process, new location? Ask in your portal. It gets built into the same platform — not stacked on the pile as another tool.",
+    "modulesLive": "Modules live",
+    "n06SamePlatform": "/ 06 · same platform",
+    "everyMonday": "Every Monday",
+    "oneEmailThatTellsYou": "One email that tells you",
+    "itSRunning": "it's running.",
+    "whatTheSystemHandledWhatChanged": "What the system handled, what changed and what needs you — written from your own numbers, so you never have to log in just to check.",
+    "fromRIDEFFWeekly": "From: RIDEFF · weekly",
+    "mon0700": "Mon 07:00",
+    "yourWeekInOneRead": "Your week, in one read.",
+    "n2OffersWaitingForYourApproval": "2 offers waiting for your approval",
+    "review": "Review",
+    "whatSIncluded": "What's included",
+    "oneReceipt": "One receipt.",
+    "noSurprises": "No surprises.",
+    "everythingThatKeepsYourSystemRunning": "Everything that keeps your system running is on it. Limits like domains or change requests are written into your offer before you approve.",
+    "growthMonthlyEichstatt": "Growth · monthly · Eichstätt",
+    "incl": "incl.",
+    "tOTAL": "TOTAL",
+    "n24900Mo": "€249.00 / mo",
+    "netPlus19VAT12Month": "net · plus 19% VAT · 12-month term",
+    "onePersonOneInvoiceThankYou": "one person · one invoice · thank you",
+    "thePromise": "The promise",
+    "measured": "Measured,",
+    "notDescribed": "not described.",
+    "firstReply": "First reply",
+    "hoursMax": "hours max",
+    "onWorkingDaysEveryMessageIn": "On working days, every message in your portal gets a real answer — from me.",
+    "uptimeLast30Days": "Uptime · last 30 days",
+    "monitoredAroundTheClockYouSee": "Monitored around the clock. You see the same chart in your portal.",
+    "backups": "Backups",
+    "daily": "Daily",
+    "everyNightKeptInTheEU": "Every night, kept in the EU. Restored by me if you ever need it.",
+    "yourContact": "Your contact",
+    "person": "person",
+    "rialtoTheSamePersonFromFirst": "Rialto — the same person from first call to every update. No ticket queue, no handoffs.",
+    "exampleFiguresFinalReplyTimeAnd": "Example figures — final reply time and uptime are set with you in your offer.",
+    "thatSTheWholeLoop": "That's the whole loop:",
+    "understandBuildRun": "Understand → Build → Run.",
+    "startAProject": "Start a project →",
+    "website": "Website",
+    "newVersionUp": "New version up",
+    "bookingForm": "Booking form",
+    "liveTomorrow": "Live tomorrow",
+    "invoices": "Invoices",
+    "allPaid": "All paid",
+    "teamApp": "Team app",
+    "shiftSwapLive": "Shift swap live",
+    "canYouChangeTheHomepagePhoto": "Can you change the homepage photo?",
+    "you": "You",
+    "newVersionIsUp": "New version is up ✓",
+    "fontABitBigger": "Font a bit bigger?",
+    "canWeAddAGuestCount": "Can we add a guest-count field?",
+    "addedLiveTomorrow": "Added — live tomorrow",
+    "didTheOctoberInvoiceGoOut": "Did the October invoice go out?",
+    "paidBySEPAOn0211": "Paid by SEPA on 02.11",
+    "canStaffSwapShiftsInThe": "Can staff swap shifts in the app?",
+    "shiftSwapIsLive": "Shift swap is live",
+    "perfectThanks": "Perfect, thanks!",
+    "apps": "Apps",
+    "pages08S": "pages 0.8 s",
+    "aIAgents": "AI agents",
+    "n12DraftsOk": "12 drafts ok",
+    "automations": "Automations",
+    "n214RunsOk": "214 runs ok",
+    "dataCore": "Data core",
+    "entryPoints": "Entry points",
+    "n0Unanswered": "0 unanswered",
+    "integrations": "Integrations",
+    "allSynced": "all synced",
+    "month1": "Month 1",
+    "goLive": "Go live",
+    "websiteInboxAndCustomersTheCore": "Website, inbox and customers — the core.",
+    "month2": "Month 2",
+    "askedForInThePortalLive": "Asked for in the portal, live a few days later.",
+    "month4": "Month 4",
+    "shiftsAndChecklistsOnEveryPhone": "Shifts and checklists on every phone.",
+    "month6": "Month 6",
+    "offerAgent": "Offer agent",
+    "draftsOffersFromYourOwnPrices": "Drafts offers from your own prices.",
+    "month9": "Month 9",
+    "shop": "Shop",
+    "sameCustomersSameStockNowOnline": "Same customers, same stock — now online.",
+    "month12": "Month 12",
+    "financeFlows": "Finance flows",
+    "invoicesRemindersExportForYourAccountant": "Invoices, reminders, export for your accountant.",
+    "inquiryAnswered": "Inquiry answered",
+    "offerDrafted": "Offer drafted",
+    "invoicePaid": "Invoice paid",
+    "shiftPlanSent": "Shift plan sent",
+    "shopOrdersSynced": "Shop orders synced",
+    "remindersSent": "Reminders sent",
+    "securityUpdate": "Security update",
+    "backupComplete": "Backup complete",
+    "reportWritten": "Report written",
+    "briefingReady": "Briefing ready",
+    "backup": "Backup",
+    "nightlyBackupCompleted": "Nightly backup completed",
+    "customers": "Customers",
+    "inquiryAnsweredIn2Min": "Inquiry answered in 2 min",
+    "finance": "Finance",
+    "invoiceR2026041Paid": "Invoice R-2026-041 paid",
+    "update": "Update",
+    "securityUpdateDeployed": "Security update deployed",
+    "sales": "Sales",
+    "offerDraftedWaitingForYou": "Offer drafted · waiting for you",
+    "team": "Team",
+    "shiftPlanPublished": "Shift plan published",
+    "monitor": "Monitor",
+    "responseTime180Ms": "Response time 180 ms",
+    "bookingConfirmed": "Booking confirmed",
+    "mon": "Mon",
+    "weeklyReportSent": "Weekly report sent",
+    "n6InquiriesAnswered": "6 inquiries answered",
+    "offerApprovedByYou": "Offer approved by you",
+    "tue": "Tue",
+    "backupCompleted": "Backup completed",
+    "invoiceRemindersSent": "Invoice reminders sent",
+    "newRequestBookingForm": "New request: booking form",
+    "wed": "Wed",
+    "bookingFormFieldAdded": "Booking form field added",
+    "n4PaymentsMatched": "4 payments matched",
+    "thu": "Thu",
+    "shiftSwapHandled": "Shift swap handled",
+    "stockReorderListWritten": "Stock reorder list written",
+    "n9InquiriesAnswered": "9 inquiries answered",
+    "fri": "Fri",
+    "invoiceRun12Sent": "Invoice run · 12 sent",
+    "smallFixMenuTypo": "Small fix · menu typo",
+    "weekClosed": "Week closed",
+    "sat": "Sat",
+    "n5BookingsConfirmed": "5 bookings confirmed",
+    "sun": "Sun",
+    "reportPrepared": "Report prepared",
+    "allSystemsNormal": "All systems normal",
+    "threads": "Threads",
+    "startseiteDraft2": "Startseite, draft 2",
+    "new": "New",
+    "open": "Open",
+    "invoiceOctober": "Invoice October",
+    "paidBySEPA": "Paid by SEPA",
+    "done": "Done",
+    "teamAppUpdate": "Team app update",
+    "weeklyReport": "Weekly report",
+    "n42InquiriesHandled": "42 inquiries handled",
+    "monthlyDue01Nov": "Monthly · due 01 Nov",
+    "upcoming": "Upcoming",
+    "monthlyGrowth": "Monthly · Growth",
+    "n249Paid": "€249 · paid",
+    "setup": "Setup",
+    "n1990Paid": "€1,990 · paid",
+    "project": "Project",
+    "n01FirstCall": "01 First call",
+    "n02Analysis": "02 Analysis",
+    "n03Build": "03 Build",
+    "n04Test": "04 Test",
+    "n05Live": "05 Live",
+    "runningMaintained": "Running · maintained",
+    "now": "Now",
+    "files": "Files",
+    "offerApprovedPdf": "Offer · approved.pdf",
+    "approvalStoredWithHash": "Approval stored with hash",
+    "brandAssetsZip": "Brand assets.zip",
+    "uploadedByYou": "Uploaded by you",
+    "menuPhotos": "Menu photos",
+    "n12Images": "12 images",
+    "termsV12Pdf": "Terms v1.2.pdf",
+    "accepted": "Accepted",
+    "day": "Day",
+    "youRunTheBusiness": "You run the business.",
+    "customersTeamTheCounterMeanwhileInquiries": "Customers, team, the counter. Meanwhile inquiries get answered and offers get drafted in the background.",
+    "evening": "Evening",
+    "youCloseTheShop": "You close the shop.",
+    "ordersSyncRemindersGoOutThe": "Orders sync, reminders go out, the day gets tidied up — without you staying late.",
+    "night": "Night",
+    "youSleepItDoesnT": "You sleep. It doesn't.",
+    "updatesAreInstalledBackupsAreMade": "Updates are installed, backups are made, the system is checked. Quietly, in Frankfurt.",
+    "morning": "Morning",
+    "youWakeUpToAReport": "You wake up to a report.",
+    "aShortBriefingWhatHappenedWhat": "A short briefing: what happened, what needs you. Everything else is already done.",
+    "checking": "checking ",
+    "allLayersOk": "all layers ok",
+    "checking2": "checking…",
+    "ok": "✓ ok",
+    "newsletterSupplier": "Newsletter · supplier",
+    "orderConfirmation": "Order confirmation",
+    "youReport": "You report",
+    "oneMessageAScreenshotIsEnough": "One message, a screenshot is enough",
+    "threadOpens": "Thread opens",
+    "checkoutBrokenPriority": "\"Checkout broken\" · priority",
+    "fixed": "Fixed",
+    "paymentWebhookRestarted": "Payment webhook restarted",
+    "deployed": "Deployed",
+    "testedBackupsUntouched": "Tested, backups untouched",
+    "confirmed": "Confirmed",
+    "shortNoteWhatItWasWhat": "Short note: what it was, what changed",
+    "linenShirt69": "Linen shirt · €69",
+    "toteBag29": "Tote bag · €29",
+    "cap24": "Cap · €24",
+    "checkout": "Checkout ✕",
+    "checkout2": "Checkout →",
+    "breakSomething": "Break something ⚡",
+    "breakItAgain": "Break it again ⚡",
+    "fixing": "Fixing…",
+    "allNormal": "all normal",
+    "incidentOpen": "incident open",
+    "inquiriesAnswered": "Inquiries answered",
+    "invoicesSent": "Invoices sent",
+    "updatesDeployed": "Updates deployed",
+    "oneMessageInThePortalA": "One message in the portal — a screenshot is enough.",
+    "itGetsItsOwnThreadSo": "It gets its own thread, so it never drowns in chat.",
+    "iFixItUsuallyWithoutYou": "I fix it, usually without you needing to explain twice.",
+    "testedAndDeployedBackupsStayUntouched": "Tested and deployed. Backups stay untouched.",
+    "youGetAShortNoteWhat": "You get a short note: what it was, what changed.",
+    "inquiriesHandled": "Inquiries handled",
+    "offersSent": "Offers sent",
+    "invoicesPaid": "Invoices paid",
+    "hoursSavedEst": "Hours saved (est.)",
+    "eUHostingInFrankfurt": "EU hosting in Frankfurt",
+    "yourOwnDomainSSL": "Your own domain & SSL",
+    "dailyBackups": "Daily backups",
+    "securitySoftwareUpdates": "Security & software updates",
+    "fixesWhenSomethingBreaks": "Fixes when something breaks",
+    "supportThroughYourClientPortal": "Support through your client portal",
+    "weeklySummary": "Weekly summary",
+    "numberOfDomains": "Number of domains",
+    "inYourOffer": "in your offer",
+    "mailboxes": "Mailboxes",
+    "changeRequestsMonth": "Change requests / month",
+    "newFeatures": "New features",
+    "quotedSeparately": "quoted separately",
+    "onWorkingDaysToBeSet": "On working days · to be set",
+    "uptime": "Uptime",
+    "measuredMonthlyToBeSet": "Measured monthly · to be set",
+    "keptInTheEU": "Kept in the EU",
+    "contact": "Contact",
+    "personFromBuildToEveryUpdate": "Person, from build to every update"
+  },
+  "Work": {
+    "work": "Work",
+    "builtLive": "Built, live,",
+    "running": "running.",
+    "everythingHereIsStillMaintainedBy": "Everything here is still maintained by me.",
+    "shopDashboardDE": "Shop + dashboard · DE",
+    "streetwearShopBuiltAroundLimitedDrops": "Streetwear shop built around limited drops, plus the owner dashboard behind it.",
+    "siteTeamAppID": "Site + team app · ID",
+    "familyBakeryInBandungWebsiteSeasonal": "Family bakery in Bandung — website, seasonal hampers and the app the team runs on.",
+    "clientPortal": "Client portal",
+    "everyClient": "Every client",
+    "whereClientsApproveOffersPayInvoices": "Where clients approve offers, pay invoices and talk to me.",
+    "personalCockpit": "Personal cockpit",
+    "briefingMoneyTimeAndGoalsFor": "Briefing, money, time and goals — for you or the whole family.",
+    "businessDemo": "Business demo",
+    "clickThrough": "Click-through",
+    "aSampleBusinessBrainWithDashboards": "A sample business brain with dashboards, flows and AI reports.",
+    "yourBusiness": "Your business",
+    "nextProject": "Next project",
+    "start": "Start →",
+    "builtByMeRunByMe": "Built by me, run by me — and still here next year.",
+    "tICOriginalsShop": "TIC Originals shop",
+    "mamiIPatisserieWebsite": "Mami I Patisserie website"
+  },
+  "Life": {
+    "you": "You",
+    "lifeX": "Life — {x}",
+    "wedX": "Wed · {x}",
+    "xToday": "{x} today",
+    "yourLifeRemembered": "Your life. Remembered.",
+    "sorted": "Sorted.",
+    "lived": "Lived.",
+    "lifeKeepsTrackOfBillsAppointments": "Life keeps track of bills, appointments, birthdays and goals — for you or the whole family — and quietly handles them, morning to night.",
+    "try14DaysFree": "Try 14 days free →",
+    "plansForFamilies": "Plans for families",
+    "n01ADayWithLife": "(01) A day with Life",
+    "itShowsUpWhenItHelps": "It shows up when it helps,",
+    "andStaysQuiet": "and stays quiet",
+    "whenItDoesnT": "when it doesn't.",
+    "nowLife": "now · Life",
+    "n02FourThingsOnePlace": "(02) Four things, one place",
+    "moneyTimeGoals": "Money, time, goals,",
+    "home": "home.",
+    "hoverOrTapACardTo": "Hover or tap a card to turn it over — that's what Life actually tells you.",
+    "xToday2": "{x} · today",
+    "n03Together": "(03) Together",
+    "oneHome": "One home.",
+    "everyoneOnTheSamePage": "Everyone on the same page.",
+    "sharedCalendarSharedShoppingListSplit": "Shared calendar, shared shopping list, split bills — and each person still has their own private space. Tap someone to see what they see.",
+    "together4": "Together · 4",
+    "n04PrivateByDesign": "(04) Private by design",
+    "yourLifeStays": "Your life stays",
+    "yours": "yours.",
+    "n05Plans": "(05) Plans",
+    "pickTheSizeOf": "Pick the size of",
+    "yourLife": "your life.",
+    "howManyPeopleLiveWithYou": "How many people live with you?",
+    "bestFit": "Best fit:",
+    "monthly": "Monthly",
+    "yearly2MonthsFree": "Yearly · 2 months free",
+    "finalPricesInclVATCancelAny": "Final prices incl. VAT. Cancel any month.",
+    "n2115DayClosed": "21:15 · day closed",
+    "startTomorrowMorning": "Start tomorrow morning.",
+    "fourteenDaysFreeYourFirstBriefing": "Fourteen days free. Your first briefing arrives the next morning.",
+    "try14DaysFree2": "Try 14 days free",
+    "rialtoInTheEvening": "Rialto in the evening",
+    "rialtoRelaxingAtHomeInThe": "Rialto relaxing at home in the evening",
+    "briefing": "Briefing",
+    "goodMorning": "Good morning.",
+    "oneReadThenGoYourDay": "One read, then go. Your day, your money and one thing worth focusing on.",
+    "weather": "Weather",
+    "n14Sunny": "14° · sunny",
+    "today": "Today",
+    "n2Meetings": "2 meetings",
+    "money": "Money",
+    "n340Left": "€340 left",
+    "yourBriefingIsReady": "Your briefing is ready",
+    "rentDueFriday": "Rent due Friday.",
+    "billsShowUpBeforeTheyBecome": "Bills show up before they become a problem — with the transfer already prepared.",
+    "rent": "Rent",
+    "n890Fri": "€890 · Fri",
+    "electricity": "Electricity",
+    "n86Paid": "€86 · paid",
+    "thisWeek": "This week",
+    "rentTransferPrepared": "Rent transfer prepared",
+    "time": "Time",
+    "dentistMoved": "Dentist moved.",
+    "whenAPlanChangesLifeRearranges": "When a plan changes, Life rearranges the rest of your day — quietly.",
+    "dentist": "Dentist",
+    "gym": "Gym",
+    "free": "Free",
+    "calendarUpdatedForYou": "Calendar updated for you",
+    "together": "Together",
+    "pickUpMia": "Pick up Mia.",
+    "familyThingsLandOnTheRight": "Family things land on the right phone at the right time.",
+    "leaveIn": "Leave in",
+    "n10Min": "10 min",
+    "drive": "Drive",
+    "n12Min": "12 min",
+    "getsMilkOnTheWay": "gets milk on the way",
+    "leaveIn10Min": "Leave in 10 min",
+    "evening": "Evening",
+    "closeTheDay": "Close the day.",
+    "whatWentWellWhatMovesTo": "What went well, what moves to tomorrow — and a quiet reminder to stop.",
+    "done": "Done",
+    "n6Things": "6 things",
+    "moved": "Moved",
+    "n2ToTomorrow": "2 to tomorrow",
+    "goal": "Goal",
+    "run3Of4": "Run · 3 of 4",
+    "dayClosedSleepWell": "Day closed · sleep well",
+    "knowWhatIsLeftWithoutA": "Know what is left, without a spreadsheet.",
+    "n340LeftThisWeek": "€340 left this week",
+    "onTrack": "on track",
+    "rent890": "Rent · €890",
+    "transferReadyForFri": "transfer ready for Fri",
+    "subscriptions": "Subscriptions",
+    "n2YouNeverUse": "2 you never use",
+    "yourCalendarRearrangedWhenLifeHappens": "Your calendar, rearranged when life happens.",
+    "protectedForFocus": "protected for focus",
+    "dentistMoved2": "Dentist moved",
+    "nothingPlannedGood": "nothing planned · good",
+    "goals": "Goals",
+    "smallStepsNoticedAndCounted": "Small steps, noticed and counted.",
+    "run5Km": "Run 5 km",
+    "n3Of4ThisWeek": "3 of 4 this week",
+    "saveForMayTrip": "Save for May trip",
+    "n620Of900": "€620 of €900",
+    "read": "Read",
+    "n12Of20Pages": "12 of 20 pages",
+    "home2": "Home",
+    "sharedListsSharedBillsSharedDays": "Shared lists, shared bills, shared days.",
+    "shoppingList": "Shopping list",
+    "n7ItemsAnnaAdded2": "7 items · Anna added 2",
+    "billsSplit": "Bills split",
+    "electricity5050": "electricity 50 / 50",
+    "saturday": "Saturday",
+    "ownerSeesEverything": "Owner · sees everything",
+    "bills": "Bills",
+    "n2ThisWeek": "2 this week",
+    "familyPlan": "Family plan",
+    "allSynced": "all synced",
+    "partnerSharedPrivate": "Partner · shared + private",
+    "milkBread": "milk, bread",
+    "splitBill": "Split bill",
+    "n43ToYou": "€43 to you",
+    "dinner": "Dinner",
+    "friWithFriends": "Fri with friends",
+    "kidJustHerDay": "Kid · just her day",
+    "school": "School",
+    "piano": "Piano",
+    "pickUp": "Pick-up",
+    "kidJustHisDay": "Kid · just his day",
+    "football": "Football",
+    "homework": "Homework",
+    "mathSheet": "math sheet",
+    "allowance": "Allowance",
+    "n5Saved": "€5 saved",
+    "morning": "Morning",
+    "rialtoWithCoffeeInTheMorning": "Rialto with coffee in the morning",
+    "beforeTheCoffeeCools": "before the coffee cools",
+    "leftThisWeek": "/ left this week",
+    "briefingReady30Sec": "Briefing ready · 30 sec",
+    "rentPaid820": "Rent paid · €820",
+    "umbrellaRainAt4": "Umbrella — rain at 4",
+    "day": "Day",
+    "rialtoOutInTheOldTown": "Rialto out in the old town",
+    "whileYouAreOut": "while you are out",
+    "sat": "Sat",
+    "mumSGiftOnItsWay": "/ Mum's gift, on its way",
+    "dentistMovedThu": "Dentist moved → Thu",
+    "oldGymCancelled39": "Old gym cancelled · +€39",
+    "linaSSchoolFormSigned": "Lina's school form signed",
+    "rialtoRelaxingOnTheSofaIn": "Rialto relaxing on the sofa in the evening",
+    "andThenNothing": "and then, nothing",
+    "freeTonight": "/ free tonight",
+    "groceriesDelivered": "Groceries delivered",
+    "tomorrowSorted2Meetings": "Tomorrow sorted · 2 meetings",
+    "nothingElseRest": "Nothing else. Rest.",
+    "remembered": "Remembered.",
+    "billsBirthdaysAppointmentsHeldInOne": "Bills, birthdays, appointments — held in one box, so they're not held in your head.",
+    "moneyTimeFamilyAndGoalsKeep": "Money, time, family and goals keep their orbit around you. Nothing drifts, nothing drops.",
+    "theTechStepsBackWhatS": "The tech steps back. What’s left is your evening.",
+    "handled": " handled",
+    "birthdays": "Birthdays",
+    "mum": "Mum",
+    "family": "Family",
+    "life": "Life",
+    "justYouTheEssentials": "Just you, the essentials.",
+    "everythingForOnePerson": "Everything, for one person.",
+    "mostChosen": "Most chosen",
+    "sharedForUpTo4People": "Shared, for up to 4 people.",
+    "n14SunnyByNoon": "14° · sunny by noon",
+    "n2MeetingsFreeEvening": "2 meetings · free evening",
+    "focus": "Focus",
+    "finishTheTaxFolder": "Finish the tax folder",
+    "calendar": "Calendar",
+    "bankAccounts": "Bank accounts",
+    "notes": "Notes",
+    "health": "Health",
+    "lockedFrankfurt": "Locked · Frankfurt",
+    "collectingYourData": "Collecting your data…",
+    "hostedInFrankfurt": "Hosted in Frankfurt",
+    "yourDataStaysInTheEU": "Your data stays in the EU, on servers in Germany.",
+    "neverSoldNeverUsedForTraining": "Never sold, never used for training",
+    "yourLifeIsNotADataset": "Your life is not a dataset. Not for ads, not for AI models.",
+    "deleteEverythingInOneTap": "Delete everything in one tap",
+    "leaveAnyTimeAndTakeNothing": "Leave any time and take nothing with you — or everything, as an export.",
+    "bestFit2": "Best fit",
+    "year": "/ year",
+    "month": "/ month",
+    "startFree": "Start free",
+    "setUpPersonallyWithACall": "Set up personally, with a call. Setup from €449.",
+    "byCall": "By call",
+    "from68": "from €68",
+    "bookACall": "Book a call"
+  },
+  "Pricing": {
+    "home": "Home /",
+    "pricing": "Pricing",
+    "onePrice": "One price.",
+    "everyMonth": "Every month.",
+    "forBusinesses": "For businesses",
+    "forYouLife": "For you · Life",
+    "scrollToAddLayers": "Scroll to add layers",
+    "xXLayers": "{x} · {y} layers",
+    "monthly": "Monthly",
+    "yearly2MonthsFree": "Yearly · 2 months free",
+    "xADay": "≈ {x} a day",
+    "whyThisPrice": "Why this price",
+    "findYourPlan": "Find your plan",
+    "howManyPeople": "How many people",
+    "recommended": "Recommended",
+    "showMeX": "Show me {x} ↑",
+    "whereTheMoneyGoes": "Where the money goes",
+    "whereYour": "Where your",
+    "goes": "goes.",
+    "thatS": "That's",
+    "aDay": "a day.",
+    "placeholderSplitToBeConfirmed": "Placeholder split — to be confirmed",
+    "splitAndTimingArePlaceholdersTo": "Split and timing are placeholders — to be confirmed",
+    "stepX": "Step {x}",
+    "yearOneCompared": "Year one, compared",
+    "rIDEFFX": "RIDEFF {x}",
+    "usualWayFiguresArePlaceholdersTo": "“Usual way” figures are placeholders — to be confirmed",
+    "everyDetail": "Every detail",
+    "whatSIn": "What's in",
+    "eachPlan": "each plan.",
+    "proposedToBeConfirmed": "Proposed — to be confirmed",
+    "questions": "Questions",
+    "the": "The",
+    "smallPrint": "small print,",
+    "inPlainWords": "in plain words.",
+    "startHere": "Start here",
+    "oneAreaConnectedUsuallyCustomersAnd": "One area connected — usually customers and sales.",
+    "websiteOrCoreSystem": "Website or core system",
+    "aIInboxForInquiries": "AI inbox for inquiries",
+    "clientPortal": "Client portal",
+    "hostingBackupsUpdates": "Hosting, backups, updates",
+    "mostChosen": "Most chosen",
+    "customersSalesTeamAndOperationsIn": "Customers, sales, team and operations in one system.",
+    "everythingInCore": "Everything in Core",
+    "teamApp": "Team app",
+    "automatedOffersFollowUps": "Automated offers & follow-ups",
+    "monthlyReport": "Monthly report",
+    "wholeSystem": "Whole system",
+    "fullBrain": "Full brain",
+    "everyAreaConnectedFinanceAndMarketing": "Every area connected, finance and marketing included.",
+    "everythingInGrowth": "Everything in Growth",
+    "financeInvoicingFlows": "Finance & invoicing flows",
+    "marketingAutomation": "Marketing automation",
+    "prioritySupport": "Priority support",
+    "life": "Life",
+    "justYouTheEssentials": "Just you, the essentials.",
+    "morningBriefing": "Morning briefing",
+    "moneyOverview": "Money overview",
+    "calendar": "Calendar",
+    "n14DaysFree": "14 days free",
+    "everythingForOnePerson": "Everything, for one person.",
+    "everythingInLife": "Everything in Life",
+    "goalsHabits": "Goals & habits",
+    "aIResearchBrainstorm": "AI research & brainstorm",
+    "together": "Together",
+    "upTo4": "Up to 4",
+    "sharedForAHousehold": "Shared, for a household.",
+    "everythingInPlus": "Everything in Plus",
+    "upTo4People": "Up to 4 people",
+    "sharedCalendarBudget": "Shared calendar & budget",
+    "byCall": "By call",
+    "setUpPersonallyWithRialto": "Set up personally, with Rialto.",
+    "personalSetup": "Personal setup",
+    "yourOwnDataSources": "Your own data sources",
+    "directLine": "Direct line",
+    "startedByACall": "Started by a call",
+    "foundation": "Foundation",
+    "hostingDomainBackups": "Hosting · domain · backups",
+    "websiteInboxPortal": "Website · inbox · portal",
+    "teamOffersReports": "Team · offers · reports",
+    "whole": "Whole",
+    "financeMarketing": "Finance · marketing",
+    "yourDataEU": "Your data · EU",
+    "briefingMoneyCalendar": "Briefing · money · calendar",
+    "goalsAI": "Goals · AI",
+    "private": "Private",
+    "setUpWithRialto": "Set up with Rialto",
+    "customersInquiries": "Customers & inquiries",
+    "aIInboxContactFormsClientPortal": "AI inbox, contact forms, client portal",
+    "websiteOrShop": "Website or shop",
+    "yourSiteOnYourOwnDomain": "Your site, on your own domain",
+    "offersFollowUps": "Offers & follow-ups",
+    "offersAndRemindersThatSendThemselves": "Offers and reminders that send themselves",
+    "teamShifts": "Team & shifts",
+    "teamAppSchedulesLeave": "Team app, schedules, leave",
+    "operationsReports": "Operations & reports",
+    "ordersStockAMonthlyReport": "Orders, stock, a monthly report",
+    "financeInvoicing": "Finance & invoicing",
+    "invoicesPaymentsBookkeepingExport": "Invoices, payments, bookkeeping export",
+    "marketing": "Marketing",
+    "campaignsNewsletterReviews": "Campaigns, newsletter, reviews",
+    "yourDayInOneScreen": "Your day in one screen",
+    "accountsSpendingWhatSLeft": "Accounts, spending, what’s left",
+    "everythingInOneTimeline": "Everything in one timeline",
+    "trackWhatYouWantToChange": "Track what you want to change",
+    "basedOnYourOwnData": "Based on your own data",
+    "setUpPersonally": "Set up personally",
+    "rialtoConnectsYourOwnSources": "Rialto connects your own sources",
+    "eUHostingDatabase": "EU hosting & database",
+    "serversInFrankfurtDatabaseFileStorage": "Servers in Frankfurt, database, file storage.",
+    "aIUsage": "AI usage",
+    "everyAIAnswerSummaryAndReport": "Every AI answer, summary and report costs compute.",
+    "updatesFixesSecurity": "Updates, fixes & security",
+    "keepingEverythingCurrentPatchedAndWorking": "Keeping everything current, patched and working.",
+    "supportMyHours": "Support & my hours",
+    "changesQuestionsAndChatWithMe": "Changes, questions and chat — with me, not a ticket queue.",
+    "backupsMonitoring": "Backups & monitoring",
+    "dailyBackupsAndAlertsBeforeYou": "Daily backups and alerts before you notice a problem.",
+    "yourDataStaysInFrankfurt": "Your data stays in Frankfurt.",
+    "briefingsResearchAndBrainstormsRunOn": "Briefings, research and brainstorms run on AI.",
+    "newFeatures": "New features",
+    "lifeKeepsGettingBetterWhileYou": "Life keeps getting better while you use it.",
+    "support": "Support",
+    "aRealPersonWhenSomethingFeels": "A real person when something feels off.",
+    "paymentFees": "Payment fees",
+    "cardSEPAAndKlarnaCostA": "Card, SEPA and Klarna cost a little each month.",
+    "day1": "Day 1",
+    "n30MinutesWeTalkAboutHow": "30 minutes. We talk about how your business runs today. Free.",
+    "week12": "Week 1–2",
+    "iMapYourToolsStepsAnd": "I map your tools, steps and people, then write a fixed offer.",
+    "week25": "Week 2–5",
+    "iBuildYourSystemAndConnect": "I build your system and connect every part end to end.",
+    "week56": "Week 5–6",
+    "yourTeamUsesItForReal": "Your team uses it for real. I fix what feels wrong.",
+    "live": "Live",
+    "week6": "Week 6",
+    "switchOverDataMovedTeamShown": "Switch-over, data moved, team shown how it works.",
+    "signUp": "Sign up",
+    "day0": "Day 0",
+    "emailAndA6DigitCode": "Email and a 6-digit code. No card, no password.",
+    "connect": "Connect",
+    "calendarAndAccountsOnlyWhatYou": "Calendar and accounts — only what you want to share.",
+    "firstBriefing": "First briefing",
+    "day2": "Day 2",
+    "yourMorningMoneyAndGoalsOn": "Your morning, money and goals on one screen.",
+    "makeItYours": "Make it yours",
+    "day312": "Day 3–12",
+    "goalsHabitsAIResearchOnYour": "Goals, habits, AI research on your own data.",
+    "decide": "Decide",
+    "day14": "Day 14",
+    "pickAPlanOrSimplyLeave": "Pick a plan — or simply leave. Nothing is charged.",
+    "agencyWebsiteOneOff": "Agency website, one-off",
+    "freelancerForAutomations": "Freelancer for automations",
+    "n400Mo": "€400 / mo",
+    "n46SeparateTools": "4–6 separate tools",
+    "n180Mo": "€180 / mo",
+    "yourTimeHoldingItTogether": "Your time holding it together",
+    "n8HMo40": "8 h / mo × €40",
+    "budgetingApp": "Budgeting app",
+    "calendarPlannerPro": "Calendar / planner pro",
+    "aISubscription": "AI subscription",
+    "habitTracker": "Habit tracker",
+    "builtForYou": "Built for you",
+    "runningIt": "Running it",
+    "eUHostingInFrankfurt": "EU hosting in Frankfurt",
+    "ownDomainSSL": "Own domain & SSL",
+    "dailyBackups": "Daily backups",
+    "updatesFixes": "Updates & fixes",
+    "supportThroughYourPortal": "Support through your portal",
+    "limits": "Limits",
+    "domains": "Domains",
+    "emailMailboxes": "Email mailboxes",
+    "changesPerMonth": "Changes per month",
+    "supportReply": "Support reply",
+    "n2WorkDays": "2 work days",
+    "nextWorkDay": "Next work day",
+    "sameDay": "Same day",
+    "teamAppUsers": "Team app users",
+    "unlimited": "Unlimited",
+    "backupHistory": "Backup history",
+    "n30Days": "30 days",
+    "n90Days": "90 days",
+    "n180Days": "180 days",
+    "inTheApp": "In the app",
+    "personal": "Personal",
+    "setUpByRialto": "Set up by Rialto",
+    "n14DaysFreeNoCard": "14 days free, no card",
+    "cancelAnyMonth": "Cancel any month",
+    "people": "People",
+    "custom": "Custom",
+    "connectedAccounts": "Connected accounts",
+    "n10Each": "10 each",
+    "aIRequestsPerDay": "AI requests per day",
+    "n100Each": "100 each",
+    "storage": "Storage",
+    "whyASetupFeeAndA": "Why a setup fee and a monthly fee?",
+    "theSetupPaysForAnalysingAnd": "The setup pays for analysing and building your system — it is real work, done once. The monthly fee keeps it running: hosting, AI, updates, backups and my time for changes and support.",
+    "whatDoesTheSetupFeeCover": "What does the setup fee cover?",
+    "analysisBuildTestingAndGoLive": "Analysis, build, testing and go-live. The exact amount is in your offer after the first call, before you commit to anything.",
+    "howLongIsTheContract": "How long is the contract?",
+    "businessPlansRunFor12Months": "Business plans run for 12 months.",
+    "howDoIPay": "How do I pay?",
+    "cardSEPADirectDebitOrKlarna": "Card, SEPA direct debit or Klarna. The setup can also be paid by bank transfer; monthly fees run as a subscription.",
+    "arePricesNetOrGross": "Are prices net or gross?",
+    "businessPricesAreNetPlus19": "Business prices are net, plus 19% VAT.",
+    "whatIfINeedMoreThan": "What if I need more than my limits?",
+    "weTalkFirstEitherWeAdd": "We talk first. Either we add a bit of time for that month, or moving up a plan makes more sense — your choice.",
+    "canIChangePlansLater": "Can I change plans later?",
+    "yesMostClientsStartWithCore": "Yes. Most clients start with Core or Growth and add areas once the first ones run.",
+    "howDoIApproveTheOffer": "How do I approve the offer?",
+    "inYourClientPortalTickThe": "In your client portal: tick the terms and click approve. That counts as the contract and the setup invoice is created automatically.",
+    "doINeedACardFor": "Do I need a card for the trial?",
+    "no14DaysFreeNoCard": "No. 14 days free, no card.",
+    "canICancelAnyMonth": "Can I cancel any month?",
+    "yesLifePlansCanBeCancelled": "Yes. Life plans can be cancelled any month.",
+    "isYearlyCheaper": "Is yearly cheaper?",
+    "yesPayYearlyAndGet2": "Yes — pay yearly and get 2 months free.",
+    "arePricesFinal": "Are prices final?",
+    "yesLifePricesIncludeVAT": "Yes. Life prices include VAT.",
+    "whoCanUseTogether": "Who can use Together?",
+    "upTo4PeopleInOne": "Up to 4 people in one household, with a shared calendar and budget.",
+    "howDoesLifePrivateStart": "How does Life Private start?",
+    "withACallAfterThatYou": "With a call. After that you receive a payment link, and Rialto sets everything up personally.",
+    "whereIsMyData": "Where is my data?",
+    "inTheEUInFrankfurt": "In the EU, in Frankfurt.",
+    "cardSEPADirectDebitOrKlarna2": "Card, SEPA direct debit or Klarna.",
+    "from": "from ",
+    "setup": "Setup",
+    "startsWith": "Starts with",
+    "aCall": "A call",
+    "perDay": "Per day",
+    "perMonthBilledYearly": "Per month, billed yearly",
+    "perMonth": "Per month",
+    "perYear": "Per year",
+    "first14Days": "First 14 days",
+    "free": "Free",
+    "mo": " / mo",
+    "yearOneTotal": "Year one, total",
+    "perDayAfterSetup": "Per day after setup",
+    "covers": "Covers ",
+    "andMore": " and more",
+    "for": " — for ",
+    "people2": " people.",
+    "tickAtLeastOneAreaTo": "Tick at least one area to see a plan.",
+    "startFree": "Start free",
+    "signUpWithYourEmailAnd": "Sign up with your email and a 6-digit code. No card.",
+    "startYour14Days": "Start your 14 days",
+    "trial": "Trial",
+    "n14Days": "14 days",
+    "card": "Card",
+    "notNeeded": "Not needed",
+    "login": "Login",
+    "n6DigitCode": "6-digit code",
+    "connectYourDay": "Connect your day",
+    "addYourCalendarAndAccountsOnly": "Add your calendar and accounts — only what you want.",
+    "connected": "Connected",
+    "money": "Money",
+    "n2Accounts": "2 accounts",
+    "goals": "Goals",
+    "n3Set": "3 set",
+    "continue": "Continue",
+    "yourFirstBriefing": "Your first briefing",
+    "everyMorningYourDayYourMoney": "Every morning: your day, your money, your goals.",
+    "goodMorning": "Good morning.",
+    "today": "Today",
+    "n4Events": "4 events",
+    "onTrack": "On track",
+    "goal": "Goal",
+    "run3ThisWeek": "Run 3× this week",
+    "openBriefing": "Open briefing",
+    "chooseAPlan": "Choose a plan",
+    "pickWhatFitsOrLeaveNothing": "Pick what fits — or leave. Nothing is charged.",
+    "choose": "Choose",
+    "payYourWay": "Pay your way",
+    "cardSEPAOrKlarnaYearlyGets": "Card, SEPA or Klarna. Yearly gets 2 months free.",
+    "plan": "Plan",
+    "moYearly": " / mo, yearly",
+    "payBy": "Pay by",
+    "cardSEPAKlarna": "Card · SEPA · Klarna",
+    "included": "Included",
+    "confirm": "Confirm",
+    "noLockInStayBecauseIt": "No lock-in. Stay because it helps.",
+    "yourPlan": "Your plan",
+    "billing": "Billing",
+    "yearly": "Yearly",
+    "cancel": "Cancel",
+    "anyMonth": "Any month",
+    "data": "Data",
+    "eUFrankfurt": "EU · Frankfurt",
+    "managePlan": "Manage plan",
+    "freeToGo": "Free to go",
+    "bookACall": "Book a call",
+    "n30MinutesFreeWeTalkAbout": "30 minutes, free. We talk about how your business runs today.",
+    "length": "Length",
+    "n30Min": "30 min",
+    "cost": "Cost",
+    "where": "Where",
+    "videoCall": "Video call",
+    "pickATime": "Pick a time",
+    "booked": "Booked",
+    "getYourOffer": "Get your offer",
+    "aFixedOfferInYourClient": "A fixed offer in your client portal: plan, setup, monthly — nothing hidden.",
+    "term": "Term",
+    "n12Months": "12 months",
+    "reviewOffer": "Review offer",
+    "new": "New",
+    "approveInThePortal": "Approve in the portal",
+    "tickTheTermsAndClickApprove": "Tick the terms and click approve. That counts as the contract — no paper.",
+    "termsAGB": "Terms (AGB)",
+    "accepted": "✓ accepted",
+    "approvedBy": "Approved by",
+    "owner": "Owner",
+    "saved": "Saved",
+    "pDFTimestamp": "PDF + timestamp",
+    "approved": "Approved",
+    "payTheSetup": "Pay the setup",
+    "theSetupInvoiceAppearsByItself": "The setup invoice appears by itself. Card, SEPA, Klarna or transfer.",
+    "invoiceR2026014": "Invoice R-2026-014",
+    "setupNet": "Setup, net",
+    "cardSEPAKlarnaTransfer": "Card · SEPA · Klarna · Transfer",
+    "payNow": "Pay now",
+    "due": "Due",
+    "iBuildIt": "I build it",
+    "analyseBuildTestFollowEveryPhase": "Analyse, build, test — follow every phase and chat in the portal.",
+    "done": "Done",
+    "inProgress": "In progress",
+    "next": "Next",
+    "openChat": "Open chat",
+    "phase35": "Phase 3/5",
+    "liveAndKeptRunning": "Live — and kept running",
+    "yourSystemGoesLiveTheMonthly": "Your system goes live. The monthly fee starts and I keep it running.",
+    "running": "Running",
+    "throughThePortal": "Through the portal",
+    "openDashboard": "Open dashboard",
+    "oneMonthlyPriceForALife": "One monthly price for a life assistant that knows your days. 14 days free, no card.",
+    "youPayOnceToHaveYour": "You pay once to have your system built, then one fixed monthly fee to keep it running — hosting, AI, updates and me.",
+    "finalPricesInclVATCancelAny": "Final prices incl. VAT. Cancel any month. Pay yearly, get 2 months free.",
+    "pricesNetPlus19VAT12": "Prices net, plus 19% VAT. 12-month term.",
+    "youReNotPayingForAnother": "You’re not paying for another app.",
+    "youRePayingForOnePlace": "You’re paying for one place that knows your days — private, hosted in the EU, and a little better every month.",
+    "youReNotPayingForSoftware": "You’re not paying for software.",
+    "youRePayingForASystem": "You’re paying for a system that is built for you, hosted in Frankfurt, fixed when it breaks and changed when you grow — by one person who answers.",
+    "monthSetupFrom449": "/ month · setup from €449",
+    "monthBilledYearlyInclVAT": "/ month, billed yearly · incl. VAT",
+    "monthInclVAT": "/ month incl. VAT",
+    "monthSetupFrom": "/ month · setup from ",
+    "askAbout": "Ask about ",
+    "tellMe": "Tell me",
+    "tickWhatYour": "Tick what your",
+    "whatYouNeed": "what you need.",
+    "businessNeeds": "business needs.",
+    "noAdsNoSellingYourData": "No ads, no selling your data. The monthly price pays for running Life and making it better.",
+    "noHiddenExtrasTheMonthlyFee": "No hidden extras. The monthly fee pays for keeping your system alive, safe and changing with your business.",
+    "theTrial": "The trial",
+    "theSetupFee": "The setup fee",
+    "n14Days2": "14 days,",
+    "whatTheSetup": "What the setup",
+    "beforeYouPayAnything": "before you pay anything.",
+    "paysFor": "pays for.",
+    "useEverythingForTwoWeeksIf": "Use everything for two weeks. If it doesn’t help your days, you leave — nothing is charged.",
+    "buildingASystemIsRealWork": "Building a system is real work, done once: understanding how you work, building it, testing it with your team, going live.",
+    "then": "Then ",
+    "aMonthOrNothing": " a month — or nothing.",
+    "setupFor": "Setup for ",
+    "from2": ": from ",
+    "once": ", once.",
+    "howItWorks": "How it works",
+    "howBuyingWorks": "How buying works",
+    "startFree2": "Start free,",
+    "fromFirstCall": "From first call",
+    "stayIfItHelps": "stay if it helps.",
+    "toLive": "to live.",
+    "versusADrawer": "Versus a drawer",
+    "versusDoingIt": "Versus doing it",
+    "ofSeparateApps": "of separate apps.",
+    "theUsualWay": "the usual way.",
+    "separateAppsForMoneyCalendarHabits": "Separate apps for money, calendar, habits and AI — none of them talk to each other.",
+    "anAgencyForTheWebsiteA": "An agency for the website, a freelancer for automations, a stack of tools — and you in the middle, holding it together.",
+    "separateAppsOneYear": "Separate apps, one year",
+    "theUsualWayYearOne": "The usual way, year one",
+    "setupPlus12Months": "Setup plus 12 months.",
+    "paidYearly2MonthsFree": "Paid yearly — 2 months free.",
+    "n12MonthlyPayments": "12 monthly payments.",
+    "setupFrom": "Setup from ",
+    "builtHostedMaintained": ". Built, hosted, maintained.",
+    "tryItFor": "Try it for",
+    "notSureWhichPlan": "Not sure which plan?",
+    "n14DaysFree2": "14 days, free.",
+    "askMe": "Ask me.",
+    "bookAFreeCall": "Book a free call",
+    "bookACallForPrivate": "Book a call for Private",
+    "seeTheWork": "See the work",
+    "firstCall": "First call",
+    "analysis": "Analysis",
+    "build": "Build",
+    "test": "Test",
+    "approve": "Approve",
+    "projectBuild": "Project · Build",
+    "offer": "Offer · "
+  },
+  "About": {
+    "home": "Home /",
+    "about": "About",
+    "iMRialtoI": "I'm Rialto. I",
+    "get": "get",
+    "theAISoYouDonT": "the AI, so you don't have to.",
+    "beforeRIDEFFITradedGoodsAcross": "Before RIDEFF I traded goods across borders, ran social media and sold online. I've been the business owner drowning in tools. Now I build the system that holds them together.",
+    "basedEichstattDE": "Based · Eichstätt, DE",
+    "worksRemoteEU": "Works · remote, EU",
+    "speaksDEENID": "Speaks · DE · EN · ID",
+    "rialtoFounderOperatorRIDEFF": "Rialto · founder & operator, RIDEFF",
+    "n01ThePathHere": "(01) The path here",
+    "fourChapters": "Four chapters.",
+    "oneLesson": "One lesson",
+    "each": "each.",
+    "n02HowIWork": "(02) How I work",
+    "threeRulesIDonTBend": "Three rules I don't bend.",
+    "talkToThePersonWho": "Talk to the person who",
+    "buildsIt": "builds it.",
+    "whatsAppRialto": "WhatsApp Rialto",
+    "book15Min": "Book 15 min",
+    "rialtoPortraitWarmLight": "Rialto — portrait, warm light",
+    "atWorkPhoto": "At work — photo",
+    "eichstattPhoto": "Eichstätt — photo",
+    "withAClientPhoto": "With a client — photo",
+    "exportImport": "Export & import",
+    "chapterOneYears": "Chapter one · [years]",
+    "movingGoodsBetweenCountriesTaughtMe": "Moving goods between countries taught me that every business is a chain — and it breaks at the handoffs.",
+    "socialMedia": "Social media",
+    "chapterTwoYears": "Chapter two · [years]",
+    "runningChannelsForBrandsTaughtMe": "Running channels for brands taught me how customers actually find you, and how much work hides behind one post.",
+    "sellingOnline": "Selling online",
+    "chapterThreeYears": "Chapter three · [years]",
+    "myOwnECommerceTaughtMe": "My own e-commerce taught me what it costs when shop, stock, invoices and messages live in five different tools.",
+    "nowEichstatt": "Now · Eichstätt",
+    "soIBuiltTheThingI": "So I built the thing I needed: one system, built around the business, kept running by one person.",
+    "noHandoffs": "No handoffs.",
+    "thePersonOnYourFirstCall": "The person on your first call is the person who builds your system and answers when something breaks.",
+    "youStayInControl": "You stay in control.",
+    "aIDraftsAndSortsYouApprove": "AI drafts and sorts. You approve what matters — offers, payments, anything with your name on it.",
+    "yourDataStaysInTheEU": "Your data stays in the EU.",
+    "hostedInFrankfurtBackedUpDaily": "Hosted in Frankfurt, backed up daily, never sold or used to train anything."
+  },
+  "Contact": {
+    "home": "Home /",
+    "contact": "Contact",
+    "gotAProblemWorth": "Got a problem worth",
+    "n15Minutes": "15 minutes?",
+    "bringTheRealProblemLeaveWith": "Bring the real problem, leave with a clear next step. No pitch, no obligation.",
+    "rialtoFastestWayIn": "Rialto · fastest way in",
+    "book15Minutes": "Book 15 minutes",
+    "freeFirstCallCalComLink": "Free first call · Cal.com link placeholder",
+    "forLongerBriefs": "For longer briefs",
+    "eichstattX": "Eichstätt — {x}",
+    "remoteEU": "Remote · EU",
+    "germanEnglish": "German · English",
+    "freeCall15Min11": "Free call · 15 min · 1:1 with Rialto",
+    "threeQuickQuestionsILlReply": "Three quick questions. I'll reply on WhatsApp.",
+    "whatDoYouNeed": "What do you need?",
+    "bookMyFreeSlot": "Book my free slot →",
+    "yourDetailsAreOnlyUsedTo": "Your details are only used to reply. See Datenschutz.",
+    "yourName": "Your name",
+    "whatsAppNumberOrEmail": "WhatsApp number or email",
+    "anythingElseOptional": "Anything else? (optional)",
+    "aISystem": "AI system",
+    "teamApp": "Team app",
+    "websiteShop": "Website / shop",
+    "notSureYet": "Not sure yet"
+  },
+  "Journal": {
+    "home": "Home /",
+    "journal": "Journal",
+    "notesFromThe": "Notes from the",
+    "workbench": "workbench.",
+    "whatILearnBuildingSystemsFor": "What I learn building systems for real businesses — what worked, what broke, and what I'd do differently. Written by me, not by a content team.",
+    "xXMin": "{x} · {y} min",
+    "readTheNote": "Read the note →",
+    "oneEmailAMonth": "(—) One email a month",
+    "newNote": "New note?",
+    "youLlKnow": "You'll know.",
+    "subscribe": "Subscribe",
+    "thanksFirstNoteLandsNextMonth": "Thanks — first note lands next month.",
+    "noTrackingPixelsUnsubscribeInOne": "No tracking pixels. Unsubscribe in one click.",
+    "featuredPostCoverImage": "Featured post — cover image",
+    "postCover": "Post cover",
+    "youBusinessDe": "you@business.de",
+    "all": "All",
+    "build": "Build",
+    "whyYourAIAgentNeedsA": "Why your AI agent needs a boss",
+    "sixAgentsOneRuleNothingLeaves": "Six agents, one rule: nothing leaves the system without you seeing it. How I set up approvals.",
+    "date": "[date]",
+    "understand": "Understand",
+    "the45MinuteCallThatSaves": "The 45-minute call that saves 3 months",
+    "whatIAskInTheFirst": "What I ask in the first call — and why I spend more time on handoffs than on tools.",
+    "run": "Run",
+    "whatAMondayReportActuallyContains": "What a Monday report actually contains",
+    "fiveNumbersOneSentenceEachWhy": "Five numbers, one sentence each. Why I stopped sending dashboards.",
+    "shopStockInvoicesOneSourceOf": "Shop, stock, invoices — one source of truth",
+    "aCafeInBavariaHadStock": "A café in Bavaria had stock in three places. Hereu2019s how it became one.",
+    "somethingBrokeAt3amNobodyNoticed": "Something broke at 3am. Nobody noticed.",
+    "selfHealingIsnu2019tMagicItu2019sRetries": "Self-healing isnu2019t magic — itu2019s retries, alerts and a person who reads them.",
+    "notes": "Notes",
+    "dSGVOForSmallBusinessesUsingAI": "DSGVO for small businesses using AI",
+    "frankfurtHostingDataProcessingAgreementsAnd": "Frankfurt hosting, data processing agreements, and what you can safely tell a chatbot.",
+    "stopBuyingToolsMapFirst": "Stop buying tools. Map first.",
+    "theOnePageMapIDraw": "The one-page map I draw for every client before writing a single line of code."
+  },
+  "Storefront": {
+    "home": "Home /",
+    "build": "Build",
+    "webShops": "Web & shops",
+    "aShopWindowThatNever": "A shop window that never",
+    "closes": "closes.",
+    "websitesAndOnlineShopsOnEU": "Websites and online shops on EU hosting — fast, findable, and connected to the rest of your system instead of standing alone.",
+    "startYourSite": "Start your site",
+    "seeTICOriginals": "See TIC Originals",
+    "n01TakenApart": "(01) Taken apart",
+    "tICOriginals": "TIC Originals,",
+    "layerByLayer": "layer by layer.",
+    "caseSummaryPlaceholderWhatTICOriginals": "[Case summary placeholder — what TIC Originals needed, what was built, and what it does for them now.]",
+    "site": "site",
+    "pages": "pages",
+    "nShop": "[n] + shop",
+    "payments": "payments",
+    "cardSEPAKlarna": "card · SEPA · Klarna",
+    "hosting": "hosting",
+    "eUFrankfurtSSL": "EU · Frankfurt · SSL",
+    "linked": "linked",
+    "ordersStockInvoice": "orders → stock → invoice",
+    "loadTimePlaceholder": "Load time · placeholder",
+    "ordersMonthPlaceholder": "Orders / month · placeholder",
+    "hostedInFrankfurt": "Hosted in Frankfurt",
+    "n02WhatSInIt": "(02) What's in it",
+    "notJustAWebsite": "Not just a website.",
+    "theFrontDoor": "The front door",
+    "ofYourSystem": "of your system.",
+    "connected": "Connected",
+    "startHere": "Start here",
+    "yourNextCustomerIsAlreadySearching": "Your next customer is already searching.",
+    "beThere": "Be there.",
+    "whatsAppRialto": "WhatsApp Rialto",
+    "seePricing": "See pricing",
+    "tICInterfaceScreenshot": "TIC — interface screenshot",
+    "tICSystemBehindTheShop": "TIC — system behind the shop",
+    "interface": "Interface",
+    "whatYourCustomersSee": "What your customers see.",
+    "cleanPagesClearProductsACheckout": "Clean pages, clear products, a checkout that works on every phone. Designed around what your customers are looking for.",
+    "system": "System",
+    "whatHappensBehindIt": "What happens behind it.",
+    "everyOrderFlowsIntoYourRIDEFF": "Every order flows into your RIDEFF system — stock, invoice and confirmation, without copying anything by hand.",
+    "spec": "Spec",
+    "whatItRunsOn": "What it runs on.",
+    "fastPagesEUHostingInFrankfurt": "Fast pages, EU hosting in Frankfurt, SSL, backups and updates. Card, SEPA and Klarna payments built in.",
+    "tICOriginalsHomepage": "TIC Originals — homepage",
+    "tICOriginalsShop": "TIC Originals — shop",
+    "yourBusinessDe": "your-business.de",
+    "yourNextSitePlaceholder": "Your next site — placeholder",
+    "design": "Design",
+    "builtAroundYourBusinessNotA": "Built around your business, not a template. Your colours, your words.",
+    "shopPayments": "Shop & payments",
+    "productsBookingsOrBothCardSEPA": "Products, bookings or both. Card, SEPA and Klarna.",
+    "speedSearch": "Speed & search",
+    "fastPagesAndCleanStructureSo": "Fast pages and clean structure, so people and search engines find you.",
+    "hostingDomain": "Hosting & domain",
+    "eUHostingInFrankfurtYourOwn": "EU hosting in Frankfurt, your own domain, SSL, backups, updates.",
+    "visit": "Visit",
+    "product": "Product",
+    "checkout": "Checkout",
+    "stockUpdate": "Stock update",
+    "invoice": "Invoice"
+  },
+  "Workbench": {
+    "home": "Home /",
+    "build": "Build",
+    "teamApps": "Team apps",
+    "teamAppsBuiltAroundHowYour": "Team apps. Built around how your team",
+    "works": "works.",
+    "shiftsTasksChecklistsAndChatIn": "Shifts, tasks, checklists and chat in one app your team actually opens — on the floor, in the field or at the counter.",
+    "bringYourTeamSChaos": "Bring your team's chaos",
+    "seeInsideTheApp": "See inside the app",
+    "appWholeTeam": "/ app, whole team",
+    "androidWeb": "/ Android · web",
+    "includedFrom": "/ included from",
+    "goodMorningLena": "Good morning, Lena",
+    "n01WhatItDoes": "(01) What it does",
+    "fourThingsEveryTeamNeeds": "Four things every team needs.",
+    "nothingItDoesnT": "Nothing it doesn't.",
+    "n02InsideTheApp": "(02) Inside the app",
+    "tapThroughIt": "Tap through it.",
+    "n03MadeFor": "(03) Made for",
+    "teamsThatDonTSitAt": "Teams that don't sit at a desk all day.",
+    "startHere": "Start here",
+    "bringTheWhatsAppGroupsAndPaper": "Bring the WhatsApp groups and paper lists. Leave with",
+    "oneApp": "one app.",
+    "whatsAppRialto": "WhatsApp Rialto",
+    "seePricing": "See pricing",
+    "teamAtWorkPhoto": "Team at work — photo",
+    "today": "Today",
+    "everythingForThisShiftOnOne": "Everything for this shift on one screen.",
+    "morningShift": "Morning shift",
+    "now": "Now",
+    "openChecklist": "Open checklist",
+    "n6Of9Done": "6 of 9 done",
+    "deliveryExpected": "Delivery expected",
+    "soon": "Soon",
+    "teamMeeting": "Team meeting",
+    "fri": "Fri",
+    "messageFromRialto": "Message from Rialto",
+    "newFeatureLive": "New feature live",
+    "new": "New",
+    "shifts": "Shifts",
+    "planSwapAndConfirmNoGroup": "Plan, swap and confirm — no group chat needed.",
+    "monLena": "Mon · Lena",
+    "monJonas": "Mon · Jonas",
+    "tueMira": "Tue · Mira",
+    "swapRequested": "Swap requested",
+    "ask": "Ask",
+    "wedLena": "Wed · Lena",
+    "thuOpen": "Thu · open",
+    "needsCover": "Needs cover",
+    "open": "Open",
+    "tasks": "Tasks",
+    "checklistsWithPhotosAndNotesAttached": "Checklists with photos and notes attached.",
+    "openUp": "Open up",
+    "checkStock": "Check stock",
+    "doneByJonas": "Done by Jonas",
+    "cleanStation2": "Clean station 2",
+    "photoAttached": "Photo attached",
+    "orderSupplies": "Order supplies",
+    "closeDown": "Close down",
+    "chat": "Chat",
+    "oneThreadPerTopicNotOne": "One thread per topic, not one endless group.",
+    "shiftSwapTue": "Shift swap Tue",
+    "delivery": "Delivery",
+    "newMenu": "New menu",
+    "photosUploaded": "Photos uploaded",
+    "holidayPlan": "Holiday plan",
+    "general": "General",
+    "haveAGoodWeekend": "Have a good weekend",
+    "shift": "Shift",
+    "miraSwappedTueThu": "Mira swapped Tue → Thu",
+    "n3Of4OpeningTasksDone": "3 of 4 opening tasks done",
+    "checkIn": "Check-in",
+    "newPhotoInDelivery": "New photo in \"Delivery\"",
+    "planTheWeekSwapShiftsSee": "Plan the week, swap shifts, see who is in — on every phone.",
+    "tasksChecklists": "Tasks & checklists",
+    "openingClosingQualityChecksPhotosAnd": "Opening, closing, quality checks. Photos and notes attached.",
+    "oneTapWhenWorkStartsHours": "One tap when work starts. Hours tracked without paper.",
+    "teamChat": "Team chat",
+    "oneThreadPerTopicSoNothing": "One thread per topic, so nothing gets lost in a group chat.",
+    "retailTeamPhoto": "Retail team — photo",
+    "atTheCounter": "At the counter",
+    "shopsAndShowroomsWithChangingShifts": "Shops and showrooms with changing shifts.",
+    "fieldCrewPhoto": "Field crew — photo",
+    "inTheField": "In the field",
+    "crewsOnTheRoadWhoNeed": "Crews on the road who need jobs and photos in one place.",
+    "hospitalityTeamPhoto": "Hospitality team — photo",
+    "onTheFloor": "On the floor",
+    "hospitalityAndServiceTeamsRunningOn": "Hospitality and service teams running on checklists.",
+    "practiceTeamPhoto": "Practice team — photo",
+    "inThePractice": "In the practice",
+    "smallOfficesWhereEveryoneWearsThree": "Small offices where everyone wears three hats."
   },
   "newsletter": {
     "unavailable": "That didn't work just now. Please try again later.",
@@ -1844,5 +2012,90 @@
       "button": "Confirm subscription",
       "ignore": "If you didn't sign up, simply ignore this email. The link is valid for 48 hours."
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "readingTime": "{n} min read",
+    "back": "← All articles",
+    "tags": {
+      "business": "BUSINESS",
+      "life": "LIFE"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "text": "This page doesn't exist. Your brain does.",
+    "home": "Home",
+    "try": "Try for free"
+  },
+  "meta": {
+    "home": {
+      "title": "RIDEFF — Understand, build, run. One person.",
+      "description": "Rialto from Eichstätt maps how your business runs, builds the AI agents, team apps, websites and shops around it, and keeps it all running after launch."
+    },
+    "understand": {
+      "title": "Understand · RIDEFF",
+      "description": "Pillar 01: a free first call, your week on one map, and one clear fixed-price offer in your client portal."
+    },
+    "build": {
+      "title": "Build · RIDEFF",
+      "description": "Pillar 02: six rented tools become one platform — apps, AI agents, automations, data and integrations."
+    },
+    "storefront": {
+      "title": "Websites & shops · RIDEFF",
+      "description": "Websites and shops built around your business: design, payments, speed, hosting — connected to stock and invoices."
+    },
+    "workbench": {
+      "title": "Team apps · RIDEFF",
+      "description": "One app for your team: shifts, tasks and chat in one place, for teams that don’t sit at a desk all day."
+    },
+    "run": {
+      "title": "Run · RIDEFF",
+      "description": "Pillar 03: Rialto watches your system around the clock, fixes what breaks before you notice, and sends a report every Monday."
+    },
+    "work": {
+      "title": "Work · RIDEFF",
+      "description": "Built, live, running: TIC Originals, Mami I Patisserie, the RIDEFF client portal and RIDEFF Life."
+    },
+    "life": {
+      "title": "RIDEFF Life — Your life. Remembered. Sorted. Lived.",
+      "description": "A personal assistant for money, time, goals and family — based on your own data. 14 days free, no card needed."
+    },
+    "pricing": {
+      "title": "Pricing · RIDEFF",
+      "description": "Business from €149/month net plus setup, Life from €12,90 incl. VAT. All plans, a configurator and a full comparison."
+    },
+    "about": {
+      "title": "About · RIDEFF",
+      "description": "I’m Rialto. I get the AI, so you don’t have to — one person, from the first call to keeping it running."
+    },
+    "contact": {
+      "title": "Contact · RIDEFF",
+      "description": "WhatsApp, book 15 minutes or email: Rialto replies himself."
+    },
+    "journal": {
+      "title": "Journal · RIDEFF",
+      "description": "What I learn building systems for real businesses — what worked, what broke, and what I’d do differently."
+    },
+    "impressum": {
+      "title": "Impressum · RIDEFF",
+      "description": "Legal notice of RIDEFF, Eichstätt."
+    },
+    "datenschutz": {
+      "title": "Datenschutz · RIDEFF",
+      "description": "Privacy policy of RIDEFF."
+    },
+    "agb": {
+      "title": "AGB · RIDEFF",
+      "description": "Terms of RIDEFF."
+    },
+    "demo": {
+      "title": "Business demo · RIDEFF",
+      "description": "Interactive demo of a RIDEFF system with sample data."
+    }
+  },
+  "common": {},
+  "nana": {
+    "call": "Call"
   }
 }

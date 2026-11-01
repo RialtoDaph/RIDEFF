@@ -1,13 +1,41 @@
 import { defineRouting } from 'next-intl/routing';
 
-export const locales = ['de', 'en', 'id'] as const;
+export const locales = ['de', 'en'] as const;
 export type Locale = (typeof locales)[number];
+
+/**
+ * Internal route (folder name) → public path per locale.
+ * German lives at "/" without prefix, English under "/en".
+ */
+export const pathnames = {
+  '/': '/',
+  '/understand': { de: '/verstehen', en: '/understand' },
+  '/build': { de: '/bauen', en: '/build' },
+  '/build/web-shops': { de: '/bauen/web-shops', en: '/build/web-shops' },
+  '/build/team-apps': { de: '/bauen/team-apps', en: '/build/team-apps' },
+  '/run': { de: '/betreiben', en: '/run' },
+  '/work': { de: '/projekte', en: '/work' },
+  '/life': '/life',
+  '/pricing': { de: '/preise', en: '/pricing' },
+  '/about': { de: '/ueber-mich', en: '/about' },
+  '/contact': { de: '/kontakt', en: '/contact' },
+  '/journal': '/journal',
+  '/journal/[slug]': '/journal/[slug]',
+  '/impressum': '/impressum',
+  '/datenschutz': '/datenschutz',
+  '/agb': '/agb',
+  '/demo': '/demo',
+  '/newsletter/confirmed': '/newsletter/confirmed',
+  '/newsletter/expired': '/newsletter/expired',
+} as const;
+
+export type AppPath = keyof typeof pathnames;
 
 export const routing = defineRouting({
   locales,
   defaultLocale: 'de',
-  // German lives at "/" (and "/de" redirects there); EN and ID are prefixed.
   localePrefix: 'as-needed',
+  pathnames,
   // Germany first: "/" is always German, no Accept-Language redirect.
   localeDetection: false,
   // Cookie-free site: the locale is carried by the URL only.
@@ -15,3 +43,6 @@ export const routing = defineRouting({
   // hreflang is emitted in the page metadata instead of a Link header.
   alternateLinks: false,
 });
+
+/** Pages that exist in German only (legal texts). */
+export const GERMAN_ONLY: readonly AppPath[] = ['/impressum', '/datenschutz', '/agb'];
