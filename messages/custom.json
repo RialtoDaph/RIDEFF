@@ -305,6 +305,10 @@
     "voiceLive": {
       "en": "Voice",
       "de": "Sprache"
+    },
+    "aiNotice": {
+      "de": "Sie sprechen mit Nana, einer KI-Assistentin",
+      "en": "You’re talking to Nana, an AI assistant"
     }
   },
   "journal": {

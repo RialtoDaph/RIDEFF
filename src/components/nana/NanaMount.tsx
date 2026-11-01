@@ -20,5 +20,6 @@ function pageKey(pathname: string) {
 export function NanaMount({ live }: { live: boolean }) {
   const pathname = usePathname();
   if (pathname.startsWith('/demo')) return null;
-  return <Nana page={pageKey(pathname)} live={live} />;
+  // callSheet={false}: "Call" starts the call at once, like a phone call (no pre-call sheet).
+  return <Nana page={pageKey(pathname)} live={live} callSheet={false} />;
 }

@@ -2751,7 +2751,8 @@
     "callFailed": "The call could not be connected. Please try again, or type instead.",
     "statusLive": "Text or voice",
     "voiceCallLive": "Voice call",
-    "voiceLive": "Voice"
+    "voiceLive": "Voice",
+    "aiNotice": "You’re talking to Nana, an AI assistant"
   },
   "journal": {
     "invalidEmail": "Please enter a valid email address.",

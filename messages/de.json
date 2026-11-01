@@ -2751,7 +2751,8 @@
     "callFailed": "Der Anruf konnte nicht verbunden werden. Bitte noch einmal versuchen oder lieber tippen.",
     "statusLive": "Text oder Sprache",
     "voiceCallLive": "Sprachanruf",
-    "voiceLive": "Sprache"
+    "voiceLive": "Sprache",
+    "aiNotice": "Sie sprechen mit Nana, einer KI-Assistentin"
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

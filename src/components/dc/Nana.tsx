@@ -202,8 +202,11 @@ class Logic extends DCLogic {
       mode: 'call'
     });
     if (this.props.callSheet === false) {
+      // Straight into the call, like a phone call. Without the pre-call sheet there
+      // is no "save to my portal" tick, so nothing is stored (consent: false).
       this.setState({
-        open: true
+        open: true,
+        consent: false
       });
       return this.startCall();
     }
@@ -940,6 +943,12 @@ Logic.prototype.render = function render() {
               <button onClick={v.endCall} style={{ width: "56px", height: "56px", borderRadius: "50%", border: "none", background: "#E5484D", color: "#FFFFFF", cursor: "pointer", font: "600 11px var(--font-mono)", letterSpacing: ".06em", textTransform: "uppercase" }}>
                 {v.t("RideffNana.end")}
               </button>
+            </div>
+            <div style={{ textAlign: "center", padding: "0 16px 16px", font: "400 11px var(--font-mono)", letterSpacing: ".04em", color: "#6B675F" }}>
+              {v.t("nana.aiNotice")}{" · "}
+              <a href={v.href("/datenschutz")} style={{ color: "#8C877E", textDecoration: "underline" }}>
+                {v.t("RideffNana.privacy")}
+              </a>
             </div>
           </div>
           {" "}
