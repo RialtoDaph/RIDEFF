@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
+import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
@@ -12,12 +12,31 @@ import { SiteFx } from '@/components/site/SiteFx';
 import { NanaMount } from '@/components/nana/NanaMount';
 import '../globals.css';
 
-const geist = Geist({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-geist', display: 'swap' });
-const geistMono = Geist_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-geist-mono', display: 'swap' });
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
+// Fonts ship with the repo (src/fonts, SIL OFL), so the build never depends on
+// downloading from Google Fonts. A failed download broke a production build.
+const geist = localFont({
+  src: [
+    { path: '../../fonts/Geist-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../../fonts/Geist-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../../fonts/Geist-SemiBold.woff2', weight: '600', style: 'normal' },
+    { path: '../../fonts/Geist-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-geist',
+  display: 'swap',
+});
+const geistMono = localFont({
+  src: [
+    { path: '../../fonts/GeistMono-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../../fonts/GeistMono-Medium.woff2', weight: '500', style: 'normal' },
+  ],
+  variable: '--font-geist-mono',
+  display: 'swap',
+});
+const instrumentSerif = localFont({
+  src: [
+    { path: '../../fonts/InstrumentSerif-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../../fonts/InstrumentSerif-Italic.woff2', weight: '400', style: 'italic' },
+  ],
   variable: '--font-instrument-serif',
   display: 'swap',
 });
