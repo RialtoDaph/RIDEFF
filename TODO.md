@@ -33,14 +33,14 @@ Journal posts: real posts go in `content/journal/<slug>.mdx` (see `README.md`). 
 
 Chat and voice run on **ElevenLabs Agents** once the env vars are set; without them Nana keeps the mock answers. WhatsApp Business and Supabase are still mocks.
 
-- [ ] **ElevenLabs setup** (owner):
-  1. ElevenLabs account; for EU data residency an EU-residency workspace (then `ELEVENLABS_REGION=eu`).
-  2. API key with Agents access.
-  3. Voice: for now the Instant Voice Clone "Nana" (recorded in Indonesian, so German has an accent). For more natural German, re-record ~1–2 min in German and re-run the script with the new `NANA_VOICE_ID`. Optional tuning: `NANA_TTS_MODEL`, `NANA_STABILITY`, `NANA_SIMILARITY` (try values in ElevenLabs → Text to Speech first).
-  4. Run `ELEVENLABS_API_KEY=… node scripts/elevenlabs-agent.mjs` (creates the agent: prompt with plans and prices, DE/EN first message, overrides, data collection, no voice recording, 30-day transcript retention). It prints the agent id.
-  5. In Vercel → Environment Variables: `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID` (and `ELEVENLABS_REGION`), then redeploy.
-  6. Test a call and a chat in DE and EN on the preview; adjust the prompt in `scripts/elevenlabs-agent.mjs` and re-run with `ELEVENLABS_AGENT_ID` set to update.
-- [ ] Choose the agent's LLM in the ElevenLabs dashboard (the script keeps the default) and put its provider into Datenschutz.
+- [ ] **ElevenLabs setup** (owner), no terminal needed:
+  1. ElevenLabs → Developers → API Keys: a restricted key with **ElevenAgents: Write** and **Voices: Read**, everything else No Access, plus a credit limit. Never paste it into chat or into a file in this (public) repo.
+  2. Voices → My Voices → ⋯ on the Nana voice → **Copy voice ID**.
+  3. Vercel → Project → Settings → Environment Variables: `ELEVENLABS_API_KEY` and `NANA_VOICE_ID`. Optional tuning (try values in ElevenLabs → Text to Speech first): `NANA_TTS_MODEL` (e.g. `eleven_v4`), `NANA_SIMILARITY` (e.g. `55`), `NANA_STABILITY` (e.g. `50`). EU residency workspace: `ELEVENLABS_REGION=eu`.
+  4. Redeploy. The first visitor session creates the agent "Nana · rideff.com" in ElevenLabs (prompt, DE/EN first message, overrides, data collection, no voice recording, 30-day transcripts); later deploys update it when `src/lib/nana/agent-config.ts` or the voice vars change.
+  5. Test a call and a chat in DE and EN.
+  - Voice: the current clone "Nana" was recorded in Indonesian, so German has an accent. For more natural German, record ~1–2 min in German, then just change `NANA_VOICE_ID` in Vercel and redeploy.
+- [ ] Check which LLM the agent uses in the ElevenLabs dashboard (ElevenLabs' default) and put its provider into Datenschutz.
 - [ ] **WhatsApp Business API** → `POST /api/nana/whatsapp`: account, sender number, approved template, opt-in record. Today it validates the number and pretends to send ("Sent to … ✓").
 - [ ] **Supabase (Frankfurt)**: store transcript + summary when `consent` is true and attach them to the lead/client in the portal (`TODO(owner)` in `src/app/api/nana/summary/route.ts`).
 - [ ] Rate limiting on `/api/nana/*/session` (each call mints an ElevenLabs session) and call limits / budget alerts in ElevenLabs.

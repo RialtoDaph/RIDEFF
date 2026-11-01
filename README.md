@@ -58,9 +58,9 @@ Edit the handoff JSON or `custom.json`, then run `npm run i18n`. Do not edit `me
 
 ## Nana (ElevenLabs Agents)
 
-Nana's chat and voice call run on one ElevenLabs agent. The server only mints short-lived credentials (`src/lib/nana/elevenlabs.ts`, API key never reaches the browser); the browser talks to ElevenLabs with `@elevenlabs/client` (`src/components/nana/elevenlabs-client.ts`): WebRTC for the call, a text-only session for the chat. Without `ELEVENLABS_API_KEY` + `ELEVENLABS_AGENT_ID` every route answers with mock data, so the site works without an account.
+Nana's chat and voice call run on one ElevenLabs agent. The server only mints short-lived credentials (`src/lib/nana/elevenlabs.ts`, API key never reaches the browser); the browser talks to ElevenLabs with `@elevenlabs/client` (`src/components/nana/elevenlabs-client.ts`): WebRTC for the call, a text-only session for the chat. Without `ELEVENLABS_API_KEY` every route answers with mock data, so the site works without an account.
 
-The agent (prompt with plans and prices, DE/EN first message, allowed overrides, data collection for the summary, privacy) is defined in `scripts/elevenlabs-agent.mjs`; run it to create or update the agent (setup steps in `TODO.md`).
+The agent (prompt with plans and prices, DE/EN first message, allowed overrides, data collection for the summary, privacy, voice from `NANA_VOICE_ID`) is defined in `src/lib/nana/agent-config.ts`. The server creates it on the first session and updates it whenever that definition or the voice env vars change, so setup is only env vars in Vercel (steps in `TODO.md`). `ELEVENLABS_AGENT_ID` switches to an agent managed by hand.
 
 | Route | Purpose |
 |---|---|
