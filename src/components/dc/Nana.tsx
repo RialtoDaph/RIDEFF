@@ -4,6 +4,8 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import { nanaEvent } from '@/lib/analytics';
 import { startTextChat, startVoice, suggestsContact } from '@/components/nana/elevenlabs-client';
+import { PhoneIcon, WhatsAppIcon } from '@/components/nana/icons';
+import { PICKUP_AFTER_MS, startRingback } from '@/components/nana/ringback';
 
 
 /**
@@ -230,6 +232,10 @@ class Logic extends DCLogic {
    */
   startCall = async () => {
     clearInterval(this.ci);
+    // Ringback from the click on (must start inside the click), until Nana picks up.
+    if (this.stopRing) this.stopRing();
+    this.stopRing = startRingback();
+    this.ringT0 = Date.now();
     this.real = false;
     this.vcId = null;
     this.setState({
@@ -245,6 +251,7 @@ class Logic extends DCLogic {
       try {
         this.mic = await navigator.mediaDevices.getUserMedia({ audio: true });
       } catch (e) {
+        this.ringOff();
         this.setState(s => ({
           mode: 'chat',
           call: 'idle',
@@ -253,7 +260,7 @@ class Logic extends DCLogic {
         return;
       }
     }
-    if (this.state.call !== 'ringing') return this.stopMic();
+    if (this.state.call !== 'ringing') { this.ringOff(); return this.stopMic(); }
     let data = null;
     try {
       const res = await fetch('/api/nana/voice/session', {
@@ -263,12 +270,15 @@ class Logic extends DCLogic {
       });
       data = res.ok ? await res.json() : null;
     } catch (e) {}
-    if (this.state.call !== 'ringing') return this.stopMic();
+    if (this.state.call !== 'ringing') { this.ringOff(); return this.stopMic(); }
     if (data && data.provider === 'elevenlabs') {
       // The SDK opens its own microphone stream.
       this.stopMic();
       this.real = true;
       this.SCRIPT = [];
+      // Let the caller hear one full ring before Nana picks up.
+      await new Promise(r => setTimeout(r, Math.max(0, PICKUP_AFTER_MS - (Date.now() - this.ringT0))));
+      if (this.state.call !== 'ringing') return this.ringOff();
       try {
         this.vc = await startVoice({
           token: data.token,
@@ -276,6 +286,7 @@ class Logic extends DCLogic {
           locale: this.props.locale,
           page: this.page(),
           onConnect: id => {
+            this.ringOff();
             this.vcId = id;
             nanaEvent('nana_call_start', { page: this.page(), consent: this.state.consent !== false });
             this.setState({ call: 'live', t0: Date.now() });
@@ -292,6 +303,7 @@ class Logic extends DCLogic {
         if (this.state.call === 'idle') this.endVoice();
       } catch (e) {
         this.vc = null;
+        this.ringOff();
         this.setState(s => ({
           mode: 'chat',
           call: 'idle',
@@ -311,6 +323,7 @@ class Logic extends DCLogic {
     if (data && Array.isArray(data.script) && data.script.length) this.SCRIPT = data.script.map(l => [l.who, l.text]);
     clearTimeout(this.ct);
     this.ct = setTimeout(() => {
+      this.ringOff();
       if (this.state.call === 'ringing') {
         nanaEvent('nana_call_start', { page: this.page(), consent: this.state.consent !== false });
         this.setState({
@@ -318,7 +331,7 @@ class Logic extends DCLogic {
           t0: Date.now()
         });
       }
-    }, 1400);
+    }, Math.max(1400, PICKUP_AFTER_MS - (Date.now() - this.ringT0)));
     this.ci = setInterval(() => this.setState(s => {
       if (s.call !== 'live') return {
         lv: Math.random()
@@ -330,6 +343,10 @@ class Logic extends DCLogic {
         line: Math.min(this.SCRIPT.length, Math.floor(sec / 3))
       };
     }), 140);
+  };
+  ringOff = () => {
+    if (this.stopRing) this.stopRing();
+    this.stopRing = null;
   };
   endVoice = async () => {
     const vc = this.vc;
@@ -357,6 +374,7 @@ class Logic extends DCLogic {
   endCall = async () => {
     if (this.ending) return;
     this.ending = true;
+    this.ringOff();
     clearInterval(this.ci);
     clearTimeout(this.ct);
     this.stopMic();
@@ -462,6 +480,7 @@ class Logic extends DCLogic {
   }
   componentWillUnmount() {
     this.alive = false;
+    this.ringOff();
     this.stopMic();
     this.endVoice();
     this.closeChat();
@@ -532,6 +551,7 @@ class Logic extends DCLogic {
       listRef: this.setList,
       inputRef: this.inputRef,
       launcherT: s.call !== 'idle' ? this.props.t("RideffNana.onCall") + this.fmt(s.sec) : this.props.t("RideffNana.askNana"),
+      launcherCallBg: s.call !== 'idle' ? '#FF6A00' : '#0A0A0A',
       callBtnT: s.call !== 'idle' ? this.props.t("RideffNana.backToCall") : this.props.t("nana.call"),
       toggle: () => {
         if (!s.open) nanaEvent('nana_open', { page: this.page() });
@@ -678,8 +698,8 @@ Logic.prototype.render = function render() {
                 </span>
               </div>
               <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                <button onClick={v.callNana} style={{ display: "flex", alignItems: "center", gap: "6px", border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
-                  {v.callBtnT2}
+                <button onClick={v.callNana} aria-label={v.callBtnT2} title={v.callBtnT2} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "50%", padding: "0", cursor: "pointer" }}>
+                  <PhoneIcon width={17} height={17} />
                 </button>
                 <button onClick={v.toggle} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#1C1C1E", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "16px" }}>
                   {"×"}
@@ -706,7 +726,7 @@ Logic.prototype.render = function render() {
                         {v.t("RideffNana.typeAQuestion")}
                       </button>
                       <button onClick={v.callNana} style={{ display: "flex", alignItems: "center", gap: "8px", border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
-                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0A0A0A" }} />
+                        <PhoneIcon width={14} height={14} />
                         {v.t("RideffNana.callNanaVoice")}
                       </button>
                     </div>
@@ -970,13 +990,12 @@ Logic.prototype.render = function render() {
                 {v.launcherT}
               </button>
               <span style={{ width: "1px", height: "22px", background: "#D9D3C9" }} />
-              <button onClick={v.callNana} title={v.t("RideffNana.callNana")} style={{ display: "flex", alignItems: "center", gap: "6px", border: "none", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "10px 14px", font: "600 13px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }} className="hv-9bccb67">
-                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#FF6A00" }} />
-                {v.callBtnT}
+              <button onClick={v.callNana} aria-label={v.callBtnT} title={v.callBtnT} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", border: "none", background: `${v.launcherCallBg ?? ''}`, color: "#F4F4F2", borderRadius: "50%", padding: "0", cursor: "pointer" }} className="hv-9bccb67">
+                <PhoneIcon width={18} height={18} />
               </button>
             </div>
-            <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#0A0A0A", color: "#F4F4F2", display: "flex", alignItems: "center", justifyContent: "center", font: "700 12px var(--font-mono)", textDecoration: "none", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
-              {"WA"}
+            <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
+              <WhatsAppIcon width={28} height={28} />
             </a>
           </div>
         </>) : null}
