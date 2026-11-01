@@ -41,7 +41,6 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
   5. In Vercel → Environment Variables: `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID` (and `ELEVENLABS_REGION`), then redeploy.
   6. Test a call and a chat in DE and EN on the preview; adjust the prompt in `scripts/elevenlabs-agent.mjs` and re-run with `ELEVENLABS_AGENT_ID` set to update.
 - [ ] Choose the agent's LLM in the ElevenLabs dashboard (the script keeps the default) and put its provider into Datenschutz.
-- [ ] **First call length:** Nana's copy (handoff) says "free 30-minute call", the Home/Contact booking says "Book 15 minutes". The agent prompt uses 30 minutes — decide which is right.
 - [ ] **WhatsApp Business API** → `POST /api/nana/whatsapp`: account, sender number, approved template, opt-in record. Today it validates the number and pretends to send ("Sent to … ✓").
 - [ ] **Supabase (Frankfurt)**: store transcript + summary when `consent` is true and attach them to the lead/client in the portal (`TODO(owner)` in `src/app/api/nana/summary/route.ts`).
 - [ ] Rate limiting on `/api/nana/*/session` (each call mints an ElevenLabs session) and call limits / budget alerts in ElevenLabs.

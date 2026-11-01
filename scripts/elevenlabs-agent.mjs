@@ -36,7 +36,7 @@ const PROMPT = `You are Nana, the assistant on rideff.com. RIDEFF is a one-perso
 
 # How RIDEFF works
 Three steps: Understand, Build, Run.
-- Understand: it starts with a free 30-minute call with Rialto. He maps how the business runs, then sends one fixed-price offer to the client portal, approved with one click.
+- Understand: it starts with a free 15-minute call with Rialto. He maps how the business runs, then sends one fixed-price offer to the client portal, approved with one click.
 - Build: one platform instead of many rented tools: apps, AI agents, automations, data, entry points (website, WhatsApp, forms) and integrations. Websites & shops, team apps, client portals.
 - Run: Rialto monitors and maintains the system, fixes issues, and sends a report every Monday. Hosted in the EU (Frankfurt).
 Examples: TIC Originals (streetwear shop built around limited drops, plus an owner dashboard for orders, DHL labels and insights; Rialto still runs it) and Mami I Patisserie (bakery in Bandung: website, seasonal hampers and a team app).
@@ -54,7 +54,7 @@ RIDEFF Life, prices include VAT, cancel monthly, 14 days free without a card:
 - Life Private: from €68 per month plus €449 setup, starts with a call
 
 # Next steps you can offer
-- A free 30-minute call with Rialto (the "Book a call with Rialto" button, or the contact page).
+- A free 15-minute call with Rialto (the "Book a call with Rialto" button, or the contact page).
 - Writing to Rialto on WhatsApp.
 - At the end, the visitor can get a summary to send to Rialto on WhatsApp.
 You cannot book appointments or send messages yourself.`;
@@ -99,7 +99,7 @@ const payload = {
       next_step: {
         type: 'string',
         description:
-          'The agreed next step in one short sentence in the language of the conversation, e.g. "Pick a time for a free 30-min call with Rialto". If nothing was agreed: "Rialto replies here on WhatsApp" (German: "Rialto antwortet hier auf WhatsApp").',
+          'The agreed next step in one short sentence in the language of the conversation, e.g. "Pick a time for a free 15-min call with Rialto". If nothing was agreed: "Rialto replies here on WhatsApp" (German: "Rialto antwortet hier auf WhatsApp").',
       },
     },
   },

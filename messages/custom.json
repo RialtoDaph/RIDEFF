@@ -336,5 +336,37 @@
       "de": "15 Min. buchen",
       "en": "Book 15 min"
     }
+  },
+  "RideffNana": {
+    "yesItStartsWithAFree": {
+      "en": "Yes — it starts with a free 15-minute call. After that you get a fixed offer in your client portal.",
+      "de": "Ja — es beginnt mit einem kostenlosen 15-Minuten-Gespräch. Danach erhalten Sie ein Festpreisangebot in Ihrem Kundenportal."
+    },
+    "threeStepsUnderstandBuildRunIt": {
+      "en": "Three steps: Understand, Build, Run. It starts with a free 15-minute call — Rialto gives you a timeline right after.",
+      "de": "Drei Schritte: Verstehen, Bauen, Betreiben. Es beginnt mit einem kostenlosen 15-Minuten-Gespräch — direkt danach bekommen Sie von Rialto einen Zeitplan."
+    },
+    "pickATimeForAFree": {
+      "en": "Pick a time for a free 15-min call with Rialto",
+      "de": "Termin für ein kostenloses 15-Min.-Gespräch mit Rialto wählen"
+    },
+    "aFree30MinCallWith": {
+      "en": "A free 15-min call with Rialto",
+      "de": "Ein kostenloses 15-Min.-Gespräch mit Rialto"
+    }
+  },
+  "Pricing": {
+    "n30MinutesWeTalkAboutHow": {
+      "en": "15 minutes. We talk about how your business runs today. Free.",
+      "de": "15 Minuten. Wir sprechen darüber, wie Ihr Betrieb heute läuft. Kostenlos."
+    },
+    "n30MinutesFreeWeTalkAbout": {
+      "en": "15 minutes, free. We talk about how your business runs today.",
+      "de": "15 Minuten, kostenlos. Wir sprechen darüber, wie Ihr Betrieb heute läuft."
+    },
+    "n30Min": {
+      "en": "15 min",
+      "de": "15 Min."
+    }
   }
 }
