@@ -265,6 +265,30 @@
     "call": {
       "de": "Anrufen",
       "en": "Call"
+    },
+    "questions": {
+      "en": "{n, plural, one {# question} other {# questions}}",
+      "de": "{n, plural, one {# Frage} other {# Fragen}}"
+    },
+    "micBlocked": {
+      "en": "Microphone blocked — allow it in your browser, or type instead.",
+      "de": "Mikrofon blockiert — erlauben Sie es im Browser oder tippen Sie lieber."
+    },
+    "sendFailed": {
+      "en": "That didn’t go through. Please try again, or message Rialto on WhatsApp.",
+      "de": "Das hat nicht geklappt. Bitte noch einmal versuchen oder Rialto auf WhatsApp schreiben."
+    },
+    "phoneLabel": {
+      "en": "Your WhatsApp number",
+      "de": "Ihre WhatsApp-Nummer"
+    },
+    "messageLabel": {
+      "en": "Message to Nana",
+      "de": "Nachricht an Nana"
+    },
+    "close": {
+      "en": "Close",
+      "de": "Schließen"
     }
   },
   "journal": {

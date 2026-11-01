@@ -2094,7 +2094,13 @@
     "waNotSure": "noch unklar"
   },
   "nana": {
-    "call": "Anrufen"
+    "call": "Anrufen",
+    "questions": "{n, plural, one {# Frage} other {# Fragen}}",
+    "micBlocked": "Mikrofon blockiert — erlauben Sie es im Browser oder tippen Sie lieber.",
+    "sendFailed": "Das hat nicht geklappt. Bitte noch einmal versuchen oder Rialto auf WhatsApp schreiben.",
+    "phoneLabel": "Ihre WhatsApp-Nummer",
+    "messageLabel": "Nachricht an Nana",
+    "close": "Schließen"
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

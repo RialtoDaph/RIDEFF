@@ -9,6 +9,7 @@ import { SITE_URL } from '@/lib/site';
 import { defaultMetadata } from '@/lib/metadata';
 import { Messages } from '@/components/site/Messages';
 import { SiteFx } from '@/components/site/SiteFx';
+import { NanaMount } from '@/components/nana/NanaMount';
 import '../globals.css';
 
 const geist = Geist({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-geist', display: 'swap' });
@@ -47,6 +48,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           <SiteFx />
         </Messages>
         {children}
+        <Messages namespaces={['RideffNana', 'nana']}>
+          <NanaMount />
+        </Messages>
         <Analytics />
       </body>
     </html>
