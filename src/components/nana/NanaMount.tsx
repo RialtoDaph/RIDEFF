@@ -13,8 +13,12 @@ function pageKey(pathname: string) {
 }
 
 /** Nana lives in the layout, so a running call survives page changes. */
-export function NanaMount() {
+/**
+ * live: an ElevenLabs key is configured, so labels drop the prototype's
+ * "preview" and errors no longer say Nana is a preview.
+ */
+export function NanaMount({ live }: { live: boolean }) {
   const pathname = usePathname();
   if (pathname.startsWith('/demo')) return null;
-  return <Nana page={pageKey(pathname)} />;
+  return <Nana page={pageKey(pathname)} live={live} />;
 }

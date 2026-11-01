@@ -10,6 +10,7 @@ import { defaultMetadata } from '@/lib/metadata';
 import { Messages } from '@/components/site/Messages';
 import { SiteFx } from '@/components/site/SiteFx';
 import { NanaMount } from '@/components/nana/NanaMount';
+import { isElevenLabsConfigured } from '@/lib/nana/elevenlabs';
 import '../globals.css';
 
 // Fonts ship with the repo (src/fonts, SIL OFL), so the build never depends on
@@ -68,7 +69,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
         </Messages>
         {children}
         <Messages namespaces={['RideffNana', 'nana']}>
-          <NanaMount />
+          <NanaMount live={isElevenLabsConfigured()} />
         </Messages>
         <Analytics />
       </body>
