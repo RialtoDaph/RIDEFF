@@ -102,7 +102,7 @@ class Logic extends DCLogic {
     clearTimeout(this.rt);
     this.setState(s => s.typing ? {
       typing: false,
-      msgs: [...s.msgs, { from: 'bot', t: this.props.t("RideffNana.iMStillAPreviewSo"), acts: true }]
+      msgs: [...s.msgs, { from: 'bot', t: this.props.t(this.props.live ? "nana.sendFailed" : "RideffNana.iMStillAPreviewSo"), acts: true }]
     } : null);
   };
   /** Opens (or reuses) the text session; null in mock mode. */
@@ -530,7 +530,7 @@ class Logic extends DCLogic {
           mode: st.call !== 'idle' ? 'call' : 'chat'
         }));
       },
-      status: s.call !== 'idle' ? this.props.t("RideffNana.onACall") + this.fmt(s.sec) : s.typing ? this.props.t("RideffNana.typing") : this.props.t("RideffNana.textOrVoicePreview"),
+      status: s.call !== 'idle' ? this.props.t("RideffNana.onACall") + this.fmt(s.sec) : s.typing ? this.props.t("RideffNana.typing") : this.props.t(this.props.live ? "nana.statusLive" : "RideffNana.textOrVoicePreview"),
       msgs,
       typing: s.typing,
       chips,
@@ -821,7 +821,7 @@ Logic.prototype.render = function render() {
           <div style={{ width: `${v.pW ?? ''}`, maxHeight: `${v.pMax ?? ''}`, height: `${v.pHp ?? ''}`, background: "#0B0B0C", color: "#F4F4F2", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.45)", overflow: "auto", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-                {v.t("RideffNana.voiceCallPreview")}
+                {v.t(v.live ? "nana.voiceCallLive" : "RideffNana.voiceCallPreview")}
               </span>
               <button onClick={v.cancelPre} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#1C1C1E", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "16px" }}>
                 {"×"}
@@ -887,7 +887,7 @@ Logic.prototype.render = function render() {
           <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHk ?? ''}`, background: "#0B0B0C", color: "#F4F4F2", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.45)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-                {v.t("RideffNana.voicePreview")}
+                {v.t(v.live ? "nana.voiceLive" : "RideffNana.voicePreview")}
               </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: `${v.timerC ?? ''}` }}>
                 {v.timer}

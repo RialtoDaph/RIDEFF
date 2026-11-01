@@ -2748,7 +2748,10 @@
     "phoneLabel": "Your WhatsApp number",
     "messageLabel": "Message to Nana",
     "close": "Close",
-    "callFailed": "The call could not be connected. Please try again, or type instead."
+    "callFailed": "The call could not be connected. Please try again, or type instead.",
+    "statusLive": "Text or voice",
+    "voiceCallLive": "Voice call",
+    "voiceLive": "Voice"
   },
   "journal": {
     "invalidEmail": "Please enter a valid email address.",
