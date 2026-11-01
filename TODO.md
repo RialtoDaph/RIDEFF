@@ -26,20 +26,25 @@ Journal posts: real posts go in `content/journal/<slug>.mdx` (see `README.md`). 
 
 - Impressum: `[Straße und Hausnummer]`, `[PLZ Ort]`, `[Telefonnummer]`, `[USt-IdNr. oder „Kleinunternehmer gemäß § 19 UStG“]`
 - Datenschutz: `[Anschrift]`, `[7]` days log retention, `[Aufsichtsbehörde Ihres Bundeslandes]`, newsletter provider `[Resend, Inc., USA / Brevo (Sendinblue SAS), Frankreich]`
-- Datenschutz, new sections 7 (Nana) and 8 (WhatsApp), drafted for this build and **not yet reviewed**: `[Anbieter, Sitz, Verarbeitungsort]` (AI), `[Sprachanbieter, Sitz, Verarbeitungsort]` (voice), `[24 Stunden]` chat retention without consent, `[12 Monate]` portal transcript retention, `[über Anbieter, falls genutzt]` and `[30 Tagen]` for WhatsApp Business
+- Datenschutz, new sections 7 (Nana on ElevenLabs) and 8 (WhatsApp), drafted for this build and **not yet reviewed**: `[Firma und Anschrift laut Auftragsverarbeitungsvertrag]` (ElevenLabs entity), `[USA oder EU-Rechenzentrum, je nach Konto]`, `[Sprachmodell-Anbieter laut Agent-Einstellung]`, `[24 Stunden]` chat retention without consent, `[12 Monate]` portal transcript retention, `[über Anbieter, falls genutzt]` and `[30 Tagen]` for WhatsApp Business
 - AGB: full terms still to be written
 
-## 3. Nana (all mocked behind API routes)
+## 3. Nana
 
-The UI is final; `src/app/api/nana/*` answer with mock data (contract in `src/lib/nana/types.ts`).
+Chat and voice run on **ElevenLabs Agents** once the env vars are set; without them Nana keeps the mock answers. WhatsApp Business and Supabase are still mocks.
 
-- [ ] **AI provider** → `POST /api/nana/chat` (replace `mockReply()`; keep streaming text/plain and the `x-nana-actions` header). Write the system prompt with the real plans and prices (README → Nana → plan table).
-- [ ] **Voice provider** → `POST /api/nana/voice/session` must return a realtime token; the client then streams mic audio (mic permission is already requested in `startCall`). Today the call panel plays the scripted café call.
-- [ ] **Summary** → `POST /api/nana/summary`: let the AI fill need / interest / next from the transcript (interest must map to a real plan). The WhatsApp template and date/duration formats are already final.
-- [ ] **Supabase (Frankfurt)**: tables for transcripts and summaries; store them when `consent` is true and attach them to the lead/client in the portal (`TODO(owner)` in the summary route).
+- [ ] **ElevenLabs setup** (owner):
+  1. ElevenLabs account; for EU data residency an EU-residency workspace (then `ELEVENLABS_REGION=eu`).
+  2. API key with Agents access.
+  3. Choose a voice that sounds good in German and English; optional `NANA_VOICE_ID`.
+  4. Run `ELEVENLABS_API_KEY=… node scripts/elevenlabs-agent.mjs` (creates the agent: prompt with plans and prices, DE/EN first message, overrides, data collection, no voice recording, 30-day transcript retention). It prints the agent id.
+  5. In Vercel → Environment Variables: `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID` (and `ELEVENLABS_REGION`), then redeploy.
+  6. Test a call and a chat in DE and EN on the preview; adjust the prompt in `scripts/elevenlabs-agent.mjs` and re-run with `ELEVENLABS_AGENT_ID` set to update.
+- [ ] Choose the agent's LLM in the ElevenLabs dashboard (the script keeps the default) and put its provider into Datenschutz.
+- [ ] **First call length:** Nana's copy (handoff) says "free 30-minute call", the Home/Contact booking says "Book 15 minutes". The agent prompt uses 30 minutes — decide which is right.
 - [ ] **WhatsApp Business API** → `POST /api/nana/whatsapp`: account, sender number, approved template, opt-in record. Today it validates the number and pretends to send ("Sent to … ✓").
-- [ ] Rate limiting / abuse protection on the Nana routes before real providers are connected.
-- [ ] Keys go into Vercel env vars (see `.env.example`).
+- [ ] **Supabase (Frankfurt)**: store transcript + summary when `consent` is true and attach them to the lead/client in the portal (`TODO(owner)` in `src/app/api/nana/summary/route.ts`).
+- [ ] Rate limiting on `/api/nana/*/session` (each call mints an ElevenLabs session) and call limits / budget alerts in ElevenLabs.
 
 ## 4. Owner decisions and assets
 

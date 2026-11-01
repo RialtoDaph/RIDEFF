@@ -2747,7 +2747,8 @@
     "sendFailed": "Das hat nicht geklappt. Bitte noch einmal versuchen oder Rialto auf WhatsApp schreiben.",
     "phoneLabel": "Ihre WhatsApp-Nummer",
     "messageLabel": "Nachricht an Nana",
-    "close": "Schließen"
+    "close": "Schließen",
+    "callFailed": "Der Anruf konnte nicht verbunden werden. Bitte noch einmal versuchen oder lieber tippen."
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

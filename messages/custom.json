@@ -289,6 +289,10 @@
     "close": {
       "en": "Close",
       "de": "Schließen"
+    },
+    "callFailed": {
+      "en": "The call could not be connected. Please try again, or type instead.",
+      "de": "Der Anruf konnte nicht verbunden werden. Bitte noch einmal versuchen oder lieber tippen."
     }
   },
   "journal": {

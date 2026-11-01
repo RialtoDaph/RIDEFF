@@ -44,36 +44,35 @@ export async function mockCallScript(locale: Locale) {
 
 const fmt = (sec: number) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
 
+/** Fields ElevenLabs' post-call analysis fills (data collection ids in scripts/elevenlabs-agent.mjs). */
+export type SummaryFields = { need?: string; interest?: string; next?: string };
+
 /**
- * Summary in the WhatsApp template from the README. In production the AI fills
- * need / interest / next from the transcript; the mock uses the prototype's rules.
+ * Summary in the WhatsApp template from the README. need / interest / next come
+ * from ElevenLabs' post-call analysis when available, otherwise from simple
+ * keyword rules over the transcript (the prototype's logic).
  */
-export async function mockSummary(req: SummaryRequest, now = new Date()): Promise<SummaryResponse> {
+export async function buildSummary(req: SummaryRequest, ai: SummaryFields = {}, now = new Date()): Promise<SummaryResponse> {
   const t = await getTranslations({ locale: req.locale, namespace: 'RideffNana' });
   const tn = await getTranslations({ locale: req.locale, namespace: 'nana' });
-  const mine = req.transcript.filter((l) => l.from === 'you').map((l) => l.text);
+  const mine = req.transcript.filter((l) => l.from === 'you').map((l) => l.text.trim()).filter(Boolean);
   const all = mine.join(' ');
 
-  let kind: string, duration: string, need: string, interest: string, next: string;
-  if (req.kind === 'call') {
-    kind = t('voiceCall');
-    duration = fmt(Math.max(0, Math.round(req.duration)));
-    need = t('aSystemForMyCafe');
-    interest = t('growth249MonthSetupFrom1');
-    next = t('pickATimeForAFree');
-  } else {
-    kind = t('chat');
-    duration = tn('questions', { n: req.duration });
-    need = mine[0] || '—';
-    interest = /growth|plan|fit|setup|paket|passt|einrichtung/i.test(all)
+  const kind = req.kind === 'call' ? t('voiceCall') : t('chat');
+  const duration = req.kind === 'call' ? fmt(Math.max(0, Math.round(req.duration))) : tn('questions', { n: req.duration });
+  const need = ai.need?.trim() || mine[0] || '—';
+  const interest =
+    ai.interest?.trim() ||
+    (/growth|plan|fit|setup|paket|passt|einrichtung|cost|kost|preis|price/i.test(all)
       ? t('growth249MonthSetupFrom1')
       : /family|together|familie/i.test(all)
         ? t('rIDEFFLifeTogether2990Month')
         : /life|trial|test/i.test(all)
           ? t('rIDEFFLife14DaysFree')
-          : t('notDecidedYet');
-    next = /call|book|talk|rialto|build|mine|live|long|gespräch|buchen|bauen|meins|lange/i.test(all) ? t('aFree30MinCallWith') : t('rialtoRepliesHereOnWhatsApp');
-  }
+          : t('notDecidedYet'));
+  const next =
+    ai.next?.trim() ||
+    (/call|book|talk|rialto|build|mine|live|long|gespräch|buchen|bauen|meins|lange|sprechen/i.test(all) ? t('aFree30MinCallWith') : t('rialtoRepliesHereOnWhatsApp'));
 
   const date = now.toLocaleDateString(req.locale === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Berlin' });
   const text = [
