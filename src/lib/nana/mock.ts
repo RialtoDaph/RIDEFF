@@ -45,7 +45,17 @@ export async function mockCallScript(locale: Locale) {
 const fmt = (sec: number) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
 
 /** Fields ElevenLabs' post-call analysis fills (data collection ids in ./agent-config.ts). */
-export type SummaryFields = { need?: string; interest?: string; next?: string };
+export type SummaryFields = {
+  name?: string;
+  company?: string;
+  industry?: string;
+  contact?: string;
+  need?: string;
+  situation?: string;
+  timeline?: string;
+  interest?: string;
+  next?: string;
+};
 
 /**
  * Summary in the WhatsApp template from the README. need / interest / next come
@@ -75,18 +85,19 @@ export async function buildSummary(req: SummaryRequest, ai: SummaryFields = {}, 
     (/call|book|talk|rialto|build|mine|live|long|gespräch|buchen|bauen|meins|lange|sprechen/i.test(all) ? t('aFree30MinCallWith') : t('rialtoRepliesHereOnWhatsApp'));
 
   const date = now.toLocaleDateString(req.locale === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Berlin' });
+  const clean = (v?: string) => v?.trim() || '';
+  // Contact block: name / company · industry / how to reach them (lines only if known).
+  const contact = [clean(ai.name), [clean(ai.company), clean(ai.industry)].filter(Boolean).join(' · '), clean(ai.contact)].filter(Boolean);
+  const section = (heading: string, lines: string[]) => (lines.length ? ['', heading, ...lines] : []);
   const text = [
     t('hiRialtoSummaryFromNana'),
     `${kind} · ${date} · ${duration}`,
-    '',
-    t('whatINeed'),
-    need,
-    '',
-    t('interestedIn'),
-    interest,
-    '',
-    t('nextStep'),
-    next,
+    ...section(tn('sumContact'), contact),
+    ...section(t('whatINeed'), [need]),
+    ...section(tn('sumSituation'), [clean(ai.situation)].filter(Boolean)),
+    ...section(t('interestedIn'), [interest]),
+    ...section(tn('sumTimeline'), [clean(ai.timeline)].filter(Boolean)),
+    ...section(t('nextStep'), [next]),
     '',
     t('sentFromNanaOnRideff'),
   ].join('\n');

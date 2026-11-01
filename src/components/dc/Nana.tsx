@@ -11,7 +11,7 @@ import { startTextChat, startVoice, suggestsContact } from '@/components/nana/el
  * zoomed on the face; the orange stays as the fallback colour.
  */
 const AVATAR = process.env.NEXT_PUBLIC_NANA_AVATAR ? opt(process.env.NEXT_PUBLIC_NANA_AVATAR, 640) : '';
-const avatarBg = AVATAR ? { backgroundImage: `url(${AVATAR})`, backgroundSize: '210%', backgroundPosition: '50% 34%' } : {};
+const avatarBg = AVATAR ? { backgroundImage: `url(${AVATAR})`, backgroundSize: '150%', backgroundPosition: '50% 40%' } : {};
 
 class Logic extends DCLogic {
   WA = '4917632572420';
@@ -73,7 +73,7 @@ class Logic extends DCLogic {
   greet() {
     return [{
       from: 'bot',
-      t: this.props.t("RideffNana.hiIMNanaAskMe"),
+      t: this.props.t(this.props.live ? "nana.greetLive" : "RideffNana.hiIMNanaAskMe"),
       choice: true
     }];
   }

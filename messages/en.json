@@ -2752,7 +2752,11 @@
     "statusLive": "Text or voice",
     "voiceCallLive": "Voice call",
     "voiceLive": "Voice",
-    "aiNotice": "You’re talking to Nana, an AI assistant"
+    "aiNotice": "You’re talking to Nana, an AI assistant",
+    "greetLive": "Good day and welcome to RIDEFF. I’m Nana, Rialto’s AI assistant. May I ask who I’m speaking with? You can type or call me directly.",
+    "sumContact": "*Contact*",
+    "sumSituation": "*Current situation*",
+    "sumTimeline": "*Timeline & budget*"
   },
   "journal": {
     "invalidEmail": "Please enter a valid email address.",
