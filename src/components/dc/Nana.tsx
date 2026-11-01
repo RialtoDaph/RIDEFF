@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import { nanaEvent } from '@/lib/analytics';
 import { startTextChat, startVoice, suggestsContact } from '@/components/nana/elevenlabs-client';
-import { PhoneIcon, WhatsAppIcon } from '@/components/nana/icons';
+import { ChatIcon, HangUpIcon, MicIcon, MicOffIcon, PhoneIcon, WhatsAppIcon } from '@/components/nana/icons';
 import { PICKUP_AFTER_MS, startRingback } from '@/components/nana/ringback';
 
 
@@ -595,6 +595,7 @@ class Logic extends DCLogic {
         c: l[0] === 'nana' ? '#FF9A50' : '#8C877E',
         op: i === a.length - 1 ? 1 : .45
       })),
+      muted: !!s.muted,
       muteT: s.muted ? this.props.t("RideffNana.unmute") : this.props.t("RideffNana.mute"),
       muteBg: s.muted ? '#F4F4F2' : 'transparent',
       muteFg: s.muted ? '#0A0A0A' : '#F4F4F2',
@@ -698,7 +699,7 @@ Logic.prototype.render = function render() {
                 </span>
               </div>
               <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                <button onClick={v.callNana} aria-label={v.callBtnT2} title={v.callBtnT2} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "50%", padding: "0", cursor: "pointer" }}>
+                <button onClick={v.callNana} aria-label={v.callBtnT2} title={v.callBtnT2} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", border: "1px solid #3A3A3C", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "50%", padding: "0", cursor: "pointer" }}>
                   <PhoneIcon width={17} height={17} />
                 </button>
                 <button onClick={v.toggle} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#1C1C1E", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "16px" }}>
@@ -736,7 +737,8 @@ Logic.prototype.render = function render() {
                       <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", textDecoration: "none" }}>
                         {v.t("RideffNana.bookACallWithRialto")}
                       </a>
-                      <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style={{ border: "1px solid #BDB6AA", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", textDecoration: "none" }}>
+                      <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1px solid #BDB6AA", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", textDecoration: "none" }}>
+                        <WhatsAppIcon width={15} height={15} style={{ color: "#25D366" }} />
                         {"WhatsApp"}
                       </a>
                     </div>
@@ -783,14 +785,16 @@ Logic.prototype.render = function render() {
                         </>) : null}
                       </div>
                       <div style={{ padding: "0 14px 14px", display: "flex", flexDirection: "column", gap: "8px" }}>
-                        <a href={v.waHref} onClick={v.onWaRialto} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "12px 16px", font: "600 14px var(--font-sans)", textDecoration: "none" }} className="hv-b9fc66e">
+                        <a href={v.waHref} onClick={v.onWaRialto} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", background: "#25D366", color: "#FFFFFF", borderRadius: "999px", padding: "12px 16px", font: "600 14px var(--font-sans)", textDecoration: "none" }} className="hv-b9fc66e">
+                          <WhatsAppIcon width={18} height={18} />
                           {v.t("RideffNana.sendToRialtoOnWhatsApp")}
                         </a>
                         <div style={{ display: "flex", gap: "6px" }}>
-                          <button onClick={v.copySum} style={{ flex: "1", border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
+                          <button onClick={v.copySum} style={{ flex: "0 0 auto", border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
                             {v.copyT}
                           </button>
-                          <button onClick={v.toggleMine} style={{ flex: "1", border: "1px solid #BDB6AA", background: `${v.mineBg ?? ''}`, borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
+                          <button onClick={v.toggleMine} style={{ flex: "1", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", border: "none", background: "#25D366", borderRadius: "999px", padding: "9px 14px", font: "600 13px var(--font-sans)", color: "#FFFFFF", cursor: "pointer", whiteSpace: "nowrap" }}>
+                            <WhatsAppIcon width={16} height={16} />
                             {v.t("RideffNana.sendToMyWhatsApp")}
                           </button>
                         </div>
@@ -806,7 +810,7 @@ Logic.prototype.render = function render() {
                             {" "}
                             <form onSubmit={v.sendMine} style={{ display: "flex", gap: "6px", margin: "0" }}>
                               <input value={v.phone ?? ''} onChange={v.onPhone} placeholder="+49 …" inputMode="tel" type="tel" autoComplete="tel" aria-label={v.t("nana.phoneLabel")} style={{ flex: "1", minWidth: "0", background: "#F3EFE8", border: "none", outline: "none", borderRadius: "999px", padding: "10px 14px", font: "400 14px var(--font-sans)", color: "#0A0A0A" }} />
-                              <button type="submit" style={{ border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "0 16px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
+                              <button type="submit" style={{ border: "none", background: "#25D366", color: "#FFFFFF", borderRadius: "999px", padding: "0 16px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
                                 {v.t("RideffNana.send")}
                               </button>
                             </form>
@@ -913,72 +917,45 @@ Logic.prototype.render = function render() {
           {" "}
         </>) : null}
         {v.openCall ? (<>
-          {" "}
           <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHk ?? ''}`, background: "#0B0B0C", color: "#F4F4F2", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.45)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-                {v.t(v.live ? "nana.voiceLive" : "RideffNana.voicePreview")}
-              </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: `${v.timerC ?? ''}` }}>
-                {v.timer}
-              </span>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "18px", padding: "18px 0 10px" }}>
-              <div style={{ position: "relative", width: "112px", height: "112px" }}>
-                {" "}
+            {/* Like a phone call: photo, name, timer, three icon buttons; no transcript or status text. */}
+            <div style={{ flex: "1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "18px", padding: "36px 20px 10px" }}>
+              <div style={{ position: "relative", width: "120px", height: "120px" }}>
                 {v.ringing ? (<>
                   <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #FF6A00", animation: "nnRing 1.6s ease-out infinite" }} />
                   <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #FF6A00", animation: "nnRing 1.6s .8s ease-out infinite" }} />
                 </>) : null}
-                {" "}
                 <span style={{ position: "absolute", inset: "0", borderRadius: "50%", background: "#FF6A00", ...avatarBg, transform: `scale(${v.pulse ?? ''})`, transition: "transform .14s ease-out" }} />
-                {" "}
               </div>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
-                <b style={{ fontSize: "22px", letterSpacing: "-0.02em" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+                <b style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>
                   {"Nana"}
                 </b>
-                <span style={{ fontSize: "13px", color: "#8C877E" }}>
-                  {v.callState}
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "14px", color: `${v.timerC ?? ''}` }}>
+                  {v.timer}
+                </span>
+                <span style={{ fontSize: "11px", color: "#6B675F" }}>
+                  {v.t("nana.automatedDesk")}
                 </span>
               </div>
-              <div style={{ display: "flex", gap: "4px", alignItems: "center", height: "28px" }}>
+              <div aria-hidden="true" style={{ display: "flex", gap: "4px", alignItems: "center", height: "28px" }}>
                 {(v.bars ?? []).map((b, $index) => (<Fragment key={$index}>
                   <span style={{ width: "4px", borderRadius: "2px", background: `${b?.c ?? ''}`, height: `${b?.h ?? ''}`, transition: "height .12s" }} />
                 </Fragment>))}
               </div>
             </div>
-            <div style={{ flex: "1", display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: "10px", padding: "0 20px 16px", overflow: "hidden" }}>
-              {(v.lines ?? []).map((l, $index) => (<Fragment key={$index}>
-                <div style={{ display: "flex", flexDirection: "column", gap: "3px", opacity: `${l?.op ?? ''}`, animation: "nnIn .4s both" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: `${l?.c ?? ''}` }}>
-                    {l?.who}
-                  </span>
-                  <span style={{ fontSize: "14px", lineHeight: "1.45" }}>
-                    {l?.t}
-                  </span>
-                </div>
-              </Fragment>))}
-            </div>
-            <div style={{ display: "flex", justifyContent: "center", gap: "16px", padding: "16px 0 22px", borderTop: "1px solid #1F1F21" }}>
-              <button onClick={v.toggleMute} style={{ width: "56px", height: "56px", borderRadius: "50%", border: "1px solid #2A2A2C", background: `${v.muteBg ?? ''}`, color: `${v.muteFg ?? ''}`, cursor: "pointer", font: "600 11px var(--font-mono)", letterSpacing: ".06em", textTransform: "uppercase" }}>
-                {v.muteT}
+            <div style={{ display: "flex", justifyContent: "center", gap: "22px", padding: "18px 0 26px" }}>
+              <button onClick={v.toggleMute} aria-label={v.muteT} title={v.muteT} aria-pressed={!!v.muted} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #2A2A2C", background: `${v.muteBg ?? ''}`, color: `${v.muteFg ?? ''}`, cursor: "pointer" }}>
+                {v.muted ? <MicOffIcon /> : <MicIcon />}
               </button>
-              <button onClick={v.toChat} style={{ width: "56px", height: "56px", borderRadius: "50%", border: "1px solid #2A2A2C", background: "transparent", color: "#F4F4F2", cursor: "pointer", font: "600 11px var(--font-mono)", letterSpacing: ".06em", textTransform: "uppercase" }}>
-                {v.t("RideffNana.chat")}
+              <button onClick={v.toChat} aria-label={v.t("RideffNana.chat")} title={v.t("RideffNana.chat")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #2A2A2C", background: "transparent", color: "#F4F4F2", cursor: "pointer" }}>
+                <ChatIcon />
               </button>
-              <button onClick={v.endCall} style={{ width: "56px", height: "56px", borderRadius: "50%", border: "none", background: "#E5484D", color: "#FFFFFF", cursor: "pointer", font: "600 11px var(--font-mono)", letterSpacing: ".06em", textTransform: "uppercase" }}>
-                {v.t("RideffNana.end")}
+              <button onClick={v.endCall} aria-label={v.t("RideffNana.end")} title={v.t("RideffNana.end")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "none", background: "#E5484D", color: "#FFFFFF", cursor: "pointer" }}>
+                <HangUpIcon />
               </button>
-            </div>
-            <div style={{ textAlign: "center", padding: "0 16px 16px", font: "400 11px var(--font-mono)", letterSpacing: ".04em", color: "#6B675F" }}>
-              {v.t("nana.aiNotice")}{" · "}
-              <a href={v.href("/datenschutz")} style={{ color: "#8C877E", textDecoration: "underline" }}>
-                {v.t("RideffNana.privacy")}
-              </a>
             </div>
           </div>
-          {" "}
         </>) : null}
         {v.showLauncher ? (<>
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>

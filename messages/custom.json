@@ -306,13 +306,9 @@
       "en": "Voice",
       "de": "Sprache"
     },
-    "aiNotice": {
-      "de": "Sie sprechen mit Nana, einer KI-Assistentin",
-      "en": "You’re talking to Nana, an AI assistant"
-    },
     "greetLive": {
-      "de": "Guten Tag und willkommen bei RIDEFF. Ich bin Nana, die KI-Assistentin von Rialto. Mit wem spreche ich, bitte? Sie können mir schreiben oder mich direkt anrufen.",
-      "en": "Good day and welcome to RIDEFF. I’m Nana, Rialto’s AI assistant. May I ask who I’m speaking with? You can type or call me directly."
+      "de": "Willkommen bei RIDEFF! Hier ist Nana vom Front Desk. Mit wem habe ich das Vergnügen? Sie können mir schreiben oder direkt anrufen.",
+      "en": "Welcome to RIDEFF! This is Nana from the front desk. Who do I have the pleasure of speaking with? You can type or call me directly."
     },
     "sumContact": {
       "de": "*Kontakt*",
@@ -325,6 +321,10 @@
     "sumTimeline": {
       "de": "*Zeitrahmen & Budget*",
       "en": "*Timeline & budget*"
+    },
+    "automatedDesk": {
+      "de": "Automatisierter Front Desk",
+      "en": "Automated front desk"
     }
   },
   "journal": {

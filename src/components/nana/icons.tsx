@@ -17,3 +17,44 @@ export function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+const stroke = { viewBox: '0 0 24 24', width: 22, height: 22, fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true } as const;
+
+/** Microphone (Lucide "mic", ISC). */
+export function MicIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...stroke} {...props}>
+      <path d="M12 19v3" />
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+      <rect x="9" y="2" width="6" height="13" rx="3" />
+    </svg>
+  );
+}
+
+/** Microphone off (Lucide "mic-off", ISC). */
+export function MicOffIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...stroke} {...props}>
+      <path d="M12 19v3" />
+      <path d="M15 9.34V5a3 3 0 0 0-5.68-1.33" />
+      <path d="M16.95 16.95A7 7 0 0 1 5 12v-2" />
+      <path d="M18.89 13.23A7 7 0 0 0 19 12v-2" />
+      <path d="m2 2 20 20" />
+      <path d="M9 9v3a3 3 0 0 0 5.12 2.12" />
+    </svg>
+  );
+}
+
+/** Chat bubble (Lucide "message-circle", ISC). */
+export function ChatIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...stroke} {...props}>
+      <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+    </svg>
+  );
+}
+
+/** Hang up: the handset turned down, as on a phone. */
+export function HangUpIcon(props: SVGProps<SVGSVGElement>) {
+  return <PhoneIcon width={24} height={24} style={{ transform: 'rotate(135deg)' }} {...props} />;
+}

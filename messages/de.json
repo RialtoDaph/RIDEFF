@@ -2752,11 +2752,11 @@
     "statusLive": "Text oder Sprache",
     "voiceCallLive": "Sprachanruf",
     "voiceLive": "Sprache",
-    "aiNotice": "Sie sprechen mit Nana, einer KI-Assistentin",
-    "greetLive": "Guten Tag und willkommen bei RIDEFF. Ich bin Nana, die KI-Assistentin von Rialto. Mit wem spreche ich, bitte? Sie können mir schreiben oder mich direkt anrufen.",
+    "greetLive": "Willkommen bei RIDEFF! Hier ist Nana vom Front Desk. Mit wem habe ich das Vergnügen? Sie können mir schreiben oder direkt anrufen.",
     "sumContact": "*Kontakt*",
     "sumSituation": "*Aktuelle Situation*",
-    "sumTimeline": "*Zeitrahmen & Budget*"
+    "sumTimeline": "*Zeitrahmen & Budget*",
+    "automatedDesk": "Automatisierter Front Desk"
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
