@@ -56,6 +56,8 @@ class Logic extends DCLogic {
         rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
       } catch (e) {}
       const pin = !rm && innerWidth >= 1000 && innerHeight >= 640;
+      // Reduced motion: the 24h dial is not scrubbed; it shows its final state.
+      if (rm !== !!this.state.rm) this.setState({ rm, dp: rm ? 1 : this.state.dp });
       if (pin !== !!(this.state || {}).pin) this.setState({
         pin
       });
@@ -81,7 +83,7 @@ class Logic extends DCLogic {
       const dr = this.dialRef.current;
       if (dr) {
         const r = dr.getBoundingClientRect(),
-          dp = Math.max(0, Math.min(1, -r.top / (r.height - innerHeight)));
+          dp = this.state.rm ? 1 : Math.max(0, Math.min(1, -r.top / (r.height - innerHeight)));
         if (Math.abs(dp - this.state.dp) > .002) this.setState({
           dp
         });
@@ -343,6 +345,7 @@ class Logic extends DCLogic {
       return 'rgb(' + c.join(',') + ')';
     };
     return {
+      rm: !!(this.state || {}).rm,
       ...dialVals,
       portalRef: this.portalRef,
       promRef: this.promRef,
@@ -589,9 +592,9 @@ Logic.prototype.render = function render() {
     <>
       <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}\na{color:inherit;text-decoration:none}a:hover{color:#FF6A00}\n@keyframes rdIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}\n@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}\n@keyframes rdTrack{0%{left:0%}100%{left:100%}}\n@keyframes rdScanX{0%{left:-20%}100%{left:110%}}" }} />
       <Nav active="run" />
-      <div ref={v.dialRef} data-screen-label="24h stage" style={{ height: "520vh", position: "relative" }}>
+      <div ref={v.dialRef} data-screen-label="24h stage" style={{ height: v.rm ? "auto" : "520vh", position: "relative" }}>
         {" "}
-        <div style={{ position: "sticky", top: "0", height: "100vh", overflow: "hidden", background: `${v.skyBg ?? ''}`, color: `${v.skyFg ?? ''}` }}>
+        <div style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: `${v.skyBg ?? ''}`, color: `${v.skyFg ?? ''}` }}>
           {" "}
           <div style={{ position: "absolute", inset: "0", background: `radial-gradient(ellipse at 70% 50%,${v.glow ?? ''} 0%,transparent 60%)` }} />
           {" "}

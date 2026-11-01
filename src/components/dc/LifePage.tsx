@@ -465,7 +465,7 @@ class Logic extends DCLogic {
           price: y ? fmt(p[2] * 10) : fmt(p[2]),
           unit: y ? this.props.t("Life.year") : this.props.t("Life.month"),
           cta: this.props.t("Life.startFree"),
-          href: this.props.href("@lifedemo"),
+          href: this.props.signup(['life', 'plus', 'together'][k] || 'plus'),
           bg: hi ? '#2A1E14' : '#FFFAF4',
           fg: hi ? '#FFF8F0' : '#2A1E14',
           btnBg: hi ? '#E25F00' : '#2A1E14',
@@ -687,7 +687,7 @@ Logic.prototype.render = function render() {
                 {v.t("Life.lifeKeepsTrackOfBillsAppointments")}
               </p>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <a href={v.href("@lifedemo")} style={{ background: "#140D08", color: "#FFF3E6", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-6842cf6">
+                <a href={v.signup("plus")} style={{ background: "#140D08", color: "#FFF3E6", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-6842cf6">
                   {v.t("Life.try14DaysFree")}
                 </a>
                 <a href="#lf-day" style={{ border: "1px solid #C9B49E", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }}>
@@ -1151,7 +1151,7 @@ Logic.prototype.render = function render() {
           <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#E8D8C6", maxWidth: "440px" }}>
             {v.t("Life.fourteenDaysFreeYourFirstBriefing")}
           </p>
-          <a href={v.href("@lifedemo")} style={{ background: "#E25F00", color: "#FFF8F0", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px", animation: "lfBreath 3.6s ease-in-out infinite" }}>
+          <a href={v.signup("plus")} style={{ background: "#E25F00", color: "#FFF8F0", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px", animation: "lfBreath 3.6s ease-in-out infinite" }}>
             {v.t("Life.try14DaysFree2")}
           </a>
         </div>

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { getPathname, usePathname, useRouter } from '@/i18n/navigation';
 import { GERMAN_ONLY, type AppPath, type Locale } from '@/i18n/routing';
-import { LIFE_DEMO_URL, PORTAL_URL } from '@/lib/site';
+import { LIFE_DEMO_URL, PORTAL_URL, signupUrl, type LifePlan } from '@/lib/site';
 
 /**
  * Runtime for components ported from the handoff prototypes (`*.dc.html`).
@@ -21,7 +21,8 @@ export type DCProps = {
   locale: Locale;
   /** Internal route ("/work#x") → localized public path ("/projekte#x"). */
   href: (route: string) => string;
-  reducedMotion?: boolean;
+  /** RIDEFF Life sign-up: app.rideff.com/signup?plan=…&lang=… */
+  signup: (plan: LifePlan) => string;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -60,7 +61,8 @@ export function useDC(): DCProps {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const href = useCallback((route: string) => localHref(route, locale), [locale]);
-  return useMemo(() => ({ t, locale, href }), [t, locale, href]);
+  const signup = useCallback((plan: LifePlan) => signupUrl(plan, locale), [locale]);
+  return useMemo(() => ({ t, locale, href, signup }), [t, locale, href, signup]);
 }
 
 /** Replacement for the prototype's <image-slot>: an image that fills its box. */
@@ -119,3 +121,5 @@ export function useSwitchLocale() {
 
 
 export { opt } from './img';
+
+export const prefersReducedMotion = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;

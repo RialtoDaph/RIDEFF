@@ -585,7 +585,7 @@ class Logic extends DCLogic {
           day: this.eur(moOf(p) * 12 / 365, 1),
           unit: L ? p.priv ? this.props.t("Pricing.monthSetupFrom449") : s.yearly ? this.props.t("Pricing.monthBilledYearlyInclVAT") : this.props.t("Pricing.monthInclVAT") : this.props.t("Pricing.monthSetupFrom") + this.eur(p.setup),
           cta: L ? p.priv ? this.props.t("Pricing.bookACall") : this.props.t("Pricing.startFree") : this.props.t("Pricing.askAbout") + p.name,
-          href: L ? p.priv ? this.props.href("/contact") : this.props.href("@lifedemo") : this.props.href("/contact"),
+          href: L ? p.priv ? this.props.href("/contact") : this.props.signup(['life', 'plus', 'together'][i] || 'plus') : this.props.href("/contact"),
           go: () => this.pick(i),
           bg: on ? '#0B0B0C' : '#F4F1EC',
           fg: on ? '#F4F4F2' : '#0A0A0A',
@@ -695,7 +695,7 @@ class Logic extends DCLogic {
       ctaH: L ? this.props.t("Pricing.tryItFor") : this.props.t("Pricing.notSureWhichPlan"),
       ctaH2: L ? this.props.t("Pricing.n14DaysFree2") : this.props.t("Pricing.askMe"),
       cta1: L ? this.props.t("Pricing.startFree") : this.props.t("Pricing.bookAFreeCall"),
-      cta1H: L ? this.props.href("@lifedemo") : this.props.href("/contact"),
+      cta1H: L ? this.props.signup('plus') : this.props.href("/contact"),
       cta2: L ? this.props.t("Pricing.bookACallForPrivate") : this.props.t("Pricing.seeTheWork"),
       cta2H: L ? this.props.href("/contact") : this.props.href("/work")
     };

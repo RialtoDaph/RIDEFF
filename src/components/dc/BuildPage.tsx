@@ -98,6 +98,7 @@ class Logic extends DCLogic {
       rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     } catch (e) {}
     const pin = !rm && innerWidth >= 1000 && innerHeight >= 640;
+    if (rm !== !!(this.state || {}).rm) this.setState({ rm });
     if (pin !== (this.state || {}).pin) this.setState({
       pin
     }, this.fxScroll);
@@ -146,9 +147,10 @@ class Logic extends DCLogic {
     }
     let THREE;
     try {
-      THREE = await import('https://unpkg.com/three@0.160.0/build/three.module.js');
+      // Bundled (npm "three"), not loaded from a CDN: no third-party request.
+      THREE = await import('three');
     } catch (e) {
-      console.warn(this.props.t("Build.threeFailed"), e);
+      console.warn('three failed', e);
       return;
     }
     const cv = this.canvasRef.current;
@@ -446,7 +448,8 @@ class Logic extends DCLogic {
     if (!st) return;
     const r = st.getBoundingClientRect(),
       span = r.height - innerHeight;
-    const p01 = Math.max(0, Math.min(1, -r.top / span)),
+    // Reduced motion: no pinned scrubbing, show the final state ("One platform").
+    const p01 = this.state.rm ? 1 : Math.max(0, Math.min(1, -r.top / span)),
       p = p01 * 4;
     const k = Math.min(3, Math.floor(p)),
       t = p - k;
@@ -523,6 +526,7 @@ class Logic extends DCLogic {
     const jn = (+s.jp || 0) * 6,
       cur = Math.min(5, Math.floor(jn));
     return {
+      rm: !!(this.state || {}).rm,
       canvasRef: this.canvasRef,
       stageRef: this.stageRef,
       termRef: this.termRef,
@@ -686,9 +690,9 @@ Logic.prototype.render = function render() {
     <>
       <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#0B0B0C;color:#F4F4F2;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}\na{color:inherit;text-decoration:none}a:hover{color:#FF9A50}\n@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}\n@keyframes rdBlink{0%,49%{opacity:1}50%,100%{opacity:0}}\n@keyframes rdMarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n@keyframes rdMarqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}\n@keyframes rdScanX{0%{left:-20%}100%{left:110%}}\n@keyframes rdGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,106,0,.45)}50%{box-shadow:0 0 0 12px rgba(255,106,0,0)}}" }} />
       <Nav active="build" dark={true} />
-      <div ref={v.stageRef} data-screen-label="Hero story" style={{ height: "420vh", position: "relative" }}>
+      <div ref={v.stageRef} data-screen-label="Hero story" style={{ height: v.rm ? "auto" : "420vh", position: "relative" }}>
         {" "}
-        <div style={{ position: "sticky", top: "0", height: "100vh", overflow: "hidden", background: "radial-gradient(ellipse at 66% 48%,#15120F 0%,#0B0B0C 62%)" }}>
+        <div style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: "radial-gradient(ellipse at 66% 48%,#15120F 0%,#0B0B0C 62%)" }}>
           {" "}
           <canvas ref={v.canvasRef} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", display: "block" }} />
           {" "}

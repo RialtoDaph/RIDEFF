@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Understand.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, prefersReducedMotion, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 
@@ -69,18 +69,20 @@ class Logic extends DCLogic {
       this.m.moved = true;
     };
     window.addEventListener('mousemove', this.onMove);
+    // Reduced motion: no pinned scrubbing, show the final states.
+    if (prefersReducedMotion()) this.setState({ rm: true, p: 1, pp: 1 });
     this.onScroll = () => {
       const st = this.stageRef.current;
       if (!st) return;
       const b = st.getBoundingClientRect();
-      const p = Math.max(0, Math.min(1, -b.top / (b.height - innerHeight)));
+      const p = this.state.rm ? 1 : Math.max(0, Math.min(1, -b.top / (b.height - innerHeight)));
       if (Math.abs(p - this.state.p) > .004) this.setState({
         p
       });
       const of = this.offerRef.current;
       if (of) {
         const ob = of.getBoundingClientRect(),
-          pp = Math.max(0, Math.min(1, -ob.top / (ob.height - innerHeight) + .15));
+          pp = this.state.rm ? 1 : Math.max(0, Math.min(1, -ob.top / (ob.height - innerHeight) + .15));
         if (Math.abs(pp - this.state.pp) > .004) this.setState({
           pp
         });
@@ -199,6 +201,7 @@ class Logic extends DCLogic {
     const used = ci,
       pE = s.pp < .5 ? 4 * s.pp ** 3 : 1 - (-2 * s.pp + 2) ** 3 / 2;
     return {
+      rm: !!(this.state || {}).rm,
       stageRef: this.stageRef,
       viewRef: this.viewRef,
       cleanRef: this.cleanRef,
@@ -327,9 +330,9 @@ Logic.prototype.render = function render() {
     <>
       <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}@keyframes rdBlink{0%,49%{opacity:1}50%,100%{opacity:0}}@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}@keyframes rdIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rdStamp{0%{transform:scale(2.4) rotate(-14deg);opacity:0}60%{transform:scale(.92) rotate(-14deg);opacity:1}100%{transform:scale(1) rotate(-14deg);opacity:1}}" }} />
       <Nav active="understand" />
-      <div ref={v.stageRef} data-screen-label="Lens stage" style={{ height: "460vh", position: "relative" }}>
+      <div ref={v.stageRef} data-screen-label="Lens stage" style={{ height: v.rm ? "auto" : "460vh", position: "relative" }}>
         {" "}
-        <div ref={v.viewRef} style={{ position: "sticky", top: "0", height: "100vh", overflow: "hidden", background: "#ECE8E1", cursor: "none" }}>
+        <div ref={v.viewRef} style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: "#ECE8E1", cursor: "none" }}>
           {" "}
           <div style={{ position: "absolute", inset: "0" }}>
             {" "}
@@ -633,9 +636,9 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div ref={v.offerRef} data-screen-label="03 The offer" style={{ height: "240vh", position: "relative", marginTop: "100px" }}>
+      <div ref={v.offerRef} data-screen-label="03 The offer" style={{ height: v.rm ? "auto" : "240vh", position: "relative", marginTop: "100px" }}>
         {" "}
-        <div style={{ position: "sticky", top: "0", height: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <div style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
           <div style={{ width: "100%", maxWidth: "1480px", margin: "0 auto", padding: "90px clamp(20px,3vw,40px) 0", boxSizing: "border-box", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "56px", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
