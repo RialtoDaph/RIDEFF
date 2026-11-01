@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
-import { getPosts } from '@/lib/blog';
+import { getPosts } from '@/lib/journal';
 import { languages, localePath, PAGE_META } from '@/lib/metadata';
 import { GERMAN_ONLY, routing, type AppPath } from '@/i18n/routing';
 

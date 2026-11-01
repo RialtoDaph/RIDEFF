@@ -246,8 +246,9 @@ function element(node, scope, ctx, indent) {
   }
   if (tag === 'image-slot') {
     const props = [];
-    if (A.src) props.push(`src=${JSON.stringify(assetOf(A.src))}`);
-    if (A.placeholder) {
+    if (A.src) props.push(A.src.includes('{{') ? `src=${attrValue(A.src, scope)}` : `src=${JSON.stringify(assetOf(A.src))}`);
+    if (A.placeholder && A.placeholder.includes('{{')) props.push(`alt=${attrValue(A.placeholder, scope)}`);
+    else if (A.placeholder) {
       const key = lookup(ctx.ns, A.placeholder, ctx.report);
       props.push(key ? `alt={v.t(${JSON.stringify(key)})}` : `alt=${JSON.stringify(A.placeholder)}`);
     }

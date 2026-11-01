@@ -55,46 +55,34 @@
       }
     }
   },
-  "blog": {
-    "title": {
-      "de": "Blog",
-      "en": "Blog"
-    },
-    "readingTime": {
-      "de": "{n} Min. Lesezeit",
-      "en": "{n} min read"
-    },
-    "back": {
-      "de": "← Alle Artikel",
-      "en": "← All articles"
-    },
-    "tags": {
-      "business": {
-        "de": "BUSINESS",
-        "en": "BUSINESS"
-      },
-      "life": {
-        "de": "LIFE",
-        "en": "LIFE"
-      }
-    }
-  },
   "notFound": {
     "code": {
       "de": "404",
       "en": "404"
     },
+    "kicker": {
+      "de": "(404) Nicht gefunden",
+      "en": "(404) Not found"
+    },
+    "title": {
+      "de": "Diese Seite gibt es nicht.",
+      "en": "This page doesn’t exist."
+    },
+    "accent": {
+      "de": "Ihr Projekt schon.",
+      "en": "Your project does."
+    },
     "text": {
-      "de": "Diese Seite gibt es nicht. Ihr Gehirn schon.",
-      "en": "This page doesn't exist. Your brain does."
+      "de": "Vielleicht wurde sie verschoben. Alles andere läuft — überwacht, sogar diese Seite.",
+      "en": "Maybe it moved. Everything else is running — monitored, even this page."
     },
     "home": {
-      "de": "Start",
-      "en": "Home"
+      "de": "Zur Startseite",
+      "en": "Back home"
     },
-    "try": {
-      "de": "Kostenlos testen",
-      "en": "Try for free"
+    "contact": {
+      "de": "Projekt starten →",
+      "en": "Start a project →"
     }
   },
   "meta": {
@@ -259,11 +247,66 @@
       }
     }
   },
-  "common": {},
+  "common": {
+    "waIntro": {
+      "en": "Hi Rialto, I'm {name} ({contact}). I'm interested in: {need}.",
+      "de": "Hallo Rialto, ich bin {name} ({contact}). Ich interessiere mich für: {need}."
+    },
+    "waSlot": {
+      "en": " Could we talk on {slot}?",
+      "de": " Können wir am {slot} sprechen?"
+    },
+    "waNotSure": {
+      "en": "not sure yet",
+      "de": "noch unklar"
+    }
+  },
   "nana": {
     "call": {
       "de": "Anrufen",
       "en": "Call"
+    }
+  },
+  "journal": {
+    "invalidEmail": {
+      "de": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "en": "Please enter a valid email address."
+    },
+    "emailLabel": {
+      "de": "E-Mail-Adresse",
+      "en": "Email address"
+    },
+    "confirmHint": {
+      "de": "Bitte bestätigen Sie die Anmeldung über den Link in der E-Mail, die gerade unterwegs ist.",
+      "en": "Please confirm via the link in the email that is on its way."
+    },
+    "readingTime": {
+      "de": "{n} Min. Lesezeit",
+      "en": "{n} min read"
+    },
+    "back": {
+      "de": "← Alle Notizen",
+      "en": "← All notes"
+    },
+    "ctaKicker": {
+      "de": "Projekt starten",
+      "en": "Start a project"
+    },
+    "ctaTitle": {
+      "de": "Erkennen Sie Ihren Betrieb wieder?",
+      "en": "Sounds like your business?"
+    },
+    "ctaText": {
+      "de": "15 Minuten mit Rialto. Er hört zu, stellt Fragen und sagt Ihnen ehrlich, ob sich ein System lohnt.",
+      "en": "15 minutes with Rialto. He listens, asks questions and tells you honestly whether a system is worth it."
+    },
+    "ctaWhatsApp": {
+      "de": "Rialto auf WhatsApp",
+      "en": "WhatsApp Rialto"
+    },
+    "ctaBook": {
+      "de": "15 Min. buchen",
+      "en": "Book 15 min"
     }
   }
 }

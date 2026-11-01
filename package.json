@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "i18n": "node scripts/sync-i18n.mjs",
+    "i18n": "node scripts/gen-messages.mjs",
     "og": "node scripts/generate-og.mjs"
   },
   "engines": {

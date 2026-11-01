@@ -29,6 +29,8 @@ const icu = (s) => {
   return s.replace(/\{x\}/g, () => `{${NAMES[i++]}}`);
 };
 
+const fixEscapes = (s) => s.replace(/(?<=[A-Za-z])u(20[0-9a-f]{2})(?=[a-z])/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+
 function keyFor(en, used) {
   const words = en
     .normalize('NFD')
@@ -54,7 +56,10 @@ for (const [ns, table] of Object.entries(src)) {
   en[ns] = {};
   de[ns] = {};
   keymap[ns] = {};
-  for (const [enStr, deStr] of Object.entries(table)) {
+  for (const [rawEn, rawDe] of Object.entries(table)) {
+    // A few handoff keys carry a lost escape ("Hereu2019s"); restore the character.
+    const enStr = fixEscapes(rawEn);
+    const deStr = fixEscapes(rawDe);
     const k = keyFor(enStr, used);
     en[ns][k] = icu(enStr);
     de[ns][k] = icu(deStr);

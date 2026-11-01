@@ -90,6 +90,12 @@
 html {
   -webkit-text-size-adjust: 100%;
 }
+/* Decorative overhang (e.g. the Life orbit on phones) must not cause sideways
+   scrolling. `clip` (unlike `hidden`) keeps position: sticky pins working. */
+html,
+body {
+  overflow-x: clip;
+}
 body {
   margin: 0;
   background: #ece8e1;

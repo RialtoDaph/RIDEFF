@@ -1830,7 +1830,7 @@
     "shopStockInvoicesOneSourceOf": "Shop, Lager, Rechnungen — eine Quelle der Wahrheit",
     "aCafeInBavariaHadStock": "Ein Café in Bayern hatte seinen Bestand an drei Orten. So wurde daraus einer.",
     "somethingBrokeAt3amNobodyNoticed": "Um 3 Uhr nachts ging etwas kaputt. Niemand hat es gemerkt.",
-    "selfHealingIsnu2019tMagicItu2019sRetries": "Selbstheilung ist keine Magie — es sind Wiederholungen, Warnungen und ein Mensch, der sie liest.",
+    "selfHealingIsnTMagicIt": "Selbstheilung ist keine Magie — es sind Wiederholungen, Warnungen und ein Mensch, der sie liest.",
     "notes": "Notizen",
     "dSGVOForSmallBusinessesUsingAI": "DSGVO für kleine Betriebe, die KI nutzen",
     "frankfurtHostingDataProcessingAgreementsAnd": "Hosting in Frankfurt, Auftragsverarbeitungsverträge und was Sie einem Chatbot bedenkenlos erzählen können.",
@@ -2013,20 +2013,14 @@
       "ignore": "Wenn Sie sich nicht angemeldet haben, ignorieren Sie diese E-Mail einfach. Der Link gilt 48 Stunden."
     }
   },
-  "blog": {
-    "title": "Blog",
-    "readingTime": "{n} Min. Lesezeit",
-    "back": "← Alle Artikel",
-    "tags": {
-      "business": "BUSINESS",
-      "life": "LIFE"
-    }
-  },
   "notFound": {
     "code": "404",
-    "text": "Diese Seite gibt es nicht. Ihr Gehirn schon.",
-    "home": "Start",
-    "try": "Kostenlos testen"
+    "kicker": "(404) Nicht gefunden",
+    "title": "Diese Seite gibt es nicht.",
+    "accent": "Ihr Projekt schon.",
+    "text": "Vielleicht wurde sie verschoben. Alles andere läuft — überwacht, sogar diese Seite.",
+    "home": "Zur Startseite",
+    "contact": "Projekt starten →"
   },
   "meta": {
     "home": {
@@ -2094,8 +2088,24 @@
       "description": "Interaktive Demo eines RIDEFF-Systems mit Beispieldaten."
     }
   },
-  "common": {},
+  "common": {
+    "waIntro": "Hallo Rialto, ich bin {name} ({contact}). Ich interessiere mich für: {need}.",
+    "waSlot": " Können wir am {slot} sprechen?",
+    "waNotSure": "noch unklar"
+  },
   "nana": {
     "call": "Anrufen"
+  },
+  "journal": {
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "emailLabel": "E-Mail-Adresse",
+    "confirmHint": "Bitte bestätigen Sie die Anmeldung über den Link in der E-Mail, die gerade unterwegs ist.",
+    "readingTime": "{n} Min. Lesezeit",
+    "back": "← Alle Notizen",
+    "ctaKicker": "Projekt starten",
+    "ctaTitle": "Erkennen Sie Ihren Betrieb wieder?",
+    "ctaText": "15 Minuten mit Rialto. Er hört zu, stellt Fragen und sagt Ihnen ehrlich, ob sich ein System lohnt.",
+    "ctaWhatsApp": "Rialto auf WhatsApp",
+    "ctaBook": "15 Min. buchen"
   }
 }
