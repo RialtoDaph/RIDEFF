@@ -38,7 +38,13 @@ export async function POST(req: Request) {
       if (official.length) transcript = official;
       const dc = conv.analysis?.data_collection_results ?? {};
       const val = (k: string) => (typeof dc[k]?.value === 'string' ? (dc[k].value as string) : undefined);
+      ai.name = val('name');
+      ai.company = val('company');
+      ai.industry = val('industry');
+      ai.contact = val('contact');
       ai.need = val('need');
+      ai.situation = val('situation');
+      ai.timeline = val('timeline');
       ai.interest = val('interest');
       ai.next = val('next_step');
     }

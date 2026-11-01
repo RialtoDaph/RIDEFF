@@ -2751,7 +2751,12 @@
     "callFailed": "Der Anruf konnte nicht verbunden werden. Bitte noch einmal versuchen oder lieber tippen.",
     "statusLive": "Text oder Sprache",
     "voiceCallLive": "Sprachanruf",
-    "voiceLive": "Sprache"
+    "voiceLive": "Sprache",
+    "aiNotice": "Sie sprechen mit Nana, einer KI-Assistentin",
+    "greetLive": "Guten Tag und willkommen bei RIDEFF. Ich bin Nana, die KI-Assistentin von Rialto. Mit wem spreche ich, bitte? Sie können mir schreiben oder mich direkt anrufen.",
+    "sumContact": "*Kontakt*",
+    "sumSituation": "*Aktuelle Situation*",
+    "sumTimeline": "*Zeitrahmen & Budget*"
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

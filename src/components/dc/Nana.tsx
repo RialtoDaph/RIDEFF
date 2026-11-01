@@ -1,10 +1,17 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RideffNana.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import { nanaEvent } from '@/lib/analytics';
 import { startTextChat, startVoice, suggestsContact } from '@/components/nana/elevenlabs-client';
 
+
+/**
+ * Nana's photo (public/images/nana.jpg, found at build time by next.config.ts),
+ * zoomed on the face; the orange stays as the fallback colour.
+ */
+const AVATAR = process.env.NEXT_PUBLIC_NANA_AVATAR ? opt(process.env.NEXT_PUBLIC_NANA_AVATAR, 640) : '';
+const avatarBg = AVATAR ? { backgroundImage: `url(${AVATAR})`, backgroundSize: '150%', backgroundPosition: '50% 40%' } : {};
 
 class Logic extends DCLogic {
   WA = '4917632572420';
@@ -66,7 +73,7 @@ class Logic extends DCLogic {
   greet() {
     return [{
       from: 'bot',
-      t: this.props.t("RideffNana.hiIMNanaAskMe"),
+      t: this.props.t(this.props.live ? "nana.greetLive" : "RideffNana.hiIMNanaAskMe"),
       choice: true
     }];
   }
@@ -202,8 +209,11 @@ class Logic extends DCLogic {
       mode: 'call'
     });
     if (this.props.callSheet === false) {
+      // Straight into the call, like a phone call. Without the pre-call sheet there
+      // is no "save to my portal" tick, so nothing is stored (consent: false).
       this.setState({
-        open: true
+        open: true,
+        consent: false
       });
       return this.startCall();
     }
@@ -655,7 +665,7 @@ Logic.prototype.render = function render() {
           <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHc ?? ''}`, background: "#F7F5F1", color: "#0A0A0A", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.3)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
             <div style={{ background: "#0A0A0A", color: "#F4F4F2", padding: "14px 14px 14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
               <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <span style={{ position: "relative", width: "34px", height: "34px", borderRadius: "50%", background: "#FF6A00" }}>
+                <span style={{ position: "relative", width: "34px", height: "34px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
                   <span style={{ position: "absolute", right: "-1px", bottom: "-1px", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #0A0A0A" }} />
                 </span>
                 <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -828,7 +838,7 @@ Logic.prototype.render = function render() {
               </button>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px", padding: "8px 24px 22px", textAlign: "center" }}>
-              <span style={{ width: "72px", height: "72px", borderRadius: "50%", background: "#FF6A00" }} />
+              <span style={{ width: "72px", height: "72px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }} />
               <b style={{ fontSize: "22px", letterSpacing: "-0.02em" }}>
                 {v.t("RideffNana.talkToNana")}
               </b>
@@ -901,7 +911,7 @@ Logic.prototype.render = function render() {
                   <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #FF6A00", animation: "nnRing 1.6s .8s ease-out infinite" }} />
                 </>) : null}
                 {" "}
-                <span style={{ position: "absolute", inset: "0", borderRadius: "50%", background: "#FF6A00", transform: `scale(${v.pulse ?? ''})`, transition: "transform .14s ease-out" }} />
+                <span style={{ position: "absolute", inset: "0", borderRadius: "50%", background: "#FF6A00", ...avatarBg, transform: `scale(${v.pulse ?? ''})`, transition: "transform .14s ease-out" }} />
                 {" "}
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
@@ -941,6 +951,12 @@ Logic.prototype.render = function render() {
                 {v.t("RideffNana.end")}
               </button>
             </div>
+            <div style={{ textAlign: "center", padding: "0 16px 16px", font: "400 11px var(--font-mono)", letterSpacing: ".04em", color: "#6B675F" }}>
+              {v.t("nana.aiNotice")}{" · "}
+              <a href={v.href("/datenschutz")} style={{ color: "#8C877E", textDecoration: "underline" }}>
+                {v.t("RideffNana.privacy")}
+              </a>
+            </div>
           </div>
           {" "}
         </>) : null}
@@ -948,7 +964,7 @@ Logic.prototype.render = function render() {
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#F4F1EC", border: "1px solid rgba(10,10,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
               <button onClick={v.toggle} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
-                <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#FF6A00" }}>
+                <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
                   <span style={{ position: "absolute", right: "0", bottom: "0", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #F4F1EC" }} />
                 </span>
                 {v.launcherT}
