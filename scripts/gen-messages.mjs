@@ -67,6 +67,21 @@ for (const [ns, table] of Object.entries(src)) {
   }
 }
 
+// /demo: German source → English (messages/demo-source.json, see extract-demo-strings.mjs).
+{
+  const demo = JSON.parse(fs.readFileSync(path.join(root, 'messages/demo-source.json'), 'utf8'));
+  const used = new Set();
+  en.Demo = {};
+  de.Demo = {};
+  keymap.Demo = {};
+  for (const [deStr, enStr] of Object.entries(demo)) {
+    const k = keyFor(enStr, used);
+    en.Demo[k] = enStr;
+    de.Demo[k] = deStr;
+    keymap.Demo[deStr] = k;
+  }
+}
+
 function addCustom(node, enOut, deOut) {
   for (const [k, v] of Object.entries(node)) {
     if (v && typeof v === 'object' && 'de' in v && 'en' in v && typeof v.de === 'string') {
@@ -85,4 +100,6 @@ const write = (file, data) => fs.writeFileSync(path.join(root, file), JSON.strin
 write('messages/en.json', en);
 write('messages/de.json', de);
 write('src/i18n/keymap.json', keymap);
+// /demo looks runtime values up by their German text (src/components/dc/BusinessDemo.tsx).
+write('src/i18n/demo-keymap.json', keymap.Demo);
 console.log(`messages: ${Object.values(keymap).reduce((n, m) => n + Object.keys(m).length, 0)} handoff strings in ${Object.keys(keymap).length} namespaces`);

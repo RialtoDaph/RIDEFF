@@ -49,7 +49,7 @@ export const FILES = {
   'RIDEFF Contact': ['ContactPage', 'Contact'],
   'RIDEFF Journal': ['JournalPage', 'Journal'],
   'RIDEFF Rechtliches': ['LegalPage', null],
-  'RIDEFF Business Demo': ['BusinessDemo', null],
+  'RIDEFF Business Demo': ['BusinessDemo', 'Demo'],
 };
 
 const ROUTES = {
@@ -211,9 +211,19 @@ function textNode(raw, scope, ctx, parentFlex) {
     const names = ['x', 'y', 'z', 'w'];
     return lead + `{v.t(${JSON.stringify(key)}, { ${holes.map((h, i) => `${names[i]}: ${expr(h, scope)}`).join(', ')} })}` + trail;
   }
-  if (norm(pattern) !== '{x}' && /[A-Za-z]{3,}/.test(pattern.replace(/\{x\}/g, ''))) ctx.report.missing.add('[holes] ' + norm(pattern));
+  // No key for the whole pattern: translate each static fragment on its own (this is
+  // what the prototype's runtime translator did, node by node).
   const parts = raw.split(holeRe);
-  return parts.map((p, i) => (i & 1 ? `{${expr(p, scope)}}` : p ? (p.trim() ? jsText(p.replace(/\s+/g, ' ')) : p.includes(' ') ? '{" "}' : '') : '')).join('');
+  const demo = ctx.ns === 'Demo';
+  return parts.map((p, i) => {
+    if (i & 1) return demo ? `{v.tx(${expr(p, scope)})}` : `{${expr(p, scope)}}`;
+    if (!p) return '';
+    if (!p.trim()) return p.includes(' ') ? '{" "}' : '';
+    const k = lookup(ctx.ns, p, ctx.report, true);
+    if (k) return (/^\s/.test(p) ? '{" "}' : '') + `{v.t(${JSON.stringify(k)})}` + (/\s$/.test(p) ? '{" "}' : '');
+    if (/[A-Za-z]{3,}/.test(p)) ctx.report.missing.add('[part] ' + norm(p));
+    return jsText(p.replace(/\s+/g, ' '));
+  }).join('');
 }
 
 function attrsOf(node) { return Object.fromEntries(node.attrs.map((a) => [a.prefix ? `${a.prefix}:${a.name}` : a.name, a.value])); }
