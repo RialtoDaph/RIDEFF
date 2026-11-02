@@ -1364,7 +1364,7 @@
     "stepX": "Schritt {x}",
     "yearOneCompared": "Das erste Jahr im Vergleich",
     "rIDEFFX": "RIDEFF {x}",
-    "usualWayFiguresArePlaceholdersTo": "Zahlen für den „üblichen Weg“ sind Platzhalter · noch zu bestätigen",
+    "usualWayFiguresArePlaceholdersTo": "Typische Richtwerte für kleine Betriebe · gerechnet mit dem unteren Ende",
     "everyDetail": "Jedes Detail",
     "whatSIn": "Was in",
     "eachPlan": "jedem Paket steckt.",
@@ -1736,7 +1736,11 @@
     "test": "Test",
     "approve": "Freigeben",
     "projectBuild": "Projekt · Aufbau",
-    "offer": "Angebot · "
+    "offer": "Angebot · ",
+    "n20HMo40": "ca. 20 Std. / Monat × 40 €",
+    "costAgency": "ca. 5.000–15.000 €",
+    "costFreelancer": "ca. 600–1.200 € / Monat",
+    "costTools": "ca. 150–400 € / Monat"
   },
   "About": {
     "home": "Start /",

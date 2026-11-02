@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import { eur } from '@/lib/format';
 
 class Logic extends DCLogic {
   state = {
@@ -34,7 +35,7 @@ class Logic extends DCLogic {
     alt: this.props.t("Life.rialtoWithCoffeeInTheMorning"),
     temp: '12°',
     line: this.props.t("Life.beforeTheCoffeeCools"),
-    chip: ['€', '€340', this.props.t("Life.leftThisWeek")],
+    chip: ['€', eur(340, this.props.locale), this.props.t("Life.leftThisWeek")],
     feed: [['06:30', this.props.t("Life.briefingReady30Sec")], ['07:00', this.props.t("Life.rentPaid820")], ['07:15', this.props.t("Life.umbrellaRainAt4")]]
   }, {
     n: this.props.t("Life.day"),
@@ -255,7 +256,7 @@ class Logic extends DCLogic {
     const ang = Math.PI * (1 - dpe),
       dark = dh > 19.5;
     const y = !!s.yearly,
-      fmt = v => '€' + v.toFixed(2).replace('.', ',');
+      fmt = v => eur(v, this.props.locale, true);
     const P = [[this.props.t("Life.life"), this.props.t("Life.justYouTheEssentials"), 12.9, ''], ['Life Plus', this.props.t("Life.everythingForOnePerson"), 19.9, this.props.t("Life.mostChosen")], [this.props.t("Life.together"), this.props.t("Life.sharedForUpTo4People"), 29.9, '']];
     const fit = s.ppl > 1 ? 2 : 1;
     const v = E(cl(s.vp)),
@@ -1077,7 +1078,7 @@ Logic.prototype.render = function render() {
                   </b>
                 </span>
               </div>
-              <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#F6EDE3", width: "max-content" }}>
+              <div className="lf-bill" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#F6EDE3", width: "max-content" }}>
                 <button onClick={v.setMonthly} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${v.mBg ?? ''}`, color: `${v.mFg ?? ''}` }}>
                   {v.t("Life.monthly")}
                 </button>

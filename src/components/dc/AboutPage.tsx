@@ -87,7 +87,7 @@ Logic.prototype.render = function render() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             {(v.path ?? []).map((p, $index) => (<Fragment key={$index}>
               {" "}
-              <div style={{ display: "grid", gridTemplateColumns: "80px minmax(0,1fr) minmax(0,1.3fr)", gap: "32px", padding: "32px 0", borderTop: "1px solid #2A2A2C", alignItems: "baseline" }}>
+              <div className="ab-ch" style={{ display: "grid", gridTemplateColumns: "80px minmax(0,1fr) minmax(0,1.3fr)", gap: "32px", padding: "32px 0", borderTop: "1px solid #2A2A2C", alignItems: "baseline" }}>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
                   {p?.n}
                 </span>

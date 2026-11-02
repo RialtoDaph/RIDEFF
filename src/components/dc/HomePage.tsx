@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 import { WhatsAppIcon } from '@/components/nana/icons';
+import { eur } from '@/lib/format';
 
 class Logic extends DCLogic {
   state = {
@@ -166,9 +167,13 @@ class Logic extends DCLogic {
     this.fitPins = () => {
       if (this.state.mpin) {
         // Tallest door seen so far, so the pinned box doesn't jump between pillars.
+        // Stick so the tabs sit just under the nav pill: the heading scrolls away whole
+        // instead of being half-hidden behind the nav.
         const b = document.querySelector('[data-pinbox="doors"]'),
           h = b ? Math.max(this.state.dbh, b.scrollHeight) : 0,
-          mTop = Math.min(0, innerHeight - h);
+          tabs = b && b.children[1],
+          tabsOff = tabs ? tabs.getBoundingClientRect().top - b.getBoundingClientRect().top : 0,
+          mTop = Math.round(Math.min(0, Math.max(innerHeight - h, 84 - tabsOff)));
         if (h && (h !== this.state.dbh || mTop !== this.state.mTop)) this.setState({
           dbh: h,
           mTop
@@ -677,16 +682,17 @@ class Logic extends DCLogic {
       dPinTop: s.mpin ? s.mTop + 'px' : '0',
       dBoxMinH: s.mpin && s.dbh ? s.dbh + 'px' : 'auto',
       pinH: s.pin ? '100vh' : 'auto',
-      doorsPad: s.pin ? '76px 40px 28px' : s.mpin ? '40px 20px 28px' : '40px 40px 120px',
+      doorsPad: s.pin ? '76px 40px 28px' : s.mpin ? '40px 20px 12px' : '40px clamp(20px,3vw,40px) 120px',
       tabCols: s.mpin ? 'repeat(3,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,300px),1fr))',
       tabFs: s.mpin ? '15px' : '18px',
       showFlow: !s.mpin,
       showTabNum: !s.mpin,
-      howPad: s.pin ? '40px' : '120px 40px',
-      tabPad: s.pin ? '16px' : '20px',
+      howPad: s.pin ? '40px' : '120px clamp(20px,3vw,40px)',
+      tabPad: s.pin ? '16px' : s.mpin ? '14px' : '20px',
       panelMt: s.pin ? '20px' : '28px',
       dbarOp: s.pin || s.mpin ? 1 : 0,
-      notPin: !s.pin,
+      // Phones pin the doors bottom-aligned; the extra link would push the heading under the nav.
+      notPin: !s.pin && !s.mpin,
       dNum: '0' + (s.d + 1),
       dHref: [this.props.href("/understand"), this.props.href("/build"), this.props.href("/run")][s.d],
       dLabel: this.P[s.d].label,
@@ -766,16 +772,16 @@ class Logic extends DCLogic {
         name: 'Core',
         tag: this.props.t("Home.startHere"),
         for: this.props.t("Home.oneAreaConnectedUsuallyCustomersAnd"),
-        price: '€149',
-        setup: '€1,290',
+        price: eur(149, this.props.locale),
+        setup: eur(1290, this.props.locale),
         items: [this.props.t("Home.websiteOrCoreSystem"), this.props.t("Home.aIInboxForInquiries"), this.props.t("Home.clientPortal"), this.props.t("Home.hostingBackupsUpdates")]
       }, {
         n: '02',
         name: 'Growth',
         tag: this.props.t("Home.mostChosen"),
         for: this.props.t("Home.customersSalesTeamAndOperationsIn"),
-        price: '€249',
-        setup: '€1,990',
+        price: eur(249, this.props.locale),
+        setup: eur(1990, this.props.locale),
         items: [this.props.t("Home.everythingInCore"), this.props.t("Home.teamApp"), this.props.t("Home.automatedOffersFollowUps"), this.props.t("Home.monthlyReport")],
         dark: true
       }, {
@@ -783,8 +789,8 @@ class Logic extends DCLogic {
         name: this.props.t("Home.wholeSystem"),
         tag: this.props.t("Home.fullBrain"),
         for: this.props.t("Home.everyAreaConnectedFinanceAndMarketing"),
-        price: '€449',
-        setup: '€3,900',
+        price: eur(449, this.props.locale),
+        setup: eur(3900, this.props.locale),
         items: [this.props.t("Home.everythingInGrowth"), this.props.t("Home.financeInvoicingFlows"), this.props.t("Home.marketingAutomation"), this.props.t("Home.prioritySupport")]
       }].map(x => ({
         ...x,
@@ -898,7 +904,7 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
               {v.t("Home.aISystemsAppsWebEichstattDE")}
             </div>
-            <h1 style={{ margin: "0", fontSize: "clamp(52px,6.4vw,112px)", lineHeight: ".94", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
+            <h1 className="hp-h1" style={{ margin: "0", fontSize: "clamp(52px,6.4vw,112px)", lineHeight: ".94", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
               <span style={{ whiteSpace: "nowrap" }}>
                 {v.t("Home.onePerson")}
                 <span style={{ display: "inline-flex", verticalAlign: "middle", marginLeft: ".12em" }}>
@@ -1129,7 +1135,7 @@ Logic.prototype.render = function render() {
             </>) : null}
             {" "}{v.fx}{" "}
             <div style={{ position: "absolute", left: "20px", top: "22px", zIndex: "3", display: "flex", flexDirection: "column", alignItems: "center", gap: "14px" }}>
-              <span key={v.num} style={{ animation: "rdTag .7s cubic-bezier(.16,1,.3,1) .45s both", writingMode: "vertical-rl", transform: "rotate(180deg)", background: "#F4F1EC", color: "#0A0A0A", borderRadius: "999px", padding: "20px 12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".14em", textTransform: "uppercase" }}>
+              <span key={v.num} className="hc-pill" style={{ animation: "rdTag .7s cubic-bezier(.16,1,.3,1) .45s both", writingMode: "vertical-rl", transform: "rotate(180deg)", background: "#F4F1EC", color: "#0A0A0A", borderRadius: "999px", padding: "20px 12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".14em", textTransform: "uppercase" }}>
                 {v.t("Home.pillarXX", { x: v.num, y: v.door })}
               </span>
               <a href={v.pHref} style={{ width: "46px", height: "46px", borderRadius: "50%", background: "#0A0A0A", color: "#F4F4F2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
@@ -1177,7 +1183,7 @@ Logic.prototype.render = function render() {
         </div>
         {" "}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", borderTop: "1px solid #D3CCC0", borderBottom: "1px solid #D3CCC0" }}>
-          <div style={{ padding: "22px 40px", display: "flex", alignItems: "baseline", gap: "8px" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"1"}
             </b>
@@ -1185,7 +1191,7 @@ Logic.prototype.render = function render() {
               {v.t("Home.personFirstCallToLive")}
             </span>
           </div>
-          <div style={{ padding: "22px 40px", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"5"}
             </b>
@@ -1193,7 +1199,7 @@ Logic.prototype.render = function render() {
               {v.t("Home.phasesToGoLive")}
             </span>
           </div>
-          <div style={{ padding: "22px 40px", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"EU"}
             </b>
@@ -1201,7 +1207,7 @@ Logic.prototype.render = function render() {
               {v.t("Home.hostedInFrankfurt")}
             </span>
           </div>
-          <div style={{ padding: "22px 40px", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"1"}
             </b>
@@ -1226,7 +1232,7 @@ Logic.prototype.render = function render() {
           {" "}
         </div>
       </div>
-      <div id="thesis" data-screen-label="01 Thesis" style={{ padding: "120px 40px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "64px", alignItems: "start" }}>
+      <div id="thesis" data-screen-label="01 Thesis" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "64px", alignItems: "start" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Home.n01Thesis")}
@@ -1301,7 +1307,7 @@ Logic.prototype.render = function render() {
         <div style={{ position: `${v.dPinPos ?? ''}`, top: `${v.dPinTop ?? ''}`, height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <div data-pinbox="doors" data-screen-label="02 Four doors" style={{ minHeight: `${v.dBoxMinH ?? ''}`, padding: `${v.doorsPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", transformOrigin: "50% 50%" }}>
             {" "}
-            <div data-rv="0" style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap", marginBottom: "40px" }}>
+            <div data-rv="0" className="hp-dhead" style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap", marginBottom: "40px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
                   {v.t("Home.n02ThreePillars")}
@@ -1340,7 +1346,7 @@ Logic.prototype.render = function render() {
               <div data-dbar="1" style={{ height: "100%", background: "#FF6A00", transformOrigin: "0 50%", transform: "scaleX(0)", boxShadow: "0 0 10px #FF6A00" }} />
             </div>
             {" "}
-            <div style={{ marginTop: `${v.panelMt ?? ''}`, borderRadius: "26px", background: `${v.dBg ?? ''}`, color: `${v.dFg ?? ''}`, padding: "clamp(28px,4vw,56px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,380px),1fr))", gap: "48px", transition: "background .5s,color .5s", perspective: "1400px", overflow: "hidden" }}>
+            <div className="hp-dpanel" style={{ marginTop: `${v.panelMt ?? ''}`, borderRadius: "26px", background: `${v.dBg ?? ''}`, color: `${v.dFg ?? ''}`, padding: "clamp(28px,4vw,56px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,380px),1fr))", gap: "48px", transition: "background .5s,color .5s", perspective: "1400px", overflow: "hidden" }}>
               <div key={`${v.dNum ?? ''}a`} style={{ display: "flex", flexDirection: "column", gap: "24px", justifyContent: "space-between", animation: "rdFlipIn .9s cubic-bezier(.16,1,.3,1) both" }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".65" }}>
@@ -1400,7 +1406,7 @@ Logic.prototype.render = function render() {
       </div>
       <div data-screen-label="03 Business brain" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
         {" "}
-        <div style={{ padding: "120px 40px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
+        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "end" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }} data-rv="0">
@@ -1466,7 +1472,7 @@ Logic.prototype.render = function render() {
                 {" "}
                 {(v.nodes ?? []).map((n, $index) => (<Fragment key={$index}>
                   {" "}
-                  <div style={{ position: "absolute", left: `${n?.x ?? ''}`, top: `${n?.y ?? ''}`, width: "clamp(150px,15vw,210px)", transform: `${n?.anchor ?? ''} ${n?.tf ?? ''}`, zIndex: "3", display: "flex", flexDirection: `${n?.fd ?? ''}`, alignItems: "center", gap: "10px", textAlign: "center", opacity: `${n?.op ?? ''}`, transition: `all .7s cubic-bezier(.16,1,.3,1) ${n?.dl ?? ''}` }}>
+                  <div className="hp-node" style={{ position: "absolute", left: `${n?.x ?? ''}`, top: `${n?.y ?? ''}`, width: "clamp(150px,15vw,210px)", transform: `${n?.anchor ?? ''} ${n?.tf ?? ''}`, zIndex: "3", display: "flex", flexDirection: `${n?.fd ?? ''}`, alignItems: "center", gap: "10px", textAlign: "center", opacity: `${n?.op ?? ''}`, transition: `all .7s cubic-bezier(.16,1,.3,1) ${n?.dl ?? ''}` }}>
                     <span style={{ width: "54px", height: "54px", flexShrink: "0", borderRadius: "50%", border: `2px solid ${n?.dot ?? ''}`, background: `${n?.cbg ?? ''}`, boxShadow: `${n?.sh ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "12px", color: `${n?.tag ?? ''}`, transition: `all .6s ${n?.dl ?? ''}` }}>
                       {n?.num}
                     </span>
@@ -1501,7 +1507,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div id="proof" data-screen-label="04 Proof" style={{ padding: "120px 40px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
+      <div id="proof" data-screen-label="04 Proof" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Home.n04Proof")}
@@ -1604,7 +1610,7 @@ Logic.prototype.render = function render() {
       </div>
       <div id="pricing" data-screen-label="05 Pricing" style={{ background: "#E3DED5" }}>
         {" "}
-        <div style={{ padding: "120px 40px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
+        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "end" }}>
             <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
@@ -1754,7 +1760,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="07 FAQ" style={{ padding: "40px 40px 120px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "56px", alignItems: "start" }}>
+      <div data-screen-label="07 FAQ" style={{ padding: "40px clamp(20px,3vw,40px) 120px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "56px", alignItems: "start" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div data-rv="0" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Home.n07Questions")}
@@ -1794,7 +1800,7 @@ Logic.prototype.render = function render() {
       </div>
       <div id="start" data-screen-label="08 Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
         {" "}
-        <div style={{ padding: "120px 40px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "64px" }}>
+        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "64px" }}>
           <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
               {v.t("Home.n08StartAProject")}

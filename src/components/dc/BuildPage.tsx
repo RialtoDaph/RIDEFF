@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import { num } from '@/lib/format';
 
 class Logic extends DCLogic {
   state = {
@@ -538,7 +539,7 @@ class Logic extends DCLogic {
       collapseRef: this.collapseRef,
       layersRef: this.layersRef,
       journeyRef: this.journeyRef,
-      count: (this.N || 26000).toLocaleString('en'),
+      count: num(this.N || 26000, this.props.locale),
       formName: this.NAMES[s.cap],
       capNum: c[0].split(' · ')[0],
       capLabel: c[0].split(' · ')[1] || this.props.t("Build.build"),
@@ -1066,7 +1067,7 @@ Logic.prototype.render = function render() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,260px),1fr))", gap: "12px" }}>
           {(v.caps ?? []).map((k, $index) => (<Fragment key={$index}>
             {" "}
-            <a href={k?.href} style={{ color: "#F4F4F2", textDecoration: "none", background: "#111112", border: "1px solid #232325", borderRadius: "22px", padding: "26px", display: "flex", flexDirection: "column", gap: "40px", minHeight: "200px", boxSizing: "border-box", transition: "transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s" }} className="hv-b35902a">
+            <a href={k?.href} className="bd-cap hv-b35902a" style={{ color: "#F4F4F2", textDecoration: "none", background: "#111112", border: "1px solid #232325", borderRadius: "22px", padding: "26px", display: "flex", flexDirection: "column", gap: "40px", minHeight: "200px", boxSizing: "border-box", transition: "transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#6B675F" }}>
                 <span style={{ color: `${k?.c ?? ''}` }}>
                   {k?.n}

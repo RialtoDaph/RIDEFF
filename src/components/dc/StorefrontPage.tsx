@@ -141,7 +141,7 @@ Logic.prototype.render = function render() {
             {v.t("Storefront.caseSummaryPlaceholderWhatTICOriginals")}
           </p>
         </div>
-        <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#DCD5CA", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
+        <div className="sf-tabs" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#DCD5CA", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
           {(v.layers ?? []).map((l, $index) => (<Fragment key={$index}>
             <button onClick={l?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${l?.bg ?? ''}`, color: `${l?.fg ?? ''}` }}>
               {l?.n}{" · "}{l?.t}

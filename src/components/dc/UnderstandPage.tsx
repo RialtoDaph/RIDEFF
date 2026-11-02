@@ -15,7 +15,8 @@ class Logic extends DCLogic {
     terms: false,
     approved: false,
     stamp: '',
-    touch: false
+    touch: false,
+    mob: false
   };
   stageRef = React.createRef();
   viewRef = React.createRef();
@@ -79,10 +80,13 @@ class Logic extends DCLogic {
       if (Math.abs(p - this.state.p) > .004) this.setState({
         p
       });
+      // Phones: the offer is not pinned (text + paper don't fit one screen); it prints as it scrolls in.
+      const mob = innerWidth < 900;
+      if (mob !== this.state.mob) this.setState({ mob });
       const of = this.offerRef.current;
       if (of) {
         const ob = of.getBoundingClientRect(),
-          pp = this.state.rm ? 1 : Math.max(0, Math.min(1, -ob.top / (ob.height - innerHeight) + .15));
+          pp = this.state.rm ? 1 : mob ? Math.max(0, Math.min(1, (innerHeight * .9 - ob.top) / (ob.height * .9))) : Math.max(0, Math.min(1, -ob.top / (ob.height - innerHeight) + .15));
         if (Math.abs(pp - this.state.pp) > .004) this.setState({
           pp
         });
@@ -100,6 +104,7 @@ class Logic extends DCLogic {
     window.addEventListener('scroll', this.onScroll, {
       passive: true
     });
+    window.addEventListener('resize', this.onScroll);
     this.onScroll();
     const loop = now => {
       if (!this.alive) return;
@@ -141,6 +146,7 @@ class Logic extends DCLogic {
     clearInterval(this.ty);
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
   }
   renderVals() {
     const s = this.state,
@@ -202,6 +208,7 @@ class Logic extends DCLogic {
       pE = s.pp < .5 ? 4 * s.pp ** 3 : 1 - (-2 * s.pp + 2) ** 3 / 2;
     return {
       rm: !!(this.state || {}).rm,
+      mob: !!s.mob,
       stageRef: this.stageRef,
       viewRef: this.viewRef,
       cleanRef: this.cleanRef,
@@ -350,7 +357,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div style={{ position: "absolute", inset: "0", backgroundImage: "radial-gradient(#232325 1px,transparent 1px)", backgroundSize: "26px 26px" }} />
             {" "}
-            <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", top: "150px", bottom: "150px", display: "flex", flexDirection: "column", gap: "22px" }}>
+            <div className="uc-area" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", top: "150px", bottom: "150px", display: "flex", flexDirection: "column", gap: "22px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
                 <span>
                   {v.t("Understand.yourBusinessUnderstood")}
@@ -374,7 +381,7 @@ Logic.prototype.render = function render() {
                   {" "}{v.t("Understand.week")}
                 </span>
               </div>
-              <div style={{ flex: "1", display: "grid", gridTemplateColumns: "repeat(6,minmax(0,1fr))", gap: "14px" }}>
+              <div className="uc-map" style={{ flex: "1", display: "grid", gridTemplateColumns: "repeat(6,minmax(0,1fr))", gap: "14px" }}>
                 {(v.map ?? []).map((a, $index) => (<Fragment key={$index}>
                   {" "}
                   <div style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: `2px solid ${a?.c ?? ''}`, paddingTop: "14px" }}>
@@ -407,7 +414,7 @@ Logic.prototype.render = function render() {
             {" "}
           </div>
           {" "}
-          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "6px 10px", borderRadius: "999px" }}>
+          <div className="uc-crumb" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "6px 10px", borderRadius: "999px" }}>
             {v.t("Understand.home")}{" "}
             <span style={{ color: "#BDB6AA" }}>
               {"/"}
@@ -419,7 +426,7 @@ Logic.prototype.render = function render() {
             {" "}{v.t("Understand.pillar01")}
           </div>
           {" "}
-          <div style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "110px", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "10px 12px", borderRadius: "14px" }}>
+          <div className="uc-read" style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "110px", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "10px 12px", borderRadius: "14px" }}>
             <span>
               {v.t("Understand.clarity")}{" "}
               <b style={{ color: "#FF6A00", fontWeight: "500" }}>
@@ -458,7 +465,7 @@ Logic.prototype.render = function render() {
             </>) : null}
           </div>
           {" "}
-          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", bottom: "28px", display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "16px", zIndex: "4" }}>
+          <div className="uc-segs" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", bottom: "28px", display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "16px", zIndex: "4" }}>
             {(v.segs ?? []).map((g, $index) => (<Fragment key={$index}>
               {" "}
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -636,9 +643,9 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div ref={v.offerRef} data-screen-label="03 The offer" style={{ height: v.rm ? "auto" : "240vh", position: "relative", marginTop: "100px" }}>
+      <div ref={v.offerRef} data-screen-label="03 The offer" style={{ height: v.rm || v.mob ? "auto" : "240vh", position: "relative", marginTop: "100px", paddingBottom: v.mob ? "88px" : "0" }}>
         {" "}
-        <div style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <div style={{ position: v.rm || v.mob ? "relative" : "sticky", top: "0", height: v.mob ? "auto" : "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
           <div style={{ width: "100%", maxWidth: "1480px", margin: "0 auto", padding: "90px clamp(20px,3vw,40px) 0", boxSizing: "border-box", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "56px", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
@@ -678,7 +685,7 @@ Logic.prototype.render = function render() {
                 </span>
                 <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#FF6A00", animation: "rdPulse 1s infinite", opacity: `${v.printing ?? ''}` }} />
               </div>
-              <div style={{ width: "min(92%,480px)", height: "min(66vh,560px)", overflow: "hidden", marginTop: "-10px" }}>
+              <div style={{ width: "min(92%,480px)", height: v.mob ? "auto" : "min(66vh,560px)", overflow: "hidden", marginTop: "-10px" }}>
                 {" "}
                 <div style={{ position: "relative", background: "#E7E3DC", padding: "44px 36px 36px", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "18px", fontSize: "14px", transform: `translateY(${v.paperY ?? ''})`, boxShadow: "0 30px 60px rgba(10,10,10,.14)" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>

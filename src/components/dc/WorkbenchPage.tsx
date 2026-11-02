@@ -260,7 +260,7 @@ Logic.prototype.render = function render() {
           {(v.who ?? []).map((w, $index) => (<Fragment key={$index}>
             {" "}
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              <div style={{ aspectRatio: "4/5", borderRadius: "20px", overflow: "hidden" }}>
+              <div className="wb-uc" style={{ aspectRatio: "4/5", borderRadius: "20px", overflow: "hidden" }}>
                 <ImageSlot src={w?.src} alt={w?.ph} shape="rounded" radius={20} />
               </div>
               <span style={{ fontSize: "20px", fontWeight: "600", letterSpacing: "-0.02em" }}>
