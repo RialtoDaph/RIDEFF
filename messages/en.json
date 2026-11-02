@@ -222,7 +222,7 @@
     "yourLifeGetsABrainToo": "Your life gets a brain, too.",
     "morningBriefingMoneyTimeAndGoals": "Morning briefing, money, time and goals for you or your family. From €12.90 a month incl. VAT, cancel monthly, 14 days free, no card.",
     "enterRIDEFFLife": "Enter RIDEFF Life →",
-    "onCostPlaceholderFigures": "On cost · placeholder figures",
+    "onCostPlaceholderFigures": "On cost · typical ranges",
     "rIDEFFGrowthOnePersonOneInvoice": "RIDEFF Growth · one person, one invoice",
     "n249Mo": "€249 / mo",
     "n06HowItWorks": "(06) How it works",
@@ -237,7 +237,7 @@
     "runItself": "run itself.",
     "rialtoDirectLine": "Rialto · direct line",
     "book15Minutes": "Book 15 minutes",
-    "freeFirstCallCalComLink": "Free first call · Cal.com link placeholder",
+    "freeFirstCallCalComLink": "Free first call · 15 min via Cal.com",
     "forLongerBriefs": "For longer briefs",
     "eichstattX": "Eichstätt · {x}",
     "remoteEU": "Remote · EU",
@@ -480,7 +480,11 @@
     "iBuildItYouSeeProgress": "I build it. You see progress in your portal.",
     "test": "Test",
     "yourTeamTriesItInA": "Your team tries it in a test run.",
-    "itGoesLiveAndIKeep": "It goes live, and I keep it running."
+    "itGoesLiveAndIKeep": "It goes live, and I keep it running.",
+    "costAgency": "approx. €3,000–8,000",
+    "costFreelancer": "approx. €400–800 / mo",
+    "costTools": "approx. €100–300 / mo",
+    "costTime": "approx. 15 h / mo"
   },
   "Understand": {
     "yourBusinessUnderstood": "Your business · understood",
@@ -1785,7 +1789,7 @@
     "bringTheRealProblemLeaveWith": "Bring the real problem, leave with a clear next step. No pitch, no obligation.",
     "rialtoFastestWayIn": "Rialto · fastest way in",
     "book15Minutes": "Book 15 minutes",
-    "freeFirstCallCalComLink": "Free first call · Cal.com link placeholder",
+    "freeFirstCallCalComLink": "Free first call · 15 min via Cal.com",
     "forLongerBriefs": "For longer briefs",
     "eichstattX": "Eichstätt · {x}",
     "remoteEU": "Remote · EU",
@@ -2763,7 +2767,9 @@
     "automatedDesk": "Automated front desk",
     "online": "Online",
     "teaser": "Hi, I’m Nana from RIDEFF 👋 Any questions about your business? Just ask or call me.",
-    "teaserReply": "Reply"
+    "teaserReply": "Reply",
+    "callContinueFirst": "Hello, it’s Nana. I have our chat in front of me. How can I help further?",
+    "tooMany": "Too many tries right now. Please try again in a few minutes, or message Rialto on WhatsApp."
   },
   "journal": {
     "invalidEmail": "Please enter a valid email address.",

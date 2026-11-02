@@ -13,8 +13,7 @@ Everything below is visible on the site (or wired as a mock) until it is done.
 | Storefront → (01) Case | `[Case summary placeholder — …]`, `[n]` shops, "Load time · placeholder", "Orders / month · placeholder", "Your next site — placeholder" | `Storefront.*` |
 | Understand → (03) The offer | `[your business]` in the mock offer | `Understand.offerYourBusiness` |
 | Journal | `[date]` on the designed posts; the designed posts themselves (titles, texts, covers reuse other assets) | `Journal.date`, `POSTS` in `src/components/dc/JournalPage.tsx` |
-| Home → (05) cost comparison | "On cost · placeholder figures" | `Home.onCostPlaceholderFigures` |
-| Home / Contact booking card | "Free first call · Cal.com link placeholder" | `Home.freeFirstCallCalComLink`, `Contact.*` |
+| Home → (05) cost comparison | Rough market ranges written for this build ("ca. 3.000–8.000 €", "ca. 400–800 € / Monat", "ca. 100–300 € / Monat", "ca. 15 Std. / Monat"), labelled "typische Richtwerte": confirm or replace | `Home.cost*`, `Home.onCostPlaceholderFigures` in `messages/custom.json` |
 | Pricing (Business) | "Placeholder split — to be confirmed" (where the money goes), "Split and timing are placeholders — to be confirmed", "“Usual way” figures are placeholders — to be confirmed" (year-one comparison), "Proposed — to be confirmed" (limits table) | `Pricing.*` |
 | Pricing (Life) buying flow | mock app screens show `app.rideff.com/start`, `/connect`, `/plan`, `/billing`, `/settings`; Life Private links `cal.com/rideff` | `STEPS` in `src/components/dc/PricingPage.tsx` |
 
@@ -43,11 +42,12 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 - [ ] Check which LLM the agent uses in the ElevenLabs dashboard (ElevenLabs' default) and put its provider into Datenschutz.
 - [ ] **WhatsApp Business API** → `POST /api/nana/whatsapp`: account, sender number, approved template, opt-in record. Today it validates the number and pretends to send ("Sent to … ✓").
 - [ ] **Supabase (Frankfurt)**: store transcript + summary when `consent` is true and attach them to the lead/client in the portal (`TODO(owner)` in `src/app/api/nana/summary/route.ts`).
-- [ ] Rate limiting on `/api/nana/*/session` (each call mints an ElevenLabs session) and call limits / budget alerts in ElevenLabs.
+- [x] Rate limiting on `/api/nana/*/session`: per IP and per session, in memory per server instance (`src/lib/nana/rate-limit.ts`).
+- [ ] Call limits / budget alerts in ElevenLabs as the hard stop (the in-memory limit does not cover many instances or a distributed attack).
 
 ## 4. Owner decisions and assets
 
-- [ ] **Cal.com**: slug for the 15-min first call and for Life Private. The Home "(08) Start a project" day/slot picker and the Contact form currently hand the chosen slot to WhatsApp (prefilled text). Back them with the Cal.com API (or the inline embed, brand colour `#FF6A00`).
+- [ ] **Cal.com**: the 15-min first call links to `CAL_URL` in `src/lib/site.ts` (Home and Contact booking rows). Still open: the Life Private link. The Home "(08) Start a project" day/slot picker and the Contact form currently hand the chosen slot to WhatsApp (prefilled text). Back them with the Cal.com API (or the inline embed, brand colour `#FF6A00`).
 - [ ] **Route slugs** (`src/i18n/routing.ts`): `/verstehen`, `/bauen`, `/bauen/web-shops`, `/bauen/team-apps`, `/betreiben`, `/projekte`, `/preise`, `/ueber-mich`, `/kontakt` + English equivalents under `/en` — confirm.
 - [ ] **Life demo link**: `NEXT_PUBLIC_LIFE_DEMO_URL` (default `https://app.rideff.com/demo`) for the "RIDEFF Life" demo links on Work/Build/Life. Sign-up CTAs go to `app.rideff.com/signup?plan=…&lang=…`.
 - [ ] **Portal**: `NEXT_PUBLIC_PORTAL_URL` once `portal.rideff.com` (separate repo) is live.

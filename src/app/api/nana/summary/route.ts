@@ -8,12 +8,15 @@ export const runtime = 'nodejs';
 export const maxDuration = 30;
 
 /**
- * POST /api/nana/summary  { sessionId, locale, kind, duration, transcript[], consent, conversationId? }
+ * POST /api/nana/summary  { sessionId, locale, kind, duration, transcript[], consent, conversationIds? }
  * → { kind, duration, need, interest, next, text, stored }
  *
- * With an ElevenLabs conversation id, need / interest / next come from the
- * agent's post-call analysis (data collection) and the official transcript.
- * Without (or if the analysis is not ready in time), from the client transcript.
+ * transcript is the whole visit (typed chat first, then the call). With ElevenLabs
+ * conversation ids (chat session, call), need / interest / next come from the
+ * agents' post-call analysis: the first conversation that filled a field wins, so
+ * a noisy call cannot overwrite what was typed. The official transcripts replace
+ * the client one only when every conversation is available; otherwise (or if the
+ * analysis is not ready in time) the client transcript is used.
  *
  * TODO(owner): with consent, store transcript + summary in Supabase (Frankfurt)
  * and attach them to the lead/client in the portal.
@@ -30,24 +33,25 @@ export async function POST(req: Request) {
   }));
 
   const ai: SummaryFields = {};
-  const conversationId = str(body.conversationId, 80);
-  if (conversationId) {
-    const conv = await finishedConversation(conversationId);
-    if (conv) {
-      const official = conv.transcript.filter((l) => l.message).map((l) => ({ from: l.role === 'agent' ? ('nana' as const) : ('you' as const), text: String(l.message) }));
-      if (official.length) transcript = official;
-      const dc = conv.analysis?.data_collection_results ?? {};
-      const val = (k: string) => (typeof dc[k]?.value === 'string' ? (dc[k].value as string) : undefined);
-      ai.name = val('name');
-      ai.company = val('company');
-      ai.industry = val('industry');
-      ai.contact = val('contact');
-      ai.need = val('need');
-      ai.situation = val('situation');
-      ai.timeline = val('timeline');
-      ai.interest = val('interest');
-      ai.next = val('next_step');
+  const ids = [...new Set((Array.isArray(body.conversationIds) ? body.conversationIds : [body.conversationId]).map((v: unknown) => str(v, 80)).filter(Boolean))].slice(0, 3) as string[];
+  if (ids.length) {
+    const convs = await Promise.all(ids.map((id) => finishedConversation(id)));
+    const official = convs.flatMap((c) => (c?.transcript ?? []).filter((l) => l.message).map((l) => ({ from: l.role === 'agent' ? ('nana' as const) : ('you' as const), text: String(l.message) })));
+    if (convs.every(Boolean) && official.length) transcript = official;
+    const FIELDS: [keyof SummaryFields, string][] = [['name', 'name'], ['company', 'company'], ['industry', 'industry'], ['contact', 'contact'], ['need', 'need'], ['situation', 'situation'], ['timeline', 'timeline'], ['interest', 'interest'], ['next', 'next_step']];
+    // The agent's "nothing yet" answers only count when no conversation has a real one.
+    const FALLBACK = /^(not decided yet|noch nicht entschieden|rialto replies here on whatsapp|rialto antwortet hier auf whatsapp)\.?$/i;
+    const fallback: SummaryFields = {};
+    for (const conv of convs) {
+      const dc = conv?.analysis?.data_collection_results ?? {};
+      for (const [field, key] of FIELDS) {
+        const v = dc[key]?.value;
+        if (typeof v !== 'string' || !v.trim()) continue;
+        if (FALLBACK.test(v.trim())) fallback[field] ??= v;
+        else if (!ai[field]) ai[field] = v;
+      }
     }
+    for (const [field] of FIELDS) ai[field] ??= fallback[field];
   }
 
   const request: SummaryRequest = {
@@ -57,7 +61,7 @@ export async function POST(req: Request) {
     duration: Math.max(0, Math.min(36_000, Number(body.duration) || 0)),
     transcript,
     consent: body.consent === true,
-    conversationId: conversationId || undefined,
+    conversationId: ids[ids.length - 1],
   };
   return Response.json(await buildSummary(request, ai), { headers: { 'cache-control': 'no-store' } });
 }
