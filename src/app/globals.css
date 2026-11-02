@@ -156,6 +156,142 @@ html.lenis body {
   white-space: nowrap;
 }
 
+/* Nav: desktop links vs. "Menü" button by viewport, so the first paint matches the device. */
+@media (max-width: 1100px) {
+  .rn-wide {
+    display: none !important;
+  }
+}
+@media (max-width: 560px) {
+  .rn-cta {
+    display: none !important;
+  }
+}
+@media (min-width: 1101px) {
+  .rn-narrow {
+    display: none !important;
+  }
+}
+@media (max-width: 1120px) {
+  .rn-top {
+    justify-content: space-between !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Phones: Nana + WhatsApp shrink to icons so they cover less of the page,
+   and the footer leaves room so its last line isn't hidden behind them. */
+@media (max-width: 559px) {
+  .nana-label {
+    display: none;
+  }
+  .nana-dock button:has(> .nana-label) {
+    padding: 1px !important;
+  }
+  .nana-dock .nana-wa {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .rd-footer {
+    padding-bottom: 84px;
+  }
+  .rd-footer a {
+    padding: 6px 0;
+  }
+  /* Copyright line sits under the RIDEFF wordmark on phones. */
+  .rd-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .rd-footer > * {
+    width: 100%;
+  }
+  .rd-footer > .rd-copy {
+    order: 1;
+    padding-top: 24px !important;
+  }
+  /* Finger-sized language switch. */
+  .rn-lang {
+    padding: 10px 12px !important;
+  }
+  /* Scrolled nav pill: languages live in the menu overlay, the CTA stays on one line. */
+  .rn-clangs {
+    display: none !important;
+  }
+  .rn-cta2 {
+    white-space: nowrap;
+  }
+  /* Mockup labels below 11px are hard to read on a phone. */
+  [style*="font-size:9px"],
+  [style*="font-size: 9px"],
+  [style*="font-size:10px"],
+  [style*="font-size: 10px"],
+  [style*=" 9px var(--font"],
+  [style*=" 10px var(--font"] {
+    font-size: 11px !important;
+  }
+  .pt-label {
+    font-size: 14px !important;
+  }
+  /* Home: hero chips stay inside the photo. */
+  .hc-chip {
+    left: 14px !important;
+    right: 14px;
+  }
+  .hc-chip > span {
+    display: none;
+  }
+  .hc-chip-box {
+    white-space: normal !important;
+    gap: 10px !important;
+    padding: 8px 14px 8px 8px !important;
+  }
+  .hc-chip-box > b {
+    font-size: 17px !important;
+    white-space: nowrap;
+  }
+  .hc-chip-box > span:last-child {
+    font-size: 14px !important;
+    line-height: 1.3;
+  }
+  /* Home: label above value instead of a squeezed two-column row. */
+  .hp-fact {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 6px !important;
+  }
+  /* Home proof rows: number · title · arrow, description underneath. */
+  .hp-demo {
+    grid-template-columns: 28px minmax(0, 1fr) auto !important;
+    gap: 8px 14px !important;
+    padding: 22px 0 !important;
+  }
+  .hp-demo > span:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .hp-demo > span:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  /* Home brain: the three packages on one line. */
+  .hp-tiers {
+    flex-wrap: nowrap !important;
+  }
+  .hp-tiers > button {
+    padding: 10px 14px !important;
+    white-space: nowrap;
+  }
+  /* Life hero: morning / day / evening tabs fit side by side. */
+  .lf-tab {
+    gap: 8px !important;
+    padding: 4px 12px 4px 4px !important;
+  }
+  .lf-tab .lf-sw {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
 /* Reduced motion: final states, no loops (JS effects check the same query). */
 @media (prefers-reduced-motion: reduce) {
   html {

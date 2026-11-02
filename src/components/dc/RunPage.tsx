@@ -8,7 +8,7 @@ import Footer from '@/components/dc/Footer';
 class Logic extends DCLogic {
   state = {
     rp: 0,
-    brk: 0,
+    bp: 0,
     tab: 0,
     cyc: 0,
     ev: 0,
@@ -20,6 +20,7 @@ class Logic extends DCLogic {
   dialRef = React.createRef();
   rcRef = React.createRef();
   watchRef = React.createRef();
+  brkRef = React.createRef();
   growRef = React.createRef();
   portalRef = React.createRef();
   promRef = React.createRef();
@@ -111,6 +112,15 @@ class Logic extends DCLogic {
         const wq = cl((innerHeight * .85 - wr.getBoundingClientRect().top) / (innerHeight * .8));
         if (Math.abs(wq - (st.wq || 0)) > .004) this.setState({
           wq
+        });
+      }
+      // "When something breaks": scroll drives the incident from break to resolved.
+      const br = this.brkRef.current;
+      if (br) {
+        const r = br.getBoundingClientRect(),
+          bp = st.rm ? 1 : st.pin ? cl(-r.top / (r.height - innerHeight)) : cl((innerHeight * .75 - r.top) / r.height);
+        if (Math.abs(bp - (st.bp || 0)) > .004) this.setState({
+          bp
         });
       }
       const gr = this.growRef.current;
@@ -215,7 +225,6 @@ class Logic extends DCLogic {
     this.raf = requestAnimationFrame(loop);
   }
   componentWillUnmount() {
-    clearInterval(this.bt);
     clearInterval(this.wt);
     window.removeEventListener('resize', this.calcPin);
     this.alive = false;
@@ -432,6 +441,11 @@ class Logic extends DCLogic {
           rowOp: on ? 1 : .7
         };
       }),
+      brkRef: this.brkRef,
+      bH: s.pin ? '300vh' : 'auto',
+      bPos: s.pin ? 'sticky' : 'relative',
+      bInnerH: s.pin ? '100vh' : 'auto',
+      bPad: s.pin ? '40px clamp(20px,3vw,40px)' : '0 clamp(20px,3vw,40px)',
       gH: s.pin ? '260vh' : 'auto',
       gPos: s.pin ? 'sticky' : 'relative',
       gInnerH: s.pin ? '100vh' : 'auto',
@@ -478,7 +492,9 @@ class Logic extends DCLogic {
       mailSh: (.04 + m * .08).toFixed(2),
       mailBd: m > .99 ? '#FF6A0033' : 'transparent',
       ...(() => {
-        const b = s.brk,
+        // A short calm beat, then one step per sixth of the rest; resolved holds at the end.
+        const bp = +s.bp || 0,
+          b = bp < .1 ? 0 : Math.min(6, 1 + Math.floor((bp - .1) / .8 * 6)),
           broken = b >= 1 && b <= 3,
           T = ['14:02', '14:02', '14:06', '14:31', '14:33'];
         const steps = [[this.props.t("Run.youReport"), this.props.t("Run.oneMessageAScreenshotIsEnough")], [this.props.t("Run.threadOpens"), this.props.t("Run.checkoutBrokenPriority")], [this.props.t("Run.fixed"), this.props.t("Run.paymentWebhookRestarted")], [this.props.t("Run.deployed"), this.props.t("Run.testedBackupsUntouched")], [this.props.t("Run.confirmed"), this.props.t("Run.shortNoteWhatItWasWhat")]];
@@ -494,9 +510,6 @@ class Logic extends DCLogic {
           })),
           ckBg: broken ? '#8C877E' : '#0A0A0A',
           ckLabel: broken ? this.props.t("Run.checkout") : this.props.t("Run.checkout2"),
-          brkBtnBg: b === 0 || b === 6 ? '#FF6A00' : '#DCD5CA',
-          brkBtnFg: '#0A0A0A',
-          brkLabel: b === 0 ? this.props.t("Run.breakSomething") : b === 6 ? this.props.t("Run.breakItAgain") : this.props.t("Run.fixing"),
           brkState: b === 0 ? this.props.t("Run.allNormal") : b === 6 ? 'resolved' : broken ? this.props.t("Run.incidentOpen") : 'deploying',
           brkStateC: broken ? '#FF6A00' : '#8C877E',
           fixTl: steps.map((x, i) => {
@@ -504,28 +517,12 @@ class Logic extends DCLogic {
             return {
               t: x[0],
               d: x[1],
-              time: on ? T[i] : '—',
+              time: on ? T[i] : '–',
               o: on ? 1 : .3,
               dot: on ? '#FF6A00' : '#3A3A3C',
               glow: on ? '0 0 0 5px rgba(255,106,0,.2)' : 'none'
             };
-          }),
-          breakIt: () => {
-            if (b !== 0 && b !== 6) return;
-            clearInterval(this.bt);
-            this.setState({
-              brk: 1
-            });
-            this.bt = setInterval(() => this.setState(x => {
-              if (x.brk >= 6) {
-                clearInterval(this.bt);
-                return null;
-              }
-              return {
-                brk: x.brk + 1
-              };
-            }), 1100);
-          }
+          })
         };
       })(),
       beatRef: this.beatRef,
@@ -577,7 +574,7 @@ class Logic extends DCLogic {
         a: i[0],
         b: i[1]
       })),
-      promise: [[this.props.t("Run.firstReply"), '— h', this.props.t("Run.onWorkingDaysToBeSet")], [this.props.t("Run.uptime"), '—%', this.props.t("Run.measuredMonthlyToBeSet")], [this.props.t("Run.backups"), this.props.t("Run.daily"), this.props.t("Run.keptInTheEU")], [this.props.t("Run.contact"), '1', this.props.t("Run.personFromBuildToEveryUpdate")]].map(p => ({
+      promise: [[this.props.t("Run.firstReply"), '– h', this.props.t("Run.onWorkingDaysToBeSet")], [this.props.t("Run.uptime"), '–%', this.props.t("Run.measuredMonthlyToBeSet")], [this.props.t("Run.backups"), this.props.t("Run.daily"), this.props.t("Run.keptInTheEU")], [this.props.t("Run.contact"), '1', this.props.t("Run.personFromBuildToEveryUpdate")]].map(p => ({
         k: p[0],
         v: p[1],
         d: p[2]
@@ -884,7 +881,8 @@ Logic.prototype.render = function render() {
         </div>
         {" "}
       </div>
-      <div data-screen-label="02 When it breaks" style={{ padding: "140px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
+      <div ref={v.brkRef} data-screen-label="02 When it breaks" style={{ height: `${v.bH ?? ''}`, position: "relative", marginTop: "140px" }}>
+      <div style={{ position: `${v.bPos ?? ''}`, top: "0", height: `${v.bInnerH ?? ''}`, boxSizing: "border-box", padding: `${v.bPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "40px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
@@ -894,15 +892,12 @@ Logic.prototype.render = function render() {
               </span>
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
-              {v.t("Run.goOn")}{" "}
+              {v.t("Run.downAt")}{" "}
               <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
-                {v.t("Run.breakIt")}
+                {v.t("Run.backAt")}
               </span>
             </h2>
           </div>
-          <button onClick={v.breakIt} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "18px 28px", font: "700 13px var(--font-sans)", letterSpacing: ".06em", textTransform: "uppercase", background: `${v.brkBtnBg ?? ''}`, color: `${v.brkBtnFg ?? ''}`, boxShadow: "0 14px 30px rgba(255,106,0,.25)" }}>
-            {v.brkLabel}
-          </button>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "16px" }}>
           <div style={{ position: "relative", background: "#FFFFFF", borderRadius: "24px", overflow: "hidden", boxShadow: "0 30px 70px rgba(10,10,10,.1)", transform: `rotate(${v.shopRot ?? ''})`, transition: "transform .3s" }}>
@@ -974,6 +969,7 @@ Logic.prototype.render = function render() {
             </Fragment>))}
           </div>
         </div>
+      </div>
       </div>
       <div ref={v.growRef} data-screen-label="04 Grows with you" style={{ height: `${v.gH ?? ''}`, position: "relative", marginTop: "140px" }}>
         {" "}

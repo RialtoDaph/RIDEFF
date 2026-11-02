@@ -61,8 +61,9 @@ class Logic extends DCLogic {
     chip: ['◷', '3 h', this.props.t("Life.freeTonight")],
     feed: [['18:30', this.props.t("Life.groceriesDelivered")], ['20:00', this.props.t("Life.tomorrowSorted2Meetings")], ['21:00', this.props.t("Life.nothingElseRest")]]
   }];
+  // The top face turns its label 180° so it reads upright from the hero's viewing angle.
   cf(z, L) {
-    return ['rotateY(0deg)', 'rotateY(90deg)', 'rotateY(180deg)', 'rotateY(-90deg)', 'rotateX(90deg)', 'rotateX(-90deg)'].map((r, i) => ({
+    return ['rotateY(0deg)', 'rotateY(90deg)', 'rotateY(180deg)', 'rotateY(-90deg)', 'rotateX(90deg) rotateZ(180deg)', 'rotateX(-90deg)'].map((r, i) => ({
       tf: r + ' translateZ(' + z + 'px)',
       l: L ? L[i] : ''
     }));
@@ -514,8 +515,8 @@ Logic.prototype.render = function render() {
                 <div style={{ position: "absolute", inset: "0", animation: "lfFloat 5s ease-in-out infinite" }}>
                   <div style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", animation: "lfSpin 14s linear infinite" }}>
                     {(v.cubeFaces ?? []).map((fc, $index) => (<Fragment key={$index}>
-                      <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600" }}>
-                        {fc?.l}
+                      <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600", transformStyle: "preserve-3d" }}>
+                        <span style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}>{fc?.l}</span>
                       </span>
                     </Fragment>))}
                     <span style={{ position: "absolute", left: "50%", top: "50%", width: "56px", height: "56px", margin: "-28px 0 0 -28px", borderRadius: "50%", background: "radial-gradient(circle at 35% 30%,#FFE0B8,#FF7A1A 60%,#C24A00)", boxShadow: "0 0 40px rgba(255,122,26,.8)" }} />
@@ -526,8 +527,8 @@ Logic.prototype.render = function render() {
               <div style={{ position: "absolute", left: "58%", top: "16%", width: "70px", height: "70px", perspective: "600px" }}>
                 <div style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", animation: "lfSpin 10s linear infinite reverse" }}>
                   {(v.cubeFacesS ?? []).map((fc, $index) => (<Fragment key={$index}>
-                    <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600" }}>
-                      {fc?.l}
+                    <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600", transformStyle: "preserve-3d" }}>
+                      <span style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}>{fc?.l}</span>
                     </span>
                   </Fragment>))}
                 </div>
@@ -536,8 +537,8 @@ Logic.prototype.render = function render() {
               <div style={{ position: "absolute", left: "36%", top: "64%", width: "54px", height: "54px", perspective: "600px" }}>
                 <div style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", animation: "lfSpin 12s linear infinite" }}>
                   {(v.cubeFacesXS ?? []).map((fc, $index) => (<Fragment key={$index}>
-                    <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600" }}>
-                      {fc?.l}
+                    <span style={{ position: "absolute", inset: "0", transform: `${fc?.tf ?? ''}`, background: "linear-gradient(135deg,rgba(255,248,238,.55),rgba(255,248,238,.12))", border: "1.5px solid rgba(255,248,238,.85)", borderRadius: "18px", boxShadow: "inset 0 0 40px rgba(255,180,110,.5)", backfaceVisibility: "visible", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".12em", textTransform: "uppercase", color: "#7A2E00", fontWeight: "600", transformStyle: "preserve-3d" }}>
+                      <span style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}>{fc?.l}</span>
                     </span>
                   </Fragment>))}
                 </div>
@@ -650,13 +651,13 @@ Logic.prototype.render = function render() {
               <span style={{ position: "absolute", left: "0", bottom: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#F3ECE2 28px)" }} />
               <span style={{ position: "absolute", left: "100%", bottom: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#F3ECE2 28px)" }} />
               {(v.lmTabs17 ?? []).map((t, $index) => (<Fragment key={$index}>
-                <button onClick={t?.go} style={{ position: "relative", display: "flex", alignItems: "center", gap: "12px", background: `${t?.bg ?? ''}`, color: `${t?.fg ?? ''}`, border: `1px solid ${t?.bd ?? ''}`, borderRadius: "999px", padding: "6px 20px 6px 6px", cursor: "pointer", overflow: "hidden", fontFamily: "var(--font-sans)", transition: "background .4s,color .4s" }}>
-                  <span style={{ width: "52px", height: "52px", borderRadius: "50%", overflow: "hidden", flexShrink: "0", background: `${t?.sw ?? ''}`, backgroundSize: "cover", backgroundPosition: "center" }} />
+                <button className="lf-tab" onClick={t?.go} style={{ position: "relative", display: "flex", alignItems: "center", gap: "12px", background: `${t?.bg ?? ''}`, color: `${t?.fg ?? ''}`, border: `1px solid ${t?.bd ?? ''}`, borderRadius: "999px", padding: "6px 20px 6px 6px", cursor: "pointer", overflow: "hidden", fontFamily: "var(--font-sans)", transition: "background .4s,color .4s" }}>
+                  <span className="lf-sw" style={{ width: "52px", height: "52px", borderRadius: "50%", overflow: "hidden", flexShrink: "0", background: `${t?.sw ?? ''}`, backgroundSize: "cover", backgroundPosition: "center" }} />
                   <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "2px" }}>
                     <span style={{ fontSize: "15px", fontWeight: "600" }}>
                       {t?.n}
                     </span>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", opacity: ".7" }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", opacity: ".7", whiteSpace: "nowrap" }}>
                       {t?.h}
                     </span>
                   </span>

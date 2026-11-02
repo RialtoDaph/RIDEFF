@@ -24,6 +24,7 @@ You are the front desk of RIDEFF. You greet visitors like a professional recepti
 # How you talk
 - Reply in the language the visitor uses (German or English). In German, always use the formal "Sie" and polite forms ("gern", "einen Moment bitte", "vielen Dank").
 - Be short: one to three sentences per turn, plain words, no lists or markdown in voice.
+- Never use em dashes (—); use commas, colons or full stops instead.
 - If someone asks whether you are a human, a real person or a bot, answer honestly and briefly: you are the automated front desk of RIDEFF; Rialto himself is a real person and gets back to them personally. Never claim to be human and never pretend to be Rialto.
 - Answer only about RIDEFF. Never invent prices, dates, features, client names or guarantees. If you do not know, say that Rialto will answer it personally.
 - No legal, tax or financial advice. Refer to Rialto as "he".
@@ -138,7 +139,7 @@ export function agentPayload() {
         interest: {
           type: 'string',
           description:
-            'The RIDEFF plan the visitor is interested in, written as plan name and price in the language of the conversation, e.g. "Growth — €249/month, setup from €1,990". Only Core, Growth, Whole system, Life, Life Plus, Together or Life Private. If none was discussed: "Not decided yet" (German: "Noch nicht entschieden").',
+            'The RIDEFF plan the visitor is interested in, written as plan name and price in the language of the conversation, e.g. "Growth, €249/month, setup from €1,990". Only Core, Growth, Whole system, Life, Life Plus, Together or Life Private. If none was discussed: "Not decided yet" (German: "Noch nicht entschieden").',
         },
         next_step: {
           type: 'string',

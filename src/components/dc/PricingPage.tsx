@@ -169,7 +169,7 @@ class Logic extends DCLogic {
   }, {
     t: this.props.t("Pricing.limits"),
     ph: true,
-    rows: [[this.props.t("Pricing.domains"), '1', '1', '3'], [this.props.t("Pricing.emailMailboxes"), '3', '10', '25'], [this.props.t("Pricing.changesPerMonth"), '2 h', '5 h', '10 h'], [this.props.t("Pricing.supportReply"), this.props.t("Pricing.n2WorkDays"), this.props.t("Pricing.nextWorkDay"), this.props.t("Pricing.sameDay")], [this.props.t("Pricing.teamAppUsers"), '—', '15', this.props.t("Pricing.unlimited")], [this.props.t("Pricing.backupHistory"), this.props.t("Pricing.n30Days"), this.props.t("Pricing.n90Days"), this.props.t("Pricing.n180Days")]]
+    rows: [[this.props.t("Pricing.domains"), '1', '1', '3'], [this.props.t("Pricing.emailMailboxes"), '3', '10', '25'], [this.props.t("Pricing.changesPerMonth"), '2 h', '5 h', '10 h'], [this.props.t("Pricing.supportReply"), this.props.t("Pricing.n2WorkDays"), this.props.t("Pricing.nextWorkDay"), this.props.t("Pricing.sameDay")], [this.props.t("Pricing.teamAppUsers"), '–', '15', this.props.t("Pricing.unlimited")], [this.props.t("Pricing.backupHistory"), this.props.t("Pricing.n30Days"), this.props.t("Pricing.n90Days"), this.props.t("Pricing.n180Days")]]
   }];
   TL = [{
     t: this.props.t("Pricing.inTheApp"),
@@ -501,7 +501,7 @@ class Logic extends DCLogic {
       rows: g.rows.map(r => ({
         t: r[0],
         cells: r.slice(1).map((v, i) => ({
-          v: v === 1 ? '✓' : v === 0 ? '—' : v,
+          v: v === 1 ? '✓' : v === 0 ? '–' : v,
           fg: v === 0 ? '#BDB6AA' : v === 1 ? '#FF6A00' : '#0A0A0A',
           bg: i === pi ? 'rgba(255,106,0,.08)' : 'transparent'
         }))
@@ -674,7 +674,7 @@ class Logic extends DCLogic {
       cmRid: this.eur(rid, L),
       cmRidW: s.sn_cm ? rid / mx * 100 + '%' : '0%',
       cmRidNote: L ? cur.priv ? this.props.t("Pricing.setupPlus12Months") : s.yearly ? this.props.t("Pricing.paidYearly2MonthsFree") : this.props.t("Pricing.n12MonthlyPayments") : this.props.t("Pricing.setupFrom") + this.eur(cur.setup) + ' + 12 × ' + this.eur(cur.mo) + this.props.t("Pricing.builtHostedMaintained"),
-      tCols: 'minmax(180px,2fr) repeat(' + nC + ',minmax(0,1fr))',
+      tCols: 'minmax(140px,2fr) repeat(' + nC + ',minmax(0,1fr))',
       tHead: P.map((p, i) => ({
         t: p.name,
         p: priceOf(p),
@@ -1257,9 +1257,9 @@ Logic.prototype.render = function render() {
           </div>
           <div data-rv="0" style={{ overflowX: "auto", borderRadius: "24px", background: "#F4F1EC" }}>
             {" "}
-            <div style={{ minWidth: "680px", display: "flex", flexDirection: "column", padding: "8px 28px 28px" }}>
+            <div className="pt-table" style={{ minWidth: "600px", display: "flex", flexDirection: "column", padding: "8px 28px 28px" }}>
               <div style={{ position: "sticky", top: "0", display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", padding: "20px 0", borderBottom: "1px solid #0A0A0A", background: "#F4F1EC" }}>
-                <span />
+                <span style={{ position: "sticky", left: "0", alignSelf: "stretch", margin: "0 0 0 -28px", background: "#F4F1EC" }} />
                 {(v.tHead ?? []).map((h, $index) => (<Fragment key={$index}>
                   <button onClick={h?.go} style={{ border: "none", cursor: "pointer", borderRadius: "14px", padding: "12px 10px", display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", background: `${h?.bg ?? ''}`, color: `${h?.fg ?? ''}`, transition: "background .3s" }}>
                     <span style={{ font: "600 16px var(--font-sans)" }}>
@@ -1274,7 +1274,7 @@ Logic.prototype.render = function render() {
               {(v.tGroups ?? []).map((g, $index) => (<Fragment key={$index}>
                 {" "}
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "28px 0 10px" }}>
+                  <div style={{ position: "sticky", left: "0", alignSelf: "flex-start", display: "flex", alignItems: "center", gap: "12px", margin: "0 0 0 -28px", padding: "28px 0 10px 28px" }}>
                     <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF6A00" }}>
                       {g?.t}
                     </span>
@@ -1286,7 +1286,7 @@ Logic.prototype.render = function render() {
                   </div>
                   {(g?.rows ?? []).map((r, $index) => (<Fragment key={$index}>
                     <div style={{ display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", alignItems: "center", borderBottom: "1px solid #DCD5CA" }}>
-                      <span style={{ fontSize: "15px", padding: "14px 0" }}>
+                      <span className="pt-label" style={{ position: "sticky", left: "0", zIndex: "1", alignSelf: "stretch", display: "flex", alignItems: "center", fontSize: "15px", margin: "0 0 0 -28px", padding: "14px 8px 14px 28px", background: "#F4F1EC" }}>
                         {r?.t}
                       </span>
                       {(r?.cells ?? []).map((c, $index) => (<Fragment key={$index}>

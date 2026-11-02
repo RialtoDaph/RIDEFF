@@ -1,0 +1,728 @@
+{
+  "RideffNav": {
+    "whatsAppRialto": {
+      "de": "WhatsApp · Rialto",
+      "en": "WhatsApp · Rialto"
+    }
+  },
+  "RideffFooter": {
+    "understandBuildRunOneOperatorFrom": {
+      "de": "Verstehen, bauen, betreiben. Ein Mensch, von Eichstätt bis zu Ihnen.",
+      "en": "Understand, build, run. One operator, from Eichstätt to wherever you are."
+    },
+    "n2026RIDEFFRialtoEichstattGermany": {
+      "de": "© 2026 RIDEFF · Rialto. Eichstätt, Deutschland.",
+      "en": "© 2026 RIDEFF · Rialto. Eichstätt, Germany."
+    }
+  },
+  "RideffNana": {
+    "notNowTypeInstead": {
+      "de": "Jetzt nicht · lieber tippen",
+      "en": "Not now · type instead"
+    },
+    "mostBusinessesStartWithGrowth249": {
+      "de": "Die meisten Betriebe starten mit Growth: 249 € im Monat, Einrichtung ab 1.990 €. Kreuzen Sie im Konfigurator auf dieser Seite Ihre Bereiche an, er zeigt das passende Paket live.",
+      "en": "Most businesses start with Growth: €249 a month, setup from €1,990. Tick your areas in the configurator on this page and it shows the right plan live."
+    },
+    "theSetupPaysForAnalysisBuild": {
+      "de": "Die Einrichtung bezahlt Analyse, Aufbau, Test und Livegang, einmalig. Die Monatsgebühr hält alles am Laufen: Hosting, KI, Updates und Rialtos Zeit.",
+      "en": "The setup pays for analysis, build, testing and go-live, once. The monthly fee keeps it running: hosting, AI, updates and Rialto’s time."
+    },
+    "tICOriginalsGotAShopBuilt": {
+      "de": "TIC Originals bekam einen Shop rund um limitierte Drops, dazu ein Inhaber-Dashboard: Bestellungen, DHL-Labels, Auswertungen. Rialto betreut ihn bis heute.",
+      "en": "TIC Originals got a shop built around limited drops, plus an owner dashboard: orders, DHL labels, insights. Rialto still runs it."
+    },
+    "rIDEFFLifeIsAPersonalAssistant": {
+      "de": "RIDEFF Life ist ein persönlicher Assistent: Morgen-Briefing, Geld, Zeit und Ziele, auf Basis Ihrer eigenen Daten. 14 Tage kostenlos.",
+      "en": "RIDEFF Life is a personal assistant: morning briefing, money, time and goals, based on your own data. 14 days free."
+    },
+    "growthConnectsCustomersSalesTeamAnd": {
+      "de": "Growth verbindet Kunden, Vertrieb, Team und Betrieb. 249 € im Monat plus Einrichtung ab 1.990 €.",
+      "en": "Growth connects customers, sales, team and operations. €249 a month plus setup from €1,990."
+    },
+    "happyToSetThatUpPick": {
+      "de": "Gern, wählen Sie einen Termin mit Rialto oder schreiben Sie ihm auf WhatsApp.",
+      "en": "Happy to set that up. Pick a time with Rialto, or message him on WhatsApp."
+    },
+    "mostCafesStartWithGrowth249": {
+      "de": "Die meisten Cafés starten mit Growth: 249 € im Monat, Einrichtung ab 1.990 €.",
+      "en": "Most cafés start with Growth: €249 a month, setup from €1,990."
+    },
+    "hiIMNanaAskMe": {
+      "de": "Hallo, ich bin Nana. Fragen Sie mich zu Paketen, Zeitplänen oder dazu, was RIDEFF für Sie bauen kann, per Text oder per Sprache.",
+      "en": "Hi, I’m Nana. Ask me about plans, timelines or what RIDEFF could build for you, by text or by voice."
+    },
+    "iMStillAPreviewSo": {
+      "de": "Ich bin noch eine Vorschau und kann das noch nicht beantworten. Rialto schon. Möchten Sie mit ihm sprechen?",
+      "en": "I’m still a preview, so I can’t answer that yet. Rialto can. Want to talk to him?"
+    },
+    "growth249MonthSetupFrom1": {
+      "de": "Growth · 249 €/Monat, Einrichtung ab 1.990 €",
+      "en": "Growth · €249/month, setup from €1,990"
+    },
+    "thanksForCallingHereSA": {
+      "de": "Danke für Ihren Anruf. Hier ist eine Zusammenfassung. Senden Sie sie per WhatsApp an Rialto, er übernimmt ab da.",
+      "en": "Thanks for calling. Here’s a summary. Send it to Rialto on WhatsApp and he’ll pick it up from there."
+    },
+    "rIDEFFLifeTogether2990Month": {
+      "de": "RIDEFF Life Together · 29,90 €/Monat",
+      "en": "RIDEFF Life Together · €29,90/month"
+    },
+    "rIDEFFLife14DaysFree": {
+      "de": "RIDEFF Life · 14 Tage kostenlos",
+      "en": "RIDEFF Life · 14 days free"
+    },
+    "hiRialtoSummaryFromNana": {
+      "de": "*Hallo Rialto · Zusammenfassung von Nana*",
+      "en": "*Hi Rialto · summary from Nana*"
+    }
+  },
+  "Home": {
+    "aISystemsAppsWebEichstattDE": {
+      "de": "KI-Systeme · Apps · Web · Eichstätt, DE",
+      "en": "AI systems · Apps · Web · Eichstätt, DE"
+    },
+    "iMRialtoIMapHow": {
+      "de": "Ich bin Rialto. Ich erfasse, wie Ihr Betrieb läuft, baue die KI-Agenten, Apps und das Web drumherum und bleibe nach dem Livegang dran. Aus Eichstätt, für eine kleine Zahl an Kunden.",
+      "en": "I'm Rialto. I map how your business runs, build the AI agents, apps and web around it, and stay on after launch. From Eichstätt, for a short list of clients."
+    },
+    "pillarXX": {
+      "de": "Säule {x} · {y}",
+      "en": "Pillar {x} · {y}"
+    },
+    "iRanTradeMarketingAndAn": {
+      "de": "Ich habe selbst Handel, Marketing und einen Onlineshop betrieben. Ich baue so, wie ein Betrieb wirklich läuft",
+      "en": "I ran trade, marketing and an online shop myself. I build for how a business really runs"
+    },
+    "builtPutLiveAndMaintainedBy": {
+      "de": "Gebaut, live gestellt und betreut von derselben Person",
+      "en": "Built, put live and maintained by the same person"
+    },
+    "aStreetwearLabelThatRunsBetween": {
+      "de": "Ein Streetwear-Label, das zwischen den Drops läuft,",
+      "en": "A streetwear label that runs between drops,"
+    },
+    "tillICollapseSellsLimitedDrops": {
+      "de": "Till I Collapse verkauft limitierte Drops online. Ich habe den Shop und das Backoffice dahinter gebaut: Bestellungen, DHL-Labels, Erstattungen, Nachbestellungen und die Kleinunternehmergrenze, jeden Morgen auf einem Bildschirm.",
+      "en": "Till I Collapse sells limited drops online. I built the shop and the back office behind it: orders, DHL labels, refunds, restocks and the small-business tax limit, on one screen every morning."
+    },
+    "morningBriefingMoneyTimeAndGoals": {
+      "de": "Morgen-Briefing, Geld, Zeit und Ziele für Sie oder Ihre Familie. Ab 12,90 € im Monat inkl. MwSt., monatlich kündbar, 14 Tage kostenlos, keine Karte.",
+      "en": "Morning briefing, money, time and goals for you or your family. From €12.90 a month incl. VAT, cancel monthly, 14 days free, no card."
+    },
+    "rIDEFFGrowthOnePersonOneInvoice": {
+      "de": "RIDEFF Growth · ein Mensch, eine Rechnung",
+      "en": "RIDEFF Growth · one person, one invoice"
+    },
+    "stillUnsureWhatsAppIsTheFastest": {
+      "de": "Noch unsicher? WhatsApp ist der schnellste Weg, oder fragen Sie Nana, unten rechts.",
+      "en": "Still unsure? WhatsApp is the fastest way in, or ask Nana, bottom right."
+    },
+    "eichstattX": {
+      "de": "Eichstätt · {x}",
+      "en": "Eichstätt · {x}"
+    },
+    "fromDropToDoorstep": {
+      "de": "Vom Drop bis zur Haustür:",
+      "en": "From drop to doorstep:"
+    },
+    "n01TheShopStripePayPalDE": {
+      "de": "01 · Der Shop: Stripe & PayPal, DE / EN, 14 Tage Rückgabe",
+      "en": "01 · The shop: Stripe & PayPal, DE / EN, 14-day returns"
+    },
+    "n02TheBackOfficeTodayS": {
+      "de": "02 · Das Backoffice: heutige Bestellungen, Erstattungen, Nachbestellungen und Zahlungen",
+      "en": "02 · The back office: today's orders, refunds, restocks and payments"
+    },
+    "tICBackOfficeTodayList": {
+      "de": "TIC Backoffice · Tagesliste",
+      "en": "TIC back office · today list"
+    },
+    "beforeAnythingIsBuiltAFree": {
+      "de": "Bevor irgendetwas gebaut wird: ein kostenloses Erstgespräch, dann eine Analyse, wie Arbeit fließt, wo sie sich wiederholt und was sie Sie kostet. Sie erhalten ein klares Angebot, kein Verkaufsgespräch.",
+      "en": "Before anything is built: a free first call, then an analysis of how work moves, where it repeats and what it costs you. You get one clear offer, not a pitch."
+    },
+    "approveWithOneClickOrDon": {
+      "de": "Mit einem Klick freigeben. Oder eben nicht.",
+      "en": "Approve with one click. Or don't."
+    },
+    "aISystemsTeamAppsWebsitesAnd": {
+      "de": "KI-Systeme, Team-Apps, Websites und Shops: von mir gebaut, auf einem Fundament, gehostet in Frankfurt. Jedes Teil spricht mit den anderen.",
+      "en": "AI systems, team apps, websites and shops: built by me, on one foundation, hosted in Frankfurt. Each piece talks to the others."
+    },
+    "hostingUpdatesBackupsFixesAndNew": {
+      "de": "Hosting, Updates, Backups, Fehlerbehebungen und neue Wünsche: alles über Ihr Kundenportal, alles von der Person, die es gebaut hat.",
+      "en": "Hosting, updates, backups, fixes and new requests: all through your client portal, all handled by the person who built it."
+    },
+    "meRialtoBasedInEichstattI": {
+      "de": "Ich, Rialto, aus Eichstätt. Bevor ich RIDEFF gegründet habe, war ich in Export und Import, Social Media und E-Commerce tätig. Sie sprechen mit der Person, die Ihr System baut.",
+      "en": "Me, Rialto, based in Eichstätt. I worked in export and import, social media and e-commerce before building RIDEFF. You talk to the person who builds your system."
+    },
+    "growthConnectsFourAreasUsuallyCustomers": {
+      "de": "Growth verbindet vier Bereiche, meist Kunden, Vertrieb, Team und Betrieb, für 249 € im Monat plus Einrichtung ab 1.990 €. Soll ich ein Gespräch mit Rialto buchen?",
+      "en": "Growth connects four areas, usually customers, sales, team and operations, for €249 a month plus setup from €1,990. Want me to book a call with Rialto?"
+    },
+    "iVeStoodWhereYouStand": {
+      "de": "Ich stand genau da, wo Sie stehen: Rechnungen hinterherlaufen, dieselben Fragen beantworten, fünf Tools jonglieren, die nie miteinander reden.",
+      "en": "I've stood where you stand: chasing invoices, answering the same questions, juggling five tools that never talk to each other."
+    },
+    "aSampleBusinessBrainDashboardFlows": {
+      "de": "Ein Beispiel-Betriebsgehirn: Dashboard, Abläufe und KI-Berichte zum Durchklicken.",
+      "en": "A sample business brain: dashboard, flows and AI reports you can click through."
+    },
+    "whereEveryClientApprovesOffersPays": {
+      "de": "Hier gibt jeder Kunde Angebote frei, bezahlt und spricht mit mir. Ein Thread pro Thema.",
+      "en": "Where every client approves offers, pays and talks to me. One thread per topic."
+    },
+    "oneAreaConnectedUsuallyCustomersAnd": {
+      "de": "Ein Bereich verbunden, meist Kunden und Vertrieb.",
+      "en": "One area connected, usually customers and sales."
+    },
+    "mo": {
+      "de": "€ – / Monat",
+      "en": "€ – / mo"
+    },
+    "hMo": {
+      "de": "– Std. / Monat",
+      "en": "– h / mo"
+    },
+    "itGoesLiveAndIKeep": {
+      "de": "Es geht live, und ich halte es am Laufen.",
+      "en": "It goes live, and I keep it running."
+    }
+  },
+  "Understand": {
+    "theMapBecomesOneClearOffer": {
+      "de": "Die Karte wird zu einem klaren Angebot in Ihrem Kundenportal: welche Bereiche, welche Phasen, ein Festpreis. Mit einem Klick freigeben, oder eben nicht. Probieren Sie es aus.",
+      "en": "The map becomes one clear offer in your client portal: which areas, which phases, one fixed price. Approve it with a click, or don't. Go on, try it."
+    },
+    "stockAskJonas": {
+      "de": "Lager · Jonas fragen",
+      "en": "stock · ask Jonas"
+    },
+    "bookingPhoneOrMail": {
+      "de": "Buchung, Telefon oder Mail?",
+      "en": "booking, phone or mail?"
+    },
+    "n3UnpaidCheck": {
+      "de": "3 unbezahlt · prüfen",
+      "en": "3 unpaid · check"
+    },
+    "n2ReviewAnswerIt": {
+      "de": "2★-Bewertung · antworten",
+      "en": "2★ review · answer it"
+    },
+    "lenaSickSwap": {
+      "de": "Lena krank · tauschen",
+      "en": "Lena sick · swap"
+    },
+    "inTheAnalysisITraceHow": {
+      "de": "In der Analyse verfolge ich, wie Arbeit wirklich fließt: jedes Tool, jede Übergabe, alles, was sich wiederholt.",
+      "en": "In the analysis I trace how work really moves: every tool, every handoff, everything that repeats."
+    },
+    "andWhoWritesTheOfferAnd": {
+      "de": "Und wer schreibt das Angebot, und wie lange dauert eins?",
+      "en": "And who writes the offer, and how long does one take?"
+    },
+    "thenThatIsWhereWeStart": {
+      "de": "Dann fangen wir genau da an. Postfach und Angebote, etwa 7 Stunden pro Woche zurück.",
+      "en": "Then that is where we start. Inbox and offers, about 7 hours a week back."
+    }
+  },
+  "Build": {
+    "scrollToWatchItComeTogether": {
+      "de": "Scrollen Sie, um zu sehen, wie es zusammenkommt. Fahren Sie mit dem Cursor durch das Feld",
+      "en": "Scroll to watch it come together. Move your cursor through the field"
+    },
+    "everyToolSolvesOneProblemAnd": {
+      "de": "Jedes Tool löst ein Problem und schafft ein neues: noch ein Login, noch eine Rechnung, noch ein Ort, an dem sich Ihre Daten verstecken. Ich ersetze das Flickwerk durch ein System, das sich danach richtet, wie Ihr Betrieb wirklich arbeitet.",
+      "en": "Every tool solves one problem and adds another: one more login, one more bill, one more place your data hides. I replace the patchwork with one system shaped around how your business actually works."
+    },
+    "youOnlySeeTheTopThe": {
+      "de": "Sie sehen nur die oberste: die Apps. Darunter ist jede Ebene gemeinsam entworfen, sodass aus einer WhatsApp-Nachricht eine bezahlte Rechnung wird, ohne dass jemand etwas kopiert.",
+      "en": "You only see the top: the apps. Underneath, every layer is designed together, so a message on WhatsApp can end up as a paid invoice without anyone copying a thing."
+    },
+    "customSoftwareUsedToMeanAn": {
+      "de": "Individuelle Software hieß früher: eine Agentur und sechs Monate. Mit KI-gestützter Entwicklung entwerfe, programmiere und liefere ich sie selbst, in Wochen, auf einem Stack, den ich hoste und betreue.",
+      "en": "Custom software used to mean an agency and six months. With AI-assisted engineering I design, code and ship it myself, in weeks, on one stack I host and maintain."
+    },
+    "eachOneSplitIntoWhatYou": {
+      "de": "Jedes aufgeteilt in das, was Sie sehen, was dahinter läuft, worauf es gebaut ist, und wie es auf dem Handy aussieht.",
+      "en": "Each one split into what you see, what runs behind it, what it's built on, and how it looks on a phone."
+    },
+    "whatYourTeamYourClientsAnd": {
+      "de": "Was Ihr Team, Ihre Kunden und Sie tatsächlich öffnen, auf Handy und Desktop.",
+      "en": "What your team, your clients and you actually open, on phone and desktop."
+    },
+    "theyReadSortDraftAndSummarise": {
+      "de": "Sie lesen, sortieren, entwerfen und fassen zusammen, auf Ihren eigenen Daten. Nichts geht in Ihrem Namen raus, bevor Sie es freigeben.",
+      "en": "They read, sort, draft and summarise on your own data. Nothing leaves with your name on it until you approve."
+    },
+    "rulesThatMoveRoutineWorkOn": {
+      "de": "Regeln, die Routinearbeit von selbst bewegen: Auslöser, Erinnerungen, Zeitpläne und Freigaben.",
+      "en": "Rules that move routine work on their own: triggers, reminders, schedules and approvals."
+    },
+    "everyWayACustomerReachesYou": {
+      "de": "Jeder Weg, auf dem ein Kunde Sie erreicht, landet hier, schon mit der richtigen Person verknüpft.",
+      "en": "Every way a customer reaches you lands here, already linked to the right person."
+    },
+    "theServicesYouKeepUsingWired": {
+      "de": "Die Dienste, die Sie weiter nutzen, angebunden statt abgetippt.",
+      "en": "The services you keep using, wired in instead of copied from."
+    },
+    "canYouCater40PeopleOn": {
+      "de": "„Können Sie am Samstag 40 Personen bewirten?“ über Ihr Website-Formular.",
+      "en": "“Can you cater 40 people on Saturday?” sent through your website form."
+    },
+    "caseSummaryPlaceholderWhatTICOriginals": {
+      "de": "[Platzhalter Projektzusammenfassung: was TIC Originals brauchte und was Website und System heute für sie leisten.]",
+      "en": "[Case summary placeholder: what TIC Originals needed and what the site and system do for them now.]"
+    },
+    "highlight1EGStorefrontWith": {
+      "de": "[Highlight 1: z. B. Shop mit Karte, SEPA und Klarna]",
+      "en": "[Highlight 1: e.g. storefront with card, SEPA and Klarna]"
+    },
+    "highlight2EGOrdersFlow": {
+      "de": "[Highlight 2: z. B. Bestellungen fließen in Lager und Rechnungen]",
+      "en": "[Highlight 2: e.g. orders flow into stock and invoices]"
+    },
+    "highlight3EGFastPages": {
+      "de": "[Highlight 3: z. B. schnelle Seiten, EU-Hosting]",
+      "en": "[Highlight 3: e.g. fast pages, EU hosting]"
+    },
+    "highlight4EGMaintainedMonthly": {
+      "de": "[Highlight 4: z. B. monatlich über das Portal betreut]",
+      "en": "[Highlight 4: e.g. maintained monthly through the portal]"
+    },
+    "tICHomepageScreenshot": {
+      "de": "TIC · Screenshot Startseite",
+      "en": "TIC · homepage screenshot"
+    },
+    "tICShopAdminScreenshot": {
+      "de": "TIC · Screenshot Shop / Admin",
+      "en": "TIC · shop / admin screenshot"
+    },
+    "whereEveryClientApprovesOffersPays": {
+      "de": "Hier gibt jeder Kunde Angebote frei, bezahlt Rechnungen und spricht mit mir: ein Thread pro Thema, nie ein Chat, der wegscrollt.",
+      "en": "Where every client approves offers, pays invoices and talks to me: one thread per topic, never a chat that scrolls away."
+    },
+    "emailLoginWithA6Digit": {
+      "de": "E-Mail-Login mit 6-stelligem Code, keine Passwörter zum Vergessen.",
+      "en": "Email login with a 6-digit code, no passwords to forget."
+    },
+    "invoicesRYYYYNNNCardSEPA": {
+      "de": "Rechnungen R-JJJJ-NNN: Karte, SEPA, Klarna oder Überweisung.",
+      "en": "Invoices R-YYYY-NNN: card, SEPA, Klarna or bank transfer."
+    },
+    "portalClientDashboard": {
+      "de": "Portal · Kunden-Dashboard",
+      "en": "Portal · client dashboard"
+    },
+    "portalAdminInbox": {
+      "de": "Portal · Admin-Postfach",
+      "en": "Portal · admin inbox"
+    },
+    "aPersonalBrainForYourDay": {
+      "de": "Ein persönliches Gehirn für Ihren Tag: Morgen-Briefing, Geld, Zeit und Ziele, für eine Person oder einen Haushalt mit vier.",
+      "en": "A personal brain for your day: morning briefing, money, time and goals, for one person or a household of four."
+    },
+    "lifeCockpitScreenshot": {
+      "de": "Life · Screenshot Cockpit",
+      "en": "Life · cockpit screenshot"
+    },
+    "lifeBriefingScreenshot": {
+      "de": "Life · Screenshot Briefing",
+      "en": "Life · briefing screenshot"
+    },
+    "fromSixToolsToOnePlatform": {
+      "de": "Von sechs Tools zu einer Plattform. Ihrer.",
+      "en": "From six tools to one platform. Yours."
+    },
+    "spreadsheetInboxChatBookingToolInvoicing": {
+      "de": "Tabelle, Postfach, Chat, Buchungstool, Rechnungsprogramm, Shop-Software. Ich führe sie zu einem System zusammen, das sich nach Ihrer Arbeitsweise richtet, und setze Automatisierung und KI obendrauf.",
+      "en": "Spreadsheet, inbox, chat, booking tool, invoicing, shop software. I merge them into one system built around how you work, then add automation and AI on top."
+    },
+    "customersOrdersJobsAndNumbersIn": {
+      "de": "Kunden, Bestellungen, Aufträge und Zahlen in einer Datenbank, mit Ihrem Logo, Ihrem Ablauf und Ihren Regeln. Kein Kopieren mehr zwischen Apps.",
+      "en": "Customers, orders, jobs and numbers in one database, with your logo, your workflow and your rules. No more copy-paste between apps."
+    },
+    "webShopWhatsAppEmailOneInbox": {
+      "de": "Web, Shop, WhatsApp, E-Mail: ein Postfach.",
+      "en": "Web, shop, WhatsApp, email: one inbox."
+    },
+    "rulesMoveTheRoutineWorkOn": {
+      "de": "Regeln bewegen die Routinearbeit von selbst. KI-Agenten lesen, entwerfen, sortieren und berichten, und Sie geben frei, was zählt.",
+      "en": "Rules move the routine work on their own. AI agents read, draft, sort and report, and you approve what matters."
+    },
+    "aTeamAppOnEveryPhone": {
+      "de": "Eine Team-App auf jedem Handy, ein Portal für Ihre Kunden, ein Dashboard für Sie. Alles auf derselben Plattform, gehostet in Frankfurt.",
+      "en": "A team app on every phone, a portal for your clients, one dashboard for you. All on the same platform, hosted in Frankfurt."
+    },
+    "phoneAndDesktopShiftsTasksChecklists": {
+      "de": "Handy und Desktop: Schichten, Aufgaben, Checklisten.",
+      "en": "Phone and desktop: shifts, tasks, checklists."
+    },
+    "offersPaymentsFilesOneThreadPer": {
+      "de": "Angebote, Zahlungen, Dateien: ein Thread pro Thema.",
+      "en": "Offers, payments, files: one thread per topic."
+    },
+    "replySortDraftAndReportOn": {
+      "de": "Antworten, sortieren, entwerfen und berichten auf Ihren Daten.",
+      "en": "Reply, sort, draft and report on your data."
+    },
+    "connectAnythingWithAnAPIOr": {
+      "de": "Alles mit einer API verbinden, oder eine bauen.",
+      "en": "Connect anything with an API, or build one."
+    },
+    "nextJsReactTypeScriptFastOn": {
+      "de": "Next.js · React · TypeScript, schnell auf jedem Handy",
+      "en": "Next.js · React · TypeScript, fast on every phone"
+    },
+    "oldToolsSwitchedOffAndI": {
+      "de": "Alte Tools abgeschaltet, und ich halte es am Laufen.",
+      "en": "Old tools switched off, and I keep it running."
+    }
+  },
+  "Run": {
+    "thePlatformIBuiltForYou": {
+      "de": "Die Plattform, die ich für Sie gebaut habe, ist die Plattform, die ich betreue. Jede Ebene wird geprüft, während Sie schlafen, und wenn etwas nicht stimmt, behebe ich es, bevor Sie es merken.",
+      "en": "The platform I built for you is the platform I look after. Every layer gets checked while you sleep, and if something looks off, I fix it before you notice."
+    },
+    "scrollAndWatchTheGroupChat": {
+      "de": "Scrollen Sie und sehen Sie zu, wie sich der Gruppenchat selbst sortiert. Anfragen, Rechnungen, Projektphasen und Dateien liegen in Ihrem Kundenportal: jedes Thema bekommt seinen eigenen Thread, nichts scrollt weg, nichts geht verloren.",
+      "en": "Scroll and watch the group chat sort itself. Requests, invoices, project phases and files live in your client portal: every topic gets its own thread, so nothing scrolls away and nothing gets lost."
+    },
+    "newIdeaNewProcessNewLocation": {
+      "de": "Neue Idee, neuer Ablauf, neuer Standort? Fragen Sie im Portal. Es wird in dieselbe Plattform eingebaut, nicht als weiteres Tool auf den Stapel gelegt.",
+      "en": "New idea, new process, new location? Ask in your portal. It gets built into the same platform, not stacked on the pile as another tool."
+    },
+    "whatTheSystemHandledWhatChanged": {
+      "de": "Was das System erledigt hat, was sich geändert hat und was Sie braucht, aus Ihren eigenen Zahlen geschrieben, damit Sie sich nie nur zum Nachsehen einloggen müssen.",
+      "en": "What the system handled, what changed and what needs you, written from your own numbers, so you never have to log in just to check."
+    },
+    "onWorkingDaysEveryMessageIn": {
+      "de": "An Werktagen bekommt jede Nachricht in Ihrem Portal eine echte Antwort, von mir.",
+      "en": "On working days, every message in your portal gets a real answer, from me."
+    },
+    "rialtoTheSamePersonFromFirst": {
+      "de": "Rialto, dieselbe Person vom Erstgespräch bis zu jedem Update. Keine Ticket-Warteschlange, keine Übergaben.",
+      "en": "Rialto, the same person from first call to every update. No ticket queue, no handoffs."
+    },
+    "exampleFiguresFinalReplyTimeAnd": {
+      "de": "Beispielzahlen, finale Antwortzeit und Uptime werden mit Ihnen im Angebot festgelegt.",
+      "en": "Example figures, final reply time and uptime are set with you in your offer."
+    },
+    "addedLiveTomorrow": {
+      "de": "Ergänzt · morgen live",
+      "en": "Added · live tomorrow"
+    },
+    "websiteInboxAndCustomersTheCore": {
+      "de": "Website, Postfach und Kunden: der Kern.",
+      "en": "Website, inbox and customers: the core."
+    },
+    "sameCustomersSameStockNowOnline": {
+      "de": "Dieselben Kunden, dasselbe Lager, jetzt online.",
+      "en": "Same customers, same stock, now online."
+    },
+    "ordersSyncRemindersGoOutThe": {
+      "de": "Bestellungen synchronisieren, Erinnerungen gehen raus, der Tag wird aufgeräumt, ohne dass Sie länger bleiben.",
+      "en": "Orders sync, reminders go out, the day gets tidied up, without you staying late."
+    },
+    "oneMessageInThePortalA": {
+      "de": "Eine Nachricht im Portal, ein Screenshot reicht.",
+      "en": "One message in the portal, a screenshot is enough."
+    }
+  },
+  "Work": {
+    "familyBakeryInBandungWebsiteSeasonal": {
+      "de": "Familienbäckerei in Bandung: Website, saisonale Geschenkkörbe und die App, mit der das Team arbeitet.",
+      "en": "Family bakery in Bandung: website, seasonal hampers and the app the team runs on."
+    },
+    "briefingMoneyTimeAndGoalsFor": {
+      "de": "Briefing, Geld, Zeit und Ziele, für Sie oder die ganze Familie.",
+      "en": "Briefing, money, time and goals, for you or the whole family."
+    },
+    "builtByMeRunByMe": {
+      "de": "Von mir gebaut, von mir betrieben, und nächstes Jahr immer noch da.",
+      "en": "Built by me, run by me, and still here next year."
+    }
+  },
+  "Life": {
+    "lifeX": {
+      "de": "Life · {x}",
+      "en": "Life · {x}"
+    },
+    "lifeKeepsTrackOfBillsAppointments": {
+      "de": "Life behält Rechnungen, Termine, Geburtstage und Ziele im Blick, für Sie oder die ganze Familie, und kümmert sich leise darum, von morgens bis abends.",
+      "en": "Life keeps track of bills, appointments, birthdays and goals, for you or the whole family, and quietly handles them, morning to night."
+    },
+    "hoverOrTapACardTo": {
+      "de": "Fahren Sie über eine Karte oder tippen Sie sie an, um sie umzudrehen. Das sagt Ihnen Life tatsächlich.",
+      "en": "Hover or tap a card to turn it over. That's what Life actually tells you."
+    },
+    "sharedCalendarSharedShoppingListSplit": {
+      "de": "Gemeinsamer Kalender, gemeinsame Einkaufsliste, geteilte Rechnungen, und jede Person hat trotzdem ihren eigenen privaten Bereich. Tippen Sie auf jemanden, um zu sehen, was er sieht.",
+      "en": "Shared calendar, shared shopping list, split bills, and each person still has their own private space. Tap someone to see what they see."
+    },
+    "billsShowUpBeforeTheyBecome": {
+      "de": "Rechnungen tauchen auf, bevor sie zum Problem werden, mit bereits vorbereiteter Überweisung.",
+      "en": "Bills show up before they become a problem, with the transfer already prepared."
+    },
+    "whenAPlanChangesLifeRearranges": {
+      "de": "Wenn sich ein Plan ändert, ordnet Life den Rest Ihres Tages neu, ganz leise.",
+      "en": "When a plan changes, Life rearranges the rest of your day, quietly."
+    },
+    "whatWentWellWhatMovesTo": {
+      "de": "Was gut lief, was auf morgen rutscht, und eine leise Erinnerung, Feierabend zu machen.",
+      "en": "What went well, what moves to tomorrow, and a quiet reminder to stop."
+    },
+    "umbrellaRainAt4": {
+      "de": "Schirm · Regen um 16 Uhr",
+      "en": "Umbrella · rain at 4"
+    },
+    "billsBirthdaysAppointmentsHeldInOne": {
+      "de": "Rechnungen, Geburtstage, Termine, in einer Box gehalten, damit Sie sie nicht im Kopf halten müssen.",
+      "en": "Bills, birthdays, appointments, held in one box, so they're not held in your head."
+    },
+    "leaveAnyTimeAndTakeNothing": {
+      "de": "Jederzeit gehen und nichts mitnehmen, oder alles, als Export.",
+      "en": "Leave any time and take nothing with you, or everything, as an export."
+    }
+  },
+  "Pricing": {
+    "placeholderSplitToBeConfirmed": {
+      "de": "Platzhalter-Aufteilung · noch zu bestätigen",
+      "en": "Placeholder split · to be confirmed"
+    },
+    "splitAndTimingArePlaceholdersTo": {
+      "de": "Aufteilung und Zeitplan sind Platzhalter · noch zu bestätigen",
+      "en": "Split and timing are placeholders · to be confirmed"
+    },
+    "usualWayFiguresArePlaceholdersTo": {
+      "de": "Zahlen für den „üblichen Weg“ sind Platzhalter · noch zu bestätigen",
+      "en": "“Usual way” figures are placeholders · to be confirmed"
+    },
+    "proposedToBeConfirmed": {
+      "de": "Vorschlag · noch zu bestätigen",
+      "en": "Proposed · to be confirmed"
+    },
+    "oneAreaConnectedUsuallyCustomersAnd": {
+      "de": "Ein Bereich verbunden, meist Kunden und Vertrieb.",
+      "en": "One area connected, usually customers and sales."
+    },
+    "changesQuestionsAndChatWithMe": {
+      "de": "Änderungen, Fragen und Chat mit mir, nicht mit einer Ticket-Warteschlange.",
+      "en": "Changes, questions and chat with me, not a ticket queue."
+    },
+    "calendarAndAccountsOnlyWhatYou": {
+      "de": "Kalender und Konten: nur, was Sie teilen möchten.",
+      "en": "Calendar and accounts: only what you want to share."
+    },
+    "pickAPlanOrSimplyLeave": {
+      "de": "Paket wählen, oder einfach gehen. Es wird nichts berechnet.",
+      "en": "Pick a plan, or simply leave. Nothing is charged."
+    },
+    "theSetupPaysForAnalysingAnd": {
+      "de": "Die Einrichtung bezahlt Analyse und Aufbau Ihres Systems. Echte Arbeit, einmal erledigt. Die Monatsgebühr hält es am Laufen: Hosting, KI, Updates, Backups und meine Zeit für Änderungen und Support.",
+      "en": "The setup pays for analysing and building your system. It is real work, done once. The monthly fee keeps it running: hosting, AI, updates, backups and my time for changes and support."
+    },
+    "weTalkFirstEitherWeAdd": {
+      "de": "Wir sprechen zuerst. Entweder kommt für diesen Monat etwas Zeit dazu, oder ein größeres Paket ist sinnvoller. Ihre Wahl.",
+      "en": "We talk first. Either we add a bit of time for that month, or moving up a plan makes more sense. Your choice."
+    },
+    "yesPayYearlyAndGet2": {
+      "de": "Ja, bei jährlicher Zahlung gibt es 2 Monate geschenkt.",
+      "en": "Yes, pay yearly and get 2 months free."
+    },
+    "for": {
+      "de": " · für ",
+      "en": " · for "
+    },
+    "addYourCalendarAndAccountsOnly": {
+      "de": "Kalender und Konten hinzufügen: nur, was Sie möchten.",
+      "en": "Add your calendar and accounts: only what you want."
+    },
+    "pickWhatFitsOrLeaveNothing": {
+      "de": "Wählen Sie, was passt, oder gehen Sie. Es wird nichts berechnet.",
+      "en": "Pick what fits, or leave. Nothing is charged."
+    },
+    "aFixedOfferInYourClient": {
+      "de": "Ein Festpreisangebot in Ihrem Kundenportal: Paket, Einrichtung, monatlich, nichts versteckt.",
+      "en": "A fixed offer in your client portal: plan, setup, monthly, nothing hidden."
+    },
+    "tickTheTermsAndClickApprove": {
+      "de": "AGB anhaken und auf Freigeben klicken. Das gilt als Vertrag, kein Papier.",
+      "en": "Tick the terms and click approve. That counts as the contract, no paper."
+    },
+    "analyseBuildTestFollowEveryPhase": {
+      "de": "Analyse, Aufbau, Test: verfolgen Sie jede Phase und chatten Sie im Portal.",
+      "en": "Analyse, build, test: follow every phase and chat in the portal."
+    },
+    "liveAndKeptRunning": {
+      "de": "Live und in Betrieb gehalten",
+      "en": "Live and kept running"
+    },
+    "youPayOnceToHaveYour": {
+      "de": "Sie zahlen einmal dafür, dass Ihr System gebaut wird, dann eine feste Monatsgebühr, damit es läuft: Hosting, KI, Updates und ich.",
+      "en": "You pay once to have your system built, then one fixed monthly fee to keep it running: hosting, AI, updates and me."
+    },
+    "youRePayingForOnePlace": {
+      "de": "Sie zahlen für einen Ort, der Ihre Tage kennt: privat, in der EU gehostet und jeden Monat ein bisschen besser.",
+      "en": "You’re paying for one place that knows your days: private, hosted in the EU, and a little better every month."
+    },
+    "youRePayingForASystem": {
+      "de": "Sie zahlen für ein System, das für Sie gebaut, in Frankfurt gehostet, repariert, wenn es kaputtgeht, und angepasst wird, wenn Sie wachsen, von einem Menschen, der antwortet.",
+      "en": "You’re paying for a system that is built for you, hosted in Frankfurt, fixed when it breaks and changed when you grow, by one person who answers."
+    },
+    "useEverythingForTwoWeeksIf": {
+      "de": "Nutzen Sie zwei Wochen lang alles. Wenn es Ihren Tagen nicht hilft, gehen Sie. Es wird nichts berechnet.",
+      "en": "Use everything for two weeks. If it doesn’t help your days, you leave. Nothing is charged."
+    },
+    "aMonthOrNothing": {
+      "de": " im Monat, oder nichts.",
+      "en": " a month, or nothing."
+    },
+    "separateAppsForMoneyCalendarHabits": {
+      "de": "Einzelne Apps für Geld, Kalender, Gewohnheiten und KI. Keine davon spricht mit der anderen.",
+      "en": "Separate apps for money, calendar, habits and AI. None of them talk to each other."
+    },
+    "anAgencyForTheWebsiteA": {
+      "de": "Eine Agentur für die Website, ein Freelancer für Automatisierungen, ein Stapel Tools, und Sie in der Mitte, die alles zusammenhalten.",
+      "en": "An agency for the website, a freelancer for automations, a stack of tools, and you in the middle, holding it together."
+    },
+    "paidYearly2MonthsFree": {
+      "de": "Jährlich bezahlt, 2 Monate geschenkt.",
+      "en": "Paid yearly, 2 months free."
+    }
+  },
+  "About": {
+    "rialtoPortraitWarmLight": {
+      "de": "Rialto · Porträt, warmes Licht",
+      "en": "Rialto · portrait, warm light"
+    },
+    "atWorkPhoto": {
+      "de": "Bei der Arbeit · Foto",
+      "en": "At work · photo"
+    },
+    "eichstattPhoto": {
+      "de": "Eichstätt · Foto",
+      "en": "Eichstätt · photo"
+    },
+    "withAClientPhoto": {
+      "de": "Mit einem Kunden · Foto",
+      "en": "With a client · photo"
+    },
+    "movingGoodsBetweenCountriesTaughtMe": {
+      "de": "Waren zwischen Ländern zu bewegen hat mich gelehrt: Jeder Betrieb ist eine Kette, und sie reißt an den Übergaben.",
+      "en": "Moving goods between countries taught me that every business is a chain, and it breaks at the handoffs."
+    },
+    "aIDraftsAndSortsYouApprove": {
+      "de": "Die KI entwirft und sortiert. Sie geben frei, was zählt: Angebote, Zahlungen, alles mit Ihrem Namen darauf.",
+      "en": "AI drafts and sorts. You approve what matters: offers, payments, anything with your name on it."
+    }
+  },
+  "Contact": {
+    "eichstattX": {
+      "de": "Eichstätt · {x}",
+      "en": "Eichstätt · {x}"
+    }
+  },
+  "Journal": {
+    "whatILearnBuildingSystemsFor": {
+      "de": "Was ich beim Bauen von Systemen für echte Betriebe lerne: was funktioniert hat, was kaputtging und was ich anders machen würde. Von mir geschrieben, nicht von einem Content-Team.",
+      "en": "What I learn building systems for real businesses: what worked, what broke, and what I'd do differently. Written by me, not by a content team."
+    },
+    "oneEmailAMonth": {
+      "de": "(–) Eine E-Mail im Monat",
+      "en": "(–) One email a month"
+    },
+    "thanksFirstNoteLandsNextMonth": {
+      "de": "Danke! Die erste Notiz kommt nächsten Monat.",
+      "en": "Thanks! First note lands next month."
+    },
+    "featuredPostCoverImage": {
+      "de": "Hauptbeitrag · Titelbild",
+      "en": "Featured post · cover image"
+    },
+    "whatIAskInTheFirst": {
+      "de": "Was ich im Erstgespräch frage, und warum ich mehr Zeit mit Übergaben verbringe als mit Tools.",
+      "en": "What I ask in the first call, and why I spend more time on handoffs than on tools."
+    },
+    "shopStockInvoicesOneSourceOf": {
+      "de": "Shop, Lager, Rechnungen · eine Quelle der Wahrheit",
+      "en": "Shop, stock, invoices · one source of truth"
+    },
+    "selfHealingIsnTMagicIt": {
+      "de": "Selbstheilung ist keine Magie. Es sind Wiederholungen, Warnungen und ein Mensch, der sie liest.",
+      "en": "Self-healing isn’t magic. It’s retries, alerts and a person who reads them."
+    }
+  },
+  "Storefront": {
+    "websitesAndOnlineShopsOnEU": {
+      "de": "Websites und Onlineshops auf EU-Hosting: schnell, auffindbar und mit dem Rest Ihres Systems verbunden, statt allein dazustehen.",
+      "en": "Websites and online shops on EU hosting: fast, findable, and connected to the rest of your system instead of standing alone."
+    },
+    "caseSummaryPlaceholderWhatTICOriginals": {
+      "de": "[Platzhalter Projektzusammenfassung: was TIC Originals brauchte, was gebaut wurde und was es heute für sie leistet.]",
+      "en": "[Case summary placeholder: what TIC Originals needed, what was built, and what it does for them now.]"
+    },
+    "tICInterfaceScreenshot": {
+      "de": "TIC · Screenshot Oberfläche",
+      "en": "TIC · interface screenshot"
+    },
+    "tICSystemBehindTheShop": {
+      "de": "TIC · System hinter dem Shop",
+      "en": "TIC · system behind the shop"
+    },
+    "everyOrderFlowsIntoYourRIDEFF": {
+      "de": "Jede Bestellung fließt in Ihr RIDEFF-System: Lager, Rechnung und Bestätigung, ohne etwas von Hand zu kopieren.",
+      "en": "Every order flows into your RIDEFF system: stock, invoice and confirmation, without copying anything by hand."
+    },
+    "tICOriginalsHomepage": {
+      "de": "TIC Originals · Startseite",
+      "en": "TIC Originals · homepage"
+    },
+    "tICOriginalsShop": {
+      "de": "TIC Originals · Shop",
+      "en": "TIC Originals · shop"
+    },
+    "yourNextSitePlaceholder": {
+      "de": "Ihre nächste Website · Platzhalter",
+      "en": "Your next site · placeholder"
+    }
+  },
+  "Workbench": {
+    "shiftsTasksChecklistsAndChatIn": {
+      "de": "Schichten, Aufgaben, Checklisten und Chat in einer App, die Ihr Team wirklich öffnet: im Laden, unterwegs oder an der Theke.",
+      "en": "Shifts, tasks, checklists and chat in one app your team actually opens: on the floor, in the field or at the counter."
+    },
+    "teamAtWorkPhoto": {
+      "de": "Team bei der Arbeit · Foto",
+      "en": "Team at work · photo"
+    },
+    "planSwapAndConfirmNoGroup": {
+      "de": "Planen, tauschen, bestätigen, ohne Gruppenchat.",
+      "en": "Plan, swap and confirm, no group chat needed."
+    },
+    "planTheWeekSwapShiftsSee": {
+      "de": "Die Woche planen, Schichten tauschen, sehen, wer da ist, auf jedem Handy.",
+      "en": "Plan the week, swap shifts, see who is in, on every phone."
+    },
+    "retailTeamPhoto": {
+      "de": "Verkaufsteam · Foto",
+      "en": "Retail team · photo"
+    },
+    "fieldCrewPhoto": {
+      "de": "Außendienst · Foto",
+      "en": "Field crew · photo"
+    },
+    "hospitalityTeamPhoto": {
+      "de": "Gastroteam · Foto",
+      "en": "Hospitality team · photo"
+    },
+    "practiceTeamPhoto": {
+      "de": "Praxisteam · Foto",
+      "en": "Practice team · photo"
+    }
+  }
+}

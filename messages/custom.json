@@ -73,8 +73,8 @@
       "en": "Your project does."
     },
     "text": {
-      "de": "Vielleicht wurde sie verschoben. Alles andere läuft — überwacht, sogar diese Seite.",
-      "en": "Maybe it moved. Everything else is running — monitored, even this page."
+      "de": "Vielleicht wurde sie verschoben. Alles andere läuft und wird überwacht, sogar diese Seite.",
+      "en": "Maybe it moved. Everything else is running and monitored, even this page."
     },
     "home": {
       "de": "Zur Startseite",
@@ -88,8 +88,8 @@
   "meta": {
     "home": {
       "title": {
-        "de": "RIDEFF — Verstehen, bauen, betreiben. Ein Mensch.",
-        "en": "RIDEFF — Understand, build, run. One person."
+        "de": "RIDEFF · Verstehen, bauen, betreiben. Ein Mensch.",
+        "en": "RIDEFF · Understand, build, run. One person."
       },
       "description": {
         "de": "Rialto aus Eichstätt versteht, wie Ihr Betrieb läuft, baut KI-Agenten, Team-Apps, Websites und Shops darum herum und betreut alles nach dem Livegang.",
@@ -112,8 +112,8 @@
         "en": "Build · RIDEFF"
       },
       "description": {
-        "de": "Säule 02: aus sechs gemieteten Tools wird eine Plattform — Apps, KI-Agenten, Automationen, Daten und Integrationen.",
-        "en": "Pillar 02: six rented tools become one platform — apps, AI agents, automations, data and integrations."
+        "de": "Säule 02. Aus sechs gemieteten Tools wird eine Plattform: Apps, KI-Agenten, Automationen, Daten und Integrationen.",
+        "en": "Pillar 02. Six rented tools become one platform: apps, AI agents, automations, data and integrations."
       }
     },
     "storefront": {
@@ -122,8 +122,8 @@
         "en": "Websites & shops · RIDEFF"
       },
       "description": {
-        "de": "Websites und Shops, gebaut um Ihren Betrieb: Design, Zahlung, Tempo, Hosting — verbunden mit Lager und Rechnung.",
-        "en": "Websites and shops built around your business: design, payments, speed, hosting — connected to stock and invoices."
+        "de": "Websites und Shops, gebaut um Ihren Betrieb: Design, Zahlung, Tempo, Hosting, verbunden mit Lager und Rechnung.",
+        "en": "Websites and shops built around your business: design, payments, speed, hosting, connected to stock and invoices."
       }
     },
     "workbench": {
@@ -158,12 +158,12 @@
     },
     "life": {
       "title": {
-        "de": "RIDEFF Life — Ihr Leben. Erinnert. Sortiert. Gelebt.",
-        "en": "RIDEFF Life — Your life. Remembered. Sorted. Lived."
+        "de": "RIDEFF Life · Ihr Leben. Erinnert. Sortiert. Gelebt.",
+        "en": "RIDEFF Life · Your life. Remembered. Sorted. Lived."
       },
       "description": {
-        "de": "Ein persönlicher Assistent für Geld, Zeit, Ziele und Familie — auf Basis Ihrer eigenen Daten. 14 Tage kostenlos, keine Karte nötig.",
-        "en": "A personal assistant for money, time, goals and family — based on your own data. 14 days free, no card needed."
+        "de": "Ein persönlicher Assistent für Geld, Zeit, Ziele und Familie, auf Basis Ihrer eigenen Daten. 14 Tage kostenlos, keine Karte nötig.",
+        "en": "A personal assistant for money, time, goals and family, based on your own data. 14 days free, no card needed."
       }
     },
     "pricing": {
@@ -182,8 +182,8 @@
         "en": "About · RIDEFF"
       },
       "description": {
-        "de": "Ich bin Rialto. Ich verstehe die KI, damit Sie es nicht müssen — ein Mensch, vom Erstgespräch bis zum Betrieb.",
-        "en": "I’m Rialto. I get the AI, so you don’t have to — one person, from the first call to keeping it running."
+        "de": "Ich bin Rialto. Ich verstehe die KI, damit Sie es nicht müssen. Ein Mensch, vom Erstgespräch bis zum Betrieb.",
+        "en": "I’m Rialto. I get the AI, so you don’t have to. One person, from the first call to keeping it running."
       }
     },
     "contact": {
@@ -202,8 +202,8 @@
         "en": "Journal · RIDEFF"
       },
       "description": {
-        "de": "Was ich beim Bauen von Systemen für echte Betriebe lerne — was funktioniert hat, was kaputtging und was ich anders machen würde.",
-        "en": "What I learn building systems for real businesses — what worked, what broke, and what I’d do differently."
+        "de": "Was ich beim Bauen von Systemen für echte Betriebe lerne: was funktioniert hat, was kaputtging und was ich anders machen würde.",
+        "en": "What I learn building systems for real businesses: what worked, what broke, and what I’d do differently."
       }
     },
     "impressum": {
@@ -271,8 +271,8 @@
       "de": "{n, plural, one {# Frage} other {# Fragen}}"
     },
     "micBlocked": {
-      "en": "Microphone blocked — allow it in your browser, or type instead.",
-      "de": "Mikrofon blockiert — erlauben Sie es im Browser oder tippen Sie lieber."
+      "en": "Microphone blocked. Allow it in your browser, or type instead.",
+      "de": "Mikrofon blockiert. Erlauben Sie es im Browser oder tippen Sie lieber."
     },
     "sendFailed": {
       "en": "That didn’t go through. Please try again, or message Rialto on WhatsApp.",
@@ -325,6 +325,18 @@
     "automatedDesk": {
       "de": "Automatisierter Front Desk",
       "en": "Automated front desk"
+    },
+    "online": {
+      "en": "Online",
+      "de": "Online"
+    },
+    "teaser": {
+      "en": "Hi, I’m Nana from RIDEFF 👋 Any questions about your business? Just ask or call me.",
+      "de": "Hallo, ich bin Nana von RIDEFF 👋 Fragen zu Ihrem Betrieb? Schreiben Sie mir einfach oder rufen Sie an."
+    },
+    "teaserReply": {
+      "en": "Reply",
+      "de": "Antworten"
     }
   },
   "journal": {
@@ -371,12 +383,12 @@
   },
   "RideffNana": {
     "yesItStartsWithAFree": {
-      "en": "Yes — it starts with a free 15-minute call. After that you get a fixed offer in your client portal.",
-      "de": "Ja — es beginnt mit einem kostenlosen 15-Minuten-Gespräch. Danach erhalten Sie ein Festpreisangebot in Ihrem Kundenportal."
+      "en": "Yes, it starts with a free 15-minute call. After that you get a fixed offer in your client portal.",
+      "de": "Ja, es beginnt mit einem kostenlosen 15-Minuten-Gespräch. Danach erhalten Sie ein Festpreisangebot in Ihrem Kundenportal."
     },
     "threeStepsUnderstandBuildRunIt": {
-      "en": "Three steps: Understand, Build, Run. It starts with a free 15-minute call — Rialto gives you a timeline right after.",
-      "de": "Drei Schritte: Verstehen, Bauen, Betreiben. Es beginnt mit einem kostenlosen 15-Minuten-Gespräch — direkt danach bekommen Sie von Rialto einen Zeitplan."
+      "en": "Three steps: Understand, Build, Run. It starts with a free 15-minute call, Rialto gives you a timeline right after.",
+      "de": "Drei Schritte: Verstehen, Bauen, Betreiben. Es beginnt mit einem kostenlosen 15-Minuten-Gespräch, direkt danach bekommen Sie von Rialto einen Zeitplan."
     },
     "pickATimeForAFree": {
       "en": "Pick a time for a free 15-min call with Rialto",
@@ -399,6 +411,26 @@
     "n30Min": {
       "en": "15 min",
       "de": "15 Min."
+    }
+  },
+  "Run": {
+    "downAt": {
+      "en": "Down at 14:02.",
+      "de": "Um 14:02 offline."
+    },
+    "backAt": {
+      "en": "Back at 14:33.",
+      "de": "Um 14:33 wieder da."
+    }
+  },
+  "RideffNav": {
+    "openTheApp": {
+      "en": "Open the app →",
+      "de": "Zur App →"
+    },
+    "openTheApp2": {
+      "en": "Open the app",
+      "de": "Zur App"
     }
   }
 }

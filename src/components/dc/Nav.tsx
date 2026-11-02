@@ -2,6 +2,7 @@
 'use client';
 import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC, useSwitchLocale } from '@/lib/dc';
+import { APP_URL } from '@/lib/site';
 
 
 class Logic extends DCLogic {
@@ -50,8 +51,7 @@ class Logic extends DCLogic {
       s = this.state;
     const fg = dark ? '#F4F4F2' : '#0A0A0A',
       muted = dark ? '#B8B3AA' : '#5A5650';
-    const wide = s.w > 1100,
-      heroMode = (this.props.heroCta ?? false) && s.w > 1120 && !s.sc;
+    const heroMode = (this.props.heroCta ?? false) && s.w > 1120 && !s.sc;
     return {
       fg,
       muted,
@@ -65,6 +65,10 @@ class Logic extends DCLogic {
       cBg: dark ? 'rgba(20,20,22,.82)' : 'rgba(244,241,236,.86)',
       ctaBg: dark ? '#F4F4F2' : '#0A0A0A',
       ctaFg: dark ? '#0A0A0A' : '#F4F4F2',
+      // On Life the CTA opens the web app; Life Private is booked from the pricing section.
+      ctaHref: a === 'life' ? APP_URL : this.props.href("/contact"),
+      ctaT: a === 'life' ? this.props.t("RideffNav.openTheApp") : this.props.t("RideffNav.startAProject"),
+      ctaT2: a === 'life' ? this.props.t("RideffNav.openTheApp2") : this.props.t("RideffNav.startAProject2"),
       linkFs: heroMode && s.w <= 1480 ? '13px' : '14px',
       linkPad: heroMode && s.w <= 1480 ? '8px 12px' : '9px 16px',
       links: this.PAGES.slice(0, 8).filter(p => s.sc ? p[0] !== 'home' : !(heroMode && s.w <= 1480 && (p[0] === 'home' || p[0] === 'life'))).map(p => {
@@ -85,8 +89,10 @@ class Logic extends DCLogic {
         href: p[2],
         c: p[0] === a ? '#FF6A00' : '#F4F4F2'
       })),
-      showLinks: wide,
-      showMenuBtn: !wide,
+      // Links vs. "Menü" is decided in CSS (.rn-wide / .rn-narrow in globals.css), so the
+      // server render (w = 1400) doesn't flash the desktop links on phones before mount.
+      showLinks: true,
+      showMenuBtn: true,
       showStatus: s.w > 1480,
       showCta: s.w > 560 && !heroMode,
       langs: ['de', 'en'].map(l => {
@@ -123,13 +129,13 @@ Logic.prototype.render = function render() {
         {" "}
         {v.full ? (<>
           {" "}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: `${v.justify ?? ''}`, gap: "20px", padding: "22px clamp(20px,3vw,40px)", pointerEvents: `${v.topPe ?? ''}`, background: `${v.topBg ?? ''}` }}>
+          <div className="rn-top" style={{ display: "flex", alignItems: "center", justifyContent: `${v.justify ?? ''}`, gap: "20px", padding: "22px clamp(20px,3vw,40px)", pointerEvents: `${v.topPe ?? ''}`, background: `${v.topBg ?? ''}` }}>
             <a href={v.href("/")} style={{ pointerEvents: "auto", fontWeight: "700", fontSize: "21px", letterSpacing: "-0.03em", color: `${v.fg ?? ''}`, textDecoration: "none", display: "flex", alignItems: "baseline", gap: "2px" }}>
               <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             </a>
             {v.showLinks ? (<>
               {" "}
-              <div style={{ pointerEvents: "auto", display: "flex", gap: "2px", alignItems: "center", padding: "5px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}`, backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }}>
+              <div className="rn-wide" style={{ pointerEvents: "auto", display: "flex", gap: "2px", alignItems: "center", padding: "5px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}`, backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }}>
                 {(v.links ?? []).map((l, $index) => (<Fragment key={$index}>
                   <a href={l?.href} style={{ fontSize: `${v.linkFs ?? ''}`, padding: `${v.linkPad ?? ''}`, whiteSpace: "nowrap", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none", fontFamily: `${l?.ff ?? ''}`, fontStyle: `${l?.fs ?? ''}`, transition: "background .2s" }}>
                     {l?.t}
@@ -141,7 +147,7 @@ Logic.prototype.render = function render() {
             <div style={{ pointerEvents: "auto", display: "flex", alignItems: "center", gap: "14px" }}>
               <div style={{ pointerEvents: "auto", display: "flex", gap: "2px", padding: "4px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}` }}>
                 {(v.langs ?? []).map((g, $index) => (<Fragment key={$index}>
-                  <button onClick={g?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "6px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
+                  <button className="rn-lang" onClick={g?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "6px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
                     {g?.t}
                   </button>
                 </Fragment>))}
@@ -153,12 +159,12 @@ Logic.prototype.render = function render() {
                 </div>
               </>) : null}
               {v.showCta ? (<>
-                <a href={v.href("/contact")} style={{ background: `${v.ctaBg ?? ''}`, color: `${v.ctaFg ?? ''}`, borderRadius: "999px", padding: "12px 20px", fontSize: "13px", fontWeight: "600", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none" }}>
-                  {v.t("RideffNav.startAProject")}
+                <a className="rn-cta" href={v.ctaHref} style={{ background: `${v.ctaBg ?? ''}`, color: `${v.ctaFg ?? ''}`, borderRadius: "999px", padding: "12px 20px", fontSize: "13px", fontWeight: "600", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none" }}>
+                  {v.ctaT}
                 </a>
               </>) : null}
               {v.showMenuBtn ? (<>
-                <button onClick={v.toggle} style={{ background: "none", border: `1px solid ${v.fg ?? ''}`, color: `${v.fg ?? ''}`, borderRadius: "999px", padding: "10px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+                <button className="rn-narrow" onClick={v.toggle} style={{ background: "none", border: `1px solid ${v.fg ?? ''}`, color: `${v.fg ?? ''}`, borderRadius: "999px", padding: "10px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
                   {v.t("RideffNav.menu")}
                 </button>
               </>) : null}
@@ -175,7 +181,7 @@ Logic.prototype.render = function render() {
                 <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "20px", width: "auto", display: "block" }} />
               </a>
               {v.showLinks ? (<>
-                <div style={{ display: "flex", gap: "2px" }}>
+                <div className="rn-wide" style={{ display: "flex", gap: "2px" }}>
                   {(v.links ?? []).map((l, $index) => (<Fragment key={$index}>
                     <a href={l?.href} style={{ fontSize: "14px", padding: "9px 14px", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none", fontFamily: `${l?.ff ?? ''}`, fontStyle: `${l?.fs ?? ''}` }}>
                       {l?.t}
@@ -184,19 +190,19 @@ Logic.prototype.render = function render() {
                 </div>
               </>) : null}
               {v.showMenuBtn ? (<>
-                <button onClick={v.toggle} style={{ background: "none", border: "none", color: `${v.fg ?? ''}`, padding: "9px 12px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+                <button className="rn-narrow" onClick={v.toggle} style={{ background: "none", border: "none", color: `${v.fg ?? ''}`, padding: "9px 12px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
                   {v.t("RideffNav.menu")}
                 </button>
               </>) : null}
-              <div style={{ pointerEvents: "auto", display: "flex", gap: "2px", padding: "4px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}` }}>
+              <div className="rn-clangs" style={{ pointerEvents: "auto", display: "flex", gap: "2px", padding: "4px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}` }}>
                 {(v.langs ?? []).map((g, $index) => (<Fragment key={$index}>
-                  <button onClick={g?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "6px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
+                  <button className="rn-lang" onClick={g?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "6px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
                     {g?.t}
                   </button>
                 </Fragment>))}
               </div>
-              <a href={v.href("/contact")} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
-                {v.t("RideffNav.startAProject2")}
+              <a className="rn-cta2" href={v.ctaHref} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
+                {v.ctaT2}
               </a>
             </div>
           </div>
@@ -239,7 +245,7 @@ Logic.prototype.render = function render() {
             </span>
             <div style={{ display: "flex", gap: "6px" }}>
               {(v.langsMenu ?? []).map((g, $index) => (<Fragment key={$index}>
-                <button onClick={g?.go} style={{ border: "1px solid #3A3A3C", cursor: "pointer", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
+                <button className="rn-lang" onClick={g?.go} style={{ border: "1px solid #3A3A3C", cursor: "pointer", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
                   {g?.t}
                 </button>
               </Fragment>))}

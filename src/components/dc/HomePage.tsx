@@ -4,10 +4,15 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import { WhatsAppIcon } from '@/components/nana/icons';
 
 class Logic extends DCLogic {
   state = {
     pin: false,
+    // Phones: the doors stick bottom-aligned (mTop < 0) and scroll through the three pillars.
+    mpin: false,
+    dbh: 0,
+    mTop: 0,
     how: 0,
     i: 0,
     d: 0,
@@ -15,8 +20,6 @@ class Logic extends DCLogic {
     faq: 0,
     intro: false,
     menu: false,
-    nana: false,
-    nq: null,
     fName: '',
     fContact: '',
     need: null,
@@ -100,7 +103,6 @@ class Logic extends DCLogic {
   }];
   NODES = [[this.props.t("Home.customers"), this.props.t("Home.inquiriesAnsweredBookingsConfirmed")], [this.props.t("Home.sales"), this.props.t("Home.offersDraftedFollowUpsSent")], [this.props.t("Home.team"), this.props.t("Home.shiftsTasksCheckIns")], [this.props.t("Home.operations"), this.props.t("Home.ordersStockSuppliers")], [this.props.t("Home.finance"), this.props.t("Home.invoicesPaymentsReminders")], [this.props.t("Home.marketing"), this.props.t("Home.postsNewslettersReviews")]];
   FAQ = [[this.props.t("Home.whoIsBehindRIDEFF"), this.props.t("Home.meRialtoBasedInEichstattI")], [this.props.t("Home.doINeedToUnderstandAI"), this.props.t("Home.noThatIsThePointYou")], [this.props.t("Home.whatDoesItCost"), this.props.t("Home.core149Growth249WholeSystem")], [this.props.t("Home.whereIsMyData"), this.props.t("Home.hostedInTheEUInFrankfurt")], [this.props.t("Home.whatHappensAfterLaunch"), this.props.t("Home.iKeepItRunningUpdatesFixes")], [this.props.t("Home.howSoonCanWeStart"), this.props.t("Home.iKeepTheNumberOfClients")]];
-  NANA = [[this.props.t("Home.whatDoesGrowthInclude"), this.props.t("Home.growthConnectsFourAreasUsuallyCustomers")], [this.props.t("Home.howLongUntilLive"), this.props.t("Home.fivePhasesFirstCallAnalysisBuild")], [this.props.t("Home.bookACall"), this.props.t("Home.useTheFormUnderStartA")]];
   cardRef = React.createRef();
   vidRef = React.createRef();
   tiltMove = e => {
@@ -117,11 +119,12 @@ class Logic extends DCLogic {
     }
   };
   goDoor = k => {
-    const el = document.querySelector('[data-pin="doors"]');
-    if (!this.state.pin || !el) return this.setState({
+    const el = document.querySelector('[data-pin="doors"]'),
+      st = this.state;
+    if (!(st.pin || st.mpin && st.dbh) || !el) return this.setState({
       d: k
     });
-    const top = el.getBoundingClientRect().top + scrollY + (k + .5) / 3 * (el.offsetHeight - innerHeight);
+    const top = st.pin ? el.getBoundingClientRect().top + scrollY + (k + .5) / 3 * (el.offsetHeight - innerHeight) : el.getBoundingClientRect().top + scrollY - st.mTop + (k + .5) / 3 * (el.offsetHeight - st.dbh);
     if (window.__lenis) window.__lenis.scrollTo(top, {
       duration: 1.4,
       easing: x => 1 - Math.pow(1 - x, 4)
@@ -161,6 +164,16 @@ class Logic extends DCLogic {
       });
     }
     this.fitPins = () => {
+      if (this.state.mpin) {
+        // Tallest door seen so far, so the pinned box doesn't jump between pillars.
+        const b = document.querySelector('[data-pinbox="doors"]'),
+          h = b ? Math.max(this.state.dbh, b.scrollHeight) : 0,
+          mTop = Math.min(0, innerHeight - h);
+        if (h && (h !== this.state.dbh || mTop !== this.state.mTop)) this.setState({
+          dbh: h,
+          mTop
+        });
+      }
       document.querySelectorAll('[data-pinbox]').forEach(b => {
         b.style.transform = '';
         if (!this.state.pin) return;
@@ -170,9 +183,12 @@ class Logic extends DCLogic {
       });
     };
     this.calcPin = () => {
-      const pin = !this.rm && innerWidth >= 1000 && innerHeight >= 640;
-      if (pin !== this.state.pin) this.setState({
-        pin
+      const pin = !this.rm && innerWidth >= 1000 && innerHeight >= 640,
+        mpin = !this.rm && innerWidth < 1000 && innerHeight >= 560;
+      if (pin !== this.state.pin || mpin !== this.state.mpin) this.setState({
+        pin,
+        mpin,
+        dbh: 0
       }, () => {
         this.fitPins();
         this.scrollFx();
@@ -227,11 +243,12 @@ class Logic extends DCLogic {
         e = 1 - Math.pow(1 - t, 3);
       plane.style.transform = 'rotateX(' + ((1 - e) * 42).toFixed(2) + 'deg) translateY(' + ((1 - e) * 60).toFixed(1) + 'px) scale(' + (.84 + e * .16).toFixed(3) + ')';
     }
-    const pin = this.state.pin;
+    const pin = this.state.pin,
+      mp = this.state.mpin && this.state.dbh;
     const dp = document.querySelector('[data-pin="doors"]');
-    if (dp && pin) {
+    if (dp && (pin || mp)) {
       const r = dp.getBoundingClientRect(),
-        t = cl(-r.top / (r.height - vh), 0, .999),
+        t = pin ? cl(-r.top / (r.height - vh), 0, .999) : cl((this.state.mTop - r.top) / (r.height - this.state.dbh), 0, .999),
         d = Math.floor(t * 3);
       if (d !== this.state.d) this.setState({
         d
@@ -428,7 +445,7 @@ class Logic extends DCLogic {
         opacity: 0,
         animation: 'rdSlat .95s cubic-bezier(.77,0,.18,1) 120ms forwards, rdPulse .95s linear 120ms'
       }
-    }, this.props.t("Home.pillar0") + (s.i + 1) + ' — ' + this.P[s.i].door);
+    }, this.props.t("Home.pillar0") + (s.i + 1) + ' · ' + this.P[s.i].door);
     return e('div', {
       key: this._fxKey,
       style: {
@@ -556,7 +573,6 @@ class Logic extends DCLogic {
       ticMorning: [this.props.t("Home.n4OrdersToShip"), this.props.t("Home.n1RefundToProcess"), this.props.t("Home.n2ProductsToRestock"), this.props.t("Home.n1PaymentToChase"), this.props.t("Home.n4AbandonedCartsToWinBack")],
       showIntro: s.intro,
       menuOpen: s.menu,
-      nanaOpen: s.nana,
       clock: s.clock,
       enter: () => {
         try {
@@ -568,9 +584,6 @@ class Logic extends DCLogic {
       },
       toggleMenu: () => this.setState(x => ({
         menu: !x.menu
-      })),
-      toggleNana: () => this.setState(x => ({
-        nana: !x.nana
       })),
       menuLinks: [[this.props.t("Home.home"), '#top'], [this.props.t("Home.theControlRoom"), '#doors'], [this.props.t("Home.theWorkbench"), '#doors'], [this.props.t("Home.theStorefront"), '#doors'], [this.props.t("Home.everyday"), '#doors'], [this.props.t("Home.work"), '#proof'], [this.props.t("Home.pricing"), '#pricing'], [this.props.t("Home.about"), '#thesis'], [this.props.t("Home.contact"), '#start']].map((m, k) => ({
         n: '0' + (k + 1),
@@ -657,15 +670,22 @@ class Logic extends DCLogic {
         line: k === s.d ? '#FF6A00' : 'transparent',
         go: () => this.goDoor(k)
       })),
-      doorsH: s.pin ? '330vh' : 'auto',
+      doorsH: s.pin ? '330vh' : s.mpin && s.dbh ? s.dbh + 2 * innerHeight + 'px' : 'auto',
       howH: s.pin ? '230vh' : 'auto',
       pinPos: s.pin ? 'sticky' : 'relative',
+      dPinPos: s.pin || s.mpin && s.dbh ? 'sticky' : 'relative',
+      dPinTop: s.mpin ? s.mTop + 'px' : '0',
+      dBoxMinH: s.mpin && s.dbh ? s.dbh + 'px' : 'auto',
       pinH: s.pin ? '100vh' : 'auto',
-      doorsPad: s.pin ? '76px 40px 28px' : '40px 40px 120px',
+      doorsPad: s.pin ? '76px 40px 28px' : s.mpin ? '40px 20px 28px' : '40px 40px 120px',
+      tabCols: s.mpin ? 'repeat(3,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,300px),1fr))',
+      tabFs: s.mpin ? '15px' : '18px',
+      showFlow: !s.mpin,
+      showTabNum: !s.mpin,
       howPad: s.pin ? '40px' : '120px 40px',
       tabPad: s.pin ? '16px' : '20px',
       panelMt: s.pin ? '20px' : '28px',
-      dbarOp: s.pin ? 1 : 0,
+      dbarOp: s.pin || s.mpin ? 1 : 0,
       notPin: !s.pin,
       dNum: '0' + (s.d + 1),
       dHref: [this.props.href("/understand"), this.props.href("/build"), this.props.href("/run")][s.d],
@@ -774,7 +794,7 @@ class Logic extends DCLogic {
         btnBg: x.dark ? '#FF6A00' : '#0A0A0A',
         btnFg: x.dark ? '#0A0A0A' : '#F4F4F2'
       })),
-      costRows: [[this.props.t("Home.agencyWebsiteOneOff"), '€ —'], [this.props.t("Home.freelancerForAutomations"), this.props.t("Home.mo")], [this.props.t("Home.n46SeparateTools"), this.props.t("Home.mo")], [this.props.t("Home.yourTimeKeepingItTogether"), this.props.t("Home.hMo")]].map(c => ({
+      costRows: [[this.props.t("Home.agencyWebsiteOneOff"), '€ –'], [this.props.t("Home.freelancerForAutomations"), this.props.t("Home.mo")], [this.props.t("Home.n46SeparateTools"), this.props.t("Home.mo")], [this.props.t("Home.yourTimeKeepingItTogether"), this.props.t("Home.hMo")]].map(c => ({
         t: c[0],
         v: c[1]
       })),
@@ -822,14 +842,6 @@ class Logic extends DCLogic {
         };
       }),
       waHref: 'https://wa.me/4917632572420?text=' + encodeURIComponent(msg),
-      nanaQ: s.nq != null ? this.NANA[s.nq][0] : null,
-      nanaA: s.nq != null ? this.NANA[s.nq][1] : null,
-      nanaChips: this.NANA.map((n, k) => ({
-        q: n[0],
-        go: () => this.setState({
-          nq: k
-        })
-      }))
     };
   }
 }
@@ -949,8 +961,8 @@ Logic.prototype.render = function render() {
               {" "}
               <img src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
               {" "}
-              <div style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
+              <div className="hc-chip" style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
+                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
                   <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
                     {"◷"}
                   </span>
@@ -965,8 +977,8 @@ Logic.prototype.render = function render() {
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#F4F4F2", boxShadow: "0 0 0 4px rgba(244,241,236,.35)" }} />
               </div>
               {" "}
-              <div style={{ position: "absolute", left: "18%", top: "58%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 6s ease-in-out 1.2s infinite" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
+              <div className="hc-chip" style={{ position: "absolute", left: "18%", top: "58%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 6s ease-in-out 1.2s infinite" }}>
+                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
                   <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
                     {"✎"}
                   </span>
@@ -989,7 +1001,7 @@ Logic.prototype.render = function render() {
                 {" "}
                 <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 18px", color: "#6B675F", fontSize: "12px" }}>
                   <span>
-                    {"● ● ● rialto@rideff — ~/your-business"}
+                    {"● ● ● rialto@rideff · ~/your-business"}
                   </span>
                   <span style={{ color: "#FF9A50" }}>
                     {"● LIVE"}
@@ -1107,8 +1119,8 @@ Logic.prototype.render = function render() {
               <div style={{ position: "absolute", top: "0", right: "0", zIndex: "3", background: "#ECE8E1", borderBottomLeftRadius: "28px", padding: "0 0 14px 14px", display: "flex", gap: "10px", alignItems: "center" }}>
                 <span style={{ position: "absolute", top: "0", right: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#ECE8E1 28px)" }} />
                 <span style={{ position: "absolute", top: "100%", right: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#ECE8E1 28px)" }} />
-                <a href="https://wa.me/4917632572420" aria-label="WhatsApp" style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#0A0A0A", color: "#F4F4F2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px" }} className="hv-9bccb67">
-                  {"✆"}
+                <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <WhatsAppIcon width={28} height={28} />
                 </a>
                 <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", height: "56px", padding: "0 26px", display: "flex", alignItems: "center", fontSize: "13px", fontWeight: "600", letterSpacing: ".08em", textTransform: "uppercase", whiteSpace: "nowrap" }} className="hv-9bccb67">
                   {v.t("Home.startAProject")}
@@ -1236,7 +1248,7 @@ Logic.prototype.render = function render() {
             </Fragment>))}
           </p>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
                 {v.t("Home.whyMe")}
               </span>
@@ -1244,7 +1256,7 @@ Logic.prototype.render = function render() {
                 {v.t("Home.iRanTradeMarketingAndAn")}
               </span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
                 {v.t("Home.based")}
               </span>
@@ -1252,7 +1264,7 @@ Logic.prototype.render = function render() {
                 {v.t("Home.eichstattGermanyClientsAcrossTheEU")}
               </span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0", borderBottom: "1px solid #D3CCC0" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0", borderBottom: "1px solid #D3CCC0" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
                 {v.t("Home.how")}
               </span>
@@ -1286,8 +1298,8 @@ Logic.prototype.render = function render() {
         </div>
       </div>
       <div id="doors" data-pin="doors" style={{ height: `${v.doorsH ?? ''}`, position: "relative" }}>
-        <div style={{ position: `${v.pinPos ?? ''}`, top: "0", height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div data-pinbox="doors" data-screen-label="02 Four doors" style={{ padding: `${v.doorsPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", transformOrigin: "50% 50%" }}>
+        <div style={{ position: `${v.dPinPos ?? ''}`, top: `${v.dPinTop ?? ''}`, height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div data-pinbox="doors" data-screen-label="02 Four doors" style={{ minHeight: `${v.dBoxMinH ?? ''}`, padding: `${v.doorsPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", transformOrigin: "50% 50%" }}>
             {" "}
             <div data-rv="0" style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap", marginBottom: "40px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -1309,16 +1321,16 @@ Logic.prototype.render = function render() {
               </>) : null}
             </div>
             {" "}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "0", borderTop: "1px solid #D3CCC0" }}>
+            <div style={{ display: "grid", gridTemplateColumns: `${v.tabCols ?? ''}`, gap: "0", borderTop: "1px solid #D3CCC0" }}>
               {(v.doorTabs ?? []).map((d, $index) => (<Fragment key={$index}>
                 {" "}
                 <div onClick={d?.go} style={{ cursor: "pointer", padding: `${v.tabPad ?? ''} 4px`, display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `2px solid ${d?.line ?? ''}`, transition: "border-color .3s" }}>
-                  <span style={{ fontSize: "18px", fontWeight: "600", letterSpacing: "-0.02em", opacity: `${d?.op ?? ''}` }}>
+                  <span style={{ fontSize: `${v.tabFs ?? ''}`, fontWeight: "600", letterSpacing: "-0.02em", opacity: `${d?.op ?? ''}` }}>
                     {d?.door}
                   </span>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
+                  {v.showTabNum ? (<span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
                     {d?.n}
-                  </span>
+                  </span>) : null}
                 </div>
                 {" "}
               </Fragment>))}
@@ -1332,7 +1344,7 @@ Logic.prototype.render = function render() {
               <div key={`${v.dNum ?? ''}a`} style={{ display: "flex", flexDirection: "column", gap: "24px", justifyContent: "space-between", animation: "rdFlipIn .9s cubic-bezier(.16,1,.3,1) both" }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".65" }}>
-                    {v.dNum}{" — "}{v.dLabel}
+                    {v.dNum}{" · "}{v.dLabel}
                   </div>
                   <h3 style={{ margin: "0", fontSize: "clamp(32px,3.6vw,52px)", lineHeight: "1.02", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
                     {v.dHead}
@@ -1354,7 +1366,7 @@ Logic.prototype.render = function render() {
                   </a>
                 </div>
               </div>
-              <div key={`${v.dNum ?? ''}b`} style={{ display: "flex", flexDirection: "column", gap: "16px", justifyContent: "center", perspective: "900px" }}>
+              {v.showFlow ? (<div key={`${v.dNum ?? ''}b`} style={{ display: "flex", flexDirection: "column", gap: "16px", justifyContent: "center", perspective: "900px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", opacity: ".7" }}>
                   <span>
                     {v.t("Home.exampleFlow")}
@@ -1381,7 +1393,7 @@ Logic.prototype.render = function render() {
                   </div>
                   {" "}
                 </Fragment>))}
-              </div>
+              </div>) : null}
             </div>
           </div>
         </div>
@@ -1406,7 +1418,7 @@ Logic.prototype.render = function render() {
               <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.55", color: "#B8B3AA", maxWidth: "460px" }}>
                 {v.t("Home.mostBusinessesRunSixThingsOn")}
               </p>
-              <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#1C1C1E", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
+              <div className="hp-tiers" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#1C1C1E", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
                 {(v.tiers ?? []).map((t, $index) => (<Fragment key={$index}>
                   {" "}
                   <button onClick={t?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${t?.bg ?? ''}`, color: `${t?.fg ?? ''}`, transition: "background .3s" }}>
@@ -1504,7 +1516,7 @@ Logic.prototype.render = function render() {
         <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
           {(v.demos ?? []).map((d, $index) => (<Fragment key={$index}>
             {" "}
-            <a href={d?.href} style={{ display: "grid", gridTemplateColumns: "60px minmax(0,1fr) minmax(0,1.2fr) auto", gap: "24px", alignItems: "center", padding: "28px 0", borderBottom: "1px solid #D3CCC0", transition: "padding .45s cubic-bezier(.16,1,.3,1),color .3s" }} className="hv-b83c21d">
+            <a href={d?.href} style={{ display: "grid", gridTemplateColumns: "60px minmax(0,1fr) minmax(0,1.2fr) auto", gap: "24px", alignItems: "center", padding: "28px 0", borderBottom: "1px solid #D3CCC0", transition: "padding .45s cubic-bezier(.16,1,.3,1),color .3s" }} className="hp-demo hv-b83c21d">
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
                 {d?.n}
               </span>
@@ -1684,7 +1696,7 @@ Logic.prototype.render = function render() {
                     <span style={{ color: "#3A3731" }}>
                       {c?.t}
                     </span>
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#5A5650" }}>
+                    <span style={{ fontFamily: "var(--font-mono)", color: "#5A5650", whiteSpace: "nowrap" }}>
                       {c?.v}
                     </span>
                   </div>
@@ -1694,7 +1706,7 @@ Logic.prototype.render = function render() {
                   <span>
                     {v.t("Home.rIDEFFGrowthOnePersonOneInvoice")}
                   </span>
-                  <span style={{ color: "#FF6A00" }}>
+                  <span style={{ color: "#FF6A00", whiteSpace: "nowrap" }}>
                     {v.t("Home.n249Mo")}
                   </span>
                 </div>
@@ -2007,62 +2019,6 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </>) : null}
-      <div style={{ position: "fixed", right: "24px", bottom: "24px", zIndex: "60", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "12px" }}>
-        {v.nanaOpen ? (<>
-          {" "}
-          <div style={{ width: "min(340px,calc(100vw - 48px))", background: "#F7F5F1", color: "#0A0A0A", borderRadius: "22px", boxShadow: "0 30px 70px rgba(10,10,10,.25)", overflow: "hidden", animation: "rdFade .25s", display: "flex", flexDirection: "column" }}>
-            <div style={{ background: "#0A0A0A", color: "#F4F4F2", padding: "16px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <span style={{ width: "30px", height: "30px", borderRadius: "50%", background: "#FF6A00" }} />
-                <span style={{ display: "flex", flexDirection: "column" }}>
-                  <b style={{ fontSize: "14px" }}>
-                    {"Nana"}
-                  </b>
-                  <span style={{ fontSize: "11px", color: "#8C877E" }}>
-                    {v.t("Home.rIDEFFAssistantPreview")}
-                  </span>
-                </span>
-              </div>
-              <button onClick={v.toggleNana} style={{ background: "none", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "18px" }}>
-                {"×"}
-              </button>
-            </div>
-            <div data-lenis-prevent="1" style={{ padding: "18px", display: "flex", flexDirection: "column", gap: "10px", maxHeight: "300px", overflow: "auto" }}>
-              <div style={{ alignSelf: "flex-start", background: "#ECE8E1", borderRadius: "14px 14px 14px 4px", padding: "11px 14px", fontSize: "14px", lineHeight: "1.45", maxWidth: "85%" }}>
-                {v.t("Home.hiIMNanaAskMe")}
-              </div>
-              {v.nanaQ ? (<>
-                <div style={{ alignSelf: "flex-end", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "14px 14px 4px 14px", padding: "11px 14px", fontSize: "14px", maxWidth: "85%" }}>
-                  {v.nanaQ}
-                </div>
-              </>) : null}
-              {v.nanaA ? (<>
-                <div style={{ alignSelf: "flex-start", background: "#ECE8E1", borderRadius: "14px 14px 14px 4px", padding: "11px 14px", fontSize: "14px", lineHeight: "1.45", maxWidth: "85%" }}>
-                  {v.nanaA}
-                </div>
-              </>) : null}
-              <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", paddingTop: "4px" }}>
-                {(v.nanaChips ?? []).map((c, $index) => (<Fragment key={$index}>
-                  <button onClick={c?.go} style={{ cursor: "pointer", border: "1px solid #BDB6AA", background: "none", borderRadius: "999px", padding: "7px 12px", font: "500 13px var(--font-sans)" }}>
-                    {c?.q}
-                  </button>
-                </Fragment>))}
-              </div>
-            </div>
-            <div style={{ display: "flex", gap: "8px", padding: "12px", borderTop: "1px solid #E2DDD4" }}>
-              <input disabled placeholder={v.t("Home.liveChatComingSoon")} style={{ flex: "1", background: "#ECE8E1", border: "none", borderRadius: "999px", padding: "11px 14px", fontSize: "14px" }} />
-              <button style={{ border: "none", background: "#FF6A00", borderRadius: "999px", padding: "0 14px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
-                {"Call"}
-              </button>
-            </div>
-          </div>
-          {" "}
-        </>) : null}
-        <button onClick={v.toggleNana} style={{ display: "flex", alignItems: "center", gap: "10px", background: "#0A0A0A", color: "#F4F4F2", border: "none", borderRadius: "999px", padding: "8px 18px 8px 8px", font: "500 14px var(--font-sans)", cursor: "pointer", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
-          <span style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#FF6A00" }} />
-          {v.t("Home.askNana")}{" "}
-        </button>
-      </div>
     </>
   );
 };
