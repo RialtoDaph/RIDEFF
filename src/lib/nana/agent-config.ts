@@ -109,7 +109,7 @@ export function agentPayload() {
         first_message: FIRST_DE,
         language: 'de',
         prompt: { prompt: PROMPT },
-        dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de', chat_context: '' } },
+        dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de', chat_context: '', session_id: '' } },
       },
       // German needs a multilingual voice model.
       tts: {

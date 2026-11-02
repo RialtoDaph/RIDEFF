@@ -11,6 +11,8 @@ import type { Locale } from '@/i18n/routing';
  * sets them): language, first message, text only.
  */
 type Common = {
+  /** Nana's session id: stored with the conversation so /api/nana/summary only reads this visitor's conversations. */
+  sessionId: string;
   locale: Locale;
   page: string;
   onConnect: (conversationId: string) => void;
@@ -38,7 +40,7 @@ export async function startVoice(
     textOnly: false,
     stripAudioTags: true,
     overrides: { agent: { language: o.locale, ...(o.firstMessage ? { firstMessage: o.firstMessage } : {}) } },
-    dynamicVariables: { page: o.page, locale: o.locale, chat_context: o.chatContext },
+    dynamicVariables: { page: o.page, locale: o.locale, chat_context: o.chatContext, session_id: o.sessionId },
     onConnect: ({ conversationId }) => o.onConnect(conversationId),
     onMessage: ({ source, message }) => message && o.onLine(source === 'ai' ? 'nana' : 'you', message),
     onModeChange: ({ mode }) => o.onMode(mode),
@@ -61,7 +63,7 @@ export async function startTextChat(
     stripAudioTags: true,
     // No spoken-style greeting in the chat: Nana's greeting is already on screen.
     overrides: { agent: { language: o.locale, firstMessage: '' }, conversation: { textOnly: true } },
-    dynamicVariables: { page: o.page, locale: o.locale, chat_context: '' },
+    dynamicVariables: { page: o.page, locale: o.locale, chat_context: '', session_id: o.sessionId },
     onConnect: ({ conversationId }) => o.onConnect(conversationId),
     onMessage: ({ source, message }) => source === 'ai' && message && o.onReply(message),
     onDisconnect: (d) => o.onEnd(d.reason),

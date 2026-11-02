@@ -1,6 +1,7 @@
 import { buildSummary, type SummaryFields } from '@/lib/nana/mock';
 import { finishedConversation } from '@/lib/nana/elevenlabs';
 import type { SummaryRequest } from '@/lib/nana/types';
+import { rateLimit } from '@/lib/nana/rate-limit';
 import { bad, locale, readJson, sessionId, str } from '@/lib/nana/validate';
 
 export const runtime = 'nodejs';
@@ -26,6 +27,8 @@ export async function POST(req: Request) {
   if (!body) return bad('bad_request');
   const sid = sessionId(body.sessionId);
   if (!sid) return bad('bad_session');
+  const limited = rateLimit('summary', req, sid);
+  if (limited) return limited;
   const kind = body.kind === 'call' ? 'call' : 'chat';
   let transcript = (Array.isArray(body.transcript) ? body.transcript : []).slice(0, 200).map((l: { from?: unknown; text?: unknown }) => ({
     from: l?.from === 'nana' ? ('nana' as const) : ('you' as const),
@@ -35,7 +38,7 @@ export async function POST(req: Request) {
   const ai: SummaryFields = {};
   const ids = [...new Set((Array.isArray(body.conversationIds) ? body.conversationIds : [body.conversationId]).map((v: unknown) => str(v, 80)).filter(Boolean))].slice(0, 3) as string[];
   if (ids.length) {
-    const convs = await Promise.all(ids.map((id) => finishedConversation(id)));
+    const convs = await Promise.all(ids.map((id) => finishedConversation(id, sid)));
     const official = convs.flatMap((c) => (c?.transcript ?? []).filter((l) => l.message).map((l) => ({ from: l.role === 'agent' ? ('nana' as const) : ('you' as const), text: String(l.message) })));
     if (convs.every(Boolean) && official.length) transcript = official;
     const FIELDS: [keyof SummaryFields, string][] = [['name', 'name'], ['company', 'company'], ['industry', 'industry'], ['contact', 'contact'], ['need', 'need'], ['situation', 'situation'], ['timeline', 'timeline'], ['interest', 'interest'], ['next', 'next_step']];

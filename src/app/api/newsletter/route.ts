@@ -4,6 +4,7 @@ import { hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
 import { EMAIL_RE, createToken, isConfigured, sendConfirmation } from '@/lib/newsletter';
+import { rateLimit } from '@/lib/nana/rate-limit';
 
 export const runtime = 'nodejs';
 
@@ -22,6 +23,8 @@ export async function POST(req: NextRequest) {
   if (typeof body.company === 'string' && body.company) return NextResponse.json({ ok: true });
   if (!EMAIL_RE.test(email) || email.length > 254) return NextResponse.json({ error: 'invalid_email' }, { status: 400 });
   if (!isConfigured()) return NextResponse.json({ error: 'not_configured' }, { status: 503 });
+  const limited = rateLimit('newsletter', req, email);
+  if (limited) return limited;
 
   const t = await getTranslations({ locale, namespace: 'newsletter.mail' });
   const origin = process.env.VERCEL_ENV === 'production' ? SITE_URL : req.nextUrl.origin;

@@ -112,6 +112,7 @@ type Conversation = {
   agent_id: string;
   status: 'initiated' | 'in-progress' | 'processing' | 'done' | 'failed';
   transcript: { role: 'user' | 'agent'; message?: string | null }[];
+  conversation_initiation_client_data?: { dynamic_variables?: Record<string, unknown> } | null;
   analysis?: {
     transcript_summary?: string;
     data_collection_results?: Record<string, { value?: unknown }>;
@@ -121,9 +122,11 @@ type Conversation = {
 /**
  * A finished conversation with ElevenLabs' post-call analysis. The analysis runs
  * after the session ends, so this polls for a few seconds. Returns null if it is
- * not ready in time, or if the conversation belongs to another agent.
+ * not ready in time, if it belongs to another agent, or if it was not started by
+ * this Nana session (dynamic variable session_id), so nobody can read another
+ * visitor's conversation by its id.
  */
-export async function finishedConversation(conversationId: string, timeoutMs = 12_000) {
+export async function finishedConversation(conversationId: string, sessionId: string, timeoutMs = 12_000) {
   if (!config() || !/^[\w-]{6,80}$/.test(conversationId)) return null;
   const id = await agentId().catch(() => null);
   if (!id) return null;
@@ -132,6 +135,7 @@ export async function finishedConversation(conversationId: string, timeoutMs = 1
     try {
       const conv = await call<Conversation>('GET', `/v1/convai/conversations/${conversationId}`);
       if (conv.agent_id !== id) return null;
+      if (conv.conversation_initiation_client_data?.dynamic_variables?.session_id !== sessionId) return null;
       if (conv.status === 'done' || conv.status === 'failed') return conv;
     } catch {
       // Not visible yet right after the session ends: retry.

@@ -1,8 +1,10 @@
 import 'server-only';
 
 /**
- * Sliding-window limits for the routes that mint ElevenLabs sessions (each one
- * can cost credits). Counted per IP and per Nana session id.
+ * Sliding-window limits for routes that cost money or send mail: ElevenLabs
+ * sessions (credits), the summary (polls ElevenLabs for up to 30 s) and the
+ * newsletter (a mail to any address). Counted per IP and per key (the Nana
+ * session id, or the e-mail address for the newsletter).
  *
  * In memory, so per server instance: it stops one browser or script from
  * hammering a warm instance, not a distributed attack. Keep the call limits and
@@ -15,6 +17,10 @@ export const LIMITS = {
   voice: { perIp: 6, perSession: 3, windowMs: 10 * 60_000 },
   // Text sessions reopen after idle timeouts, so allow more.
   chat: { perIp: 20, perSession: 8, windowMs: 10 * 60_000 },
+  // One summary per chat or call; a few retries.
+  summary: { perIp: 15, perSession: 6, windowMs: 10 * 60_000 },
+  // perSession = per e-mail address: no mail bombing of one inbox.
+  newsletter: { perIp: 5, perSession: 2, windowMs: 60 * 60_000 },
 } satisfies Record<string, Limit>;
 
 const hits = new Map<string, number[]>();
