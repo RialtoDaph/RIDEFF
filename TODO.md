@@ -51,7 +51,9 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 - [ ] **Route slugs** (`src/i18n/routing.ts`): `/verstehen`, `/bauen`, `/bauen/web-shops`, `/bauen/team-apps`, `/betreiben`, `/projekte`, `/preise`, `/ueber-mich`, `/kontakt` + English equivalents under `/en` — confirm.
 - [ ] **Life demo link**: `NEXT_PUBLIC_LIFE_DEMO_URL` (default `https://app.rideff.com/demo`) for the "RIDEFF Life" demo links on Work/Build/Life. Sign-up CTAs go to `app.rideff.com/signup?plan=…&lang=…`.
 - [ ] **Portal**: `NEXT_PUBLIC_PORTAL_URL` once `portal.rideff.com` (separate repo) is live.
-- [ ] **Newsletter provider** (Resend or Brevo) + env vars; until then the Journal form shows "That didn't work just now …".
+- [ ] **Newsletter provider** (Resend or Brevo) + env vars; until then the Journal sign-up section is hidden (`NEXT_PUBLIC_NEWSLETTER_ON` in `next.config.ts`) and appears on the next deploy after the env vars are set.
+- [ ] **Domain rideff.com** is not registered yet. Register it, add it in Vercel (apex + www) as the primary domain and set up `hallo@rideff.com`. Canonicals, hreflang, sitemap, OG images and JSON-LD follow `SITE_URL` (`src/lib/site.ts`): Vercel's production domain, or `NEXT_PUBLIC_SITE_URL` if set. `app.rideff.com` (Life sign-up/demo) and `portal.rideff.com` also need DNS.
+- [ ] **Search**: after the domain is live, add it to Google Search Console and Bing Webmaster Tools and submit `/sitemap.xml`; create a Google Business Profile (Eichstätt) with the same name, address and number as the Impressum.
 - [ ] **OG image**: `public/og/og-{de,en}.png` are generated placeholders (`npm run og`); replace with designed images, same names.
 - [ ] **Photos to replace** (README): About "Eichstätt" and "With a client" (other Rialto photos for now); Workbench team photos (empty interiors); Journal covers (reused assets).
 - [ ] **Meta titles/descriptions** (`messages/custom.json` → `meta`) were written for this build (not in the handoff) — approve or edit.
@@ -59,7 +61,10 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 
 ## 5. Technical follow-ups
 
-- [ ] Vercel Analytics custom events (`nana_*`) need a Pro/Enterprise plan to show up; page views work on every plan. Add the cookie-free analytics notice to Datenschutz if wording changes (section 3 already covers it).
+- [ ] Vercel Analytics custom events (`nana_*`, and `cta_click` with `type` = whatsapp | call | email | phone | life_signup | life_demo | portal | contact_page and `page`) need a Pro/Enterprise plan to show up; Cal.com links get `utm_source/utm_medium/utm_content` (the page) on click; page views work on every plan. Add the cookie-free analytics notice to Datenschutz if wording changes (section 3 already covers it).
 - [ ] The ported page components (`src/components/dc/*`) are type-unchecked 1:1 ports (`// @ts-nocheck`); refactor into typed components page by page when content changes.
+- [ ] Structured data (`src/lib/jsonld.tsx`: business, founder, website, FAQs, offers, articles, breadcrumbs) and `/llms.txt` (`src/app/llms.txt/route.ts`) repeat facts from the site: update them when prices, address or FAQs change. Add `address.streetAddress`/`postalCode` once the Impressum has them.
+- [ ] Content-Security-Policy runs **report-only** (`next.config.ts`): a production build showed no violations on Home, Life, Build, Contact and the Nana chat. After a live ElevenLabs chat + call on production also shows none in the console, rename the header to `Content-Security-Policy`.
+- [ ] Security, owner side: 2FA on GitHub, Vercel, ElevenLabs, Cal.com and the domain registrar; GitHub secret scanning, push protection and Dependabot alerts (the repo is public; consider making it private); ElevenLabs agent allowlist (rideff.vercel.app, later rideff.com) and budget alerts; a Vercel Firewall rate-limit rule for `/api/nana/*` (the in-code limits are per instance); SPF, DKIM and DMARC once mail runs on rideff.com; DPA/AVV with ElevenLabs and Vercel.
 - [ ] Images: served through the Next.js image optimizer (`opt()`), but the originals in `public/images` are still 2–3 MB PNGs — compress them at the source when replacing.
 - [ ] Not designed in the handoff, built in RIDEFF style: 404, Journal article page, newsletter confirmed/expired pages — design review.

@@ -2679,31 +2679,31 @@
   },
   "meta": {
     "home": {
-      "title": "RIDEFF · Verstehen, bauen, betreiben. Ein Mensch.",
+      "title": "RIDEFF · KI-Systeme, Apps & Websites für kleine Betriebe",
       "description": "Rialto aus Eichstätt versteht, wie Ihr Betrieb läuft, baut KI-Agenten, Team-Apps, Websites und Shops darum herum und betreut alles nach dem Livegang."
     },
     "understand": {
-      "title": "Verstehen · RIDEFF",
+      "title": "Erstgespräch & Festpreisangebot · RIDEFF",
       "description": "Säule 01: ein kostenloses Erstgespräch, Ihre Woche auf einer Karte und ein klares Festpreisangebot im Kundenportal."
     },
     "build": {
-      "title": "Bauen · RIDEFF",
+      "title": "KI-Agenten, Apps & Automatisierung · RIDEFF",
       "description": "Säule 02. Aus sechs gemieteten Tools wird eine Plattform: Apps, KI-Agenten, Automationen, Daten und Integrationen."
     },
     "storefront": {
-      "title": "Websites & Shops · RIDEFF",
+      "title": "Website & Online-Shop für kleine Betriebe · RIDEFF",
       "description": "Websites und Shops, gebaut um Ihren Betrieb: Design, Zahlung, Tempo, Hosting, verbunden mit Lager und Rechnung."
     },
     "workbench": {
-      "title": "Team-Apps · RIDEFF",
+      "title": "Team-App für Schichten & Aufgaben · RIDEFF",
       "description": "Eine App für Ihr Team: Schichten, Aufgaben und Chat an einem Ort, für Teams, die nicht den ganzen Tag am Schreibtisch sitzen."
     },
     "run": {
-      "title": "Betreiben · RIDEFF",
+      "title": "Betrieb, Wartung & Support · RIDEFF",
       "description": "Säule 03: Rialto überwacht Ihr System rund um die Uhr, behebt Fehler, bevor Sie sie merken, und schickt jeden Montag einen Bericht."
     },
     "work": {
-      "title": "Projekte · RIDEFF",
+      "title": "Projekte & Referenzen · RIDEFF",
       "description": "Gebaut, live, im Betrieb: TIC Originals, Mami I Patisserie, das RIDEFF-Kundenportal und RIDEFF Life."
     },
     "life": {
@@ -2711,15 +2711,15 @@
       "description": "Ein persönlicher Assistent für Geld, Zeit, Ziele und Familie, auf Basis Ihrer eigenen Daten. 14 Tage kostenlos, keine Karte nötig."
     },
     "pricing": {
-      "title": "Preise · RIDEFF",
+      "title": "Preise ab 149 € im Monat · RIDEFF",
       "description": "Business ab 149 €/Monat netto plus Einrichtung, Life ab 12,90 € inkl. MwSt. Alle Pakete, Konfigurator und Vergleich."
     },
     "about": {
-      "title": "Über mich · RIDEFF",
+      "title": "Über mich · Rialto aus Eichstätt · RIDEFF",
       "description": "Ich bin Rialto. Ich verstehe die KI, damit Sie es nicht müssen. Ein Mensch, vom Erstgespräch bis zum Betrieb."
     },
     "contact": {
-      "title": "Kontakt · RIDEFF",
+      "title": "Kontakt · Kostenloses Erstgespräch · RIDEFF",
       "description": "WhatsApp, 15 Minuten buchen oder E-Mail: Rialto antwortet persönlich."
     },
     "journal": {

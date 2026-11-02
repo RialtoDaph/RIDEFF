@@ -154,6 +154,7 @@ class Logic extends DCLogic {
       const earlier = this.state.msgs.filter(m => (m.from === 'me' || m.from === 'bot') && !m.choice).slice(0, -1);
       const tc = await startTextChat({
         signedUrl: data.signedUrl,
+        sessionId: this.sid,
         locale: this.props.locale,
         page: this.page(),
         onConnect: id => { this.tcId = id; },
@@ -314,6 +315,7 @@ class Logic extends DCLogic {
         this.vc = await startVoice({
           token: data.token,
           livekitUrl: data.livekitUrl,
+          sessionId: this.sid,
           locale: this.props.locale,
           page: this.page(),
           chatContext,

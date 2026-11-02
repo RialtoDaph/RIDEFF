@@ -88,8 +88,8 @@
   "meta": {
     "home": {
       "title": {
-        "de": "RIDEFF · Verstehen, bauen, betreiben. Ein Mensch.",
-        "en": "RIDEFF · Understand, build, run. One person."
+        "de": "RIDEFF · KI-Systeme, Apps & Websites für kleine Betriebe",
+        "en": "RIDEFF · AI systems, apps & websites for small businesses"
       },
       "description": {
         "de": "Rialto aus Eichstätt versteht, wie Ihr Betrieb läuft, baut KI-Agenten, Team-Apps, Websites und Shops darum herum und betreut alles nach dem Livegang.",
@@ -98,8 +98,8 @@
     },
     "understand": {
       "title": {
-        "de": "Verstehen · RIDEFF",
-        "en": "Understand · RIDEFF"
+        "de": "Erstgespräch & Festpreisangebot · RIDEFF",
+        "en": "Free first call & fixed-price offer · RIDEFF"
       },
       "description": {
         "de": "Säule 01: ein kostenloses Erstgespräch, Ihre Woche auf einer Karte und ein klares Festpreisangebot im Kundenportal.",
@@ -108,8 +108,8 @@
     },
     "build": {
       "title": {
-        "de": "Bauen · RIDEFF",
-        "en": "Build · RIDEFF"
+        "de": "KI-Agenten, Apps & Automatisierung · RIDEFF",
+        "en": "AI agents, apps & automation · RIDEFF"
       },
       "description": {
         "de": "Säule 02. Aus sechs gemieteten Tools wird eine Plattform: Apps, KI-Agenten, Automationen, Daten und Integrationen.",
@@ -118,8 +118,8 @@
     },
     "storefront": {
       "title": {
-        "de": "Websites & Shops · RIDEFF",
-        "en": "Websites & shops · RIDEFF"
+        "de": "Website & Online-Shop für kleine Betriebe · RIDEFF",
+        "en": "Websites & online shops for small businesses · RIDEFF"
       },
       "description": {
         "de": "Websites und Shops, gebaut um Ihren Betrieb: Design, Zahlung, Tempo, Hosting, verbunden mit Lager und Rechnung.",
@@ -128,8 +128,8 @@
     },
     "workbench": {
       "title": {
-        "de": "Team-Apps · RIDEFF",
-        "en": "Team apps · RIDEFF"
+        "de": "Team-App für Schichten & Aufgaben · RIDEFF",
+        "en": "Team app for shifts & tasks · RIDEFF"
       },
       "description": {
         "de": "Eine App für Ihr Team: Schichten, Aufgaben und Chat an einem Ort, für Teams, die nicht den ganzen Tag am Schreibtisch sitzen.",
@@ -138,8 +138,8 @@
     },
     "run": {
       "title": {
-        "de": "Betreiben · RIDEFF",
-        "en": "Run · RIDEFF"
+        "de": "Betrieb, Wartung & Support · RIDEFF",
+        "en": "Hosting, maintenance & support · RIDEFF"
       },
       "description": {
         "de": "Säule 03: Rialto überwacht Ihr System rund um die Uhr, behebt Fehler, bevor Sie sie merken, und schickt jeden Montag einen Bericht.",
@@ -148,8 +148,8 @@
     },
     "work": {
       "title": {
-        "de": "Projekte · RIDEFF",
-        "en": "Work · RIDEFF"
+        "de": "Projekte & Referenzen · RIDEFF",
+        "en": "Work & case studies · RIDEFF"
       },
       "description": {
         "de": "Gebaut, live, im Betrieb: TIC Originals, Mami I Patisserie, das RIDEFF-Kundenportal und RIDEFF Life.",
@@ -168,8 +168,8 @@
     },
     "pricing": {
       "title": {
-        "de": "Preise · RIDEFF",
-        "en": "Pricing · RIDEFF"
+        "de": "Preise ab 149 € im Monat · RIDEFF",
+        "en": "Pricing from €149 a month · RIDEFF"
       },
       "description": {
         "de": "Business ab 149 €/Monat netto plus Einrichtung, Life ab 12,90 € inkl. MwSt. Alle Pakete, Konfigurator und Vergleich.",
@@ -178,8 +178,8 @@
     },
     "about": {
       "title": {
-        "de": "Über mich · RIDEFF",
-        "en": "About · RIDEFF"
+        "de": "Über mich · Rialto aus Eichstätt · RIDEFF",
+        "en": "About · Rialto from Eichstätt · RIDEFF"
       },
       "description": {
         "de": "Ich bin Rialto. Ich verstehe die KI, damit Sie es nicht müssen. Ein Mensch, vom Erstgespräch bis zum Betrieb.",
@@ -188,8 +188,8 @@
     },
     "contact": {
       "title": {
-        "de": "Kontakt · RIDEFF",
-        "en": "Contact · RIDEFF"
+        "de": "Kontakt · Kostenloses Erstgespräch · RIDEFF",
+        "en": "Contact · Free first call · RIDEFF"
       },
       "description": {
         "de": "WhatsApp, 15 Minuten buchen oder E-Mail: Rialto antwortet persönlich.",

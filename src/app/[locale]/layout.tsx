@@ -7,8 +7,10 @@ import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
 import { defaultMetadata } from '@/lib/metadata';
+import { JsonLd, siteGraph } from '@/lib/jsonld';
 import { Messages } from '@/components/site/Messages';
 import { SiteFx } from '@/components/site/SiteFx';
+import { CtaTracker } from '@/components/site/CtaTracker';
 import { NanaMount } from '@/components/nana/NanaMount';
 import { isElevenLabsConfigured } from '@/lib/nana/elevenlabs';
 import '../globals.css';
@@ -64,6 +66,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   return (
     <html lang={locale} className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
       <body>
+        <JsonLd data={await siteGraph(locale)} />
         <Messages namespaces={[]}>
           <SiteFx />
         </Messages>
@@ -71,6 +74,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
         <Messages namespaces={['RideffNana', 'nana']}>
           <NanaMount live={isElevenLabsConfigured()} />
         </Messages>
+        <CtaTracker />
         <Analytics />
       </body>
     </html>
