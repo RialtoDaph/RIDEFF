@@ -26,7 +26,7 @@ class Logic extends DCLogic {
   layersRef = React.createRef();
   journeyRef = React.createRef();
   COL = ['#FF9E47', '#9E8CF2', '#61CC80', '#54B0E6', '#E0B842', '#EB7AAB'];
-  TOOLS = [['SP', this.props.t("Build.spreadsheet"), this.props.t("Build.free"), this.props.t("Build.customersPrices"), this.props.t("Build.n3Versions")], ['IN', this.props.t("Build.inbox"), this.props.t("Build.n8Mo"), this.props.t("Build.inquiriesOffers"), this.props.t("Build.lostThreads")], ['CH', this.props.t("Build.chatApp"), '—', this.props.t("Build.ordersOnWhatsApp"), this.props.t("Build.noHistory")], ['BK', this.props.t("Build.bookingTool"), this.props.t("Build.n39Mo"), this.props.t("Build.appointments"), this.props.t("Build.doesnTSync")], ['IV', this.props.t("Build.invoicingApp"), this.props.t("Build.n19Mo"), this.props.t("Build.invoicesReminders"), this.props.t("Build.typedTwice")], ['SH', this.props.t("Build.shopSoftware"), this.props.t("Build.n49Mo"), this.props.t("Build.productsStock"), this.props.t("Build.ownLogin")]];
+  TOOLS = [['SP', this.props.t("Build.spreadsheet"), this.props.t("Build.free"), this.props.t("Build.customersPrices"), this.props.t("Build.n3Versions")], ['IN', this.props.t("Build.inbox"), this.props.t("Build.n8Mo"), this.props.t("Build.inquiriesOffers"), this.props.t("Build.lostThreads")], ['CH', this.props.t("Build.chatApp"), '–', this.props.t("Build.ordersOnWhatsApp"), this.props.t("Build.noHistory")], ['BK', this.props.t("Build.bookingTool"), this.props.t("Build.n39Mo"), this.props.t("Build.appointments"), this.props.t("Build.doesnTSync")], ['IV', this.props.t("Build.invoicingApp"), this.props.t("Build.n19Mo"), this.props.t("Build.invoicesReminders"), this.props.t("Build.typedTwice")], ['SH', this.props.t("Build.shopSoftware"), this.props.t("Build.n49Mo"), this.props.t("Build.productsStock"), this.props.t("Build.ownLogin")]];
   FAN = [[-95, -85, -60, -8], [15, -120, 50, 6], [95, -35, -30, 10], [-100, 55, 40, -6], [-5, 85, 90, -3], [90, 100, -40, 8]];
   LAYERS = [[this.props.t("Build.apps"), this.props.t("Build.whatYourTeamYourClientsAnd"), [this.props.t("Build.teamApp"), this.props.t("Build.clientPortal"), this.props.t("Build.dashboard"), this.props.t("Build.website")]], [this.props.t("Build.aIAgents"), this.props.t("Build.theyReadSortDraftAndSummarise"), [this.props.t("Build.replyAgent"), this.props.t("Build.offerAgent"), this.props.t("Build.reportAgent")]], [this.props.t("Build.automations"), this.props.t("Build.rulesThatMoveRoutineWorkOn"), [this.props.t("Build.triggers"), this.props.t("Build.reminders"), this.props.t("Build.schedules"), this.props.t("Build.approvals")]], [this.props.t("Build.dataCore"), this.props.t("Build.oneDatabaseForCustomersOrdersJobs"), [this.props.t("Build.customers"), this.props.t("Build.orders"), this.props.t("Build.jobs"), this.props.t("Build.invoices")]], [this.props.t("Build.entryPoints"), this.props.t("Build.everyWayACustomerReachesYou"), [this.props.t("Build.website"), this.props.t("Build.shop"), 'WhatsApp', this.props.t("Build.email"), this.props.t("Build.forms")]], [this.props.t("Build.integrations"), this.props.t("Build.theServicesYouKeepUsingWired"), ['Stripe', 'DATEV', 'DHL', 'Google', 'Microsoft']]];
   LCOL = ['#FF6A00', '#9E8CF2', '#61CC80', '#54B0E6', '#E0B842', '#EB7AAB'];
@@ -37,7 +37,7 @@ class Logic extends DCLogic {
     d: this.props.t("Build.caseSummaryPlaceholderWhatTICOriginals"),
     bullets: [this.props.t("Build.highlight1EGStorefrontWith"), this.props.t("Build.highlight2EGOrdersFlow"), this.props.t("Build.highlight3EGFastPages"), this.props.t("Build.highlight4EGMaintainedMonthly")],
     chips: ['Next.js', 'Stripe', 'Klarna', 'Supabase'],
-    stats: [[this.props.t("Build.pages"), '—'], [this.props.t("Build.ordersMo"), '—'], [this.props.t("Build.hosting"), 'EU']],
+    stats: [[this.props.t("Build.pages"), '–'], [this.props.t("Build.ordersMo"), '–'], [this.props.t("Build.hosting"), 'EU']],
     link: 'ticoriginals.com',
     href: this.props.href("/build/web-shops"),
     phUi: this.props.t("Build.tICHomepageScreenshot"),
@@ -80,7 +80,9 @@ class Logic extends DCLogic {
     const root = this.casesRef.current;
     if (root) n.ce = [...root.querySelectorAll('[data-case]')].map(el => cl((vh * 0.9 - el.getBoundingClientRect().top) / (vh * 0.65)));
     const c = this.collapseRef.current;
-    if (c) n.cp = cl((vh * .8 - c.getBoundingClientRect().top) / (vh * .9));
+    // Stacked on phones, the card stage sits below the counters: time the collapse to the stage itself.
+    const cs = c && (this.state.narrow ? c.lastElementChild : c);
+    if (cs) n.cp = cl((vh * .8 - cs.getBoundingClientRect().top) / (vh * .9));
     const l = this.layersRef.current;
     if (l) n.lp = cl((vh * .85 - l.getBoundingClientRect().top) / (vh * .8));
     const j = this.journeyRef.current;
@@ -97,7 +99,9 @@ class Logic extends DCLogic {
     try {
       rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     } catch (e) {}
-    const pin = !rm && innerWidth >= 1000 && innerHeight >= 640;
+    const pin = !rm && innerWidth >= 1000 && innerHeight >= 640,
+      narrow = innerWidth < 600;
+    if (narrow !== !!(this.state || {}).narrow) this.setState({ narrow });
     if (rm !== !!(this.state || {}).rm) this.setState({ rm });
     if (pin !== (this.state || {}).pin) this.setState({
       pin
@@ -547,8 +551,11 @@ class Logic extends DCLogic {
         c: i === s.cap ? '#F4F4F2' : '#6B675F'
       })),
       toolCards: this.TOOLS.map((t, k) => {
+        // Phones: a tighter fan, so the scattered tools stay inside the screen.
         const f = this.FAN[k],
-          q = 1 - e;
+          q = 1 - e,
+          fx = s.narrow ? .36 : 1,
+          fy = s.narrow ? .55 : 1;
         return {
           ini: t[0],
           name: t[1],
@@ -556,7 +563,7 @@ class Logic extends DCLogic {
           use: t[3],
           tag: t[4],
           c: this.COL[k],
-          tf: `translate(-50%,-50%) translate3d(${(f[0] * q).toFixed(1)}%, ${(f[1] * q).toFixed(1)}%, ${(f[2] * q + k * 5).toFixed(1)}px) rotateZ(${(f[3] * q).toFixed(2)}deg)`,
+          tf: `translate(-50%,-50%) translate3d(${(f[0] * fx * q).toFixed(1)}%, ${(f[1] * fy * q).toFixed(1)}%, ${(f[2] * q + k * 5).toFixed(1)}px) rotateZ(${(f[3] * q).toFixed(2)}deg)`,
           op: fade.toFixed(3)
         };
       }),
@@ -1088,7 +1095,7 @@ Logic.prototype.render = function render() {
               <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#2E2E30" }} />
               <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#2E2E30" }} />
               <span style={{ marginLeft: "12px" }}>
-                {"rialto@rideff — ~/your-platform"}
+                {"rialto@rideff · ~/your-platform"}
               </span>
             </div>
             {" "}
@@ -1220,7 +1227,7 @@ Logic.prototype.render = function render() {
                   </div>
                 </Fragment>))}
               </div>
-              <a href={c?.href} style={{ display: "flex", gap: "14px", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".1em", textTransform: "uppercase" }}>
+              <a href={c?.href} style={{ display: "flex", gap: "14px", alignItems: "center", padding: "10px 0", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".1em", textTransform: "uppercase" }}>
                 <span style={{ color: "#FF6A00" }}>
                   {"⟶"}
                 </span>

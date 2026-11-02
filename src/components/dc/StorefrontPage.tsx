@@ -210,7 +210,7 @@ Logic.prototype.render = function render() {
             <div style={{ display: "flex", gap: "32px", flexWrap: "wrap", paddingTop: "8px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
-                  {"—"}
+                  {"–"}
                 </b>
                 <span style={{ fontSize: "13px", color: "#5A5650" }}>
                   {v.t("Storefront.loadTimePlaceholder")}
@@ -218,7 +218,7 @@ Logic.prototype.render = function render() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
-                  {"—"}
+                  {"–"}
                 </b>
                 <span style={{ fontSize: "13px", color: "#5A5650" }}>
                   {v.t("Storefront.ordersMonthPlaceholder")}

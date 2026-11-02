@@ -34,7 +34,9 @@ class Logic extends DCLogic {
     copied: false,
     mineOpen: false,
     mineSent: false,
-    phone: ''
+    phone: '',
+    teaser: false,
+    teaserTyping: false
   };
   componentDidMount() {
     // One session per page load; Nana lives in the layout, so it survives navigation.
@@ -45,6 +47,23 @@ class Logic extends DCLogic {
     window.addEventListener('resize', this.onR);
     this.onR();
     this.alive = true;
+    // Teaser: once per browser session, after a quarter of a scrollable page, Nana "writes" first.
+    try {
+      this.teased = sessionStorage.getItem('rideff-nana-teased') === '1';
+    } catch (e) {}
+    this.onTeaseScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      if (this.teased || max < innerHeight * .5 || scrollY / max < .25) return;
+      this.teased = true;
+      window.removeEventListener('scroll', this.onTeaseScroll);
+      try {
+        sessionStorage.setItem('rideff-nana-teased', '1');
+      } catch (e) {}
+      if (this.state.open || this.state.call !== 'idle') return;
+      this.setState({ teaser: true, teaserTyping: true });
+      this.tt = setTimeout(() => this.alive && this.setState({ teaserTyping: false }), 1400);
+    };
+    if (!this.teased) window.addEventListener('scroll', this.onTeaseScroll, { passive: true });
     if (this.state.call !== 'idle' || this.state.mode !== 'chat') this.setState({
       call: 'idle',
       mode: 'chat',
@@ -485,6 +504,8 @@ class Logic extends DCLogic {
     this.endVoice();
     this.closeChat();
     clearTimeout(this.rt);
+    clearTimeout(this.tt);
+    window.removeEventListener('scroll', this.onTeaseScroll);
     window.removeEventListener('resize', this.onR);
     clearInterval(this.ci);
     clearTimeout(this.ct);
@@ -551,15 +572,29 @@ class Logic extends DCLogic {
       listRef: this.setList,
       inputRef: this.inputRef,
       launcherT: s.call !== 'idle' ? this.props.t("RideffNana.onCall") + this.fmt(s.sec) : this.props.t("RideffNana.askNana"),
+      // Idle on phones the label hides (CSS) and the avatar alone opens Nana; during a call the timer stays.
+      launcherTCls: s.call !== 'idle' ? undefined : 'nana-label',
       launcherCallBg: s.call !== 'idle' ? '#FF6A00' : '#0A0A0A',
       callBtnT: s.call !== 'idle' ? this.props.t("RideffNana.backToCall") : this.props.t("nana.call"),
       toggle: () => {
         if (!s.open) nanaEvent('nana_open', { page: this.page() });
         this.setState(st => ({
           open: !st.open,
-          mode: st.call !== 'idle' ? 'call' : 'chat'
+          mode: st.call !== 'idle' ? 'call' : 'chat',
+          teaser: false
         }));
       },
+      showTeaser: s.teaser && !s.open,
+      teaserTyping: s.teaserTyping,
+      openTeaser: () => {
+        nanaEvent('nana_open', { page: this.page(), from: 'teaser' });
+        this.setState({ open: true, mode: 'chat', teaser: false });
+      },
+      closeTeaser: e => {
+        e.stopPropagation();
+        this.setState({ teaser: false });
+      },
+      online: s.call === 'idle' && !s.typing,
       status: s.call !== 'idle' ? this.props.t("RideffNana.onACall") + this.fmt(s.sec) : s.typing ? this.props.t("RideffNana.typing") : this.props.t(this.props.live ? "nana.statusLive" : "RideffNana.textOrVoicePreview"),
       msgs,
       typing: s.typing,
@@ -694,6 +729,7 @@ Logic.prototype.render = function render() {
                     {"Nana"}
                   </b>
                   <span style={{ fontSize: "11px", color: "#8C877E" }}>
+                    {v.online ? (<><span style={{ color: "#61C784", fontWeight: "600" }}>{v.t("nana.online")}</span>{" · "}</>) : null}
                     {v.status}
                   </span>
                 </span>
@@ -957,21 +993,47 @@ Logic.prototype.render = function render() {
             </div>
           </div>
         </>) : null}
+        {v.showLauncher && v.showTeaser ? (
+          <div role="button" tabIndex={0} onClick={v.openTeaser} onKeyDown={e => e.key === 'Enter' && v.openTeaser()} aria-label={v.t("nana.teaser")} style={{ position: "relative", width: "min(300px,calc(100vw - 40px))", boxSizing: "border-box", background: "#FFFFFF", color: "#0A0A0A", borderRadius: "18px 18px 4px 18px", boxShadow: "0 18px 40px rgba(10,10,10,.22)", padding: "12px 14px", display: "flex", gap: "10px", alignItems: "flex-start", cursor: "pointer", animation: "nnIn .35s both" }}>
+            <span style={{ position: "relative", width: "32px", height: "32px", flexShrink: "0", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
+              <span style={{ position: "absolute", right: "-1px", bottom: "-1px", width: "9px", height: "9px", borderRadius: "50%", background: "#61C784", border: "2px solid #FFFFFF" }} />
+            </span>
+            <span style={{ display: "flex", flexDirection: "column", gap: "4px", minWidth: "0" }}>
+              <span style={{ display: "flex", gap: "6px", alignItems: "baseline", fontSize: "13px" }}>
+                <b>{"Nana"}</b>
+                <span style={{ fontSize: "11px", color: "#1E8A4C", fontWeight: "600" }}>{v.t("nana.online")}</span>
+              </span>
+              {v.teaserTyping ? (
+                <span style={{ display: "flex", gap: "4px", padding: "6px 0" }}>
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .15s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .3s infinite" }} />
+                </span>
+              ) : (<>
+                <span style={{ fontSize: "14px", lineHeight: "1.4", animation: "nnIn .3s both" }}>{v.t("nana.teaser")}</span>
+                <span style={{ fontSize: "12px", fontWeight: "600", color: "#C2410C" }}>{v.t("nana.teaserReply")}{" →"}</span>
+              </>)}
+            </span>
+            <button onClick={v.closeTeaser} aria-label={v.t("nana.close")} style={{ position: "absolute", top: "-10px", right: "-6px", width: "26px", height: "26px", borderRadius: "50%", border: "none", background: "#0A0A0A", color: "#F4F4F2", fontSize: "14px", lineHeight: "1", cursor: "pointer", boxShadow: "0 4px 10px rgba(10,10,10,.25)" }}>
+              {"×"}
+            </button>
+          </div>
+        ) : null}
         {v.showLauncher ? (<>
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <div className="nana-dock" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#F4F1EC", border: "1px solid rgba(10,10,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
-              <button onClick={v.toggle} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
+              <button onClick={v.toggle} aria-label={v.launcherT} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
                 <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
                   <span style={{ position: "absolute", right: "0", bottom: "0", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #F4F1EC" }} />
                 </span>
-                {v.launcherT}
+                <span className={v.launcherTCls}>{v.launcherT}</span>
               </button>
               <span style={{ width: "1px", height: "22px", background: "#D9D3C9" }} />
               <button onClick={v.callNana} aria-label={v.callBtnT} title={v.callBtnT} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", border: "none", background: `${v.launcherCallBg ?? ''}`, color: "#F4F4F2", borderRadius: "50%", padding: "0", cursor: "pointer" }} className="hv-9bccb67">
                 <PhoneIcon width={18} height={18} />
               </button>
             </div>
-            <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
+            <a className="nana-wa" href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
               <WhatsAppIcon width={28} height={28} />
             </a>
           </div>

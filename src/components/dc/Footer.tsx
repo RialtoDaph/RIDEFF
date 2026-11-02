@@ -380,7 +380,7 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <div style={{ background: "#0B0B0C", color: "#F4F4F2", fontFamily: "var(--font-sans)", borderTop: "1px solid #1C1C1E" }}>
+      <div className="rd-footer" style={{ background: "#0B0B0C", color: "#F4F4F2", fontFamily: "var(--font-sans)", borderTop: "1px solid #1C1C1E" }}>
         {" "}
         <div style={{ padding: "64px clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: "32px", fontSize: "14px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -452,7 +452,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
         {" "}
-        <div style={{ padding: "0 clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontSize: "12px", color: "#6B675F" }}>
+        <div className="rd-copy" style={{ padding: "0 clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontSize: "12px", color: "#6B675F" }}>
           <span>
             {v.t("RideffFooter.n2026RIDEFFRialtoEichstattGermany")}
           </span>

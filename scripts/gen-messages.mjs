@@ -6,6 +6,7 @@
  *   rideff_handoff/i18n/rideff-en-de.json  EN source → DE, grouped per page (source of truth)
  *   messages/custom.json                   strings that are not in the handoff (404, blog,
  *                                          newsletter mail, composed ICU strings …) as {de, en} leaves
+ *   messages/no-emdash.json                handoff strings rewritten without em dashes (applied last)
  *
  * Keys: camelCase from the first words of the English source, unique per namespace and
  * stable as long as the handoff order does not change. "{x}" placeholders become ICU
@@ -95,6 +96,8 @@ function addCustom(node, enOut, deOut) {
   }
 }
 addCustom(custom, en, de);
+// House style: no em dashes. Handoff strings rewritten with commas, colons, full stops or "·".
+addCustom(JSON.parse(fs.readFileSync(path.join(root, 'messages/no-emdash.json'), 'utf8')), en, de);
 
 const write = (file, data) => fs.writeFileSync(path.join(root, file), JSON.stringify(data, null, 2) + '\n');
 write('messages/en.json', en);

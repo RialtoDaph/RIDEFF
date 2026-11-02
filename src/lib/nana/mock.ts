@@ -70,7 +70,7 @@ export async function buildSummary(req: SummaryRequest, ai: SummaryFields = {}, 
 
   const kind = req.kind === 'call' ? t('voiceCall') : t('chat');
   const duration = req.kind === 'call' ? fmt(Math.max(0, Math.round(req.duration))) : tn('questions', { n: req.duration });
-  const need = ai.need?.trim() || mine[0] || '—';
+  const need = ai.need?.trim() || mine[0] || '–';
   const interest =
     ai.interest?.trim() ||
     (/growth|plan|fit|setup|paket|passt|einrichtung|cost|kost|preis|price/i.test(all)

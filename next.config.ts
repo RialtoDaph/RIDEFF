@@ -11,6 +11,8 @@ const nanaAvatar = ['jpg', 'jpeg', 'png', 'webp'].map((e) => `/images/nana.${e}`
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   env: { NEXT_PUBLIC_NANA_AVATAR: nanaAvatar },
+  // Dev only: lets a phone on the same Wi-Fi open the dev server (http://<Mac IP>:3000).
+  allowedDevOrigins: ['192.168.*.*', '10.*.*.*', '*.local'],
 };
 
 export default withNextIntl(nextConfig);

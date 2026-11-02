@@ -249,7 +249,7 @@ class Logic extends DCLogic {
       bars: AREAS.map(a => ({
         t: a[0],
         w: per[a[0]] / max * 100 + '%',
-        h: per[a[0]] ? per[a[0]] + ' h' : '—',
+        h: per[a[0]] ? per[a[0]] + ' h' : '–',
         c: per[a[0]] ? '#0A0A0A' : '#8C877E'
       })),
       hours,
@@ -713,10 +713,10 @@ Logic.prototype.render = function render() {
                     </b>
                   </div>
                   <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                    <button onClick={v.toggleTerms} style={{ width: "18px", height: "18px", border: "1.5px solid #0A0A0A", borderRadius: "4px", background: `${v.termsBg ?? ''}`, cursor: "pointer", padding: "0", color: "#F4F4F2", fontSize: "12px", lineHeight: "1" }}>
+                    <button onClick={v.toggleTerms} aria-label={v.t("Understand.iAcceptTheTerms")} style={{ width: "18px", height: "18px", border: "1.5px solid #0A0A0A", borderRadius: "4px", background: `${v.termsBg ?? ''}`, cursor: "pointer", padding: "0", color: "#F4F4F2", fontSize: "12px", lineHeight: "1" }}>
                       {v.termsMark}
                     </button>
-                    <span style={{ fontSize: "13px", color: "#3A3731" }}>
+                    <span onClick={v.toggleTerms} style={{ fontSize: "13px", color: "#3A3731", cursor: "pointer", padding: "12px 0" }}>
                       {v.t("Understand.iAcceptTheTerms")}
                     </span>
                     <button onClick={v.approve} style={{ marginLeft: "auto", border: "none", background: `${v.apBg ?? ''}`, color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "600 13px var(--font-sans)", cursor: "pointer", opacity: `${v.apOp ?? ''}` }}>
