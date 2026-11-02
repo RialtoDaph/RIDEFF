@@ -273,6 +273,11 @@ html.lenis body {
     grid-column: 3;
     grid-row: 1;
   }
+  /* Home cost comparison: value under its label. */
+  .hp-cost {
+    flex-direction: column;
+    gap: 2px !important;
+  }
   /* Home brain: the three packages on one line. */
   .hp-tiers {
     flex-wrap: nowrap !important;

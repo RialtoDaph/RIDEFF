@@ -337,6 +337,14 @@
     "teaserReply": {
       "en": "Reply",
       "de": "Antworten"
+    },
+    "callContinueFirst": {
+      "de": "Hallo, hier ist Nana. Ich habe unseren Chat vor mir. Wie kann ich weiterhelfen?",
+      "en": "Hello, it’s Nana. I have our chat in front of me. How can I help further?"
+    },
+    "tooMany": {
+      "de": "Gerade sind es zu viele Versuche. Bitte in ein paar Minuten noch einmal, oder schreiben Sie Rialto auf WhatsApp.",
+      "en": "Too many tries right now. Please try again in a few minutes, or message Rialto on WhatsApp."
     }
   },
   "journal": {
@@ -431,6 +439,38 @@
     "openTheApp2": {
       "en": "Open the app",
       "de": "Zur App"
+    }
+  },
+  "Home": {
+    "freeFirstCallCalComLink": {
+      "de": "Kostenloses Erstgespräch · 15 Min. über Cal.com",
+      "en": "Free first call · 15 min via Cal.com"
+    },
+    "onCostPlaceholderFigures": {
+      "de": "Zu den Kosten · typische Richtwerte",
+      "en": "On cost · typical ranges"
+    },
+    "costAgency": {
+      "de": "ca. 5.000–15.000 €",
+      "en": "approx. €5,000–15,000"
+    },
+    "costFreelancer": {
+      "de": "ca. 600–1.200 € / Monat",
+      "en": "approx. €600–1,200 / mo"
+    },
+    "costTools": {
+      "de": "ca. 150–400 € / Monat",
+      "en": "approx. €150–400 / mo"
+    },
+    "costTime": {
+      "de": "ca. 20 Std. / Monat",
+      "en": "approx. 20 h / mo"
+    }
+  },
+  "Contact": {
+    "freeFirstCallCalComLink": {
+      "de": "Kostenloses Erstgespräch · 15 Min. über Cal.com",
+      "en": "Free first call · 15 min via Cal.com"
     }
   }
 }

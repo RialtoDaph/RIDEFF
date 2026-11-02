@@ -222,7 +222,7 @@
     "yourLifeGetsABrainToo": "Auch Ihr Leben bekommt ein Gehirn.",
     "morningBriefingMoneyTimeAndGoals": "Morgen-Briefing, Geld, Zeit und Ziele für Sie oder Ihre Familie. Ab 12,90 € im Monat inkl. MwSt., monatlich kündbar, 14 Tage kostenlos, keine Karte.",
     "enterRIDEFFLife": "Zu RIDEFF Life →",
-    "onCostPlaceholderFigures": "Zu den Kosten · Platzhalterzahlen",
+    "onCostPlaceholderFigures": "Zu den Kosten · typische Richtwerte",
     "rIDEFFGrowthOnePersonOneInvoice": "RIDEFF Growth · ein Mensch, eine Rechnung",
     "n249Mo": "249 € / Monat",
     "n06HowItWorks": "(06) So läuft's",
@@ -237,7 +237,7 @@
     "runItself": "sich selbst erledigt.",
     "rialtoDirectLine": "Rialto · direkter Draht",
     "book15Minutes": "15 Minuten buchen",
-    "freeFirstCallCalComLink": "Kostenloses Erstgespräch · Cal.com-Link Platzhalter",
+    "freeFirstCallCalComLink": "Kostenloses Erstgespräch · 15 Min. über Cal.com",
     "forLongerBriefs": "Für längere Briefings",
     "eichstattX": "Eichstätt · {x}",
     "remoteEU": "Remote · EU",
@@ -480,7 +480,11 @@
     "iBuildItYouSeeProgress": "Ich baue es. Den Fortschritt sehen Sie in Ihrem Portal.",
     "test": "Test",
     "yourTeamTriesItInA": "Ihr Team probiert es in einem Testlauf aus.",
-    "itGoesLiveAndIKeep": "Es geht live, und ich halte es am Laufen."
+    "itGoesLiveAndIKeep": "Es geht live, und ich halte es am Laufen.",
+    "costAgency": "ca. 5.000–15.000 €",
+    "costFreelancer": "ca. 600–1.200 € / Monat",
+    "costTools": "ca. 150–400 € / Monat",
+    "costTime": "ca. 20 Std. / Monat"
   },
   "Understand": {
     "yourBusinessUnderstood": "Ihr Betrieb · verstanden",
@@ -1785,7 +1789,7 @@
     "bringTheRealProblemLeaveWith": "Bringen Sie das echte Problem mit und gehen Sie mit einem klaren nächsten Schritt. Kein Verkaufsgespräch, keine Verpflichtung.",
     "rialtoFastestWayIn": "Rialto · der schnellste Weg",
     "book15Minutes": "15 Minuten buchen",
-    "freeFirstCallCalComLink": "Kostenloses Erstgespräch · Cal.com-Link Platzhalter",
+    "freeFirstCallCalComLink": "Kostenloses Erstgespräch · 15 Min. über Cal.com",
     "forLongerBriefs": "Für längere Briefings",
     "eichstattX": "Eichstätt · {x}",
     "remoteEU": "Remote · EU",
@@ -2763,7 +2767,9 @@
     "automatedDesk": "Automatisierter Front Desk",
     "online": "Online",
     "teaser": "Hallo, ich bin Nana von RIDEFF 👋 Fragen zu Ihrem Betrieb? Schreiben Sie mir einfach oder rufen Sie an.",
-    "teaserReply": "Antworten"
+    "teaserReply": "Antworten",
+    "callContinueFirst": "Hallo, hier ist Nana. Ich habe unseren Chat vor mir. Wie kann ich weiterhelfen?",
+    "tooMany": "Gerade sind es zu viele Versuche. Bitte in ein paar Minuten noch einmal, oder schreiben Sie Rialto auf WhatsApp."
   },
   "journal": {
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

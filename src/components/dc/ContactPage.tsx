@@ -98,7 +98,7 @@ Logic.prototype.render = function render() {
                 {"↗"}
               </span>
             </a>
-            <a href="#" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
               <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "20px", fontWeight: "600" }}>
                   {v.t("Contact.book15Minutes")}

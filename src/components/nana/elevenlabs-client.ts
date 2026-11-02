@@ -22,6 +22,10 @@ export async function startVoice(
   o: Common & {
     token: string;
     livekitUrl: string;
+    /** The typed chat so far ("Visitor: …" / "Nana: …" lines), or "". */
+    chatContext: string;
+    /** Replaces the formal greeting when the visitor already chatted. */
+    firstMessage?: string;
     onLine: (who: 'nana' | 'you', text: string) => void;
     onMode: (mode: 'speaking' | 'listening') => void;
   },
@@ -33,8 +37,8 @@ export async function startVoice(
     livekitUrl: o.livekitUrl,
     textOnly: false,
     stripAudioTags: true,
-    overrides: { agent: { language: o.locale } },
-    dynamicVariables: { page: o.page, locale: o.locale },
+    overrides: { agent: { language: o.locale, ...(o.firstMessage ? { firstMessage: o.firstMessage } : {}) } },
+    dynamicVariables: { page: o.page, locale: o.locale, chat_context: o.chatContext },
     onConnect: ({ conversationId }) => o.onConnect(conversationId),
     onMessage: ({ source, message }) => message && o.onLine(source === 'ai' ? 'nana' : 'you', message),
     onModeChange: ({ mode }) => o.onMode(mode),
@@ -57,7 +61,7 @@ export async function startTextChat(
     stripAudioTags: true,
     // No spoken-style greeting in the chat: Nana's greeting is already on screen.
     overrides: { agent: { language: o.locale, firstMessage: '' }, conversation: { textOnly: true } },
-    dynamicVariables: { page: o.page, locale: o.locale },
+    dynamicVariables: { page: o.page, locale: o.locale, chat_context: '' },
     onConnect: ({ conversationId }) => o.onConnect(conversationId),
     onMessage: ({ source, message }) => source === 'ai' && message && o.onReply(message),
     onDisconnect: (d) => o.onEnd(d.reason),

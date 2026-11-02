@@ -6,6 +6,8 @@ export const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://portal.
 /** Where "RIDEFF Life Demo" links point (the prototype's app stand-in). See TODO.md. */
 export const LIFE_DEMO_URL = process.env.NEXT_PUBLIC_LIFE_DEMO_URL || `${APP_URL}/demo`;
 export const WHATSAPP_URL = 'https://wa.me/4917632572420';
+/** Free 15-minute first call with Rialto (Cal.com). */
+export const CAL_URL = 'https://cal.com/rideff-call/rideff-rialto-call-15';
 
 export type LifePlan = 'life' | 'plus' | 'together';
 export const signupUrl = (plan: LifePlan, locale: Locale) => `${APP_URL}/signup?plan=${plan}&lang=${locale}`;

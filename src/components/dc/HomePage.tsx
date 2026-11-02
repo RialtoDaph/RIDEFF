@@ -794,7 +794,7 @@ class Logic extends DCLogic {
         btnBg: x.dark ? '#FF6A00' : '#0A0A0A',
         btnFg: x.dark ? '#0A0A0A' : '#F4F4F2'
       })),
-      costRows: [[this.props.t("Home.agencyWebsiteOneOff"), '€ –'], [this.props.t("Home.freelancerForAutomations"), this.props.t("Home.mo")], [this.props.t("Home.n46SeparateTools"), this.props.t("Home.mo")], [this.props.t("Home.yourTimeKeepingItTogether"), this.props.t("Home.hMo")]].map(c => ({
+      costRows: [[this.props.t("Home.agencyWebsiteOneOff"), this.props.t("Home.costAgency")], [this.props.t("Home.freelancerForAutomations"), this.props.t("Home.costFreelancer")], [this.props.t("Home.n46SeparateTools"), this.props.t("Home.costTools")], [this.props.t("Home.yourTimeKeepingItTogether"), this.props.t("Home.costTime")]].map(c => ({
         t: c[0],
         v: c[1]
       })),
@@ -1692,7 +1692,7 @@ Logic.prototype.render = function render() {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {(v.costRows ?? []).map((c, $index) => (<Fragment key={$index}>
                   {" "}
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "10px 0", borderBottom: "1px solid #D3CCC0", fontSize: "15px" }}>
+                  <div className="hp-cost" style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "10px 0", borderBottom: "1px solid #D3CCC0", fontSize: "15px" }}>
                     <span style={{ color: "#3A3731" }}>
                       {c?.t}
                     </span>
@@ -1702,7 +1702,7 @@ Logic.prototype.render = function render() {
                   </div>
                   {" "}
                 </Fragment>))}
-                <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0 0", fontSize: "16px", fontWeight: "600" }}>
+                <div className="hp-cost" style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0 0", fontSize: "16px", fontWeight: "600" }}>
                   <span>
                     {v.t("Home.rIDEFFGrowthOnePersonOneInvoice")}
                   </span>
@@ -1819,7 +1819,7 @@ Logic.prototype.render = function render() {
                   {"↗"}
                 </span>
               </a>
-              <a href="#start" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
                 <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <b style={{ fontSize: "20px", fontWeight: "600" }}>
                     {v.t("Home.book15Minutes")}

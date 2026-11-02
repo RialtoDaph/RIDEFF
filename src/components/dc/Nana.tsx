@@ -122,6 +122,7 @@ class Logic extends DCLogic {
         }
       } catch (e) {
         this.tc = null;
+        if (e && e.message === 'rate_limited') return this.setState(s => ({ typing: false, msgs: [...s.msgs, { from: 'sys', t: this.props.t("nana.tooMany") }] }));
       }
     }
     return this.askMock(q);
@@ -143,6 +144,7 @@ class Logic extends DCLogic {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ sessionId: this.sid })
       });
+      if (res.status === 429) throw new Error('rate_limited');
       const data = res.ok ? await res.json() : null;
       if (!data || data.provider !== 'elevenlabs') {
         this.chatProvider = 'mock';
@@ -174,6 +176,8 @@ class Logic extends DCLogic {
       this.tcOpening = null;
     }
   };
+  /** The typed chat as transcript lines (greeting and choice rows excluded). */
+  chatLines = () => this.state.msgs.filter(m => (m.from === 'me' || m.from === 'bot') && !m.choice && typeof m.t === 'string').map(m => ({ from: m.from === 'me' ? 'you' : 'nana', text: m.t }));
   /** Ends the text session (its post-call analysis then runs at ElevenLabs). */
   closeChat = async () => {
     const tc = this.tc;
@@ -287,8 +291,13 @@ class Logic extends DCLogic {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ sessionId: this.sid, locale: this.props.locale, page: this.page() })
       });
-      data = res.ok ? await res.json() : null;
+      data = res.ok ? await res.json() : res.status === 429 ? { provider: 'limited' } : null;
     } catch (e) {}
+    if (data && data.provider === 'limited') {
+      this.ringOff();
+      this.stopMic();
+      return this.setState(s => ({ mode: 'chat', call: 'idle', msgs: [...s.msgs, { from: 'sys', t: this.props.t("nana.tooMany") }] }));
+    }
     if (this.state.call !== 'ringing') { this.ringOff(); return this.stopMic(); }
     if (data && data.provider === 'elevenlabs') {
       // The SDK opens its own microphone stream.
@@ -299,11 +308,16 @@ class Logic extends DCLogic {
       await new Promise(r => setTimeout(r, Math.max(0, PICKUP_AFTER_MS - (Date.now() - this.ringT0))));
       if (this.state.call !== 'ringing') return this.ringOff();
       try {
+        // The typed chat goes along, so Nana continues it instead of greeting again.
+        const chat = this.chatLines(),
+          chatContext = chat.some(l => l.from === 'you') ? chat.slice(-12).map(l => (l.from === 'you' ? 'Visitor: ' : 'Nana: ') + l.text).join('\n').slice(-2000) : '';
         this.vc = await startVoice({
           token: data.token,
           livekitUrl: data.livekitUrl,
           locale: this.props.locale,
           page: this.page(),
+          chatContext,
+          firstMessage: chatContext ? this.props.t("nana.callContinueFirst") : undefined,
           onConnect: id => {
             this.ringOff();
             this.vcId = id;
@@ -379,11 +393,11 @@ class Logic extends DCLogic {
     this.mic = null;
   };
   /** POST /api/nana/summary → { kind, duration, need, interest, next, text } */
-  fetchSum = async (kind, duration, transcript, conversationId) => {
+  fetchSum = async (kind, duration, transcript, conversationIds) => {
     const res = await fetch('/api/nana/summary', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ sessionId: this.sid, locale: this.props.locale, kind, duration, transcript, consent: kind === 'call' ? this.state.consent !== false : false, conversationId: conversationId || undefined })
+      body: JSON.stringify({ sessionId: this.sid, locale: this.props.locale, kind, duration, transcript, consent: kind === 'call' ? this.state.consent !== false : false, conversationIds: (conversationIds || []).filter(Boolean) })
     });
     if (!res.ok) throw new Error(String(res.status));
     const d = await res.json();
@@ -400,10 +414,14 @@ class Logic extends DCLogic {
     const conversationId = this.real ? this.vcId : null;
     this.endVoice();
     nanaEvent('nana_call_end', { seconds: this.state.sec });
-    const sec = this.state.sec,
+    // The summary covers the whole visit: the typed chat first, then the call.
+    const chat = this.chatLines(),
+      typed = chat.some(l => l.from === 'you'),
+      sec = this.state.sec,
       d = this.fmt(sec),
       heard = this.state.line >= 2,
-      transcript = this.SCRIPT.slice(0, this.state.line).map(l => ({ from: l[0], text: l[1] }));
+      transcript = [...(typed ? chat : []), ...this.SCRIPT.slice(0, this.state.line).map(l => ({ from: l[0], text: l[1] }))],
+      conversationIds = [typed && this.chatProvider === 'elevenlabs' ? this.tcId : null, conversationId];
     this.setState(s => ({
       mode: 'chat',
       call: 'idle',
@@ -421,9 +439,11 @@ class Logic extends DCLogic {
     }));
     this.ending = false;
     if (!heard) return;
+    // End the text session too, so ElevenLabs analyses the chat alongside the call.
+    if (typed) await this.closeChat();
     let sum = null;
     try {
-      sum = await this.fetchSum('call', sec, transcript, conversationId);
+      sum = await this.fetchSum('call', sec, transcript, conversationIds);
     } catch (e) {}
     if (!this.alive) return;
     this.setState(s => ({
@@ -442,7 +462,7 @@ class Logic extends DCLogic {
     }));
   };
   chatSum = async () => {
-    const transcript = this.state.msgs.filter(m => (m.from === 'me' || m.from === 'bot') && !m.choice).map(m => ({ from: m.from === 'me' ? 'you' : 'nana', text: m.t })),
+    const transcript = this.chatLines(),
       questions = transcript.filter(l => l.from === 'you').length;
     this.setState({ typing: true });
     // End the text session so ElevenLabs can analyse it; a new message opens a new one.
@@ -450,7 +470,7 @@ class Logic extends DCLogic {
     await this.closeChat();
     let sum = null;
     try {
-      sum = await this.fetchSum('chat', questions, transcript, conversationId);
+      sum = await this.fetchSum('chat', questions, transcript, [conversationId]);
     } catch (e) {}
     if (!this.alive) return;
     this.setState(s => ({

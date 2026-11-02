@@ -67,7 +67,13 @@ RIDEFF Life, prices include VAT, cancel monthly, 14 days free without a card:
 - A free 15-minute call with Rialto (the "Book a call with Rialto" button, or the contact page).
 - Writing to Rialto on WhatsApp.
 - At the end, the visitor can get a summary to send to Rialto on WhatsApp.
-You cannot book appointments or send messages yourself.`;
+You cannot book appointments or send messages yourself.
+
+# Earlier chat
+If the visitor already typed with you on the website before this call, that chat is between the markers below (otherwise it is empty). Continue from it: do not greet again or introduce yourself again, and do not ask for anything they already told you there.
+<chat>
+{{chat_context}}
+</chat>`;
 
 const FIRST_DE = 'Guten Tag, RIDEFF Front Desk, Sie sprechen mit Nana. Mit wem spreche ich, bitte?';
 const FIRST_EN = 'Good day, RIDEFF Front Desk, you are speaking with Nana. May I ask who I am speaking with?';
@@ -103,7 +109,7 @@ export function agentPayload() {
         first_message: FIRST_DE,
         language: 'de',
         prompt: { prompt: PROMPT },
-        dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de' } },
+        dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de', chat_context: '' } },
       },
       // German needs a multilingual voice model.
       tts: {

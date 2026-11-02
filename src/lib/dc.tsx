@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { getPathname, usePathname, useRouter } from '@/i18n/navigation';
 import { GERMAN_ONLY, type AppPath, type Locale } from '@/i18n/routing';
-import { LIFE_DEMO_URL, PORTAL_URL, signupUrl, type LifePlan } from '@/lib/site';
+import { LIFE_DEMO_URL, PORTAL_URL, signupUrl, type LifePlan, CAL_URL } from '@/lib/site';
 
 /**
  * Runtime for components ported from the handoff prototypes (`*.dc.html`).
@@ -49,6 +49,7 @@ export function dcStyle(s: unknown): CSSProperties | undefined {
 export function localHref(route: string, locale: Locale): string {
   if (route === '@portal') return PORTAL_URL;
   if (route === '@lifedemo') return LIFE_DEMO_URL;
+  if (route === '@cal') return CAL_URL;
   const hash = route.indexOf('#');
   const q = route.indexOf('?');
   const cut = [hash, q].filter((n) => n >= 0).sort((a, b) => a - b)[0] ?? route.length;
