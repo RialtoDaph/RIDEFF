@@ -481,10 +481,10 @@
     "test": "Test",
     "yourTeamTriesItInA": "Your team tries it in a test run.",
     "itGoesLiveAndIKeep": "It goes live, and I keep it running.",
-    "costAgency": "approx. €3,000–8,000",
-    "costFreelancer": "approx. €400–800 / mo",
-    "costTools": "approx. €100–300 / mo",
-    "costTime": "approx. 15 h / mo"
+    "costAgency": "approx. €5,000–15,000",
+    "costFreelancer": "approx. €600–1,200 / mo",
+    "costTools": "approx. €150–400 / mo",
+    "costTime": "approx. 20 h / mo"
   },
   "Understand": {
     "yourBusinessUnderstood": "Your business · understood",

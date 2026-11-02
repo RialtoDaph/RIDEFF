@@ -451,20 +451,20 @@
       "en": "On cost · typical ranges"
     },
     "costAgency": {
-      "de": "ca. 3.000–8.000 €",
-      "en": "approx. €3,000–8,000"
+      "de": "ca. 5.000–15.000 €",
+      "en": "approx. €5,000–15,000"
     },
     "costFreelancer": {
-      "de": "ca. 400–800 € / Monat",
-      "en": "approx. €400–800 / mo"
+      "de": "ca. 600–1.200 € / Monat",
+      "en": "approx. €600–1,200 / mo"
     },
     "costTools": {
-      "de": "ca. 100–300 € / Monat",
-      "en": "approx. €100–300 / mo"
+      "de": "ca. 150–400 € / Monat",
+      "en": "approx. €150–400 / mo"
     },
     "costTime": {
-      "de": "ca. 15 Std. / Monat",
-      "en": "approx. 15 h / mo"
+      "de": "ca. 20 Std. / Monat",
+      "en": "approx. 20 h / mo"
     }
   },
   "Contact": {

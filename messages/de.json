@@ -481,10 +481,10 @@
     "test": "Test",
     "yourTeamTriesItInA": "Ihr Team probiert es in einem Testlauf aus.",
     "itGoesLiveAndIKeep": "Es geht live, und ich halte es am Laufen.",
-    "costAgency": "ca. 3.000–8.000 €",
-    "costFreelancer": "ca. 400–800 € / Monat",
-    "costTools": "ca. 100–300 € / Monat",
-    "costTime": "ca. 15 Std. / Monat"
+    "costAgency": "ca. 5.000–15.000 €",
+    "costFreelancer": "ca. 600–1.200 € / Monat",
+    "costTools": "ca. 150–400 € / Monat",
+    "costTime": "ca. 20 Std. / Monat"
   },
   "Understand": {
     "yourBusinessUnderstood": "Ihr Betrieb · verstanden",
