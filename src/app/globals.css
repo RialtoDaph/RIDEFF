@@ -295,6 +295,200 @@ html.lenis body {
     width: 34px !important;
     height: 34px !important;
   }
+  /* Sections: less dead air between blocks (desktop keeps 120/130px). */
+  [style^="padding:120px clamp(20px,3vw,40px)"],
+  [style^="padding:130px clamp(20px,3vw,40px)"] {
+    padding-top: 88px !important;
+  }
+  [style^="padding:120px clamp(20px,3vw,40px);"],
+  [style^="padding:130px clamp(20px,3vw,40px);"],
+  [style="padding:120px clamp(20px,3vw,40px)"],
+  [style="padding:130px clamp(20px,3vw,40px)"] {
+    padding-bottom: 88px !important;
+  }
+  /* Home hero card: the vertical "Pillar 0X" label sat on the overlays; the tabs below name the pillar. */
+  .hc-pill {
+    display: none;
+  }
+  /* Home stats strip: one per row, separated by top rules instead of a stray left rule. */
+  .hp-stat {
+    border-left: none !important;
+    border-top: 1px solid #d3ccc0;
+    padding: 16px clamp(20px, 3vw, 40px) !important;
+  }
+  .hp-stat:first-child {
+    border-top: none;
+  }
+  .hp-dpanel {
+    padding: 24px 22px !important;
+    gap: 28px !important;
+  }
+  .hp-dhead {
+    margin-bottom: 24px !important;
+  }
+  /* Home brain: narrower nodes so the outer labels stay on screen. */
+  .hp-node {
+    width: 118px !important;
+    gap: 6px !important;
+  }
+  .hp-node > b {
+    font-size: 17px !important;
+  }
+  .hp-node > span:nth-child(3) {
+    font-size: 12px !important;
+  }
+  /* Understand lens: breadcrumb and clarity readout stacked, task map in 3 columns. */
+  .uc-crumb {
+    top: 92px !important;
+  }
+  .uc-read {
+    top: 130px !important;
+    left: clamp(20px, 3vw, 40px);
+    right: auto !important;
+    flex-direction: row !important;
+    gap: 14px !important;
+    padding: 6px 10px !important;
+    border-radius: 999px !important;
+  }
+  .uc-area {
+    top: 178px !important;
+    gap: 14px !important;
+  }
+  .uc-map {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 14px 8px !important;
+    flex: none !important;
+  }
+  .uc-map > div {
+    gap: 6px !important;
+    padding-top: 8px !important;
+  }
+  .uc-map > div > div {
+    padding: 8px !important;
+    border-radius: 10px !important;
+  }
+  .uc-segs span {
+    letter-spacing: 0.04em !important;
+  }
+  /* Build: capability cards without the desktop min-height gap. */
+  .bd-cap {
+    min-height: 0 !important;
+    gap: 20px !important;
+  }
+  /* Web & shops: case tabs on one line. */
+  .sf-tabs {
+    flex-wrap: nowrap !important;
+  }
+  .sf-tabs > button {
+    padding: 9px 10px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+  /* Team apps: shorter use-case photos. */
+  .wb-uc {
+    aspect-ratio: 4 / 3 !important;
+  }
+  /* About: number + title on one row, the story underneath at full width. */
+  .ab-ch {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    gap: 12px 14px !important;
+    padding: 26px 0 !important;
+  }
+  .ab-ch > span:last-child {
+    grid-column: 1 / -1;
+  }
+  /* Footer: link groups in two columns, legal links on one line. */
+  .rd-fgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px 16px !important;
+  }
+  .rd-fgrid > :first-child,
+  .rd-fgrid > :nth-child(4) {
+    grid-column: 1 / -1;
+  }
+  .rd-fgrid > :last-child {
+    grid-column: 1 / -1;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    column-gap: 22px !important;
+  }
+  .rd-fgrid > :last-child > span {
+    flex-basis: 100%;
+  }
+}
+
+/* Small phones (iPhone SE / mini at 320–359px). */
+@media (max-width: 359px) {
+  /* Home hero: "Ein Mensch." + avatars stays on one line. */
+  .hp-h1 {
+    font-size: 13vw !important;
+  }
+  .sf-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .lf-bill > button {
+    padding: 10px 11px !important;
+    font-size: 12.5px !important;
+    white-space: nowrap;
+  }
+}
+
+/* Single-column layouts: sticky side columns would scroll over the content below them. */
+@media (max-width: 899px) {
+  [style*="position:sticky;top:110px"],
+  [style*="position:sticky;top:120px"] {
+    position: static !important;
+  }
+}
+
+/* Run hero (24h dial) below 820px: copy on top, dial underneath, readouts off the breadcrumb. */
+@media (max-width: 819px) {
+  .ru-crumb {
+    top: 96px !important;
+  }
+  .ru-read {
+    top: 124px !important;
+    left: clamp(20px, 3vw, 40px);
+    right: auto !important;
+    justify-content: flex-start !important;
+    gap: 4px 14px !important;
+    font-size: 11px !important;
+  }
+  .ru-hero {
+    align-items: flex-start !important;
+    padding-top: 176px !important;
+  }
+  .ru-copy {
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+  .ru-copy h1 {
+    font-size: clamp(40px, 11vw, 56px) !important;
+  }
+  .ru-dial {
+    right: auto !important;
+    left: 50% !important;
+    top: auto !important;
+    bottom: 136px;
+    transform: translateX(-50%) !important;
+  }
+  /* Event pills around the dial would run off the screen; the dots stay. */
+  .ru-ev {
+    display: none;
+  }
+  .ru-dial-box {
+    width: max(170px, min(66vw, calc(100vh - 560px))) !important;
+  }
+  .ru-segs {
+    bottom: 84px !important;
+  }
+}
+/* Short phones: no room for the dial under the copy; the readout still shows the hour. */
+@media (max-width: 819px) and (max-height: 700px) {
+  .ru-dial {
+    display: none !important;
+  }
 }
 
 /* Reduced motion: final states, no loops (JS effects check the same query). */

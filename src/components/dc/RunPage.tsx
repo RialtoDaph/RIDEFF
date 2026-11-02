@@ -281,7 +281,7 @@ class Logic extends DCLogic {
     const Rn = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
     const dialVals = {
       dialRef: this.dialRef,
-      dialO: this.state.narrow ? .35 : 1,
+      dialO: this.state.narrow ? .7 : 1,
       skyBg: 'rgb(' + col.join(',') + ')',
       skyFg: dark ? '#F4F4F2' : '#0A0A0A',
       glow: dark ? 'rgba(255,106,0,.10)' : 'rgba(255,255,255,.5)',
@@ -599,11 +599,11 @@ Logic.prototype.render = function render() {
             <span style={{ position: "absolute", left: `${s?.x ?? ''}`, top: `${s?.y ?? ''}`, width: `${s?.z ?? ''}`, height: `${s?.z ?? ''}`, borderRadius: "50%", background: "#F4F4F2", opacity: `${s?.o ?? ''}` }} />
           </Fragment>))}
           {" "}
-          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".7" }}>
+          <div className="ru-crumb" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".7" }}>
             {v.t("Run.homeRunPillar03")}
           </div>
           {" "}
-          <div style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "96px", zIndex: "3", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "flex-end", gap: "6px 18px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", opacity: ".85" }}>
+          <div className="ru-read" style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "96px", zIndex: "3", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "flex-end", gap: "6px 18px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", opacity: ".85" }}>
             <span style={{ whiteSpace: "nowrap" }}>
               {v.t("Run.handled")}{" "}
               <b style={{ color: "#FF6A00", fontWeight: "500" }}>
@@ -625,8 +625,8 @@ Logic.prototype.render = function render() {
             </span>
           </div>
           {" "}
-          <div style={{ position: "absolute", inset: "0", padding: "clamp(96px,14vh,140px) clamp(20px,3vw,40px) clamp(80px,12vh,110px)", boxSizing: "border-box", display: "flex", alignItems: "center" }}>
-            <div style={{ position: "relative", zIndex: "2", display: "flex", flexDirection: "column", gap: "20px", maxWidth: "min(600px,calc(100% - min(64vh,40vw,540px) - 240px))" }}>
+          <div className="ru-hero" style={{ position: "absolute", inset: "0", padding: "clamp(96px,14vh,140px) clamp(20px,3vw,40px) clamp(80px,12vh,110px)", boxSizing: "border-box", display: "flex", alignItems: "center" }}>
+            <div className="ru-copy" style={{ position: "relative", zIndex: "2", display: "flex", flexDirection: "column", gap: "20px", maxWidth: "min(600px,calc(100% - min(64vh,40vw,540px) - 240px))" }}>
               <div style={{ display: "flex", gap: "12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase" }}>
                 <span style={{ opacity: ".55" }}>
                   {v.phNum}
@@ -649,8 +649,8 @@ Logic.prototype.render = function render() {
                 </div>
               </>) : null}
             </div>
-            <div style={{ position: "absolute", right: "clamp(140px,12vw,200px)", top: "calc(50% + 30px)", transform: "translateY(-50%)", zIndex: "1", opacity: `${v.dialO ?? ''}`, display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <div style={{ position: "relative", width: "min(64vh,40vw,540px,calc(100vh - 300px))", aspectRatio: "1" }}>
+            <div className="ru-dial" style={{ position: "absolute", right: "clamp(140px,12vw,200px)", top: "calc(50% + 30px)", transform: "translateY(-50%)", zIndex: "1", opacity: `${v.dialO ?? ''}`, display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <div className="ru-dial-box" style={{ position: "relative", width: "min(64vh,40vw,540px,calc(100vh - 300px))", aspectRatio: "1" }}>
                 {" "}
                 <div style={{ position: "absolute", inset: "0", borderRadius: "50%", border: `1px solid ${v.ringC ?? ''}` }} />
                 {" "}
@@ -676,7 +676,7 @@ Logic.prototype.render = function render() {
                   {" "}
                   <div style={{ position: "absolute", left: `${e?.x ?? ''}`, top: `${e?.y ?? ''}`, transform: `${e?.tf ?? ''}`, display: "flex", alignItems: "center", gap: "8px", flexDirection: `${e?.dir ?? ''}` }}>
                     <span style={{ width: `${e?.dot ?? ''}`, height: `${e?.dot ?? ''}`, borderRadius: "50%", background: `${e?.dc ?? ''}`, boxShadow: `${e?.glow ?? ''}`, transition: "all .3s", flexShrink: "0" }} />
-                    <span style={{ fontSize: "12px", whiteSpace: "nowrap", padding: "5px 10px", borderRadius: "999px", background: `${e?.bg ?? ''}`, color: `${e?.fg ?? ''}`, border: `1px solid ${e?.bd ?? ''}`, opacity: `${e?.o ?? ''}`, transition: "all .3s" }}>
+                    <span className="ru-ev" style={{ fontSize: "12px", whiteSpace: "nowrap", padding: "5px 10px", borderRadius: "999px", background: `${e?.bg ?? ''}`, color: `${e?.fg ?? ''}`, border: `1px solid ${e?.bd ?? ''}`, opacity: `${e?.o ?? ''}`, transition: "all .3s" }}>
                       {e?.t}
                     </span>
                   </div>
@@ -699,7 +699,7 @@ Logic.prototype.render = function render() {
             </div>
           </div>
           {" "}
-          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", bottom: "28px", display: "grid", gridTemplateColumns: "repeat(4,minmax(0,1fr))", gap: "16px" }}>
+          <div className="ru-segs" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", bottom: "28px", display: "grid", gridTemplateColumns: "repeat(4,minmax(0,1fr))", gap: "16px" }}>
             {(v.psegs ?? []).map((g, $index) => (<Fragment key={$index}>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 <div style={{ height: "2px", background: `${v.ringC ?? ''}`, overflow: "hidden" }}>

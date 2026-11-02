@@ -1077,7 +1077,7 @@ Logic.prototype.render = function render() {
                   </b>
                 </span>
               </div>
-              <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#F6EDE3", width: "max-content" }}>
+              <div className="lf-bill" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#F6EDE3", width: "max-content" }}>
                 <button onClick={v.setMonthly} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${v.mBg ?? ''}`, color: `${v.mFg ?? ''}` }}>
                   {v.t("Life.monthly")}
                 </button>
