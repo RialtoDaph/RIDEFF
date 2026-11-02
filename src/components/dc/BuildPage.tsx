@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import { num } from '@/lib/format';
 
 class Logic extends DCLogic {
   state = {
@@ -538,7 +539,7 @@ class Logic extends DCLogic {
       collapseRef: this.collapseRef,
       layersRef: this.layersRef,
       journeyRef: this.journeyRef,
-      count: (this.N || 26000).toLocaleString('en'),
+      count: num(this.N || 26000, this.props.locale),
       formName: this.NAMES[s.cap],
       capNum: c[0].split(' · ')[0],
       capLabel: c[0].split(' · ')[1] || this.props.t("Build.build"),

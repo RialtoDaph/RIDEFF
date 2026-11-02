@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import { eur } from '@/lib/format';
 
 class Logic extends DCLogic {
   state = {
@@ -565,7 +566,7 @@ class Logic extends DCLogic {
         n: '0' + (k + 1),
         d
       })),
-      weekly: [[this.props.t("Run.inquiriesHandled"), Math.round(42 * m)], [this.props.t("Run.offersSent"), Math.round(9 * m)], [this.props.t("Run.invoicesPaid"), '€' + Math.round(6480 * m).toLocaleString('en')], [this.props.t("Run.hoursSavedEst"), Math.round(14 * m) + ' h']].map(w => ({
+      weekly: [[this.props.t("Run.inquiriesHandled"), Math.round(42 * m)], [this.props.t("Run.offersSent"), Math.round(9 * m)], [this.props.t("Run.invoicesPaid"), eur(Math.round(6480 * m), this.props.locale)], [this.props.t("Run.hoursSavedEst"), Math.round(14 * m) + ' h']].map(w => ({
         a: w[0],
         b: w[1]
       })),

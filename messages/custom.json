@@ -419,6 +419,22 @@
     "n30Min": {
       "en": "15 min",
       "de": "15 Min."
+    },
+    "n20HMo40": {
+      "de": "ca. 20 Std. / Monat × 40 €",
+      "en": "approx. 20 h / mo × €40"
+    },
+    "costAgency": {
+      "de": "ca. 5.000–15.000 €",
+      "en": "approx. €5,000–15,000"
+    },
+    "costFreelancer": {
+      "de": "ca. 600–1.200 € / Monat",
+      "en": "approx. €600–1,200 / mo"
+    },
+    "costTools": {
+      "de": "ca. 150–400 € / Monat",
+      "en": "approx. €150–400 / mo"
     }
   },
   "Run": {

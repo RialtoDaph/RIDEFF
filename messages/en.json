@@ -1364,7 +1364,7 @@
     "stepX": "Step {x}",
     "yearOneCompared": "Year one, compared",
     "rIDEFFX": "RIDEFF {x}",
-    "usualWayFiguresArePlaceholdersTo": "“Usual way” figures are placeholders · to be confirmed",
+    "usualWayFiguresArePlaceholdersTo": "Typical ranges for small businesses · counted at the lower end",
     "everyDetail": "Every detail",
     "whatSIn": "What's in",
     "eachPlan": "each plan.",
@@ -1736,7 +1736,11 @@
     "test": "Test",
     "approve": "Approve",
     "projectBuild": "Project · Build",
-    "offer": "Offer · "
+    "offer": "Offer · ",
+    "n20HMo40": "approx. 20 h / mo × €40",
+    "costAgency": "approx. €5,000–15,000",
+    "costFreelancer": "approx. €600–1,200 / mo",
+    "costTools": "approx. €150–400 / mo"
   },
   "About": {
     "home": "Home /",
