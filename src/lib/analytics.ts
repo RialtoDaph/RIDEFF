@@ -22,3 +22,14 @@ export function nanaEvent(name: NanaEvent, props?: Record<string, string | numbe
     // Analytics must never break Nana.
   }
 }
+
+/** Outbound and contact CTAs (src/components/site/CtaTracker.tsx). */
+export type CtaType = 'whatsapp' | 'call' | 'email' | 'phone' | 'life_signup' | 'life_demo' | 'portal' | 'contact_page';
+
+export function ctaEvent(type: CtaType, page: string) {
+  try {
+    track('cta_click', { type, page });
+  } catch {
+    // Analytics must never break a link.
+  }
+}

@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing, type Locale } from '@/i18n/routing';
 import { Messages } from '@/components/site/Messages';
 import { pageMetadata, type MetaRoute } from './metadata';
+import { JsonLd, pageGraph } from './jsonld';
 
 type Params = { params: Promise<{ locale: string }> };
 
@@ -22,11 +23,15 @@ export function sitePage(route: MetaRoute, namespaces: string[], Body: Component
   return {
     generateMetadata: async ({ params }: Params): Promise<Metadata> => pageMetadata(await locale(params), route, opts),
     Page: async function Page({ params }: Params) {
-      setRequestLocale(await locale(params));
+      const l = await locale(params);
+      setRequestLocale(l);
       return (
-        <Messages namespaces={namespaces}>
-          <Body />
-        </Messages>
+        <>
+          {opts.noindex ? null : <JsonLd data={await pageGraph(route, l)} />}
+          <Messages namespaces={namespaces}>
+            <Body />
+          </Messages>
+        </>
       );
     },
   };

@@ -177,7 +177,8 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
-      <div data-screen-label="Subscribe" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
+      {/* Hidden until a newsletter provider is configured (next.config.ts → NEXT_PUBLIC_NEWSLETTER_ON). */}
+      {process.env.NEXT_PUBLIC_NEWSLETTER_ON ? (<div data-screen-label="Subscribe" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "40px", alignItems: "end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -217,7 +218,7 @@ Logic.prototype.render = function render() {
             </span>
           </div>
         </div>
-      </div>
+      </div>) : null}
       <Footer  />
     </>
   );

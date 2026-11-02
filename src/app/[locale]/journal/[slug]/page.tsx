@@ -8,6 +8,7 @@ import { formatDate, getPost, getPosts } from '@/lib/journal';
 import { opt } from '@/lib/img';
 import { WHATSAPP_URL } from '@/lib/site';
 import { socialMeta } from '@/lib/og';
+import { articleGraph, JsonLd } from '@/lib/jsonld';
 import { Messages } from '@/components/site/Messages';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
@@ -61,6 +62,7 @@ export default async function JournalPost({ params }: PageProps<'/[locale]/journ
 
   return (
     <Messages namespaces={[]}>
+      <JsonLd data={articleGraph(meta)} />
       <Nav active="journal" />
       <main id="main" className="px-[clamp(20px,3vw,40px)] pt-[140px] pb-[120px]">
         <article className="mx-auto max-w-[680px]">
