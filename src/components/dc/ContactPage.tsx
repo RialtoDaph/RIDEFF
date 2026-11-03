@@ -153,8 +153,8 @@ Logic.prototype.render = function render() {
               </span>
             </div>
           </div>
-          <input value={v.fName ?? ''} onChange={v.setName} placeholder={v.t("Contact.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
-          <input value={v.fContact ?? ''} onChange={v.setContact} placeholder={v.t("Contact.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+          <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Contact.yourName")} autoComplete="name" placeholder={v.t("Contact.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+          <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Contact.whatsAppNumberOrEmail")} placeholder={v.t("Contact.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <span style={{ fontSize: "14px", color: "#B8B3AA" }}>
               {v.t("Contact.whatDoYouNeed")}
@@ -167,7 +167,7 @@ Logic.prototype.render = function render() {
               </Fragment>))}
             </div>
           </div>
-          <textarea value={v.fMsg ?? ''} onChange={v.setMsg} placeholder={v.t("Contact.anythingElseOptional")} rows="3" style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none", resize: "vertical" }} />
+          <textarea value={v.fMsg ?? ''} onChange={v.setMsg} aria-label={v.t("Contact.anythingElseOptional")} placeholder={v.t("Contact.anythingElseOptional")} rows="3" style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none", resize: "vertical" }} />
           <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }}>
             {v.t("Contact.bookMyFreeSlot")}
           </a>

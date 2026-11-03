@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Build.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
@@ -915,7 +915,7 @@ Logic.prototype.render = function render() {
               {" "}
               {(v.layers ?? []).map((l, $index) => (<Fragment key={$index}>
                 {" "}
-                <div onClick={l?.go} style={{ position: "absolute", inset: "0", borderRadius: "18px", border: `1px solid ${l?.bd ?? ''}`, background: `${l?.bg ?? ''}`, transform: `${l?.tf ?? ''}`, transition: "transform .6s cubic-bezier(.16,1,.3,1),background .4s,border-color .4s", cursor: "pointer", overflow: "hidden", boxShadow: "0 30px 50px -20px rgba(0,0,0,.8)" }}>
+                <div {...press(l?.go)} style={{ position: "absolute", inset: "0", borderRadius: "18px", border: `1px solid ${l?.bd ?? ''}`, background: `${l?.bg ?? ''}`, transform: `${l?.tf ?? ''}`, transition: "transform .6s cubic-bezier(.16,1,.3,1),background .4s,border-color .4s", cursor: "pointer", overflow: "hidden", boxShadow: "0 30px 50px -20px rgba(0,0,0,.8)" }}>
                   {" "}
                   <div style={{ position: "absolute", left: "18px", right: "18px", top: "14px", display: "flex", gap: "10px", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase", color: `${l?.tc ?? ''}` }}>
                     <span style={{ width: "9px", height: "9px", borderRadius: "2px", background: `${l?.c ?? ''}` }} />

@@ -5,17 +5,14 @@ import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
 import { EMAIL_RE, createToken, isConfigured, sendConfirmation } from '@/lib/newsletter';
 import { rateLimit } from '@/lib/nana/rate-limit';
+import { readJson } from '@/lib/nana/validate';
 
 export const runtime = 'nodejs';
 
 /** Step 1 of the double opt-in: send the confirmation mail. Nothing is stored. */
 export async function POST(req: NextRequest) {
-  let body: { email?: unknown; locale?: unknown; company?: unknown };
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: 'bad_request' }, { status: 400 });
-  }
+  const body = await readJson(req, 4_000);
+  if (!body) return NextResponse.json({ error: 'bad_request' }, { status: 400 });
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
   const locale = typeof body.locale === 'string' && hasLocale(routing.locales, body.locale) ? body.locale : routing.defaultLocale;
 

@@ -8,7 +8,11 @@ import type { Locale } from '@/i18n/routing';
  */
 const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || (vercelHost ? `https://${vercelHost}` : 'https://rideff.com')).replace(/\/$/, '');
-export const APP_URL = 'https://app.rideff.com';
+/**
+ * RIDEFF Life web app (sign-up, demo, Nav CTA on /life). Temporary Vercel URL
+ * until app.rideff.com is live; then set NEXT_PUBLIC_LIFE_APP_URL (or change this default).
+ */
+export const APP_URL = (process.env.NEXT_PUBLIC_LIFE_APP_URL || 'https://ridef-life.vercel.app').replace(/\/$/, '');
 export const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://portal.rideff.com';
 /** Where "RIDEFF Life Demo" links point (the prototype's app stand-in). See TODO.md. */
 export const LIFE_DEMO_URL = process.env.NEXT_PUBLIC_LIFE_DEMO_URL || `${APP_URL}/demo`;

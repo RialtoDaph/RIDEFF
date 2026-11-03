@@ -21,7 +21,7 @@ export type DCProps = {
   locale: Locale;
   /** Internal route ("/work#x") → localized public path ("/projekte#x"). */
   href: (route: string) => string;
-  /** RIDEFF Life sign-up: app.rideff.com/signup?plan=…&lang=… */
+  /** RIDEFF Life sign-up: <APP_URL>/signup?plan=…&lang=… */
   signup: (plan: LifePlan) => string;
 };
 
@@ -120,6 +120,24 @@ export function useSwitchLocale() {
   );
 }
 
+
+/**
+ * Keyboard access for a clickable non-button element (cards, tabs, 3D layers
+ * whose styling breaks inside a <button>): role, focus and Enter/Space.
+ */
+export function press(fn?: () => void) {
+  return {
+    role: 'button' as const,
+    tabIndex: 0,
+    onClick: fn,
+    onKeyDown: (e: { key: string; preventDefault: () => void }) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        fn?.();
+      }
+    },
+  };
+}
 
 export { opt } from './img';
 

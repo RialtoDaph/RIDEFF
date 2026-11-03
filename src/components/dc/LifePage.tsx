@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Life.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 import { eur } from '@/lib/format';
@@ -830,7 +830,7 @@ Logic.prototype.render = function render() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,250px),1fr))", gap: "14px" }}>
           {(v.four ?? []).map((c, $index) => (<Fragment key={$index}>
             {" "}
-            <div onMouseEnter={c?.over} onMouseLeave={c?.out} onClick={c?.tap} style={{ position: "relative", height: "340px", perspective: "1400px", cursor: "pointer" }}>
+            <div onMouseEnter={c?.over} onMouseLeave={c?.out} {...press(c?.tap)} style={{ position: "relative", height: "340px", perspective: "1400px", cursor: "pointer" }}>
               {" "}
               <div style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", transform: `${c?.flip ?? ''}`, transition: "transform .9s cubic-bezier(.16,1,.3,1)" }}>
                 {" "}
@@ -1070,7 +1070,7 @@ Logic.prototype.render = function render() {
                     {v.ppl}
                   </b>
                 </span>
-                <input type="range" min="1" max="4" step="1" value={v.ppl ?? ''} onChange={v.setPpl} style={{ width: "100%", accentColor: "#E25F00" }} />
+                <input type="range" min="1" max="4" step="1" value={v.ppl ?? ''} onChange={v.setPpl} aria-label={v.t("Life.howManyPeopleLiveWithYou")} style={{ width: "100%", accentColor: "#E25F00" }} />
                 <span style={{ fontSize: "14px", color: "#5A4636" }}>
                   {v.t("Life.bestFit")}{" "}
                   <b style={{ color: "#E25F00" }}>

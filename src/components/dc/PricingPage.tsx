@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Pricing.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, press, useDC } from '@/lib/dc';
 import { eur as fmtEur } from '@/lib/format';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
@@ -770,7 +770,7 @@ Logic.prototype.render = function render() {
                 <div style={{ position: "relative", width: "min(300px,62vw)", aspectRatio: "1", transformStyle: "preserve-3d", transform: `translateY(${v.stackY ?? ''}) rotateX(58deg) rotateZ(${v.rz ?? ''})`, transition: "transform .6s cubic-bezier(.16,1,.3,1)" }}>
                   {" "}
                   {(v.slabs ?? []).map((s, $index) => (<Fragment key={$index}>
-                    <div onClick={s?.go} style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", transform: `translateZ(${s?.z ?? ''})`, transition: "transform .8s cubic-bezier(.16,1,.3,1)", cursor: "pointer" }}>
+                    <div {...press(s?.go)} style={{ position: "absolute", inset: "0", transformStyle: "preserve-3d", transform: `translateZ(${s?.z ?? ''})`, transition: "transform .8s cubic-bezier(.16,1,.3,1)", cursor: "pointer" }}>
                       {" "}
                       <div style={{ position: "absolute", inset: "0", borderRadius: "24px", transform: "translateZ(-16px)", background: `${s?.side ?? ''}`, transition: "background .5s" }} />
                       {" "}
@@ -817,7 +817,7 @@ Logic.prototype.render = function render() {
         <div data-rv="0" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,270px),1fr))", gap: "14px" }}>
           {(v.plans ?? []).map((p, $index) => (<Fragment key={$index}>
             {" "}
-            <div onClick={p?.go} style={{ cursor: "pointer", borderRadius: "24px", padding: "30px", display: "flex", flexDirection: "column", gap: "24px", background: `${p?.bg ?? ''}`, color: `${p?.fg ?? ''}`, transform: `translateY(${p?.ty ?? ''})`, transition: "background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)" }}>
+            <div {...press(p?.go)} style={{ cursor: "pointer", borderRadius: "24px", padding: "30px", display: "flex", flexDirection: "column", gap: "24px", background: `${p?.bg ?? ''}`, color: `${p?.fg ?? ''}`, transform: `translateY(${p?.ty ?? ''})`, transition: "background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
                   {p?.n}
