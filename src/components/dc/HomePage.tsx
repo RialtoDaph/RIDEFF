@@ -1,7 +1,7 @@
 // @ts-nocheck -- ported 1:1 from rideff_handoff/design/RIDEFF Home.dc.html (see scripts/dc-port/convert.mjs)
 'use client';
 import React, { Fragment } from 'react';
-import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
+import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 import { WhatsAppIcon } from '@/components/nana/icons';
@@ -331,6 +331,10 @@ class Logic extends DCLogic {
     });
     tick();
     this.ck = setInterval(tick, 30000);
+    this.onEsc = e => {
+      if (e.key === 'Escape' && this.state.caseOpen) this.renderVals().closeCase();
+    };
+    window.addEventListener('keydown', this.onEsc);
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onFxScroll);
@@ -341,6 +345,7 @@ class Logic extends DCLogic {
     window.removeEventListener('resize', this.measure);
     clearInterval(this.t);
     clearInterval(this.ck);
+    window.removeEventListener('keydown', this.onEsc);
   }
   tree() {
     const C = ['#FF9E47', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB'];
@@ -1330,7 +1335,7 @@ Logic.prototype.render = function render() {
             <div style={{ display: "grid", gridTemplateColumns: `${v.tabCols ?? ''}`, gap: "0", borderTop: "1px solid #D3CCC0" }}>
               {(v.doorTabs ?? []).map((d, $index) => (<Fragment key={$index}>
                 {" "}
-                <div onClick={d?.go} style={{ cursor: "pointer", padding: `${v.tabPad ?? ''} 4px`, display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `2px solid ${d?.line ?? ''}`, transition: "border-color .3s" }}>
+                <div {...press(d?.go)} style={{ cursor: "pointer", padding: `${v.tabPad ?? ''} 4px`, display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `2px solid ${d?.line ?? ''}`, transition: "border-color .3s" }}>
                   <span style={{ fontSize: `${v.tabFs ?? ''}`, fontWeight: "600", letterSpacing: "-0.02em", opacity: `${d?.op ?? ''}` }}>
                     {d?.door}
                   </span>
@@ -1880,8 +1885,8 @@ Logic.prototype.render = function render() {
                 </span>
               </div>
             </div>
-            <input value={v.fName ?? ''} onChange={v.setName} placeholder={v.t("Home.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
-            <input value={v.fContact ?? ''} onChange={v.setContact} placeholder={v.t("Home.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+            <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Home.yourName")} autoComplete="name" placeholder={v.t("Home.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+            <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Home.whatsAppNumberOrEmail")} placeholder={v.t("Home.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <span style={{ fontSize: "14px", color: "#B8B3AA" }}>
                 {v.t("Home.whatDoYouNeed")}
@@ -1935,7 +1940,7 @@ Logic.prototype.render = function render() {
       {v.caseOpen ? (<>
         {" "}
         <div onClick={v.closeCase} style={{ position: "fixed", inset: "0", zIndex: "95", background: "rgba(11,11,12,.72)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", animation: "rdFade .3s" }}>
-          <div data-lenis-prevent="1" onClick={v.stopBubble} style={{ width: "min(1120px,100%)", maxHeight: "calc(100vh - 48px)", overflow: "auto", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "28px", border: "1px solid #2A2A2C", display: "flex", flexDirection: "column" }}>
+          <div data-lenis-prevent="1" role="dialog" aria-modal="true" onClick={v.stopBubble} style={{ width: "min(1120px,100%)", maxHeight: "calc(100vh - 48px)", overflow: "auto", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "28px", border: "1px solid #2A2A2C", display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", padding: "22px 28px", borderBottom: "1px solid #1F1F21", position: "sticky", top: "0", background: "#0B0B0C", zIndex: "2" }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF9A50" }}>
                 {v.t("Home.caseTICOriginalsTillICollapse")}

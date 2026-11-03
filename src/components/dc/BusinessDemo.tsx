@@ -1413,7 +1413,7 @@ Logic.prototype.render = function render() {
                   <span style={{ fontSize: "20px", fontWeight: "700" }}>
                     {v.tx(v.d?.form)}
                   </span>
-                  <input value={v.name ?? ''} onChange={v.setName} placeholder={v.t("Demo.yourName")} style={{ padding: "14px 16px", borderRadius: "10px", border: "1px solid #E4E4E1", fontSize: "15px", outline: "none" }} />
+                  <input value={v.name ?? ''} onChange={v.setName} aria-label={v.t("Demo.yourName")} placeholder={v.t("Demo.yourName")} style={{ padding: "14px 16px", borderRadius: "10px", border: "1px solid #E4E4E1", fontSize: "15px", outline: "none" }} />
                   <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
                     {(v.slots ?? []).map((sl, $index) => (<Fragment key={$index}>
                       <button onClick={sl?.on} style={{ fontFamily: "var(--font-mono)", fontSize: "12px", padding: "10px 14px", borderRadius: "9999px", cursor: "pointer", whiteSpace: "nowrap", border: `1px solid ${sl?.bd ?? ''}`, background: `${sl?.bg ?? ''}`, color: `${sl?.fg ?? ''}`, whiteSpace: "nowrap" }}>
@@ -1554,7 +1554,7 @@ Logic.prototype.render = function render() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", fontWeight: "500", letterSpacing: "0.1em", background: "#FF6A00", color: "#fff", borderRadius: "4px", padding: "3px 7px" }}>
                   {v.t("Demo.aI")}
                 </span>
-                <input autoFocus={true} value={v.q ?? ''} onChange={v.qChange} placeholder={v.t("Demo.askYourBusiness")} style={{ flex: "1", border: "none", outline: "none", fontSize: "17px", background: "transparent" }} />
+                <input autoFocus={true} value={v.q ?? ''} onChange={v.qChange} aria-label={v.t("Demo.askYourBusiness")} placeholder={v.t("Demo.askYourBusiness")} style={{ flex: "1", border: "none", outline: "none", fontSize: "17px", background: "transparent" }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "#71717A" }}>
                   {"ESC"}
                 </span>

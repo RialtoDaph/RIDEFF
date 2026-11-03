@@ -3,7 +3,7 @@ import 'server-only';
 /**
  * Sliding-window limits for routes that cost money or send mail: ElevenLabs
  * sessions (credits), the summary (polls ElevenLabs for up to 30 s) and the
- * newsletter (a mail to any address). Counted per IP and per key (the Nana
+ * newsletter and WhatsApp (a message to any address or number). Counted per IP and per key (the Nana
  * session id, or the e-mail address for the newsletter).
  *
  * In memory, so per server instance: it stops one browser or script from
@@ -19,6 +19,8 @@ export const LIMITS = {
   chat: { perIp: 20, perSession: 8, windowMs: 10 * 60_000 },
   // One summary per chat or call; a few retries.
   summary: { perIp: 15, perSession: 6, windowMs: 10 * 60_000 },
+  // perSession = per phone number: no message bombing of one number (and no paid sends on repeat).
+  whatsapp: { perIp: 5, perSession: 2, windowMs: 60 * 60_000 },
   // perSession = per e-mail address: no mail bombing of one inbox.
   newsletter: { perIp: 5, perSession: 2, windowMs: 60 * 60_000 },
 } satisfies Record<string, Limit>;

@@ -23,6 +23,10 @@ class Logic extends DCLogic {
     };
     // SiteFx asks open overlays to close when a page transition starts.
     this.onNav = () => this.setState({ open: false });
+    this.onEsc = e => {
+      if (e.key === 'Escape' && this.state.open) this.setState({ open: false });
+    };
+    window.addEventListener('keydown', this.onEsc);
     window.addEventListener('resize', this.onR);
     window.addEventListener('scroll', this.onS, {
       passive: true
@@ -42,6 +46,7 @@ class Logic extends DCLogic {
     window.removeEventListener('resize', this.onR);
     window.removeEventListener('scroll', this.onS);
     document.removeEventListener('rideff:navigate', this.onNav);
+    window.removeEventListener('keydown', this.onEsc);
     if (this.state.open) { window.__lenis?.start(); document.documentElement.style.overflow = ''; }
   }
   PAGES = [['home', this.props.t("RideffNav.home"), this.props.href("/")], ['understand', this.props.t("RideffNav.understand"), this.props.href("/understand")], ['build', this.props.t("RideffNav.build"), this.props.href("/build")], ['run', this.props.t("RideffNav.run"), this.props.href("/run")], ['work', this.props.t("RideffNav.work"), this.props.href("/work")], ['pricing', this.props.t("RideffNav.pricing"), this.props.href("/pricing")], ['about', this.props.t("RideffNav.about"), this.props.href("/about")], ['life', this.props.t("RideffNav.life"), this.props.href("/life")], ['contact', this.props.t("RideffNav.contact"), this.props.href("/contact")], ['journal', this.props.t("RideffNav.journal"), this.props.href("/journal")]];
@@ -164,7 +169,7 @@ Logic.prototype.render = function render() {
                 </a>
               </>) : null}
               {v.showMenuBtn ? (<>
-                <button className="rn-narrow" onClick={v.toggle} style={{ background: "none", border: `1px solid ${v.fg ?? ''}`, color: `${v.fg ?? ''}`, borderRadius: "999px", padding: "10px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+                <button className="rn-narrow" onClick={v.toggle} aria-expanded={!!v.open} aria-controls="rn-menu" style={{ background: "none", border: `1px solid ${v.fg ?? ''}`, color: `${v.fg ?? ''}`, borderRadius: "999px", padding: "10px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
                   {v.t("RideffNav.menu")}
                 </button>
               </>) : null}
@@ -190,7 +195,7 @@ Logic.prototype.render = function render() {
                 </div>
               </>) : null}
               {v.showMenuBtn ? (<>
-                <button className="rn-narrow" onClick={v.toggle} style={{ background: "none", border: "none", color: `${v.fg ?? ''}`, padding: "9px 12px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+                <button className="rn-narrow" onClick={v.toggle} aria-expanded={!!v.open} aria-controls="rn-menu" style={{ background: "none", border: "none", color: `${v.fg ?? ''}`, padding: "9px 12px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
                   {v.t("RideffNav.menu")}
                 </button>
               </>) : null}
@@ -211,7 +216,7 @@ Logic.prototype.render = function render() {
       </div>
       {v.open ? (<>
         {" "}
-        <div data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
+        <div id="rn-menu" role="dialog" aria-modal="true" aria-label={v.t("RideffNav.menu")} data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             <button onClick={v.toggle} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>

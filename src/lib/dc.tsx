@@ -121,6 +121,24 @@ export function useSwitchLocale() {
 }
 
 
+/**
+ * Keyboard access for a clickable non-button element (cards, tabs, 3D layers
+ * whose styling breaks inside a <button>): role, focus and Enter/Space.
+ */
+export function press(fn?: () => void) {
+  return {
+    role: 'button' as const,
+    tabIndex: 0,
+    onClick: fn,
+    onKeyDown: (e: { key: string; preventDefault: () => void }) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        fn?.();
+      }
+    },
+  };
+}
+
 export { opt } from './img';
 
 export const prefersReducedMotion = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;

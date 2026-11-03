@@ -719,6 +719,7 @@ class Logic extends DCLogic {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ sessionId: this.sid, phone: s.phone, text, optIn: true })
           });
+          if (res.status === 429) return this.setState({ mineBusy: false, mineErr: this.props.t("nana.tooMany") });
           if (!res.ok) throw new Error(String(res.status));
           nanaEvent('nana_summary_wa_self');
           this.setState({ mineSent: true, mineBusy: false });
@@ -834,7 +835,7 @@ Logic.prototype.render = function render() {
                         </>) : null}
                         {v.editing ? (<>
                           {" "}
-                          <textarea value={v.sumText ?? ''} onChange={v.onSumText} rows="12" style={{ width: "100%", boxSizing: "border-box", resize: "vertical", background: "#F3EFE8", border: "1px solid #FF6A00", outline: "none", borderRadius: "12px", padding: "12px", font: "400 13px/1.5 var(--font-mono)", color: "#0A0A0A" }} />
+                          <textarea value={v.sumText ?? ''} onChange={v.onSumText} aria-label={v.t("RideffNana.yourSummary")} rows="12" style={{ width: "100%", boxSizing: "border-box", resize: "vertical", background: "#F3EFE8", border: "1px solid #FF6A00", outline: "none", borderRadius: "12px", padding: "12px", font: "400 13px/1.5 var(--font-mono)", color: "#0A0A0A" }} />
                           {" "}
                           <span style={{ fontSize: "11px", color: "#8C877E" }}>
                             {v.t("RideffNana.boldAndItalicShowAsFormatting")}
