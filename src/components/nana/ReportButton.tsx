@@ -1,35 +1,14 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
-
 /**
- * Owner-only shortcut to the private RIDEFF Report (claude.ai artifact) where the
- * owner leaves feedback. Hidden for visitors: it appears only in a browser where
- * the owner opened any page with `?report=on` once (remembered in localStorage);
- * `?report=off` hides it again. The report itself is private, so the link is
- * useless to anyone else even if they found it.
+ * Shortcut to the owner's private RIDEFF Report (claude.ai artifact) where the
+ * owner leaves feedback. Shown to everyone while the site is pre-launch.
+ * TODO(before launch): remove this button (see TODO.md). The report itself is
+ * private and asks for a claude.ai sign-in, so it is useless to anyone else.
  */
 const REPORT_URL = 'https://claude.ai/artifact/44G2XpY9G9X9Pj5shcoeFE';
-const KEY = 'rideff-report';
-
-function isOn(): boolean {
-  try {
-    const p = new URLSearchParams(window.location.search).get('report');
-    if (p === 'on') localStorage.setItem(KEY, '1');
-    if (p === 'off') localStorage.removeItem(KEY);
-    return localStorage.getItem(KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
-const subscribe = () => () => {};
 
 export default function ReportButton() {
-  const on = useSyncExternalStore(subscribe, isOn, () => false);
-
-  if (!on) return null;
-
   return (
     <a
       className="nana-report"
