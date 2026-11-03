@@ -21,7 +21,7 @@ export type DCProps = {
   locale: Locale;
   /** Internal route ("/work#x") → localized public path ("/projekte#x"). */
   href: (route: string) => string;
-  /** RIDEFF Life sign-up: app.rideff.com/signup?plan=…&lang=… */
+  /** RIDEFF Life sign-up: <APP_URL>/signup?plan=…&lang=… */
   signup: (plan: LifePlan) => string;
 };
 
