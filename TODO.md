@@ -61,6 +61,8 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 
 ## 5. Technical follow-ups
 
+- [ ] **Remove the Report button before launch**: the orange button above the floating WhatsApp button (`src/components/nana/ReportButton.tsx`, rendered in `Nana.tsx`) links to the owner's private feedback page and is visible to everyone while the site is pre-launch.
+
 - [ ] Vercel Analytics custom events (`nana_*`, and `cta_click` with `type` = whatsapp | call | email | phone | life_signup | life_demo | portal | contact_page and `page`) need a Pro/Enterprise plan to show up; Cal.com links get `utm_source/utm_medium/utm_content` (the page) on click; page views work on every plan. Add the cookie-free analytics notice to Datenschutz if wording changes (section 3 already covers it).
 - [ ] The ported page components (`src/components/dc/*`) are type-unchecked 1:1 ports (`// @ts-nocheck`); refactor into typed components page by page when content changes.
 - [ ] Structured data (`src/lib/jsonld.tsx`: business, founder, website, FAQs, offers, articles, breadcrumbs) and `/llms.txt` (`src/app/llms.txt/route.ts`) repeat facts from the site: update them when prices, address or FAQs change. Add `address.streetAddress`/`postalCode` once the Impressum has them.
