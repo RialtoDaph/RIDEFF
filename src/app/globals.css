@@ -188,7 +188,8 @@ html.lenis body {
   .nana-dock button:has(> .nana-label) {
     padding: 1px !important;
   }
-  .nana-dock .nana-wa {
+  .nana-dock .nana-wa,
+  .nana-report {
     width: 46px !important;
     height: 46px !important;
   }
