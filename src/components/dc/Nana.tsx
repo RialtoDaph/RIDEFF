@@ -6,6 +6,7 @@ import { nanaEvent } from '@/lib/analytics';
 import { startTextChat, startVoice, suggestsContact } from '@/components/nana/elevenlabs-client';
 import { ChatIcon, HangUpIcon, MicIcon, MicOffIcon, PhoneIcon, WhatsAppIcon } from '@/components/nana/icons';
 import { PICKUP_AFTER_MS, startRingback } from '@/components/nana/ringback';
+import ReportButton from '@/components/nana/ReportButton';
 
 
 /**
@@ -1043,6 +1044,7 @@ Logic.prototype.render = function render() {
           </div>
         ) : null}
         {v.showLauncher ? (<>
+          <ReportButton />
           <div className="nana-dock" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#F4F1EC", border: "1px solid rgba(10,10,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
               <button onClick={v.toggle} aria-label={v.launcherT} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
