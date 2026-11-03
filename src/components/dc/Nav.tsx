@@ -77,15 +77,12 @@ class Logic extends DCLogic {
       linkFs: heroMode && s.w <= 1480 ? '13px' : '14px',
       linkPad: heroMode && s.w <= 1480 ? '8px 12px' : '9px 16px',
       links: this.PAGES.slice(0, 8).filter(p => s.sc ? p[0] !== 'home' : !(heroMode && s.w <= 1480 && (p[0] === 'home' || p[0] === 'life'))).map(p => {
-        const on = p[0] === a,
-          life = p[0] === 'life';
+        const on = p[0] === a;
         return {
           t: p[1],
           href: p[2],
           bg: on ? dark ? '#F4F4F2' : '#0A0A0A' : 'transparent',
-          c: on ? dark ? '#0A0A0A' : '#F4F4F2' : fg,
-          ff: life ? "var(--font-serif)" : 'var(--font-sans)',
-          fs: life ? 'italic' : 'normal'
+          c: on ? dark ? '#0A0A0A' : '#F4F4F2' : fg
         };
       }),
       menu: this.PAGES.map((p, k) => ({
@@ -142,7 +139,7 @@ Logic.prototype.render = function render() {
               {" "}
               <div className="rn-wide" style={{ pointerEvents: "auto", display: "flex", gap: "2px", alignItems: "center", padding: "5px", borderRadius: "999px", border: `1px solid ${v.pillBd ?? ''}`, background: `${v.pillBg ?? ''}`, backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }}>
                 {(v.links ?? []).map((l, $index) => (<Fragment key={$index}>
-                  <a href={l?.href} style={{ fontSize: `${v.linkFs ?? ''}`, padding: `${v.linkPad ?? ''}`, whiteSpace: "nowrap", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none", fontFamily: `${l?.ff ?? ''}`, fontStyle: `${l?.fs ?? ''}`, transition: "background .2s" }}>
+                  <a href={l?.href} style={{ fontSize: `${v.linkFs ?? ''}`, padding: `${v.linkPad ?? ''}`, whiteSpace: "nowrap", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none", transition: "background .2s" }}>
                     {l?.t}
                   </a>
                 </Fragment>))}
@@ -188,7 +185,7 @@ Logic.prototype.render = function render() {
               {v.showLinks ? (<>
                 <div className="rn-wide" style={{ display: "flex", gap: "2px" }}>
                   {(v.links ?? []).map((l, $index) => (<Fragment key={$index}>
-                    <a href={l?.href} style={{ fontSize: "14px", padding: "9px 14px", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none", fontFamily: `${l?.ff ?? ''}`, fontStyle: `${l?.fs ?? ''}` }}>
+                    <a href={l?.href} style={{ fontSize: "14px", padding: "9px 14px", borderRadius: "999px", background: `${l?.bg ?? ''}`, color: `${l?.c ?? ''}`, textDecoration: "none" }}>
                       {l?.t}
                     </a>
                   </Fragment>))}

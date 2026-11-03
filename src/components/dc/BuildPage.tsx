@@ -791,7 +791,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Build.sixAppsYouRent")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Build.onePlatformYouOwn")}
             </span>
           </h2>
@@ -899,7 +899,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Build.sixLayers")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Build.builtAsOne")}
               </span>
             </h2>
@@ -986,7 +986,7 @@ Logic.prototype.render = function render() {
               </div>
               <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
                 {v.t("Build.fromWebsiteForm")}{" "}
-                <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+                <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                   {v.t("Build.toPaidInvoice")}
                 </span>
               </h2>
@@ -1055,7 +1055,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Build.ifItRunsYourBusiness")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Build.iCanBuildIt")}
               </span>
             </h2>
@@ -1174,7 +1174,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "960px", textWrap: "balance" }}>
               {v.t("Build.threeBuilds")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Build.layerByLayer")}
               </span>
             </h2>
@@ -1295,7 +1295,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
             {v.t("Build.fromFirstCallTo")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Build.yourOwnPlatform")}
             </span>
           </h2>
@@ -1336,7 +1336,7 @@ Logic.prototype.render = function render() {
         </div>
         <h2 style={{ margin: "0", fontSize: "clamp(46px,6vw,100px)", lineHeight: ".96", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1100px", textWrap: "balance" }}>
           {v.t("Build.bringYourSixToolsLeaveWith")}{" "}
-          <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+          <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
             {v.t("Build.onePlatform")}
           </span>
         </h2>

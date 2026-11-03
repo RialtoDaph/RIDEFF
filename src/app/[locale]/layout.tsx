@@ -35,14 +35,6 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
   display: 'swap',
 });
-const instrumentSerif = localFont({
-  src: [
-    { path: '../../fonts/InstrumentSerif-Regular.woff2', weight: '400', style: 'normal' },
-    { path: '../../fonts/InstrumentSerif-Italic.woff2', weight: '400', style: 'italic' },
-  ],
-  variable: '--font-instrument-serif',
-  display: 'swap',
-});
 
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
   const { locale } = await params;
@@ -64,7 +56,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
+    <html lang={locale} className={`${geist.variable} ${geistMono.variable}`}>
       <body>
         <JsonLd data={await siteGraph(locale)} />
         <Messages namespaces={[]}>

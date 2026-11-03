@@ -83,7 +83,7 @@ Logic.prototype.render = function render() {
             </div>
             <h1 style={{ margin: "0", fontSize: "clamp(50px,6.6vw,104px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Storefront.aShopWindowThatNever")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Storefront.closes")}
               </span>
             </h1>
@@ -132,7 +132,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Storefront.tICOriginals")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400" }}>
                 {v.t("Storefront.layerByLayer")}
               </span>
             </h2>
@@ -245,7 +245,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
               {v.t("Storefront.notJustAWebsite")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400" }}>
                 {v.t("Storefront.theFrontDoor")}
               </span>
               {" "}{v.t("Storefront.ofYourSystem")}
@@ -293,7 +293,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(42px,5.6vw,88px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Storefront.yourNextCustomerIsAlreadySearching")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Storefront.beThere")}
             </span>
           </h2>

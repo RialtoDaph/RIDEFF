@@ -727,7 +727,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.sixLayers")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Run.checkedEveryNight")}
               </span>
             </h2>
@@ -811,7 +811,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.onePlace")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Run.oneThread")}
               </span>
               {" "}{v.t("Run.perTopic")}
@@ -894,7 +894,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
               {v.t("Run.downAt")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Run.backAt")}
               </span>
             </h2>
@@ -984,7 +984,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(38px,4.4vw,70px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.yourPlatform")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Run.keepsGrowing")}
               </span>
             </h2>
@@ -1058,7 +1058,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Run.oneEmailThatTellsYou")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Run.itSRunning")}
             </span>
           </h2>
@@ -1123,7 +1123,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Run.oneReceipt")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Run.noSurprises")}
             </span>
           </h2>
@@ -1197,7 +1197,7 @@ Logic.prototype.render = function render() {
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
             {v.t("Run.measured")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Run.notDescribed")}
             </span>
           </h2>

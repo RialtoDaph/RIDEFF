@@ -96,7 +96,7 @@ Logic.prototype.render = function render() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "40px", alignItems: "end" }}>
           <h1 style={{ margin: "0", fontSize: "clamp(56px,7.4vw,116px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Journal.notesFromThe")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
               {v.t("Journal.workbench")}
             </span>
           </h1>
@@ -187,7 +187,7 @@ Logic.prototype.render = function render() {
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(42px,5.6vw,88px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Journal.newNote")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
                 {v.t("Journal.youLlKnow")}
               </span>
             </h2>

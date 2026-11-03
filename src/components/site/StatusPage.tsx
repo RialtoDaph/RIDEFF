@@ -19,7 +19,7 @@ export function StatusPage({ kicker, title, accent, text, children }: { kicker: 
             {accent ? (
               <>
                 {' '}
-                <span className="font-serif font-normal italic text-orange">{accent}</span>
+                <span className="font-accent font-normal text-orange">{accent}</span>
               </>
             ) : null}
           </h1>

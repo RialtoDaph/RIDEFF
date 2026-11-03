@@ -404,7 +404,7 @@ Logic.prototype.render = function render() {
             <a href={v.href("/run")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
               {v.t("RideffFooter.n03Run")}
             </a>
-            <a href={v.href("/life")} style={{ color: "#B8B3AA", textDecoration: "none", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "16px" }}>
+            <a href={v.href("/life")} style={{ color: "#B8B3AA", textDecoration: "none", fontFamily: "var(--font-accent)", fontSize: "16px" }}>
               {"RIDEFF Life"}
             </a>
           </div>
