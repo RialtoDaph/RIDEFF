@@ -61,7 +61,6 @@
   /* Type (next/font variables are set on <html>) */
   --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-accent: var(--font-sans);
 
   /* Radius */
   --radius-tag: 4px;

@@ -38,9 +38,9 @@ Logic.prototype.render = function render() {
               {v.t("About.about")}
             </span>
           </div>
-          <h1 style={{ margin: "0", fontSize: "clamp(56px,7.4vw,116px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
+          <h1 style={{ margin: "0", fontSize: "clamp(46px,6.1vw,95px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("About.iMRialtoI")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("About.get")}
             </span>
             {" "}{v.t("About.theAISoYouDonT")}
@@ -76,9 +76,9 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
               {v.t("About.n01ThePathHere")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
               {v.t("About.fourChapters")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("About.oneLesson")}
               </span>
               {" "}{v.t("About.each")}
@@ -113,7 +113,7 @@ Logic.prototype.render = function render() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("About.n02HowIWork")}
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
             {v.t("About.threeRulesIDonTBend")}
           </h2>
         </div>
@@ -121,7 +121,7 @@ Logic.prototype.render = function render() {
           {(v.rules ?? []).map((r, $index) => (<Fragment key={$index}>
             {" "}
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #0A0A0A", paddingTop: "22px" }}>
-              <span style={{ fontFamily: "var(--font-accent)", fontSize: "56px", lineHeight: "1", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "56px", lineHeight: "1", color: "#FF6A00" }}>
                 {r?.n}
               </span>
               <span style={{ fontSize: "26px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -149,9 +149,9 @@ Logic.prototype.render = function render() {
       <div data-screen-label="Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
-          <h2 style={{ margin: "0", fontSize: "clamp(42px,5.6vw,88px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("About.talkToThePersonWho")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("About.buildsIt")}
             </span>
           </h2>

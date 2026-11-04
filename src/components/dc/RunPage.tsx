@@ -636,7 +636,7 @@ Logic.prototype.render = function render() {
                   {v.phLabel}
                 </span>
               </div>
-              <h1 style={{ margin: "0", fontSize: "clamp(46px,6.4vw,104px)", lineHeight: ".94", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
+              <h1 style={{ margin: "0", fontSize: "clamp(38px,5.2vw,85px)", lineHeight: ".94", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
                 {v.phHead}
               </h1>
               <p style={{ margin: "0", fontSize: "clamp(16px,1.4vw,20px)", lineHeight: "1.5", opacity: ".75", maxWidth: "500px", textWrap: "pretty" }}>
@@ -725,9 +725,9 @@ Logic.prototype.render = function render() {
                 {v.t("Run.whatIWatch")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.sixLayers")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Run.checkedEveryNight")}
               </span>
             </h2>
@@ -809,9 +809,9 @@ Logic.prototype.render = function render() {
                 {v.t("Run.yourPortal")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.onePlace")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Run.oneThread")}
               </span>
               {" "}{v.t("Run.perTopic")}
@@ -892,9 +892,9 @@ Logic.prototype.render = function render() {
                 {v.t("Run.whenSomethingBreaks")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
               {v.t("Run.downAt")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Run.backAt")}
               </span>
             </h2>
@@ -982,9 +982,9 @@ Logic.prototype.render = function render() {
                 {v.t("Run.itGrowsWithYou")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(38px,4.4vw,70px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(31px,3.6vw,57px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Run.yourPlatform")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Run.keepsGrowing")}
               </span>
             </h2>
@@ -1056,9 +1056,9 @@ Logic.prototype.render = function render() {
               {v.t("Run.everyMonday")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Run.oneEmailThatTellsYou")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Run.itSRunning")}
             </span>
           </h2>
@@ -1121,9 +1121,9 @@ Logic.prototype.render = function render() {
               {v.t("Run.whatSIncluded")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Run.oneReceipt")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Run.noSurprises")}
             </span>
           </h2>
@@ -1195,9 +1195,9 @@ Logic.prototype.render = function render() {
               {v.t("Run.thePromise")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
             {v.t("Run.measured")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Run.notDescribed")}
             </span>
           </h2>

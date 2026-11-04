@@ -163,8 +163,12 @@
       "en": "Growth connects four areas, usually customers, sales, team and operations, for €249 a month plus setup from €1,990. Want me to book a call with Rialto?"
     },
     "iVeStoodWhereYouStand": {
-      "de": "Ich stand genau da, wo Sie stehen: Rechnungen hinterherlaufen, dieselben Fragen beantworten, fünf Tools jonglieren, die nie miteinander reden.",
-      "en": "I've stood where you stand: chasing invoices, answering the same questions, juggling five tools that never talk to each other."
+      "de": "Ich stand genau da, wo Sie stehen: Daten in fünf Tools, Entscheidungen aus dem Bauch.",
+      "en": "I've stood where you stand: data in five tools, decisions on gut feeling."
+    },
+    "soIBuildWhatIWished": {
+      "de": "Also habe ich alles an einem Ort gebündelt und eine KI dazugeholt, die mitdenkt und Probleme früh erkennt. Das baue ich heute für Sie.",
+      "en": "So I brought everything into one place and added an AI that thinks along and spots problems early. Today I build that for you."
     },
     "aSampleBusinessBrainDashboardFlows": {
       "de": "Ein Beispiel-Betriebsgehirn: Dashboard, Abläufe und KI-Berichte zum Durchklicken.",
@@ -175,8 +179,8 @@
       "en": "Where every client approves offers, pays and talks to me. One thread per topic."
     },
     "oneAreaConnectedUsuallyCustomersAnd": {
-      "de": "Ein Bereich verbunden, meist Kunden und Vertrieb.",
-      "en": "One area connected, usually customers and sales."
+      "de": "Ein Bereich verbunden, meist Kunden und Anfragen.",
+      "en": "One area connected, usually customers and inquiries."
     },
     "mo": {
       "de": "€ – / Monat",
@@ -507,8 +511,8 @@
       "en": "Proposed · to be confirmed"
     },
     "oneAreaConnectedUsuallyCustomersAnd": {
-      "de": "Ein Bereich verbunden, meist Kunden und Vertrieb.",
-      "en": "One area connected, usually customers and sales."
+      "de": "Ein Bereich verbunden, meist Kunden und Anfragen.",
+      "en": "One area connected, usually customers and inquiries."
     },
     "changesQuestionsAndChatWithMe": {
       "de": "Änderungen, Fragen und Chat mit mir, nicht mit einer Ticket-Warteschlange.",

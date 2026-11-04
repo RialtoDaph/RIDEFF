@@ -488,5 +488,167 @@
       "de": "Kostenloses Erstgespräch · 15 Min. über Cal.com",
       "en": "Free first call · 15 min via Cal.com"
     }
+  },
+  "Build": {
+    "mapCustomers": {
+      "de": "Kunden",
+      "en": "Customers"
+    },
+    "mapSales": {
+      "de": "Vertrieb",
+      "en": "Sales"
+    },
+    "mapTeam": {
+      "de": "Team",
+      "en": "Team"
+    },
+    "mapOperations": {
+      "de": "Betrieb",
+      "en": "Operations"
+    },
+    "mapFinance": {
+      "de": "Finanzen",
+      "en": "Finance"
+    },
+    "mapMarketing": {
+      "de": "Marketing",
+      "en": "Marketing"
+    },
+    "mapYourBrain": {
+      "de": "Ihr Gehirn",
+      "en": "Your brain"
+    },
+    "mapIllustrative": {
+      "de": "Beispielhaft. Der genaue Umfang wird nach dem ersten Gespräch festgelegt.",
+      "en": "Illustrative. Exact scope is set after the first call."
+    },
+    "mapCta": {
+      "de": "Gespräch vereinbaren →",
+      "en": "Book a call →"
+    },
+    "mapLabel": {
+      "de": "Ihr Startpunkt",
+      "en": "Your starting point"
+    },
+    "mapHeadline": {
+      "de": "Wo verlieren Sie",
+      "en": "Where do you lose"
+    },
+    "mapHeadlineAccent": {
+      "de": "am meisten Zeit?",
+      "en": "the most time?"
+    },
+    "mapBody": {
+      "de": "Tippen Sie einen oder mehrere Bereiche an. Ihr System wächst von dort aus, Sie müssen nicht alles auf einmal umstellen.",
+      "en": "Tap one or more areas. Your system grows from there, so you don't have to switch everything at once."
+    },
+    "mapExample": {
+      "de": "Beispiel",
+      "en": "Example"
+    },
+    "mapTasksIn": {
+      "de": "Das läuft dann von selbst",
+      "en": "What then runs by itself"
+    },
+    "mapStartWith": {
+      "de": "Damit starten wir",
+      "en": "We'd start with"
+    },
+    "mapPickPrompt": {
+      "de": "Wählen Sie mindestens einen Bereich.",
+      "en": "Pick at least one area."
+    },
+    "mapWhole": {
+      "de": "Ganzes System",
+      "en": "Whole system"
+    },
+    "mapCorePrice": {
+      "de": "149 € / Monat · Einrichtung ab 1.290 €",
+      "en": "€149 a month · setup from €1,290"
+    },
+    "mapGrowthPrice": {
+      "de": "249 € / Monat · Einrichtung ab 1.990 €",
+      "en": "€249 a month · setup from €1,990"
+    },
+    "mapPrices": {
+      "de": "Preise ansehen",
+      "en": "See pricing"
+    },
+    "mapT00": {
+      "de": "Anfragen beantworten",
+      "en": "Answer inquiries"
+    },
+    "mapT01": {
+      "de": "Termine bestätigen",
+      "en": "Confirm bookings"
+    },
+    "mapT02": {
+      "de": "Rückfragen klären",
+      "en": "Clear up questions"
+    },
+    "mapT10": {
+      "de": "Angebote entwerfen",
+      "en": "Draft offers"
+    },
+    "mapT11": {
+      "de": "Nachfassen",
+      "en": "Send follow-ups"
+    },
+    "mapT12": {
+      "de": "Pipeline im Blick",
+      "en": "Keep the pipeline in view"
+    },
+    "mapT20": {
+      "de": "Schichten planen",
+      "en": "Plan shifts"
+    },
+    "mapT21": {
+      "de": "Aufgaben verteilen",
+      "en": "Assign tasks"
+    },
+    "mapT22": {
+      "de": "Check-ins",
+      "en": "Run check-ins"
+    },
+    "mapT30": {
+      "de": "Bestellungen",
+      "en": "Handle orders"
+    },
+    "mapT31": {
+      "de": "Lagerbestand",
+      "en": "Track stock"
+    },
+    "mapT32": {
+      "de": "Lieferanten",
+      "en": "Manage suppliers"
+    },
+    "mapT40": {
+      "de": "Rechnungen schreiben",
+      "en": "Write invoices"
+    },
+    "mapT41": {
+      "de": "Zahlungen prüfen",
+      "en": "Check payments"
+    },
+    "mapT42": {
+      "de": "Mahnungen senden",
+      "en": "Send reminders"
+    },
+    "mapT50": {
+      "de": "Posts planen",
+      "en": "Plan posts"
+    },
+    "mapT51": {
+      "de": "Newsletter",
+      "en": "Send newsletters"
+    },
+    "mapT52": {
+      "de": "Bewertungen",
+      "en": "Handle reviews"
+    },
+    "mapWholePrice": {
+      "de": "449 € / Monat · Einrichtung ab 3.900 €",
+      "en": "€449 a month · setup from €3,900"
+    }
   }
 }

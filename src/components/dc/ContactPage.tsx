@@ -75,9 +75,9 @@ Logic.prototype.render = function render() {
               {v.t("Contact.contact")}
             </span>
           </div>
-          <h1 style={{ margin: "0", fontSize: "clamp(50px,6.4vw,100px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+          <h1 style={{ margin: "0", fontSize: "clamp(41px,5.2vw,82px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Contact.gotAProblemWorth")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Contact.n15Minutes")}
             </span>
           </h1>

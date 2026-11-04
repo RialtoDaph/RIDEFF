@@ -86,9 +86,9 @@ Logic.prototype.render = function render() {
             </span>
             {" · 02.2"}
           </div>
-          <h1 style={{ margin: "0", fontSize: "clamp(50px,6.4vw,100px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+          <h1 style={{ margin: "0", fontSize: "clamp(41px,5.2vw,82px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Workbench.teamAppsBuiltAroundHowYour")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Workbench.works")}
             </span>
           </h1>
@@ -166,9 +166,9 @@ Logic.prototype.render = function render() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Workbench.n01WhatItDoes")}
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
             {v.t("Workbench.fourThingsEveryTeamNeeds")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400" }}>
+            <span>
               {v.t("Workbench.nothingItDoesnT")}
             </span>
           </h2>
@@ -198,7 +198,7 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
               {v.t("Workbench.n02InsideTheApp")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Workbench.tapThroughIt")}
             </h2>
             <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
@@ -252,7 +252,7 @@ Logic.prototype.render = function render() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Workbench.n03MadeFor")}
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
             {v.t("Workbench.teamsThatDonTSitAt")}
           </h2>
         </div>
@@ -280,9 +280,9 @@ Logic.prototype.render = function render() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Workbench.startHere")}
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(42px,5.6vw,88px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Workbench.bringTheWhatsAppGroupsAndPaper")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Workbench.oneApp")}
             </span>
           </h2>

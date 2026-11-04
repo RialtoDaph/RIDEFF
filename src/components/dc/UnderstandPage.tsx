@@ -450,7 +450,7 @@ Logic.prototype.render = function render() {
                 {v.capLabel}
               </span>
             </div>
-            <h1 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,72px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h1 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,59px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.capHead}
             </h1>
             <p style={{ margin: "0", fontSize: "clamp(15px,1.3vw,19px)", lineHeight: "1.5", color: "#3A3731", textWrap: "pretty" }}>
@@ -490,9 +490,9 @@ Logic.prototype.render = function render() {
               {v.t("Understand.theFirstCall")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fifteenMinutes")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Understand.iListenYouWatchItTake")}
             </span>
           </h2>
@@ -575,9 +575,9 @@ Logic.prototype.render = function render() {
               {v.t("Understand.yourWeek")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fortyHours")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Understand.howManyAreReallyYours")}
             </span>
           </h2>
@@ -655,9 +655,9 @@ Logic.prototype.render = function render() {
                     {v.t("Understand.whatYouGet")}
                   </span>
                 </div>
-                <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+                <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
                   {v.t("Understand.aPlanOnPaper")}{" "}
-                  <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+                  <span style={{ color: "#FF6A00" }}>
                     {v.t("Understand.notAPitch")}
                   </span>
                 </h2>
@@ -696,7 +696,7 @@ Logic.prototype.render = function render() {
                       {v.t("Understand.offerYourBusiness")}
                     </span>
                   </div>
-                  <div style={{ fontFamily: "var(--font-accent)", fontSize: "34px", lineHeight: "1.05" }}>
+                  <div style={{ fontFamily: "var(--font-sans)", fontSize: "34px", lineHeight: "1.05" }}>
                     {v.t("Understand.yourBusinessBrainPhaseOne")}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>

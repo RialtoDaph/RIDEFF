@@ -14,12 +14,12 @@ export function StatusPage({ kicker, title, accent, text, children }: { kicker: 
       <main id="main" className="flex min-h-[100svh] items-center bg-night text-on-dark">
         <div className="mx-auto flex w-full max-w-[1480px] flex-col gap-8 px-[clamp(20px,3vw,40px)] pt-[140px] pb-[120px]">
           <div className="font-mono text-[12px] text-orange">{kicker}</div>
-          <h1 className="m-0 max-w-[1000px] text-[clamp(48px,7vw,108px)] leading-[.94] font-semibold tracking-[-0.055em]">
+          <h1 className="m-0 max-w-[1000px] text-[clamp(39px,5.7vw,89px)] leading-[.94] font-semibold tracking-[-0.055em]">
             {title}
             {accent ? (
               <>
                 {' '}
-                <span className="font-accent font-normal text-orange">{accent}</span>
+                <span className="text-orange">{accent}</span>
               </>
             ) : null}
           </h1>

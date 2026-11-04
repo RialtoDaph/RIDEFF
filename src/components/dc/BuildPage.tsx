@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import BrainRollout from '@/components/dc/BrainRollout';
 import { num } from '@/lib/format';
 
 class Logic extends DCLogic {
@@ -81,9 +82,14 @@ class Logic extends DCLogic {
     const root = this.casesRef.current;
     if (root) n.ce = [...root.querySelectorAll('[data-case]')].map(el => cl((vh * 0.9 - el.getBoundingClientRect().top) / (vh * 0.65)));
     const c = this.collapseRef.current;
-    // Stacked on phones, the card stage sits below the counters: time the collapse to the stage itself.
-    const cs = c && (this.state.narrow ? c.lastElementChild : c);
-    if (cs) n.cp = cl((vh * .8 - cs.getBoundingClientRect().top) / (vh * .9));
+    // Time the collapse to the card stage itself: it starts once the stage is in view and lands as it reaches the middle.
+    const cs = c && c.lastElementChild;
+    if (cs) {
+      const r = cs.getBoundingClientRect(),
+        from = vh * .7,
+        to = vh * .4 - r.height / 2;
+      n.cp = cl((from - r.top) / (from - to));
+    }
     const l = this.layersRef.current;
     if (l) n.lp = cl((vh * .85 - l.getBoundingClientRect().top) / (vh * .8));
     const j = this.journeyRef.current;
@@ -739,7 +745,7 @@ Logic.prototype.render = function render() {
                 {v.capLabel}
               </span>
             </div>
-            <h1 style={{ margin: "0", fontSize: "clamp(36px,min(5.6vw,8vh),92px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h1 style={{ margin: "0", fontSize: "clamp(30px,min(4.6vw,6.6vh),75px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.capHead}
             </h1>
             <p style={{ margin: "0", fontSize: "clamp(17px,1.5vw,21px)", lineHeight: "1.5", color: "#B8B3AA", textWrap: "pretty", maxWidth: "540px" }}>
@@ -789,9 +795,9 @@ Logic.prototype.render = function render() {
               {v.t("Build.theToolTax")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Build.sixAppsYouRent")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Build.onePlatformYouOwn")}
             </span>
           </h2>
@@ -897,9 +903,9 @@ Logic.prototype.render = function render() {
                 {v.t("Build.insideYourPlatform")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Build.sixLayers")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Build.builtAsOne")}
               </span>
             </h2>
@@ -984,9 +990,9 @@ Logic.prototype.render = function render() {
                   {v.t("Build.oneRequestStartToFinish")}
                 </span>
               </div>
-              <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
+              <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
                 {v.t("Build.fromWebsiteForm")}{" "}
-                <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+                <span style={{ color: "#FF6A00" }}>
                   {v.t("Build.toPaidInvoice")}
                 </span>
               </h2>
@@ -1053,9 +1059,9 @@ Logic.prototype.render = function render() {
                 {v.t("Build.whatIBuild")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Build.ifItRunsYourBusiness")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Build.iCanBuildIt")}
               </span>
             </h2>
@@ -1172,9 +1178,9 @@ Logic.prototype.render = function render() {
                 {v.t("Build.buildsTakenApart")}
               </span>
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "960px", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "960px", textWrap: "balance" }}>
               {v.t("Build.threeBuilds")}{" "}
-              <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Build.layerByLayer")}
               </span>
             </h2>
@@ -1285,17 +1291,18 @@ Logic.prototype.render = function render() {
           {" "}
         </Fragment>))}
       </div>
-      <div data-screen-label="06 Process" style={{ padding: "140px clamp(20px,3vw,40px) 100px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
+      <BrainRollout t={v.t} contactHref={v.href("/contact")} pricingHref={v.href("/pricing")} />
+      <div data-screen-label="07 Process" style={{ padding: "140px clamp(20px,3vw,40px) 100px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-            {"(06) "}
+            {"(07) "}
             <span style={{ color: "#F4F4F2" }}>
               {v.t("Build.process")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
             {v.t("Build.fromFirstCallTo")}{" "}
-            <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Build.yourOwnPlatform")}
             </span>
           </h2>
@@ -1334,9 +1341,9 @@ Logic.prototype.render = function render() {
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
           {v.t("Build.startHere")}
         </div>
-        <h2 style={{ margin: "0", fontSize: "clamp(46px,6vw,100px)", lineHeight: ".96", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1100px", textWrap: "balance" }}>
+        <h2 style={{ margin: "0", fontSize: "clamp(38px,4.9vw,82px)", lineHeight: ".96", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1100px", textWrap: "balance" }}>
           {v.t("Build.bringYourSixToolsLeaveWith")}{" "}
-          <span style={{ fontFamily: "var(--font-accent)", fontWeight: "400", color: "#FF6A00" }}>
+          <span style={{ color: "#FF6A00" }}>
             {v.t("Build.onePlatform")}
           </span>
         </h2>
