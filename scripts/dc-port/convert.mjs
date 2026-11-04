@@ -393,7 +393,7 @@ function portLogic(js, ns, report) {
 /** next/font hashes family names: refer to the CSS variables instead. */
 const fonts = (s) => s
   .replace(/'Geist Mono',\s*monospace/g, 'var(--font-mono)')
-  .replace(/'Instrument Serif',\s*serif/g, 'var(--font-serif)')
+  .replace(/'Instrument Serif',\s*serif/g, 'var(--font-sans)')
   .replace(/(?:'Geist'|\bGeist),\s*(?:system-ui,\s*)?sans-serif/g, 'var(--font-sans)');
 
 // ---------------------------------------------------------------- file

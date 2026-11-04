@@ -640,7 +640,7 @@ Logic.prototype.render = function render() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".12em", textTransform: "uppercase", color: "#B0683A" }}>
                 {v.capN}{" · "}{v.lmName}
               </span>
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "30px", lineHeight: "1", color: "#140D08" }}>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "30px", lineHeight: "1", color: "#140D08" }}>
                 {v.capT}
               </span>
               <span style={{ fontSize: "14px", lineHeight: "1.45", color: "#3A2E24", textWrap: "pretty" }}>
@@ -675,11 +675,11 @@ Logic.prototype.render = function render() {
                 </span>
                 {v.t("Life.xToday", { x: v.lmCount })}
               </span>
-              <h1 style={{ margin: "0", fontSize: "clamp(46px,5.6vw,84px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
+              <h1 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,69px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
                 {v.t("Life.yourLifeRemembered")}
                 <br />
                 {v.t("Life.sorted")}{" "}
-                <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", letterSpacing: "-0.02em", color: "#FF7A1A" }}>
+                <span style={{ color: "#FF7A1A" }}>
                   {v.t("Life.lived")}
                 </span>
               </h1>
@@ -707,9 +707,9 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#E25F00" }}>
               {v.t("Life.n01ADayWithLife")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(36px,4.2vw,64px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(30px,3.4vw,52px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Life.itShowsUpWhenItHelps")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+              <span>
                 {v.t("Life.andStaysQuiet")}
               </span>
               {" "}{v.t("Life.whenItDoesnT")}
@@ -729,7 +729,7 @@ Logic.prototype.render = function render() {
               {" "}
             </div>
             <div style={{ display: "flex", alignItems: "baseline", gap: "16px" }}>
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(52px,5.4vw,84px)", lineHeight: "1", color: "#E25F00", fontVariantNumeric: "tabular-nums" }}>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(52px,5.4vw,84px)", lineHeight: "1", color: "#E25F00", fontVariantNumeric: "tabular-nums" }}>
                 {v.dClock}
               </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#9A7354" }}>
@@ -767,7 +767,7 @@ Logic.prototype.render = function render() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#E25F00" }}>
                     {v.dTag}
                   </span>
-                  <b style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", fontSize: "32px", lineHeight: "1" }}>
+                  <b style={{ fontFamily: "var(--font-sans)", fontWeight: "400", fontSize: "32px", lineHeight: "1" }}>
                     {v.dHead}
                   </b>
                   {(v.dRows ?? []).map((r, $index) => (<Fragment key={$index}>
@@ -786,7 +786,7 @@ Logic.prototype.render = function render() {
             </div>
             {" "}
             <div key={v.dStep} style={{ position: "absolute", right: "0", top: "12%", zIndex: "3", maxWidth: "240px", background: "#FFFAF4", borderRadius: "18px", padding: "14px 16px", display: "flex", gap: "12px", alignItems: "center", boxShadow: "0 20px 40px rgba(80,40,10,.18)", animation: "lfFly 1s cubic-bezier(.16,1,.3,1) both" }}>
-              <span style={{ width: "34px", height: "34px", borderRadius: "10px", background: "#E25F00", color: "#FFF8F0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "18px", flexShrink: "0" }}>
+              <span style={{ width: "34px", height: "34px", borderRadius: "10px", background: "#E25F00", color: "#FFF8F0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)", fontSize: "18px", flexShrink: "0" }}>
                 {"L"}
               </span>
               <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -816,9 +816,9 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#E25F00" }}>
               {v.t("Life.n02FourThingsOnePlace")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Life.moneyTimeGoals")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+              <span>
                 {v.t("Life.home")}
               </span>
             </h2>
@@ -858,7 +858,7 @@ Logic.prototype.render = function render() {
                     </>) : null}
                     {c?.isGoal ? (<>
                       <div style={{ width: "120px", height: "120px", borderRadius: "50%", background: `conic-gradient(#E25F00 ${v.goalPct ?? ''},rgba(255,255,255,.25) 0)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ width: "92px", height: "92px", borderRadius: "50%", background: `${c?.bg ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "30px" }}>
+                        <span style={{ width: "92px", height: "92px", borderRadius: "50%", background: `${c?.bg ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)", fontSize: "30px" }}>
                           {v.goalTxt}
                         </span>
                       </div>
@@ -874,7 +874,7 @@ Logic.prototype.render = function render() {
                     </>) : null}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                    <b style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", fontSize: "44px", lineHeight: "1" }}>
+                    <b style={{ fontFamily: "var(--font-sans)", fontWeight: "400", fontSize: "44px", lineHeight: "1" }}>
                       {c?.t}
                     </b>
                     <span style={{ fontSize: "14px", opacity: ".75" }}>
@@ -911,9 +911,9 @@ Logic.prototype.render = function render() {
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#E25F00" }}>
             {v.t("Life.n03Together")}
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Life.oneHome")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+            <span>
               {v.t("Life.everyoneOnTheSamePage")}
             </span>
           </h2>
@@ -1023,9 +1023,9 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF9A50" }}>
               {v.t("Life.n04PrivateByDesign")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Life.yourLifeStays")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF9A50" }}>
+              <span style={{ color: "#FF9A50" }}>
                 {v.t("Life.yours")}
               </span>
             </h2>
@@ -1057,9 +1057,9 @@ Logic.prototype.render = function render() {
               <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#E25F00" }}>
                 {v.t("Life.n05Plans")}
               </div>
-              <h2 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>
+              <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>
                 {v.t("Life.pickTheSizeOf")}{" "}
-                <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+                <span>
                   {v.t("Life.yourLife")}
                 </span>
               </h2>
@@ -1147,7 +1147,7 @@ Logic.prototype.render = function render() {
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF9A50" }}>
             {v.t("Life.n2115DayClosed")}
           </span>
-          <h2 style={{ margin: "0", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", fontSize: "clamp(52px,6.4vw,104px)", lineHeight: ".95", maxWidth: "640px" }}>
+          <h2 style={{ margin: "0", fontFamily: "var(--font-sans)", fontWeight: "400", fontSize: "clamp(43px,5.2vw,85px)", lineHeight: ".95", maxWidth: "640px" }}>
             {v.t("Life.startTomorrowMorning")}
           </h2>
           <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#E8D8C6", maxWidth: "440px" }}>

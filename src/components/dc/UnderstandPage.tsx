@@ -29,9 +29,9 @@ class Logic extends DCLogic {
     let seed = 7;
     const R = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
     const S = ['RE: RE: AW: Angebot?', this.props.t("Understand.invoiceFINALV3Xlsx"), this.props.t("Understand.whoCoversSaturday"), this.props.t("Understand.callBackWeber"), this.props.t("Understand.stockAskJonas"), this.props.t("Understand.whatsApp87"), this.props.t("Understand.kundenlisteAltCsv"), this.props.t("Understand.sendInvoice"), this.props.t("Understand.bookingPhoneOrMail"), this.props.t("Understand.passwordOnAPostIt"), this.props.t("Understand.n3UnpaidCheck"), this.props.t("Understand.newInquiryViaInstagram"), this.props.t("Understand.excelCrashedAgain"), this.props.t("Understand.copyPricesToShop"), this.props.t("Understand.terminVerschoben"), this.props.t("Understand.whereIsTheOfferTemplate"), 'Mon 8:00 ??? shift', this.props.t("Understand.pasteIntoBookkeeping"), this.props.t("Understand.supplierRaisedPrices"), this.props.t("Understand.replyLater"), this.props.t("Understand.n2ReviewAnswerIt"), this.props.t("Understand.newsletterNotSent"), this.props.t("Understand.lenaSickSwap"), this.props.t("Understand.printSignScan"), this.props.t("Understand.n14Unread"), 'Fwd: Fwd: delivery'];
-    const fonts = [["var(--font-mono)", 'normal'], ["var(--font-sans)", 'normal'], ["var(--font-serif)", 'italic']];
+    const fonts = [["var(--font-mono)", 'normal'], ["var(--font-sans)", 'normal']];
     this.MESS = [...Array(62)].map((_, i) => {
-      const f = fonts[R() * 3 | 0],
+      const f = fonts[R() * 2 | 0],
         note = R() < .22,
         sz = 13 + R() * (R() < .2 ? 26 : 12);
       return {
@@ -450,7 +450,7 @@ Logic.prototype.render = function render() {
                 {v.capLabel}
               </span>
             </div>
-            <h1 style={{ margin: "0", fontSize: "clamp(38px,4.6vw,72px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h1 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,59px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.capHead}
             </h1>
             <p style={{ margin: "0", fontSize: "clamp(15px,1.3vw,19px)", lineHeight: "1.5", color: "#3A3731", textWrap: "pretty" }}>
@@ -490,9 +490,9 @@ Logic.prototype.render = function render() {
               {v.t("Understand.theFirstCall")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fifteenMinutes")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Understand.iListenYouWatchItTake")}
             </span>
           </h2>
@@ -575,9 +575,9 @@ Logic.prototype.render = function render() {
               {v.t("Understand.yourWeek")}
             </span>
           </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fortyHours")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Understand.howManyAreReallyYours")}
             </span>
           </h2>
@@ -655,9 +655,9 @@ Logic.prototype.render = function render() {
                     {v.t("Understand.whatYouGet")}
                   </span>
                 </div>
-                <h2 style={{ margin: "0", fontSize: "clamp(40px,4.8vw,76px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+                <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
                   {v.t("Understand.aPlanOnPaper")}{" "}
-                  <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+                  <span style={{ color: "#FF6A00" }}>
                     {v.t("Understand.notAPitch")}
                   </span>
                 </h2>
@@ -696,7 +696,7 @@ Logic.prototype.render = function render() {
                       {v.t("Understand.offerYourBusiness")}
                     </span>
                   </div>
-                  <div style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "34px", lineHeight: "1.05" }}>
+                  <div style={{ fontFamily: "var(--font-sans)", fontSize: "34px", lineHeight: "1.05" }}>
                     {v.t("Understand.yourBusinessBrainPhaseOne")}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>

@@ -33,3 +33,12 @@ export function ctaEvent(type: CtaType, page: string) {
     // Analytics must never break a link.
   }
 }
+
+/** Build page starting-point picker: which area visitors tap first. */
+export function startAreaEvent(area: string) {
+  try {
+    track('build_start_area', { area });
+  } catch {
+    // Analytics must never break the page.
+  }
+}

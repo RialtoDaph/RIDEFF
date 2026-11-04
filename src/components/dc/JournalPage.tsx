@@ -94,9 +94,9 @@ Logic.prototype.render = function render() {
           </span>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "40px", alignItems: "end" }}>
-          <h1 style={{ margin: "0", fontSize: "clamp(56px,7.4vw,116px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
+          <h1 style={{ margin: "0", fontSize: "clamp(46px,6.1vw,95px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Journal.notesFromThe")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Journal.workbench")}
             </span>
           </h1>
@@ -136,7 +136,7 @@ Logic.prototype.render = function render() {
                   {v.t("Journal.xXMin", { x: v.feat?.date, y: v.feat?.min })}
                 </span>
               </div>
-              <h2 style={{ margin: "0", fontSize: "clamp(32px,3.6vw,54px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
+              <h2 style={{ margin: "0", fontSize: "clamp(26px,3vw,44px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600", textWrap: "balance" }}>
                 {v.feat?.t}
               </h2>
               <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.6", color: "#B8B3AA", maxWidth: "520px" }}>
@@ -185,9 +185,9 @@ Logic.prototype.render = function render() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
               {v.t("Journal.oneEmailAMonth")}
             </div>
-            <h2 style={{ margin: "0", fontSize: "clamp(42px,5.6vw,88px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Journal.newNote")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Journal.youLlKnow")}
               </span>
             </h2>

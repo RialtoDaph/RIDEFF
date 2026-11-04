@@ -17,9 +17,9 @@ Logic.prototype.render = function render() {
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
           {v.t("Work.work")}
         </div>
-        <h1 style={{ margin: "0", fontSize: "clamp(52px,7vw,112px)", lineHeight: ".95", letterSpacing: "-0.055em", fontWeight: "600" }}>
+        <h1 style={{ margin: "0", fontSize: "clamp(43px,5.7vw,92px)", lineHeight: ".95", letterSpacing: "-0.055em", fontWeight: "600" }}>
           {v.t("Work.builtLive")}{" "}
-          <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", letterSpacing: "-0.02em", color: "#FF6A00" }}>
+          <span style={{ color: "#FF6A00" }}>
             {v.t("Work.running")}
           </span>
         </h1>
@@ -62,7 +62,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("@portal")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#DCD5CA", display: "flex", alignItems: "flex-end", padding: "40px", boxSizing: "border-box" }}>
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1" }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1" }}>
               {v.t("Work.clientPortal")}
             </span>
           </div>
@@ -96,7 +96,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("/demo")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#FF6A00", display: "flex", alignItems: "flex-end", padding: "40px", boxSizing: "border-box" }}>
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1" }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1" }}>
               {v.t("Work.businessDemo")}
             </span>
           </div>
@@ -114,7 +114,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("/contact")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", border: "1.5px dashed #BDB6AA", display: "flex", alignItems: "flex-end", padding: "40px", boxSizing: "border-box", transition: "border-color .3s" }} className="hv-f543883">
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1", color: "#5A5650" }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1", color: "#5A5650" }}>
               {v.t("Work.yourBusiness")}
             </span>
           </div>

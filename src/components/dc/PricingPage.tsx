@@ -719,9 +719,9 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.pricing")}
               </span>
             </div>
-            <h1 style={{ margin: "0", fontSize: "clamp(56px,7.6vw,124px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600" }}>
+            <h1 style={{ margin: "0", fontSize: "clamp(46px,6.2vw,102px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600" }}>
               {v.t("Pricing.onePrice")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", letterSpacing: "-0.02em", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Pricing.everyMonth")}
               </span>
             </h1>
@@ -888,9 +888,9 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.findYourPlan")}
               </span>
             </div>
-            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.cfgH}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.cfgH2}
               </span>
             </h2>
@@ -971,13 +971,13 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.whereTheMoneyGoes")}
               </span>
             </div>
-            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
+            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
               {v.t("Pricing.whereYour")}{" "}
               <span style={{ color: "#FF6A00" }}>
                 {v.curPrice}
               </span>
               {" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+              <span>
                 {v.t("Pricing.goes")}
               </span>
             </h2>
@@ -1037,9 +1037,9 @@ Logic.prototype.render = function render() {
                   {v.phK}
                 </span>
               </div>
-              <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+              <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
                 {v.phH}{" "}
-                <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+                <span style={{ color: "#FF6A00" }}>
                   {v.phH2}
                 </span>
               </h2>
@@ -1098,9 +1098,9 @@ Logic.prototype.render = function render() {
                 {v.flK}
               </span>
             </div>
-            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.flH}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.flH2}
               </span>
             </h2>
@@ -1179,9 +1179,9 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.yearOneCompared")}
               </span>
             </div>
-            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
+            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.cmH}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.cmH2}
               </span>
             </h2>
@@ -1250,9 +1250,9 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.everyDetail")}
               </span>
             </div>
-            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
+            <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
               {v.t("Pricing.whatSIn")}{" "}
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+              <span style={{ color: "#FF6A00" }}>
                 {v.t("Pricing.eachPlan")}
               </span>
             </h2>
@@ -1314,9 +1314,9 @@ Logic.prototype.render = function render() {
               {v.t("Pricing.questions")}
             </span>
           </div>
-          <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(38px,4.6vw,68px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
+          <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
             {v.t("Pricing.the")}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400", color: "#FF6A00" }}>
+            <span style={{ color: "#FF6A00" }}>
               {v.t("Pricing.smallPrint")}
             </span>
             {" "}{v.t("Pricing.inPlainWords")}
@@ -1348,9 +1348,9 @@ Logic.prototype.render = function render() {
       <div data-screen-label="10 CTA" style={{ background: "#FF6A00", color: "#0A0A0A" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
-          <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(44px,6vw,96px)", lineHeight: ".95", letterSpacing: "-0.055em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
+          <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(36px,4.9vw,79px)", lineHeight: ".95", letterSpacing: "-0.055em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.ctaH}{" "}
-            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: "400" }}>
+            <span>
               {v.ctaH2}
             </span>
           </h2>
