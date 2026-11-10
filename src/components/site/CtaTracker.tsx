@@ -2,6 +2,18 @@
 
 import { useEffect } from 'react';
 import { ctaEvent, type CtaType } from '@/lib/analytics';
+import { APP_URL, LIFE_DEMO_URL, PORTAL_URL } from '@/lib/site';
+
+const hostOf = (u: string) => {
+  try {
+    return new URL(u).hostname;
+  } catch {
+    return '';
+  }
+};
+/** Life app and portal hosts as configured (temporary *.vercel.app hosts included). */
+const LIFE_HOSTS = new Set([hostOf(APP_URL), hostOf(LIFE_DEMO_URL)].filter(Boolean));
+const PORTAL_HOST = hostOf(PORTAL_URL);
 
 /** Which CTA a link is, or null for links we do not count. */
 function ctaType(url: URL): CtaType | null {
@@ -10,9 +22,9 @@ function ctaType(url: URL): CtaType | null {
   const host = url.hostname;
   if (host === 'wa.me' || host.endsWith('whatsapp.com')) return 'whatsapp';
   if (host === 'cal.com' || host.endsWith('.cal.com')) return 'call';
-  if (host.startsWith('app.') && url.pathname.startsWith('/signup')) return 'life_signup';
-  if (host.startsWith('app.') && url.pathname.startsWith('/demo')) return 'life_demo';
-  if (host.startsWith('portal.') || host.startsWith('rideff-portal.')) return 'portal';
+  if (url.href.startsWith(LIFE_DEMO_URL)) return 'life_demo';
+  if (LIFE_HOSTS.has(host) || host.startsWith('app.')) return 'life_signup';
+  if (host === PORTAL_HOST || host.startsWith('portal.') || host.startsWith('rideff-portal.')) return 'portal';
   if (host === location.hostname && /^(\/en)?\/(kontakt|contact)\/?$/.test(url.pathname)) return 'contact_page';
   return null;
 }

@@ -278,26 +278,6 @@
       "de": "„Können Sie am Samstag 40 Personen bewirten?“ über Ihr Website-Formular.",
       "en": "“Can you cater 40 people on Saturday?” sent through your website form."
     },
-    "caseSummaryPlaceholderWhatTICOriginals": {
-      "de": "[Platzhalter Projektzusammenfassung: was TIC Originals brauchte und was Website und System heute für sie leisten.]",
-      "en": "[Case summary placeholder: what TIC Originals needed and what the site and system do for them now.]"
-    },
-    "highlight1EGStorefrontWith": {
-      "de": "[Highlight 1: z. B. Shop mit Karte, SEPA und Klarna]",
-      "en": "[Highlight 1: e.g. storefront with card, SEPA and Klarna]"
-    },
-    "highlight2EGOrdersFlow": {
-      "de": "[Highlight 2: z. B. Bestellungen fließen in Lager und Rechnungen]",
-      "en": "[Highlight 2: e.g. orders flow into stock and invoices]"
-    },
-    "highlight3EGFastPages": {
-      "de": "[Highlight 3: z. B. schnelle Seiten, EU-Hosting]",
-      "en": "[Highlight 3: e.g. fast pages, EU hosting]"
-    },
-    "highlight4EGMaintainedMonthly": {
-      "de": "[Highlight 4: z. B. monatlich über das Portal betreut]",
-      "en": "[Highlight 4: e.g. maintained monthly through the portal]"
-    },
     "tICHomepageScreenshot": {
       "de": "TIC · Screenshot Startseite",
       "en": "TIC · homepage screenshot"
@@ -666,10 +646,6 @@
       "de": "Websites und Onlineshops auf EU-Hosting: schnell, auffindbar und mit dem Rest Ihres Systems verbunden, statt allein dazustehen.",
       "en": "Websites and online shops on EU hosting: fast, findable, and connected to the rest of your system instead of standing alone."
     },
-    "caseSummaryPlaceholderWhatTICOriginals": {
-      "de": "[Platzhalter Projektzusammenfassung: was TIC Originals brauchte, was gebaut wurde und was es heute für sie leistet.]",
-      "en": "[Case summary placeholder: what TIC Originals needed, what was built, and what it does for them now.]"
-    },
     "tICInterfaceScreenshot": {
       "de": "TIC · Screenshot Oberfläche",
       "en": "TIC · interface screenshot"
@@ -689,10 +665,6 @@
     "tICOriginalsShop": {
       "de": "TIC Originals · Shop",
       "en": "TIC Originals · shop"
-    },
-    "yourNextSitePlaceholder": {
-      "de": "Ihre nächste Website · Platzhalter",
-      "en": "Your next site · placeholder"
     }
   },
   "Workbench": {

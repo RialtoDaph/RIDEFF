@@ -12,17 +12,7 @@ class Logic extends DCLogic {
     email: '',
     sent: false
   };
-  POSTS = [[this.props.t("Journal.build"), this.props.t("Journal.whyYourAIAgentNeedsA"), this.props.t("Journal.sixAgentsOneRuleNothingLeaves"), this.props.t("Journal.date"), 7], [this.props.t("Journal.understand"), this.props.t("Journal.the45MinuteCallThatSaves"), this.props.t("Journal.whatIAskInTheFirst"), this.props.t("Journal.date"), 5], [this.props.t("Journal.run"), this.props.t("Journal.whatAMondayReportActuallyContains"), this.props.t("Journal.fiveNumbersOneSentenceEachWhy"), this.props.t("Journal.date"), 4], [this.props.t("Journal.build"), this.props.t("Journal.shopStockInvoicesOneSourceOf"), this.props.t("Journal.aCafeInBavariaHadStock"), this.props.t("Journal.date"), 8], [this.props.t("Journal.run"), this.props.t("Journal.somethingBrokeAt3amNobodyNoticed"), this.props.t("Journal.selfHealingIsnTMagicIt"), this.props.t("Journal.date"), 6], [this.props.t("Journal.notes"), this.props.t("Journal.dSGVOForSmallBusinessesUsingAI"), this.props.t("Journal.frankfurtHostingDataProcessingAgreementsAnd"), this.props.t("Journal.date"), 9], [this.props.t("Journal.understand"), this.props.t("Journal.stopBuyingToolsMapFirst"), this.props.t("Journal.theOnePageMapIDraw"), this.props.t("Journal.date"), 5]].map((p, k) => ({
-    src: [opt("/images/tic-insights.png"), opt("/images/rialto-understand.jpg"), opt("/images/tic-today.png"), opt("/images/site-cafe.jpg"), opt("/images/rialto-run.jpg"), opt("/images/site-praxis.jpg"), opt("/images/rialto-about.jpg")][k % 7],
-    id: 'journal-post-' + k,
-    tag: p[0],
-    t: p[1],
-    d: p[2],
-    date: p[3],
-    min: p[4],
-    href: '#'
-  }));
-  // Real posts (content/journal/*.mdx) come first; the designed placeholder posts follow until replaced.
+  // Posts come from content/journal/*.mdx (newest first). The handoff's placeholder posts were removed.
   CAT = { understand: this.props.t("Journal.understand"), build: this.props.t("Journal.build"), run: this.props.t("Journal.run"), notes: this.props.t("Journal.notes") };
   ALL = [...(this.props.posts || []).map(p => ({
     src: opt(p.cover),
@@ -33,7 +23,7 @@ class Logic extends DCLogic {
     date: p.dateLabel,
     min: p.minutes,
     href: this.props.href('/journal/' + p.slug)
-  })), ...this.POSTS];
+  }))];
   renderVals() {
     const s = this.state,
       all = s.tag === this.props.t("Journal.all");
@@ -46,7 +36,7 @@ class Logic extends DCLogic {
       pick: () => this.setState({
         tag: t
       })
-    }));
+    })).filter(x => x.t === this.props.t("Journal.all") || x.n > 0);
     return {
       tags,
       feat: list[0] || this.ALL[0],

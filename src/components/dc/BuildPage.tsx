@@ -39,12 +39,12 @@ class Logic extends DCLogic {
     d: this.props.t("Build.caseSummaryPlaceholderWhatTICOriginals"),
     bullets: [this.props.t("Build.highlight1EGStorefrontWith"), this.props.t("Build.highlight2EGOrdersFlow"), this.props.t("Build.highlight3EGFastPages"), this.props.t("Build.highlight4EGMaintainedMonthly")],
     chips: ['Next.js', 'Stripe', 'Klarna', 'Supabase'],
-    stats: [[this.props.t("Build.pages"), '–'], [this.props.t("Build.ordersMo"), '–'], [this.props.t("Build.hosting"), 'EU']],
+    stats: [[this.props.t("Build.paymentMethods"), '6'], [this.props.t("Build.languages"), '2'], [this.props.t("Build.hosting"), 'EU']],
     link: 'ticoriginals.com',
     href: this.props.href("/build/web-shops"),
     phUi: this.props.t("Build.tICHomepageScreenshot"),
     phSys: this.props.t("Build.tICShopAdminScreenshot"),
-    spec: [['client', 'TIC Originals'], ['scope', this.props.t("Build.siteShopFlows")], ['payments', this.props.t("Build.cardSEPAKlarna")], ['hosting', this.props.t("Build.eUFrankfurt")], ['status', this.props.t("Build.liveMaintained")]]
+    spec: [['client', 'TIC Originals'], ['scope', this.props.t("Build.siteShopFlows")], ['payments', this.props.t("Build.cardSEPAKlarna")], ['hosting', this.props.t("Build.tICHosting")], ['status', this.props.t("Build.liveMaintained")]]
   }, {
     kind: this.props.t("Build.ownProductClientPortal"),
     t: 'RIDEFF Portal',

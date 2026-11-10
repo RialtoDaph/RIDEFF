@@ -15,7 +15,7 @@ class Logic extends DCLogic {
   renderVals() {
     const s = this.state,
       L = this.LAYERS[s.layer];
-    const pos = [['0%', '10%', '52%', '78%', 'ticoriginals.com', 'sf-win-1', this.props.t("Storefront.tICOriginalsHomepage")], ['26%', '0%', '50%', '82%', 'shop.ticoriginals.com', 'sf-win-2', this.props.t("Storefront.tICOriginalsShop")], ['50%', '14%', '50%', '76%', this.props.t("Storefront.yourBusinessDe"), 'sf-win-3', this.props.t("Storefront.yourNextSitePlaceholder")]];
+    const pos = [['0%', '10%', '52%', '78%', 'ticoriginals.com', 'sf-win-1', this.props.t("Storefront.tICOriginalsHomepage")], ['26%', '0%', '50%', '82%', 'ticoriginals.com/shop', 'sf-win-2', this.props.t("Storefront.tICOriginalsShop")], ['50%', '14%', '50%', '76%', this.props.t("Storefront.yourBusinessDe"), 'sf-win-3', this.props.t("Storefront.yourNextSitePlaceholder")]];
     return {
       windows: pos.map((p, k) => ({
         l: p[0],
@@ -210,18 +210,18 @@ Logic.prototype.render = function render() {
             <div style={{ display: "flex", gap: "32px", flexWrap: "wrap", paddingTop: "8px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
-                  {"–"}
+                  {"6"}
                 </b>
                 <span style={{ fontSize: "13px", color: "#5A5650" }}>
-                  {v.t("Storefront.loadTimePlaceholder")}
+                  {v.t("Storefront.paymentMethods")}
                 </span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
-                  {"–"}
+                  {"2"}
                 </b>
                 <span style={{ fontSize: "13px", color: "#5A5650" }}>
-                  {v.t("Storefront.ordersMonthPlaceholder")}
+                  {v.t("Storefront.languagesDeEn")}
                 </span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -229,7 +229,7 @@ Logic.prototype.render = function render() {
                   {"EU"}
                 </b>
                 <span style={{ fontSize: "13px", color: "#5A5650" }}>
-                  {v.t("Storefront.hostedInFrankfurt")}
+                  {v.t("Storefront.hostedInEU")}
                 </span>
               </div>
             </div>
