@@ -649,6 +649,72 @@
     "mapWholePrice": {
       "de": "449 € / Monat · Einrichtung ab 3.900 €",
       "en": "€449 a month · setup from €3,900"
+    },
+    "caseSummaryPlaceholderWhatTICOriginals": {
+      "de": "TIC Originals ist ein Modelabel aus Deutschland und wollte einen eigenen Shop statt gemieteter Plattformen. Ich habe Shop und Inhaber-Dashboard auf einer Datenbank gebaut: Produkte, Lager, Bestellungen, Rabattcodes und Rechnungen an einem Ort. Die Website ist live, der Verkauf startet mit dem nächsten Drop.",
+      "en": "TIC Originals is a fashion label from Germany that wanted its own shop instead of rented platforms. I built the storefront and an owner dashboard on one database: products, stock, orders, discount codes and invoices in one place. The site is live; sales start with the next drop."
+    },
+    "highlight1EGStorefrontWith": {
+      "de": "Kasse mit Karte, PayPal, Klarna, SEPA, Apple Pay und Google Pay über Stripe",
+      "en": "Checkout with card, PayPal, Klarna, SEPA, Apple Pay and Google Pay via Stripe"
+    },
+    "highlight2EGOrdersFlow": {
+      "de": "Jede Bestellung bucht Lager und Rabattcodes im selben Schritt",
+      "en": "Every order updates stock and discount codes in the same step"
+    },
+    "highlight3EGFastPages": {
+      "de": "Inhaber-Dashboard: Aufgaben für heute, Bestellungen, Produkte, Auswertungen, Aktionen",
+      "en": "Owner dashboard: today’s tasks, orders, products, insights, promotions"
+    },
+    "highlight4EGMaintainedMonthly": {
+      "de": "Deutsch und Englisch, EU-Hosting, nur technisch notwendige Cookies",
+      "en": "German and English, EU hosting, only technically necessary cookies"
+    },
+    "cardSEPAKlarna": {
+      "de": "Karte · PayPal · Klarna · SEPA",
+      "en": "card · PayPal · Klarna · SEPA"
+    },
+    "paymentMethods": {
+      "de": "Zahlungsarten",
+      "en": "Payment methods"
+    },
+    "tICHosting": {
+      "de": "EU",
+      "en": "EU"
+    }
+  },
+  "Storefront": {
+    "caseSummaryPlaceholderWhatTICOriginals": {
+      "de": "TIC Originals ist ein Modelabel aus Deutschland und wollte einen eigenen Shop statt gemieteter Plattformen. Ich habe Shop und Inhaber-Dashboard auf einer Datenbank gebaut: Produkte, Lager, Bestellungen, Rabattcodes und Rechnungen an einem Ort. Die Website ist live, der Verkauf startet mit dem nächsten Drop.",
+      "en": "TIC Originals is a fashion label from Germany that wanted its own shop instead of rented platforms. I built the storefront and an owner dashboard on one database: products, stock, orders, discount codes and invoices in one place. The site is live; sales start with the next drop."
+    },
+    "nShop": {
+      "de": "Start + Shop + Kasse + Konto",
+      "en": "home + shop + checkout + account"
+    },
+    "cardSEPAKlarna": {
+      "de": "Karte · PayPal · Klarna · SEPA",
+      "en": "card · PayPal · Klarna · SEPA"
+    },
+    "eUFrankfurtSSL": {
+      "de": "EU · SSL",
+      "en": "EU · SSL"
+    },
+    "paymentMethods": {
+      "de": "Zahlungsarten",
+      "en": "Payment methods"
+    },
+    "languagesDeEn": {
+      "de": "Sprachen · DE und EN",
+      "en": "Languages · DE and EN"
+    },
+    "hostedInEU": {
+      "de": "EU-Hosting",
+      "en": "Hosted in the EU"
+    },
+    "yourNextSitePlaceholder": {
+      "de": "Ihre nächste Website",
+      "en": "Your next site"
     }
   }
 }

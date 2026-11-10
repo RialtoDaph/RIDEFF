@@ -16,6 +16,13 @@ import ReportButton from '@/components/nana/ReportButton';
 const AVATAR = process.env.NEXT_PUBLIC_NANA_AVATAR ? opt(process.env.NEXT_PUBLIC_NANA_AVATAR, 640) : '';
 const avatarBg = AVATAR ? { backgroundImage: `url(${AVATAR})`, backgroundSize: '150%', backgroundPosition: '50% 40%' } : {};
 
+/**
+ * "Send to my WhatsApp" needs the WhatsApp Business API (src/app/api/nana/whatsapp
+ * is still a mock that only pretends to send). Hidden until that is wired, then
+ * set NEXT_PUBLIC_NANA_WA_SELF=1 in Vercel.
+ */
+const WA_SELF = process.env.NEXT_PUBLIC_NANA_WA_SELF === '1';
+
 class Logic extends DCLogic {
   WA = '4917632572420';
   state = {
@@ -850,13 +857,15 @@ Logic.prototype.render = function render() {
                           {v.t("RideffNana.sendToRialtoOnWhatsApp")}
                         </a>
                         <div style={{ display: "flex", gap: "6px" }}>
-                          <button onClick={v.copySum} style={{ flex: "0 0 auto", border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
+                          <button onClick={v.copySum} style={{ flex: WA_SELF ? "0 0 auto" : "1", border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
                             {v.copyT}
                           </button>
+                          {WA_SELF ? (
                           <button onClick={v.toggleMine} style={{ flex: "1", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", border: "none", background: "#25D366", borderRadius: "999px", padding: "9px 14px", font: "600 13px var(--font-sans)", color: "#FFFFFF", cursor: "pointer", whiteSpace: "nowrap" }}>
                             <WhatsAppIcon width={16} height={16} />
                             {v.t("RideffNana.sendToMyWhatsApp")}
                           </button>
+                          ) : null}
                         </div>
                         {v.mineOpen ? (<>
                           {" "}
