@@ -245,6 +245,26 @@
         "de": "Interaktive Demo eines RIDEFF-Systems mit Beispieldaten.",
         "en": "Interactive demo of a RIDEFF system with sample data."
       }
+    },
+    "caseTic": {
+      "title": {
+        "de": "TIC Originals · Shop & Inhaber-Dashboard · RIDEFF",
+        "en": "TIC Originals · shop & owner dashboard · RIDEFF"
+      },
+      "description": {
+        "de": "Fallstudie: eigener Onlineshop mit Inhaber-Dashboard für das Modelabel TIC Originals. Kasse, Lager, DHL-Labels und Aktionen in einem System.",
+        "en": "Case study: an own online shop with owner dashboard for the fashion label TIC Originals. Checkout, stock, DHL labels and promotions in one system."
+      }
+    },
+    "caseMami": {
+      "title": {
+        "de": "Mami I Patisserie · Website, Bestellungen & Team · RIDEFF",
+        "en": "Mami I Patisserie · website, ordering & team · RIDEFF"
+      },
+      "description": {
+        "de": "Fallstudie: Website, Bestellung saisonaler Geschenkboxen und Team-Backoffice für eine Familienbäckerei in Bandung.",
+        "en": "Case study: website, ordering for seasonal gift boxes and a team back office for a family bakery in Bandung."
+      }
     }
   },
   "common": {
@@ -259,6 +279,66 @@
     "waNotSure": {
       "en": "not sure yet",
       "de": "noch unklar"
+    },
+    "closeCall": {
+      "en": "Book a free call →",
+      "de": "Erstgespräch buchen →"
+    },
+    "closeWhatsApp": {
+      "en": "WhatsApp Rialto",
+      "de": "Rialto auf WhatsApp"
+    },
+    "closeNote": {
+      "en": "15 minutes · free · no obligation",
+      "de": "15 Minuten · kostenlos · unverbindlich"
+    },
+    "ctaCall": {
+      "de": "Erstgespräch buchen →",
+      "en": "Book a free call →"
+    },
+    "faqLeaveQ": {
+      "de": "Was, wenn ich aufhören möchte?",
+      "en": "What if I want to leave?"
+    },
+    "faqLeaveA": {
+      "de": "Sie nehmen alles mit: Ihre Daten, den Code und Ihre Domain. Ich übergebe es geordnet.",
+      "en": "You take everything with you: your data, the code and your domain. I hand it over in good order."
+    },
+    "faqAwayQ": {
+      "de": "Was, wenn Sie krank oder im Urlaub sind?",
+      "en": "What if you are ill or on holiday?"
+    },
+    "faqAwayA": {
+      "de": "Ein Team im Hintergrund kennt Ihr System und springt ein. Hosting, Backups und Überwachung laufen ohnehin weiter.",
+      "en": "A backup team knows your system and steps in. Hosting, backups and monitoring keep running either way."
+    },
+    "calcLabel": {
+      "de": "Was kostet der Kleinkram heute?",
+      "en": "What does the busywork cost today?"
+    },
+    "calcHours": {
+      "de": "Wiederholungsarbeit pro Woche",
+      "en": "Repeat work per week"
+    },
+    "calcHoursValue": {
+      "de": "{n} Std.",
+      "en": "{n} h"
+    },
+    "calcRate": {
+      "de": "Was Ihre Stunde wert ist",
+      "en": "What your hour is worth"
+    },
+    "calcResult": {
+      "de": "pro Monat gehen heute in Arbeit, die sich wiederholt.",
+      "en": "a month goes into work that repeats."
+    },
+    "calcBreakEven": {
+      "de": "Growth kostet {price} im Monat. Es trägt sich, sobald es Ihnen {n} Stunden im Monat abnimmt.",
+      "en": "Growth costs {price} a month. It pays for itself once it takes {n} hours a month off you."
+    },
+    "calcNote": {
+      "de": "Ihre Zahlen, einfach gerechnet: Stunden × 4,33 Wochen × Stundenwert.",
+      "en": "Your numbers, plain maths: hours × 4.33 weeks × hourly value."
     }
   },
   "nana": {
@@ -435,6 +515,14 @@
     "costTools": {
       "de": "ca. 150–400 € / Monat",
       "en": "approx. €150–400 / mo"
+    },
+    "fullBrain": {
+      "en": "Everything connected",
+      "de": "Alles verbunden"
+    },
+    "anchorLabel": {
+      "en": "First, the other side of the sum",
+      "de": "Erst die Gegenrechnung"
     }
   },
   "Run": {
@@ -445,6 +533,46 @@
     "backAt": {
       "en": "Back at 14:33.",
       "de": "Um 14:33 wieder da."
+    },
+    "calDentist": {
+      "en": "Calendar: dentist",
+      "de": "Kalender: Zahnarzt"
+    },
+    "person": {
+      "en": "point of contact",
+      "de": "fester Ansprechpartner"
+    },
+    "exitLabel": {
+      "en": "If you leave",
+      "de": "Wenn Sie gehen"
+    },
+    "exitTitle": {
+      "en": "You take everything with you.",
+      "de": "Sie nehmen alles mit."
+    },
+    "exitBody": {
+      "en": "Your data, the code and your domain. I hand it over in good order so someone else can carry on. The platform belongs to you, not to me.",
+      "de": "Ihre Daten, den Code und Ihre Domain. Ich übergebe es geordnet, damit jemand anderes weitermachen kann. Die Plattform gehört Ihnen, nicht mir."
+    },
+    "closeLabel": {
+      "en": "Start here",
+      "de": "Hier starten"
+    },
+    "closeHead": {
+      "en": "Your platform runs.",
+      "de": "Ihre Plattform läuft."
+    },
+    "closeAccent": {
+      "en": "You run your business.",
+      "de": "Sie führen Ihren Betrieb."
+    },
+    "closeBody": {
+      "en": "In the first call we work out what you can hand over and what it costs.",
+      "de": "Im Erstgespräch klären wir, was Sie abgeben können und was es kostet."
+    },
+    "seePricing": {
+      "en": "See pricing →",
+      "de": "Preise ansehen →"
     }
   },
   "RideffNav": {
@@ -455,6 +583,14 @@
     "openTheApp2": {
       "en": "Open the app",
       "de": "Zur App"
+    },
+    "startAProject": {
+      "en": "Book a call →",
+      "de": "Gespräch buchen →"
+    },
+    "startAProject2": {
+      "en": "Book a call",
+      "de": "Gespräch buchen"
     }
   },
   "Home": {
@@ -481,6 +617,90 @@
     "costTime": {
       "de": "ca. 20 Std. / Monat",
       "en": "approx. 20 h / mo"
+    },
+    "platformLabel": {
+      "de": "(01) Ihre Plattform",
+      "en": "(01) Your platform"
+    },
+    "platformHeadline": {
+      "de": "Sechs Tools sind gemietet. Eine Plattform gehört",
+      "en": "Six tools are rented. One platform is"
+    },
+    "platformHeadlineAccent": {
+      "de": "Ihnen.",
+      "en": "yours."
+    },
+    "platformBody": {
+      "de": "Jedes gemietete Tool endet an seinem Rand, und Sie tragen die Dinge dazwischen hin und her. Ihre eigene Plattform ist ein Fundament: Jeder Bereich dockt an, die KI arbeitet über alles hinweg, und Sie können jahrelang darauf aufbauen.",
+      "en": "Every tool you rent stops at its own edge, so you are the one carrying things between them. Your own platform is one foundation: every area plugs in, AI works across all of it, and you can keep building on it for years."
+    },
+    "platformPlanPicker": {
+      "de": "Paket wählen",
+      "en": "Choose a plan"
+    },
+    "platformConnects": {
+      "de": "Alles hängt zusammen.",
+      "en": "Everything connects."
+    },
+    "platformConnectsBody": {
+      "de": "Aus einer Anfrage wird Angebot, Auftrag und Rechnung, ohne dass Sie etwas von Tool zu Tool kopieren.",
+      "en": "An inquiry becomes an offer, a job and an invoice, without you copying anything from tool to tool."
+    },
+    "platformGrows": {
+      "de": "Sie wächst mit.",
+      "en": "It grows with you."
+    },
+    "platformGrowsBody": {
+      "de": "Starten Sie mit einem Bereich. Team-App, Shop oder mehr KI kommen später dazu, auf demselben Fundament. Nichts wird neu gebaut.",
+      "en": "Start with one area. The team app, the shop or more AI come later, on the same foundation. Nothing gets rebuilt."
+    },
+    "platformYours": {
+      "de": "Sie gehört Ihnen.",
+      "en": "It is yours."
+    },
+    "platformYoursBody": {
+      "de": "Ihre Daten, Ihr Code, Ihre Domain. Wenn Sie gehen, nehmen Sie alles mit.",
+      "en": "Your data, your code, your domain. If you ever leave, you take all of it with you."
+    },
+    "platformLegendBase": {
+      "de": "Fundament: Daten, Hosting, Ihre Domain",
+      "en": "Foundation: data, hosting, your domain"
+    },
+    "platformLegendAi": {
+      "de": "KI-Schicht: arbeitet über alle Bereiche",
+      "en": "AI layer: works across every area"
+    },
+    "platformLegendAreas": {
+      "de": "Bereiche: docken an, wenn Sie sie brauchen",
+      "en": "Areas: plug in when you need them"
+    },
+    "platformAddLater": {
+      "de": "Später dazu",
+      "en": "Add later"
+    },
+    "platformCount": {
+      "de": "{n} von 6 Bereichen verbunden",
+      "en": "{n} of 6 areas connected"
+    },
+    "n01Thesis": {
+      "de": "(02) These",
+      "en": "(02) Thesis"
+    },
+    "n02ThreePillars": {
+      "de": "(03) Drei Säulen",
+      "en": "(03) Three pillars"
+    },
+    "mostChosen": {
+      "de": "Empfohlen",
+      "en": "Recommended"
+    },
+    "oneBrain": {
+      "de": "eine Plattform",
+      "en": "one platform"
+    },
+    "lifeLine": {
+      "de": "Nicht für den Betrieb, sondern für Sie privat?",
+      "en": "Not for the business, but for you personally?"
     }
   },
   "Contact": {
@@ -515,8 +735,8 @@
       "en": "Marketing"
     },
     "mapYourBrain": {
-      "de": "Ihr Gehirn",
-      "en": "Your brain"
+      "en": "Your platform",
+      "de": "Ihre Plattform"
     },
     "mapIllustrative": {
       "de": "Beispielhaft. Der genaue Umfang wird nach dem ersten Gespräch festgelegt.",
@@ -681,6 +901,10 @@
     "tICHosting": {
       "de": "EU",
       "en": "EU"
+    },
+    "closeBody": {
+      "en": "You start with one area. The rest docks onto the same platform later.",
+      "de": "Sie fangen mit einem Bereich an. Der Rest dockt später an dieselbe Plattform an."
     }
   },
   "Storefront": {
@@ -715,6 +939,454 @@
     "yourNextSitePlaceholder": {
       "de": "Ihre nächste Website",
       "en": "Your next site"
+    },
+    "closeBody": {
+      "en": "You start with the website. Shop, bookings and workflows dock onto the same platform later.",
+      "de": "Sie starten mit der Website. Shop, Buchungen und Abläufe docken später an dieselbe Plattform an."
+    }
+  },
+  "Understand": {
+    "oneOff": {
+      "en": "one-off",
+      "de": "einmalig"
+    },
+    "messShift": {
+      "en": "Mon 8:00 ??? shift",
+      "de": "Mo 8:00 ??? Schicht"
+    },
+    "messFwd": {
+      "en": "Fwd: Fwd: delivery",
+      "de": "WG: WG: Lieferung"
+    },
+    "offerYourBusiness": {
+      "en": "Offer · example: Café Lindner",
+      "de": "Angebot · Beispiel: Café Lindner"
+    },
+    "yourBusinessBrainPhaseOne": {
+      "en": "Your platform, phase one.",
+      "de": "Ihre Plattform, Phase eins."
+    },
+    "callCta": {
+      "en": "Book the first call →",
+      "de": "Erstgespräch buchen →"
+    },
+    "callCtaNote": {
+      "en": "Free. Nothing to prepare.",
+      "de": "Kostenlos. Sie brauchen nichts vorzubereiten."
+    },
+    "closeLabel": {
+      "en": "The first step",
+      "de": "Der erste Schritt"
+    },
+    "closeHead": {
+      "en": "Fifteen minutes.",
+      "de": "Fünfzehn Minuten."
+    },
+    "closeAccent": {
+      "en": "After that you know what is worth doing.",
+      "de": "Danach wissen Sie, was sich lohnt."
+    },
+    "closeBody": {
+      "en": "You tell me how your business runs today. I tell you honestly what is worth doing and what is not.",
+      "de": "Sie erzählen, wie Ihr Betrieb heute läuft. Ich sage Ihnen ehrlich, was sich lohnt und was nicht."
+    }
+  },
+  "Life": {
+    "home2": {
+      "en": "Home",
+      "de": "Zuhause"
+    },
+    "freeSlot": {
+      "en": "Free: 14:00 – 16:00",
+      "de": "Frei: 14:00 – 16:00"
+    },
+    "nowThu": {
+      "en": "now Thu 10:00",
+      "de": "jetzt Do 10:00"
+    },
+    "familyBreakfast": {
+      "en": "family breakfast · 09:00",
+      "de": "Familienfrühstück · 09:00"
+    }
+  },
+  "Case": {
+    "back": {
+      "en": "← All work",
+      "de": "← Alle Projekte"
+    },
+    "scope": {
+      "en": "Scope",
+      "de": "Umfang"
+    },
+    "stack": {
+      "en": "Stack",
+      "de": "Technik"
+    },
+    "status": {
+      "en": "Status",
+      "de": "Status"
+    },
+    "langs": {
+      "en": "Languages",
+      "de": "Sprachen"
+    },
+    "place": {
+      "en": "Location",
+      "de": "Ort"
+    },
+    "builtLabel": {
+      "en": "(01) What I built",
+      "de": "(01) Was ich gebaut habe"
+    },
+    "screensLabel": {
+      "en": "(02) A look inside",
+      "de": "(02) Ein Blick hinein"
+    },
+    "screensHead": {
+      "en": "This is what it looks like.",
+      "de": "So sieht es aus."
+    },
+    "flowLabel": {
+      "en": "(03) How it connects",
+      "de": "(03) Wie es zusammenhängt"
+    },
+    "flowHead": {
+      "en": "One system.",
+      "de": "Ein System."
+    },
+    "flowAccent": {
+      "en": "No patchwork.",
+      "de": "Kein Flickwerk."
+    },
+    "flowBody": {
+      "en": "Each step hands over to the next, and nobody retypes anything.",
+      "de": "Jeder Schritt gibt an den nächsten weiter, ohne dass jemand etwas abtippt."
+    },
+    "sampleNote": {
+      "en": "The dashboards show sample data, not client figures.",
+      "de": "Die Dashboards zeigen Beispieldaten, keine Kundenzahlen."
+    },
+    "visit": {
+      "en": "Visit the site ↗",
+      "de": "Website ansehen ↗"
+    },
+    "nextLabel": {
+      "en": "Next project",
+      "de": "Nächstes Projekt"
+    },
+    "closeLabel": {
+      "en": "Your project",
+      "de": "Ihr Projekt"
+    },
+    "closeHead": {
+      "en": "The next project here",
+      "de": "Das nächste Projekt hier"
+    },
+    "closeAccent": {
+      "en": "could be yours.",
+      "de": "könnte Ihres sein."
+    },
+    "closeBody": {
+      "en": "In the first call I show you what a system like this would look like for your business.",
+      "de": "Im Erstgespräch zeige ich Ihnen, wie so ein System für Ihren Betrieb aussehen würde."
+    },
+    "ticKicker": {
+      "en": "Fashion label · Germany",
+      "de": "Modelabel · Deutschland"
+    },
+    "ticHead": {
+      "en": "A shop of its own",
+      "de": "Ein eigener Shop"
+    },
+    "ticAccent": {
+      "en": "instead of rented platforms.",
+      "de": "statt gemieteter Plattformen."
+    },
+    "ticIntro": {
+      "en": "TIC Originals is a fashion label from Germany that wanted its own shop instead of rented platforms. I built the storefront and an owner dashboard on one database: products, stock, orders, discount codes and invoices in one place. The site is live; sales start with the next drop.",
+      "de": "TIC Originals ist ein Modelabel aus Deutschland und wollte einen eigenen Shop statt gemieteter Plattformen. Ich habe Shop und Inhaber-Dashboard auf einer Datenbank gebaut: Produkte, Lager, Bestellungen, Rabattcodes und Rechnungen an einem Ort. Die Website ist live, der Verkauf startet mit dem nächsten Drop."
+    },
+    "ticScope": {
+      "en": "Shop · owner dashboard · workflows",
+      "de": "Shop · Inhaber-Dashboard · Abläufe"
+    },
+    "ticStack": {
+      "en": "Next.js · Supabase · Stripe",
+      "de": "Next.js · Supabase · Stripe"
+    },
+    "ticStatus": {
+      "en": "live · maintained",
+      "de": "live · betreut"
+    },
+    "ticLangs": {
+      "en": "German · English",
+      "de": "Deutsch · Englisch"
+    },
+    "ticBuiltHead": {
+      "en": "A shop in front.",
+      "de": "Vorne ein Shop."
+    },
+    "ticBuiltAccent": {
+      "en": "A workplace behind it.",
+      "de": "Dahinter ein Arbeitsplatz."
+    },
+    "ticB1T": {
+      "en": "Shop",
+      "de": "Shop"
+    },
+    "ticB1D": {
+      "en": "German and English, fast on every phone. Products, sizes and cart without detours.",
+      "de": "Deutsch und Englisch, schnell auf jedem Handy. Produkte, Größen und Warenkorb ohne Umwege."
+    },
+    "ticB2T": {
+      "en": "Checkout",
+      "de": "Kasse"
+    },
+    "ticB2D": {
+      "en": "Card, PayPal, Klarna, SEPA, Apple Pay and Google Pay through Stripe.",
+      "de": "Karte, PayPal, Klarna, SEPA, Apple Pay und Google Pay über Stripe."
+    },
+    "ticB3T": {
+      "en": "Today list",
+      "de": "Tagesliste"
+    },
+    "ticB3D": {
+      "en": "Every morning the dashboard shows what is due: shipping, refunds, restocks and open payments.",
+      "de": "Das Dashboard zeigt jeden Morgen, was ansteht: Versand, Erstattungen, Nachbestellungen und offene Zahlungen."
+    },
+    "ticB4T": {
+      "en": "Orders",
+      "de": "Bestellungen"
+    },
+    "ticB4D": {
+      "en": "Each order updates stock and discount codes in the same step. The DHL label is created straight from the order.",
+      "de": "Jede Bestellung bucht Lager und Rabattcodes im selben Schritt. Das DHL-Label entsteht direkt aus der Bestellung."
+    },
+    "ticB5T": {
+      "en": "Drops & promotions",
+      "de": "Drops & Aktionen"
+    },
+    "ticB5D": {
+      "en": "Lock the shop until the drop, with countdown and notify-me. Plus discount codes, bundles and reminders for abandoned carts.",
+      "de": "Shop bis zum Drop sperren, mit Countdown und Benachrichtigung. Dazu Rabattcodes, Bundles und Erinnerungen bei abgebrochenen Warenkörben."
+    },
+    "ticB6T": {
+      "en": "Insights",
+      "de": "Auswertungen"
+    },
+    "ticB6D": {
+      "en": "Revenue, orders and returning customers at a glance, plus where the small-business VAT limit stands.",
+      "de": "Umsatz, Bestellungen und Stammkunden auf einen Blick, dazu der Stand zur Kleinunternehmergrenze."
+    },
+    "ticS1": {
+      "en": "Homepage",
+      "de": "Startseite"
+    },
+    "ticS2": {
+      "en": "Shop",
+      "de": "Shop"
+    },
+    "ticS3": {
+      "en": "Checkout",
+      "de": "Kasse"
+    },
+    "ticS4": {
+      "en": "Dashboard · today list",
+      "de": "Dashboard · Tagesliste"
+    },
+    "ticS5": {
+      "en": "Dashboard · orders",
+      "de": "Dashboard · Bestellungen"
+    },
+    "ticS6": {
+      "en": "Dashboard · promotions",
+      "de": "Dashboard · Aktionen"
+    },
+    "ticS7": {
+      "en": "Dashboard · insights",
+      "de": "Dashboard · Auswertungen"
+    },
+    "ticFlow": {
+      "en": "Visit|Checkout|Stock|DHL label|Invoice|Insights",
+      "de": "Besuch|Kasse|Lager|DHL-Label|Rechnung|Auswertung"
+    },
+    "mamiKicker": {
+      "en": "Family bakery · Bandung, Indonesia",
+      "de": "Familienbäckerei · Bandung, Indonesien"
+    },
+    "mamiHead": {
+      "en": "Website, orders and team",
+      "de": "Website, Bestellungen und Team"
+    },
+    "mamiAccent": {
+      "en": "in one system.",
+      "de": "in einem System."
+    },
+    "mamiIntro": {
+      "en": "Mami I Patisserie is a family bakery in Bandung with recipes going back 24 years. I built the website, ordering for pastry and seasonal gift boxes, and the back office the team plans and works in.",
+      "de": "Mami I Patisserie ist eine Familienbäckerei in Bandung mit Rezepten aus 24 Jahren. Ich habe die Website, die Bestellung von Gebäck und saisonalen Geschenkboxen und das Backoffice gebaut, in dem das Team plant und arbeitet."
+    },
+    "mamiScope": {
+      "en": "Website · ordering · team back office",
+      "de": "Website · Bestellungen · Team-Backoffice"
+    },
+    "mamiPlace": {
+      "en": "Bandung, Indonesia",
+      "de": "Bandung, Indonesien"
+    },
+    "mamiLangs": {
+      "en": "Indonesian",
+      "de": "Indonesisch"
+    },
+    "mamiBuiltHead": {
+      "en": "The counter in front.",
+      "de": "Vorne die Theke."
+    },
+    "mamiBuiltAccent": {
+      "en": "The kitchen behind it.",
+      "de": "Dahinter die Backstube."
+    },
+    "mamiB1T": {
+      "en": "Website",
+      "de": "Website"
+    },
+    "mamiB1D": {
+      "en": "The story of the bakery and the daily pastry, in the brand’s own handwriting.",
+      "de": "Die Geschichte der Bäckerei und das tägliche Gebäck, in der Handschrift der Marke."
+    },
+    "mamiB2T": {
+      "en": "Menu & cart",
+      "de": "Menü & Warenkorb"
+    },
+    "mamiB2D": {
+      "en": "Pick pastry, add it to the cart and check out, or just ask on WhatsApp.",
+      "de": "Gebäck auswählen, in den Warenkorb legen und zur Kasse gehen, oder direkt per WhatsApp fragen."
+    },
+    "mamiB3T": {
+      "en": "Gift boxes",
+      "de": "Geschenkboxen"
+    },
+    "mamiB3D": {
+      "en": "Hampers with a personal greeting card, as their own product with their own flow.",
+      "de": "Hampers mit persönlicher Grußkarte, als eigenes Produkt mit eigenem Ablauf."
+    },
+    "mamiB4T": {
+      "en": "Seasonal campaigns",
+      "de": "Saisonaktionen"
+    },
+    "mamiB4D": {
+      "en": "A page of its own for the Christmas boxes, with limited stock and a countdown.",
+      "de": "Eine eigene Seite für die Weihnachtsboxen, mit begrenzter Stückzahl und Countdown."
+    },
+    "mamiB5T": {
+      "en": "Team planning",
+      "de": "Teamplanung"
+    },
+    "mamiB5D": {
+      "en": "Shifts for kitchen, morning and afternoon, absences, leave approvals and pay in one place.",
+      "de": "Schichten für Backstube, Früh- und Spätdienst, Abwesenheiten, Urlaubsfreigaben und Lohn an einem Ort."
+    },
+    "mamiB6T": {
+      "en": "Back office",
+      "de": "Backoffice"
+    },
+    "mamiB6D": {
+      "en": "Orders, money and team in one dashboard instead of several lists.",
+      "de": "Bestellungen, Geld und Team in einem Dashboard statt in mehreren Listen."
+    },
+    "mamiS1": {
+      "en": "Homepage",
+      "de": "Startseite"
+    },
+    "mamiS2": {
+      "en": "Menu",
+      "de": "Menü"
+    },
+    "mamiS3": {
+      "en": "Gift boxes",
+      "de": "Geschenkboxen"
+    },
+    "mamiS4": {
+      "en": "Christmas campaign",
+      "de": "Weihnachtsaktion"
+    },
+    "mamiS5": {
+      "en": "Cart",
+      "de": "Warenkorb"
+    },
+    "mamiS6": {
+      "en": "Back office · team planning",
+      "de": "Backoffice · Teamplanung"
+    },
+    "mamiFlow": {
+      "en": "Website|Cart|Order|Back office|Team planning",
+      "de": "Website|Warenkorb|Bestellung|Backoffice|Teamplanung"
+    }
+  },
+  "Work": {
+    "readCase": {
+      "en": "Read the case study →",
+      "de": "Fallstudie lesen →"
+    },
+    "aSampleBusinessBrainWithDashboards": {
+      "en": "A sample platform with dashboards, flows and AI reports.",
+      "de": "Eine Beispiel-Plattform mit Dashboards, Abläufen und KI-Berichten."
+    }
+  },
+  "About": {
+    "chapterOneYears": {
+      "en": "Chapter one",
+      "de": "Kapitel eins"
+    },
+    "chapterTwoYears": {
+      "en": "Chapter two",
+      "de": "Kapitel zwei"
+    },
+    "chapterThreeYears": {
+      "en": "Chapter three",
+      "de": "Kapitel drei"
+    },
+    "threeRulesIDonTBend": {
+      "en": "Four rules I don’t bend.",
+      "de": "Vier Regeln, die ich nicht beuge."
+    },
+    "noHandoffs": {
+      "en": "One contact.",
+      "de": "Ein Ansprechpartner."
+    },
+    "thePersonOnYourFirstCall": {
+      "en": "The person on your first call builds your system and answers when something breaks. A backup team knows it too and steps in.",
+      "de": "Die Person in Ihrem Erstgespräch baut Ihr System und antwortet, wenn etwas kaputtgeht. Ein Team im Hintergrund kennt es ebenfalls und springt ein."
+    },
+    "itIsYours": {
+      "en": "It is yours.",
+      "de": "Es gehört Ihnen."
+    },
+    "itIsYoursBody": {
+      "en": "If you leave, you take everything with you: your data, the code and your domain.",
+      "de": "Wenn Sie gehen, nehmen Sie alles mit: Ihre Daten, den Code und Ihre Domain."
+    },
+    "closeLabel": {
+      "en": "Start here",
+      "de": "Hier starten"
+    },
+    "closeBody": {
+      "en": "Fifteen minutes, free. You tell me where it hurts. I tell you honestly whether I can help.",
+      "de": "Fünfzehn Minuten, kostenlos. Sie erzählen, wo es hakt. Ich sage Ihnen ehrlich, ob ich helfen kann."
+    }
+  },
+  "Workbench": {
+    "closeBody": {
+      "en": "You start with shifts and tasks. The rest of your business docks onto the same platform later.",
+      "de": "Sie starten mit Schichten und Aufgaben. Der Rest Ihres Betriebs dockt später an dieselbe Plattform an."
+    },
+    "jonasCheckedIn": {
+      "en": "Jonas checked in · 07:56",
+      "de": "Jonas eingecheckt · 07:56"
+    },
+    "fri1500": {
+      "en": "Fri 15:00",
+      "de": "Fr 15:00"
     }
   }
 }

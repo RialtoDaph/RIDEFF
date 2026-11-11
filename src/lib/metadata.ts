@@ -15,6 +15,8 @@ export const PAGE_META = {
   '/build/team-apps': 'workbench',
   '/run': 'run',
   '/work': 'work',
+  '/work/tic-originals': 'caseTic',
+  '/work/mami-patisserie': 'caseMami',
   '/life': 'life',
   '/pricing': 'pricing',
   '/about': 'about',

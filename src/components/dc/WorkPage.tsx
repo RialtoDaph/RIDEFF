@@ -28,9 +28,9 @@ Logic.prototype.render = function render() {
         </p>
       </div>
       <div data-screen-label="Projects" style={{ padding: "0 clamp(20px,3vw,40px) 140px", maxWidth: "1360px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,520px),1fr))", gap: "72px 32px" }}>
-        <a href="https://ticoriginals.com" target="_blank" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <a href={v.href("/work/tic-originals")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#0E0E10" }}>
-            <img src={opt("/images/tic-hero.png")} alt={v.t("Work.tICOriginalsShop")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img src={opt("/images/tic-hero.png", 1080)} alt={v.t("Work.tICOriginalsShop")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -43,10 +43,13 @@ Logic.prototype.render = function render() {
           <p style={{ margin: "-8px 0 0", fontSize: "16px", lineHeight: "1.55", color: "#3A3731", maxWidth: "520px", textWrap: "pretty" }}>
             {v.t("Work.streetwearShopBuiltAroundLimitedDrops")}
           </p>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#FF6A00" }}>
+            {v.t("Work.readCase")}
+          </span>
         </a>
-        <a href={v.href("/contact")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <a href={v.href("/work/mami-patisserie")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#A8183F" }}>
-            <img src={opt("/images/mami-hero.png")} alt={v.t("Work.mamiIPatisserieWebsite")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img src={opt("/images/mami-hero.png", 1080)} alt={v.t("Work.mamiIPatisserieWebsite")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -59,6 +62,9 @@ Logic.prototype.render = function render() {
           <p style={{ margin: "-8px 0 0", fontSize: "16px", lineHeight: "1.55", color: "#3A3731", maxWidth: "520px", textWrap: "pretty" }}>
             {v.t("Work.familyBakeryInBandungWebsiteSeasonal")}
           </p>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#FF6A00" }}>
+            {v.t("Work.readCase")}
+          </span>
         </a>
         <a href={v.href("@portal")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#DCD5CA", display: "flex", alignItems: "flex-end", padding: "40px", boxSizing: "border-box" }}>
@@ -80,7 +86,7 @@ Logic.prototype.render = function render() {
         </a>
         <a href={v.href("/life")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", overflow: "hidden", background: "#F6E9DC" }}>
-            <img src={opt("/images/rialto-life-morning.jpg")} alt="RIDEFF Life" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
+            <img loading="lazy" decoding="async" src={opt("/images/rialto-life-morning.jpg", 1080)} alt="RIDEFF Life" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s cubic-bezier(.16,1,.3,1)" }} className="hv-ca4294b" />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px" }}>
             <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
@@ -112,7 +118,7 @@ Logic.prototype.render = function render() {
             {v.t("Work.aSampleBusinessBrainWithDashboards")}
           </p>
         </a>
-        <a href={v.href("/contact")} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ aspectRatio: "4/3", borderRadius: "20px", border: "1.5px dashed #BDB6AA", display: "flex", alignItems: "flex-end", padding: "40px", boxSizing: "border-box", transition: "border-color .3s" }} className="hv-f543883">
             <span style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(48px,5vw,72px)", lineHeight: "1", color: "#5A5650" }}>
               {v.t("Work.yourBusiness")}

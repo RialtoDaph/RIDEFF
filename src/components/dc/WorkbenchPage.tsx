@@ -5,14 +5,15 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 
 class Logic extends DCLogic {
   state = {
     tab: 0,
     cyc: 0
   };
-  SCREENS = [[this.props.t("Workbench.today"), this.props.t("Workbench.everythingForThisShiftOnOne"), [[this.props.t("Workbench.morningShift"), '08:00 – 14:00', this.props.t("Workbench.now"), '#FF9A50'], [this.props.t("Workbench.openChecklist"), this.props.t("Workbench.n6Of9Done"), '67%', '#B8B3AA'], [this.props.t("Workbench.deliveryExpected"), '10:30', this.props.t("Workbench.soon"), '#B8B3AA'], [this.props.t("Workbench.teamMeeting"), 'Fri 15:00', this.props.t("Workbench.fri"), '#B8B3AA'], [this.props.t("Workbench.messageFromRialto"), this.props.t("Workbench.newFeatureLive"), this.props.t("Workbench.new"), '#FF9A50']]], [this.props.t("Workbench.shifts"), this.props.t("Workbench.planSwapAndConfirmNoGroup"), [[this.props.t("Workbench.monLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.monJonas"), '14:00 – 20:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.tueMira"), this.props.t("Workbench.swapRequested"), this.props.t("Workbench.ask"), '#FF9A50'], [this.props.t("Workbench.wedLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.thuOpen"), this.props.t("Workbench.needsCover"), this.props.t("Workbench.open"), '#FF9A50']]], [this.props.t("Workbench.tasks"), this.props.t("Workbench.checklistsWithPhotosAndNotesAttached"), [[this.props.t("Workbench.openUp"), 'Done by Lena · 07:58', '✓', '#FF9A50'], [this.props.t("Workbench.checkStock"), this.props.t("Workbench.doneByJonas"), '✓', '#FF9A50'], [this.props.t("Workbench.cleanStation2"), this.props.t("Workbench.photoAttached"), '✓', '#FF9A50'], [this.props.t("Workbench.orderSupplies"), 'Due 12:00', '–', '#B8B3AA'], [this.props.t("Workbench.closeDown"), 'Due 20:00', '–', '#B8B3AA']]], [this.props.t("Workbench.chat"), this.props.t("Workbench.oneThreadPerTopicNotOne"), [[this.props.t("Workbench.shiftSwapTue"), 'Mira: can anyone take it?', '2', '#FF9A50'], [this.props.t("Workbench.delivery"), 'Jonas: arrived, all good', '', '#B8B3AA'], [this.props.t("Workbench.newMenu"), this.props.t("Workbench.photosUploaded"), '5', '#FF9A50'], [this.props.t("Workbench.holidayPlan"), 'Lena: August?', '', '#B8B3AA'], [this.props.t("Workbench.general"), this.props.t("Workbench.haveAGoodWeekend"), '', '#B8B3AA']]]];
-  NOTES = [[this.props.t("Workbench.shift"), this.props.t("Workbench.miraSwappedTueThu")], [this.props.t("Workbench.tasks"), this.props.t("Workbench.n3Of4OpeningTasksDone")], [this.props.t("Workbench.checkIn"), 'Jonas checked in · 07:56'], [this.props.t("Workbench.chat"), this.props.t("Workbench.newPhotoInDelivery")]];
+  SCREENS = [[this.props.t("Workbench.today"), this.props.t("Workbench.everythingForThisShiftOnOne"), [[this.props.t("Workbench.morningShift"), '08:00 – 14:00', this.props.t("Workbench.now"), '#FF9A50'], [this.props.t("Workbench.openChecklist"), this.props.t("Workbench.n6Of9Done"), '67%', '#B8B3AA'], [this.props.t("Workbench.deliveryExpected"), '10:30', this.props.t("Workbench.soon"), '#B8B3AA'], [this.props.t("Workbench.teamMeeting"), this.props.t("Workbench.fri1500"), this.props.t("Workbench.fri"), '#B8B3AA'], [this.props.t("Workbench.messageFromRialto"), this.props.t("Workbench.newFeatureLive"), this.props.t("Workbench.new"), '#FF9A50']]], [this.props.t("Workbench.shifts"), this.props.t("Workbench.planSwapAndConfirmNoGroup"), [[this.props.t("Workbench.monLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.monJonas"), '14:00 – 20:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.tueMira"), this.props.t("Workbench.swapRequested"), this.props.t("Workbench.ask"), '#FF9A50'], [this.props.t("Workbench.wedLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.thuOpen"), this.props.t("Workbench.needsCover"), this.props.t("Workbench.open"), '#FF9A50']]], [this.props.t("Workbench.tasks"), this.props.t("Workbench.checklistsWithPhotosAndNotesAttached"), [[this.props.t("Workbench.openUp"), 'Done by Lena · 07:58', '✓', '#FF9A50'], [this.props.t("Workbench.checkStock"), this.props.t("Workbench.doneByJonas"), '✓', '#FF9A50'], [this.props.t("Workbench.cleanStation2"), this.props.t("Workbench.photoAttached"), '✓', '#FF9A50'], [this.props.t("Workbench.orderSupplies"), 'Due 12:00', '–', '#B8B3AA'], [this.props.t("Workbench.closeDown"), 'Due 20:00', '–', '#B8B3AA']]], [this.props.t("Workbench.chat"), this.props.t("Workbench.oneThreadPerTopicNotOne"), [[this.props.t("Workbench.shiftSwapTue"), 'Mira: can anyone take it?', '2', '#FF9A50'], [this.props.t("Workbench.delivery"), 'Jonas: arrived, all good', '', '#B8B3AA'], [this.props.t("Workbench.newMenu"), this.props.t("Workbench.photosUploaded"), '5', '#FF9A50'], [this.props.t("Workbench.holidayPlan"), 'Lena: August?', '', '#B8B3AA'], [this.props.t("Workbench.general"), this.props.t("Workbench.haveAGoodWeekend"), '', '#B8B3AA']]]];
+  NOTES = [[this.props.t("Workbench.shift"), this.props.t("Workbench.miraSwappedTueThu")], [this.props.t("Workbench.tasks"), this.props.t("Workbench.n3Of4OpeningTasksDone")], [this.props.t("Workbench.checkIn"), this.props.t("Workbench.jonasCheckedIn")], [this.props.t("Workbench.chat"), this.props.t("Workbench.newPhotoInDelivery")]];
   componentDidMount() {
     this.t = setInterval(() => this.setState(s => ({
       cyc: s.cyc + 1
@@ -96,7 +97,7 @@ Logic.prototype.render = function render() {
             {v.t("Workbench.shiftsTasksChecklistsAndChatIn")}
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
               {v.t("Workbench.bringYourTeamSChaos")}
             </a>
             <a href="#wb-inside" style={{ border: "1px solid #0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
@@ -274,28 +275,7 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
-      <div data-screen-label="Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
-        {" "}
-        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
-            {v.t("Workbench.startHere")}
-          </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
-            {v.t("Workbench.bringTheWhatsAppGroupsAndPaper")}{" "}
-            <span style={{ color: "#FF6A00" }}>
-              {v.t("Workbench.oneApp")}
-            </span>
-          </h2>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27m%20interested%20in%20a%20team%20app." style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 26px", fontWeight: "600", fontSize: "15px" }}>
-              {v.t("Workbench.whatsAppRialto")}
-            </a>
-            <a href={v.href("/pricing")} style={{ border: "1px solid #F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "500", fontSize: "15px" }}>
-              {v.t("Workbench.seePricing")}
-            </a>
-          </div>
-        </div>
-      </div>
+      <PillarClose t={v.t} label={v.t("Workbench.startHere")} head={v.t("Workbench.bringTheWhatsAppGroupsAndPaper")} accent={v.t("Workbench.oneApp")} body={v.t("Workbench.closeBody")} />
       <Footer  />
     </>
   );

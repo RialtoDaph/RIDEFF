@@ -19,8 +19,10 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+// fileURLToPath, not URL.pathname: the latter keeps %20 and breaks in a folder with a space in its name.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = JSON.parse(fs.readFileSync(path.join(root, 'rideff_handoff/i18n/rideff-en-de.json'), 'utf8')).strings;
 const custom = JSON.parse(fs.readFileSync(path.join(root, 'messages/custom.json'), 'utf8'));
 

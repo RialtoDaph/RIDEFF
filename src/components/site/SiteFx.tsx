@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Lenis from 'lenis';
+import { EASE as M_EASE, motion, reducedMotion, watchReveals } from '@/lib/motion';
 
 declare global {
   interface Window {
@@ -11,7 +12,7 @@ declare global {
 }
 
 const SLATS = 7;
-const EASE = 'cubic-bezier(.77,0,.18,1)';
+const EASE = M_EASE.slat;
 
 /** The seven dark slats with the logo (RideffNav.dc.html → overlay()). */
 function overlay(cover: boolean) {
@@ -27,7 +28,7 @@ function overlay(cover: boolean) {
   }
   const l = document.createElement('div');
   l.setAttribute('data-l', '1');
-  l.style.cssText = `position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:opacity .3s;opacity:${cover ? 0 : 1}`;
+  l.style.cssText = `position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;opacity:${cover ? 0 : 1}`;
   l.innerHTML = '<img src="/images/rideff-mark.png" alt="" style="height:clamp(44px,6vw,80px);width:auto;display:block">';
   o.appendChild(l);
   document.body.appendChild(o);
@@ -39,20 +40,20 @@ function reveal(o: HTMLElement) {
   o.style.pointerEvents = 'none';
   o.querySelectorAll<HTMLElement>('[data-s]').forEach((s, k) => {
     s.style.transformOrigin = '50% 0';
-    s.style.transition = `transform .8s ${EASE} ${k * 50}ms`;
+    s.style.transition = `transform .55s ${EASE} ${k * 30}ms`;
     s.style.transform = 'scaleY(0)';
   });
   const l = o.querySelector<HTMLElement>('[data-l]');
   if (l) l.style.opacity = '0';
-  setTimeout(() => o.remove(), 1400);
+  setTimeout(() => o.remove(), 900);
 }
 
-const reduced = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduced = reducedMotion;
 
 /**
  * Site-wide effects from RideffNav.dc.html → siteFx():
  * page transition, 2px scroll-progress bar, Lenis smooth scroll, custom cursor,
- * smooth anchor scroll. Everything except the progress bar is off under
+ * smooth anchor scroll, plus the shared scroll reveals (src/lib/motion.ts). Everything except the progress bar is off under
  * prefers-reduced-motion.
  */
 export function SiteFx() {
@@ -70,7 +71,7 @@ export function SiteFx() {
     }
     if (o) {
       cover.current = null;
-      setTimeout(() => reveal(o), 120);
+      setTimeout(() => reveal(o), 60);
     }
     window.__lenis?.resize();
   }, [pathname]);
@@ -93,22 +94,36 @@ export function SiteFx() {
       removeEventListener('resize', upd);
     });
 
-    // Lenis
+    // Lenis, driven by GSAP's ticker so smooth scroll and scroll-linked scenes share one clock.
+    const { gsap, ScrollTrigger } = motion();
     if (!rm) {
       const L = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true });
       window.__lenis = L;
-      let raf = 0;
-      const f = (t: number) => {
-        L.raf(t);
-        raf = requestAnimationFrame(f);
-      };
-      raf = requestAnimationFrame(f);
+      L.on('scroll', ScrollTrigger.update);
+      const tick = (t: number) => L.raf(t * 1000);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
       off.push(() => {
-        cancelAnimationFrame(raf);
+        gsap.ticker.remove(tick);
         L.destroy();
         delete window.__lenis;
       });
     }
+
+    // Pages change height after mount (pinned stories, images): keep scroll-linked scenes measured.
+    let rz = 0;
+    const ro = new ResizeObserver(() => {
+      clearTimeout(rz);
+      rz = window.setTimeout(() => ScrollTrigger.refresh(), 250);
+    });
+    ro.observe(document.body);
+    off.push(() => {
+      clearTimeout(rz);
+      ro.disconnect();
+    });
+
+    // Scroll reveals for [data-rv], on every page.
+    off.push(watchReveals());
 
     // Links: smooth anchors + transition for internal pages
     const onClick = (e: MouseEvent) => {
@@ -146,17 +161,17 @@ export function SiteFx() {
       const o = overlay(true);
       o.getBoundingClientRect();
       o.querySelectorAll<HTMLElement>('[data-s]').forEach((s, k) => {
-        s.style.transition = `transform .6s ${EASE} ${k * 45}ms`;
+        s.style.transition = `transform .4s ${EASE} ${k * 25}ms`;
         s.style.transform = 'scaleY(1)';
       });
       setTimeout(() => {
         const l = o.querySelector<HTMLElement>('[data-l]');
         if (l) l.style.opacity = '1';
-      }, 320);
+      }, 200);
       setTimeout(() => {
         cover.current = o;
         router.push(href);
-      }, 820);
+      }, 520);
     };
     document.addEventListener('click', onClick);
     off.push(() => document.removeEventListener('click', onClick));

@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 import BrainRollout from '@/components/dc/BrainRollout';
 import { num } from '@/lib/format';
 
@@ -708,7 +709,7 @@ Logic.prototype.render = function render() {
         {" "}
         <div style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: "radial-gradient(ellipse at 66% 48%,#15120F 0%,#0B0B0C 62%)" }}>
           {" "}
-          <canvas ref={v.canvasRef} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", display: "block" }} />
+          <canvas ref={v.canvasRef} className="bp-hero-canvas" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", display: "block" }} />
           {" "}
           <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E", pointerEvents: "none" }}>
             {v.t("Build.home")}{" "}
@@ -757,8 +758,8 @@ Logic.prototype.render = function render() {
                 <a href="#inside" style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                   {v.t("Build.seeInsideThePlatform")}
                 </a>
-                <a href={v.href("/contact")} style={{ border: "1px solid #3A3A3C", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
-                  {v.t("Build.startAProject")}
+                <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ border: "1px solid #3A3A3C", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                  {v.t("common.ctaCall")}
                 </a>
               </div>
               {" "}
@@ -1291,7 +1292,7 @@ Logic.prototype.render = function render() {
           {" "}
         </Fragment>))}
       </div>
-      <BrainRollout t={v.t} contactHref={v.href("/contact")} pricingHref={v.href("/pricing")} />
+      <BrainRollout t={v.t} contactHref={v.href("@cal")} pricingHref={v.href("/pricing")} />
       <div data-screen-label="07 Process" style={{ padding: "140px clamp(20px,3vw,40px) 100px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
@@ -1337,25 +1338,7 @@ Logic.prototype.render = function render() {
           </a>
         </div>
       </div>
-      <div data-screen-label="Start" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", borderTop: "1px solid #1C1C1E", display: "flex", flexDirection: "column", gap: "36px" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-          {v.t("Build.startHere")}
-        </div>
-        <h2 style={{ margin: "0", fontSize: "clamp(38px,4.9vw,82px)", lineHeight: ".96", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1100px", textWrap: "balance" }}>
-          {v.t("Build.bringYourSixToolsLeaveWith")}{" "}
-          <span style={{ color: "#FF6A00" }}>
-            {v.t("Build.onePlatform")}
-          </span>
-        </h2>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27d%20like%20my%20own%20platform." style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 26px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
-            {v.t("Build.whatsAppRialto")}
-          </a>
-          <a href={v.href("/contact")} style={{ border: "1px solid #F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
-            {v.t("Build.book15Min")}
-          </a>
-        </div>
-      </div>
+      <PillarClose t={v.t} label={v.t("Build.startHere")} head={v.t("Build.bringYourSixToolsLeaveWith")} accent={v.t("Build.onePlatform")} body={v.t("Build.closeBody")} />
       <Footer  />
     </>
   );

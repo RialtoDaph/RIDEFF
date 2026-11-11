@@ -71,7 +71,8 @@ class Logic extends DCLogic {
       ctaBg: dark ? '#F4F4F2' : '#0A0A0A',
       ctaFg: dark ? '#0A0A0A' : '#F4F4F2',
       // On Life the CTA opens the web app; Life Private is booked from the pricing section.
-      ctaHref: a === 'life' ? APP_URL : this.props.href("/contact"),
+      ctaHref: a === 'life' ? APP_URL : this.props.href("@cal"),
+      ctaNew: a !== 'life',
       ctaT: a === 'life' ? this.props.t("RideffNav.openTheApp") : this.props.t("RideffNav.startAProject"),
       ctaT2: a === 'life' ? this.props.t("RideffNav.openTheApp2") : this.props.t("RideffNav.startAProject2"),
       linkFs: heroMode && s.w <= 1480 ? '13px' : '14px',
@@ -133,7 +134,7 @@ Logic.prototype.render = function render() {
           {" "}
           <div className="rn-top" style={{ display: "flex", alignItems: "center", justifyContent: `${v.justify ?? ''}`, gap: "20px", padding: "22px clamp(20px,3vw,40px)", pointerEvents: `${v.topPe ?? ''}`, background: `${v.topBg ?? ''}` }}>
             <a href={v.href("/")} style={{ pointerEvents: "auto", fontWeight: "700", fontSize: "21px", letterSpacing: "-0.03em", color: `${v.fg ?? ''}`, textDecoration: "none", display: "flex", alignItems: "baseline", gap: "2px" }}>
-              <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
+              <img src={opt("/images/rideff-mark.png", 640)} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             </a>
             {v.showLinks ? (<>
               {" "}
@@ -161,7 +162,7 @@ Logic.prototype.render = function render() {
                 </div>
               </>) : null}
               {v.showCta ? (<>
-                <a className="rn-cta" href={v.ctaHref} style={{ background: `${v.ctaBg ?? ''}`, color: `${v.ctaFg ?? ''}`, borderRadius: "999px", padding: "12px 20px", fontSize: "13px", fontWeight: "600", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none" }}>
+                <a className="rn-cta" href={v.ctaHref} target={v.ctaNew ? "_blank" : undefined} rel={v.ctaNew ? "noopener" : undefined} style={{ background: `${v.ctaBg ?? ''}`, color: `${v.ctaFg ?? ''}`, borderRadius: "999px", padding: "12px 20px", fontSize: "13px", fontWeight: "600", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none" }}>
                   {v.ctaT}
                 </a>
               </>) : null}
@@ -180,7 +181,7 @@ Logic.prototype.render = function render() {
           <div style={{ display: "flex", justifyContent: "center", padding: "14px 16px" }}>
             <div style={{ pointerEvents: "auto", display: "flex", alignItems: "center", gap: "6px", padding: "6px 6px 6px 18px", borderRadius: "999px", background: `${v.cBg ?? ''}`, border: `1px solid ${v.pillBd ?? ''}`, backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", boxShadow: "0 12px 40px rgba(0,0,0,.25)" }}>
               <a href={v.href("/")} style={{ fontWeight: "700", fontSize: "18px", letterSpacing: "-0.03em", color: `${v.fg ?? ''}`, textDecoration: "none", display: "flex", alignItems: "baseline", gap: "2px", marginRight: "10px" }}>
-                <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "20px", width: "auto", display: "block" }} />
+                <img src={opt("/images/rideff-mark.png", 640)} alt="RIDEFF" style={{ height: "20px", width: "auto", display: "block" }} />
               </a>
               {v.showLinks ? (<>
                 <div className="rn-wide" style={{ display: "flex", gap: "2px" }}>
@@ -203,7 +204,7 @@ Logic.prototype.render = function render() {
                   </button>
                 </Fragment>))}
               </div>
-              <a className="rn-cta2" href={v.ctaHref} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
+              <a className="rn-cta2" href={v.ctaHref} target={v.ctaNew ? "_blank" : undefined} rel={v.ctaNew ? "noopener" : undefined} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
                 {v.ctaT2}
               </a>
             </div>
@@ -215,7 +216,7 @@ Logic.prototype.render = function render() {
         {" "}
         <div id="rn-menu" role="dialog" aria-modal="true" aria-label={v.t("RideffNav.menu")} data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
+            <img src={opt("/images/rideff-mark.png", 640)} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
             <button onClick={v.toggle} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
               {v.t("RideffNav.close")}
             </button>
@@ -236,7 +237,7 @@ Logic.prototype.render = function render() {
             <a href="https://wa.me/4917632572420" style={{ color: "#B8B3AA", textDecoration: "none" }}>
               {v.t("RideffNav.whatsAppRialto")}
             </a>
-            <a href={v.href("/contact")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ color: "#B8B3AA", textDecoration: "none" }}>
               {v.t("RideffNav.book15Min")}
             </a>
             <a href="mailto:hallo@rideff.com" style={{ color: "#B8B3AA", textDecoration: "none" }}>

@@ -7,8 +7,8 @@
   },
   "RideffFooter": {
     "understandBuildRunOneOperatorFrom": {
-      "de": "Verstehen, bauen, betreiben. Ein Mensch, von Eichstätt bis zu Ihnen.",
-      "en": "Understand, build, run. One operator, from Eichstätt to wherever you are."
+      "en": "Understand, build, run. One contact, from Eichstätt to wherever you are.",
+      "de": "Verstehen, bauen, betreiben. Ein Ansprechpartner, von Eichstätt bis zu Ihnen."
     },
     "n2026RIDEFFRialtoEichstattGermany": {
       "de": "© 2026 RIDEFF · Rialto. Eichstätt, Deutschland.",
@@ -83,8 +83,8 @@
       "en": "AI systems · Apps · Web · Eichstätt, DE"
     },
     "iMRialtoIMapHow": {
-      "de": "Ich bin Rialto. Ich erfasse, wie Ihr Betrieb läuft, baue die KI-Agenten, Apps und das Web drumherum und bleibe nach dem Livegang dran. Aus Eichstätt, für eine kleine Zahl an Kunden.",
-      "en": "I'm Rialto. I map how your business runs, build the AI agents, apps and web around it, and stay on after launch. From Eichstätt, for a short list of clients."
+      "de": "Ich bin Rialto. Ich baue Ihrem Betrieb eine eigene Plattform: Anfragen, Angebote, Team und Rechnungen an einem Ort, mit KI, die die Wiederholungsarbeit übernimmt. Sie gehört Ihnen, und ich bleibe nach dem Livegang dran.",
+      "en": "I'm Rialto. I build your business its own platform: inquiries, offers, team and invoices in one place, with AI that takes on the repeat work. It belongs to you, and I stay on after launch."
     },
     "pillarXX": {
       "de": "Säule {x} · {y}",
@@ -95,8 +95,8 @@
       "en": "I ran trade, marketing and an online shop myself. I build for how a business really runs"
     },
     "builtPutLiveAndMaintainedBy": {
-      "de": "Gebaut, live gestellt und betreut von derselben Person",
-      "en": "Built, put live and maintained by the same person"
+      "de": "Gebaut, live gestellt und betreut von mir, mit einem Team im Rücken, das Ihr System kennt",
+      "en": "Built, put live and maintained by me, with a backup team that knows your system"
     },
     "aStreetwearLabelThatRunsBetween": {
       "de": "Ein Streetwear-Label, das zwischen den Drops läuft,",
@@ -155,8 +155,8 @@
       "en": "Hosting, updates, backups, fixes and new requests: all through your client portal, all handled by the person who built it."
     },
     "meRialtoBasedInEichstattI": {
-      "de": "Ich, Rialto, aus Eichstätt. Bevor ich RIDEFF gegründet habe, war ich in Export und Import, Social Media und E-Commerce tätig. Sie sprechen mit der Person, die Ihr System baut.",
-      "en": "Me, Rialto, based in Eichstätt. I worked in export and import, social media and e-commerce before building RIDEFF. You talk to the person who builds your system."
+      "de": "Ich, Rialto, aus Eichstätt. Bevor ich RIDEFF gegründet habe, war ich in Export und Import, Social Media und E-Commerce tätig. Sie sprechen mit der Person, die Ihr System baut, und ein Team im Hintergrund springt ein, wenn ich nicht da bin.",
+      "en": "Me, Rialto, based in Eichstätt. I worked in export and import, social media and e-commerce before building RIDEFF. You talk to the person who builds your system, and a backup team steps in when I am away."
     },
     "growthConnectsFourAreasUsuallyCustomers": {
       "de": "Growth verbindet vier Bereiche, meist Kunden, Vertrieb, Team und Betrieb, für 249 € im Monat plus Einrichtung ab 1.990 €. Soll ich ein Gespräch mit Rialto buchen?",
@@ -389,8 +389,8 @@
       "en": "On working days, every message in your portal gets a real answer, from me."
     },
     "rialtoTheSamePersonFromFirst": {
-      "de": "Rialto, dieselbe Person vom Erstgespräch bis zu jedem Update. Keine Ticket-Warteschlange, keine Übergaben.",
-      "en": "Rialto, the same person from first call to every update. No ticket queue, no handoffs."
+      "en": "Rialto, your one contact from first call to every update. A backup team knows your system and steps in during holidays or illness.",
+      "de": "Rialto, Ihr fester Ansprechpartner vom Erstgespräch bis zu jedem Update. Ein Team im Hintergrund kennt Ihr System und springt bei Urlaub oder Krankheit ein."
     },
     "exampleFiguresFinalReplyTimeAnd": {
       "de": "Beispielzahlen, finale Antwortzeit und Uptime werden mit Ihnen im Angebot festgelegt.",

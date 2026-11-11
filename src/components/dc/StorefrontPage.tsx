@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 
 class Logic extends DCLogic {
   state = {
@@ -93,7 +94,7 @@ Logic.prototype.render = function render() {
               {v.t("Storefront.websitesAndOnlineShopsOnEU")}
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
                 {v.t("Storefront.startYourSite")}
               </a>
               <a href="#sf-case" style={{ border: "1px solid #0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
@@ -116,7 +117,7 @@ Logic.prototype.render = function render() {
                 </span>
               </div>
               <div style={{ flex: "1" }}>
-                <ImageSlot src={w?.src} alt={w?.ph} shape="rect" />
+                <ImageSlot src={w?.src} alt={w?.ph} shape="rect" priority />
               </div>
             </div>
             {" "}
@@ -285,28 +286,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
-        {" "}
-        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
-            {v.t("Storefront.startHere")}
-          </div>
-          <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
-            {v.t("Storefront.yourNextCustomerIsAlreadySearching")}{" "}
-            <span style={{ color: "#FF6A00" }}>
-              {v.t("Storefront.beThere")}
-            </span>
-          </h2>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%27m%20interested%20in%20a%20website%20or%20shop." style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 26px", fontWeight: "600", fontSize: "15px" }}>
-              {v.t("Storefront.whatsAppRialto")}
-            </a>
-            <a href={v.href("/pricing")} style={{ border: "1px solid #F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "500", fontSize: "15px" }}>
-              {v.t("Storefront.seePricing")}
-            </a>
-          </div>
-        </div>
-      </div>
+      <PillarClose t={v.t} label={v.t("Storefront.startHere")} head={v.t("Storefront.yourNextCustomerIsAlreadySearching")} accent={v.t("Storefront.beThere")} body={v.t("Storefront.closeBody")} />
       <Footer  />
     </>
   );

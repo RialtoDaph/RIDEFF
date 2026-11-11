@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import { ImageSlot } from '@/lib/dc';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 
 class Logic extends DCLogic {
   renderVals() {
@@ -15,7 +16,7 @@ class Logic extends DCLogic {
         when: p[1],
         d: p[2]
       })),
-      rules: [['i', this.props.t("About.noHandoffs"), this.props.t("About.thePersonOnYourFirstCall")], ['ii', this.props.t("About.youStayInControl"), this.props.t("About.aIDraftsAndSortsYouApprove")], ['iii', this.props.t("About.yourDataStaysInTheEU"), this.props.t("About.hostedInFrankfurtBackedUpDaily")]].map(r => ({
+      rules: [['i', this.props.t("About.noHandoffs"), this.props.t("About.thePersonOnYourFirstCall")], ['ii', this.props.t("About.youStayInControl"), this.props.t("About.aIDraftsAndSortsYouApprove")], ['iii', this.props.t("About.yourDataStaysInTheEU"), this.props.t("About.hostedInFrankfurtBackedUpDaily")], ['iv', this.props.t("About.itIsYours"), this.props.t("About.itIsYoursBody")]].map(r => ({
         n: r[0],
         t: r[1],
         d: r[2]
@@ -62,7 +63,7 @@ Logic.prototype.render = function render() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <div style={{ aspectRatio: "4/5", borderRadius: "24px", overflow: "hidden" }}>
-            <ImageSlot src={opt("/images/rialto-about-v2.jpg")} alt={v.t("About.rialtoPortraitWarmLight")} shape="rounded" radius={24} />
+            <ImageSlot src={opt("/images/rialto-about-v2.jpg")} alt={v.t("About.rialtoPortraitWarmLight")} shape="rounded" radius={24} priority />
           </div>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
             {v.t("About.rialtoFounderOperatorRIDEFF")}
@@ -117,7 +118,7 @@ Logic.prototype.render = function render() {
             {v.t("About.threeRulesIDonTBend")}
           </h2>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: "40px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: "40px 32px" }}>
           {(v.rules ?? []).map((r, $index) => (<Fragment key={$index}>
             {" "}
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #0A0A0A", paddingTop: "22px" }}>
@@ -146,25 +147,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
-        {" "}
-        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
-          <h2 style={{ margin: "0", fontSize: "clamp(34px,4.6vw,72px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
-            {v.t("About.talkToThePersonWho")}{" "}
-            <span style={{ color: "#FF6A00" }}>
-              {v.t("About.buildsIt")}
-            </span>
-          </h2>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href="https://wa.me/4917632572420" style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 26px", fontWeight: "600", fontSize: "15px" }}>
-              {v.t("About.whatsAppRialto")}
-            </a>
-            <a href={v.href("/contact")} style={{ border: "1px solid #F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "500", fontSize: "15px" }}>
-              {v.t("About.book15Min")}
-            </a>
-          </div>
-        </div>
-      </div>
+      <PillarClose t={v.t} label={v.t("About.closeLabel")} head={v.t("About.talkToThePersonWho")} accent={v.t("About.buildsIt")} body={v.t("About.closeBody")} />
       <Footer  />
     </>
   );

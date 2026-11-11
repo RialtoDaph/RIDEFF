@@ -121,6 +121,7 @@ export async function pageGraph(route: MetaRoute, locale: Locale) {
   const nodes: object[] = [];
   if (route === '/') {
     const t = await getTranslations({ locale, namespace: 'Home' });
+    const tc = await getTranslations({ locale, namespace: 'common' });
     nodes.push(
       faq([
         [t('whoIsBehindRIDEFF'), t('meRialtoBasedInEichstattI')],
@@ -128,6 +129,8 @@ export async function pageGraph(route: MetaRoute, locale: Locale) {
         [t('whatDoesItCost'), t('core149Growth249WholeSystem')],
         [t('whereIsMyData'), t('hostedInTheEUInFrankfurt')],
         [t('whatHappensAfterLaunch'), t('iKeepItRunningUpdatesFixes')],
+        [tc('faqLeaveQ'), tc('faqLeaveA')],
+        [tc('faqAwayQ'), tc('faqAwayA')],
         [t('howSoonCanWeStart'), t('iKeepTheNumberOfClients')],
       ]),
     );
@@ -137,6 +140,7 @@ export async function pageGraph(route: MetaRoute, locale: Locale) {
   }
   if (route === '/pricing') {
     const t = await getTranslations({ locale, namespace: 'Pricing' });
+    const tc = await getTranslations({ locale, namespace: 'common' });
     nodes.push(
       faq([
         [t('whyASetupFeeAndA'), t('theSetupPaysForAnalysingAnd')],
@@ -144,6 +148,8 @@ export async function pageGraph(route: MetaRoute, locale: Locale) {
         [t('howLongIsTheContract'), t('businessPlansRunFor12Months')],
         [t('arePricesNetOrGross'), t('businessPricesAreNetPlus19')],
         [t('canIChangePlansLater'), t('yesMostClientsStartWithCore')],
+        [tc('faqLeaveQ'), tc('faqLeaveA')],
+        [tc('faqAwayQ'), tc('faqAwayA')],
         [t('doINeedACardFor'), t('no14DaysFreeNoCard')],
         [t('canICancelAnyMonth'), t('yesLifePlansCanBeCancelled')],
         [t('whoCanUseTogether'), t('upTo4PeopleInOne')],

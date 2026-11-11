@@ -131,6 +131,41 @@ button {
   outline-offset: 3px;
 }
 
+/* One press response for every pill button on the site. The ported pages style
+   buttons inline, so they are matched by their shape (both spellings: the
+   server writes "border-radius:999px", the browser re-serialises with a space). */
+a[style*='border-radius:999px'],
+a[style*='border-radius: 999px'],
+button[style*='border-radius:999px'],
+button[style*='border-radius: 999px'] {
+  transition:
+    transform 0.25s var(--ease-out-expo),
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+a[style*='border-radius:999px']:active,
+a[style*='border-radius: 999px']:active,
+button[style*='border-radius:999px']:active,
+button[style*='border-radius: 999px']:active {
+  transform: scale(0.97);
+}
+/* Calls to action (uppercase pills) lift a little under the pointer. */
+@media (hover: hover) {
+  a[style*='border-radius:999px'][style*='text-transform:uppercase']:hover,
+  a[style*='border-radius: 999px'][style*='text-transform: uppercase']:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px rgba(10, 10, 10, 0.45);
+  }
+  a[style*='border-radius:999px'][style*='text-transform:uppercase']:active,
+  a[style*='border-radius: 999px'][style*='text-transform: uppercase']:active {
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {
@@ -175,6 +210,14 @@ html.lenis body {
   .rn-top {
     justify-content: space-between !important;
     pointer-events: auto !important;
+  }
+}
+
+/* Phones: the Build hero's particles sit behind the headline instead of beside
+   it, so they are dimmed to keep the text readable. */
+@media (max-width: 759px) {
+  .bp-hero-canvas {
+    opacity: 0.45;
   }
 }
 
