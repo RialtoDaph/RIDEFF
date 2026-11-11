@@ -1053,8 +1053,8 @@ Logic.prototype.render = function render() {
           </div>
         ) : null}
         {v.showLauncher ? (<>
-          <ReportButton />
           <div className="nana-dock" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <ReportButton />
             <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#F4F1EC", border: "1px solid rgba(10,10,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
               <button onClick={v.toggle} aria-label={v.launcherT} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
                 <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>

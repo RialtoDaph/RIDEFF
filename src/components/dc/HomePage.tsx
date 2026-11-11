@@ -2,6 +2,9 @@
 'use client';
 import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, press, useDC } from '@/lib/dc';
+import PlatformSection from '@/components/home/PlatformSection';
+import PriceAnchor from '@/components/home/PriceAnchor';
+import ClosingScene from '@/components/home/ClosingScene';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
 import { WhatsAppIcon } from '@/components/nana/icons';
@@ -17,9 +20,7 @@ class Logic extends DCLogic {
     how: 0,
     i: 0,
     d: 0,
-    tier: 1,
     faq: 0,
-    intro: false,
     menu: false,
     fName: '',
     fContact: '',
@@ -89,23 +90,8 @@ class Logic extends DCLogic {
     line: '#A8A094',
     flow: [[this.props.t("Home.hostedInFrankfurt2"), this.props.t("Home.fastMonitoredEUOnly")], [this.props.t("Home.updatesBackups"), this.props.t("Home.dailyTestedDoneForYou")], [this.props.t("Home.requestsViaPortal"), this.props.t("Home.oneThreadPerTopic")], [this.props.t("Home.reportEveryMonday"), this.props.t("Home.knowItRunsWithoutChecking")]]
   }];
-  TIERS = [{
-    name: 'Core',
-    on: 2,
-    price: this.props.t("Home.core149Mo")
-  }, {
-    name: 'Growth',
-    on: 4,
-    price: this.props.t("Home.growth249Mo")
-  }, {
-    name: this.props.t("Home.wholeSystem"),
-    on: 6,
-    price: this.props.t("Home.wholeSystem449Mo")
-  }];
-  NODES = [[this.props.t("Home.customers"), this.props.t("Home.inquiriesAnsweredBookingsConfirmed")], [this.props.t("Home.sales"), this.props.t("Home.offersDraftedFollowUpsSent")], [this.props.t("Home.team"), this.props.t("Home.shiftsTasksCheckIns")], [this.props.t("Home.operations"), this.props.t("Home.ordersStockSuppliers")], [this.props.t("Home.finance"), this.props.t("Home.invoicesPaymentsReminders")], [this.props.t("Home.marketing"), this.props.t("Home.postsNewslettersReviews")]];
-  FAQ = [[this.props.t("Home.whoIsBehindRIDEFF"), this.props.t("Home.meRialtoBasedInEichstattI")], [this.props.t("Home.doINeedToUnderstandAI"), this.props.t("Home.noThatIsThePointYou")], [this.props.t("Home.whatDoesItCost"), this.props.t("Home.core149Growth249WholeSystem")], [this.props.t("Home.whereIsMyData"), this.props.t("Home.hostedInTheEUInFrankfurt")], [this.props.t("Home.whatHappensAfterLaunch"), this.props.t("Home.iKeepItRunningUpdatesFixes")], [this.props.t("Home.howSoonCanWeStart"), this.props.t("Home.iKeepTheNumberOfClients")]];
+  FAQ = [[this.props.t("Home.whoIsBehindRIDEFF"), this.props.t("Home.meRialtoBasedInEichstattI")], [this.props.t("Home.doINeedToUnderstandAI"), this.props.t("Home.noThatIsThePointYou")], [this.props.t("Home.whatDoesItCost"), this.props.t("Home.core149Growth249WholeSystem")], [this.props.t("Home.whereIsMyData"), this.props.t("Home.hostedInTheEUInFrankfurt")], [this.props.t("Home.whatHappensAfterLaunch"), this.props.t("Home.iKeepItRunningUpdatesFixes")], [this.props.t("common.faqLeaveQ"), this.props.t("common.faqLeaveA")], [this.props.t("common.faqAwayQ"), this.props.t("common.faqAwayA")], [this.props.t("Home.howSoonCanWeStart"), this.props.t("Home.iKeepTheNumberOfClients")]];
   cardRef = React.createRef();
-  vidRef = React.createRef();
   tiltMove = e => {
     if (this.rm) return;
     const el = e.currentTarget,
@@ -144,26 +130,7 @@ class Logic extends DCLogic {
     try {
       this.rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     } catch (e) {}
-    if (!this.rm && 'IntersectionObserver' in window) {
-      this.io = new IntersectionObserver(es => es.forEach(en => {
-        if (!en.isIntersecting) return;
-        const el = en.target,
-          d = +(el.dataset.rv || 0);
-        el.style.transition = 'opacity 1s cubic-bezier(.16,1,.3,1) ' + d + 'ms, transform 1.2s cubic-bezier(.16,1,.3,1) ' + d + 'ms';
-        el.style.opacity = 1;
-        el.style.transform = 'none';
-        this.io.unobserve(el);
-      }), {
-        threshold: .12
-      });
-      document.querySelectorAll('[data-rv]').forEach(el => {
-        if (el.getBoundingClientRect().top < innerHeight * .9) return;
-        el.style.opacity = 0;
-        el.style.transformOrigin = '50% 100%';
-        el.style.transform = 'perspective(1200px) translateY(70px) rotateX(18deg)';
-        this.io.observe(el);
-      });
-    }
+    // Scroll reveals for [data-rv] are site-wide: src/lib/motion.ts → watchReveals().
     this.fitPins = () => {
       if (this.state.mpin) {
         // Tallest door seen so far, so the pinned box doesn't jump between pillars.
@@ -202,8 +169,6 @@ class Logic extends DCLogic {
     this.fitT = setInterval(() => this.fitPins(), 1500);
     this.calcPin();
     window.addEventListener('resize', this.calcPin);
-    this.lastY = scrollY;
-    this.skew = 0;
     this.onFxScroll = () => {
       if (this.raf) return;
       this.raf = requestAnimationFrame(() => {
@@ -220,15 +185,6 @@ class Logic extends DCLogic {
   scrollFx() {
     const vh = innerHeight,
       cl = (v, a, b) => Math.max(a, Math.min(b, v));
-    const v = scrollY - this.lastY;
-    this.lastY = scrollY;
-    this.skew += (cl(-v * .25, -12, 12) - this.skew) * .3;
-    document.querySelectorAll('[data-mq]').forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) return;
-      const p = vh - r.top;
-      el.style.transform = this.rm ? '' : 'translateX(' + (+el.dataset.mq * p * .45 - (el.dataset.mq === '1' ? 600 : 1400)) + 'px) skewX(' + this.skew.toFixed(2) + 'deg)';
-    });
     const words = document.querySelector('[data-words]');
     if (words) {
       const r = words.getBoundingClientRect(),
@@ -240,13 +196,6 @@ class Logic extends DCLogic {
         const muted = s.dataset.wd === '1';
         s.style.color = k < lit ? muted ? '#8C877E' : '#0A0A0A' : '#D3CCC0';
       });
-    }
-    const plane = document.querySelector('[data-plane]');
-    if (plane && !this.rm) {
-      const r = plane.getBoundingClientRect(),
-        t = cl((vh - r.top) / (vh * .85), 0, 1),
-        e = 1 - Math.pow(1 - t, 3);
-      plane.style.transform = 'rotateX(' + ((1 - e) * 42).toFixed(2) + 'deg) translateY(' + ((1 - e) * 60).toFixed(1) + 'px) scale(' + (.84 + e * .16).toFixed(3) + ')';
     }
     const pin = this.state.pin,
       mp = this.state.mpin && this.state.dbh;
@@ -291,36 +240,12 @@ class Logic extends DCLogic {
     });
   };
   chipsRef = React.createRef();
-  componentDidUpdate() {
-    const v = this.vidRef.current;
-    if (v && v !== this._vb) {
-      this._vb = v;
-      const go = () => {
-        try {
-          v.muted = !this.state.sound;
-          v.playsInline = true;
-          const pr = v.play();
-          if (pr && pr.catch) pr.catch(() => {});
-        } catch (er) {}
-      };
-      if (v.readyState >= 1) go();else v.addEventListener('loadedmetadata', go, {
-        once: true
-      });
-    }
-  }
   componentDidMount() {
     this.setState({ mounted: true });
     this.measure();
     window.addEventListener('resize', this.measure);
     setTimeout(this.measure, 300);
     setTimeout(() => this.fxInit(), 60);
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem('rideff-v3-intro') === '1';
-    } catch (e) {}
-    if ((this.props.showIntro ?? true) && !seen) this.setState({
-      intro: true
-    });
     this.start();
     const tick = () => this.setState({
       clock: new Date().toLocaleTimeString('de-DE', {
@@ -341,7 +266,6 @@ class Logic extends DCLogic {
     if (this.calcPin) window.removeEventListener('resize', this.calcPin);
     clearInterval(this.fitT);
     window.removeEventListener('resize', this.onFxScroll);
-    if (this.io) this.io.disconnect();
     window.removeEventListener('resize', this.measure);
     clearInterval(this.t);
     clearInterval(this.ck);
@@ -477,8 +401,7 @@ class Logic extends DCLogic {
   renderVals() {
     const s = this.state,
       p = this.P[s.i],
-      d = this.D[s.d],
-      tier = this.TIERS[s.tier];
+      d = this.D[s.d];
     const need = [this.props.t("Home.aISystem"), this.props.t("Home.teamApp"), this.props.t("Home.websiteShop"), 'RIDEFF Life', this.props.t("Home.notSureYet")];
     // Days depend on the visitor's date: computed after mount (static HTML has none).
     if (!this._days && this.state.mounted) {
@@ -526,44 +449,6 @@ class Logic extends DCLogic {
           })
         };
       }),
-      onVidReady: e => {
-        const v = e.currentTarget;
-        try {
-          v.muted = !this.state.sound;
-          v.playsInline = true;
-          const pr = v.play();
-          if (pr && pr.catch) pr.catch(() => {});
-        } catch (er) {}
-      },
-      vidRef: this.vidRef,
-      vidPct: (s.vp || 0) + '%',
-      vidTime: s.vt || '0:45',
-      soundLabel: s.sound ? this.props.t("Home.soundOff") : this.props.t("Home.soundOn"),
-      onVidTime: e => {
-        const v = e.currentTarget;
-        if (!v || !isFinite(v.duration) || !v.duration) return;
-        const left = Math.max(0, Math.ceil(v.duration - v.currentTime)),
-          vt = Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0'),
-          vp = Math.round(v.currentTime / v.duration * 100);
-        if (vt !== this.state.vt || vp !== this.state.vp) this.setState({
-          vp,
-          vt
-        });
-      },
-      toggleSound: () => {
-        const v = this.vidRef.current;
-        const on = !s.sound;
-        if (v) {
-          v.muted = !on;
-          if (on) {
-            v.volume = 1;
-            v.play().catch(() => {});
-          }
-        }
-        this.setState({
-          sound: on
-        });
-      },
       caseOpen: !!s.caseOpen,
       openCase: () => {
         this.setState({
@@ -581,17 +466,8 @@ class Logic extends DCLogic {
       ticTags: [this.props.t("Home.shopDEEN"), this.props.t("Home.stripePayPal"), this.props.t("Home.backOffice"), this.props.t("Home.dHLLabels"), this.props.t("Home.restockAlerts")],
       ticBuilt: [this.props.t("Home.onlineShopInGermanAndEnglish"), this.props.t("Home.backOfficeThatOpensOnA"), this.props.t("Home.dHLShippingLabelsForAllOpen"), this.props.t("Home.restockTrackingWithCustomerWaitingLists"), this.props.t("Home.smallBusinessTaxLimitTrackedLive"), this.props.t("Home.abandonedCartWinBack")],
       ticMorning: [this.props.t("Home.n4OrdersToShip"), this.props.t("Home.n1RefundToProcess"), this.props.t("Home.n2ProductsToRestock"), this.props.t("Home.n1PaymentToChase"), this.props.t("Home.n4AbandonedCartsToWinBack")],
-      showIntro: s.intro,
       menuOpen: s.menu,
       clock: s.clock,
-      enter: () => {
-        try {
-          sessionStorage.setItem('rideff-v3-intro', '1');
-        } catch (e) {}
-        this.setState({
-          intro: false
-        });
-      },
       toggleMenu: () => this.setState(x => ({
         menu: !x.menu
       })),
@@ -720,52 +596,8 @@ class Logic extends DCLogic {
         t: w + ' ',
         m
       }))),
-      mq: [0, 1].flatMap(() => [this.props.t("Home.understand"), this.props.t("Home.build"), this.props.t("Home.run"), this.props.t("Home.repeat")]),
-      mq2: [0, 1].flatMap(() => [this.props.t("Home.onePerson3"), this.props.t("Home.noHandoffs"), this.props.t("Home.oneBrain"), this.props.t("Home.alwaysOn")]),
       tiltMove: this.tiltMove,
       tiltLeave: this.tiltLeave,
-      tiers: this.TIERS.map((t, k) => ({
-        name: t.name,
-        bg: k === s.tier ? '#FF6A00' : 'transparent',
-        fg: k === s.tier ? '#0A0A0A' : '#B8B3AA',
-        go: () => this.setState({
-          tier: k
-        })
-      })),
-      nodes: this.NODES.map((n, k) => {
-        const on = k < tier.on,
-          an = (-90 + k * 60) * Math.PI / 180,
-          rx = 38,
-          ry = 33,
-          up = Math.sin(an) < -.1;
-        return {
-          num: '0' + (k + 1),
-          on,
-          fd: up ? 'column-reverse' : 'column',
-          anchor: up ? 'translate(-50%, calc(-100% + 27px))' : 'translate(-50%, -27px)',
-          cbg: on ? '#1A1410' : '#0B0B0C',
-          x: 50 + Math.cos(an) * rx + '%',
-          y: 50 + Math.sin(an) * ry + '%',
-          lx: (50 + Math.cos(an) * rx).toFixed(2),
-          ly: (50 + Math.sin(an) * ry).toFixed(2),
-          lc: on ? 'rgba(255,106,0,.45)' : '#1F1F21',
-          pc: on ? '#FF6A00' : 'transparent',
-          pd: k * .4 + 's',
-          tf: on ? 'translateZ(50px) scale(1)' : 'translateZ(0px) scale(.94)',
-          sh: on ? '0 36px 60px -24px rgba(255,106,0,.5), 0 0 0 1px rgba(255,106,0,.3)' : 'none',
-          dl: k * 70 + 'ms',
-          t: n[0],
-          d: n[1],
-          state: on ? this.props.t("Home.connected") : this.props.t("Home.notInPlan"),
-          bg: on ? '#1C1C1E' : 'transparent',
-          bd: on ? '#3A3A3C' : '#222224',
-          dot: on ? '#FF6A00' : '#3A3A3C',
-          tag: on ? '#FF9A50' : '#4A4A4C',
-          op: on ? 1 : 0.35
-        };
-      }),
-      live: tier.on,
-      tierPrice: tier.price,
       demos: [['01', this.props.t("Home.businessDemo"), this.props.t("Home.aSampleBusinessBrainDashboardFlows"), this.props.href("/demo")], ['02', this.props.t("Home.lifeDemo"), this.props.t("Home.theRIDEFFLifeCockpitWithA"), this.props.href("@lifedemo")], ['03', this.props.t("Home.clientPortal"), this.props.t("Home.whereEveryClientApprovesOffersPays"), this.props.href("@portal")]].map(x => ({
         n: x[0],
         t: x[1],
@@ -862,45 +694,6 @@ Logic.prototype.render = function render() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: "html{scroll-behavior:smooth}\nbody{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}\na{color:inherit;text-decoration:none}a:hover{color:#FF6A00}\ninput,textarea{font-family:inherit}\n@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}\n@keyframes rdTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n@keyframes rdSlat{0%{transform:translateY(-102%)}44%,56%{transform:translateY(0)}100%{transform:translateY(102%)}}\n@keyframes rdScan{0%{left:-4%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:104%;opacity:0}}\n@keyframes rdTag{0%{opacity:0;transform:rotate(180deg) translateY(-14px);filter:blur(6px)}100%{opacity:1;transform:rotate(180deg);filter:blur(0)}}\n@keyframes rdNerve{0%{stroke-dashoffset:110;opacity:0}8%{opacity:1}70%{opacity:1}100%{stroke-dashoffset:-10;opacity:0}}\n@keyframes rdGlow{0%,100%{transform:translate(-50%,-50%) scale(1);filter:brightness(1)}50%{transform:translate(-50%,-50%) scale(1.14);filter:brightness(1.5)}}\n@keyframes rdFlipIn{0%{opacity:0;transform:rotateY(-18deg) translateX(60px) translateZ(-80px);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}\n@keyframes rdRise{0%{opacity:0;transform:translateY(26px) rotateX(-30deg)}100%{opacity:1;transform:none}}\n@keyframes rdSweep{0%{left:-35%}100%{left:110%}}\n@keyframes rdSpin{to{transform:rotate(360deg)}}\n@keyframes rdBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}\n@keyframes rdKen{0%{transform:scale(1.03) translate(0,0)}100%{transform:scale(1.14) translate(-2.5%,-1.5%)}}\n@keyframes rdFeed{0%{opacity:0;transform:translateX(-18px)}10%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateX(10px)}}\n@keyframes rdFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-10px)}}\n@keyframes rdRing{0%{box-shadow:0 0 0 0 rgba(255,106,0,.6)}100%{box-shadow:0 0 0 14px rgba(255,106,0,0)}}\n@keyframes rdLine{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}\n@keyframes rdOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}\n@keyframes rdFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}" }} />
-      {v.showIntro ? (<>
-        {" "}
-        <div style={{ position: "fixed", inset: "0", zIndex: "100", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 32px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
-            <img src={opt("/images/rideff-mark.png")} alt="RIDEFF" style={{ height: "26px", width: "auto", display: "block" }} />
-            <span>
-              {v.t("Home.showreel2026X", { x: v.vidTime })}
-            </span>
-            <button onClick={v.enter} style={{ background: "none", border: "none", color: "#8C877E", font: "inherit", letterSpacing: "inherit", textTransform: "inherit", cursor: "pointer" }}>
-              {v.t("Home.skip")}
-            </button>
-          </div>
-          <div style={{ flex: "1", margin: "0 32px", borderRadius: "20px", overflow: "hidden", position: "relative", background: "#0B0B0C" }}>
-            {" "}
-            <video ref={v.vidRef} src="/media/rideff-intro.mp4" preload="metadata" onEnded={v.enter} onTimeUpdate={v.onVidTime} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-            {" "}
-            <div style={{ position: "absolute", left: "0", right: "0", bottom: "0", height: "3px", background: "rgba(255,255,255,.12)" }}>
-              <div style={{ height: "100%", width: `${v.vidPct ?? ''}`, background: "#FF6A00", boxShadow: "0 0 10px #FF6A00", transition: "width .25s linear" }} />
-            </div>
-            {" "}
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", padding: "22px 32px", flexWrap: "wrap" }}>
-            <div style={{ fontSize: "clamp(22px,3vw,36px)", letterSpacing: "-0.03em", fontWeight: "500" }}>
-              {v.t("Home.yourBusinessGetsA")}{" "}
-              <span style={{ color: "#FF6A00" }}>
-                {v.t("Home.brain")}
-              </span>
-            </div>
-            <div style={{ display: "flex", gap: "10px" }}>
-              <button onClick={v.toggleSound} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "13px 20px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
-                {v.soundLabel}
-              </button>
-              <button onClick={v.enter} style={{ background: "#FF6A00", border: "none", color: "#0A0A0A", borderRadius: "999px", padding: "13px 24px", font: "600 14px var(--font-sans)", cursor: "pointer" }}>
-                {v.t("Home.enterSite")}
-              </button>
-            </div>
-          </div>
-        </div>
-      </>) : null}
       <Nav active="home" heroCta={true} />
       <div id="top" data-screen-label="Hero" style={{ background: "#ECE8E1" }}>
         {" "}
@@ -932,21 +725,12 @@ Logic.prototype.render = function render() {
               {v.t("Home.iMRialtoIMapHow")}
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
-              <a href={v.href("/work")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-9bccb67">
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-9bccb67">
+                {v.t("common.ctaCall")}
+              </a>
+              <a href={v.href("/work")} style={{ border: "1px solid #BDB6AA", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }}>
                 {v.t("Home.seeTheWork")}
               </a>
-              <a href={v.href("/pricing")} style={{ border: "1px solid #BDB6AA", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }}>
-                {v.t("Home.plansPricing")}
-              </a>
-              <button onClick={v.enter} style={{ display: "flex", alignItems: "center", gap: "12px", background: "none", border: "none", cursor: "pointer", font: "500 16px var(--font-sans)", color: "#0A0A0A", padding: "4px" }}>
-                <span style={{ width: "46px", height: "46px", borderRadius: "50%", background: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px" }}>
-                  {"▶"}
-                </span>
-                {v.t("Home.intro")}{" "}
-                <span style={{ color: "#8C877E" }}>
-                  {"0:45"}
-                </span>
-              </button>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "16px", paddingTop: "28px" }}>
               <div style={{ flex: "1", borderTop: "1px dashed #BDB6AA" }} />
@@ -970,7 +754,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div style={{ position: "absolute", inset: "0", opacity: `${v.op0 ?? ''}`, transform: `${v.tf0 ?? ''}`, filter: `${v.fl0 ?? ''}`, transition: `${v.tr0 ?? ''}` }}>
               {" "}
-              <img src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
+              <img loading="lazy" decoding="async" src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
               {" "}
               <div className="hc-chip" style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
                 <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
@@ -1096,7 +880,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div style={{ position: "absolute", inset: "0", opacity: `${v.op2 ?? ''}`, transform: `${v.tf2 ?? ''}`, filter: `${v.fl2 ?? ''}`, transition: `${v.tr2 ?? ''}` }}>
               {" "}
-              <img src={opt("/images/rialto-run-v2.jpg")} alt={v.t("Home.rialtoAtHisDesk")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 12s ease-in-out infinite alternate" }} />
+              <img loading="lazy" decoding="async" src={opt("/images/rialto-run-v2.jpg")} alt={v.t("Home.rialtoAtHisDesk")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 12s ease-in-out infinite alternate" }} />
               {" "}
               <div style={{ position: "absolute", left: "12%", top: "20%", width: "min(340px,50%)", display: "flex", flexDirection: "column", gap: "8px", pointerEvents: "none" }}>
                 {(v.runFeed ?? []).map((f, $index) => (<Fragment key={$index}>
@@ -1157,7 +941,7 @@ Logic.prototype.render = function render() {
                   {" "}
                   <div style={{ position: "absolute", left: "0", top: "0", height: "3px", width: `${t?.w ?? ''}`, background: "#FF6A00", transition: `width ${t?.dur ?? ''} linear` }} />
                   {" "}
-                  <img src={t?.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", opacity: `${t?.op ?? ''}`, transition: "opacity .4s,transform .6s", transform: `${t?.zoom ?? ''}` }} />
+                  <img loading="lazy" decoding="async" src={t?.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", opacity: `${t?.op ?? ''}`, transition: "opacity .4s,transform .6s", transform: `${t?.zoom ?? ''}` }} />
                   <span style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg,rgba(10,10,10,0) 40%,rgba(10,10,10,.55))" }} />
                   <span style={{ position: "absolute", left: "8px", top: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#F4F4F2" }}>
                     {t?.n}
@@ -1237,13 +1021,14 @@ Logic.prototype.render = function render() {
           {" "}
         </div>
       </div>
-      <div id="thesis" data-screen-label="01 Thesis" style={{ padding: "clamp(72px,16vw,120px) clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "clamp(40px,8.5vw,64px)", alignItems: "start" }}>
+      <PlatformSection t={v.t} />
+      <div id="thesis" data-screen-label="02 Thesis" style={{ padding: "clamp(72px,16vw,120px) clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "clamp(40px,8.5vw,64px)", alignItems: "start" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
             {v.t("Home.n01Thesis")}
           </div>
           <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", aspectRatio: "4/5", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", transition: "transform .25s ease-out", willChange: "transform", boxShadow: "0 40px 80px -40px rgba(10,10,10,.45)" }}>
-            <img src={opt("/images/rialto-about-v3.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img loading="lazy" decoding="async" src={opt("/images/rialto-about-v3.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             <span data-glare="1" style={{ position: "absolute", inset: "0", borderRadius: "22px", pointerEvents: "none", opacity: "0", transition: "opacity .3s", zIndex: "2", mixBlendMode: "soft-light" }} />
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
@@ -1286,31 +1071,9 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="Kinetic band" style={{ overflow: "hidden", padding: "24px 0 72px", display: "flex", flexDirection: "column", gap: "4px", userSelect: "none" }} aria-hidden="true">
-        <div data-mq="1" style={{ display: "flex", gap: ".4em", whiteSpace: "nowrap", fontSize: "clamp(64px,11vw,190px)", fontWeight: "600", letterSpacing: "-0.06em", lineHeight: "1", willChange: "transform" }}>
-          {(v.mq ?? []).map((m, $index) => (<Fragment key={$index}>
-            <span style={{ display: "flex", gap: ".4em", alignItems: "center" }}>
-              {m}
-              <span style={{ fontSize: ".5em", color: "#FF6A00", display: "inline-block", animation: "rdSpin 8s linear infinite" }}>
-                {"✳"}
-              </span>
-            </span>
-          </Fragment>))}
-        </div>
-        <div data-mq="-1" style={{ display: "flex", gap: ".4em", whiteSpace: "nowrap", fontSize: "clamp(64px,11vw,190px)", fontFamily: "var(--font-sans)", letterSpacing: "-0.03em", lineHeight: "1", color: "transparent", WebkitTextStroke: "1.5px #0A0A0A", willChange: "transform" }}>
-          {(v.mq2 ?? []).map((m, $index) => (<Fragment key={$index}>
-            <span style={{ display: "flex", gap: ".4em", alignItems: "center" }}>
-              {m}
-              <span style={{ fontSize: ".4em", WebkitTextStroke: "0", color: "#FF6A00" }}>
-                {"●"}
-              </span>
-            </span>
-          </Fragment>))}
-        </div>
-      </div>
       <div id="doors" data-pin="doors" style={{ height: `${v.doorsH ?? ''}`, position: "relative" }}>
         <div style={{ position: `${v.dPinPos ?? ''}`, top: `${v.dPinTop ?? ''}`, height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div data-pinbox="doors" data-screen-label="02 Four doors" style={{ minHeight: `${v.dBoxMinH ?? ''}`, padding: `${v.doorsPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", transformOrigin: "50% 50%" }}>
+          <div data-pinbox="doors" data-screen-label="03 Four doors" style={{ minHeight: `${v.dBoxMinH ?? ''}`, padding: `${v.doorsPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", transformOrigin: "50% 50%" }}>
             {" "}
             <div data-rv="0" className="hp-dhead" style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap", marginBottom: "40px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -1409,109 +1172,6 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="03 Business brain" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
-        {" "}
-        <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "end" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }} data-rv="0">
-                {v.t("Home.n03YourBusinessBrain")}
-              </div>
-              <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
-                {v.t("Home.sixAreasOneSystemThat")}{" "}
-                <span style={{ color: "#FF6A00" }}>
-                  {v.t("Home.connects")}
-                </span>
-                {" "}{v.t("Home.them")}
-              </h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.55", color: "#B8B3AA", maxWidth: "460px" }}>
-                {v.t("Home.mostBusinessesRunSixThingsOn")}
-              </p>
-              <div className="hp-tiers" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#1C1C1E", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
-                {(v.tiers ?? []).map((t, $index) => (<Fragment key={$index}>
-                  {" "}
-                  <button onClick={t?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${t?.bg ?? ''}`, color: `${t?.fg ?? ''}`, transition: "background .3s" }}>
-                    {t?.name}
-                  </button>
-                  {" "}
-                </Fragment>))}
-              </div>
-            </div>
-          </div>
-          <div style={{ perspective: "1800px" }}>
-            {" "}
-            <div data-plane="1" style={{ position: "relative", transformStyle: "preserve-3d", transformOrigin: "50% 100%", willChange: "transform" }}>
-              {" "}
-              <div style={{ position: "relative", height: "clamp(560px,54vw,680px)", transformStyle: "preserve-3d" }}>
-                {" "}
-                <div style={{ position: "absolute", left: "50%", top: "50%", width: "min(76%,820px)", aspectRatio: "1.9", borderRadius: "50%", border: "1px dashed #2A2A2C", transform: "translate(-50%,-50%)" }} />
-                {" "}
-                <div style={{ position: "absolute", left: "50%", top: "50%", width: "min(50%,540px)", aspectRatio: "1.9", borderRadius: "50%", border: "1px solid #1C1C1E", transform: "translate(-50%,-50%)" }} />
-                {" "}
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", overflow: "visible" }}>
-                  {" "}
-                  {(v.nodes ?? []).map((n, $index) => (<Fragment key={$index}>
-                    <line x1="50" y1="50" x2={n?.lx} y2={n?.ly} stroke={n?.lc} strokeWidth="1.5" vectorEffect="non-scaling-stroke" style={{ transition: "stroke .6s" }} />
-                  </Fragment>))}
-                  {" "}
-                  {(v.nodes ?? []).map((n, $index) => (<Fragment key={$index}>
-                    <line x1="50" y1="50" x2={n?.lx} y2={n?.ly} stroke={n?.pc} strokeWidth="3.5" strokeLinecap="round" pathLength="100" strokeDasharray="8 100" vectorEffect="non-scaling-stroke" style={{ filter: "drop-shadow(0 0 4px #FF6A00)", animation: `rdNerve 2.4s linear ${n?.pd ?? ''} infinite` }} />
-                  </Fragment>))}
-                  {" "}
-                </svg>
-                {" "}
-                <div style={{ position: "absolute", left: "50%", top: "50%", width: "clamp(120px,13vw,170px)", aspectRatio: "1", borderRadius: "50%", transform: "translate(-50%,-50%)", background: "radial-gradient(circle,#2A1A0E,#0B0B0C 72%)", border: "2px solid #FF6A00", boxShadow: "0 0 60px rgba(255,106,0,.35)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "4px", textAlign: "center", zIndex: "2" }}>
-                  <span style={{ position: "absolute", inset: "-14px", borderRadius: "50%", border: "1px dashed rgba(255,106,0,.4)", animation: "rdOrbit 24s linear infinite", left: "50%", top: "50%", width: "calc(100% + 28px)", height: "calc(100% + 28px)", transform: "translate(-50%,-50%)" }} />
-                  <span style={{ fontSize: "28px", color: "#FF6A00", display: "inline-block", animation: "rdSpin 10s linear infinite" }}>
-                    {"✳"}
-                  </span>
-                  <b style={{ fontSize: "16px", letterSpacing: "-0.02em" }}>
-                    {v.t("Home.yourBrain")}
-                  </b>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
-                    {v.t("Home.x6Live", { x: v.live })}
-                  </span>
-                </div>
-                {" "}
-                {(v.nodes ?? []).map((n, $index) => (<Fragment key={$index}>
-                  {" "}
-                  <div className="hp-node" style={{ position: "absolute", left: `${n?.x ?? ''}`, top: `${n?.y ?? ''}`, width: "clamp(150px,15vw,210px)", transform: `${n?.anchor ?? ''} ${n?.tf ?? ''}`, zIndex: "3", display: "flex", flexDirection: `${n?.fd ?? ''}`, alignItems: "center", gap: "10px", textAlign: "center", opacity: `${n?.op ?? ''}`, transition: `all .7s cubic-bezier(.16,1,.3,1) ${n?.dl ?? ''}` }}>
-                    <span style={{ width: "54px", height: "54px", flexShrink: "0", borderRadius: "50%", border: `2px solid ${n?.dot ?? ''}`, background: `${n?.cbg ?? ''}`, boxShadow: `${n?.sh ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "12px", color: `${n?.tag ?? ''}`, transition: `all .6s ${n?.dl ?? ''}` }}>
-                      {n?.num}
-                    </span>
-                    <b style={{ fontSize: "20px", letterSpacing: "-0.03em" }}>
-                      {n?.t}
-                    </b>
-                    <span style={{ fontSize: "13px", lineHeight: "1.4", color: "#B8B3AA" }}>
-                      {n?.d}
-                    </span>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: `${n?.tag ?? ''}` }}>
-                      {n?.state}
-                    </span>
-                  </div>
-                  {" "}
-                </Fragment>))}
-                {" "}
-              </div>
-              {" "}
-            </div>
-            {" "}
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: "20px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#8C877E" }}>
-            <span>
-              <b style={{ color: "#F4F4F2", fontSize: "14px" }}>
-                {v.live}
-              </b>
-              {" "}{v.t("Home.n6AreasConnectedX", { x: v.tierPrice })}
-            </span>
-            <span>
-              {v.t("Home.illustrativeExactScopeIsSetAfter")}
-            </span>
-          </div>
-        </div>
-      </div>
       <div id="proof" data-screen-label="04 Proof" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
@@ -1589,24 +1249,24 @@ Logic.prototype.render = function render() {
                   </span>
                 </div>
                 {" "}
-                <img src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", display: "block", aspectRatio: "16/11", objectFit: "cover", objectPosition: "top" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", display: "block", aspectRatio: "16/11", objectFit: "cover", objectPosition: "top" }} />
                 {" "}
               </div>
               {" "}
               <div style={{ position: "absolute", right: "0", bottom: "0", width: "62%", borderRadius: "14px", overflow: "hidden", border: "1px solid #2A2A2C", boxShadow: "0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,106,0,.2)", transform: "rotate(2deg)" }}>
                 {" "}
-                <img src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "4/3", objectFit: "cover", objectPosition: "top left" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "4/3", objectFit: "cover", objectPosition: "top left" }} />
                 {" "}
               </div>
               {" "}
               <div style={{ position: "absolute", left: "-4%", top: "58%", width: "30%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6s ease-in-out 0s infinite" }}>
-                <img src={opt("/images/hf/tic1.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic1.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", left: "30%", top: "-6%", width: "22%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 7s ease-in-out .8s infinite" }}>
-                <img src={opt("/images/hf/tic2.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic2.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <div style={{ position: "absolute", left: "84%", top: "-2%", width: "20%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6.5s ease-in-out 1.6s infinite" }}>
-                <img src={opt("/images/hf/tic3.jpg")} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic3.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               {" "}
             </div>
@@ -1633,6 +1293,7 @@ Logic.prototype.render = function render() {
               {v.t("Home.includedInEveryPlanEUHosting")}
             </p>
           </div>
+          <PriceAnchor t={v.t} rows={v.costRows} />
           <div data-rv="120" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "14px" }}>
             {(v.plans ?? []).map((p, $index) => (<Fragment key={$index}>
               {" "}
@@ -1678,51 +1339,6 @@ Logic.prototype.render = function render() {
               </div>
               {" "}
             </Fragment>))}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "14px" }}>
-            <div style={{ borderRadius: "22px", padding: "32px", background: "#F6E9DC", display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#B0784A" }}>
-                {v.t("Home.alsoFromRIDEFFLife")}
-              </div>
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "40px", lineHeight: "1" }}>
-                {v.t("Home.yourLifeGetsABrainToo")}
-              </div>
-              <p style={{ margin: "0", fontSize: "15px", lineHeight: "1.55", color: "#5A5650" }}>
-                {v.t("Home.morningBriefingMoneyTimeAndGoals")}
-              </p>
-              <div style={{ display: "flex" }}>
-                <a href={v.href("/life")} style={{ border: "1px solid #0A0A0A", borderRadius: "999px", padding: "12px 20px", fontSize: "14px", fontWeight: "500" }}>
-                  {v.t("Home.enterRIDEFFLife")}
-                </a>
-              </div>
-            </div>
-            <div style={{ borderRadius: "22px", padding: "32px", background: "#ECE8E1", display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
-                {v.t("Home.onCostPlaceholderFigures")}
-              </div>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                {(v.costRows ?? []).map((c, $index) => (<Fragment key={$index}>
-                  {" "}
-                  <div className="hp-cost" style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "10px 0", borderBottom: "1px solid #D3CCC0", fontSize: "15px" }}>
-                    <span style={{ color: "#3A3731" }}>
-                      {c?.t}
-                    </span>
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#5A5650", whiteSpace: "nowrap" }}>
-                      {c?.v}
-                    </span>
-                  </div>
-                  {" "}
-                </Fragment>))}
-                <div className="hp-cost" style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0 0", fontSize: "16px", fontWeight: "600" }}>
-                  <span>
-                    {v.t("Home.rIDEFFGrowthOnePersonOneInvoice")}
-                  </span>
-                  <span style={{ color: "#FF6A00", whiteSpace: "nowrap" }}>
-                    {v.t("Home.n249Mo")}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1803,7 +1419,18 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
+      <div style={{ maxWidth: "1480px", margin: "0 auto", padding: "0 clamp(20px,3vw,40px) 72px" }}>
+        <div style={{ borderTop: "1px solid #D3CCC0", paddingTop: "22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px 24px", flexWrap: "wrap", fontSize: "15px", color: "#5A5650" }}>
+          <span>
+            {v.t("Home.lifeLine")}
+          </span>
+          <a href={v.href("/life")} style={{ fontWeight: "500", color: "#0A0A0A", borderBottom: "1px solid #0A0A0A" }}>
+            {v.t("Home.enterRIDEFFLife")}
+          </a>
+        </div>
+      </div>
       <div id="start" data-screen-label="08 Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
+        <ClosingScene />
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "64px" }}>
           <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
@@ -1817,19 +1444,6 @@ Logic.prototype.render = function render() {
               </span>
             </h2>
             <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
-              <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
-                <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                  <b style={{ fontSize: "20px", fontWeight: "600" }}>
-                    {"WhatsApp +49 176 32572420"}
-                  </b>
-                  <span style={{ fontSize: "14px", color: "#8C877E" }}>
-                    {v.t("Home.rialtoDirectLine")}
-                  </span>
-                </span>
-                <span style={{ fontSize: "22px" }}>
-                  {"↗"}
-                </span>
-              </a>
               <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
                 <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <b style={{ fontSize: "20px", fontWeight: "600" }}>
@@ -1837,6 +1451,19 @@ Logic.prototype.render = function render() {
                   </b>
                   <span style={{ fontSize: "14px", color: "#8C877E" }}>
                     {v.t("Home.freeFirstCallCalComLink")}
+                  </span>
+                </span>
+                <span style={{ fontSize: "22px" }}>
+                  {"↗"}
+                </span>
+              </a>
+              <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
+                <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <b style={{ fontSize: "20px", fontWeight: "600" }}>
+                    {"WhatsApp +49 176 32572420"}
+                  </b>
+                  <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                    {v.t("Home.rialtoDirectLine")}
                   </span>
                 </span>
                 <span style={{ fontSize: "22px" }}>
@@ -1957,7 +1584,7 @@ Logic.prototype.render = function render() {
                 </span>
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
                   {v.t("Home.n01TheShopStripePayPalDE")}
                 </span>
@@ -1991,15 +1618,15 @@ Logic.prototype.render = function render() {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
                   {v.t("Home.n02TheBackOfficeTodayS")}
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: "14px" }}>
-                <img src={opt("/images/hf/tic1.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img src={opt("/images/hf/tic2.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img src={opt("/images/hf/tic3.jpg")} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic1.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic2.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic3.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", borderTop: "1px solid #1F1F21", paddingTop: "28px" }}>
                 <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#B8B3AA" }}>

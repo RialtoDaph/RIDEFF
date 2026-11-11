@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, opt, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 import { eur } from '@/lib/format';
 
 class Logic extends DCLogic {
@@ -482,7 +483,7 @@ class Logic extends DCLogic {
       }),
       rcRef: this.rcRef,
       rcH: 90 + s.rp * 760 + 'px',
-      inbox: [[this.props.t("Run.newsletterSupplier"), this.props.t("Run.sun")], [this.props.t("Run.orderConfirmation"), this.props.t("Run.sun")], ['Calendar: dentist', this.props.t("Run.sat")]].map(x => ({
+      inbox: [[this.props.t("Run.newsletterSupplier"), this.props.t("Run.sun")], [this.props.t("Run.orderConfirmation"), this.props.t("Run.sun")], [this.props.t("Run.calDentist"), this.props.t("Run.sat")]].map(x => ({
         a: x[0],
         b: x[1],
         o: .5 + (1 - m) * .5
@@ -1266,7 +1267,7 @@ Logic.prototype.render = function render() {
             </span>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <span style={{ position: "relative", width: "76px", height: "76px", flexShrink: "0" }}>
-                <img src={opt("/images/rialto-about-v3.jpg")} alt="Rialto" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "50% 25%", display: "block" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/rialto-about-v3.jpg", 640)} alt="Rialto" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "50% 25%", display: "block" }} />
                 <span style={{ position: "absolute", right: "2px", bottom: "2px", width: "16px", height: "16px", borderRadius: "50%", background: "#61CC80", border: "3px solid #0B0B0C", animation: "rdPulse 1.6s infinite" }} />
               </span>
               <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -1286,18 +1287,21 @@ Logic.prototype.render = function render() {
         <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
           {v.t("Run.exampleFiguresFinalReplyTimeAnd")}
         </span>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", paddingTop: "28px", borderTop: "1px solid #BDB6AA" }}>
-          <span style={{ fontSize: "18px" }}>
-            {v.t("Run.thatSTheWholeLoop")}{" "}
-            <b>
-              {v.t("Run.understandBuildRun")}
+        <div data-rv="0" style={{ background: "#0B0B0C", color: "#F4F4F2", borderRadius: "24px", padding: "clamp(26px,3vw,40px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,340px),1fr))", gap: "18px 48px", alignItems: "center" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF6A00" }}>
+              {v.t("Run.exitLabel")}
+            </span>
+            <b style={{ fontSize: "clamp(30px,3.2vw,48px)", fontWeight: "600", letterSpacing: "-0.045em", lineHeight: "1" }}>
+              {v.t("Run.exitTitle")}
             </b>
-          </span>
-          <a href={v.href("/contact")} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
-            {v.t("Run.startAProject")}
-          </a>
+          </div>
+          <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.55", color: "#B8B3AA", maxWidth: "560px" }}>
+            {v.t("Run.exitBody")}
+          </p>
         </div>
       </div>
+      <PillarClose t={v.t} label={v.t("Run.closeLabel")} head={v.t("Run.closeHead")} accent={v.t("Run.closeAccent")} body={v.t("Run.closeBody")} next={{ label: v.t("Run.seePricing"), href: v.href("/pricing") }} />
       <Footer  />
     </>
   );

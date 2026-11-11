@@ -15,6 +15,8 @@ export const pathnames = {
   '/build/team-apps': { de: '/bauen/team-apps', en: '/build/team-apps' },
   '/run': { de: '/betreiben', en: '/run' },
   '/work': { de: '/projekte', en: '/work' },
+  '/work/tic-originals': { de: '/projekte/tic-originals', en: '/work/tic-originals' },
+  '/work/mami-patisserie': { de: '/projekte/mami-patisserie', en: '/work/mami-patisserie' },
   '/life': '/life',
   '/pricing': { de: '/preise', en: '/pricing' },
   '/about': { de: '/ueber-mich', en: '/about' },

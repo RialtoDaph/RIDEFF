@@ -5,6 +5,7 @@ import { DCLogic, dcStyle, press, useDC } from '@/lib/dc';
 import { eur as fmtEur } from '@/lib/format';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import PriceAnchor from '@/components/home/PriceAnchor';
 
 class Logic extends DCLogic {
   state = {
@@ -187,7 +188,7 @@ class Logic extends DCLogic {
     ph: true,
     rows: [[this.props.t("Pricing.people"), '1', '1', this.props.t("Pricing.upTo4"), this.props.t("Pricing.custom")], [this.props.t("Pricing.connectedAccounts"), '3', '10', this.props.t("Pricing.n10Each"), this.props.t("Pricing.custom")], [this.props.t("Pricing.aIRequestsPerDay"), '20', '100', this.props.t("Pricing.n100Each"), this.props.t("Pricing.custom")], [this.props.t("Pricing.storage"), '1 GB', '5 GB', '20 GB', this.props.t("Pricing.custom")]]
   }];
-  FAQ_B = [[this.props.t("Pricing.whyASetupFeeAndA"), this.props.t("Pricing.theSetupPaysForAnalysingAnd")], [this.props.t("Pricing.whatDoesTheSetupFeeCover"), this.props.t("Pricing.analysisBuildTestingAndGoLive")], [this.props.t("Pricing.howLongIsTheContract"), this.props.t("Pricing.businessPlansRunFor12Months")], [this.props.t("Pricing.howDoIPay"), this.props.t("Pricing.cardSEPADirectDebitOrKlarna")], [this.props.t("Pricing.arePricesNetOrGross"), this.props.t("Pricing.businessPricesAreNetPlus19")], [this.props.t("Pricing.whatIfINeedMoreThan"), this.props.t("Pricing.weTalkFirstEitherWeAdd")], [this.props.t("Pricing.canIChangePlansLater"), this.props.t("Pricing.yesMostClientsStartWithCore")], [this.props.t("Pricing.howDoIApproveTheOffer"), this.props.t("Pricing.inYourClientPortalTickThe")]];
+  FAQ_B = [[this.props.t("Pricing.whyASetupFeeAndA"), this.props.t("Pricing.theSetupPaysForAnalysingAnd")], [this.props.t("Pricing.whatDoesTheSetupFeeCover"), this.props.t("Pricing.analysisBuildTestingAndGoLive")], [this.props.t("Pricing.howLongIsTheContract"), this.props.t("Pricing.businessPlansRunFor12Months")], [this.props.t("Pricing.howDoIPay"), this.props.t("Pricing.cardSEPADirectDebitOrKlarna")], [this.props.t("Pricing.arePricesNetOrGross"), this.props.t("Pricing.businessPricesAreNetPlus19")], [this.props.t("Pricing.whatIfINeedMoreThan"), this.props.t("Pricing.weTalkFirstEitherWeAdd")], [this.props.t("Pricing.canIChangePlansLater"), this.props.t("Pricing.yesMostClientsStartWithCore")], [this.props.t("Pricing.howDoIApproveTheOffer"), this.props.t("Pricing.inYourClientPortalTickThe")], [this.props.t("common.faqLeaveQ"), this.props.t("common.faqLeaveA")], [this.props.t("common.faqAwayQ"), this.props.t("common.faqAwayA")]];
   FAQ_L = [[this.props.t("Pricing.doINeedACardFor"), this.props.t("Pricing.no14DaysFreeNoCard")], [this.props.t("Pricing.canICancelAnyMonth"), this.props.t("Pricing.yesLifePlansCanBeCancelled")], [this.props.t("Pricing.isYearlyCheaper"), this.props.t("Pricing.yesPayYearlyAndGet2")], [this.props.t("Pricing.arePricesFinal"), this.props.t("Pricing.yesLifePricesIncludeVAT")], [this.props.t("Pricing.whoCanUseTogether"), this.props.t("Pricing.upTo4PeopleInOne")], [this.props.t("Pricing.howDoesLifePrivateStart"), this.props.t("Pricing.withACallAfterThatYou")], [this.props.t("Pricing.whereIsMyData"), this.props.t("Pricing.inTheEUInFrankfurt")], [this.props.t("Pricing.howDoIPay"), this.props.t("Pricing.cardSEPADirectDebitOrKlarna2")]];
   eur = (n, dec) => fmtEur(dec ? n : Math.round(n), this.props.locale, !!dec);
   toggleIn = (key, k) => this.setState(s => ({
@@ -240,24 +241,7 @@ class Logic extends DCLogic {
       sn_ph: true,
       sn_cm: true
     });else {
-      this.io = new IntersectionObserver(es => es.forEach(en => {
-        if (!en.isIntersecting) return;
-        const el = en.target,
-          d = +(el.dataset.rv || 0);
-        el.style.transition = 'opacity 1s cubic-bezier(.16,1,.3,1) ' + d + 'ms, transform 1.2s cubic-bezier(.16,1,.3,1) ' + d + 'ms';
-        el.style.opacity = 1;
-        el.style.transform = 'none';
-        this.io.unobserve(el);
-      }), {
-        threshold: .12
-      });
-      document.querySelectorAll('[data-rv]').forEach(el => {
-        if (el.getBoundingClientRect().top < innerHeight * .9) return;
-        el.style.opacity = 0;
-        el.style.transformOrigin = '50% 100%';
-        el.style.transform = 'perspective(1200px) translateY(70px) rotateX(18deg)';
-        this.io.observe(el);
-      });
+      // Scroll reveals for [data-rv] are site-wide: src/lib/motion.ts → watchReveals().
       this.io2 = new IntersectionObserver(es => es.forEach(en => {
         if (!en.isIntersecting) return;
         this.setState({
@@ -359,7 +343,6 @@ class Logic extends DCLogic {
     removeEventListener('scroll', this.onFx);
     removeEventListener('resize', this.onFx);
     if (this.calcPin) removeEventListener('resize', this.calcPin);
-    if (this.io) this.io.disconnect();
     if (this.io2) this.io2.disconnect();
   }
   renderVals() {
@@ -697,7 +680,8 @@ class Logic extends DCLogic {
       ctaH: L ? this.props.t("Pricing.tryItFor") : this.props.t("Pricing.notSureWhichPlan"),
       ctaH2: L ? this.props.t("Pricing.n14DaysFree2") : this.props.t("Pricing.askMe"),
       cta1: L ? this.props.t("Pricing.startFree") : this.props.t("Pricing.bookAFreeCall"),
-      cta1H: L ? this.props.signup('plus') : this.props.href("/contact"),
+      cta1H: L ? this.props.signup('plus') : this.props.href("@cal"),
+      cta1New: !L,
       cta2: L ? this.props.t("Pricing.bookACallForPrivate") : this.props.t("Pricing.seeTheWork"),
       cta2H: L ? this.props.href("/contact") : this.props.href("/work")
     };
@@ -863,6 +847,11 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
+      {v.isLife ? null : (
+        <div data-screen-label="02a Anchor" style={{ padding: "0 clamp(20px,3vw,40px) 40px", maxWidth: "1480px", margin: "0 auto" }}>
+          <PriceAnchor t={v.t} />
+        </div>
+      )}
       <div data-screen-label="02b Why" style={{ padding: "80px clamp(20px,3vw,40px) 150px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "28px" }}>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
           {"(00) "}
@@ -1355,7 +1344,7 @@ Logic.prototype.render = function render() {
             </span>
           </h2>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href={v.cta1H} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px" }} className="hv-b65372f">
+            <a href={v.cta1H} target={v.cta1New ? "_blank" : undefined} rel={v.cta1New ? "noopener" : undefined} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px" }} className="hv-b65372f">
               {v.cta1}
             </a>
             <a href={v.cta2H} style={{ border: "1.5px solid #0A0A0A", borderRadius: "999px", padding: "17px 28px", fontWeight: "500", fontSize: "15px" }} className="hv-77a5803">

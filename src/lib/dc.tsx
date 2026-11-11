@@ -73,12 +73,15 @@ export function ImageSlot({
   shape = 'rounded',
   radius = 12,
   style,
+  priority = false,
 }: {
   src: string;
   alt?: string;
   shape?: 'rect' | 'rounded' | 'circle' | 'pill';
   radius?: number;
   style?: CSSProperties;
+  /** Above the fold: load now instead of waiting for the lazy-load check. */
+  priority?: boolean;
 }) {
   const r = shape === 'circle' ? '50%' : shape === 'pill' ? 999 : shape === 'rect' ? 0 : radius;
   return (
@@ -86,7 +89,8 @@ export function ImageSlot({
     <img
       src={src}
       alt={alt}
-      loading="lazy"
+      loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : undefined}
       decoding="async"
       style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', borderRadius: r, ...style }}
     />

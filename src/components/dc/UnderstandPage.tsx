@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import { DCLogic, dcStyle, prefersReducedMotion, useDC } from '@/lib/dc';
 import Nav from '@/components/dc/Nav';
 import Footer from '@/components/dc/Footer';
+import PillarClose from '@/components/home/PillarClose';
 
 class Logic extends DCLogic {
   state = {
@@ -28,7 +29,7 @@ class Logic extends DCLogic {
     super(p);
     let seed = 7;
     const R = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-    const S = ['RE: RE: AW: Angebot?', this.props.t("Understand.invoiceFINALV3Xlsx"), this.props.t("Understand.whoCoversSaturday"), this.props.t("Understand.callBackWeber"), this.props.t("Understand.stockAskJonas"), this.props.t("Understand.whatsApp87"), this.props.t("Understand.kundenlisteAltCsv"), this.props.t("Understand.sendInvoice"), this.props.t("Understand.bookingPhoneOrMail"), this.props.t("Understand.passwordOnAPostIt"), this.props.t("Understand.n3UnpaidCheck"), this.props.t("Understand.newInquiryViaInstagram"), this.props.t("Understand.excelCrashedAgain"), this.props.t("Understand.copyPricesToShop"), this.props.t("Understand.terminVerschoben"), this.props.t("Understand.whereIsTheOfferTemplate"), 'Mon 8:00 ??? shift', this.props.t("Understand.pasteIntoBookkeeping"), this.props.t("Understand.supplierRaisedPrices"), this.props.t("Understand.replyLater"), this.props.t("Understand.n2ReviewAnswerIt"), this.props.t("Understand.newsletterNotSent"), this.props.t("Understand.lenaSickSwap"), this.props.t("Understand.printSignScan"), this.props.t("Understand.n14Unread"), 'Fwd: Fwd: delivery'];
+    const S = ['RE: RE: AW: Angebot?', this.props.t("Understand.invoiceFINALV3Xlsx"), this.props.t("Understand.whoCoversSaturday"), this.props.t("Understand.callBackWeber"), this.props.t("Understand.stockAskJonas"), this.props.t("Understand.whatsApp87"), this.props.t("Understand.kundenlisteAltCsv"), this.props.t("Understand.sendInvoice"), this.props.t("Understand.bookingPhoneOrMail"), this.props.t("Understand.passwordOnAPostIt"), this.props.t("Understand.n3UnpaidCheck"), this.props.t("Understand.newInquiryViaInstagram"), this.props.t("Understand.excelCrashedAgain"), this.props.t("Understand.copyPricesToShop"), this.props.t("Understand.terminVerschoben"), this.props.t("Understand.whereIsTheOfferTemplate"), this.props.t("Understand.messShift"), this.props.t("Understand.pasteIntoBookkeeping"), this.props.t("Understand.supplierRaisedPrices"), this.props.t("Understand.replyLater"), this.props.t("Understand.n2ReviewAnswerIt"), this.props.t("Understand.newsletterNotSent"), this.props.t("Understand.lenaSickSwap"), this.props.t("Understand.printSignScan"), this.props.t("Understand.n14Unread"), this.props.t("Understand.messFwd")];
     const fonts = [["var(--font-mono)", 'normal'], ["var(--font-sans)", 'normal']];
     this.MESS = [...Array(62)].map((_, i) => {
       const f = fonts[R() * 2 | 0],
@@ -222,7 +223,7 @@ class Logic extends DCLogic {
         c: a[1],
         tasks: a[2].map(k => ({
           t: k[0],
-          tag: k[1] ? this.props.t("Understand.repeats") + k[1] + this.props.t("Understand.hWk") : 'one-off',
+          tag: k[1] ? this.props.t("Understand.repeats") + k[1] + this.props.t("Understand.hWk") : this.props.t("Understand.oneOff"),
           bd: k[1] ? a[1] : '#2A2A2C',
           bg: k[1] ? a[1] + '1F' : '#141416',
           tc: k[1] ? a[1] : '#6B675F'
@@ -458,7 +459,7 @@ Logic.prototype.render = function render() {
             </p>
             {v.isLast ? (<>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "14px 22px", fontWeight: "700", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "14px 22px", fontWeight: "700", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                   {v.t("Understand.bookTheFirstCall")}
                 </a>
               </div>
@@ -567,6 +568,14 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
+      <div data-rv="0" style={{ padding: "28px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", alignItems: "center", gap: "14px 20px", flexWrap: "wrap" }}>
+        <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+          {v.t("Understand.callCta")}
+        </a>
+        <span style={{ fontSize: "15px", color: "#5A5650" }}>
+          {v.t("Understand.callCtaNote")}
+        </span>
+      </div>
       <div data-screen-label="02 Your week" style={{ padding: "140px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
@@ -673,7 +682,7 @@ Logic.prototype.render = function render() {
                   </b>
                   {"."}
                 </span>
-                <a href={v.href("/build")} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "14px 22px", fontWeight: "700", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                <a href={v.href("/build")} style={{ border: "1px solid #0A0A0A", color: "#0A0A0A", borderRadius: "999px", padding: "14px 22px", fontWeight: "600", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                   {v.t("Understand.enterBuild")}
                 </a>
               </div>
@@ -745,6 +754,7 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
+      <PillarClose t={v.t} label={v.t("Understand.closeLabel")} head={v.t("Understand.closeHead")} accent={v.t("Understand.closeAccent")} body={v.t("Understand.closeBody")} />
       <Footer  />
     </>
   );

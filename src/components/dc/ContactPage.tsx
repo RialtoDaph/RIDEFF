@@ -85,19 +85,6 @@ Logic.prototype.render = function render() {
             {v.t("Contact.bringTheRealProblemLeaveWith")}
           </p>
           <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
-            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
-              <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                <b style={{ fontSize: "20px", fontWeight: "600" }}>
-                  {"WhatsApp +49 176 32572420"}
-                </b>
-                <span style={{ fontSize: "14px", color: "#8C877E" }}>
-                  {v.t("Contact.rialtoFastestWayIn")}
-                </span>
-              </span>
-              <span style={{ fontSize: "22px" }}>
-                {"↗"}
-              </span>
-            </a>
             <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
               <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "20px", fontWeight: "600" }}>
@@ -105,6 +92,19 @@ Logic.prototype.render = function render() {
                 </b>
                 <span style={{ fontSize: "14px", color: "#8C877E" }}>
                   {v.t("Contact.freeFirstCallCalComLink")}
+                </span>
+              </span>
+              <span style={{ fontSize: "22px" }}>
+                {"↗"}
+              </span>
+            </a>
+            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
+              <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <b style={{ fontSize: "20px", fontWeight: "600" }}>
+                  {"WhatsApp +49 176 32572420"}
+                </b>
+                <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                  {v.t("Contact.rialtoFastestWayIn")}
                 </span>
               </span>
               <span style={{ fontSize: "22px" }}>
