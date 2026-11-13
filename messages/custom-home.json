@@ -1,0 +1,94 @@
+{
+  "common": {
+    "ctaCall": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    },
+    "closeCall": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  },
+  "Home": {
+    "startAProject": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    },
+    "bookMyFreeSlot": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    },
+    "howEyebrow": {
+      "de": "(05) So läuft's",
+      "en": "(05) How it works"
+    },
+    "plansEyebrow": {
+      "de": "(06) Zusammenarbeit",
+      "en": "(06) Ways to work together"
+    },
+    "plansLead": {
+      "de": "Ein klarer Preis.",
+      "en": "One clear price."
+    },
+    "heroBridge": {
+      "de": "Ein Shop, eine Team-App, KI-Agenten und laufende Betreuung: alles aus einer Hand, gebaut für kleine Betriebe.",
+      "en": "A shop, a team app, AI agents and ongoing care: all from one person, built for small businesses."
+    },
+    "mamiEyebrow": {
+      "de": "Zweites Projekt · Mami I Patisserie",
+      "en": "Second project · Mami I Patisserie"
+    },
+    "mamiTitle": {
+      "de": "Eine Familienbäckerei in Bandung, jetzt online und im Team.",
+      "en": "A family bakery in Bandung, now online and in sync."
+    },
+    "mamiBody": {
+      "de": "Website mit saisonalen Kollektionen, Bestellung per WhatsApp und eine App, mit der das Team plant, statt in mehreren Listen zu suchen.",
+      "en": "A website with seasonal collections, ordering on WhatsApp and an app the team plans in, instead of hunting through several lists."
+    },
+    "mamiCta": {
+      "de": "Projekt öffnen →",
+      "en": "Open the case →"
+    }
+  },
+  "Understand": {
+    "bookTheFirstCall": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    },
+    "callCta": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  },
+  "Run": {
+    "startAProject": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  },
+  "Work": {
+    "nextCta": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  },
+  "Contact": {
+    "bookMyFreeSlot": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  },
+  "Demo": {
+    "bookAFirstCall": {
+      "de": "Gespräch buchen",
+      "en": "Book a call"
+    }
+  },
+  "notFound": {
+    "contact": {
+      "de": "Gespräch buchen →",
+      "en": "Book a call →"
+    }
+  }
+}

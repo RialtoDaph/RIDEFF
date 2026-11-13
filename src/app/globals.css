@@ -2,58 +2,76 @@
 @import '../styles/dc-hover.css';
 
 /*
- * RIDEFF design tokens (rideff_handoff/README.md → Design tokens).
- * Exact hex values from the prototypes. Tailwind exposes each as a CSS variable
- * (--color-orange …) and as utilities (bg-orange, text-ink …). The ported page
- * components (src/components/dc) use the same values inline, as in the design.
+ * RIDEFF design tokens. Single source of truth for the palette.
+ *
+ * Owner palette (2026-11): #7F1D1D #DC2626 #F97316 #FDBA74 #FFE4C7 #FFF7ED.
+ * Roles:
+ *   - #F97316 is the one action/accent colour. Its steps stay on the same
+ *     ramp: soft #FDBA74 (palette), warm #FA8229 (a quarter step toward soft),
+ *     deep #EA580C (pressed/hover), ink #C2410C (accent text on light, AA).
+ *   - Light pages sit on #FFF7ED; pills and tinted surfaces step toward #FFE4C7.
+ *     Lines are peach-greys in the same hue (~30deg) so borders stay visible.
+ *   - Dark sections are an oxblood-black derived from #7F1D1D (hue ~357deg,
+ *     6% lightness) instead of neutral black; cards and lines step up in the
+ *     same hue. Text on dark is the palette cream #FFF7ED.
+ *   - #7F1D1D / #DC2626 are deep accents only (thin gradients on dark);
+ *     #DC2626 doubles as the danger colour.
+ *
+ * Tailwind exposes each token as a utility (bg-orange, text-ink ...). The
+ * ported page components (src/components/dc) carry the same values as inline
+ * hex literals; three.js, canvas and OG code need literals, never var().
  */
 @theme {
   /* Brand */
-  --color-orange: #ff6a00;
-  --color-orange-soft: #ff9a50;
-  --color-orange-warm: #ff7a1a;
-  --color-orange-deep: #e25f00;
+  --color-orange: #f97316;
+  --color-orange-soft: #fdba74;
+  --color-orange-warm: #fa8229;
+  --color-orange-deep: #ea580c;
+  --color-orange-ink: #c2410c;
+  --color-burgundy: #7f1d1d;
+  --color-red: #dc2626;
+  --color-peach: #ffe4c7;
 
-  /* Ink and dark surfaces */
-  --color-ink: #0a0a0a;
-  --color-night: #0b0b0c;
-  --color-night-card: #111112;
-  --color-night-surface: #1c1c1e;
-  --color-night-line-1: #1f1f21;
-  --color-night-line-2: #232325;
-  --color-night-line-3: #2a2a2c;
-  --color-night-line-4: #3a3a3c;
+  /* Ink and dark surfaces: oxblood-black, hue 357 */
+  --color-ink: #17090a;
+  --color-night: #14080a;
+  --color-night-card: #1e0d0e;
+  --color-night-surface: #2a1315;
+  --color-night-line-1: #2e1517;
+  --color-night-line-2: #341919;
+  --color-night-line-3: #3d1f20;
+  --color-night-line-4: #4f2c2c;
 
   /* Light */
-  --color-paper: #ece8e1;
-  --color-paper-pill: #f4f1ec;
-  --color-paper-surface: #f7f5f1;
-  --color-on-dark: #f4f4f2;
-  --color-line-1: #e2ddd4;
-  --color-line-2: #d3ccc0;
-  --color-line-3: #bdb6aa;
-  --color-line-4: #dcd5ca;
+  --color-paper: #fff7ed;
+  --color-paper-pill: #ffeedb;
+  --color-paper-surface: #fffcf7;
+  --color-on-dark: #fff7ed;
+  --color-line-1: #f1e1cf;
+  --color-line-2: #e6d0b9;
+  --color-line-3: #d3b9a0;
+  --color-line-4: #edd9c4;
 
   /* Muted text */
-  --color-muted: #5a5650;
-  --color-body: #3a3731;
-  --color-mono: #8c877e;
-  --color-muted-dark: #b8b3aa;
-  --color-muted-dark-2: #6b675f;
+  --color-muted: #5e4a43;
+  --color-body: #3d2b27;
+  --color-mono: #927a6d;
+  --color-muted-dark: #cbb7a8;
+  --color-muted-dark-2: #78625a;
 
   /* Warm dark accents (Life / Run) */
-  --color-warm-1: #2a1e14;
-  --color-warm-2: #140d08;
-  --color-warm-3: #5a4636;
-  --color-warm-4: #9a7354;
-  --color-cream-1: #fffaf4;
-  --color-cream-2: #fff8f0;
-  --color-cream-3: #fff3e6;
+  --color-warm-1: #2b1311;
+  --color-warm-2: #170a08;
+  --color-warm-3: #5e3a31;
+  --color-warm-4: #a56c55;
+  --color-cream-1: #fffbf5;
+  --color-cream-2: #fff7ed;
+  --color-cream-3: #ffedd8;
 
   /* Status and data */
   --color-success: #61c784;
   --color-online: #61cc80;
-  --color-danger: #e5484d;
+  --color-danger: #dc2626;
   --color-data-violet: #9e8cf2;
   --color-data-blue: #54b0e6;
   --color-data-gold: #e0b842;
@@ -73,15 +91,48 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-pill: 0 12px 30px rgba(10, 10, 10, 0.2);
-  --shadow-panel: 0 30px 80px rgba(10, 10, 10, 0.35);
-  --shadow-glow: 0 0 0 6px rgba(255, 106, 0, 0.18), 0 0 24px rgba(255, 106, 0, 0.5);
+  --shadow-pill: 0 12px 30px rgba(23, 9, 10, 0.2);
+  --shadow-panel: 0 30px 80px rgba(23, 9, 10, 0.35);
+  --shadow-glow: 0 0 0 6px rgba(249, 115, 22, 0.18), 0 0 24px rgba(249, 115, 22, 0.5);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-slat: cubic-bezier(0.77, 0, 0.18, 1);
 }
 
+/* Raw aliases for inline styles (style={{ color: 'var(--rd-accent)' }}).
+   Declared here because Tailwind only emits @theme variables that a utility
+   uses. The -rgb triplets are for rgba(var(--rd-accent-rgb), 0.2). */
 :root {
+  --rd-accent: #f97316;
+  --rd-accent-soft: #fdba74;
+  --rd-accent-warm: #fa8229;
+  --rd-accent-deep: #ea580c;
+  --rd-accent-ink: #c2410c;
+  --rd-burgundy: #7f1d1d;
+  --rd-red: #dc2626;
+  --rd-peach: #ffe4c7;
+  --rd-ink: #17090a;
+  --rd-night: #14080a;
+  --rd-night-card: #1e0d0e;
+  --rd-night-surface: #2a1315;
+  --rd-night-line: #3d1f20;
+  --rd-night-line-strong: #4f2c2c;
+  --rd-paper: #fff7ed;
+  --rd-paper-pill: #ffeedb;
+  --rd-paper-surface: #fffcf7;
+  --rd-on-dark: #fff7ed;
+  --rd-line: #e6d0b9;
+  --rd-line-soft: #f1e1cf;
+  --rd-line-strong: #d3b9a0;
+  --rd-body: #3d2b27;
+  --rd-muted: #5e4a43;
+  --rd-mono: #927a6d;
+  --rd-muted-dark: #cbb7a8;
+  --rd-danger: #dc2626;
+  --rd-accent-rgb: 249, 115, 22;
+  --rd-ink-rgb: 23, 9, 10;
+  --rd-paper-rgb: 255, 247, 237;
+
   --content-max: 1480px;
   --content-pad: clamp(20px, 3vw, 40px);
 }
@@ -97,8 +148,8 @@ body {
 }
 body {
   margin: 0;
-  background: #ece8e1;
-  color: #0a0a0a;
+  background: var(--rd-paper);
+  color: var(--rd-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -123,11 +174,11 @@ button {
   font: inherit;
 }
 ::selection {
-  background: #ff6a00;
-  color: #0a0a0a;
+  background: var(--rd-accent);
+  color: var(--rd-ink);
 }
 :focus-visible {
-  outline: 2px solid #ff6a00;
+  outline: 2px solid var(--rd-accent);
   outline-offset: 3px;
 }
 
@@ -157,7 +208,7 @@ button[style*='border-radius: 999px']:active {
   a[style*='border-radius:999px'][style*='text-transform:uppercase']:hover,
   a[style*='border-radius: 999px'][style*='text-transform: uppercase']:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px -12px rgba(10, 10, 10, 0.45);
+    box-shadow: 0 10px 24px -12px rgba(23, 9, 10, 0.45);
   }
   a[style*='border-radius:999px'][style*='text-transform:uppercase']:active,
   a[style*='border-radius: 999px'][style*='text-transform: uppercase']:active {
@@ -230,8 +281,7 @@ html.lenis body {
   .nana-dock button:has(> .nana-label) {
     padding: 1px !important;
   }
-  .nana-dock .nana-wa,
-  .nana-report {
+  .nana-dock .nana-wa {
     width: 46px !important;
     height: 46px !important;
   }
@@ -356,7 +406,7 @@ html.lenis body {
   /* Home stats strip: one per row, separated by top rules instead of a stray left rule. */
   .hp-stat {
     border-left: none !important;
-    border-top: 1px solid #d3ccc0;
+    border-top: 1px solid var(--rd-line);
     padding: 16px clamp(20px, 3vw, 40px) !important;
   }
   .hp-stat:first-child {

@@ -31,63 +31,63 @@ class Logic extends DCLogic {
   P = [{
     door: this.props.t("Home.understand"),
     label: this.props.t("Home.analysis"),
-    bg: '#CFC6B8',
+    bg: '#DEC7B1',
     stat: this.props.t("Home.n15Min"),
     statLabel: this.props.t("Home.firstCallFree2"),
     chips: ['Call', this.props.t("Home.map"), this.props.t("Home.audit"), this.props.t("Home.offer")],
-    thumb: '#CFC6B8',
+    thumb: '#DEC7B1',
     glyph: '✎',
-    ic: '#0A0A0A'
+    ic: '#17090A'
   }, {
     door: this.props.t("Home.build"),
     label: this.props.t("Home.systems"),
-    bg: '#0B0B0C',
+    bg: '#14080A',
     stat: '24/7',
     statLabel: this.props.t("Home.runsWhileYouSleep"),
     chips: [this.props.t("Home.agents"), this.props.t("Home.apps"), this.props.t("Home.web"), this.props.t("Home.shops")],
-    thumb: '#0B0B0C',
+    thumb: '#14080A',
     glyph: '✳',
-    ic: '#FF6A00'
+    ic: '#F97316'
   }, {
     door: this.props.t("Home.run"),
     label: this.props.t("Home.care"),
-    bg: '#3A332B',
+    bg: '#4A2527',
     stat: '1',
     statLabel: this.props.t("Home.portalForEverything"),
     chips: [this.props.t("Home.hosting2"), this.props.t("Home.updates"), this.props.t("Home.reports"), this.props.t("Home.support")],
-    thumb: '#3A332B',
+    thumb: '#4A2527',
     glyph: '♥',
-    ic: '#FF9A50'
+    ic: '#FDBA74'
   }];
   D = [{
     head: this.props.t("Home.iLearnHowYourBusinessActually"),
     desc: this.props.t("Home.beforeAnythingIsBuiltAFree"),
     chips: [this.props.t("Home.firstCall"), this.props.t("Home.analysis"), this.props.t("Home.processMap"), this.props.t("Home.offer")],
     status: this.props.t("Home.step1"),
-    bg: '#F4F1EC',
-    fg: '#0A0A0A',
-    card: '#ECE8E1',
-    line: '#BDB6AA',
+    bg: '#FFEEDB',
+    fg: '#17090A',
+    card: '#FFF7ED',
+    line: '#D3B9A0',
     flow: [[this.props.t("Home.firstCall"), this.props.t("Home.n15MinutesFreeNoPitch")], [this.props.t("Home.mapTheWeek"), this.props.t("Home.everyStepToolAndPerson")], [this.props.t("Home.findWhatRepeats"), this.props.t("Home.thatIsWhereASystemPays")], [this.props.t("Home.offerInYourPortal"), this.props.t("Home.approveWithOneClickOrDon")]]
   }, {
     head: this.props.t("Home.thePlanBecomesARunningSystem"),
     desc: this.props.t("Home.aISystemsTeamAppsWebsitesAnd"),
     chips: [this.props.t("Home.aISystems"), this.props.t("Home.teamApps"), this.props.t("Home.webShops"), this.props.t("Home.integrations")],
     status: this.props.t("Home.live"),
-    bg: '#0B0B0C',
-    fg: '#F4F4F2',
-    card: '#1C1C1E',
-    line: '#3A3A3C',
+    bg: '#14080A',
+    fg: '#FFF7ED',
+    card: '#2A1315',
+    line: '#4F2C2C',
     flow: [[this.props.t("Home.inquiryComesIn"), this.props.t("Home.emailWebsiteOrWhatsApp")], [this.props.t("Home.aISortsAndAnswers"), this.props.t("Home.draftsAReplyInYourTone")], [this.props.t("Home.offerPrepared"), this.props.t("Home.youApproveWithOneTap")], [this.props.t("Home.followUpRunsItself"), this.props.t("Home.remindersInvoiceReport")]]
   }, {
     head: this.props.t("Home.liveIsWhereAgenciesLeaveI"),
     desc: this.props.t("Home.hostingUpdatesBackupsFixesAndNew"),
     chips: [this.props.t("Home.hosting2"), this.props.t("Home.updates"), this.props.t("Home.portalSupport"), this.props.t("Home.weeklyReport")],
     status: this.props.t("Home.ongoing"),
-    bg: '#DCD5CA',
-    fg: '#0A0A0A',
-    card: '#ECE8E1',
-    line: '#A8A094',
+    bg: '#EDD9C4',
+    fg: '#17090A',
+    card: '#FFF7ED',
+    line: '#BFA285',
     flow: [[this.props.t("Home.hostedInFrankfurt2"), this.props.t("Home.fastMonitoredEUOnly")], [this.props.t("Home.updatesBackups"), this.props.t("Home.dailyTestedDoneForYou")], [this.props.t("Home.requestsViaPortal"), this.props.t("Home.oneThreadPerTopic")], [this.props.t("Home.reportEveryMonday"), this.props.t("Home.knowItRunsWithoutChecking")]]
   }];
   FAQ = [[this.props.t("Home.whoIsBehindRIDEFF"), this.props.t("Home.meRialtoBasedInEichstattI")], [this.props.t("Home.doINeedToUnderstandAI"), this.props.t("Home.noThatIsThePointYou")], [this.props.t("Home.whatDoesItCost"), this.props.t("Home.core149Growth249WholeSystem")], [this.props.t("Home.whereIsMyData"), this.props.t("Home.hostedInTheEUInFrankfurt")], [this.props.t("Home.whatHappensAfterLaunch"), this.props.t("Home.iKeepItRunningUpdatesFixes")], [this.props.t("common.faqLeaveQ"), this.props.t("common.faqLeaveA")], [this.props.t("common.faqAwayQ"), this.props.t("common.faqAwayA")], [this.props.t("Home.howSoonCanWeStart"), this.props.t("Home.iKeepTheNumberOfClients")]];
@@ -194,7 +194,7 @@ class Logic extends DCLogic {
         lit = Math.round(t * n);
       sp.forEach((s, k) => {
         const muted = s.dataset.wd === '1';
-        s.style.color = k < lit ? muted ? '#8C877E' : '#0A0A0A' : '#D3CCC0';
+        s.style.color = k < lit ? muted ? '#927A6D' : '#17090A' : '#E6D0B9';
       });
     }
     const pin = this.state.pin,
@@ -272,7 +272,7 @@ class Logic extends DCLogic {
     window.removeEventListener('keydown', this.onEsc);
   }
   tree() {
-    const C = ['#FF9E47', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB'];
+    const C = ['#FB923C', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB'];
     const hubs = C.map((c, k) => ({
       x: 6 + k * 17.6,
       c
@@ -342,9 +342,9 @@ class Logic extends DCLogic {
       style: {
         flex: 1,
         height: '100%',
-        background: k % 2 ? col : '#0A0A0A',
-        borderRight: '1px solid rgba(255,154,80,.18)',
-        boxShadow: 'inset 0 -2px 0 #FF6A00, 0 6px 24px rgba(255,106,0,.35)',
+        background: k % 2 ? col : '#17090A',
+        borderRight: '1px solid rgba(253,186,116,.18)',
+        boxShadow: 'inset 0 -2px 0 #F97316, 0 6px 24px rgba(249,115,22,.35)',
         transform: 'translateY(-102%)',
         animation: 'rdSlat .95s cubic-bezier(.77,0,.18,1) ' + k * 32 + 'ms forwards'
       }
@@ -356,8 +356,8 @@ class Logic extends DCLogic {
         top: 0,
         bottom: 0,
         width: '2px',
-        background: '#FF6A00',
-        boxShadow: '0 0 24px 6px rgba(255,106,0,.55)',
+        background: '#F97316',
+        boxShadow: '0 0 24px 6px rgba(249,115,22,.55)',
         opacity: 0,
         animation: 'rdScan 1.1s cubic-bezier(.6,0,.2,1) 80ms forwards'
       }
@@ -369,7 +369,7 @@ class Logic extends DCLogic {
         left: '50%',
         top: '50%',
         transform: 'translate(-50%,-50%)',
-        color: '#F4F4F2',
+        color: '#FFF7ED',
         fontFamily: "var(--font-mono)",
         fontSize: '12px',
         letterSpacing: '.24em',
@@ -427,9 +427,9 @@ class Logic extends DCLogic {
         return {
           wd: WD[d.getDay()],
           day: d.getDate(),
-          bg: on ? '#FF6A00' : 'transparent',
-          fg: on ? '#0A0A0A' : '#F4F4F2',
-          bd: on ? '#FF6A00' : '#2A2A2C',
+          bg: on ? '#F97316' : 'transparent',
+          fg: on ? '#17090A' : '#FFF7ED',
+          bd: on ? '#F97316' : '#3D1F20',
           go: () => this.setState({
             slotDay: k,
             slotTime: s.slotTime ?? 0
@@ -440,9 +440,9 @@ class Logic extends DCLogic {
         const on = s.slotTime === k;
         return {
           t,
-          bg: on ? '#F4F4F2' : 'transparent',
-          fg: on ? '#0A0A0A' : '#F4F4F2',
-          bd: on ? '#F4F4F2' : '#2A2A2C',
+          bg: on ? '#FFF7ED' : 'transparent',
+          fg: on ? '#17090A' : '#FFF7ED',
+          bd: on ? '#FFF7ED' : '#3D1F20',
           go: () => this.setState({
             slotTime: k,
             slotDay: s.slotDay ?? 0
@@ -492,7 +492,7 @@ class Logic extends DCLogic {
         thumb: x.thumb,
         glyph: x.glyph,
         ic: x.ic,
-        bd: k === s.i ? '#F4F1EC' : 'transparent',
+        bd: k === s.i ? '#FFEEDB' : 'transparent',
         w: k === s.i ? '100%' : '0%',
         dur: k === s.i ? this.DUR + 'ms' : '0ms',
         op: k === s.i ? 1 : 0.6,
@@ -523,9 +523,9 @@ class Logic extends DCLogic {
       tabFont: (s.tabH || 140) < 120 ? '12px' : '14px',
       tabW: (s.tabH || 140) + 'px',
       chipBottom: s.narrow ? Math.round((s.tabH || 140) / 1.05 + 14 + 16) + 'px' : '20px',
-      chipBd: s.i === 0 ? 'rgba(10,10,10,.25)' : 'rgba(244,241,236,.25)',
-      chipFg: s.i === 0 ? '#0A0A0A' : '#F4F4F2',
-      chipBg: s.i === 0 ? 'rgba(244,241,236,.82)' : 'rgba(11,11,12,.82)',
+      chipBd: s.i === 0 ? 'rgba(23,9,10,.25)' : 'rgba(255,238,219,.25)',
+      chipFg: s.i === 0 ? '#17090A' : '#FFF7ED',
+      chipBg: s.i === 0 ? 'rgba(255,238,219,.82)' : 'rgba(20,8,10,.82)',
       prev: () => {
         this.setState({
           i: (s.i + 2) % 3
@@ -553,7 +553,7 @@ class Logic extends DCLogic {
         n: '0' + (k + 1),
         door: x.door,
         op: k === s.d ? 1 : 0.45,
-        line: k === s.d ? '#FF6A00' : 'transparent',
+        line: k === s.d ? '#F97316' : 'transparent',
         go: () => this.goDoor(k)
       })),
       doorsH: s.pin ? '330vh' : s.mpin && s.dbh ? s.dbh + 2 * innerHeight + 'px' : 'auto',
@@ -631,11 +631,11 @@ class Logic extends DCLogic {
         items: [this.props.t("Home.everythingInGrowth"), this.props.t("Home.financeInvoicingFlows"), this.props.t("Home.marketingAutomation"), this.props.t("Home.prioritySupport")]
       }].map(x => ({
         ...x,
-        bg: x.dark ? '#0B0B0C' : '#ECE8E1',
-        fg: x.dark ? '#F4F4F2' : '#0A0A0A',
-        line: x.dark ? '#2A2A2C' : '#D3CCC0',
-        btnBg: x.dark ? '#FF6A00' : '#0A0A0A',
-        btnFg: x.dark ? '#0A0A0A' : '#F4F4F2'
+        bg: x.dark ? '#14080A' : '#FFF7ED',
+        fg: x.dark ? '#FFF7ED' : '#17090A',
+        line: x.dark ? '#3D1F20' : '#E6D0B9',
+        btnBg: x.dark ? '#F97316' : '#17090A',
+        btnFg: x.dark ? '#17090A' : '#FFF7ED'
       })),
       costRows: [[this.props.t("Home.agencyWebsiteOneOff"), this.props.t("Home.costAgency")], [this.props.t("Home.freelancerForAutomations"), this.props.t("Home.costFreelancer")], [this.props.t("Home.n46SeparateTools"), this.props.t("Home.costTools")], [this.props.t("Home.yourTimeKeepingItTogether"), this.props.t("Home.costTime")]].map(c => ({
         t: c[0],
@@ -650,9 +650,9 @@ class Logic extends DCLogic {
           d: x[1],
           op: on ? 1 : .35,
           tf: on ? 'none' : 'translateY(16px)',
-          nb: on ? cur ? '#FF6A00' : '#0A0A0A' : 'transparent',
-          nc: on ? cur ? '#0A0A0A' : '#F4F4F2' : '#5A5650',
-          ns: cur ? '0 0 0 6px rgba(255,106,0,.18), 0 0 24px rgba(255,106,0,.5)' : 'inset 0 0 0 1px #BDB6AA'
+          nb: on ? cur ? '#F97316' : '#17090A' : 'transparent',
+          nc: on ? cur ? '#17090A' : '#FFF7ED' : '#5E4A43',
+          ns: cur ? '0 0 0 6px rgba(249,115,22,.18), 0 0 24px rgba(249,115,22,.5)' : 'inset 0 0 0 1px #D3B9A0'
         };
       }),
       faqs: this.FAQ.map((f, k) => ({
@@ -676,9 +676,9 @@ class Logic extends DCLogic {
         const on = s.need === t;
         return {
           t,
-          bg: on ? '#FF6A00' : 'transparent',
-          fg: on ? '#0A0A0A' : '#F4F4F2',
-          bd: on ? '#FF6A00' : '#3A3A3C',
+          bg: on ? '#F97316' : 'transparent',
+          fg: on ? '#17090A' : '#FFF7ED',
+          bd: on ? '#F97316' : '#4F2C2C',
           go: () => this.setState({
             need: on ? null : t
           })
@@ -693,13 +693,13 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "html{scroll-behavior:smooth}\nbody{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}\na{color:inherit;text-decoration:none}a:hover{color:#FF6A00}\ninput,textarea{font-family:inherit}\n@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}\n@keyframes rdTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n@keyframes rdSlat{0%{transform:translateY(-102%)}44%,56%{transform:translateY(0)}100%{transform:translateY(102%)}}\n@keyframes rdScan{0%{left:-4%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:104%;opacity:0}}\n@keyframes rdTag{0%{opacity:0;transform:rotate(180deg) translateY(-14px);filter:blur(6px)}100%{opacity:1;transform:rotate(180deg);filter:blur(0)}}\n@keyframes rdNerve{0%{stroke-dashoffset:110;opacity:0}8%{opacity:1}70%{opacity:1}100%{stroke-dashoffset:-10;opacity:0}}\n@keyframes rdGlow{0%,100%{transform:translate(-50%,-50%) scale(1);filter:brightness(1)}50%{transform:translate(-50%,-50%) scale(1.14);filter:brightness(1.5)}}\n@keyframes rdFlipIn{0%{opacity:0;transform:rotateY(-18deg) translateX(60px) translateZ(-80px);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}\n@keyframes rdRise{0%{opacity:0;transform:translateY(26px) rotateX(-30deg)}100%{opacity:1;transform:none}}\n@keyframes rdSweep{0%{left:-35%}100%{left:110%}}\n@keyframes rdSpin{to{transform:rotate(360deg)}}\n@keyframes rdBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}\n@keyframes rdKen{0%{transform:scale(1.03) translate(0,0)}100%{transform:scale(1.14) translate(-2.5%,-1.5%)}}\n@keyframes rdFeed{0%{opacity:0;transform:translateX(-18px)}10%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateX(10px)}}\n@keyframes rdFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-10px)}}\n@keyframes rdRing{0%{box-shadow:0 0 0 0 rgba(255,106,0,.6)}100%{box-shadow:0 0 0 14px rgba(255,106,0,0)}}\n@keyframes rdLine{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}\n@keyframes rdOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}\n@keyframes rdFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "html{scroll-behavior:smooth}\nbody{margin:0;background:#FFF7ED;color:#17090A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}\na{color:inherit;text-decoration:none}a:hover{color:#F97316}\ninput,textarea{font-family:inherit}\n@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}\n@keyframes rdTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n@keyframes rdSlat{0%{transform:translateY(-102%)}44%,56%{transform:translateY(0)}100%{transform:translateY(102%)}}\n@keyframes rdScan{0%{left:-4%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:104%;opacity:0}}\n@keyframes rdTag{0%{opacity:0;transform:rotate(180deg) translateY(-14px);filter:blur(6px)}100%{opacity:1;transform:rotate(180deg);filter:blur(0)}}\n@keyframes rdNerve{0%{stroke-dashoffset:110;opacity:0}8%{opacity:1}70%{opacity:1}100%{stroke-dashoffset:-10;opacity:0}}\n@keyframes rdGlow{0%,100%{transform:translate(-50%,-50%) scale(1);filter:brightness(1)}50%{transform:translate(-50%,-50%) scale(1.14);filter:brightness(1.5)}}\n@keyframes rdFlipIn{0%{opacity:0;transform:rotateY(-18deg) translateX(60px) translateZ(-80px);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}\n@keyframes rdRise{0%{opacity:0;transform:translateY(26px) rotateX(-30deg)}100%{opacity:1;transform:none}}\n@keyframes rdSweep{0%{left:-35%}100%{left:110%}}\n@keyframes rdSpin{to{transform:rotate(360deg)}}\n@keyframes rdBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}\n@keyframes rdKen{0%{transform:scale(1.03) translate(0,0)}100%{transform:scale(1.14) translate(-2.5%,-1.5%)}}\n@keyframes rdFeed{0%{opacity:0;transform:translateX(-18px)}10%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateX(10px)}}\n@keyframes rdFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-10px)}}\n@keyframes rdRing{0%{box-shadow:0 0 0 0 rgba(249,115,22,.6)}100%{box-shadow:0 0 0 14px rgba(249,115,22,0)}}\n@keyframes rdLine{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}\n@keyframes rdOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}\n@keyframes rdFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}" }} />
       <Nav active="home" heroCta={true} />
-      <div id="top" data-screen-label="Hero" style={{ background: "#ECE8E1" }}>
+      <div id="top" data-screen-label="Hero" style={{ background: "#FFF7ED" }}>
         {" "}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,520px),1fr))", gap: "40px", padding: "16px 16px 28px clamp(20px,3vw,40px)", maxWidth: "1680px", margin: "0 auto", alignItems: "stretch" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px", justifyContent: "center", paddingTop: "112px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {v.t("Home.aISystemsAppsWebEichstattDE")}
             </div>
             <h1 className="hp-h1" style={{ margin: "0", fontSize: "clamp(43px,5.2vw,92px)", lineHeight: ".94", letterSpacing: "-0.055em", fontWeight: "600", textWrap: "balance" }}>
@@ -707,7 +707,7 @@ Logic.prototype.render = function render() {
                 {v.t("Home.onePerson")}
                 <span style={{ display: "inline-flex", verticalAlign: "middle", marginLeft: ".12em" }}>
                   {(v.avatars ?? []).map((v, $index) => (<Fragment key={$index}>
-                    <span style={{ width: ".62em", height: ".62em", borderRadius: "50%", overflow: "hidden", border: "3px solid #ECE8E1", marginLeft: "-.16em", display: "inline-block" }}>
+                    <span style={{ width: ".62em", height: ".62em", borderRadius: "50%", overflow: "hidden", border: "3px solid #FFF7ED", marginLeft: "-.16em", display: "inline-block" }}>
                       <img src={v?.src} alt={v?.ph} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                     </span>
                   </Fragment>))}
@@ -717,34 +717,34 @@ Logic.prototype.render = function render() {
               {v.t("Home.understandsIt")}
               <br />
               {v.t("Home.buildsIt")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.t("Home.keepsItRunning")}
               </span>
             </h1>
-            <p style={{ margin: "0", maxWidth: "540px", fontSize: "clamp(18px,1.5vw,22px)", lineHeight: "1.5", color: "#3A3731", textWrap: "pretty" }}>
+            <p style={{ margin: "0", maxWidth: "540px", fontSize: "clamp(18px,1.5vw,22px)", lineHeight: "1.5", color: "#3D2B27", textWrap: "pretty" }}>
               {v.t("Home.iMRialtoIMapHow")}
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
-              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-9bccb67">
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }} className="hv-9bccb67">
                 {v.t("common.ctaCall")}
               </a>
-              <a href={v.href("/work")} style={{ border: "1px solid #BDB6AA", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }}>
+              <a href={v.href("/work")} style={{ border: "1px solid #D3B9A0", borderRadius: "999px", padding: "17px 26px", fontWeight: "600", fontSize: "13px", letterSpacing: ".08em", textTransform: "uppercase" }}>
                 {v.t("Home.seeTheWork")}
               </a>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "16px", paddingTop: "28px" }}>
-              <div style={{ flex: "1", borderTop: "1px dashed #BDB6AA" }} />
+              <div style={{ flex: "1", borderTop: "1px dashed #D3B9A0" }} />
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <span style={{ fontSize: "44px", fontWeight: "500", letterSpacing: "-0.04em", lineHeight: "1" }}>
                   {v.num}
-                  <span style={{ fontSize: "20px", color: "#8C877E" }}>
+                  <span style={{ fontSize: "20px", color: "#927A6D" }}>
                     {" / 03"}
                   </span>
                 </span>
-                <button onClick={v.prev} style={{ width: "48px", height: "48px", borderRadius: "50%", border: "1px solid #BDB6AA", background: "none", cursor: "pointer", fontSize: "16px" }}>
+                <button onClick={v.prev} style={{ width: "48px", height: "48px", borderRadius: "50%", border: "1px solid #D3B9A0", background: "none", cursor: "pointer", fontSize: "16px" }}>
                   {"‹"}
                 </button>
-                <button onClick={v.next} style={{ width: "48px", height: "48px", borderRadius: "50%", border: "1px solid #BDB6AA", background: "none", cursor: "pointer", fontSize: "16px" }}>
+                <button onClick={v.next} style={{ width: "48px", height: "48px", borderRadius: "50%", border: "1px solid #D3B9A0", background: "none", cursor: "pointer", fontSize: "16px" }}>
                   {"›"}
                 </button>
               </div>
@@ -757,73 +757,73 @@ Logic.prototype.render = function render() {
               <img loading="lazy" decoding="async" src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
               {" "}
               <div className="hc-chip" style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
-                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
-                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
+                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
+                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#17090A", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
                     {"◷"}
                   </span>
                   <b style={{ fontSize: "19px" }}>
                     {"≈14 h"}
                   </b>
-                  <span style={{ fontSize: "16px", color: "#5A5650" }}>
+                  <span style={{ fontSize: "16px", color: "#5E4A43" }}>
                     {v.t("Home.weekFoundRepeatable")}
                   </span>
                 </div>
-                <span style={{ width: "70px", height: "1px", background: "#F4F4F2" }} />
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#F4F4F2", boxShadow: "0 0 0 4px rgba(244,241,236,.35)" }} />
+                <span style={{ width: "70px", height: "1px", background: "#FFF7ED" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#FFF7ED", boxShadow: "0 0 0 4px rgba(255,238,219,.35)" }} />
               </div>
               {" "}
               <div className="hc-chip" style={{ position: "absolute", left: "18%", top: "58%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 6s ease-in-out 1.2s infinite" }}>
-                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
-                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
+                <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
+                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#17090A", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
                     {"✎"}
                   </span>
                   <b style={{ fontSize: "19px" }}>
                     {v.t("Home.n15Min")}
                   </b>
-                  <span style={{ fontSize: "16px", color: "#5A5650" }}>
+                  <span style={{ fontSize: "16px", color: "#5E4A43" }}>
                     {v.t("Home.firstCallFree")}
                   </span>
                 </div>
-                <span style={{ width: "50px", height: "1px", background: "#F4F4F2" }} />
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#F4F4F2", boxShadow: "0 0 0 4px rgba(244,241,236,.35)" }} />
+                <span style={{ width: "50px", height: "1px", background: "#FFF7ED" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#FFF7ED", boxShadow: "0 0 0 4px rgba(255,238,219,.35)" }} />
               </div>
               {" "}
             </div>
             {" "}
-            <div style={{ position: "absolute", inset: "0", opacity: `${v.op1 ?? ''}`, transform: `${v.tf1 ?? ''}`, filter: `${v.fl1 ?? ''}`, transition: `${v.tr1 ?? ''}`, background: "radial-gradient(ellipse at 55% 60%,#17140F,#0B0B0C 70%)" }}>
+            <div style={{ position: "absolute", inset: "0", opacity: `${v.op1 ?? ''}`, transform: `${v.tf1 ?? ''}`, filter: `${v.fl1 ?? ''}`, transition: `${v.tr1 ?? ''}`, background: "radial-gradient(ellipse at 55% 60%,#210F10,#14080A 70%)" }}>
               {" "}
-              <div style={{ position: "absolute", left: "12%", right: "4%", top: "22px", border: "1px solid #1F1F21", borderRadius: "16px", background: "rgba(15,15,16,.8)", fontFamily: "var(--font-mono)", fontSize: "clamp(12px,1.05vw,16px)", color: "#F4F4F2", overflow: "hidden" }}>
+              <div style={{ position: "absolute", left: "12%", right: "4%", top: "22px", border: "1px solid #2E1517", borderRadius: "16px", background: "rgba(29,13,13,.8)", fontFamily: "var(--font-mono)", fontSize: "clamp(12px,1.05vw,16px)", color: "#FFF7ED", overflow: "hidden" }}>
                 {" "}
-                <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 18px", color: "#6B675F", fontSize: "12px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 18px", color: "#78625A", fontSize: "12px" }}>
                   <span>
                     {"● ● ● rialto@rideff · ~/your-business"}
                   </span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {"● LIVE"}
                   </span>
                 </div>
                 {" "}
                 <div style={{ padding: "4px 18px 18px", display: "flex", flexDirection: "column", gap: "6px" }}>
                   <span>
-                    <span style={{ color: "#6B675F" }}>
+                    <span style={{ color: "#78625A" }}>
                       {"$"}
                     </span>
                     {" deploy --agents --plan growth"}
                   </span>
                   <span>
-                    <span style={{ color: "#FF6A00" }}>
+                    <span style={{ color: "#F97316" }}>
                       {"✓"}
                     </span>
                     {" "}{v.t("Home.chiefAgentOnline")}
                   </span>
                   <span>
-                    <span style={{ color: "#FF6A00" }}>
+                    <span style={{ color: "#F97316" }}>
                       {"✓"}
                     </span>
                     {" "}{v.t("Home.n6AreasMappedApprovalsOn")}
                   </span>
                   <span>
-                    <span style={{ color: "#FF6A00" }}>
+                    <span style={{ color: "#F97316" }}>
                       {"✓"}
                     </span>
                     {" "}{v.t("Home.n18AgentsToolsConnected")}
@@ -846,31 +846,31 @@ Logic.prototype.render = function render() {
               {" "}
               <div style={{ position: "absolute", left: "10%", right: "3%", top: "38%", height: "46%" }}>
                 {" "}
-                <span style={{ position: "absolute", left: "50%", top: "0", transform: "translate(-50%,-50%)", animation: "rdGlow 2.4s ease-in-out infinite", width: "58px", height: "58px", borderRadius: "50%", border: "2px solid #FF6A00", background: "#2A1A0E", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px", boxShadow: "0 0 30px rgba(255,106,0,.5)" }}>
+                <span style={{ position: "absolute", left: "50%", top: "0", transform: "translate(-50%,-50%)", animation: "rdGlow 2.4s ease-in-out infinite", width: "58px", height: "58px", borderRadius: "50%", border: "2px solid #F97316", background: "#2B110D", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px", boxShadow: "0 0 30px rgba(249,115,22,.5)" }}>
                   {"✳"}
                 </span>
                 {" "}
                 {(v.hubs ?? []).map((u, $index) => (<Fragment key={$index}>
-                  <span style={{ position: "absolute", left: `${u?.x ?? ''}`, top: "50%", transform: "translate(-50%,-50%)", animation: `rdGlow 2.4s ease-in-out ${u?.dl ?? ''} infinite`, width: "34px", height: "34px", borderRadius: "50%", border: `2px solid ${u?.c ?? ''}`, background: "#0B0B0C", color: `${u?.c ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", boxShadow: `0 0 18px ${u?.c ?? ''}` }}>
+                  <span style={{ position: "absolute", left: `${u?.x ?? ''}`, top: "50%", transform: "translate(-50%,-50%)", animation: `rdGlow 2.4s ease-in-out ${u?.dl ?? ''} infinite`, width: "34px", height: "34px", borderRadius: "50%", border: `2px solid ${u?.c ?? ''}`, background: "#14080A", color: `${u?.c ?? ''}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", boxShadow: `0 0 18px ${u?.c ?? ''}` }}>
                     {"✳"}
                   </span>
                 </Fragment>))}
                 {" "}
                 {(v.agents ?? []).map((g, $index) => (<Fragment key={$index}>
-                  <span style={{ position: "absolute", left: `${g?.x ?? ''}`, top: "100%", transform: "translate(-50%,-50%)", width: "14px", height: "14px", borderRadius: "50%", border: `2px solid ${g?.c ?? ''}`, background: "#0B0B0C" }} />
+                  <span style={{ position: "absolute", left: `${g?.x ?? ''}`, top: "100%", transform: "translate(-50%,-50%)", width: "14px", height: "14px", borderRadius: "50%", border: `2px solid ${g?.c ?? ''}`, background: "#14080A" }} />
                 </Fragment>))}
                 {" "}
               </div>
               {" "}
               <div style={{ position: "absolute", left: "22%", top: "63%", display: "flex", alignItems: "center", pointerEvents: "none" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.94)", color: "#0A0A0A", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
-                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.94)", color: "#17090A", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
+                  <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#17090A", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {"✳"}
                   </span>
                   <b style={{ fontSize: "19px" }}>
                     {"6"}
                   </b>
-                  <span style={{ fontSize: "16px", color: "#5A5650" }}>
+                  <span style={{ fontSize: "16px", color: "#5E4A43" }}>
                     {v.t("Home.areasOneBrain")}
                   </span>
                 </div>
@@ -884,8 +884,8 @@ Logic.prototype.render = function render() {
               {" "}
               <div style={{ position: "absolute", left: "12%", top: "20%", width: "min(340px,50%)", display: "flex", flexDirection: "column", gap: "8px", pointerEvents: "none" }}>
                 {(v.runFeed ?? []).map((f, $index) => (<Fragment key={$index}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(11,11,12,.86)", backdropFilter: "blur(10px)", color: "#F4F4F2", borderRadius: "14px", padding: "12px 16px", fontSize: "14px", animation: `rdFeed 5s cubic-bezier(.16,1,.3,1) ${f?.dl ?? ''} infinite both` }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF9A50" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(20,8,10,.86)", backdropFilter: "blur(10px)", color: "#FFF7ED", borderRadius: "14px", padding: "12px 16px", fontSize: "14px", animation: `rdFeed 5s cubic-bezier(.16,1,.3,1) ${f?.dl ?? ''} infinite both` }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FDBA74" }}>
                       {f?.t}
                     </span>
                     <span style={{ flex: "1" }}>
@@ -896,14 +896,14 @@ Logic.prototype.render = function render() {
                 </Fragment>))}
               </div>
               {" "}
-              <div style={{ position: "absolute", left: "12%", top: "56%", display: "flex", alignItems: "center", gap: "12px", background: "rgba(244,241,236,.92)", borderRadius: "14px", padding: "8px 18px 8px 8px", pointerEvents: "none", whiteSpace: "nowrap", animation: "rdFloat 5.5s ease-in-out infinite" }}>
-                <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#0A0A0A", color: "#FF6A00", display: "flex", alignItems: "center", justifyContent: "center", animation: "rdRing 1.8s ease-out infinite" }}>
+              <div style={{ position: "absolute", left: "12%", top: "56%", display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.92)", borderRadius: "14px", padding: "8px 18px 8px 8px", pointerEvents: "none", whiteSpace: "nowrap", animation: "rdFloat 5.5s ease-in-out infinite" }}>
+                <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#17090A", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center", animation: "rdRing 1.8s ease-out infinite" }}>
                   {"♥"}
                 </span>
                 <b style={{ fontSize: "19px" }}>
                   {v.t("Home.mon")}
                 </b>
-                <span style={{ fontSize: "16px", color: "#5A5650" }}>
+                <span style={{ fontSize: "16px", color: "#5E4A43" }}>
                   {v.t("Home.reportEveryWeek")}
                 </span>
               </div>
@@ -911,43 +911,43 @@ Logic.prototype.render = function render() {
             </div>
             {" "}
             {v.heroMode ? (<>
-              <div style={{ position: "absolute", top: "0", right: "0", zIndex: "3", background: "#ECE8E1", borderBottomLeftRadius: "28px", padding: "0 0 14px 14px", display: "flex", gap: "10px", alignItems: "center" }}>
-                <span style={{ position: "absolute", top: "0", right: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#ECE8E1 28px)" }} />
-                <span style={{ position: "absolute", top: "100%", right: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#ECE8E1 28px)" }} />
+              <div style={{ position: "absolute", top: "0", right: "0", zIndex: "3", background: "#FFF7ED", borderBottomLeftRadius: "28px", padding: "0 0 14px 14px", display: "flex", gap: "10px", alignItems: "center" }}>
+                <span style={{ position: "absolute", top: "0", right: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#FFF7ED 28px)" }} />
+                <span style={{ position: "absolute", top: "100%", right: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 0 100%,transparent 27.5px,#FFF7ED 28px)" }} />
                 <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <WhatsAppIcon width={28} height={28} />
                 </a>
-                <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", height: "56px", padding: "0 26px", display: "flex", alignItems: "center", fontSize: "13px", fontWeight: "600", letterSpacing: ".08em", textTransform: "uppercase", whiteSpace: "nowrap" }} className="hv-9bccb67">
+                <a href={v.href("/contact")} style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", height: "56px", padding: "0 26px", display: "flex", alignItems: "center", fontSize: "13px", fontWeight: "600", letterSpacing: ".08em", textTransform: "uppercase", whiteSpace: "nowrap" }} className="hv-9bccb67">
                   {v.t("Home.startAProject")}
                 </a>
               </div>
             </>) : null}
             {" "}{v.fx}{" "}
             <div style={{ position: "absolute", left: "20px", top: "22px", zIndex: "3", display: "flex", flexDirection: "column", alignItems: "center", gap: "14px" }}>
-              <span key={v.num} className="hc-pill" style={{ animation: "rdTag .7s cubic-bezier(.16,1,.3,1) .45s both", writingMode: "vertical-rl", transform: "rotate(180deg)", background: "#F4F1EC", color: "#0A0A0A", borderRadius: "999px", padding: "20px 12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".14em", textTransform: "uppercase" }}>
+              <span key={v.num} className="hc-pill" style={{ animation: "rdTag .7s cubic-bezier(.16,1,.3,1) .45s both", writingMode: "vertical-rl", transform: "rotate(180deg)", background: "#FFEEDB", color: "#17090A", borderRadius: "999px", padding: "20px 12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".14em", textTransform: "uppercase" }}>
                 {v.t("Home.pillarXX", { x: v.num, y: v.door })}
               </span>
-              <a href={v.pHref} style={{ width: "46px", height: "46px", borderRadius: "50%", background: "#0A0A0A", color: "#F4F4F2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
+              <a href={v.pHref} style={{ width: "46px", height: "46px", borderRadius: "50%", background: "#17090A", color: "#FFF7ED", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
                 {"↗"}
               </a>
             </div>
             {" "}
-            <div style={{ position: "absolute", left: "0", bottom: "0", zIndex: "3", background: "#ECE8E1", borderTopRightRadius: "28px", padding: "14px 14px 0 0", display: "flex", gap: "10px" }}>
-              <span style={{ position: "absolute", left: "0", bottom: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#ECE8E1 28px)" }} />
-              <span style={{ position: "absolute", left: "100%", bottom: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#ECE8E1 28px)" }} />
+            <div style={{ position: "absolute", left: "0", bottom: "0", zIndex: "3", background: "#FFF7ED", borderTopRightRadius: "28px", padding: "14px 14px 0 0", display: "flex", gap: "10px" }}>
+              <span style={{ position: "absolute", left: "0", bottom: "100%", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#FFF7ED 28px)" }} />
+              <span style={{ position: "absolute", left: "100%", bottom: "0", width: "28px", height: "28px", background: "radial-gradient(circle at 100% 0,transparent 27.5px,#FFF7ED 28px)" }} />
               {(v.tabs ?? []).map((t, $index) => (<Fragment key={$index}>
                 {" "}
                 <button onClick={t?.go} style={{ position: "relative", width: `${v.tabW ?? ''}`, aspectRatio: "1.05", borderRadius: "16px", overflow: "hidden", border: `2px solid ${t?.bd ?? ''}`, background: `${t?.thumb ?? ''}`, cursor: "pointer", padding: "0" }}>
                   {" "}
-                  <div style={{ position: "absolute", left: "0", top: "0", height: "3px", width: `${t?.w ?? ''}`, background: "#FF6A00", transition: `width ${t?.dur ?? ''} linear` }} />
+                  <div style={{ position: "absolute", left: "0", top: "0", height: "3px", width: `${t?.w ?? ''}`, background: "#F97316", transition: `width ${t?.dur ?? ''} linear` }} />
                   {" "}
                   <img loading="lazy" decoding="async" src={t?.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", opacity: `${t?.op ?? ''}`, transition: "opacity .4s,transform .6s", transform: `${t?.zoom ?? ''}` }} />
-                  <span style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg,rgba(10,10,10,0) 40%,rgba(10,10,10,.55))" }} />
-                  <span style={{ position: "absolute", left: "8px", top: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#F4F4F2" }}>
+                  <span style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg,rgba(23,9,10,0) 40%,rgba(23,9,10,.55))" }} />
+                  <span style={{ position: "absolute", left: "8px", top: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#FFF7ED" }}>
                     {t?.n}
                   </span>
                   {" "}
-                  <span style={{ position: "absolute", left: "6px", right: "6px", bottom: "6px", background: "rgba(244,241,236,.94)", color: "#0A0A0A", borderRadius: "999px", padding: "7px 0", font: `500 ${v.tabFont ?? ''} var(--font-sans)`, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                  <span style={{ position: "absolute", left: "6px", right: "6px", bottom: "6px", background: "rgba(255,238,219,.94)", color: "#17090A", borderRadius: "999px", padding: "7px 0", font: `500 ${v.tabFont ?? ''} var(--font-sans)`, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                     {t?.door}
                   </span>
                   {" "}
@@ -971,48 +971,48 @@ Logic.prototype.render = function render() {
           </div>
         </div>
         {" "}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", borderTop: "1px solid #D3CCC0", borderBottom: "1px solid #D3CCC0" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", borderTop: "1px solid #E6D0B9", borderBottom: "1px solid #E6D0B9" }}>
           <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"1"}
             </b>
-            <span style={{ fontSize: "14px", color: "#5A5650" }}>
+            <span style={{ fontSize: "14px", color: "#5E4A43" }}>
               {v.t("Home.personFirstCallToLive")}
             </span>
           </div>
-          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #E6D0B9" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"5"}
             </b>
-            <span style={{ fontSize: "14px", color: "#5A5650" }}>
+            <span style={{ fontSize: "14px", color: "#5E4A43" }}>
               {v.t("Home.phasesToGoLive")}
             </span>
           </div>
-          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #E6D0B9" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"EU"}
             </b>
-            <span style={{ fontSize: "14px", color: "#5A5650" }}>
+            <span style={{ fontSize: "14px", color: "#5E4A43" }}>
               {v.t("Home.hostedInFrankfurt")}
             </span>
           </div>
-          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #D3CCC0" }}>
+          <div className="hp-stat" style={{ padding: "22px clamp(20px,3vw,40px)", display: "flex", alignItems: "baseline", gap: "8px", borderLeft: "1px solid #E6D0B9" }}>
             <b style={{ fontSize: "26px", letterSpacing: "-0.03em" }}>
               {"1"}
             </b>
-            <span style={{ fontSize: "14px", color: "#5A5650" }}>
+            <span style={{ fontSize: "14px", color: "#5E4A43" }}>
               {v.t("Home.fixedMonthlyPrice")}
             </span>
           </div>
         </div>
         {" "}
-        <div style={{ overflow: "hidden", padding: "18px 0", background: "#0A0A0A", color: "#F4F4F2" }}>
+        <div style={{ overflow: "hidden", padding: "18px 0", background: "#17090A", color: "#FFF7ED" }}>
           {" "}
           <div style={{ display: "flex", gap: "48px", width: "max-content", animation: "rdTicker 40s linear infinite", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".12em", textTransform: "uppercase" }}>
             {(v.ticker ?? []).map((k, $index) => (<Fragment key={$index}>
               <span style={{ display: "flex", gap: "48px", alignItems: "center", whiteSpace: "nowrap" }}>
                 {k}
-                <span style={{ color: "#FF6A00" }}>
+                <span style={{ color: "#F97316" }}>
                   {"●"}
                 </span>
               </span>
@@ -1022,16 +1022,21 @@ Logic.prototype.render = function render() {
         </div>
       </div>
       <PlatformSection t={v.t} />
+      <div data-screen-label="01b Bridge" style={{ padding: "clamp(40px,6vw,72px) clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto" }}>
+        <p data-rv="0" style={{ margin: "0", maxWidth: "860px", fontSize: "clamp(20px,2.3vw,30px)", lineHeight: "1.35", letterSpacing: "-0.02em", fontWeight: "500", color: "#3D2B27", textWrap: "balance" }}>
+          {v.t("Home.heroBridge")}
+        </p>
+      </div>
       <div id="thesis" data-screen-label="02 Thesis" style={{ padding: "clamp(72px,16vw,120px) clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "clamp(40px,8.5vw,64px)", alignItems: "start" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
             {v.t("Home.n01Thesis")}
           </div>
-          <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", aspectRatio: "4/5", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", transition: "transform .25s ease-out", willChange: "transform", boxShadow: "0 40px 80px -40px rgba(10,10,10,.45)" }}>
+          <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", aspectRatio: "4/5", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", transition: "transform .25s ease-out", willChange: "transform", boxShadow: "0 40px 80px -40px rgba(23,9,10,.45)" }}>
             <img loading="lazy" decoding="async" src={opt("/images/rialto-about-v3.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             <span data-glare="1" style={{ position: "absolute", inset: "0", borderRadius: "22px", pointerEvents: "none", opacity: "0", transition: "opacity .3s", zIndex: "2", mixBlendMode: "soft-light" }} />
           </div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5E4A43" }}>
             {v.t("Home.rialtoFounderOperatorRIDEFF")}
           </div>
         </div>
@@ -1044,24 +1049,24 @@ Logic.prototype.render = function render() {
             </Fragment>))}
           </p>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #E6D0B9" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5E4A43" }}>
                 {v.t("Home.whyMe")}
               </span>
               <span style={{ fontSize: "16px" }}>
                 {v.t("Home.iRanTradeMarketingAndAn")}
               </span>
             </div>
-            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #E6D0B9" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5E4A43" }}>
                 {v.t("Home.based")}
               </span>
               <span style={{ fontSize: "16px" }}>
                 {v.t("Home.eichstattGermanyClientsAcrossTheEU")}
               </span>
             </div>
-            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #D3CCC0", borderBottom: "1px solid #D3CCC0" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div className="hp-fact" style={{ display: "grid", gridTemplateColumns: "140px minmax(0,1fr)", gap: "20px", padding: "18px 0", borderTop: "1px solid #E6D0B9", borderBottom: "1px solid #E6D0B9" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5E4A43" }}>
                 {v.t("Home.how")}
               </span>
               <span style={{ fontSize: "16px" }}>
@@ -1077,7 +1082,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div data-rv="0" className="hp-dhead" style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: "24px", flexWrap: "wrap", marginBottom: "40px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                   {v.t("Home.n02ThreePillars")}
                 </div>
                 <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "820px", textWrap: "balance" }}>
@@ -1089,20 +1094,20 @@ Logic.prototype.render = function render() {
                 </h2>
               </div>
               {v.notPin ? (<>
-                <a href="#start" style={{ fontSize: "15px", borderBottom: "1px solid #0A0A0A", paddingBottom: "2px" }}>
+                <a href="#start" style={{ fontSize: "15px", borderBottom: "1px solid #17090A", paddingBottom: "2px" }}>
                   {v.t("Home.notSureWhichAskMe")}
                 </a>
               </>) : null}
             </div>
             {" "}
-            <div style={{ display: "grid", gridTemplateColumns: `${v.tabCols ?? ''}`, gap: "0", borderTop: "1px solid #D3CCC0" }}>
+            <div style={{ display: "grid", gridTemplateColumns: `${v.tabCols ?? ''}`, gap: "0", borderTop: "1px solid #E6D0B9" }}>
               {(v.doorTabs ?? []).map((d, $index) => (<Fragment key={$index}>
                 {" "}
                 <div {...press(d?.go)} style={{ cursor: "pointer", padding: `${v.tabPad ?? ''} 4px`, display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `2px solid ${d?.line ?? ''}`, transition: "border-color .3s" }}>
                   <span style={{ fontSize: `${v.tabFs ?? ''}`, fontWeight: "600", letterSpacing: "-0.02em", opacity: `${d?.op ?? ''}` }}>
                     {d?.door}
                   </span>
-                  {v.showTabNum ? (<span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
+                  {v.showTabNum ? (<span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5E4A43" }}>
                     {d?.n}
                   </span>) : null}
                 </div>
@@ -1111,7 +1116,7 @@ Logic.prototype.render = function render() {
             </div>
             {" "}
             <div style={{ height: "2px", background: "transparent", marginTop: "-2px", opacity: `${v.dbarOp ?? ''}` }}>
-              <div data-dbar="1" style={{ height: "100%", background: "#FF6A00", transformOrigin: "0 50%", transform: "scaleX(0)", boxShadow: "0 0 10px #FF6A00" }} />
+              <div data-dbar="1" style={{ height: "100%", background: "#F97316", transformOrigin: "0 50%", transform: "scaleX(0)", boxShadow: "0 0 10px #F97316" }} />
             </div>
             {" "}
             <div className="hp-dpanel" style={{ marginTop: `${v.panelMt ?? ''}`, borderRadius: "26px", background: `${v.dBg ?? ''}`, color: `${v.dFg ?? ''}`, padding: "clamp(28px,4vw,56px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,380px),1fr))", gap: "48px", transition: "background .5s,color .5s", perspective: "1400px", overflow: "hidden" }}>
@@ -1135,7 +1140,7 @@ Logic.prototype.render = function render() {
                   </Fragment>))}
                 </div>
                 <div style={{ display: "flex" }}>
-                  <a href={v.dHref} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "13px 22px", fontWeight: "600", fontSize: "15px" }}>
+                  <a href={v.dHref} style={{ background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "13px 22px", fontWeight: "600", fontSize: "15px" }}>
                     {v.t("Home.enterX", { x: v.dDoor })}
                   </a>
                 </div>
@@ -1146,14 +1151,14 @@ Logic.prototype.render = function render() {
                     {v.t("Home.exampleFlow")}
                   </span>
                   <span style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#FF6A00", animation: "rdPulse 2s infinite" }} />
+                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#F97316", animation: "rdPulse 2s infinite" }} />
                     {v.dStatus}
                   </span>
                 </div>
                 {(v.dFlow ?? []).map((f, $index) => (<Fragment key={$index}>
                   {" "}
                   <div style={{ display: "grid", gridTemplateColumns: "36px minmax(0,1fr)", gap: "14px", alignItems: "center", padding: "16px 18px", borderRadius: "14px", background: `${v.dCard ?? ''}`, transformOrigin: "50% 0", animation: `rdRise .75s cubic-bezier(.16,1,.3,1) ${f?.dl ?? ''} both` }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                       {f?.n}
                     </span>
                     <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -1174,7 +1179,7 @@ Logic.prototype.render = function render() {
       </div>
       <div id="proof" data-screen-label="04 Proof" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
             {v.t("Home.n04Proof")}
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
@@ -1184,17 +1189,17 @@ Logic.prototype.render = function render() {
             </span>
           </h2>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
+        <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #E6D0B9" }}>
           {(v.demos ?? []).map((d, $index) => (<Fragment key={$index}>
             {" "}
-            <a href={d?.href} style={{ display: "grid", gridTemplateColumns: "60px minmax(0,1fr) minmax(0,1.2fr) auto", gap: "24px", alignItems: "center", padding: "28px 0", borderBottom: "1px solid #D3CCC0", transition: "padding .45s cubic-bezier(.16,1,.3,1),color .3s" }} className="hp-demo hv-b83c21d">
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+            <a href={d?.href} style={{ display: "grid", gridTemplateColumns: "60px minmax(0,1fr) minmax(0,1.2fr) auto", gap: "24px", alignItems: "center", padding: "28px 0", borderBottom: "1px solid #E6D0B9", transition: "padding .45s cubic-bezier(.16,1,.3,1),color .3s" }} className="hp-demo hv-b83c21d">
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
                 {d?.n}
               </span>
               <span style={{ fontSize: "clamp(22px,2.4vw,32px)", fontWeight: "600", letterSpacing: "-0.03em" }}>
                 {d?.t}
               </span>
-              <span style={{ fontSize: "15px", color: "#3A3731", lineHeight: "1.5" }}>
+              <span style={{ fontSize: "15px", color: "#3D2B27", lineHeight: "1.5" }}>
                 {d?.d}
               </span>
               <span style={{ fontSize: "22px" }}>
@@ -1205,47 +1210,47 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "24px", paddingTop: "24px" }}>
-          <div data-rv="0" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "48px", alignItems: "center", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "28px", padding: "clamp(28px,4vw,56px)", overflow: "hidden", position: "relative" }}>
-            <div style={{ position: "absolute", right: "-10%", top: "-30%", width: "60%", aspectRatio: "1", borderRadius: "50%", background: "radial-gradient(circle,rgba(255,106,0,.22),transparent 65%)", pointerEvents: "none" }} />
+          <div data-rv="0" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "48px", alignItems: "center", background: "#14080A", color: "#FFF7ED", borderRadius: "28px", padding: "clamp(28px,4vw,56px)", overflow: "hidden", position: "relative" }}>
+            <div style={{ position: "absolute", right: "-10%", top: "-30%", width: "60%", aspectRatio: "1", borderRadius: "50%", background: "radial-gradient(circle,rgba(249,115,22,.22),transparent 65%)", pointerEvents: "none" }} />
             <div style={{ display: "flex", flexDirection: "column", gap: "22px", position: "relative", zIndex: "1" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF9A50" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FDBA74" }}>
                 {v.t("Home.flagshipCaseTICOriginals")}
               </div>
               <h3 style={{ margin: "0", fontSize: "clamp(30px,3.4vw,50px)", letterSpacing: "-0.04em", lineHeight: "1.02", fontWeight: "600", textWrap: "balance" }}>
                 {v.t("Home.aStreetwearLabelThatRunsBetween")}{" "}
-                <span style={{ color: "#FF9A50" }}>
+                <span style={{ color: "#FDBA74" }}>
                   {v.t("Home.withoutTheBusywork")}
                 </span>
               </h3>
-              <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.55", color: "#B8B3AA", maxWidth: "520px", textWrap: "pretty" }}>
+              <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.55", color: "#CBB7A8", maxWidth: "520px", textWrap: "pretty" }}>
                 {v.t("Home.tillICollapseSellsLimitedDrops")}
               </p>
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                 {(v.ticTags ?? []).map((t, $index) => (<Fragment key={$index}>
-                  <span style={{ border: "1px solid #2A2A2C", borderRadius: "999px", padding: "7px 13px", fontSize: "13px", color: "#D8D3CA" }}>
+                  <span style={{ border: "1px solid #3D1F20", borderRadius: "999px", padding: "7px 13px", fontSize: "13px", color: "#E7D5C3" }}>
                     {t}
                   </span>
                 </Fragment>))}
               </div>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", paddingTop: "6px" }}>
-                <button onClick={v.openCase} style={{ background: "#FF6A00", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "15px 24px", font: "600 15px var(--font-sans)", cursor: "pointer" }} className="hv-c235bc3">
+                <button onClick={v.openCase} style={{ background: "#F97316", color: "#17090A", border: "none", borderRadius: "999px", padding: "15px 24px", font: "600 15px var(--font-sans)", cursor: "pointer" }} className="hv-c235bc3">
                   {v.t("Home.openTheCase")}
                 </button>
-                <a href={v.href("/work")} style={{ fontSize: "15px", borderBottom: "1px solid #F4F4F2", paddingBottom: "2px", color: "#F4F4F2" }}>
+                <a href={v.href("/work")} style={{ fontSize: "15px", borderBottom: "1px solid #FFF7ED", paddingBottom: "2px", color: "#FFF7ED" }}>
                   {v.t("Home.seeAllWork")}
                 </a>
               </div>
             </div>
             <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} onClick={v.openCase} style={{ position: "relative", aspectRatio: "5/4", cursor: "pointer", transition: "transform .3s ease-out", transformStyle: "preserve-3d" }}>
               {" "}
-              <div style={{ position: "absolute", left: "0", top: "4%", width: "78%", borderRadius: "14px", overflow: "hidden", background: "#141416", border: "1px solid #2A2A2C", boxShadow: "0 40px 80px -30px rgba(0,0,0,.8)", transform: "rotate(-3deg)" }}>
+              <div style={{ position: "absolute", left: "0", top: "4%", width: "78%", borderRadius: "14px", overflow: "hidden", background: "#241011", border: "1px solid #3D1F20", boxShadow: "0 40px 80px -30px rgba(0,0,0,.8)", transform: "rotate(-3deg)" }}>
                 {" "}
-                <div style={{ display: "flex", gap: "5px", padding: "9px 12px", background: "#1C1C1E" }}>
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#3A3A3C" }} />
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#3A3A3C" }} />
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#3A3A3C" }} />
-                  <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "10px", color: "#6B675F" }}>
-                    {"tilicollapse.com"}
+                <div style={{ display: "flex", gap: "5px", padding: "9px 12px", background: "#2A1315" }}>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#4F2C2C" }} />
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#4F2C2C" }} />
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#4F2C2C" }} />
+                  <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "10px", color: "#78625A" }}>
+                    {"ticoriginals.com"}
                   </span>
                 </div>
                 {" "}
@@ -1253,43 +1258,100 @@ Logic.prototype.render = function render() {
                 {" "}
               </div>
               {" "}
-              <div style={{ position: "absolute", right: "0", bottom: "0", width: "62%", borderRadius: "14px", overflow: "hidden", border: "1px solid #2A2A2C", boxShadow: "0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,106,0,.2)", transform: "rotate(2deg)" }}>
+              <div style={{ position: "absolute", right: "0", bottom: "0", width: "62%", borderRadius: "14px", overflow: "hidden", border: "1px solid #3D1F20", boxShadow: "0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(249,115,22,.2)", transform: "rotate(2deg)" }}>
                 {" "}
-                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "4/3", objectFit: "cover", objectPosition: "top left" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOfficeTodayList")} style={{ width: "100%", display: "block", aspectRatio: "2022/1488", objectFit: "cover", objectPosition: "top left" }} />
                 {" "}
               </div>
               {" "}
-              <div style={{ position: "absolute", left: "-4%", top: "58%", width: "30%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6s ease-in-out 0s infinite" }}>
+              <div style={{ position: "absolute", left: "-4%", top: "58%", width: "30%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#FFF7ED", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6s ease-in-out 0s infinite" }}>
                 <img loading="lazy" decoding="async" src={opt("/images/hf/tic1.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
-              <div style={{ position: "absolute", left: "30%", top: "-6%", width: "22%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 7s ease-in-out .8s infinite" }}>
+              <div style={{ position: "absolute", left: "30%", top: "-6%", width: "22%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#FFF7ED", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 7s ease-in-out .8s infinite" }}>
                 <img loading="lazy" decoding="async" src={opt("/images/hf/tic2.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
-              <div style={{ position: "absolute", left: "84%", top: "-2%", width: "20%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#F4F4F2", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6.5s ease-in-out 1.6s infinite" }}>
+              <div style={{ position: "absolute", left: "84%", top: "-2%", width: "20%", aspectRatio: "1", borderRadius: "14px", overflow: "hidden", background: "#FFF7ED", boxShadow: "0 24px 50px -16px rgba(0,0,0,.7)", animation: "rdBob 6.5s ease-in-out 1.6s infinite" }}>
                 <img loading="lazy" decoding="async" src={opt("/images/hf/tic3.jpg", 1080)} alt={v.t("Home.tICProduct")} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               {" "}
             </div>
           </div>
+        <div data-rv="0" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,360px),1fr))", gap: "clamp(24px,4vw,48px)", alignItems: "center", background: "#FFE4C7", borderRadius: "28px", padding: "clamp(24px,4vw,56px)" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#C2410C" }}>
+              {v.t("Home.mamiEyebrow")}
+            </div>
+            <h3 style={{ margin: "0", fontSize: "clamp(26px,2.8vw,40px)", letterSpacing: "-0.035em", lineHeight: "1.05", fontWeight: "600", textWrap: "balance" }}>
+              {v.t("Home.mamiTitle")}
+            </h3>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3D2B27", maxWidth: "520px", textWrap: "pretty" }}>
+              {v.t("Home.mamiBody")}
+            </p>
+            <a href={v.href("/work/mami-patisserie")} style={{ alignSelf: "flex-start", background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "14px 22px", fontSize: "15px", fontWeight: "600" }}>
+              {v.t("Home.mamiCta")}
+            </a>
+          </div>
+          <a href={v.href("/work/mami-patisserie")} style={{ display: "block", borderRadius: "14px", overflow: "hidden", border: "1px solid #E6D0B9", boxShadow: "0 30px 60px -30px rgba(23,9,10,.45)", background: "#FFF7ED" }}>
+            <img loading="lazy" decoding="async" src={opt("/images/mami-hero.png", 1080)} alt="Mami I Patisserie" style={{ width: "100%", display: "block", aspectRatio: "1920/1083", objectFit: "contain" }} />
+          </a>
+        </div>
         </div>
       </div>
-      <div id="pricing" data-screen-label="05 Pricing" style={{ background: "#E3DED5" }}>
+      <div data-pin="how" style={{ height: `${v.howH ?? ''}`, position: "relative" }}>
+        <div style={{ position: `${v.pinPos ?? ''}`, top: "0", height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div data-pinbox="how" data-screen-label="06 How it works" style={{ padding: `${v.howPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "56px", transformOrigin: "50% 50%" }}>
+            <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
+                {v.t("Home.howEyebrow")}
+              </div>
+              <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
+                {v.t("Home.fromFirstCallToASystem")}{" "}
+                <span>
+                  {v.t("Home.runs")}
+                </span>
+              </h2>
+            </div>
+            <div data-how="1" style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ height: "2px", background: "#E6D0B9", borderRadius: "2px", overflow: "hidden" }}>
+                <div data-howline="1" style={{ height: "100%", width: "0%", background: "#F97316", boxShadow: "0 0 14px #F97316" }} />
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "32px" }}>
+                {(v.phases ?? []).map((p, $index) => (<Fragment key={$index}>
+                  {" "}
+                  <div style={{ display: "flex", flexDirection: "column", gap: "14px", paddingTop: "22px", opacity: `${p?.op ?? ''}`, transform: `${p?.tf ?? ''}`, transition: "opacity .5s,transform .7s cubic-bezier(.16,1,.3,1)" }}>
+                    <span style={{ width: "42px", height: "42px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "12px", background: `${p?.nb ?? ''}`, color: `${p?.nc ?? ''}`, boxShadow: `${p?.ns ?? ''}`, transition: "all .45s" }}>
+                      {p?.n}
+                    </span>
+                    <span style={{ fontSize: "24px", fontWeight: "600", letterSpacing: "-0.03em" }}>
+                      {p?.t}
+                    </span>
+                    <span style={{ fontSize: "15px", lineHeight: "1.5", color: "#3D2B27" }}>
+                      {p?.d}
+                    </span>
+                  </div>
+                  {" "}
+                </Fragment>))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pricing" data-screen-label="05 Pricing" style={{ background: "#EEE0D2" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "end" }}>
             <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
-                {v.t("Home.n05WaysToWorkTogether")}
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
+                {v.t("Home.plansEyebrow")}
               </div>
               <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
                 {v.t("Home.threePlans")}{" "}
                 <span>
-                  {v.t("Home.onePerson2")}
+                  {v.t("Home.plansLead")}
                 </span>
-                {" "}{v.t("Home.theWholeWay")}
               </h2>
             </div>
-            <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3A3731", maxWidth: "460px" }}>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3D2B27", maxWidth: "460px" }}>
               {v.t("Home.includedInEveryPlanEUHosting")}
             </p>
           </div>
@@ -1300,7 +1362,7 @@ Logic.prototype.render = function render() {
               <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", borderRadius: "22px", padding: "32px", display: "flex", flexDirection: "column", gap: "28px", background: `${p?.bg ?? ''}`, color: `${p?.fg ?? ''}`, transition: "transform .25s ease-out,box-shadow .3s", willChange: "transform" }} className="hv-65e47e9">
                 <span data-glare="1" style={{ position: "absolute", inset: "0", borderRadius: "22px", pointerEvents: "none", opacity: "0", transition: "opacity .3s", zIndex: "2", mixBlendMode: "soft-light" }} />
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                     {p?.n}
                   </span>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".7" }}>
@@ -1326,7 +1388,7 @@ Logic.prototype.render = function render() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: `1px solid ${p?.line ?? ''}`, paddingTop: "20px" }}>
                   {(p?.items ?? []).map((i, $index) => (<Fragment key={$index}>
                     <span style={{ fontSize: "15px", display: "flex", gap: "10px" }}>
-                      <span style={{ color: "#FF6A00" }}>
+                      <span style={{ color: "#F97316" }}>
                         {"+"}
                       </span>
                       {i}
@@ -1342,48 +1404,9 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-pin="how" style={{ height: `${v.howH ?? ''}`, position: "relative" }}>
-        <div style={{ position: `${v.pinPos ?? ''}`, top: "0", height: `${v.pinH ?? ''}`, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div data-pinbox="how" data-screen-label="06 How it works" style={{ padding: `${v.howPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", width: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "56px", transformOrigin: "50% 50%" }}>
-            <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
-                {v.t("Home.n06HowItWorks")}
-              </div>
-              <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
-                {v.t("Home.fromFirstCallToASystem")}{" "}
-                <span>
-                  {v.t("Home.runs")}
-                </span>
-              </h2>
-            </div>
-            <div data-how="1" style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ height: "2px", background: "#D3CCC0", borderRadius: "2px", overflow: "hidden" }}>
-                <div data-howline="1" style={{ height: "100%", width: "0%", background: "#FF6A00", boxShadow: "0 0 14px #FF6A00" }} />
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "32px" }}>
-                {(v.phases ?? []).map((p, $index) => (<Fragment key={$index}>
-                  {" "}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "14px", paddingTop: "22px", opacity: `${p?.op ?? ''}`, transform: `${p?.tf ?? ''}`, transition: "opacity .5s,transform .7s cubic-bezier(.16,1,.3,1)" }}>
-                    <span style={{ width: "42px", height: "42px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "12px", background: `${p?.nb ?? ''}`, color: `${p?.nc ?? ''}`, boxShadow: `${p?.ns ?? ''}`, transition: "all .45s" }}>
-                      {p?.n}
-                    </span>
-                    <span style={{ fontSize: "24px", fontWeight: "600", letterSpacing: "-0.03em" }}>
-                      {p?.t}
-                    </span>
-                    <span style={{ fontSize: "15px", lineHeight: "1.5", color: "#3A3731" }}>
-                      {p?.d}
-                    </span>
-                  </div>
-                  {" "}
-                </Fragment>))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div data-screen-label="07 FAQ" style={{ padding: "40px clamp(20px,3vw,40px) 120px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "56px", alignItems: "start" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div data-rv="0" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+          <div data-rv="0" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
             {v.t("Home.n07Questions")}
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
@@ -1392,24 +1415,24 @@ Logic.prototype.render = function render() {
               {v.t("Home.message")}
             </span>
           </h2>
-          <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3A3731", maxWidth: "380px" }}>
+          <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3D2B27", maxWidth: "380px" }}>
             {v.t("Home.stillUnsureWhatsAppIsTheFastest")}
           </p>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
+        <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #E6D0B9" }}>
           {(v.faqs ?? []).map((f, $index) => (<Fragment key={$index}>
             {" "}
-            <div style={{ borderBottom: "1px solid #D3CCC0" }}>
+            <div style={{ borderBottom: "1px solid #E6D0B9" }}>
               {" "}
-              <button onClick={f?.toggle} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", padding: "22px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", font: "500 19px var(--font-sans)", color: "#0A0A0A", letterSpacing: "-0.01em" }}>
+              <button onClick={f?.toggle} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", padding: "22px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", font: "500 19px var(--font-sans)", color: "#17090A", letterSpacing: "-0.01em" }}>
                 {f?.q}
-                <span style={{ fontSize: "22px", color: "#FF6A00" }}>
+                <span style={{ fontSize: "22px", color: "#F97316" }}>
                   {f?.sign}
                 </span>
               </button>
               {" "}
               {f?.open ? (<>
-                <p style={{ margin: "0 0 22px", fontSize: "16px", lineHeight: "1.6", color: "#3A3731", maxWidth: "620px" }}>
+                <p style={{ margin: "0 0 22px", fontSize: "16px", lineHeight: "1.6", color: "#3D2B27", maxWidth: "620px" }}>
                   {f?.a}
                 </p>
               </>) : null}
@@ -1420,36 +1443,36 @@ Logic.prototype.render = function render() {
         </div>
       </div>
       <div style={{ maxWidth: "1480px", margin: "0 auto", padding: "0 clamp(20px,3vw,40px) 72px" }}>
-        <div style={{ borderTop: "1px solid #D3CCC0", paddingTop: "22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px 24px", flexWrap: "wrap", fontSize: "15px", color: "#5A5650" }}>
+        <div style={{ borderTop: "1px solid #E6D0B9", paddingTop: "22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px 24px", flexWrap: "wrap", fontSize: "15px", color: "#5E4A43" }}>
           <span>
             {v.t("Home.lifeLine")}
           </span>
-          <a href={v.href("/life")} style={{ fontWeight: "500", color: "#0A0A0A", borderBottom: "1px solid #0A0A0A" }}>
+          <a href={v.href("/life")} style={{ fontWeight: "500", color: "#17090A", borderBottom: "1px solid #17090A" }}>
             {v.t("Home.enterRIDEFFLife")}
           </a>
         </div>
       </div>
-      <div id="start" data-screen-label="08 Start" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
+      <div id="start" data-screen-label="08 Start" style={{ background: "#14080A", color: "#FFF7ED" }}>
         <ClosingScene />
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "64px" }}>
           <div data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
               {v.t("Home.n08StartAProject")}
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(34px,4.4vw,69px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Home.bringTheBusyworkILlMake")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.t("Home.runItself")}
               </span>
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
-              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
+            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #3D1F20" }}>
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }} className="hv-eace579">
                 <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <b style={{ fontSize: "20px", fontWeight: "600" }}>
                     {v.t("Home.book15Minutes")}
                   </b>
-                  <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                  <span style={{ fontSize: "14px", color: "#927A6D" }}>
                     {v.t("Home.freeFirstCallCalComLink")}
                   </span>
                 </span>
@@ -1457,12 +1480,12 @@ Logic.prototype.render = function render() {
                   {"↗"}
                 </span>
               </a>
-              <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
+              <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }} className="hv-eace579">
                 <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <b style={{ fontSize: "20px", fontWeight: "600" }}>
                     {"WhatsApp +49 176 32572420"}
                   </b>
-                  <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                  <span style={{ fontSize: "14px", color: "#927A6D" }}>
                     {v.t("Home.rialtoDirectLine")}
                   </span>
                 </span>
@@ -1470,12 +1493,12 @@ Logic.prototype.render = function render() {
                   {"↗"}
                 </span>
               </a>
-              <a href="mailto:hallo@rideff.com" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }} className="hv-eace579">
+              <a href="mailto:hallo@rideff.com" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }} className="hv-eace579">
                 <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <b style={{ fontSize: "20px", fontWeight: "600" }}>
                     {"hallo@rideff.com"}
                   </b>
-                  <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                  <span style={{ fontSize: "14px", color: "#927A6D" }}>
                     {v.t("Home.forLongerBriefs")}
                   </span>
                 </span>
@@ -1484,7 +1507,7 @@ Logic.prototype.render = function render() {
                 </span>
               </a>
             </div>
-            <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
+            <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D" }}>
               <span>
                 {v.t("Home.eichstattX", { x: v.clock })}
               </span>
@@ -1496,10 +1519,10 @@ Logic.prototype.render = function render() {
               </span>
             </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px", background: "#161618", borderRadius: "24px", padding: "clamp(24px,3vw,40px)" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px", background: "#271113", borderRadius: "24px", padding: "clamp(24px,3vw,40px)" }}>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
               <div style={{ width: "56px", height: "56px", borderRadius: "50%", overflow: "hidden", flexShrink: "0" }}>
-                <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "repeating-linear-gradient(135deg,#2A2A2C 0 5px,#222224 5px 10px)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", color: "#8C877E" }}>
+                <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "repeating-linear-gradient(135deg,#3D1F20 0 5px,#361a1b 5px 10px)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", color: "#927A6D" }}>
                   {"R"}
                 </div>
               </div>
@@ -1507,15 +1530,15 @@ Logic.prototype.render = function render() {
                 <b style={{ fontSize: "17px" }}>
                   {v.t("Home.freeCall15Min11")}
                 </b>
-                <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                <span style={{ fontSize: "14px", color: "#927A6D" }}>
                   {v.t("Home.threeQuickQuestionsILlReply")}
                 </span>
               </div>
             </div>
-            <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Home.yourName")} autoComplete="name" placeholder={v.t("Home.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
-            <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Home.whatsAppNumberOrEmail")} placeholder={v.t("Home.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+            <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Home.yourName")} autoComplete="name" placeholder={v.t("Home.yourName")} style={{ background: "#14080A", border: "1px solid #3D1F20", borderRadius: "12px", padding: "15px 16px", color: "#FFF7ED", fontSize: "15px", outline: "none" }} />
+            <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Home.whatsAppNumberOrEmail")} placeholder={v.t("Home.whatsAppNumberOrEmail")} style={{ background: "#14080A", border: "1px solid #3D1F20", borderRadius: "12px", padding: "15px 16px", color: "#FFF7ED", fontSize: "15px", outline: "none" }} />
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <span style={{ fontSize: "14px", color: "#B8B3AA" }}>
+              <span style={{ fontSize: "14px", color: "#CBB7A8" }}>
                 {v.t("Home.whatDoYouNeed")}
               </span>
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -1527,9 +1550,9 @@ Logic.prototype.render = function render() {
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <span style={{ fontSize: "14px", color: "#B8B3AA" }}>
+              <span style={{ fontSize: "14px", color: "#CBB7A8" }}>
                 {v.t("Home.pickATimeForTheCall")}{" "}
-                <span style={{ color: "#6B675F" }}>
+                <span style={{ color: "#78625A" }}>
                   {v.t("Home.centralEuropeanTime")}
                 </span>
               </span>
@@ -1553,10 +1576,10 @@ Logic.prototype.render = function render() {
                 </Fragment>))}
               </div>
             </div>
-            <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }} className="hv-e9a718d">
+            <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }} className="hv-e9a718d">
               {v.t("Home.bookMyFreeSlot")}
             </a>
-            <span style={{ fontSize: "12px", color: "#6B675F" }}>
+            <span style={{ fontSize: "12px", color: "#78625A" }}>
               {v.t("Home.noPitchNoObligationYourDetails")}
             </span>
           </div>
@@ -1566,37 +1589,37 @@ Logic.prototype.render = function render() {
       <Footer  />
       {v.caseOpen ? (<>
         {" "}
-        <div onClick={v.closeCase} style={{ position: "fixed", inset: "0", zIndex: "95", background: "rgba(11,11,12,.72)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", animation: "rdFade .3s" }}>
-          <div data-lenis-prevent="1" role="dialog" aria-modal="true" onClick={v.stopBubble} style={{ width: "min(1120px,100%)", maxHeight: "calc(100vh - 48px)", overflow: "auto", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "28px", border: "1px solid #2A2A2C", display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", padding: "22px 28px", borderBottom: "1px solid #1F1F21", position: "sticky", top: "0", background: "#0B0B0C", zIndex: "2" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF9A50" }}>
+        <div onClick={v.closeCase} style={{ position: "fixed", inset: "0", zIndex: "95", background: "rgba(20,8,10,.72)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", animation: "rdFade .3s" }}>
+          <div data-lenis-prevent="1" role="dialog" aria-modal="true" onClick={v.stopBubble} style={{ width: "min(1120px,100%)", maxHeight: "calc(100vh - 48px)", overflow: "auto", background: "#14080A", color: "#FFF7ED", borderRadius: "28px", border: "1px solid #3D1F20", display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", padding: "22px 28px", borderBottom: "1px solid #2E1517", position: "sticky", top: "0", background: "#14080A", zIndex: "2" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FDBA74" }}>
                 {v.t("Home.caseTICOriginalsTillICollapse")}
               </div>
-              <button onClick={v.closeCase} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "9px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+              <button onClick={v.closeCase} style={{ background: "none", border: "1px solid #4F2C2C", color: "#FFF7ED", borderRadius: "999px", padding: "9px 16px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
                 {v.t("Home.close")}
               </button>
             </div>
             <div style={{ padding: "clamp(24px,4vw,48px)", display: "flex", flexDirection: "column", gap: "40px" }}>
               <h3 style={{ margin: "0", fontSize: "clamp(32px,4vw,58px)", letterSpacing: "-0.045em", lineHeight: "1", fontWeight: "600", maxWidth: "820px", textWrap: "balance" }}>
                 {v.t("Home.fromDropToDoorstep")}{" "}
-                <span style={{ color: "#FF9A50" }}>
+                <span style={{ color: "#FDBA74" }}>
                   {v.t("Home.oneSystem")}
                 </span>
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img loading="lazy" decoding="async" src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
+                <img loading="lazy" decoding="async" src={opt("/images/tic-shop.png")} alt={v.t("Home.tICOriginalsOnlineShop")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #3D1F20" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#927A6D" }}>
                   {v.t("Home.n01TheShopStripePayPalDE")}
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "32px" }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                     {v.t("Home.whatIBuilt")}
                   </div>
                   {(v.ticBuilt ?? []).map((b, $index) => (<Fragment key={$index}>
-                    <div style={{ display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.45", borderTop: "1px solid #1F1F21", paddingTop: "12px" }}>
-                      <span style={{ color: "#FF6A00" }}>
+                    <div style={{ display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.45", borderTop: "1px solid #2E1517", paddingTop: "12px" }}>
+                      <span style={{ color: "#F97316" }}>
                         {"+"}
                       </span>
                       {b}
@@ -1604,12 +1627,12 @@ Logic.prototype.render = function render() {
                   </Fragment>))}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                     {v.t("Home.everyMorningOneList")}
                   </div>
                   {(v.ticMorning ?? []).map((b, $index) => (<Fragment key={$index}>
-                    <div style={{ display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.45", borderTop: "1px solid #1F1F21", paddingTop: "12px" }}>
-                      <span style={{ color: "#FF6A00" }}>
+                    <div style={{ display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.45", borderTop: "1px solid #2E1517", paddingTop: "12px" }}>
+                      <span style={{ color: "#F97316" }}>
                         {"→"}
                       </span>
                       {b}
@@ -1618,38 +1641,38 @@ Logic.prototype.render = function render() {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #2A2A2C" }} />
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
+                <img loading="lazy" decoding="async" src={opt("/images/tic-backoffice.png")} alt={v.t("Home.tICBackOffice")} style={{ width: "100%", borderRadius: "18px", display: "block", border: "1px solid #3D1F20" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#927A6D" }}>
                   {v.t("Home.n02TheBackOfficeTodayS")}
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: "14px" }}>
-                <img loading="lazy" decoding="async" src={opt("/images/hf/tic1.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img loading="lazy" decoding="async" src={opt("/images/hf/tic2.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
-                <img loading="lazy" decoding="async" src={opt("/images/hf/tic3.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#F4F4F2" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic1.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#FFF7ED" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic2.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#FFF7ED" }} />
+                <img loading="lazy" decoding="async" src={opt("/images/hf/tic3.jpg", 1080)} alt={v.t("Home.tICOriginalsProduct")} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: "16px", display: "block", background: "#FFF7ED" }} />
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", borderTop: "1px solid #1F1F21", paddingTop: "28px" }}>
-                <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#B8B3AA" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", borderTop: "1px solid #2E1517", paddingTop: "28px" }}>
+                <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#CBB7A8" }}>
                   <span>
-                    <span style={{ color: "#FF9A50" }}>
+                    <span style={{ color: "#FDBA74" }}>
                       {v.t("Home.hosting")}
                     </span>
                     {" "}{v.t("Home.eUFrankfurt")}
                   </span>
                   <span>
-                    <span style={{ color: "#FF9A50" }}>
+                    <span style={{ color: "#FDBA74" }}>
                       {v.t("Home.phase")}
                     </span>
                     {" "}{v.t("Home.liveMaintained")}
                   </span>
                   <span>
-                    <span style={{ color: "#FF9A50" }}>
+                    <span style={{ color: "#FDBA74" }}>
                       {v.t("Home.builtBy")}
                     </span>
                     {" "}{v.t("Home.onePerson3")}
                   </span>
                 </div>
-                <a href="#start" onClick={v.closeCase} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "14px 22px", fontWeight: "600", fontSize: "15px" }}>
+                <a href="#start" onClick={v.closeCase} style={{ background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "14px 22px", fontWeight: "600", fontSize: "15px" }}>
                   {v.t("Home.iWantThisForMyBrand")}
                 </a>
               </div>

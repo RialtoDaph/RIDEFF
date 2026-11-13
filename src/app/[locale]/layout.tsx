@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
 }
 
 export const viewport: Viewport = {
-  themeColor: '#ECE8E1',
+  themeColor: '#FFF7ED',
 };
 
 export function generateStaticParams() {

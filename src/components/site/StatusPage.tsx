@@ -27,7 +27,7 @@ export function StatusPage({ kicker, title, accent, text, children }: { kicker: 
           {children ? <div className="flex flex-wrap gap-3">{children}</div> : null}
         </div>
       </main>
-      <div style={{ background: '#ECE8E1' }}>
+      <div style={{ background: '#FFF7ED' }}>
         <Footer />
       </div>
     </Messages>

@@ -98,6 +98,10 @@ function addCustom(node, enOut, deOut) {
   }
 }
 addCustom(custom, en, de);
+// Per-area extras: messages/custom-<area>.json, same {de, en} leaf format as custom.json.
+for (const f of fs.readdirSync(path.join(root, 'messages')).filter((n) => /^custom-.+\.json$/.test(n)).sort()) {
+  addCustom(JSON.parse(fs.readFileSync(path.join(root, 'messages', f), 'utf8')), en, de);
+}
 // House style: no em dashes. Handoff strings rewritten with commas, colons, full stops or "·".
 addCustom(JSON.parse(fs.readFileSync(path.join(root, 'messages/no-emdash.json'), 'utf8')), en, de);
 

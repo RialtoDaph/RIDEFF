@@ -1,0 +1,98 @@
+{
+  "Build": {
+    "stackMean0": {
+      "de": "Was Ihr Team und Ihre Kunden täglich öffnen.",
+      "en": "What your team and your clients open every day."
+    },
+    "stackMean1": {
+      "de": "Lesen mit, sortieren und entwerfen Antworten.",
+      "en": "Read along, sort and draft replies."
+    },
+    "stackMean2": {
+      "de": "Erledigen Routine nach festen Regeln.",
+      "en": "Handle routine work by fixed rules."
+    },
+    "stackMean3": {
+      "de": "Eine Datenbank, eine Wahrheit für alles.",
+      "en": "One database, one truth for everything."
+    },
+    "stackMean4": {
+      "de": "Jeder Weg, auf dem Kunden Sie erreichen.",
+      "en": "Every way customers reach you."
+    },
+    "stackMean5": {
+      "de": "Dienste wie Stripe, DATEV und DHL, fest angebunden.",
+      "en": "Services like Stripe, DATEV and DHL, wired in."
+    },
+    "stackEx0": {
+      "de": "Ihr Team sieht die Schicht in der App, der Kunde sein Angebot im Portal, Sie die Zahlen im Dashboard.",
+      "en": "Your team sees the shift in the app, the client sees the offer in the portal, you see the numbers on the dashboard."
+    },
+    "stackEx1": {
+      "de": "Ein Agent entwirft Antwort und Angebot in Ihrem Ton. Raus geht es erst, wenn Sie mit einem Tipp freigeben.",
+      "en": "An agent drafts the reply and the offer in your tone. It only goes out once you approve with one tap."
+    },
+    "stackEx2": {
+      "de": "Nach Ihrer Freigabe: Schicht für drei Personen angelegt, Packliste erstellt, Erinnerung gesetzt.",
+      "en": "After your approval: shift for three created, packing list written, reminder set."
+    },
+    "stackEx3": {
+      "de": "Das Café ist schon bekannt: drei frühere Bestellungen, Adresse und Preise liegen bereit.",
+      "en": "The café is already known: three past orders, address and prices are ready."
+    },
+    "stackEx4": {
+      "de": "Eine WhatsApp-Nachricht kommt an: „Können Sie am Samstag 40 Personen beliefern?“ Sie landet sofort beim richtigen Kunden.",
+      "en": "A WhatsApp message arrives: “Can you cater 40 people on Saturday?” It lands on the right customer straight away."
+    },
+    "stackEx5": {
+      "de": "Stripe zieht die Zahlung ein, die Rechnung geht an DATEV. Niemand tippt etwas ab.",
+      "en": "Stripe collects the payment, the invoice goes to DATEV. Nobody retypes anything."
+    },
+    "stackExample": {
+      "de": "Beispiel",
+      "en": "Example"
+    },
+    "stackFlowLabel": {
+      "de": "Datenfluss",
+      "en": "Data flow"
+    },
+    "stackFlowIn": {
+      "de": "Nachricht kommt an",
+      "en": "Message comes in"
+    },
+    "stackFlowOrder": {
+      "de": "Bestellung angelegt",
+      "en": "Order created"
+    },
+    "stackFlowPaid": {
+      "de": "Rechnung bezahlt",
+      "en": "Invoice paid"
+    }
+  },
+  "Run": {
+    "stackMean0": {
+      "de": "Was Ihr Team und Ihre Kunden täglich öffnen.",
+      "en": "What your team and your clients open every day."
+    },
+    "stackMean1": {
+      "de": "Lesen mit, sortieren und entwerfen Antworten.",
+      "en": "Read along, sort and draft replies."
+    },
+    "stackMean2": {
+      "de": "Erledigen Routine nach festen Regeln.",
+      "en": "Handle routine work by fixed rules."
+    },
+    "stackMean3": {
+      "de": "Eine Datenbank, eine Wahrheit für alles.",
+      "en": "One database, one truth for everything."
+    },
+    "stackMean4": {
+      "de": "Jeder Weg, auf dem Kunden Sie erreichen.",
+      "en": "Every way customers reach you."
+    },
+    "stackMean5": {
+      "de": "Dienste wie Stripe, DATEV und DHL, fest angebunden.",
+      "en": "Services like Stripe, DATEV and DHL, wired in."
+    }
+  }
+}

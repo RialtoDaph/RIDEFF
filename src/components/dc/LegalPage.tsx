@@ -10,7 +10,7 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "html{scroll-behavior:smooth}body{margin:0;background:#F4F4F2;font-family:var(--font-sans);color:#0A0A0A;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:#0A0A0A}a:hover{color:#FF6A00}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "html{scroll-behavior:smooth}body{margin:0;background:#FFF7ED;font-family:var(--font-sans);color:#17090A;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:#17090A}a:hover{color:#F97316}" }} />
       <div style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 20px 96px", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
           <a href={v.href("/")} style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
@@ -20,13 +20,13 @@ Logic.prototype.render = function render() {
             </span>
           </a>
           <nav style={{ display: "flex", gap: "20px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.08em" }}>
-            <a href={v.href("/impressum")} aria-current={v.section === "impressum" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "impressum" ? "#FF6A00" : undefined }}>
+            <a href={v.href("/impressum")} aria-current={v.section === "impressum" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "impressum" ? "#F97316" : undefined }}>
               {"IMPRESSUM"}
             </a>
-            <a href={v.href("/datenschutz")} aria-current={v.section === "datenschutz" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "datenschutz" ? "#FF6A00" : undefined }}>
+            <a href={v.href("/datenschutz")} aria-current={v.section === "datenschutz" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "datenschutz" ? "#F97316" : undefined }}>
               {"DATENSCHUTZ"}
             </a>
-            <a href={v.href("/agb")} aria-current={v.section === "agb" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "agb" ? "#FF6A00" : undefined }}>
+            <a href={v.href("/agb")} aria-current={v.section === "agb" ? "page" : undefined} style={{ textDecoration: "none", color: v.section === "agb" ? "#F97316" : undefined }}>
               {"AGB"}
             </a>
           </nav>
@@ -39,7 +39,7 @@ Logic.prototype.render = function render() {
           <h1 style={{ fontSize: "40px", fontWeight: "700", letterSpacing: "-0.04em", margin: "0" }}>
             {"Impressum"}
           </h1>
-          <p style={{ fontSize: "14px", color: "#6B6B6B", margin: "0" }}>
+          <p style={{ fontSize: "14px", color: "#79655D", margin: "0" }}>
             {"Angaben gemäß § 5 DDG"}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "4px", fontSize: "16px", lineHeight: "1.6" }}>
@@ -176,7 +176,7 @@ Logic.prototype.render = function render() {
           <p style={{ fontSize: "16px", lineHeight: "1.6", margin: "0" }}>
             {"Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO) sowie das Recht, eine erteilte Einwilligung jederzeit zu widerrufen. Schreiben Sie uns an hallo@rideff.com. Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei [Aufsichtsbehörde Ihres Bundeslandes]."}
           </p>
-          <p style={{ fontSize: "14px", color: "#6B6B6B", margin: "0" }}>
+          <p style={{ fontSize: "14px", color: "#79655D", margin: "0" }}>
             {"Stand: Oktober 2026"}
           </p>
         </section>
@@ -191,7 +191,7 @@ Logic.prototype.render = function render() {
           </p>
         </section>
         </>) : null}
-        <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#6B6B6B", borderTop: "1px solid #E4E4E1", paddingTop: "24px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#79655D", borderTop: "1px solid #F2E6DB", paddingTop: "24px" }}>
           <span>
             {"© 2026 RIDEFF"}
           </span>

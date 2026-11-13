@@ -43,12 +43,12 @@ class Logic extends DCLogic {
         ff: f[0],
         fs: f[1],
         sz: sz.toFixed(0) + 'px',
-        c: ['#5A5650', '#8C877E', '#3A3731', '#A8A094'][R() * 4 | 0],
+        c: ['#5E4A43', '#927A6D', '#3D2B27', '#BFA285'][R() * 4 | 0],
         b: (R() < .45 ? R() * 1.6 : 0).toFixed(2) + 'px',
-        bg: note ? ['#EFE3C8', '#F4F1EC', '#E8DCCB'][R() * 3 | 0] : 'transparent',
+        bg: note ? ['#EFE3C8', '#FFEEDB', '#E8DCCB'][R() * 3 | 0] : 'transparent',
         pad: note ? '8px 10px' : '0',
         td: R() < .1 ? 'line-through' : 'none',
-        shadow: note ? '0 6px 14px rgba(10,10,10,.08)' : 'none'
+        shadow: note ? '0 6px 14px rgba(23,9,10,.08)' : 'none'
       };
     });
   }
@@ -156,7 +156,7 @@ class Logic extends DCLogic {
     const CAPS = [['01', this.props.t("Understand.asItFeels"), this.props.t("Understand.yourBusinessFromTheInside"), this.props.t("Understand.threeInboxesASpreadsheetNobodyTrusts")], ['02', this.props.t("Understand.underneath"), this.props.t("Understand.iLookUnderneath"), this.props.t("Understand.inTheAnalysisITraceHow")], ['03', this.props.t("Understand.understood"), this.props.t("Understand.understood2"), this.props.t("Understand.sixAreasTheTasksThatRepeat")]];
     const c = CAPS[cap],
       e = p < .2 ? 0 : Math.min(1, (p - .2) / .7);
-    const AREAS = [[this.props.t("Understand.customers"), '#F09E5C', [[this.props.t("Understand.inquiriesFrom3Inboxes"), 4], [this.props.t("Understand.bookings"), 0], [this.props.t("Understand.reviewReplies"), 1]]], [this.props.t("Understand.sales"), '#61C784', [[this.props.t("Understand.offers"), 3], [this.props.t("Understand.followUps"), 2], [this.props.t("Understand.priceList"), 0]]], [this.props.t("Understand.team"), '#55B0E5', [[this.props.t("Understand.shiftPlan"), 2], [this.props.t("Understand.sickDaySwaps"), 0], [this.props.t("Understand.onboarding"), 0]]], [this.props.t("Understand.operations"), '#9E8CF2', [[this.props.t("Understand.stockChecks"), 1], [this.props.t("Understand.supplierOrders"), 0], [this.props.t("Understand.copyToShop"), 1]]], [this.props.t("Understand.finance"), '#E0B740', [[this.props.t("Understand.invoices"), 0], [this.props.t("Understand.reminders"), 1], [this.props.t("Understand.bookkeepingExport"), 0]]], [this.props.t("Understand.marketing"), '#EB7AAA', [[this.props.t("Understand.newsletter"), 0], [this.props.t("Understand.socialPosts"), 0], [this.props.t("Understand.googleReviews"), 0]]]];
+    const AREAS = [[this.props.t("Understand.customers"), '#FDBA74', [[this.props.t("Understand.inquiriesFrom3Inboxes"), 4], [this.props.t("Understand.bookings"), 0], [this.props.t("Understand.reviewReplies"), 1]]], [this.props.t("Understand.sales"), '#61C784', [[this.props.t("Understand.offers"), 3], [this.props.t("Understand.followUps"), 2], [this.props.t("Understand.priceList"), 0]]], [this.props.t("Understand.team"), '#55B0E5', [[this.props.t("Understand.shiftPlan"), 2], [this.props.t("Understand.sickDaySwaps"), 0], [this.props.t("Understand.onboarding"), 0]]], [this.props.t("Understand.operations"), '#9E8CF2', [[this.props.t("Understand.stockChecks"), 1], [this.props.t("Understand.supplierOrders"), 0], [this.props.t("Understand.copyToShop"), 1]]], [this.props.t("Understand.finance"), '#E0B740', [[this.props.t("Understand.invoices"), 0], [this.props.t("Understand.reminders"), 1], [this.props.t("Understand.bookkeepingExport"), 0]]], [this.props.t("Understand.marketing"), '#EB7AAA', [[this.props.t("Understand.newsletter"), 0], [this.props.t("Understand.socialPosts"), 0], [this.props.t("Understand.googleReviews"), 0]]]];
     const SINKS = [[this.props.t("Understand.answeringInquiries"), this.props.t("Understand.customers"), 4], [this.props.t("Understand.writingOffers"), this.props.t("Understand.sales"), 3], [this.props.t("Understand.followingUp"), this.props.t("Understand.sales"), 2], [this.props.t("Understand.planningShifts"), this.props.t("Understand.team"), 3], [this.props.t("Understand.updatingStock"), this.props.t("Understand.operations"), 2], [this.props.t("Understand.chasingInvoices"), this.props.t("Understand.finance"), 2], [this.props.t("Understand.copyingDataBetweenTools"), this.props.t("Understand.operations"), 3], [this.props.t("Understand.postingOnSocial"), this.props.t("Understand.marketing"), 2]];
     const per = {};
     AREAS.forEach(a => per[a[0]] = 0);
@@ -175,8 +175,8 @@ class Logic extends DCLogic {
         who,
         t: t.slice(0, n),
         side: who === this.props.t("Understand.you") ? 'flex-end' : 'flex-start',
-        bg: who === this.props.t("Understand.you") ? '#0A0A0A' : '#FFFFFF',
-        fg: who === this.props.t("Understand.you") ? '#F4F4F2' : '#0A0A0A'
+        bg: who === this.props.t("Understand.you") ? '#17090A' : '#FFFFFF',
+        fg: who === this.props.t("Understand.you") ? '#FFF7ED' : '#17090A'
       });
       rem -= t.length + 24;
     }
@@ -193,7 +193,7 @@ class Logic extends DCLogic {
       Customers: done >= 2,
       Sales: done >= 4
     };
-    const FACTS = [[2, this.props.t("Understand.inquiriesArriveIn3Channels"), this.props.t("Understand.customers"), '#F09E5C'], [4, this.props.t("Understand.offersTake40MinWrittenAt"), this.props.t("Understand.sales"), '#61C784'], [5, this.props.t("Understand.startWithInboxOffers7H"), this.props.t("Understand.phase1"), '#FF6A00']];
+    const FACTS = [[2, this.props.t("Understand.inquiriesArriveIn3Channels"), this.props.t("Understand.customers"), '#FDBA74'], [4, this.props.t("Understand.offersTake40MinWrittenAt"), this.props.t("Understand.sales"), '#61C784'], [5, this.props.t("Understand.startWithInboxOffers7H"), this.props.t("Understand.phase1"), '#F97316']];
     let sd = 11;
     const Rr = () => (sd = (sd * 9301 + 49297) % 233280) / 233280;
     const order = [...Array(40).keys()].sort(() => Rr() - .5);
@@ -224,9 +224,9 @@ class Logic extends DCLogic {
         tasks: a[2].map(k => ({
           t: k[0],
           tag: k[1] ? this.props.t("Understand.repeats") + k[1] + this.props.t("Understand.hWk") : this.props.t("Understand.oneOff"),
-          bd: k[1] ? a[1] : '#2A2A2C',
-          bg: k[1] ? a[1] + '1F' : '#141416',
-          tc: k[1] ? a[1] : '#6B675F'
+          bd: k[1] ? a[1] : '#3D1F20',
+          bg: k[1] ? a[1] + '1F' : '#241011',
+          tc: k[1] ? a[1] : '#78625A'
         }))
       })),
       capNum: c[0],
@@ -237,8 +237,8 @@ class Logic extends DCLogic {
       segs: [this.props.t("Understand.asItFeels"), this.props.t("Understand.underneath"), this.props.t("Understand.understood")].map((t, i) => ({
         t,
         w: Math.max(0, Math.min(1, p * 3 - i)) * 100 + '%',
-        c: i === cap ? '#0A0A0A' : '#8C877E',
-        track: '#D3CCC0'
+        c: i === cap ? '#17090A' : '#927A6D',
+        track: '#E6D0B9'
       })),
       chat,
       callTime: String(Math.floor(secs / 60)).padStart(2, '0') + ':' + String(secs % 60).padStart(2, '0'),
@@ -246,9 +246,9 @@ class Logic extends DCLogic {
         const a = s.on.includes(x[0]);
         return {
           t: x[0],
-          bg: a ? '#0A0A0A' : 'transparent',
-          fg: a ? '#F4F4F2' : '#0A0A0A',
-          bd: a ? '#0A0A0A' : '#BDB6AA',
+          bg: a ? '#17090A' : 'transparent',
+          fg: a ? '#FFF7ED' : '#17090A',
+          bd: a ? '#17090A' : '#D3B9A0',
           go: () => this.setState({
             on: a ? s.on.filter(y => y !== x[0]) : [...s.on, x[0]]
           })
@@ -258,19 +258,19 @@ class Logic extends DCLogic {
         t: a[0],
         w: per[a[0]] / max * 100 + '%',
         h: per[a[0]] ? per[a[0]] + ' h' : '–',
-        c: per[a[0]] ? '#0A0A0A' : '#8C877E'
+        c: per[a[0]] ? '#17090A' : '#927A6D'
       })),
       hours,
       offer: [[this.props.t("Understand.customersAIInbox"), this.props.t("Understand.phase1")], [this.props.t("Understand.salesOffersFollowUps"), this.props.t("Understand.phase1")], [this.props.t("Understand.teamApp"), this.props.t("Understand.phase2")], [this.props.t("Understand.setup"), this.props.t("Understand.from1990")]].map(o => ({
         a: o[0],
         b: o[1]
       })),
-      termsBg: s.terms ? '#0A0A0A' : 'transparent',
+      termsBg: s.terms ? '#17090A' : 'transparent',
       termsMark: s.terms ? '✓' : '',
       toggleTerms: () => !s.approved && this.setState({
         terms: !s.terms
       }),
-      apBg: s.approved ? '#FF6A00' : '#0A0A0A',
+      apBg: s.approved ? '#F97316' : '#17090A',
       apOp: s.terms || s.approved ? 1 : .35,
       apLabel: s.approved ? this.props.t("Understand.approved2") : this.props.t("Understand.approve"),
       approve: () => {
@@ -292,10 +292,10 @@ class Logic extends DCLogic {
         const on = !!litMap[a[0]];
         return {
           t: a[0],
-          c: on ? a[1] : '#3A3A3C',
-          bd: on ? a[1] : '#232325',
+          c: on ? a[1] : '#4F2C2C',
+          bd: on ? a[1] : '#341919',
           bg: on ? a[1] + '1F' : 'transparent',
-          tc: on ? '#F4F4F2' : '#6B675F',
+          tc: on ? '#FFF7ED' : '#78625A',
           glow: on ? '0 0 0 5px ' + a[1] + '33' : 'none',
           s: on ? 1 : .96
         };
@@ -312,7 +312,7 @@ class Logic extends DCLogic {
             col = cellCol[k],
             gone = s.free && col;
           return {
-            bg: col ? col : '#E2DDD4',
+            bg: col ? col : '#F1E1CF',
             s: gone ? .1 : 1,
             r: gone ? '40deg' : '0deg',
             o: gone ? 0 : 1,
@@ -323,8 +323,8 @@ class Logic extends DCLogic {
       toggleFree: () => this.setState({
         free: !s.free
       }),
-      freeBg: s.free ? 'transparent' : '#FF6A00',
-      freeFg: '#0A0A0A',
+      freeBg: s.free ? 'transparent' : '#F97316',
+      freeFg: '#17090A',
       freeLabel: s.free ? this.props.t("Understand.showMyWeekAgain") : this.props.t("Understand.handItToRIDEFF"),
       weekNote: s.free ? this.props.t("Understand.backInYourWeek") : this.props.t("Understand.spentOnWorkThatRepeats"),
       weekBig: (s.free ? '+' : '') + used
@@ -336,11 +336,11 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}@keyframes rdBlink{0%,49%{opacity:1}50%,100%{opacity:0}}@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}@keyframes rdIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rdStamp{0%{transform:scale(2.4) rotate(-14deg);opacity:0}60%{transform:scale(.92) rotate(-14deg);opacity:1}100%{transform:scale(1) rotate(-14deg);opacity:1}}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#FFF7ED;color:#17090A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#F97316}@keyframes rdBlink{0%,49%{opacity:1}50%,100%{opacity:0}}@keyframes rdPulse{0%,100%{opacity:1}50%{opacity:.3}}@keyframes rdIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rdStamp{0%{transform:scale(2.4) rotate(-14deg);opacity:0}60%{transform:scale(.92) rotate(-14deg);opacity:1}100%{transform:scale(1) rotate(-14deg);opacity:1}}" }} />
       <Nav active="understand" />
       <div ref={v.stageRef} data-screen-label="Lens stage" style={{ height: v.rm ? "auto" : "460vh", position: "relative" }}>
         {" "}
-        <div ref={v.viewRef} style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: "#ECE8E1", cursor: "none" }}>
+        <div ref={v.viewRef} style={{ position: v.rm ? "relative" : "sticky", top: "0", height: "100vh", overflow: "hidden", background: "#FFF7ED", cursor: "none" }}>
           {" "}
           <div style={{ position: "absolute", inset: "0" }}>
             {" "}
@@ -354,29 +354,29 @@ Logic.prototype.render = function render() {
             {" "}
           </div>
           {" "}
-          <div ref={v.cleanRef} style={{ position: "absolute", inset: "0", background: "#0B0B0C", color: "#F4F4F2", WebkitMaskImage: "radial-gradient(circle 0px at 50% 50%,#000 98%,transparent 100%)", maskImage: "radial-gradient(circle 0px at 50% 50%,#000 98%,transparent 100%)" }}>
+          <div ref={v.cleanRef} style={{ position: "absolute", inset: "0", background: "#14080A", color: "#FFF7ED", WebkitMaskImage: "radial-gradient(circle 0px at 50% 50%,#000 98%,transparent 100%)", maskImage: "radial-gradient(circle 0px at 50% 50%,#000 98%,transparent 100%)" }}>
             {" "}
-            <div style={{ position: "absolute", inset: "0", backgroundImage: "radial-gradient(#232325 1px,transparent 1px)", backgroundSize: "26px 26px" }} />
+            <div style={{ position: "absolute", inset: "0", backgroundImage: "radial-gradient(#341919 1px,transparent 1px)", backgroundSize: "26px 26px" }} />
             {" "}
             <div className="uc-area" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", right: "clamp(20px,3vw,40px)", top: "150px", bottom: "150px", display: "flex", flexDirection: "column", gap: "22px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                 <span>
                   {v.t("Understand.yourBusinessUnderstood")}
                 </span>
                 <span>
-                  <b style={{ color: "#FF9A50", fontWeight: "500" }}>
+                  <b style={{ color: "#FDBA74", fontWeight: "500" }}>
                     {"6"}
                   </b>
                   {" "}{v.t("Understand.areas")}{" "}
-                  <b style={{ color: "#FF9A50", fontWeight: "500" }}>
+                  <b style={{ color: "#FDBA74", fontWeight: "500" }}>
                     {"18"}
                   </b>
                   {" "}{v.t("Understand.tasks")}{" "}
-                  <b style={{ color: "#FF9A50", fontWeight: "500" }}>
+                  <b style={{ color: "#FDBA74", fontWeight: "500" }}>
                     {"8"}
                   </b>
                   {" "}{v.t("Understand.repeat")}{" "}
-                  <b style={{ color: "#FF9A50", fontWeight: "500" }}>
+                  <b style={{ color: "#FDBA74", fontWeight: "500" }}>
                     {"≈15 h"}
                   </b>
                   {" "}{v.t("Understand.week")}
@@ -411,40 +411,40 @@ Logic.prototype.render = function render() {
           {" "}
           <div ref={v.ringRef} style={{ position: "absolute", left: "0", top: "0", width: "0", height: "0", pointerEvents: "none", zIndex: "3" }}>
             {" "}
-            <div style={{ position: "absolute", left: "-7px", top: "-7px", width: "14px", height: "14px", borderRadius: "50%", background: "#FF6A00", boxShadow: "0 0 0 6px rgba(255,106,0,.18)" }} />
+            <div style={{ position: "absolute", left: "-7px", top: "-7px", width: "14px", height: "14px", borderRadius: "50%", background: "#F97316", boxShadow: "0 0 0 6px rgba(249,115,22,.18)" }} />
             {" "}
           </div>
           {" "}
-          <div className="uc-crumb" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "6px 10px", borderRadius: "999px" }}>
+          <div className="uc-crumb" style={{ position: "absolute", left: "clamp(20px,3vw,40px)", top: "110px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43", zIndex: "4", background: "#FFF7ED", padding: "6px 10px", borderRadius: "999px" }}>
             {v.t("Understand.home")}{" "}
-            <span style={{ color: "#BDB6AA" }}>
+            <span style={{ color: "#D3B9A0" }}>
               {"/"}
             </span>
             {" "}
-            <span style={{ color: "#0A0A0A" }}>
+            <span style={{ color: "#17090A" }}>
               {v.t("Understand.understand")}
             </span>
             {" "}{v.t("Understand.pillar01")}
           </div>
           {" "}
-          <div className="uc-read" style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "110px", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650", zIndex: "4", background: "#ECE8E1", padding: "10px 12px", borderRadius: "14px" }}>
+          <div className="uc-read" style={{ position: "absolute", right: "clamp(20px,3vw,40px)", top: "110px", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5E4A43", zIndex: "4", background: "#FFF7ED", padding: "10px 12px", borderRadius: "14px" }}>
             <span>
               {v.t("Understand.clarity")}{" "}
-              <b style={{ color: "#FF6A00", fontWeight: "500" }}>
+              <b style={{ color: "#F97316", fontWeight: "500" }}>
                 {v.clarity}{"%"}
               </b>
             </span>
             <span>
               {v.t("Understand.lens")}{" "}
-              <b style={{ color: "#FF6A00", fontWeight: "500" }}>
+              <b style={{ color: "#F97316", fontWeight: "500" }}>
                 {v.lensMode}
               </b>
             </span>
           </div>
           {" "}
-          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", bottom: "110px", maxWidth: "min(580px,calc(100% - 40px))", zIndex: "4", background: "rgba(236,232,225,.94)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", borderRadius: "24px", padding: "26px 28px", display: "flex", flexDirection: "column", gap: "14px", boxShadow: "0 20px 50px rgba(10,10,10,.12)", cursor: "auto" }}>
+          <div style={{ position: "absolute", left: "clamp(20px,3vw,40px)", bottom: "110px", maxWidth: "min(580px,calc(100% - 40px))", zIndex: "4", background: "rgba(255,247,237,.94)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", borderRadius: "24px", padding: "26px 28px", display: "flex", flexDirection: "column", gap: "14px", boxShadow: "0 20px 50px rgba(23,9,10,.12)", cursor: "auto" }}>
             <div style={{ display: "flex", gap: "12px", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase" }}>
-              <span style={{ color: "#8C877E" }}>
+              <span style={{ color: "#927A6D" }}>
                 {v.capNum}
               </span>
               <span>
@@ -454,12 +454,12 @@ Logic.prototype.render = function render() {
             <h1 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,59px)", lineHeight: ".95", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.capHead}
             </h1>
-            <p style={{ margin: "0", fontSize: "clamp(15px,1.3vw,19px)", lineHeight: "1.5", color: "#3A3731", textWrap: "pretty" }}>
+            <p style={{ margin: "0", fontSize: "clamp(15px,1.3vw,19px)", lineHeight: "1.5", color: "#3D2B27", textWrap: "pretty" }}>
               {v.capBody}
             </p>
             {v.isLast ? (<>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "14px 22px", fontWeight: "700", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "14px 22px", fontWeight: "700", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                   {v.t("Understand.bookTheFirstCall")}
                 </a>
               </div>
@@ -471,7 +471,7 @@ Logic.prototype.render = function render() {
               {" "}
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 <div style={{ height: "2px", background: `${g?.track ?? ''}`, overflow: "hidden" }}>
-                  <div style={{ height: "100%", width: `${g?.w ?? ''}`, background: "#FF6A00" }} />
+                  <div style={{ height: "100%", width: `${g?.w ?? ''}`, background: "#F97316" }} />
                 </div>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: `${g?.c ?? ''}` }}>
                   {g?.t}
@@ -485,25 +485,25 @@ Logic.prototype.render = function render() {
       </div>
       <div ref={v.chatRef} data-screen-label="01 First call" style={{ padding: "140px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
             {"(01) "}
-            <span style={{ color: "#0A0A0A" }}>
+            <span style={{ color: "#17090A" }}>
               {v.t("Understand.theFirstCall")}
             </span>
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fifteenMinutes")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.t("Understand.iListenYouWatchItTake")}
             </span>
           </h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "16px" }}>
-          <div style={{ background: "#F4F1EC", border: "1px solid #DCD5CA", borderRadius: "26px", overflow: "hidden" }}>
+          <div style={{ background: "#FFEEDB", border: "1px solid #EDD9C4", borderRadius: "26px", overflow: "hidden" }}>
             {" "}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px", borderBottom: "1px solid #E2DDD4", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px", borderBottom: "1px solid #F1E1CF", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
               <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#FF6A00", animation: "rdPulse 1.6s infinite" }} />
+                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#F97316", animation: "rdPulse 1.6s infinite" }} />
                 {v.t("Understand.firstCallExample")}
               </span>
               <span>
@@ -515,7 +515,7 @@ Logic.prototype.render = function render() {
               {(v.chat ?? []).map((m, $index) => (<Fragment key={$index}>
                 {" "}
                 <div style={{ alignSelf: `${m?.side ?? ''}`, maxWidth: "84%", display: "flex", flexDirection: "column", gap: "4px" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", alignSelf: `${m?.side ?? ''}` }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", alignSelf: `${m?.side ?? ''}` }}>
                     {m?.who}
                   </span>
                   <span style={{ background: `${m?.bg ?? ''}`, color: `${m?.fg ?? ''}`, borderRadius: "16px", padding: "12px 15px", fontSize: "15px", lineHeight: "1.45" }}>
@@ -527,13 +527,13 @@ Logic.prototype.render = function render() {
             </div>
             {" "}
           </div>
-          <div style={{ background: "#0B0B0C", color: "#F4F4F2", borderRadius: "26px", padding: "24px", display: "flex", flexDirection: "column", gap: "20px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+          <div style={{ background: "#14080A", color: "#FFF7ED", borderRadius: "26px", padding: "24px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
               <span>
                 {v.t("Understand.whatIHear")}
               </span>
               <span>
-                <b style={{ color: "#FF9A50", fontWeight: "500" }}>
+                <b style={{ color: "#FDBA74", fontWeight: "500" }}>
                   {v.litCount}
                 </b>
                 {" "}{v.t("Understand.n6Areas")}
@@ -554,7 +554,7 @@ Logic.prototype.render = function render() {
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: "1" }}>
               {(v.facts ?? []).map((f, $index) => (<Fragment key={$index}>
                 {" "}
-                <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", alignItems: "center", padding: "14px 16px", borderRadius: "14px", background: "#161618", borderLeft: `3px solid ${f?.c ?? ''}`, animation: "rdIn .5s both" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", alignItems: "center", padding: "14px 16px", borderRadius: "14px", background: "#271113", borderLeft: `3px solid ${f?.c ?? ''}`, animation: "rdIn .5s both" }}>
                   <span style={{ fontSize: "15px" }}>
                     {f?.t}
                   </span>
@@ -569,31 +569,31 @@ Logic.prototype.render = function render() {
         </div>
       </div>
       <div data-rv="0" style={{ padding: "28px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", alignItems: "center", gap: "14px 20px", flexWrap: "wrap" }}>
-        <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "16px 26px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+        <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "16px 26px", fontWeight: "700", fontSize: "13px", letterSpacing: ".06em", textTransform: "uppercase" }}>
           {v.t("Understand.callCta")}
         </a>
-        <span style={{ fontSize: "15px", color: "#5A5650" }}>
+        <span style={{ fontSize: "15px", color: "#5E4A43" }}>
           {v.t("Understand.callCtaNote")}
         </span>
       </div>
       <div data-screen-label="02 Your week" style={{ padding: "140px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
             {"(02) "}
-            <span style={{ color: "#0A0A0A" }}>
+            <span style={{ color: "#17090A" }}>
               {v.t("Understand.yourWeek")}
             </span>
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
             {v.t("Understand.fortyHours")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.t("Understand.howManyAreReallyYours")}
             </span>
           </h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
-            <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#3A3731", maxWidth: "460px" }}>
+            <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#3D2B27", maxWidth: "460px" }}>
               {v.t("Understand.tapWhatEatsYourWeekEvery")}
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -603,12 +603,12 @@ Logic.prototype.render = function render() {
                 </button>
               </Fragment>))}
             </div>
-            <button onClick={v.toggleFree} style={{ alignSelf: "flex-start", border: "1px solid #0A0A0A", cursor: "pointer", borderRadius: "999px", padding: "16px 26px", font: "700 13px var(--font-sans)", letterSpacing: ".06em", textTransform: "uppercase", background: `${v.freeBg ?? ''}`, color: `${v.freeFg ?? ''}` }}>
+            <button onClick={v.toggleFree} style={{ alignSelf: "flex-start", border: "1px solid #17090A", cursor: "pointer", borderRadius: "999px", padding: "16px 26px", font: "700 13px var(--font-sans)", letterSpacing: ".06em", textTransform: "uppercase", background: `${v.freeBg ?? ''}`, color: `${v.freeFg ?? ''}` }}>
               {v.freeLabel}
             </button>
           </div>
-          <div style={{ background: "#F4F1EC", borderRadius: "26px", padding: "clamp(20px,2.4vw,32px)", display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "44px repeat(5,minmax(0,1fr))", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
+          <div style={{ background: "#FFEEDB", borderRadius: "26px", padding: "clamp(20px,2.4vw,32px)", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "44px repeat(5,minmax(0,1fr))", gap: "6px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D" }}>
               <span />
               <span>
                 {v.t("Understand.mon")}
@@ -629,7 +629,7 @@ Logic.prototype.render = function render() {
             {(v.rowsW ?? []).map((r, $index) => (<Fragment key={$index}>
               {" "}
               <div style={{ display: "grid", gridTemplateColumns: "44px repeat(5,minmax(0,1fr))", gap: "6px" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E", alignSelf: "center" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#927A6D", alignSelf: "center" }}>
                   {r?.h}
                 </span>
                 {(r?.cells ?? []).map((c, $index) => (<Fragment key={$index}>
@@ -638,13 +638,13 @@ Logic.prototype.render = function render() {
               </div>
               {" "}
             </Fragment>))}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px", flexWrap: "wrap", background: "#0B0B0C", color: "#F4F4F2", borderRadius: "18px", padding: "20px 22px", marginTop: "6px" }}>
-              <span style={{ fontSize: "15px", color: "#B8B3AA" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px", flexWrap: "wrap", background: "#14080A", color: "#FFF7ED", borderRadius: "18px", padding: "20px 22px", marginTop: "6px" }}>
+              <span style={{ fontSize: "15px", color: "#CBB7A8" }}>
                 {v.weekNote}
               </span>
               <span style={{ fontSize: "44px", fontWeight: "600", letterSpacing: "-0.04em" }}>
                 {v.weekBig}
-                <span style={{ fontSize: "15px", fontWeight: "400", color: "#8C877E" }}>
+                <span style={{ fontSize: "15px", fontWeight: "400", color: "#927A6D" }}>
                   {" "}{v.t("Understand.hWeek")}
                 </span>
               </span>
@@ -658,23 +658,23 @@ Logic.prototype.render = function render() {
           <div style={{ width: "100%", maxWidth: "1480px", margin: "0 auto", padding: "90px clamp(20px,3vw,40px) 0", boxSizing: "border-box", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "56px", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
                   {"(03) "}
-                  <span style={{ color: "#0A0A0A" }}>
+                  <span style={{ color: "#17090A" }}>
                     {v.t("Understand.whatYouGet")}
                   </span>
                 </div>
                 <h2 style={{ margin: "0", fontSize: "clamp(33px,3.9vw,62px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
                   {v.t("Understand.aPlanOnPaper")}{" "}
-                  <span style={{ color: "#FF6A00" }}>
+                  <span style={{ color: "#F97316" }}>
                     {v.t("Understand.notAPitch")}
                   </span>
                 </h2>
               </div>
-              <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.6", color: "#3A3731", maxWidth: "480px" }}>
+              <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.6", color: "#3D2B27", maxWidth: "480px" }}>
                 {v.t("Understand.theMapBecomesOneClearOffer")}
               </p>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", paddingTop: "20px", borderTop: "1px solid #D3CCC0" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap", paddingTop: "20px", borderTop: "1px solid #E6D0B9" }}>
                 <span style={{ fontSize: "17px" }}>
                   {v.t("Understand.nextPillar")}{" "}
                   <b>
@@ -682,26 +682,26 @@ Logic.prototype.render = function render() {
                   </b>
                   {"."}
                 </span>
-                <a href={v.href("/build")} style={{ border: "1px solid #0A0A0A", color: "#0A0A0A", borderRadius: "999px", padding: "14px 22px", fontWeight: "600", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                <a href={v.href("/build")} style={{ border: "1px solid #17090A", color: "#17090A", borderRadius: "999px", padding: "14px 22px", fontWeight: "600", fontSize: "12px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                   {v.t("Understand.enterBuild")}
                 </a>
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ width: "min(100%,540px)", height: "34px", borderRadius: "14px", background: "#0B0B0C", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 18px", boxSizing: "border-box", position: "relative", zIndex: "2", boxShadow: "0 14px 30px rgba(10,10,10,.25)" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+              <div style={{ width: "min(100%,540px)", height: "34px", borderRadius: "14px", background: "#14080A", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 18px", boxSizing: "border-box", position: "relative", zIndex: "2", boxShadow: "0 14px 30px rgba(23,9,10,.25)" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                   {v.t("Understand.rIDEFFOffer")}
                 </span>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#FF6A00", animation: "rdPulse 1s infinite", opacity: `${v.printing ?? ''}` }} />
+                <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#F97316", animation: "rdPulse 1s infinite", opacity: `${v.printing ?? ''}` }} />
               </div>
               <div style={{ width: "min(92%,480px)", height: v.mob ? "auto" : "min(66vh,560px)", overflow: "hidden", marginTop: "-10px" }}>
                 {" "}
-                <div style={{ position: "relative", background: "#E7E3DC", padding: "44px 36px 36px", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "18px", fontSize: "14px", transform: `translateY(${v.paperY ?? ''})`, boxShadow: "0 30px 60px rgba(10,10,10,.14)" }}>
+                <div style={{ position: "relative", background: "#F1E5D9", padding: "44px 36px 36px", boxSizing: "border-box", display: "flex", flexDirection: "column", gap: "18px", fontSize: "14px", transform: `translateY(${v.paperY ?? ''})`, boxShadow: "0 30px 60px rgba(23,9,10,.14)" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                     <b style={{ fontSize: "18px", letterSpacing: "-0.02em" }}>
                       {"RIDEFF"}
                     </b>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5E4A43" }}>
                       {v.t("Understand.offerYourBusiness")}
                     </span>
                   </div>
@@ -710,17 +710,17 @@ Logic.prototype.render = function render() {
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     {(v.offer ?? []).map((o, $index) => (<Fragment key={$index}>
-                      <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderTop: "1px solid #CFC8BC" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderTop: "1px solid #DFC9B4" }}>
                         <span>
                           {o?.a}
                         </span>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
                           {o?.b}
                         </span>
                       </div>
                     </Fragment>))}
                   </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderTop: "2px solid #0A0A0A", paddingTop: "14px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderTop: "2px solid #17090A", paddingTop: "14px" }}>
                     <b>
                       {"Growth"}
                     </b>
@@ -729,18 +729,18 @@ Logic.prototype.render = function render() {
                     </b>
                   </div>
                   <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                    <button onClick={v.toggleTerms} aria-label={v.t("Understand.iAcceptTheTerms")} style={{ width: "18px", height: "18px", border: "1.5px solid #0A0A0A", borderRadius: "4px", background: `${v.termsBg ?? ''}`, cursor: "pointer", padding: "0", color: "#F4F4F2", fontSize: "12px", lineHeight: "1" }}>
+                    <button onClick={v.toggleTerms} aria-label={v.t("Understand.iAcceptTheTerms")} style={{ width: "18px", height: "18px", border: "1.5px solid #17090A", borderRadius: "4px", background: `${v.termsBg ?? ''}`, cursor: "pointer", padding: "0", color: "#FFF7ED", fontSize: "12px", lineHeight: "1" }}>
                       {v.termsMark}
                     </button>
-                    <span onClick={v.toggleTerms} style={{ fontSize: "13px", color: "#3A3731", cursor: "pointer", padding: "12px 0" }}>
+                    <span onClick={v.toggleTerms} style={{ fontSize: "13px", color: "#3D2B27", cursor: "pointer", padding: "12px 0" }}>
                       {v.t("Understand.iAcceptTheTerms")}
                     </span>
-                    <button onClick={v.approve} style={{ marginLeft: "auto", border: "none", background: `${v.apBg ?? ''}`, color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "600 13px var(--font-sans)", cursor: "pointer", opacity: `${v.apOp ?? ''}` }}>
+                    <button onClick={v.approve} style={{ marginLeft: "auto", border: "none", background: `${v.apBg ?? ''}`, color: "#FFF7ED", borderRadius: "999px", padding: "10px 18px", font: "600 13px var(--font-sans)", cursor: "pointer", opacity: `${v.apOp ?? ''}` }}>
                       {v.apLabel}
                     </button>
                   </div>
                   {v.approved ? (<>
-                    <div style={{ position: "absolute", right: "26px", top: "104px", border: "3px solid #FF6A00", color: "#FF6A00", borderRadius: "10px", padding: "10px 16px", fontFamily: "var(--font-mono)", fontSize: "15px", fontWeight: "500", letterSpacing: ".12em", textTransform: "uppercase", animation: "rdStamp .5s cubic-bezier(.2,.8,.2,1) both", background: "rgba(231,227,220,.88)", display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
+                    <div style={{ position: "absolute", right: "26px", top: "104px", border: "3px solid #F97316", color: "#F97316", borderRadius: "10px", padding: "10px 16px", fontFamily: "var(--font-mono)", fontSize: "15px", fontWeight: "500", letterSpacing: ".12em", textTransform: "uppercase", animation: "rdStamp .5s cubic-bezier(.2,.8,.2,1) both", background: "rgba(241,229,217,.88)", display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
                       {v.t("Understand.approved")}
                       <span style={{ fontSize: "9px", letterSpacing: ".06em" }}>
                         {v.t("Understand.xHashStored", { x: v.stampTime })}

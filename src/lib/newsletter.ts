@@ -56,13 +56,13 @@ type Mail = { subject: string; hello: string; body: string; button: string; igno
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 function mailHtml(m: Mail, url: string) {
-  return `<!doctype html><html><body style="margin:0;background:#F4F4F2;font-family:Geist,Helvetica,Arial,sans-serif;color:#0A0A0A">
+  return `<!doctype html><html><body style="margin:0;background:#FFF7ED;font-family:Geist,Helvetica,Arial,sans-serif;color:#17090A">
 <div style="max-width:520px;margin:0 auto;padding:40px 24px">
 <p style="font-weight:700;font-size:17px;letter-spacing:0.02em;margin:0 0 32px">RIDEFF</p>
 <p style="font-size:16px;line-height:1.6;margin:0 0 12px">${esc(m.hello)}</p>
 <p style="font-size:16px;line-height:1.6;margin:0 0 28px">${esc(m.body)}</p>
-<a href="${esc(url)}" style="display:inline-block;background:#FF6A00;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:9999px">${esc(m.button)} →</a>
-<p style="font-size:13px;line-height:1.5;color:#71717A;margin:32px 0 0">${esc(m.ignore)}</p>
+<a href="${esc(url)}" style="display:inline-block;background:#F97316;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:9999px">${esc(m.button)} →</a>
+<p style="font-size:13px;line-height:1.5;color:#856F66;margin:32px 0 0">${esc(m.ignore)}</p>
 </div></body></html>`;
 }
 

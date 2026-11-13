@@ -1,0 +1,62 @@
+{
+  "Work": {
+    "resultLabel": { "de": "Ergebnis", "en": "Result" },
+    "ticBuilt": {
+      "de": "Onlineshop für Streetwear und das Inhaber-Dashboard dahinter, beides auf einer Datenbank. Zahlungen laufen über Stripe, und jede Bestellung bucht Lager und Rabattcodes mit.",
+      "en": "Online shop for streetwear and the owner dashboard behind it, both on one database. Payments run through Stripe, and every order updates stock and discount codes."
+    },
+    "ticResult": {
+      "de": "Ein eigener Shop statt gemieteter Plattformen: live, auf Deutsch und Englisch, in der EU gehostet und weiter von mir betreut.",
+      "en": "A shop of its own instead of rented platforms: live, in German and English, hosted in the EU and still maintained by me."
+    },
+    "ticTags": {
+      "de": "Stripe|Lager + Rabattcodes|DE + EN|EU-Hosting|Live",
+      "en": "Stripe|Stock + discount codes|DE + EN|EU hosting|Live"
+    },
+    "mamiBuilt": {
+      "de": "Website für eine Familienbäckerei in Bandung mit saisonalen Kollektionen, Bestellung per WhatsApp und einer App für das Team. Das Video auf der Startseite ist mit KI entstanden.",
+      "en": "Website for a family bakery in Bandung with seasonal collections, ordering on WhatsApp and an app for the team. The video on the homepage was made with AI."
+    },
+    "mamiResult": {
+      "de": "Kunden sehen das aktuelle Sortiment und bestellen direkt per WhatsApp. Das Team plant in einer App statt in mehreren Listen.",
+      "en": "Customers see the current range and order straight on WhatsApp. The team plans in one app instead of several lists."
+    },
+    "mamiTags": {
+      "de": "Saisonale Kollektionen|WhatsApp-Bestellung|Team-App|KI-Video",
+      "en": "Seasonal collections|WhatsApp ordering|Team app|AI video"
+    },
+    "lifeBuilt": {
+      "de": "Ein persönlicher Assistent als App: Morgen-Briefing, Geld, Zeit und Ziele an einem Ort, für eine Person oder die ganze Familie.",
+      "en": "A personal-life assistant as an app: morning briefing, money, time and goals in one place, for one person or the whole family."
+    },
+    "lifeResult": {
+      "de": "Mein eigenes Produkt. Sie können es 14 Tage kostenlos testen.",
+      "en": "My own product. You can try it free for 14 days."
+    },
+    "lifeTags": {
+      "de": "Briefing|Geld|Zeit|Ziele",
+      "en": "Briefing|Money|Time|Goals"
+    },
+    "lifeCta": { "de": "RIDEFF Life ansehen →", "en": "See RIDEFF Life →" },
+    "lifeAlt": { "de": "RIDEFF Life: Startansicht der App", "en": "RIDEFF Life: the app's home view" },
+    "portalResult": {
+      "de": "Jeder Kunde sieht jederzeit, wo sein Projekt steht.",
+      "en": "Every client can see where their project stands at any time."
+    },
+    "portalCta": { "de": "Zum Kundenportal →", "en": "Open the client portal →" },
+    "portalAlt": { "de": "Kundenportal: Projektstatus", "en": "Client portal: project status" },
+    "demoResult": {
+      "de": "So kann eine Plattform für Ihren Betrieb aussehen, noch bevor wir sprechen.",
+      "en": "This is what a platform for your business can look like, before we even talk."
+    },
+    "demoCta": { "de": "Demo durchklicken →", "en": "Click through the demo →" },
+    "nextBuilt": {
+      "de": "Hier könnte Ihr Projekt stehen: eine Website, ein Shop oder die Plattform, auf der Ihr Betrieb läuft.",
+      "en": "Your project could be here: a website, a shop or the platform your business runs on."
+    },
+    "nextCta": { "de": "Erstgespräch buchen →", "en": "Book a first call →" }
+  },
+  "Life": {
+    "gymMoved": { "de": "jetzt 18:30", "en": "now 18:30" }
+  }
+}

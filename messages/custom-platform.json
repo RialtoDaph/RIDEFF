@@ -1,0 +1,164 @@
+{
+  "common": {
+    "platformCustomers": {
+      "de": "Kunden",
+      "en": "Customers"
+    },
+    "platformSales": {
+      "de": "Vertrieb",
+      "en": "Sales"
+    },
+    "platformTeam": {
+      "de": "Team",
+      "en": "Team"
+    },
+    "platformOperations": {
+      "de": "Betrieb",
+      "en": "Operations"
+    },
+    "platformFinance": {
+      "de": "Finanzen",
+      "en": "Finance"
+    },
+    "platformMarketing": {
+      "de": "Marketing",
+      "en": "Marketing"
+    },
+    "platformSlabName": {
+      "de": "Fundament",
+      "en": "Foundation"
+    },
+    "platformSlabLabel": {
+      "de": "Fundament: Ihre Daten, Ihr Hosting, Ihre Domain",
+      "en": "Foundation: your data, your hosting, your domain"
+    },
+    "platformAiName": {
+      "de": "KI-Schicht",
+      "en": "AI layer"
+    },
+    "platformOptional": {
+      "de": "optional",
+      "en": "optional"
+    },
+    "platformPick": {
+      "de": "Baustein auswählen",
+      "en": "Pick a building block"
+    },
+    "platformClosingLine": {
+      "de": "Ein Fundament, das Ihnen gehört. Bereiche docken an, wenn Sie sie brauchen. Nichts wird neu gebaut. Die KI arbeitet über alles.",
+      "en": "One foundation you own. Areas dock on when you need them. Nothing gets rebuilt. The AI works across everything."
+    },
+    "platformClosingLabel": {
+      "de": "Ihre Plattform, fertig ausgebaut",
+      "en": "Your platform, fully built out"
+    }
+  },
+  "Home": {
+    "platformSlabDoes": {
+      "de": "Datenbank, Hosting in der EU und Ihre Domain. Es gehört Ihnen und trägt jeden Bereich, heute und in fünf Jahren.",
+      "en": "Database, EU hosting and your domain. You own it, and it carries every area, today and five years from now."
+    },
+    "platformAiDoes": {
+      "de": "Sie liegt unter allen Bereichen und sieht deshalb alles zusammen. So wird aus einer Anfrage ein Angebot, ein Auftrag und eine Rechnung.",
+      "en": "It sits under every area, so it sees everything together. That is how one inquiry becomes an offer, an order and an invoice."
+    },
+    "platformAlways": {
+      "de": "Immer dabei",
+      "en": "Always included"
+    },
+    "platformLaterNote": {
+      "de": "In diesem Paket noch nicht verbunden. Kommt später dazu, auf demselben Fundament und ohne Umbau.",
+      "en": "Not connected in this plan yet. It docks on later, onto the same foundation, with no rebuild."
+    },
+    "platformHintTitle": {
+      "de": "So lesen Sie das Bild",
+      "en": "How to read this"
+    },
+    "platformHint": {
+      "de": "Die Platte ist Ihr Fundament, die leuchtende Schicht die KI, jeder Block ein Bereich Ihres Betriebs. Tippen Sie auf einen Block oder einen Namen und sehen Sie, was er für Sie erledigt.",
+      "en": "The slab is your foundation, the glowing layer is the AI, each block is one area of your business. Tap a block or a name to see what it does for you."
+    },
+    "platformPlanCore": {
+      "de": "Ein Bereich läuft auf Ihrem Fundament, meist der, der heute am meisten Zeit frisst. Die anderen fünf bleiben frei und docken später an.",
+      "en": "One area runs on your foundation, usually the one that eats the most time today. The other five stay open and dock on later."
+    },
+    "platformPlanGrowth": {
+      "de": "Vier Bereiche teilen sich dieselben Daten. Eine Anfrage wandert vom Kunden über das Angebot bis ins Team, ohne dass jemand etwas abtippt.",
+      "en": "Four areas share the same data. An inquiry moves from customer to offer to team without anyone retyping a thing."
+    },
+    "platformPlanWhole": {
+      "de": "Alle sechs Bereiche sind angedockt. Vom ersten Kontakt bis zur bezahlten Rechnung läuft alles in einem System, und die KI sieht das ganze Bild.",
+      "en": "All six areas are docked. From first contact to paid invoice, everything runs in one system, and the AI sees the whole picture."
+    },
+    "platformDoesCustomers": {
+      "de": "Anfragen werden sofort beantwortet und Termine bestätigt, auch nachts und am Wochenende.",
+      "en": "Inquiries get an answer right away and bookings are confirmed, nights and weekends included."
+    },
+    "platformDoesSales": {
+      "de": "Das Angebot entsteht direkt aus der Anfrage, und das Nachfassen geht von selbst raus.",
+      "en": "The offer is drafted straight from the inquiry, and the follow-up goes out on its own."
+    },
+    "platformDoesTeam": {
+      "de": "Schichten, Aufgaben und Check-ins in einer App statt in fünf WhatsApp-Gruppen.",
+      "en": "Shifts, tasks and check-ins in one app instead of five WhatsApp groups."
+    },
+    "platformDoesOperations": {
+      "de": "Bestellungen, Lager und Lieferanten an einem Ort, mit Warnung, bevor etwas ausgeht.",
+      "en": "Orders, stock and suppliers in one place, with a warning before anything runs out."
+    },
+    "platformDoesFinance": {
+      "de": "Rechnungen gehen automatisch raus, Zahlungen werden abgeglichen, Mahnungen laufen von allein.",
+      "en": "Invoices go out automatically, payments are matched, reminders run by themselves."
+    },
+    "platformDoesMarketing": {
+      "de": "Posts, Newsletter und Bewertungsanfragen entstehen aus dem, was im Betrieb wirklich passiert.",
+      "en": "Posts, newsletters and review requests come from what actually happens in the business."
+    },
+    "platformP1": {
+      "de": "Ein Fundament, das Ihnen gehört.",
+      "en": "One foundation, and you own it."
+    },
+    "platformP1Body": {
+      "de": "Daten, Code und Domain liegen bei Ihnen. Wenn Sie gehen, nehmen Sie alles mit.",
+      "en": "Data, code and domain are yours. If you leave, you take all of it with you."
+    },
+    "platformP2": {
+      "de": "Bereiche docken an, wenn Sie sie brauchen.",
+      "en": "Areas dock on when you need them."
+    },
+    "platformP2Body": {
+      "de": "Sie starten mit einem Bereich. Der nächste kommt dazu, sobald er sich rechnet.",
+      "en": "You start with one area. The next one joins once it pays for itself."
+    },
+    "platformP3": {
+      "de": "Nichts wird neu gebaut.",
+      "en": "Nothing gets rebuilt."
+    },
+    "platformP3Body": {
+      "de": "Jeder neue Bereich nutzt dieselben Daten und dieselbe Anmeldung. Kein Umzug, kein zweites System.",
+      "en": "Every new area uses the same data and the same login. No migration, no second system."
+    },
+    "platformP4": {
+      "de": "Die KI arbeitet über alles.",
+      "en": "The AI works across everything."
+    },
+    "platformP4Body": {
+      "de": "Sie sieht Kunden, Aufträge und Rechnungen zusammen und erledigt die Schritte dazwischen, die heute jemand von Hand macht.",
+      "en": "It sees customers, orders and invoices together and handles the steps in between that someone does by hand today."
+    }
+  },
+  "RideffFooter": {
+    "wordmarkLabel": {
+      "de": "Was hier unten passiert",
+      "en": "What is happening down here"
+    },
+    "wordmarkLine": {
+      "de": "Der kleine Roboter zeigt den Betrieb: Updates, Backups und Überwachung laufen im Hintergrund, während Sie arbeiten oder schlafen.",
+      "en": "The little robot shows the upkeep: updates, backups and monitoring run in the background while you work or sleep."
+    },
+    "philosophy": {
+      "de": "Eine Plattform, die Ihnen gehört. Ein Ansprechpartner, der sie baut und am Laufen hält.",
+      "en": "One platform that you own. One person who builds it and keeps it running."
+    }
+  }
+}

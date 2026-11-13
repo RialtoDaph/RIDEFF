@@ -48,9 +48,9 @@ class Logic extends DCLogic {
         const on = s.need === t;
         return {
           t,
-          bg: on ? '#FF6A00' : 'transparent',
-          fg: on ? '#0A0A0A' : '#F4F4F2',
-          bd: on ? '#FF6A00' : '#3A3A3C',
+          bg: on ? '#F97316' : 'transparent',
+          fg: on ? '#17090A' : '#FFF7ED',
+          bd: on ? '#F97316' : '#4F2C2C',
           go: () => this.setState({
             need: on ? null : t
           })
@@ -65,32 +65,32 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#0B0B0C;color:#F4F4F2;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF9A50}input,textarea{font-family:inherit}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#14080A;color:#FFF7ED;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FDBA74}input,textarea{font-family:inherit}" }} />
       <Nav active="contact" dark={true} />
       <div data-screen-label="Contact" style={{ padding: "150px clamp(20px,3vw,40px) 120px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "64px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
             {v.t("Contact.home")}{" "}
-            <span style={{ color: "#F4F4F2" }}>
+            <span style={{ color: "#FFF7ED" }}>
               {v.t("Contact.contact")}
             </span>
           </div>
           <h1 style={{ margin: "0", fontSize: "clamp(41px,5.2vw,82px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Contact.gotAProblemWorth")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.t("Contact.n15Minutes")}
             </span>
           </h1>
-          <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#B8B3AA", maxWidth: "480px" }}>
+          <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.55", color: "#CBB7A8", maxWidth: "480px" }}>
             {v.t("Contact.bringTheRealProblemLeaveWith")}
           </p>
-          <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
-            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
+          <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #3D1F20" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }}>
               <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "20px", fontWeight: "600" }}>
                   {v.t("Contact.book15Minutes")}
                 </b>
-                <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                <span style={{ fontSize: "14px", color: "#927A6D" }}>
                   {v.t("Contact.freeFirstCallCalComLink")}
                 </span>
               </span>
@@ -98,12 +98,12 @@ Logic.prototype.render = function render() {
                 {"↗"}
               </span>
             </a>
-            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
+            <a href="https://wa.me/4917632572420?text=Hi%20Rialto%2C%20I%20found%20rideff.com%20and%20I%27d%20like%20to%20talk%20about%20a%20project." style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }}>
               <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "20px", fontWeight: "600" }}>
                   {"WhatsApp +49 176 32572420"}
                 </b>
-                <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                <span style={{ fontSize: "14px", color: "#927A6D" }}>
                   {v.t("Contact.rialtoFastestWayIn")}
                 </span>
               </span>
@@ -111,12 +111,12 @@ Logic.prototype.render = function render() {
                 {"↗"}
               </span>
             </a>
-            <a href="mailto:hallo@rideff.com" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #2A2A2C" }}>
+            <a href="mailto:hallo@rideff.com" style={{ display: "flex", justifyContent: "space-between", gap: "20px", padding: "22px 0", borderBottom: "1px solid #3D1F20" }}>
               <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <b style={{ fontSize: "20px", fontWeight: "600" }}>
                   {"hallo@rideff.com"}
                 </b>
-                <span style={{ fontSize: "14px", color: "#8C877E" }}>
+                <span style={{ fontSize: "14px", color: "#927A6D" }}>
                   {v.t("Contact.forLongerBriefs")}
                 </span>
               </span>
@@ -125,7 +125,7 @@ Logic.prototype.render = function render() {
               </span>
             </a>
           </div>
-          <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
+          <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D" }}>
             <span>
               {v.t("Contact.eichstattX", { x: v.clock })}
             </span>
@@ -137,10 +137,10 @@ Logic.prototype.render = function render() {
             </span>
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px", background: "#161618", borderRadius: "26px", padding: "clamp(24px,3vw,40px)", alignSelf: "start" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px", background: "#271113", borderRadius: "26px", padding: "clamp(24px,3vw,40px)", alignSelf: "start" }}>
           <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
             <div style={{ width: "60px", height: "60px", borderRadius: "50%", overflow: "hidden", flexShrink: "0" }}>
-              <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "repeating-linear-gradient(135deg,#2A2A2C 0 5px,#222224 5px 10px)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", color: "#8C877E" }}>
+              <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "repeating-linear-gradient(135deg,#3D1F20 0 5px,#361a1b 5px 10px)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-mono)", fontSize: "13px", color: "#927A6D" }}>
                 {"R"}
               </div>
             </div>
@@ -148,15 +148,15 @@ Logic.prototype.render = function render() {
               <b style={{ fontSize: "17px" }}>
                 {v.t("Contact.freeCall15Min11")}
               </b>
-              <span style={{ fontSize: "14px", color: "#8C877E" }}>
+              <span style={{ fontSize: "14px", color: "#927A6D" }}>
                 {v.t("Contact.threeQuickQuestionsILlReply")}
               </span>
             </div>
           </div>
-          <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Contact.yourName")} autoComplete="name" placeholder={v.t("Contact.yourName")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
-          <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Contact.whatsAppNumberOrEmail")} placeholder={v.t("Contact.whatsAppNumberOrEmail")} style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none" }} />
+          <input value={v.fName ?? ''} onChange={v.setName} aria-label={v.t("Contact.yourName")} autoComplete="name" placeholder={v.t("Contact.yourName")} style={{ background: "#14080A", border: "1px solid #3D1F20", borderRadius: "12px", padding: "15px 16px", color: "#FFF7ED", fontSize: "15px", outline: "none" }} />
+          <input value={v.fContact ?? ''} onChange={v.setContact} aria-label={v.t("Contact.whatsAppNumberOrEmail")} placeholder={v.t("Contact.whatsAppNumberOrEmail")} style={{ background: "#14080A", border: "1px solid #3D1F20", borderRadius: "12px", padding: "15px 16px", color: "#FFF7ED", fontSize: "15px", outline: "none" }} />
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <span style={{ fontSize: "14px", color: "#B8B3AA" }}>
+            <span style={{ fontSize: "14px", color: "#CBB7A8" }}>
               {v.t("Contact.whatDoYouNeed")}
             </span>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -167,11 +167,11 @@ Logic.prototype.render = function render() {
               </Fragment>))}
             </div>
           </div>
-          <textarea value={v.fMsg ?? ''} onChange={v.setMsg} aria-label={v.t("Contact.anythingElseOptional")} placeholder={v.t("Contact.anythingElseOptional")} rows="3" style={{ background: "#0B0B0C", border: "1px solid #2A2A2C", borderRadius: "12px", padding: "15px 16px", color: "#F4F4F2", fontSize: "15px", outline: "none", resize: "vertical" }} />
-          <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }}>
+          <textarea value={v.fMsg ?? ''} onChange={v.setMsg} aria-label={v.t("Contact.anythingElseOptional")} placeholder={v.t("Contact.anythingElseOptional")} rows="3" style={{ background: "#14080A", border: "1px solid #3D1F20", borderRadius: "12px", padding: "15px 16px", color: "#FFF7ED", fontSize: "15px", outline: "none", resize: "vertical" }} />
+          <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }}>
             {v.t("Contact.bookMyFreeSlot")}
           </a>
-          <span style={{ fontSize: "12px", color: "#6B675F" }}>
+          <span style={{ fontSize: "12px", color: "#78625A" }}>
             {v.t("Contact.yourDetailsAreOnlyUsedTo")}
           </span>
         </div>
