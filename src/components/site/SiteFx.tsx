@@ -23,7 +23,7 @@ function overlay(cover: boolean) {
   for (let k = 0; k < SLATS; k++) {
     const s = document.createElement('div');
     s.setAttribute('data-s', '1');
-    s.style.cssText = `flex:1;height:100%;background:#0B0B0C;border-right:1px solid #18181A;transform-origin:${cover ? '50% 100%' : '50% 0'};transform:scaleY(${cover ? 0 : 1});box-shadow:inset 0 ${cover ? '2px' : '-2px'} 0 #FF6A00`;
+    s.style.cssText = `flex:1;height:100%;background:#14080A;border-right:1px solid #291314;transform-origin:${cover ? '50% 100%' : '50% 0'};transform:scaleY(${cover ? 0 : 1});box-shadow:inset 0 ${cover ? '2px' : '-2px'} 0 #F97316`;
     o.appendChild(s);
   }
   const l = document.createElement('div');
@@ -186,10 +186,10 @@ export function SiteFx() {
       const c = document.createElement('div');
       c.setAttribute('aria-hidden', 'true');
       c.style.cssText =
-        'position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid #FF6A00;pointer-events:none;z-index:9997;opacity:0;transition:width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1),background .3s,opacity .3s';
+        'position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid #F97316;pointer-events:none;z-index:9997;opacity:0;transition:width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1),background .3s,opacity .3s';
       const d = document.createElement('div');
       d.setAttribute('aria-hidden', 'true');
-      d.style.cssText = 'position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#FF6A00;pointer-events:none;z-index:9997;opacity:0;transition:opacity .3s';
+      d.style.cssText = 'position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#F97316;pointer-events:none;z-index:9997;opacity:0;transition:opacity .3s';
       document.body.appendChild(c);
       document.body.appendChild(d);
       let mx = -100,
@@ -208,7 +208,7 @@ export function SiteFx() {
           big = h;
           c.style.width = c.style.height = big ? '64px' : '34px';
           c.style.margin = big ? '-32px 0 0 -32px' : '-17px 0 0 -17px';
-          c.style.background = big ? 'rgba(255,106,0,.14)' : 'transparent';
+          c.style.background = big ? 'rgba(249,115,22,.14)' : 'transparent';
         }
       };
       const leave = () => {
@@ -247,12 +247,12 @@ export function SiteFx() {
         top: 0,
         height: 2,
         width: '100%',
-        background: '#FF6A00',
+        background: '#F97316',
         transformOrigin: '0 50%',
         transform: 'scaleX(0)',
         zIndex: 9998,
         pointerEvents: 'none',
-        boxShadow: '0 0 10px rgba(255,106,0,.6)',
+        boxShadow: '0 0 10px rgba(249,115,22,.6)',
       }}
     />
   );

@@ -6,7 +6,6 @@ import { nanaEvent } from '@/lib/analytics';
 import { startTextChat, startVoice, suggestsContact } from '@/components/nana/elevenlabs-client';
 import { ChatIcon, HangUpIcon, MicIcon, MicOffIcon, PhoneIcon, WhatsAppIcon } from '@/components/nana/icons';
 import { PICKUP_AFTER_MS, startRingback } from '@/components/nana/ringback';
-import ReportButton from '@/components/nana/ReportButton';
 
 
 /**
@@ -509,7 +508,7 @@ class Logic extends DCLogic {
         t: b ? b[1] : i ? i[1] : t,
         fw: b ? 600 : 400,
         fi: i ? 'italic' : 'normal',
-        c: i ? '#8C877E' : '#0A0A0A',
+        c: i ? '#927A6D' : '#17090A',
         fs: i ? '12px' : '13.5px',
         h: t === '' ? '8px' : 'auto'
       };
@@ -555,8 +554,8 @@ class Logic extends DCLogic {
       isSum: m.from === 'sum' && !!s.sum,
       isTxt: m.from !== 'sys' && m.from !== 'sum',
       align: m.from === 'me' ? 'flex-end' : 'flex-start',
-      bg: m.from === 'me' ? '#0A0A0A' : '#ECE8E1',
-      fg: m.from === 'me' ? '#F4F4F2' : '#0A0A0A',
+      bg: m.from === 'me' ? '#17090A' : '#FFF7ED',
+      fg: m.from === 'me' ? '#FFF7ED' : '#17090A',
       rad: m.from === 'me' ? '14px 14px 4px 14px' : '14px 14px 14px 4px'
     }));
     const speaking = live && (this.real ? s.vmode === 'speaking' : s.line > 0 && this.SCRIPT[s.line - 1][0] === 'nana');
@@ -565,20 +564,20 @@ class Logic extends DCLogic {
       length: 7
     }, (_, i) => ({
       h: Math.max(4, Math.round(28 * amp * (0.35 + 0.65 * Math.abs(Math.sin((s.lv + i * .37) * 6.28))))) + 'px',
-      c: speaking ? '#FF6A00' : '#5A5650'
+      c: speaking ? '#F97316' : '#5E4A43'
     }));
     const meCount = s.msgs.filter(m => m.from === 'me').length;
     const chips = this.CHIPS[this.page()].map(q => ({
       q,
       go: () => this.ask(q),
-      bg: '#F7F5F1',
-      bd: '#BDB6AA'
+      bg: '#FFFCF7',
+      bd: '#D3B9A0'
     }));
     if (meCount >= 2 && !s.sum && s.call === 'idle') chips.unshift({
       q: this.props.t("RideffNana.summarizeForWhatsApp"),
       go: this.chatSum,
       bg: '#FFE3CC',
-      bd: '#FF6A00'
+      bd: '#F97316'
     });
     const text = s.sum ? s.sum.text : '';
     return {
@@ -604,7 +603,7 @@ class Logic extends DCLogic {
       launcherT: s.call !== 'idle' ? this.props.t("RideffNana.onCall") + this.fmt(s.sec) : this.props.t("RideffNana.askNana"),
       // Idle on phones the label hides (CSS) and the avatar alone opens Nana; during a call the timer stays.
       launcherTCls: s.call !== 'idle' ? undefined : 'nana-label',
-      launcherCallBg: s.call !== 'idle' ? '#FF6A00' : '#0A0A0A',
+      launcherCallBg: s.call !== 'idle' ? '#F97316' : '#17090A',
       callBtnT: s.call !== 'idle' ? this.props.t("RideffNana.backToCall") : this.props.t("nana.call"),
       toggle: () => {
         if (!s.open) nanaEvent('nana_open', { page: this.page() });
@@ -651,19 +650,19 @@ class Logic extends DCLogic {
       ringing: s.call === 'ringing',
       callState: s.call === 'ringing' ? this.props.t("RideffNana.connecting") : s.muted ? this.props.t("RideffNana.muted") : speaking ? this.props.t("RideffNana.speaking") : this.props.t("RideffNana.listening"),
       timer: this.fmt(s.sec),
-      timerC: live ? '#F4F4F2' : '#5A5650',
+      timerC: live ? '#FFF7ED' : '#5E4A43',
       pulse: (1 + (speaking ? s.lv * .08 : 0)).toFixed(3),
       bars,
       lines: this.SCRIPT.slice(0, s.line).slice(-3).map((l, i, a) => ({
         who: l[0] === 'nana' ? 'Nana' : this.props.t("RideffNana.you"),
         t: l[1],
-        c: l[0] === 'nana' ? '#FF9A50' : '#8C877E',
+        c: l[0] === 'nana' ? '#FDBA74' : '#927A6D',
         op: i === a.length - 1 ? 1 : .45
       })),
       muted: !!s.muted,
       muteT: s.muted ? this.props.t("RideffNana.unmute") : this.props.t("RideffNana.mute"),
-      muteBg: s.muted ? '#F4F4F2' : 'transparent',
-      muteFg: s.muted ? '#0A0A0A' : '#F4F4F2',
+      muteBg: s.muted ? '#FFF7ED' : 'transparent',
+      muteFg: s.muted ? '#17090A' : '#FFF7ED',
       toggleMute: () => {
         try { this.vc && this.vc.setMicMuted(!s.muted); } catch (e) {}
         this.setState(st => ({
@@ -749,27 +748,27 @@ Logic.prototype.render = function render() {
       <div style={{ position: "fixed", right: `${v.oR ?? ''}`, bottom: `${v.oB ?? ''}`, zIndex: "60", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "12px", fontFamily: "var(--font-sans)" }}>
         {v.openChat ? (<>
           {" "}
-          <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHc ?? ''}`, background: "#F7F5F1", color: "#0A0A0A", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.3)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
-            <div style={{ background: "#0A0A0A", color: "#F4F4F2", padding: "14px 14px 14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
+          <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHc ?? ''}`, background: "#FFFCF7", color: "#17090A", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(23,9,10,.3)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
+            <div style={{ background: "#17090A", color: "#FFF7ED", padding: "14px 14px 14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
               <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <span style={{ position: "relative", width: "34px", height: "34px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
-                  <span style={{ position: "absolute", right: "-1px", bottom: "-1px", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #0A0A0A" }} />
+                <span style={{ position: "relative", width: "34px", height: "34px", borderRadius: "50%", background: "#F97316", ...avatarBg }}>
+                  <span style={{ position: "absolute", right: "-1px", bottom: "-1px", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #17090A" }} />
                 </span>
                 <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                   <b style={{ fontSize: "15px" }}>
                     {"Nana"}
                   </b>
-                  <span style={{ fontSize: "11px", color: "#8C877E" }}>
+                  <span style={{ fontSize: "11px", color: "#927A6D" }}>
                     {v.online ? (<><span style={{ color: "#61C784", fontWeight: "600" }}>{v.t("nana.online")}</span>{" · "}</>) : null}
                     {v.status}
                   </span>
                 </span>
               </div>
               <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                <button onClick={v.callNana} aria-label={v.callBtnT2} title={v.callBtnT2} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", border: "1px solid #3A3A3C", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "50%", padding: "0", cursor: "pointer" }}>
+                <button onClick={v.callNana} aria-label={v.callBtnT2} title={v.callBtnT2} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", border: "1px solid #4F2C2C", background: "#17090A", color: "#FFF7ED", borderRadius: "50%", padding: "0", cursor: "pointer" }}>
                   <PhoneIcon width={17} height={17} />
                 </button>
-                <button onClick={v.toggle} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#1C1C1E", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "16px" }}>
+                <button onClick={v.toggle} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#2A1315", border: "none", color: "#927A6D", cursor: "pointer", fontSize: "16px" }}>
                   {"×"}
                 </button>
               </div>
@@ -779,7 +778,7 @@ Logic.prototype.render = function render() {
                 {" "}
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: `${m?.align ?? ''}`, animation: "nnIn .3s both" }}>
                   {m?.isSys ? (<>
-                    <span style={{ alignSelf: "center", fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", padding: "4px 0" }}>
+                    <span style={{ alignSelf: "center", fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", padding: "4px 0" }}>
                       {m?.t}
                     </span>
                   </>) : null}
@@ -790,10 +789,10 @@ Logic.prototype.render = function render() {
                   </>) : null}
                   {m?.choice ? (<>
                     <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                      <button onClick={v.focusInput} style={{ border: "1px solid #BDB6AA", background: "#F7F5F1", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }} className="hv-9e000e8">
+                      <button onClick={v.focusInput} style={{ border: "1px solid #D3B9A0", background: "#FFFCF7", color: "#17090A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }} className="hv-9e000e8">
                         {v.t("RideffNana.typeAQuestion")}
                       </button>
-                      <button onClick={v.callNana} style={{ display: "flex", alignItems: "center", gap: "8px", border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
+                      <button onClick={v.callNana} style={{ display: "flex", alignItems: "center", gap: "8px", border: "none", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
                         <PhoneIcon width={14} height={14} />
                         {v.t("RideffNana.callNanaVoice")}
                       </button>
@@ -801,10 +800,10 @@ Logic.prototype.render = function render() {
                   </>) : null}
                   {m?.acts ? (<>
                     <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                      <a href={v.href("/contact")} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", textDecoration: "none" }}>
+                      <a href={v.href("/contact")} style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "8px 14px", font: "600 13px var(--font-sans)", textDecoration: "none" }}>
                         {v.t("RideffNana.bookACallWithRialto")}
                       </a>
-                      <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1px solid #BDB6AA", color: "#0A0A0A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", textDecoration: "none" }}>
+                      <a href="https://wa.me/4917632572420" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1px solid #D3B9A0", color: "#17090A", borderRadius: "999px", padding: "8px 14px", font: "500 13px var(--font-sans)", textDecoration: "none" }}>
                         <WhatsAppIcon width={15} height={15} style={{ color: "#25D366" }} />
                         {"WhatsApp"}
                       </a>
@@ -812,27 +811,27 @@ Logic.prototype.render = function render() {
                   </>) : null}
                   {m?.isSum ? (<>
                     {" "}
-                    <div style={{ alignSelf: "stretch", background: "#FFFFFF", border: "1px solid #E2DDD4", borderRadius: "18px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+                    <div style={{ alignSelf: "stretch", background: "#FFFFFF", border: "1px solid #F1E1CF", borderRadius: "18px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "8px", padding: "12px 14px", borderBottom: "1px solid #EFEBE4" }}>
                         <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                           <b style={{ fontSize: "14px" }}>
                             {v.t("RideffNana.yourSummary")}
                           </b>
-                          <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
+                          <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D" }}>
                             {v.sumMeta}
                           </span>
                         </span>
-                        <button onClick={v.toggleEdit} style={{ border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
+                        <button onClick={v.toggleEdit} style={{ border: "1px solid #D3B9A0", background: "transparent", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-sans)", color: "#17090A", cursor: "pointer" }}>
                           {v.editT}
                         </button>
                       </div>
                       <div style={{ padding: "12px 14px", display: "flex", flexDirection: "column", gap: "8px" }}>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E" }}>
+                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D" }}>
                           {v.t("RideffNana.whatsAppMessage")}
                         </span>
                         {v.notEditing ? (<>
                           {" "}
-                          <div style={{ background: "#F3EFE8", borderRadius: "4px 14px 14px 14px", padding: "12px 14px", display: "flex", flexDirection: "column", fontSize: "13.5px", lineHeight: "1.45", color: "#0A0A0A" }}>
+                          <div style={{ background: "#F3EFE8", borderRadius: "4px 14px 14px 14px", padding: "12px 14px", display: "flex", flexDirection: "column", fontSize: "13.5px", lineHeight: "1.45", color: "#17090A" }}>
                             {(v.sumLines ?? []).map((l, $index) => (<Fragment key={$index}>
                               <span style={{ display: "block", minHeight: `${l?.h ?? ''}`, fontWeight: `${l?.fw ?? ''}`, fontStyle: `${l?.fi ?? ''}`, color: `${l?.c ?? ''}`, fontSize: `${l?.fs ?? ''}`, textWrap: "pretty" }}>
                                 {l?.t}
@@ -843,9 +842,9 @@ Logic.prototype.render = function render() {
                         </>) : null}
                         {v.editing ? (<>
                           {" "}
-                          <textarea value={v.sumText ?? ''} onChange={v.onSumText} aria-label={v.t("RideffNana.yourSummary")} rows="12" style={{ width: "100%", boxSizing: "border-box", resize: "vertical", background: "#F3EFE8", border: "1px solid #FF6A00", outline: "none", borderRadius: "12px", padding: "12px", font: "400 13px/1.5 var(--font-mono)", color: "#0A0A0A" }} />
+                          <textarea value={v.sumText ?? ''} onChange={v.onSumText} aria-label={v.t("RideffNana.yourSummary")} rows="12" style={{ width: "100%", boxSizing: "border-box", resize: "vertical", background: "#F3EFE8", border: "1px solid #F97316", outline: "none", borderRadius: "12px", padding: "12px", font: "400 13px/1.5 var(--font-mono)", color: "#17090A" }} />
                           {" "}
-                          <span style={{ fontSize: "11px", color: "#8C877E" }}>
+                          <span style={{ fontSize: "11px", color: "#927A6D" }}>
                             {v.t("RideffNana.boldAndItalicShowAsFormatting")}
                           </span>
                           {" "}
@@ -857,7 +856,7 @@ Logic.prototype.render = function render() {
                           {v.t("RideffNana.sendToRialtoOnWhatsApp")}
                         </a>
                         <div style={{ display: "flex", gap: "6px" }}>
-                          <button onClick={v.copySum} style={{ flex: WA_SELF ? "0 0 auto" : "1", border: "1px solid #BDB6AA", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#0A0A0A", cursor: "pointer" }}>
+                          <button onClick={v.copySum} style={{ flex: WA_SELF ? "0 0 auto" : "1", border: "1px solid #D3B9A0", background: "transparent", borderRadius: "999px", padding: "9px 12px", font: "500 13px var(--font-sans)", color: "#17090A", cursor: "pointer" }}>
                             {v.copyT}
                           </button>
                           {WA_SELF ? (
@@ -878,12 +877,12 @@ Logic.prototype.render = function render() {
                           {v.mineForm ? (<>
                             {" "}
                             <form onSubmit={v.sendMine} style={{ display: "flex", gap: "6px", margin: "0" }}>
-                              <input value={v.phone ?? ''} onChange={v.onPhone} placeholder="+49 …" inputMode="tel" type="tel" autoComplete="tel" aria-label={v.t("nana.phoneLabel")} style={{ flex: "1", minWidth: "0", background: "#F3EFE8", border: "none", outline: "none", borderRadius: "999px", padding: "10px 14px", font: "400 14px var(--font-sans)", color: "#0A0A0A" }} />
+                              <input value={v.phone ?? ''} onChange={v.onPhone} placeholder="+49 …" inputMode="tel" type="tel" autoComplete="tel" aria-label={v.t("nana.phoneLabel")} style={{ flex: "1", minWidth: "0", background: "#F3EFE8", border: "none", outline: "none", borderRadius: "999px", padding: "10px 14px", font: "400 14px var(--font-sans)", color: "#17090A" }} />
                               <button type="submit" style={{ border: "none", background: "#25D366", color: "#FFFFFF", borderRadius: "999px", padding: "0 16px", font: "600 13px var(--font-sans)", cursor: "pointer" }}>
                                 {v.t("RideffNana.send")}
                               </button>
                             </form>
-                            {v.mineErr ? (<div role="alert" style={{ font: "400 12px var(--font-sans)", color: "#E5484D", marginTop: "6px" }}>{v.mineErr}</div>) : null}
+                            {v.mineErr ? (<div role="alert" style={{ font: "400 12px var(--font-sans)", color: "#DC2626", marginTop: "6px" }}>{v.mineErr}</div>) : null}
                             {" "}
                           </>) : null}
                           {" "}
@@ -896,23 +895,23 @@ Logic.prototype.render = function render() {
                 {" "}
               </Fragment>))}
               {v.typing ? (<>
-                <div style={{ alignSelf: "flex-start", display: "flex", gap: "4px", background: "#ECE8E1", borderRadius: "14px 14px 14px 4px", padding: "14px 16px" }}>
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s infinite" }} />
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .15s infinite" }} />
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .3s infinite" }} />
+                <div style={{ alignSelf: "flex-start", display: "flex", gap: "4px", background: "#FFF7ED", borderRadius: "14px 14px 14px 4px", padding: "14px 16px" }}>
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s .15s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s .3s infinite" }} />
                 </div>
               </>) : null}
             </div>
             <div style={{ display: "flex", gap: "6px", overflowX: "auto", padding: "0 12px 10px" }}>
               {(v.chips ?? []).map((c, $index) => (<Fragment key={$index}>
-                <button onClick={c?.go} style={{ flexShrink: "0", cursor: "pointer", border: `1px solid ${c?.bd ?? ''}`, background: `${c?.bg ?? ''}`, borderRadius: "999px", padding: "7px 12px", font: "500 13px var(--font-sans)", whiteSpace: "nowrap", color: "#0A0A0A" }} className="hv-f543883">
+                <button onClick={c?.go} style={{ flexShrink: "0", cursor: "pointer", border: `1px solid ${c?.bd ?? ''}`, background: `${c?.bg ?? ''}`, borderRadius: "999px", padding: "7px 12px", font: "500 13px var(--font-sans)", whiteSpace: "nowrap", color: "#17090A" }} className="hv-f543883">
                   {c?.q}
                 </button>
               </Fragment>))}
             </div>
-            <form onSubmit={v.send} style={{ display: "flex", gap: "8px", padding: "12px", borderTop: "1px solid #E2DDD4", margin: "0" }}>
-              <input ref={v.inputRef} value={v.draft ?? ''} onChange={v.onDraft} aria-label={v.t("nana.messageLabel")} placeholder={v.t("RideffNana.askNanaAnything")} style={{ flex: "1", minWidth: "0", background: "#ECE8E1", border: "none", outline: "none", borderRadius: "999px", padding: "12px 16px", font: "400 14px var(--font-sans)", color: "#0A0A0A" }} />
-              <button type="submit" aria-label={v.t("RideffNana.send")} style={{ width: "44px", height: "44px", flexShrink: "0", border: "none", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "50%", cursor: "pointer", fontSize: "16px" }}>
+            <form onSubmit={v.send} style={{ display: "flex", gap: "8px", padding: "12px", borderTop: "1px solid #F1E1CF", margin: "0" }}>
+              <input ref={v.inputRef} value={v.draft ?? ''} onChange={v.onDraft} aria-label={v.t("nana.messageLabel")} placeholder={v.t("RideffNana.askNanaAnything")} style={{ flex: "1", minWidth: "0", background: "#FFF7ED", border: "none", outline: "none", borderRadius: "999px", padding: "12px 16px", font: "400 14px var(--font-sans)", color: "#17090A" }} />
+              <button type="submit" aria-label={v.t("RideffNana.send")} style={{ width: "44px", height: "44px", flexShrink: "0", border: "none", background: "#17090A", color: "#FFF7ED", borderRadius: "50%", cursor: "pointer", fontSize: "16px" }}>
                 {"↑"}
               </button>
             </form>
@@ -921,35 +920,35 @@ Logic.prototype.render = function render() {
         </>) : null}
         {v.openPre ? (<>
           {" "}
-          <div style={{ width: `${v.pW ?? ''}`, maxHeight: `${v.pMax ?? ''}`, height: `${v.pHp ?? ''}`, background: "#0B0B0C", color: "#F4F4F2", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.45)", overflow: "auto", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
+          <div style={{ width: `${v.pW ?? ''}`, maxHeight: `${v.pMax ?? ''}`, height: `${v.pHp ?? ''}`, background: "#14080A", color: "#FFF7ED", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(23,9,10,.45)", overflow: "auto", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                 {v.t(v.live ? "nana.voiceCallLive" : "RideffNana.voiceCallPreview")}
               </span>
-              <button onClick={v.cancelPre} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#1C1C1E", border: "none", color: "#8C877E", cursor: "pointer", fontSize: "16px" }}>
+              <button onClick={v.cancelPre} aria-label={v.t("nana.close")} style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#2A1315", border: "none", color: "#927A6D", cursor: "pointer", fontSize: "16px" }}>
                 {"×"}
               </button>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px", padding: "8px 24px 22px", textAlign: "center" }}>
-              <span style={{ width: "72px", height: "72px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }} />
+              <span style={{ width: "72px", height: "72px", borderRadius: "50%", background: "#F97316", ...avatarBg }} />
               <b style={{ fontSize: "22px", letterSpacing: "-0.02em" }}>
                 {v.t("RideffNana.talkToNana")}
               </b>
-              <span style={{ fontSize: "14px", lineHeight: "1.45", color: "#B5AFA5", maxWidth: "280px", textWrap: "pretty" }}>
+              <span style={{ fontSize: "14px", lineHeight: "1.45", color: "#CCB196", maxWidth: "280px", textWrap: "pretty" }}>
                 {v.t("RideffNana.askOutLoudTheWayYou")}
               </span>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", margin: "0 18px", borderTop: "1px solid #1F1F21" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "72px 1fr", gap: "12px", padding: "12px 0", borderBottom: "1px solid #1F1F21" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", paddingTop: "2px" }}>
+            <div style={{ display: "flex", flexDirection: "column", margin: "0 18px", borderTop: "1px solid #2E1517" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "72px 1fr", gap: "12px", padding: "12px 0", borderBottom: "1px solid #2E1517" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", paddingTop: "2px" }}>
                   {v.t("RideffNana.mic")}
                 </span>
                 <span style={{ fontSize: "13px", lineHeight: "1.45" }}>
                   {v.t("RideffNana.yourBrowserAsksForTheMicrophone")}
                 </span>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "72px 1fr", gap: "12px", padding: "12px 0", borderBottom: "1px solid #1F1F21" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", paddingTop: "2px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "72px 1fr", gap: "12px", padding: "12px 0", borderBottom: "1px solid #2E1517" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", paddingTop: "2px" }}>
                   {v.t("RideffNana.length")}
                 </span>
                 <span style={{ fontSize: "13px", lineHeight: "1.45" }}>
@@ -957,7 +956,7 @@ Logic.prototype.render = function render() {
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "72px 1fr", gap: "12px", padding: "12px 0" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", paddingTop: "2px" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", paddingTop: "2px" }}>
                   {v.t("RideffNana.after")}
                 </span>
                 <span style={{ fontSize: "13px", lineHeight: "1.45" }}>
@@ -966,19 +965,19 @@ Logic.prototype.render = function render() {
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "18px" }}>
-              <label style={{ display: "flex", gap: "10px", alignItems: "flex-start", fontSize: "12.5px", lineHeight: "1.45", color: "#B5AFA5", cursor: "pointer", padding: "0 2px 6px" }}>
-                <input type="checkbox" checked={!!(v.consent)} onChange={v.toggleConsent} style={{ accentColor: "#FF6A00", width: "16px", height: "16px", margin: "1px 0 0", flexShrink: "0" }} />
+              <label style={{ display: "flex", gap: "10px", alignItems: "flex-start", fontSize: "12.5px", lineHeight: "1.45", color: "#CCB196", cursor: "pointer", padding: "0 2px 6px" }}>
+                <input type="checkbox" checked={!!(v.consent)} onChange={v.toggleConsent} style={{ accentColor: "#F97316", width: "16px", height: "16px", margin: "1px 0 0", flexShrink: "0" }} />
                 <span>
                   {v.t("RideffNana.saveTheTranscriptAndSummaryTo")}{" "}
-                  <a href={v.href("/datenschutz")} style={{ color: "#FF9A50" }}>
+                  <a href={v.href("/datenschutz")} style={{ color: "#FDBA74" }}>
                     {v.t("RideffNana.privacy")}
                   </a>
                 </span>
               </label>
-              <button onClick={v.beginCall} style={{ border: "none", background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "14px", font: "600 15px var(--font-sans)", cursor: "pointer" }}>
+              <button onClick={v.beginCall} style={{ border: "none", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "14px", font: "600 15px var(--font-sans)", cursor: "pointer" }}>
                 {v.t("RideffNana.startCall")}
               </button>
-              <button onClick={v.cancelPre} style={{ border: "none", background: "transparent", color: "#8C877E", padding: "8px", font: "500 13px var(--font-sans)", cursor: "pointer" }}>
+              <button onClick={v.cancelPre} style={{ border: "none", background: "transparent", color: "#927A6D", padding: "8px", font: "500 13px var(--font-sans)", cursor: "pointer" }}>
                 {v.t("RideffNana.notNowTypeInstead")}
               </button>
             </div>
@@ -986,15 +985,15 @@ Logic.prototype.render = function render() {
           {" "}
         </>) : null}
         {v.openCall ? (<>
-          <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHk ?? ''}`, background: "#0B0B0C", color: "#F4F4F2", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(10,10,10,.45)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
+          <div style={{ width: `${v.pW ?? ''}`, height: `${v.pHk ?? ''}`, background: "#14080A", color: "#FFF7ED", borderRadius: `${v.pR ?? ''}`, boxShadow: "0 30px 80px rgba(23,9,10,.45)", overflow: "hidden", display: "flex", flexDirection: "column", animation: "nnIn .35s cubic-bezier(.16,1,.3,1) both" }}>
             {/* Like a phone call: photo, name, timer, three icon buttons; no transcript or status text. */}
             <div style={{ flex: "1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "18px", padding: "36px 20px 10px" }}>
               <div style={{ position: "relative", width: "120px", height: "120px" }}>
                 {v.ringing ? (<>
-                  <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #FF6A00", animation: "nnRing 1.6s ease-out infinite" }} />
-                  <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #FF6A00", animation: "nnRing 1.6s .8s ease-out infinite" }} />
+                  <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #F97316", animation: "nnRing 1.6s ease-out infinite" }} />
+                  <span style={{ position: "absolute", inset: "0", borderRadius: "50%", border: "2px solid #F97316", animation: "nnRing 1.6s .8s ease-out infinite" }} />
                 </>) : null}
-                <span style={{ position: "absolute", inset: "0", borderRadius: "50%", background: "#FF6A00", ...avatarBg, transform: `scale(${v.pulse ?? ''})`, transition: "transform .14s ease-out" }} />
+                <span style={{ position: "absolute", inset: "0", borderRadius: "50%", background: "#F97316", ...avatarBg, transform: `scale(${v.pulse ?? ''})`, transition: "transform .14s ease-out" }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                 <b style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>
@@ -1003,7 +1002,7 @@ Logic.prototype.render = function render() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "14px", color: `${v.timerC ?? ''}` }}>
                   {v.timer}
                 </span>
-                <span style={{ fontSize: "11px", color: "#6B675F" }}>
+                <span style={{ fontSize: "11px", color: "#78625A" }}>
                   {v.t("nana.automatedDesk")}
                 </span>
               </div>
@@ -1014,21 +1013,21 @@ Logic.prototype.render = function render() {
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "center", gap: "22px", padding: "18px 0 26px" }}>
-              <button onClick={v.toggleMute} aria-label={v.muteT} title={v.muteT} aria-pressed={!!v.muted} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #2A2A2C", background: `${v.muteBg ?? ''}`, color: `${v.muteFg ?? ''}`, cursor: "pointer" }}>
+              <button onClick={v.toggleMute} aria-label={v.muteT} title={v.muteT} aria-pressed={!!v.muted} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #3D1F20", background: `${v.muteBg ?? ''}`, color: `${v.muteFg ?? ''}`, cursor: "pointer" }}>
                 {v.muted ? <MicOffIcon /> : <MicIcon />}
               </button>
-              <button onClick={v.toChat} aria-label={v.t("RideffNana.chat")} title={v.t("RideffNana.chat")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #2A2A2C", background: "transparent", color: "#F4F4F2", cursor: "pointer" }}>
+              <button onClick={v.toChat} aria-label={v.t("RideffNana.chat")} title={v.t("RideffNana.chat")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1px solid #3D1F20", background: "transparent", color: "#FFF7ED", cursor: "pointer" }}>
                 <ChatIcon />
               </button>
-              <button onClick={v.endCall} aria-label={v.t("RideffNana.end")} title={v.t("RideffNana.end")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "none", background: "#E5484D", color: "#FFFFFF", cursor: "pointer" }}>
+              <button onClick={v.endCall} aria-label={v.t("RideffNana.end")} title={v.t("RideffNana.end")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "none", background: "#DC2626", color: "#FFFFFF", cursor: "pointer" }}>
                 <HangUpIcon />
               </button>
             </div>
           </div>
         </>) : null}
         {v.showLauncher && v.showTeaser ? (
-          <div role="button" tabIndex={0} onClick={v.openTeaser} onKeyDown={e => e.key === 'Enter' && v.openTeaser()} aria-label={v.t("nana.teaser")} style={{ position: "relative", width: "min(300px,calc(100vw - 40px))", boxSizing: "border-box", background: "#FFFFFF", color: "#0A0A0A", borderRadius: "18px 18px 4px 18px", boxShadow: "0 18px 40px rgba(10,10,10,.22)", padding: "12px 14px", display: "flex", gap: "10px", alignItems: "flex-start", cursor: "pointer", animation: "nnIn .35s both" }}>
-            <span style={{ position: "relative", width: "32px", height: "32px", flexShrink: "0", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
+          <div role="button" tabIndex={0} onClick={v.openTeaser} onKeyDown={e => e.key === 'Enter' && v.openTeaser()} aria-label={v.t("nana.teaser")} style={{ position: "relative", width: "min(300px,calc(100vw - 40px))", boxSizing: "border-box", background: "#FFFFFF", color: "#17090A", borderRadius: "18px 18px 4px 18px", boxShadow: "0 18px 40px rgba(23,9,10,.22)", padding: "12px 14px", display: "flex", gap: "10px", alignItems: "flex-start", cursor: "pointer", animation: "nnIn .35s both" }}>
+            <span style={{ position: "relative", width: "32px", height: "32px", flexShrink: "0", borderRadius: "50%", background: "#F97316", ...avatarBg }}>
               <span style={{ position: "absolute", right: "-1px", bottom: "-1px", width: "9px", height: "9px", borderRadius: "50%", background: "#61C784", border: "2px solid #FFFFFF" }} />
             </span>
             <span style={{ display: "flex", flexDirection: "column", gap: "4px", minWidth: "0" }}>
@@ -1038,36 +1037,35 @@ Logic.prototype.render = function render() {
               </span>
               {v.teaserTyping ? (
                 <span style={{ display: "flex", gap: "4px", padding: "6px 0" }}>
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s infinite" }} />
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .15s infinite" }} />
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5A5650", animation: "nnDot 1.1s .3s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s .15s infinite" }} />
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#5E4A43", animation: "nnDot 1.1s .3s infinite" }} />
                 </span>
               ) : (<>
                 <span style={{ fontSize: "14px", lineHeight: "1.4", animation: "nnIn .3s both" }}>{v.t("nana.teaser")}</span>
                 <span style={{ fontSize: "12px", fontWeight: "600", color: "#C2410C" }}>{v.t("nana.teaserReply")}{" →"}</span>
               </>)}
             </span>
-            <button onClick={v.closeTeaser} aria-label={v.t("nana.close")} style={{ position: "absolute", top: "-10px", right: "-6px", width: "26px", height: "26px", borderRadius: "50%", border: "none", background: "#0A0A0A", color: "#F4F4F2", fontSize: "14px", lineHeight: "1", cursor: "pointer", boxShadow: "0 4px 10px rgba(10,10,10,.25)" }}>
+            <button onClick={v.closeTeaser} aria-label={v.t("nana.close")} style={{ position: "absolute", top: "-10px", right: "-6px", width: "26px", height: "26px", borderRadius: "50%", border: "none", background: "#17090A", color: "#FFF7ED", fontSize: "14px", lineHeight: "1", cursor: "pointer", boxShadow: "0 4px 10px rgba(23,9,10,.25)" }}>
               {"×"}
             </button>
           </div>
         ) : null}
         {v.showLauncher ? (<>
           <div className="nana-dock" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <ReportButton />
-            <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#F4F1EC", border: "1px solid rgba(10,10,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
-              <button onClick={v.toggle} aria-label={v.launcherT} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#0A0A0A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
-                <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#FF6A00", ...avatarBg }}>
-                  <span style={{ position: "absolute", right: "0", bottom: "0", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #F4F1EC" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#FFEEDB", border: "1px solid rgba(23,9,10,.08)", borderRadius: "999px", padding: "6px", boxShadow: "0 12px 30px rgba(23,9,10,.2)" }}>
+              <button onClick={v.toggle} aria-label={v.launcherT} style={{ display: "flex", alignItems: "center", gap: "10px", background: "transparent", color: "#17090A", border: "none", borderRadius: "999px", padding: "1px 10px 1px 1px", font: "600 15px var(--font-sans)", whiteSpace: "nowrap", cursor: "pointer" }}>
+                <span style={{ position: "relative", width: "36px", height: "36px", borderRadius: "50%", background: "#F97316", ...avatarBg }}>
+                  <span style={{ position: "absolute", right: "0", bottom: "0", width: "10px", height: "10px", borderRadius: "50%", background: "#61C784", border: "2px solid #FFEEDB" }} />
                 </span>
                 <span className={v.launcherTCls}>{v.launcherT}</span>
               </button>
-              <span style={{ width: "1px", height: "22px", background: "#D9D3C9" }} />
-              <button onClick={v.callNana} aria-label={v.callBtnT} title={v.callBtnT} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", border: "none", background: `${v.launcherCallBg ?? ''}`, color: "#F4F4F2", borderRadius: "50%", padding: "0", cursor: "pointer" }} className="hv-9bccb67">
+              <span style={{ width: "1px", height: "22px", background: "#E7D5C3" }} />
+              <button onClick={v.callNana} aria-label={v.callBtnT} title={v.callBtnT} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", border: "none", background: `${v.launcherCallBg ?? ''}`, color: "#FFF7ED", borderRadius: "50%", padding: "0", cursor: "pointer" }} className="hv-9bccb67">
                 <PhoneIcon width={18} height={18} />
               </button>
             </div>
-            <a className="nana-wa" href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(10,10,10,.2)" }}>
+            <a className="nana-wa" href="https://wa.me/4917632572420" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(23,9,10,.2)" }}>
               <WhatsAppIcon width={28} height={28} />
             </a>
           </div>

@@ -277,7 +277,7 @@ class Logic extends DCLogic {
         if (b) {
           b.style.opacity = t > 1.6 ? 0 : 1;
           b.style.transform = 'translate(' + (bx - 3.5).toFixed(1) + 'px,' + (cap - 4 * (squash ? .3 : 1) + Math.abs(Math.sin(t * 30)) * (squash ? 0 : .6)).toFixed(1) + 'px) scale(' + (sc * w.dir * -1).toFixed(2) + ',' + (sc * (squash ? .3 : 1)).toFixed(2) + ')';
-          b.style.background = squash ? '#8C2A2D' : '#E5484D';
+          b.style.background = squash ? '#7F1D1D' : '#DC2626';
         }
         if (t > .9 && t < 1.15) {
           const u = (t - .9) / .25;
@@ -369,8 +369,8 @@ class Logic extends DCLogic {
       letters: 'RIDEFF'.split('').map((c, k) => ({
         c,
         k,
-        col: s.flash === k ? '#FF6A00' : '#1C1C1E',
-        sh: s.flash === k ? '0 0 40px rgba(255,106,0,.35)' : 'none'
+        col: s.flash === k ? '#F97316' : '#2A1315',
+        sh: s.flash === k ? '0 0 40px rgba(249,115,22,.35)' : 'none'
       }))
     };
   }
@@ -380,79 +380,79 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <div className="rd-footer" style={{ background: "#0B0B0C", color: "#F4F4F2", fontFamily: "var(--font-sans)", borderTop: "1px solid #1C1C1E" }}>
+      <div className="rd-footer" style={{ background: "#14080A", color: "#FFF7ED", fontFamily: "var(--font-sans)", borderTop: "1px solid #2A1315" }}>
         {" "}
         <div className="rd-fgrid" style={{ padding: "64px clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: "32px", fontSize: "14px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             <a href={v.href("/")} style={{ alignSelf: "flex-start" }}>
               <img loading="lazy" decoding="async" src={opt("/images/rideff-mark.png", 640)} alt="RIDEFF" style={{ height: "30px", width: "auto", display: "block" }} />
             </a>
-            <span style={{ color: "#8C877E", lineHeight: "1.5" }}>
+            <span style={{ color: "#927A6D", lineHeight: "1.5" }}>
               {v.t("RideffFooter.understandBuildRunOneOperatorFrom")}
             </span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#6B675F" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#78625A" }}>
               {v.t("RideffFooter.pillars")}
             </span>
-            <a href={v.href("/understand")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/understand")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.n01Understand")}
             </a>
-            <a href={v.href("/build")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/build")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.n02Build")}
             </a>
-            <a href={v.href("/run")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/run")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.n03Run")}
             </a>
-            <a href={v.href("/life")} style={{ color: "#B8B3AA", textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "16px" }}>
+            <a href={v.href("/life")} style={{ color: "#CBB7A8", textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "16px" }}>
               {"RIDEFF Life"}
             </a>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#6B675F" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#78625A" }}>
               {v.t("RideffFooter.pages")}
             </span>
-            <a href={v.href("/work")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/work")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.work")}
             </a>
-            <a href={v.href("/pricing")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/pricing")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.pricing")}
             </a>
-            <a href={v.href("/about")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/about")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.about")}
             </a>
-            <a href={v.href("/contact")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/contact")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffFooter.contact")}
             </a>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#6B675F" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#78625A" }}>
               {v.t("RideffFooter.reachRialto")}
             </span>
-            <a href="https://wa.me/4917632572420" style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href="https://wa.me/4917632572420" style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"WhatsApp +49 176 32572420"}
             </a>
-            <a href="mailto:hallo@rideff.com" style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href="mailto:hallo@rideff.com" style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"hallo@rideff.com"}
             </a>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#6B675F" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#78625A" }}>
               {v.t("RideffFooter.legal")}
             </span>
-            <a href={v.href("/impressum")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/impressum")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"Impressum"}
             </a>
-            <a href={v.href("/datenschutz")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/datenschutz")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"Datenschutz"}
             </a>
-            <a href={v.href("/agb")} style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("/agb")} style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"AGB"}
             </a>
           </div>
         </div>
         {" "}
-        <div className="rd-copy" style={{ padding: "0 clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontSize: "12px", color: "#6B675F" }}>
+        <div className="rd-copy" style={{ padding: "0 clamp(20px,3vw,40px) 32px", maxWidth: "1480px", margin: "0 auto", display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", fontSize: "12px", color: "#78625A" }}>
           <span>
             {v.t("RideffFooter.n2026RIDEFFRialtoEichstattGermany")}
           </span>
@@ -461,7 +461,25 @@ Logic.prototype.render = function render() {
           </span>
         </div>
         {" "}
-        <div ref={v.wmRef} onMouseMove={v.wmMove} onMouseLeave={v.wmLeave} onClick={v.wmTap} style={{ overflow: "hidden", padding: "64px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", cursor: "default" }} aria-hidden="true">
+        {/* Says what the wordmark scene below is: the platform's upkeep, and the idea behind it. */}
+        <div style={{ padding: "0 clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto" }}>
+          <div style={{ borderTop: "1px solid #2A1315", paddingTop: "32px", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "16px 48px", alignItems: "start" }}>
+            <p style={{ margin: "0", fontSize: "clamp(19px,1.8vw,26px)", lineHeight: "1.25", letterSpacing: "-0.025em", fontWeight: "600", color: "#FFF7ED", maxWidth: "560px", textWrap: "balance" }}>
+              {v.t("RideffFooter.philosophy")}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px", maxWidth: "520px" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "8px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
+                <span aria-hidden="true" style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#F97316", boxShadow: "0 0 6px #F97316", flexShrink: "0" }} />
+                {v.t("RideffFooter.wordmarkLabel")}
+              </span>
+              <span style={{ fontSize: "14px", lineHeight: "1.5", color: "#CBB7A8" }}>
+                {v.t("RideffFooter.wordmarkLine")}
+              </span>
+            </div>
+          </div>
+        </div>
+        {" "}
+        <div ref={v.wmRef} onMouseMove={v.wmMove} onMouseLeave={v.wmLeave} onClick={v.wmTap} style={{ overflow: "hidden", padding: "56px clamp(20px,3vw,40px) 0", maxWidth: "1480px", margin: "0 auto", cursor: "default" }} aria-hidden="true">
           {" "}
           <div style={{ position: "relative", display: "flex", justifyContent: "center", fontSize: "clamp(90px,22vw,340px)", fontWeight: "700", letterSpacing: "-0.07em", lineHeight: ".8", transform: "translateY(10%)", userSelect: "none" }}>
             {(v.letters ?? []).map((l, $index) => (<Fragment key={$index}>
@@ -473,34 +491,34 @@ Logic.prototype.render = function render() {
               {" "}
               <span style={{ position: "absolute", left: "1px", bottom: "-2px", width: "14px", height: "3px", borderRadius: "50%", background: "rgba(0,0,0,.6)" }} />
               {" "}
-              <span data-beam="1" style={{ position: "absolute", left: "13px", top: "6px", width: "46px", height: "14px", transformOrigin: "0 50%", background: "linear-gradient(90deg,rgba(255,154,80,.55),rgba(255,154,80,0))", clipPath: "polygon(0 40%,100% 0,100% 100%,0 60%)", opacity: ".8" }} />
+              <span data-beam="1" style={{ position: "absolute", left: "13px", top: "6px", width: "46px", height: "14px", transformOrigin: "0 50%", background: "linear-gradient(90deg,rgba(253,186,116,.55),rgba(253,186,116,0))", clipPath: "polygon(0 40%,100% 0,100% 100%,0 60%)", opacity: ".8" }} />
               {" "}
-              <span data-leg="a" style={{ position: "absolute", left: "3px", top: "15px", width: "3px", height: "6px", borderRadius: "1px", background: "#4A4A4C", transformOrigin: "50% 0" }} />
+              <span data-leg="a" style={{ position: "absolute", left: "3px", top: "15px", width: "3px", height: "6px", borderRadius: "1px", background: "#67393B", transformOrigin: "50% 0" }} />
               {" "}
-              <span data-leg="b" style={{ position: "absolute", left: "10px", top: "15px", width: "3px", height: "6px", borderRadius: "1px", background: "#5A5A5C", transformOrigin: "50% 0" }} />
+              <span data-leg="b" style={{ position: "absolute", left: "10px", top: "15px", width: "3px", height: "6px", borderRadius: "1px", background: "#67564F", transformOrigin: "50% 0" }} />
               {" "}
-              <span style={{ position: "absolute", left: "2px", top: "8px", width: "12px", height: "8px", borderRadius: "3px", background: "#B8B3AA" }} />
+              <span style={{ position: "absolute", left: "2px", top: "8px", width: "12px", height: "8px", borderRadius: "3px", background: "#CBB7A8" }} />
               {" "}
-              <span style={{ position: "absolute", left: "6px", top: "10px", width: "4px", height: "3px", borderRadius: "1px", background: "#FF6A00" }} />
+              <span style={{ position: "absolute", left: "6px", top: "10px", width: "4px", height: "3px", borderRadius: "1px", background: "#F97316" }} />
               {" "}
-              <span data-arm="1" style={{ position: "absolute", left: "12px", top: "9px", width: "2px", height: "6px", borderRadius: "1px", background: "#8C877E", transformOrigin: "50% 1px" }}>
-                <span style={{ position: "absolute", left: "-1px", top: "5px", width: "4px", height: "2px", borderRadius: "1px", background: "#FF9A50" }} />
+              <span data-arm="1" style={{ position: "absolute", left: "12px", top: "9px", width: "2px", height: "6px", borderRadius: "1px", background: "#927A6D", transformOrigin: "50% 1px" }}>
+                <span style={{ position: "absolute", left: "-1px", top: "5px", width: "4px", height: "2px", borderRadius: "1px", background: "#FDBA74" }} />
               </span>
               {" "}
-              <span style={{ position: "absolute", left: "1px", top: "0", width: "14px", height: "8px", borderRadius: "4px", background: "#D8D3CA" }} />
+              <span style={{ position: "absolute", left: "1px", top: "0", width: "14px", height: "8px", borderRadius: "4px", background: "#E7D5C3" }} />
               {" "}
-              <span style={{ position: "absolute", left: "3.5px", top: "2px", width: "9px", height: "4px", borderRadius: "2px", background: "#0B0B0C" }} />
+              <span style={{ position: "absolute", left: "3.5px", top: "2px", width: "9px", height: "4px", borderRadius: "2px", background: "#14080A" }} />
               {" "}
-              <span data-eye="1" style={{ position: "absolute", left: "5px", top: "3px", width: "2px", height: "2px", borderRadius: "50%", background: "#FF9A50", boxShadow: "4px 0 0 #FF9A50" }} />
+              <span data-eye="1" style={{ position: "absolute", left: "5px", top: "3px", width: "2px", height: "2px", borderRadius: "50%", background: "#FDBA74", boxShadow: "4px 0 0 #FDBA74" }} />
               {" "}
-              <span style={{ position: "absolute", left: "7.3px", top: "-5px", width: "1.4px", height: "5px", background: "#8C877E" }} />
+              <span style={{ position: "absolute", left: "7.3px", top: "-5px", width: "1.4px", height: "5px", background: "#927A6D" }} />
               {" "}
-              <span data-led="1" style={{ position: "absolute", left: "6.3px", top: "-7px", width: "3.4px", height: "3.4px", borderRadius: "50%", background: "#FF6A00", boxShadow: "0 0 6px #FF6A00" }} />
+              <span data-led="1" style={{ position: "absolute", left: "6.3px", top: "-7px", width: "3.4px", height: "3.4px", borderRadius: "50%", background: "#F97316", boxShadow: "0 0 6px #F97316" }} />
               {" "}
             </div>
-            <span data-bug="1" style={{ position: "absolute", left: "0", top: "0", width: "7px", height: "4px", borderRadius: "4px 4px 1px 1px", background: "#E5484D", opacity: "0", pointerEvents: "none", boxShadow: "-2px -1px 0 -1px #E5484D,2px 1px 0 -1px #8C2A2D" }} />
-            <span data-mail="1" style={{ position: "absolute", left: "0", top: "0", width: "10px", height: "7px", borderRadius: "1.5px", background: "#F4F4F2", opacity: "0", pointerEvents: "none", backgroundImage: "linear-gradient(155deg,transparent 45%,#BDB6AA 46%,#BDB6AA 54%,transparent 55%),linear-gradient(25deg,transparent 45%,#BDB6AA 46%,#BDB6AA 54%,transparent 55%)" }} />
-            <span data-bub="1" style={{ position: "absolute", left: "0", top: "0", transform: "translate(-50%,-100%)", opacity: "0", transition: "opacity .25s", pointerEvents: "none", whiteSpace: "nowrap", background: "#F4F4F2", color: "#0A0A0A", borderRadius: "999px", padding: "5px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".02em", boxShadow: "0 6px 18px rgba(0,0,0,.5)" }} />
+            <span data-bug="1" style={{ position: "absolute", left: "0", top: "0", width: "7px", height: "4px", borderRadius: "4px 4px 1px 1px", background: "#DC2626", opacity: "0", pointerEvents: "none", boxShadow: "-2px -1px 0 -1px #DC2626,2px 1px 0 -1px #7F1D1D" }} />
+            <span data-mail="1" style={{ position: "absolute", left: "0", top: "0", width: "10px", height: "7px", borderRadius: "1.5px", background: "#FFF7ED", opacity: "0", pointerEvents: "none", backgroundImage: "linear-gradient(155deg,transparent 45%,#D3B9A0 46%,#D3B9A0 54%,transparent 55%),linear-gradient(25deg,transparent 45%,#D3B9A0 46%,#D3B9A0 54%,transparent 55%)" }} />
+            <span data-bub="1" style={{ position: "absolute", left: "0", top: "0", transform: "translate(-50%,-100%)", opacity: "0", transition: "opacity .25s", pointerEvents: "none", whiteSpace: "nowrap", background: "#FFF7ED", color: "#17090A", borderRadius: "999px", padding: "5px 10px", font: "500 11px var(--font-mono)", letterSpacing: ".02em", boxShadow: "0 6px 18px rgba(0,0,0,.5)" }} />
           </div>
           {" "}
         </div>

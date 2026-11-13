@@ -85,8 +85,8 @@ class Logic extends DCLogic {
   }];
   SLABS_B = [['00', this.props.t("Pricing.foundation"), this.props.t("Pricing.hostingDomainBackups")], ['01', 'Core', this.props.t("Pricing.websiteInboxPortal")], ['02', 'Growth', this.props.t("Pricing.teamOffersReports")], ['03', this.props.t("Pricing.whole"), this.props.t("Pricing.financeMarketing")]];
   SLABS_L = [['00', this.props.t("Pricing.foundation"), this.props.t("Pricing.yourDataEU")], ['01', this.props.t("Pricing.life"), this.props.t("Pricing.briefingMoneyCalendar")], ['02', 'Plus', this.props.t("Pricing.goalsAI")], ['03', this.props.t("Pricing.together"), this.props.t("Pricing.upTo4People")], ['04', this.props.t("Pricing.private"), this.props.t("Pricing.setUpWithRialto")]];
-  COL_B = [['#DCD5CA', '#0A0A0A', '#BDB6AA'], ['#F4F1EC', '#0A0A0A', '#CFC8BC'], ['#0B0B0C', '#F4F4F2', '#000000'], ['#FF6A00', '#0A0A0A', '#B84C00']];
-  COL_L = [['#DCD5CA', '#0A0A0A', '#BDB6AA'], ['#F6E9DC', '#2A1E14', '#E2CDB6'], ['#F4F1EC', '#0A0A0A', '#CFC8BC'], ['#0B0B0C', '#F4F4F2', '#000000'], ['#FF6A00', '#0A0A0A', '#B84C00']];
+  COL_B = [['#EDD9C4', '#17090A', '#D3B9A0'], ['#FFEEDB', '#17090A', '#DFC9B4'], ['#14080A', '#FFF7ED', '#000000'], ['#F97316', '#17090A', '#C2410C']];
+  COL_L = [['#EDD9C4', '#17090A', '#D3B9A0'], ['#F6E9DC', '#2B1311', '#E2CDB6'], ['#FFEEDB', '#17090A', '#DFC9B4'], ['#14080A', '#FFF7ED', '#000000'], ['#F97316', '#17090A', '#C2410C']];
   AREAS = [{
     k: 'cust',
     t: this.props.t("Pricing.customersInquiries"),
@@ -156,13 +156,13 @@ class Logic extends DCLogic {
   }];
   BD_B = [[this.props.t("Pricing.eUHostingDatabase"), 18, this.props.t("Pricing.serversInFrankfurtDatabaseFileStorage")], [this.props.t("Pricing.aIUsage"), 22, this.props.t("Pricing.everyAIAnswerSummaryAndReport")], [this.props.t("Pricing.updatesFixesSecurity"), 25, this.props.t("Pricing.keepingEverythingCurrentPatchedAndWorking")], [this.props.t("Pricing.supportMyHours"), 30, this.props.t("Pricing.changesQuestionsAndChatWithMe")], [this.props.t("Pricing.backupsMonitoring"), 5, this.props.t("Pricing.dailyBackupsAndAlertsBeforeYou")]];
   BD_L = [[this.props.t("Pricing.eUHostingDatabase"), 20, this.props.t("Pricing.yourDataStaysInFrankfurt")], [this.props.t("Pricing.aIUsage"), 35, this.props.t("Pricing.briefingsResearchAndBrainstormsRunOn")], [this.props.t("Pricing.newFeatures"), 25, this.props.t("Pricing.lifeKeepsGettingBetterWhileYou")], [this.props.t("Pricing.support"), 12, this.props.t("Pricing.aRealPersonWhenSomethingFeels")], [this.props.t("Pricing.paymentFees"), 8, this.props.t("Pricing.cardSEPAAndKlarnaCostA")]];
-  BDCOL = [['#0A0A0A', '#F4F4F2'], ['#FF6A00', '#0A0A0A'], ['#FF9A50', '#0A0A0A'], ['#FFB27A', '#0A0A0A'], ['#BDB6AA', '#0A0A0A']];
+  BDCOL = [['#17090A', '#FFF7ED'], ['#F97316', '#17090A'], ['#FDBA74', '#17090A'], ['#FDBA74', '#17090A'], ['#D3B9A0', '#17090A']];
   PH_B = [[this.props.t("Pricing.firstCall"), this.props.t("Pricing.day1"), this.props.t("Pricing.n30MinutesWeTalkAboutHow"), 0], [this.props.t("Pricing.analysis"), this.props.t("Pricing.week12"), this.props.t("Pricing.iMapYourToolsStepsAnd"), 20], [this.props.t("Pricing.build"), this.props.t("Pricing.week25"), this.props.t("Pricing.iBuildYourSystemAndConnect"), 55], [this.props.t("Pricing.test"), this.props.t("Pricing.week56"), this.props.t("Pricing.yourTeamUsesItForReal"), 15], [this.props.t("Pricing.live"), this.props.t("Pricing.week6"), this.props.t("Pricing.switchOverDataMovedTeamShown"), 10]];
   PH_L = [[this.props.t("Pricing.signUp"), this.props.t("Pricing.day0"), this.props.t("Pricing.emailAndA6DigitCode"), 0], [this.props.t("Pricing.connect"), this.props.t("Pricing.day1"), this.props.t("Pricing.calendarAndAccountsOnlyWhatYou"), 0], [this.props.t("Pricing.firstBriefing"), this.props.t("Pricing.day2"), this.props.t("Pricing.yourMorningMoneyAndGoalsOn"), 0], [this.props.t("Pricing.makeItYours"), this.props.t("Pricing.day312"), this.props.t("Pricing.goalsHabitsAIResearchOnYour"), 0], [this.props.t("Pricing.decide"), this.props.t("Pricing.day14"), this.props.t("Pricing.pickAPlanOrSimplyLeave"), 0]];
   // Usual way, year one: the lower end of the cost ranges on Home (same strings, Pricing.cost*), so both pages agree.
   CM_B = [[this.props.t("Pricing.agencyWebsiteOneOff"), 5000, this.props.t("Pricing.costAgency")], [this.props.t("Pricing.freelancerForAutomations"), 7200, this.props.t("Pricing.costFreelancer")], [this.props.t("Pricing.n46SeparateTools"), 1800, this.props.t("Pricing.costTools")], [this.props.t("Pricing.yourTimeHoldingItTogether"), 9600, this.props.t("Pricing.n20HMo40")]];
   CM_L = [[this.props.t("Pricing.budgetingApp"), 60], [this.props.t("Pricing.calendarPlannerPro"), 48], [this.props.t("Pricing.aISubscription"), 240], [this.props.t("Pricing.habitTracker"), 30]];
-  CMCOL = ['#3A3731', '#5A5650', '#8C877E', '#BDB6AA'];
+  CMCOL = ['#3D2B27', '#5E4A43', '#927A6D', '#D3B9A0'];
   TB = [{
     t: this.props.t("Pricing.builtForYou"),
     rows: [[this.props.t("Pricing.websiteOrCoreSystem"), 1, 1, 1], [this.props.t("Pricing.aIInboxForInquiries"), 1, 1, 1], [this.props.t("Pricing.clientPortal"), 1, 1, 1], [this.props.t("Pricing.teamApp"), 0, 1, 1], [this.props.t("Pricing.automatedOffersFollowUps"), 0, 1, 1], [this.props.t("Pricing.monthlyReport"), 0, 1, 1], [this.props.t("Pricing.financeInvoicingFlows"), 0, 0, 1], [this.props.t("Pricing.marketingAutomation"), 0, 0, 1]]
@@ -307,7 +307,7 @@ class Logic extends DCLogic {
         sp = words.querySelectorAll('[data-wd]'),
         lit = Math.round(t * sp.length);
       sp.forEach((x, k) => {
-        x.style.color = k < lit ? x.dataset.wd === '1' ? '#8C877E' : '#0A0A0A' : '#D3CCC0';
+        x.style.color = k < lit ? x.dataset.wd === '1' ? '#927A6D' : '#17090A' : '#E6D0B9';
       });
     }
     const fp = document.querySelector('[data-pin="flow"]');
@@ -369,12 +369,12 @@ class Logic extends DCLogic {
         sub: x[2],
         z: i * gap + (on ? 0 : 46) + 'px',
         tOp: on ? 1 : 0,
-        bg: on ? c[0] : 'rgba(236,232,225,.82)',
-        fg: on ? c[1] : '#8C877E',
+        bg: on ? c[0] : 'rgba(255,247,237,.82)',
+        fg: on ? c[1] : '#927A6D',
         side: on ? c[2] : 'transparent',
-        bd: on ? i === pi + 1 ? '#FF6A00' : 'transparent' : '#A39B8E',
+        bd: on ? i === pi + 1 ? '#F97316' : 'transparent' : '#A6938B',
         bs: on ? 'solid' : 'dashed',
-        sh: on ? '0 40px 60px -30px rgba(10,10,10,.45)' : 'none',
+        sh: on ? '0 40px 60px -30px rgba(23,9,10,.45)' : 'none',
         go: () => this.pickHero(Math.max(0, i - 1))
       };
     });
@@ -410,7 +410,7 @@ class Logic extends DCLogic {
     }, {
       l: this.props.t("Pricing.first14Days"),
       v: this.props.t("Pricing.free"),
-      c: '#FF6A00'
+      c: '#F97316'
     }] : [{
       l: this.props.t("Pricing.monthly"),
       v: this.eur(R.mo) + this.props.t("Pricing.mo")
@@ -420,7 +420,7 @@ class Logic extends DCLogic {
     }, {
       l: this.props.t("Pricing.yearOneTotal"),
       v: this.props.t("Pricing.from") + this.eur(R.setup + 12 * R.mo),
-      c: '#FF6A00'
+      c: '#F97316'
     }, {
       l: this.props.t("Pricing.perDayAfterSetup"),
       v: '≈ ' + this.eur(R.mo * 12 / 365, 1)
@@ -449,9 +449,9 @@ class Logic extends DCLogic {
         d: p[2],
         amt: L ? p[1] : p[3] ? '≈ ' + this.eur(cur.setup * p[3] / 100) : this.props.t("Pricing.free"),
         w: L ? s.sn_ph ? (i + 1) / 5 * 100 + '%' : '0%' : s.sn_ph ? p[3] + '%' : '0%',
-        bg: on ? '#0A0A0A' : '#F4F1EC',
-        fg: on ? '#F4F4F2' : '#0A0A0A',
-        track: on ? '#2A2A2C' : '#DCD5CA',
+        bg: on ? '#17090A' : '#FFEEDB',
+        fg: on ? '#FFF7ED' : '#17090A',
+        track: on ? '#3D1F20' : '#EDD9C4',
         ty: on ? '-8px' : '0px',
         go: () => this.setState({
           phase: i
@@ -467,8 +467,8 @@ class Logic extends DCLogic {
       t: x[0],
       d: x[1],
       on: i === s.step,
-      fg: i === s.step ? '#F4F4F2' : '#8C877E',
-      nc: i === s.step ? '#FF6A00' : '#5A5650',
+      fg: i === s.step ? '#FFF7ED' : '#927A6D',
+      nc: i === s.step ? '#F97316' : '#5E4A43',
       w: s.pin ? '0%' : i < s.step ? '100%' : i === s.step ? (s.fp * 100).toFixed(1) + '%' : '0%',
       go: () => this.goStep(i)
     }));
@@ -487,8 +487,8 @@ class Logic extends DCLogic {
         t: r[0],
         cells: r.slice(1).map((v, i) => ({
           v: v === 1 ? '✓' : v === 0 ? '–' : v,
-          fg: v === 0 ? '#BDB6AA' : v === 1 ? '#FF6A00' : '#0A0A0A',
-          bg: i === pi ? 'rgba(255,106,0,.08)' : 'transparent'
+          fg: v === 0 ? '#D3B9A0' : v === 1 ? '#F97316' : '#17090A',
+          bg: i === pi ? 'rgba(249,115,22,.08)' : 'transparent'
         }))
       }))
     }));
@@ -497,10 +497,10 @@ class Logic extends DCLogic {
       isBizPh: !L,
       heroSub: L ? this.props.t("Pricing.oneMonthlyPriceForALife") : this.props.t("Pricing.youPayOnceToHaveYour"),
       vatNote: L ? this.props.t("Pricing.finalPricesInclVATCancelAny") : this.props.t("Pricing.pricesNetPlus19VAT12"),
-      bBg: L ? 'transparent' : '#0A0A0A',
-      bFg: L ? '#3A3731' : '#F4F4F2',
-      lBg: L ? '#0A0A0A' : 'transparent',
-      lFg: L ? '#F4F4F2' : '#3A3731',
+      bBg: L ? 'transparent' : '#17090A',
+      bFg: L ? '#3D2B27' : '#FFF7ED',
+      lBg: L ? '#17090A' : 'transparent',
+      lFg: L ? '#FFF7ED' : '#3D2B27',
       setBiz: () => this.setState({
         life: false,
         phase: 2,
@@ -529,10 +529,10 @@ class Logic extends DCLogic {
         t: w + ' ',
         m: String(m)
       }))),
-      mBg: s.yearly ? 'transparent' : '#0A0A0A',
-      mFg: s.yearly ? '#3A3731' : '#F4F4F2',
-      yBg: s.yearly ? '#0A0A0A' : 'transparent',
-      yFg: s.yearly ? '#F4F4F2' : '#3A3731',
+      mBg: s.yearly ? 'transparent' : '#17090A',
+      mFg: s.yearly ? '#3D2B27' : '#FFF7ED',
+      yBg: s.yearly ? '#17090A' : 'transparent',
+      yFg: s.yearly ? '#FFF7ED' : '#3D2B27',
       setMonthly: () => this.setState({
         yearly: false
       }),
@@ -558,9 +558,9 @@ class Logic extends DCLogic {
       planPills: P.map((p, i) => ({
         t: p.name,
         go: () => this.pickHero(i),
-        bg: i === pi ? '#0A0A0A' : 'transparent',
-        fg: i === pi ? '#F4F4F2' : '#3A3731',
-        bd: i === pi ? '#0A0A0A' : '#BDB6AA'
+        bg: i === pi ? '#17090A' : 'transparent',
+        fg: i === pi ? '#FFF7ED' : '#3D2B27',
+        bd: i === pi ? '#17090A' : '#D3B9A0'
       })),
       plans: P.map((p, i) => {
         const on = i === pi;
@@ -572,12 +572,12 @@ class Logic extends DCLogic {
           cta: L ? p.priv ? this.props.t("Pricing.bookACall") : this.props.t("Pricing.startFree") : this.props.t("Pricing.askAbout") + p.name,
           href: L ? p.priv ? this.props.href("/contact") : this.props.signup(['life', 'plus', 'together'][i] || 'plus') : this.props.href("/contact"),
           go: () => this.pick(i),
-          bg: on ? '#0B0B0C' : '#F4F1EC',
-          fg: on ? '#F4F4F2' : '#0A0A0A',
-          line: on ? '#2A2A2C' : '#D3CCC0',
-          btnBg: on ? '#FF6A00' : '#0A0A0A',
-          btnFg: on ? '#0A0A0A' : '#F4F4F2',
-          dayC: on ? '#FF9A50' : '#8C877E',
+          bg: on ? '#14080A' : '#FFEEDB',
+          fg: on ? '#FFF7ED' : '#17090A',
+          line: on ? '#3D1F20' : '#E6D0B9',
+          btnBg: on ? '#F97316' : '#17090A',
+          btnFg: on ? '#17090A' : '#FFF7ED',
+          dayC: on ? '#FDBA74' : '#927A6D',
           ty: on ? '-10px' : '0px'
         };
       }),
@@ -588,9 +588,9 @@ class Logic extends DCLogic {
         go: () => this.setState({
           people: n
         }),
-        bg: s.people === n ? '#FF6A00' : 'transparent',
-        fg: s.people === n ? '#0A0A0A' : '#F4F4F2',
-        bd: s.people === n ? '#FF6A00' : '#2A2A2C'
+        bg: s.people === n ? '#F97316' : 'transparent',
+        fg: s.people === n ? '#17090A' : '#FFF7ED',
+        bd: s.people === n ? '#F97316' : '#3D1F20'
       })),
       cOpts: opts.map(o => {
         const on = sel.includes(o.k);
@@ -598,10 +598,10 @@ class Logic extends DCLogic {
           t: o.t,
           d: o.d,
           toggle: () => this.toggleIn(L ? 'wants' : 'areas', o.k),
-          bd: on ? '#FF6A00' : '#2A2A2C',
-          bg: on ? 'rgba(255,106,0,.08)' : 'transparent',
-          cb: on ? '#FF6A00' : '#5A5650',
-          cbg: on ? '#FF6A00' : 'transparent',
+          bd: on ? '#F97316' : '#3D1F20',
+          bg: on ? 'rgba(249,115,22,.08)' : 'transparent',
+          cb: on ? '#F97316' : '#5E4A43',
+          cbg: on ? '#F97316' : 'transparent',
           mark: on ? '✓' : ''
         };
       }),
@@ -610,7 +610,7 @@ class Logic extends DCLogic {
       cfgKey: 'cfg' + L + rec,
       cfgWhy,
       cfgRows: cfgRows.map(r => ({
-        c: '#0A0A0A',
+        c: '#17090A',
         ...r
       })),
       useCfg: () => this.pickHero(rec, true),
@@ -664,8 +664,8 @@ class Logic extends DCLogic {
         t: p.name,
         p: priceOf(p),
         go: () => this.pick(i),
-        bg: i === pi ? '#0A0A0A' : 'transparent',
-        fg: i === pi ? '#F4F4F2' : '#0A0A0A'
+        bg: i === pi ? '#17090A' : 'transparent',
+        fg: i === pi ? '#FFF7ED' : '#17090A'
       })),
       tGroups,
       faqs: (L ? this.FAQ_L : this.FAQ_B).map((f, k) => ({
@@ -692,27 +692,27 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#FFF7ED;color:#17090A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#F97316}" }} />
       <Nav active="pricing" />
       <div data-pin="hero" style={{ height: `${v.heroH ?? ''}`, position: "relative" }}>
         <div data-pinbox="1" data-screen-label="01 Hero" style={{ position: `${v.pinPos ?? ''}`, top: "0", minHeight: `${v.pinH ?? ''}`, boxSizing: "border-box", padding: `${v.heroPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,500px),1fr))", gap: "40px", alignItems: "center", transformOrigin: "50% 0" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {v.t("Pricing.home")}{" "}
-              <span style={{ color: "#0A0A0A" }}>
+              <span style={{ color: "#17090A" }}>
                 {v.t("Pricing.pricing")}
               </span>
             </div>
             <h1 style={{ margin: "0", fontSize: "clamp(46px,6.2vw,102px)", lineHeight: ".92", letterSpacing: "-0.055em", fontWeight: "600" }}>
               {v.t("Pricing.onePrice")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.t("Pricing.everyMonth")}
               </span>
             </h1>
-            <p style={{ margin: "0", maxWidth: "500px", fontSize: "18px", lineHeight: "1.55", color: "#3A3731", textWrap: "pretty" }}>
+            <p style={{ margin: "0", maxWidth: "500px", fontSize: "18px", lineHeight: "1.55", color: "#3D2B27", textWrap: "pretty" }}>
               {v.heroSub}
             </p>
-            <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#DCD5CA", alignSelf: "flex-start", maxWidth: "100%", overflowX: "auto" }}>
+            <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#EDD9C4", alignSelf: "flex-start", maxWidth: "100%", overflowX: "auto" }}>
               <button onClick={v.setBiz} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "12px 22px", font: "500 14px var(--font-sans)", whiteSpace: "nowrap", background: `${v.bBg ?? ''}`, color: `${v.bFg ?? ''}`, transition: "background .3s,color .3s" }}>
                 {v.t("Pricing.forBusinesses")}
               </button>
@@ -720,30 +720,30 @@ Logic.prototype.render = function render() {
                 {v.t("Pricing.forYouLife")}
               </button>
             </div>
-            <div key={v.curKey} style={{ display: "flex", alignItems: "baseline", gap: "6px 16px", flexWrap: "wrap", borderTop: "1px solid #C9C1B4", paddingTop: "20px", maxWidth: "520px" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+            <div key={v.curKey} style={{ display: "flex", alignItems: "baseline", gap: "6px 16px", flexWrap: "wrap", borderTop: "1px solid #DAC2AB", paddingTop: "20px", maxWidth: "520px" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                 {v.curN}
               </span>
               <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
                 {v.curName}
               </span>
-              <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em", color: "#FF6A00" }}>
+              <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em", color: "#F97316" }}>
                 {v.curPrice}
               </span>
-              <span style={{ width: "100%", fontSize: "15px", lineHeight: "1.5", color: "#3A3731" }}>
+              <span style={{ width: "100%", fontSize: "15px", lineHeight: "1.5", color: "#3D2B27" }}>
                 {v.curFor}
               </span>
             </div>
-            <span style={{ fontSize: "13px", color: "#5A5650" }}>
+            <span style={{ fontSize: "13px", color: "#5E4A43" }}>
               {v.vatNote}
             </span>
             {v.pin ? (<>
-              <div style={{ display: "flex", alignItems: "center", gap: "14px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "14px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
                 <span>
                   {v.t("Pricing.scrollToAddLayers")}
                 </span>
-                <span style={{ position: "relative", width: "140px", height: "2px", background: "#C9C1B4", overflow: "hidden" }}>
-                  <span data-hbar="1" style={{ position: "absolute", inset: "0", background: "#FF6A00", transformOrigin: "0 50%", transform: "scaleX(0)" }} />
+                <span style={{ position: "relative", width: "140px", height: "2px", background: "#DAC2AB", overflow: "hidden" }}>
+                  <span data-hbar="1" style={{ position: "absolute", inset: "0", background: "#F97316", transformOrigin: "0 50%", transform: "scaleX(0)" }} />
                 </span>
               </div>
             </>) : null}
@@ -772,8 +772,8 @@ Logic.prototype.render = function render() {
                   {" "}
                 </div>
               </div>
-              <div style={{ position: "absolute", left: "0", bottom: "8px", display: "flex", alignItems: "center", gap: "10px", background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "10px 16px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase" }}>
-                <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FF6A00" }} />
+              <div style={{ position: "absolute", left: "0", bottom: "8px", display: "flex", alignItems: "center", gap: "10px", background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "10px 16px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase" }}>
+                <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#F97316" }} />
                 {v.t("Pricing.xXLayers", { x: v.curName, y: v.layerCount })}
               </div>
             </div>
@@ -789,7 +789,7 @@ Logic.prototype.render = function render() {
       </div>
       <div data-screen-label="02 Plans" style={{ padding: "40px clamp(20px,3vw,40px) 120px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "20px" }}>
         {v.isLife ? (<>
-          <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#DCD5CA", alignSelf: "flex-end" }}>
+          <div style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#EDD9C4", alignSelf: "flex-end" }}>
             <button onClick={v.setMonthly} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "9px 18px", font: "500 13px var(--font-sans)", whiteSpace: "nowrap", background: `${v.mBg ?? ''}`, color: `${v.mFg ?? ''}` }}>
               {v.t("Pricing.monthly")}
             </button>
@@ -803,7 +803,7 @@ Logic.prototype.render = function render() {
             {" "}
             <div {...press(p?.go)} style={{ cursor: "pointer", borderRadius: "24px", padding: "30px", display: "flex", flexDirection: "column", gap: "24px", background: `${p?.bg ?? ''}`, color: `${p?.fg ?? ''}`, transform: `translateY(${p?.ty ?? ''})`, transition: "background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                   {p?.n}
                 </span>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".1em", textTransform: "uppercase", opacity: ".7" }}>
@@ -832,7 +832,7 @@ Logic.prototype.render = function render() {
               <div style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: `1px solid ${p?.line ?? ''}`, paddingTop: "20px" }}>
                 {(p?.items ?? []).map((i, $index) => (<Fragment key={$index}>
                   <span style={{ fontSize: "15px", display: "flex", gap: "10px" }}>
-                    <span style={{ color: "#FF6A00" }}>
+                    <span style={{ color: "#F97316" }}>
                       {"+"}
                     </span>
                     {i}
@@ -853,39 +853,39 @@ Logic.prototype.render = function render() {
         </div>
       )}
       <div data-screen-label="02b Why" style={{ padding: "80px clamp(20px,3vw,40px) 150px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "28px" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
           {"(00) "}
-          <span style={{ color: "#0A0A0A" }}>
+          <span style={{ color: "#17090A" }}>
             {v.t("Pricing.whyThisPrice")}
           </span>
         </div>
         <p data-words="1" style={{ margin: "0", maxWidth: "1240px", fontSize: "clamp(32px,4vw,64px)", lineHeight: "1.08", letterSpacing: "-0.04em", fontWeight: "500", textWrap: "pretty" }}>
           {(v.words ?? []).map((w, $index) => (<Fragment key={$index}>
-            <span data-wd={w?.m} style={{ color: "#D3CCC0", transition: "color .25s" }}>
+            <span data-wd={w?.m} style={{ color: "#E6D0B9", transition: "color .25s" }}>
               {w?.t}
             </span>
           </Fragment>))}
         </p>
       </div>
-      <div data-screen-label="03 Configurator" style={{ background: "#0B0B0C", color: "#F4F4F2" }}>
+      <div data-screen-label="03 Configurator" style={{ background: "#14080A", color: "#FFF7ED" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,460px),1fr))", gap: "56px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
               {"(01) "}
-              <span style={{ color: "#F4F4F2" }}>
+              <span style={{ color: "#FFF7ED" }}>
                 {v.t("Pricing.findYourPlan")}
               </span>
             </div>
             <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.cfgH}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.cfgH2}
               </span>
             </h2>
             {v.isLife ? (<>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                   {v.t("Pricing.howManyPeople")}
                 </span>
                 <div style={{ display: "flex", gap: "6px" }}>
@@ -899,15 +899,15 @@ Logic.prototype.render = function render() {
             </>) : null}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,220px),1fr))", gap: "10px" }}>
               {(v.cOpts ?? []).map((o, $index) => (<Fragment key={$index}>
-                <button onClick={o?.toggle} style={{ display: "flex", gap: "14px", alignItems: "flex-start", textAlign: "left", padding: "18px", borderRadius: "16px", border: `1px solid ${o?.bd ?? ''}`, background: `${o?.bg ?? ''}`, color: "#F4F4F2", cursor: "pointer", transition: "background .3s,border-color .3s" }}>
-                  <span style={{ flexShrink: "0", width: "22px", height: "22px", borderRadius: "7px", border: `1.5px solid ${o?.cb ?? ''}`, background: `${o?.cbg ?? ''}`, color: "#0A0A0A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: "700", transition: "background .3s" }}>
+                <button onClick={o?.toggle} style={{ display: "flex", gap: "14px", alignItems: "flex-start", textAlign: "left", padding: "18px", borderRadius: "16px", border: `1px solid ${o?.bd ?? ''}`, background: `${o?.bg ?? ''}`, color: "#FFF7ED", cursor: "pointer", transition: "background .3s,border-color .3s" }}>
+                  <span style={{ flexShrink: "0", width: "22px", height: "22px", borderRadius: "7px", border: `1.5px solid ${o?.cb ?? ''}`, background: `${o?.cbg ?? ''}`, color: "#17090A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: "700", transition: "background .3s" }}>
                     {o?.mark}
                   </span>
                   <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <span style={{ font: "600 15px var(--font-sans)" }}>
                       {o?.t}
                     </span>
-                    <span style={{ font: "400 13px/1.45 var(--font-sans)", color: "#8C877E" }}>
+                    <span style={{ font: "400 13px/1.45 var(--font-sans)", color: "#927A6D" }}>
                       {o?.d}
                     </span>
                   </span>
@@ -915,25 +915,25 @@ Logic.prototype.render = function render() {
               </Fragment>))}
             </div>
           </div>
-          <div style={{ position: "sticky", top: "110px", borderRadius: "24px", background: "#F4F1EC", color: "#0A0A0A", padding: "32px", display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div style={{ position: "sticky", top: "110px", borderRadius: "24px", background: "#FFEEDB", color: "#17090A", padding: "32px", display: "flex", flexDirection: "column", gap: "24px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
                 {v.t("Pricing.recommended")}
               </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#F97316" }}>
                 {v.cfgN}
               </span>
             </div>
             <span key={v.cfgKey} style={{ fontSize: "clamp(48px,5vw,76px)", fontWeight: "600", letterSpacing: "-0.05em", lineHeight: ".95" }}>
               {v.cfgName}
             </span>
-            <span style={{ fontSize: "15px", lineHeight: "1.5", color: "#3A3731" }}>
+            <span style={{ fontSize: "15px", lineHeight: "1.5", color: "#3D2B27" }}>
               {v.cfgWhy}
             </span>
-            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
+            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #E6D0B9" }}>
               {(v.cfgRows ?? []).map((r, $index) => (<Fragment key={$index}>
-                <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0", borderBottom: "1px solid #D3CCC0", fontSize: "15px" }}>
-                  <span style={{ color: "#3A3731" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0", borderBottom: "1px solid #E6D0B9", fontSize: "15px" }}>
+                  <span style={{ color: "#3D2B27" }}>
                     {r?.l}
                   </span>
                   <span style={{ fontFamily: "var(--font-mono)", fontWeight: "500", color: `${r?.c ?? ''}` }}>
@@ -942,10 +942,10 @@ Logic.prototype.render = function render() {
                 </div>
               </Fragment>))}
             </div>
-            <button onClick={v.useCfg} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "16px 22px", font: "600 15px var(--font-sans)", background: "#0A0A0A", color: "#F4F4F2" }} className="hv-9bccb67">
+            <button onClick={v.useCfg} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "16px 22px", font: "600 15px var(--font-sans)", background: "#17090A", color: "#FFF7ED" }} className="hv-9bccb67">
               {v.t("Pricing.showMeX", { x: v.cfgName })}
             </button>
-            <span style={{ fontSize: "12px", color: "#5A5650" }}>
+            <span style={{ fontSize: "12px", color: "#5E4A43" }}>
               {v.vatNote}
             </span>
           </div>
@@ -954,15 +954,15 @@ Logic.prototype.render = function render() {
       <div data-screen-label="04 Where it goes" style={{ padding: "130px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "24px 56px", alignItems: "end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {"(02) "}
-              <span style={{ color: "#0A0A0A" }}>
+              <span style={{ color: "#17090A" }}>
                 {v.t("Pricing.whereTheMoneyGoes")}
               </span>
             </div>
             <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
               {v.t("Pricing.whereYour")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.curPrice}
               </span>
               {" "}
@@ -971,11 +971,11 @@ Logic.prototype.render = function render() {
               </span>
             </h2>
           </div>
-          <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3A3731", textWrap: "pretty" }}>
+          <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3D2B27", textWrap: "pretty" }}>
             {v.bdIntro}
           </p>
         </div>
-        <div data-seen="bd" style={{ display: "flex", height: "clamp(88px,10vw,128px)", borderRadius: "22px", overflow: "hidden", background: "#DCD5CA" }}>
+        <div data-seen="bd" style={{ display: "flex", height: "clamp(88px,10vw,128px)", borderRadius: "22px", overflow: "hidden", background: "#EDD9C4" }}>
           {(v.bd ?? []).map((b, $index) => (<Fragment key={$index}>
             <div style={{ width: `${b?.w ?? ''}`, background: `${b?.col ?? ''}`, color: `${b?.fg ?? ''}`, display: "flex", alignItems: "flex-end", padding: "0 0 14px 16px", boxSizing: "border-box", overflow: "hidden", transition: "width 1.1s cubic-bezier(.16,1,.3,1)" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", whiteSpace: "nowrap" }}>
@@ -986,7 +986,7 @@ Logic.prototype.render = function render() {
         </div>
         <div data-rv="120" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: "12px" }}>
           {(v.bd ?? []).map((b, $index) => (<Fragment key={$index}>
-            <div style={{ borderRadius: "18px", background: "#F4F1EC", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ borderRadius: "18px", background: "#FFEEDB", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "4px", background: `${b?.col ?? ''}` }} />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px" }}>
@@ -996,7 +996,7 @@ Logic.prototype.render = function render() {
               <span style={{ fontSize: "17px", fontWeight: "600", letterSpacing: "-0.02em" }}>
                 {b?.t}
               </span>
-              <span style={{ fontSize: "14px", lineHeight: "1.5", color: "#3A3731" }}>
+              <span style={{ fontSize: "14px", lineHeight: "1.5", color: "#3D2B27" }}>
                 {b?.d}
               </span>
             </div>
@@ -1005,35 +1005,35 @@ Logic.prototype.render = function render() {
         <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
           <span style={{ fontSize: "22px", fontWeight: "600", letterSpacing: "-0.02em" }}>
             {v.t("Pricing.thatS")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.curDay}
             </span>
             {" "}{v.t("Pricing.aDay")}
           </span>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", border: "1px dashed #BDB6AA", borderRadius: "999px", padding: "8px 14px" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", border: "1px dashed #D3B9A0", borderRadius: "999px", padding: "8px 14px" }}>
             {v.t("Pricing.placeholderSplitToBeConfirmed")}
           </span>
         </div>
       </div>
-      <div data-screen-label="05 Setup / Trial" style={{ background: "#E3DED5" }}>
+      <div data-screen-label="05 Setup / Trial" style={{ background: "#EEE0D2" }}>
         {" "}
         <div style={{ padding: "130px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "24px 56px", alignItems: "end" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
                 {"(03) "}
-                <span style={{ color: "#0A0A0A" }}>
+                <span style={{ color: "#17090A" }}>
                   {v.phK}
                 </span>
               </div>
               <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
                 {v.phH}{" "}
-                <span style={{ color: "#FF6A00" }}>
+                <span style={{ color: "#F97316" }}>
                   {v.phH2}
                 </span>
               </h2>
             </div>
-            <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3A3731", textWrap: "pretty" }}>
+            <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3D2B27", textWrap: "pretty" }}>
               {v.phIntro}
             </p>
           </div>
@@ -1041,7 +1041,7 @@ Logic.prototype.render = function render() {
             {(v.phases ?? []).map((p, $index) => (<Fragment key={$index}>
               <button onClick={p?.go} style={{ textAlign: "left", cursor: "pointer", border: "none", borderRadius: "22px", padding: "24px", minHeight: "300px", display: "flex", flexDirection: "column", gap: "14px", background: `${p?.bg ?? ''}`, color: `${p?.fg ?? ''}`, transform: `translateY(${p?.ty ?? ''})`, transition: "background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
                     {p?.n}
                   </span>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".08em", textTransform: "uppercase", opacity: ".65" }}>
@@ -1059,7 +1059,7 @@ Logic.prototype.render = function render() {
                     {p?.amt}
                   </span>
                   <span style={{ height: "4px", borderRadius: "2px", background: `${p?.track ?? ''}`, overflow: "hidden", display: "flex" }}>
-                    <span style={{ width: `${p?.w ?? ''}`, background: "#FF6A00", transition: "width 1s cubic-bezier(.16,1,.3,1)" }} />
+                    <span style={{ width: `${p?.w ?? ''}`, background: "#F97316", transition: "width 1s cubic-bezier(.16,1,.3,1)" }} />
                   </span>
                 </div>
               </button>
@@ -1070,32 +1070,32 @@ Logic.prototype.render = function render() {
               {v.phSum}
             </span>
             {v.isBizPh ? (<>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", border: "1px dashed #BDB6AA", borderRadius: "999px", padding: "8px 14px" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", border: "1px dashed #D3B9A0", borderRadius: "999px", padding: "8px 14px" }}>
                 {v.t("Pricing.splitAndTimingArePlaceholdersTo")}
               </span>
             </>) : null}
           </div>
         </div>
       </div>
-      <div data-pin="flow" data-screen-label="06 Flow" style={{ background: "#0B0B0C", color: "#F4F4F2", height: `${v.flowH ?? ''}`, position: "relative" }}>
+      <div data-pin="flow" data-screen-label="06 Flow" style={{ background: "#14080A", color: "#FFF7ED", height: `${v.flowH ?? ''}`, position: "relative" }}>
         {" "}
         <div data-pinbox="1" style={{ position: `${v.pinPos ?? ''}`, top: "0", minHeight: `${v.pinH ?? ''}`, boxSizing: "border-box", padding: `${v.flowPad ?? ''}`, maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,460px),1fr))", gap: "56px", alignItems: "center", transformOrigin: "50% 0" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
               {"(04) "}
-              <span style={{ color: "#F4F4F2" }}>
+              <span style={{ color: "#FFF7ED" }}>
                 {v.flK}
               </span>
             </div>
             <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.flH}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.flH2}
               </span>
             </h2>
-            <div onMouseEnter={v.flHold} onMouseLeave={v.flRelease} style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
+            <div onMouseEnter={v.flHold} onMouseLeave={v.flRelease} style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #3D1F20" }}>
               {(v.steps ?? []).map((g, $index) => (<Fragment key={$index}>
-                <button onClick={g?.go} style={{ position: "relative", display: "grid", gridTemplateColumns: "44px minmax(0,1fr)", gap: "12px", padding: "16px 0", border: "none", borderBottom: "1px solid #2A2A2C", background: "none", cursor: "pointer", textAlign: "left", color: `${g?.fg ?? ''}`, transition: "color .3s" }}>
+                <button onClick={g?.go} style={{ position: "relative", display: "grid", gridTemplateColumns: "44px minmax(0,1fr)", gap: "12px", padding: "16px 0", border: "none", borderBottom: "1px solid #3D1F20", background: "none", cursor: "pointer", textAlign: "left", color: `${g?.fg ?? ''}`, transition: "color .3s" }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", paddingTop: "3px", color: `${g?.nc ?? ''}` }}>
                     {g?.n}
                   </span>
@@ -1104,53 +1104,53 @@ Logic.prototype.render = function render() {
                       {g?.t}
                     </span>
                     {g?.on ? (<>
-                      <span style={{ font: "400 15px/1.5 var(--font-sans)", color: "#B8B3AA", maxWidth: "440px" }}>
+                      <span style={{ font: "400 15px/1.5 var(--font-sans)", color: "#CBB7A8", maxWidth: "440px" }}>
                         {g?.d}
                       </span>
                     </>) : null}
                   </span>
-                  <span data-fl="1" style={{ position: "absolute", left: "0", bottom: "-1px", height: "1px", width: `${g?.w ?? ''}`, background: "#FF6A00" }} />
+                  <span data-fl="1" style={{ position: "absolute", left: "0", bottom: "-1px", height: "1px", width: `${g?.w ?? ''}`, background: "#F97316" }} />
                 </button>
               </Fragment>))}
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center", perspective: "1400px" }}>
-            <div key={v.mkKey} style={{ width: "100%", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", background: "#141416", border: "1px solid #2A2A2C", boxShadow: "0 60px 120px -40px rgba(255,106,0,.35)", transform: "rotateY(-8deg) rotateX(4deg)" }}>
+            <div key={v.mkKey} style={{ width: "100%", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", background: "#241011", border: "1px solid #3D1F20", boxShadow: "0 60px 120px -40px rgba(249,115,22,.35)", transform: "rotateY(-8deg) rotateX(4deg)" }}>
               {" "}
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "12px 16px", background: "#1C1C1E" }}>
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#3A3A3C" }} />
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#3A3A3C" }} />
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#3A3A3C" }} />
-                <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#8C877E" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "12px 16px", background: "#2A1315" }}>
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#4F2C2C" }} />
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#4F2C2C" }} />
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#4F2C2C" }} />
+                <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#927A6D" }}>
                   {v.mk?.url}
                 </span>
               </div>
               {" "}
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "24px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#8C877E" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#927A6D" }}>
                     {v.t("Pricing.stepX", { x: v.mk?.n })}
                   </span>
-                  <span style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "6px 12px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".06em", textTransform: "uppercase" }}>
+                  <span style={{ background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "6px 12px", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".06em", textTransform: "uppercase" }}>
                     {v.mk?.st}
                   </span>
                 </div>
                 <span style={{ fontSize: "clamp(28px,3vw,40px)", fontWeight: "600", letterSpacing: "-0.04em", lineHeight: "1.05" }}>
                   {v.mk?.mt}
                 </span>
-                <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #2A2A2C" }}>
+                <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #3D1F20" }}>
                   {(v.mk?.rows ?? []).map((r, $index) => (<Fragment key={$index}>
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0", borderBottom: "1px solid #2A2A2C", fontSize: "15px" }}>
-                      <span style={{ color: "#8C877E" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "14px 0", borderBottom: "1px solid #3D1F20", fontSize: "15px" }}>
+                      <span style={{ color: "#927A6D" }}>
                         {r?.l}
                       </span>
-                      <span style={{ fontFamily: "var(--font-mono)", color: "#F4F4F2", textAlign: "right" }}>
+                      <span style={{ fontFamily: "var(--font-mono)", color: "#FFF7ED", textAlign: "right" }}>
                         {r?.v}
                       </span>
                     </div>
                   </Fragment>))}
                 </div>
-                <span style={{ alignSelf: "flex-start", background: "#F4F4F2", color: "#0A0A0A", borderRadius: "999px", padding: "13px 22px", fontWeight: "600", fontSize: "14px" }}>
+                <span style={{ alignSelf: "flex-start", background: "#FFF7ED", color: "#17090A", borderRadius: "999px", padding: "13px 22px", fontWeight: "600", fontSize: "14px" }}>
                   {v.mk?.btn}
                 </span>
               </div>
@@ -1162,36 +1162,36 @@ Logic.prototype.render = function render() {
       <div data-screen-label="07 Compare" style={{ padding: "130px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "44px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,440px),1fr))", gap: "24px 56px", alignItems: "end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {"(05) "}
-              <span style={{ color: "#0A0A0A" }}>
+              <span style={{ color: "#17090A" }}>
                 {v.t("Pricing.yearOneCompared")}
               </span>
             </div>
             <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.cmH}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.cmH2}
               </span>
             </h2>
           </div>
-          <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3A3731", textWrap: "pretty" }}>
+          <p style={{ margin: "0", maxWidth: "520px", fontSize: "17px", lineHeight: "1.55", color: "#3D2B27", textWrap: "pretty" }}>
             {v.cmIntro}
           </p>
         </div>
-        <div data-seen="cm" data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "28px", background: "#F4F1EC", borderRadius: "28px", padding: "clamp(24px,3vw,44px)" }}>
+        <div data-seen="cm" data-rv="0" style={{ display: "flex", flexDirection: "column", gap: "28px", background: "#FFEEDB", borderRadius: "28px", padding: "clamp(24px,3vw,44px)" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", alignItems: "baseline" }}>
               <span style={{ fontSize: "18px", fontWeight: "600" }}>
                 {v.cmUsualT}
               </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "18px", color: "#5A5650" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "18px", color: "#5E4A43" }}>
                 {v.cmUsual}
               </span>
             </div>
-            <div style={{ display: "flex", height: "56px", borderRadius: "14px", overflow: "hidden", background: "#E3DED5", width: `${v.cmUsualW ?? ''}`, transition: "width 1.1s cubic-bezier(.16,1,.3,1)" }}>
+            <div style={{ display: "flex", height: "56px", borderRadius: "14px", overflow: "hidden", background: "#EEE0D2", width: `${v.cmUsualW ?? ''}`, transition: "width 1.1s cubic-bezier(.16,1,.3,1)" }}>
               {(v.cmRows ?? []).map((c, $index) => (<Fragment key={$index}>
-                <span style={{ width: `${c?.w ?? ''}`, background: `${c?.col ?? ''}`, borderRight: "2px solid #F4F1EC" }} />
+                <span style={{ width: `${c?.w ?? ''}`, background: `${c?.col ?? ''}`, borderRight: "2px solid #FFEEDB" }} />
               </Fragment>))}
             </div>
           </div>
@@ -1200,16 +1200,16 @@ Logic.prototype.render = function render() {
               <span style={{ fontSize: "18px", fontWeight: "600" }}>
                 {v.t("Pricing.rIDEFFX", { x: v.curName })}
               </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "18px", color: "#FF6A00" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "18px", color: "#F97316" }}>
                 {v.cmRid}
               </span>
             </div>
-            <div style={{ height: "56px", borderRadius: "14px", background: "#FF6A00", width: `${v.cmRidW ?? ''}`, transition: "width 1.1s cubic-bezier(.16,1,.3,1)" }} />
-            <span style={{ fontSize: "13px", color: "#5A5650" }}>
+            <div style={{ height: "56px", borderRadius: "14px", background: "#F97316", width: `${v.cmRidW ?? ''}`, transition: "width 1.1s cubic-bezier(.16,1,.3,1)" }} />
+            <span style={{ fontSize: "13px", color: "#5E4A43" }}>
               {v.cmRidNote}
             </span>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,230px),1fr))", gap: "10px", borderTop: "1px solid #D3CCC0", paddingTop: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,230px),1fr))", gap: "10px", borderTop: "1px solid #E6D0B9", paddingTop: "24px" }}>
             {(v.cmRows ?? []).map((c, $index) => (<Fragment key={$index}>
               <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                 <span style={{ flexShrink: "0", marginTop: "5px", width: "12px", height: "12px", borderRadius: "4px", background: `${c?.col ?? ''}` }} />
@@ -1217,40 +1217,40 @@ Logic.prototype.render = function render() {
                   <span style={{ fontSize: "15px" }}>
                     {c?.t}
                   </span>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: "#5A5650" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: "#5E4A43" }}>
                     {c?.v}
                   </span>
                 </span>
               </div>
             </Fragment>))}
           </div>
-          <span style={{ alignSelf: "flex-start", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#8C877E", border: "1px dashed #BDB6AA", borderRadius: "999px", padding: "8px 14px" }}>
+          <span style={{ alignSelf: "flex-start", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#927A6D", border: "1px dashed #D3B9A0", borderRadius: "999px", padding: "8px 14px" }}>
             {v.t("Pricing.usualWayFiguresArePlaceholdersTo")}
           </span>
         </div>
       </div>
-      <div data-screen-label="08 Every detail" style={{ background: "#E3DED5" }}>
+      <div data-screen-label="08 Every detail" style={{ background: "#EEE0D2" }}>
         {" "}
         <div style={{ padding: "130px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {"(06) "}
-              <span style={{ color: "#0A0A0A" }}>
+              <span style={{ color: "#17090A" }}>
                 {v.t("Pricing.everyDetail")}
               </span>
             </div>
             <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: ".98", letterSpacing: "-0.05em", fontWeight: "600" }}>
               {v.t("Pricing.whatSIn")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.t("Pricing.eachPlan")}
               </span>
             </h2>
           </div>
-          <div data-rv="0" style={{ overflowX: "auto", borderRadius: "24px", background: "#F4F1EC" }}>
+          <div data-rv="0" style={{ overflowX: "auto", borderRadius: "24px", background: "#FFEEDB" }}>
             {" "}
             <div className="pt-table" style={{ minWidth: "600px", display: "flex", flexDirection: "column", padding: "8px 28px 28px" }}>
-              <div style={{ position: "sticky", top: "0", display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", padding: "20px 0", borderBottom: "1px solid #0A0A0A", background: "#F4F1EC" }}>
-                <span style={{ position: "sticky", left: "0", alignSelf: "stretch", margin: "0 0 0 -28px", background: "#F4F1EC" }} />
+              <div style={{ position: "sticky", top: "0", display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", padding: "20px 0", borderBottom: "1px solid #17090A", background: "#FFEEDB" }}>
+                <span style={{ position: "sticky", left: "0", alignSelf: "stretch", margin: "0 0 0 -28px", background: "#FFEEDB" }} />
                 {(v.tHead ?? []).map((h, $index) => (<Fragment key={$index}>
                   <button onClick={h?.go} style={{ border: "none", cursor: "pointer", borderRadius: "14px", padding: "12px 10px", display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", background: `${h?.bg ?? ''}`, color: `${h?.fg ?? ''}`, transition: "background .3s" }}>
                     <span style={{ font: "600 16px var(--font-sans)" }}>
@@ -1266,18 +1266,18 @@ Logic.prototype.render = function render() {
                 {" "}
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <div style={{ position: "sticky", left: "0", alignSelf: "flex-start", display: "flex", alignItems: "center", gap: "12px", margin: "0 0 0 -28px", padding: "28px 0 10px 28px" }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#FF6A00" }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#F97316" }}>
                       {g?.t}
                     </span>
                     {g?.ph ? (<>
-                      <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".06em", textTransform: "uppercase", color: "#8C877E", border: "1px dashed #BDB6AA", borderRadius: "999px", padding: "4px 10px" }}>
+                      <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: ".06em", textTransform: "uppercase", color: "#927A6D", border: "1px dashed #D3B9A0", borderRadius: "999px", padding: "4px 10px" }}>
                         {v.t("Pricing.proposedToBeConfirmed")}
                       </span>
                     </>) : null}
                   </div>
                   {(g?.rows ?? []).map((r, $index) => (<Fragment key={$index}>
-                    <div style={{ display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", alignItems: "center", borderBottom: "1px solid #DCD5CA" }}>
-                      <span className="pt-label" style={{ position: "sticky", left: "0", zIndex: "1", alignSelf: "stretch", display: "flex", alignItems: "center", fontSize: "15px", margin: "0 0 0 -28px", padding: "14px 8px 14px 28px", background: "#F4F1EC" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: `${v.tCols ?? ''}`, gap: "8px", alignItems: "center", borderBottom: "1px solid #EDD9C4" }}>
+                      <span className="pt-label" style={{ position: "sticky", left: "0", zIndex: "1", alignSelf: "stretch", display: "flex", alignItems: "center", fontSize: "15px", margin: "0 0 0 -28px", padding: "14px 8px 14px 28px", background: "#FFEEDB" }}>
                         {r?.t}
                       </span>
                       {(r?.cells ?? []).map((c, $index) => (<Fragment key={$index}>
@@ -1297,34 +1297,34 @@ Logic.prototype.render = function render() {
       </div>
       <div data-screen-label="09 FAQ" style={{ padding: "130px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "56px", alignItems: "start" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px", position: "sticky", top: "110px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
             {"(07) "}
-            <span style={{ color: "#0A0A0A" }}>
+            <span style={{ color: "#17090A" }}>
               {v.t("Pricing.questions")}
             </span>
           </div>
           <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600" }}>
             {v.t("Pricing.the")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.t("Pricing.smallPrint")}
             </span>
             {" "}{v.t("Pricing.inPlainWords")}
           </h2>
         </div>
-        <div data-rv="0" style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
+        <div data-rv="0" style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #E6D0B9" }}>
           {(v.faqs ?? []).map((f, $index) => (<Fragment key={$index}>
             {" "}
-            <div style={{ borderBottom: "1px solid #D3CCC0" }}>
+            <div style={{ borderBottom: "1px solid #E6D0B9" }}>
               {" "}
-              <button onClick={f?.toggle} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", padding: "22px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", font: "500 19px var(--font-sans)", color: "#0A0A0A" }}>
+              <button onClick={f?.toggle} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", padding: "22px 0", background: "none", border: "none", cursor: "pointer", textAlign: "left", font: "500 19px var(--font-sans)", color: "#17090A" }}>
                 {f?.q}
-                <span style={{ fontSize: "22px", color: "#FF6A00" }}>
+                <span style={{ fontSize: "22px", color: "#F97316" }}>
                   {f?.sign}
                 </span>
               </button>
               {" "}
               {f?.open ? (<>
-                <p style={{ margin: "0 0 22px", fontSize: "16px", lineHeight: "1.6", color: "#3A3731", maxWidth: "620px" }}>
+                <p style={{ margin: "0 0 22px", fontSize: "16px", lineHeight: "1.6", color: "#3D2B27", maxWidth: "620px" }}>
                   {f?.a}
                 </p>
               </>) : null}
@@ -1334,7 +1334,7 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
-      <div data-screen-label="10 CTA" style={{ background: "#FF6A00", color: "#0A0A0A" }}>
+      <div data-screen-label="10 CTA" style={{ background: "#F97316", color: "#17090A" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
           <h2 data-rv="0" style={{ margin: "0", fontSize: "clamp(36px,4.9vw,79px)", lineHeight: ".95", letterSpacing: "-0.055em", fontWeight: "600", maxWidth: "1000px", textWrap: "balance" }}>
@@ -1344,10 +1344,10 @@ Logic.prototype.render = function render() {
             </span>
           </h2>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href={v.cta1H} target={v.cta1New ? "_blank" : undefined} rel={v.cta1New ? "noopener" : undefined} style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px" }} className="hv-b65372f">
+            <a href={v.cta1H} target={v.cta1New ? "_blank" : undefined} rel={v.cta1New ? "noopener" : undefined} style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "17px 28px", fontWeight: "600", fontSize: "15px" }} className="hv-b65372f">
               {v.cta1}
             </a>
-            <a href={v.cta2H} style={{ border: "1.5px solid #0A0A0A", borderRadius: "999px", padding: "17px 28px", fontWeight: "500", fontSize: "15px" }} className="hv-77a5803">
+            <a href={v.cta2H} style={{ border: "1.5px solid #17090A", borderRadius: "999px", padding: "17px 28px", fontWeight: "500", fontSize: "15px" }} className="hv-77a5803">
               {v.cta2}
             </a>
           </div>

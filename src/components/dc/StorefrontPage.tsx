@@ -37,8 +37,8 @@ class Logic extends DCLogic {
       layers: this.LAYERS.map((l, k) => ({
         n: '0' + (k + 1),
         t: l[0],
-        bg: k === s.layer ? '#0A0A0A' : 'transparent',
-        fg: k === s.layer ? '#F4F4F2' : '#3A3731',
+        bg: k === s.layer ? '#17090A' : 'transparent',
+        fg: k === s.layer ? '#FFF7ED' : '#3D2B27',
         go: () => this.setState({
           layer: k
         })
@@ -66,38 +66,38 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#ECE8E1;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#FFF7ED;color:#17090A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#F97316}" }} />
       <Nav active="build" />
       <div data-screen-label="Hero" style={{ padding: "140px clamp(20px,3vw,40px) 60px", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,460px),1fr))", gap: "40px", alignItems: "end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
               {v.t("Storefront.home")}{" "}
               <a href={v.href("/build")}>
                 {v.t("Storefront.build")}
               </a>
               {" / "}
-              <span style={{ color: "#0A0A0A" }}>
+              <span style={{ color: "#17090A" }}>
                 {v.t("Storefront.webShops")}
               </span>
               {" · 02.3"}
             </div>
             <h1 style={{ margin: "0", fontSize: "clamp(41px,5.4vw,85px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Storefront.aShopWindowThatNever")}{" "}
-              <span style={{ color: "#FF6A00" }}>
+              <span style={{ color: "#F97316" }}>
                 {v.t("Storefront.closes")}
               </span>
             </h1>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
-            <p style={{ margin: "0", fontSize: "19px", lineHeight: "1.5", color: "#3A3731", maxWidth: "480px", textWrap: "pretty" }}>
+            <p style={{ margin: "0", fontSize: "19px", lineHeight: "1.5", color: "#3D2B27", maxWidth: "480px", textWrap: "pretty" }}>
               {v.t("Storefront.websitesAndOnlineShopsOnEU")}
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
+              <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
                 {v.t("Storefront.startYourSite")}
               </a>
-              <a href="#sf-case" style={{ border: "1px solid #0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
+              <a href="#sf-case" style={{ border: "1px solid #17090A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
                 {v.t("Storefront.seeTICOriginals")}
               </a>
             </div>
@@ -107,12 +107,12 @@ Logic.prototype.render = function render() {
           {" "}
           {(v.windows ?? []).map((w, $index) => (<Fragment key={$index}>
             {" "}
-            <div onMouseEnter={w?.go} style={{ position: "absolute", left: `${w?.l ?? ''}`, top: `${w?.t ?? ''}`, width: `${w?.w ?? ''}`, height: `${w?.h ?? ''}`, borderRadius: "16px", overflow: "hidden", background: "#F7F5F1", boxShadow: `0 30px 70px rgba(10,10,10,${w?.sh ?? ''})`, zIndex: `${w?.z ?? ''}`, transform: `translateY(${w?.y ?? ''})`, transition: "transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s", display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", gap: "6px", alignItems: "center", padding: "10px 14px", background: "#E2DDD4", flexShrink: "0" }}>
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#C9C2B6" }} />
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#C9C2B6" }} />
-                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#C9C2B6" }} />
-                <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5A5650" }}>
+            <div onMouseEnter={w?.go} style={{ position: "absolute", left: `${w?.l ?? ''}`, top: `${w?.t ?? ''}`, width: `${w?.w ?? ''}`, height: `${w?.h ?? ''}`, borderRadius: "16px", overflow: "hidden", background: "#FFFCF7", boxShadow: `0 30px 70px rgba(23,9,10,${w?.sh ?? ''})`, zIndex: `${w?.z ?? ''}`, transform: `translateY(${w?.y ?? ''})`, transition: "transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", gap: "6px", alignItems: "center", padding: "10px 14px", background: "#F1E1CF", flexShrink: "0" }}>
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#DBC3AC" }} />
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#DBC3AC" }} />
+                <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#DBC3AC" }} />
+                <span style={{ marginLeft: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5E4A43" }}>
                   {w?.url}
                 </span>
               </div>
@@ -128,7 +128,7 @@ Logic.prototype.render = function render() {
       <div id="sf-case" data-screen-label="01 Case layers" style={{ padding: "100px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
               {v.t("Storefront.n01TakenApart")}
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
@@ -138,11 +138,11 @@ Logic.prototype.render = function render() {
               </span>
             </h2>
           </div>
-          <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3A3731", maxWidth: "480px" }}>
+          <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.55", color: "#3D2B27", maxWidth: "480px" }}>
             {v.t("Storefront.caseSummaryPlaceholderWhatTICOriginals")}
           </p>
         </div>
-        <div className="sf-tabs" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#DCD5CA", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
+        <div className="sf-tabs" style={{ display: "flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#EDD9C4", width: "max-content", maxWidth: "100%", flexWrap: "wrap" }}>
           {(v.layers ?? []).map((l, $index) => (<Fragment key={$index}>
             <button onClick={l?.go} style={{ border: "none", cursor: "pointer", borderRadius: "999px", padding: "10px 20px", font: "500 14px var(--font-sans)", background: `${l?.bg ?? ''}`, color: `${l?.fg ?? ''}` }}>
               {l?.n}{" · "}{l?.t}
@@ -150,37 +150,37 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "40px", alignItems: "center" }}>
-          <div style={{ aspectRatio: "16/10", borderRadius: "22px", overflow: "hidden", background: "#0B0B0C" }}>
+          <div style={{ aspectRatio: "16/10", borderRadius: "22px", overflow: "hidden", background: "#14080A" }}>
             {" "}
             {v.isSpec ? (<>
               {" "}
-              <div style={{ height: "100%", boxSizing: "border-box", padding: "32px", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "2", color: "#B8B3AA", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ height: "100%", boxSizing: "border-box", padding: "32px", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "2", color: "#CBB7A8", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {v.t("Storefront.site")}
                   </span>
                   {" ticoriginals.com"}
                 </span>
                 <span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {v.t("Storefront.pages")}
                   </span>
                   {" "}{v.t("Storefront.nShop")}
                 </span>
                 <span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {v.t("Storefront.payments")}
                   </span>
                   {" "}{v.t("Storefront.cardSEPAKlarna")}
                 </span>
                 <span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {v.t("Storefront.hosting")}
                   </span>
                   {" "}{v.t("Storefront.eUFrankfurtSSL")}
                 </span>
                 <span>
-                  <span style={{ color: "#FF9A50" }}>
+                  <span style={{ color: "#FDBA74" }}>
                     {v.t("Storefront.linked")}
                   </span>
                   {" "}{v.t("Storefront.ordersStockInvoice")}
@@ -199,13 +199,13 @@ Logic.prototype.render = function render() {
             {" "}
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
               {v.layerNum}{" / 03"}
             </span>
             <h3 style={{ margin: "0", fontSize: "clamp(28px,3vw,42px)", letterSpacing: "-0.035em", lineHeight: "1.05", fontWeight: "600" }}>
               {v.layerHead}
             </h3>
-            <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", color: "#3A3731" }}>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", color: "#3D2B27" }}>
               {v.layerBody}
             </p>
             <div style={{ display: "flex", gap: "32px", flexWrap: "wrap", paddingTop: "8px" }}>
@@ -213,7 +213,7 @@ Logic.prototype.render = function render() {
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
                   {"6"}
                 </b>
-                <span style={{ fontSize: "13px", color: "#5A5650" }}>
+                <span style={{ fontSize: "13px", color: "#5E4A43" }}>
                   {v.t("Storefront.paymentMethods")}
                 </span>
               </div>
@@ -221,7 +221,7 @@ Logic.prototype.render = function render() {
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
                   {"2"}
                 </b>
-                <span style={{ fontSize: "13px", color: "#5A5650" }}>
+                <span style={{ fontSize: "13px", color: "#5E4A43" }}>
                   {v.t("Storefront.languagesDeEn")}
                 </span>
               </div>
@@ -229,7 +229,7 @@ Logic.prototype.render = function render() {
                 <b style={{ fontSize: "32px", letterSpacing: "-0.03em" }}>
                   {"EU"}
                 </b>
-                <span style={{ fontSize: "13px", color: "#5A5650" }}>
+                <span style={{ fontSize: "13px", color: "#5E4A43" }}>
                   {v.t("Storefront.hostedInEU")}
                 </span>
               </div>
@@ -237,11 +237,11 @@ Logic.prototype.render = function render() {
           </div>
         </div>
       </div>
-      <div data-screen-label="02 Included" style={{ background: "#E3DED5" }}>
+      <div data-screen-label="02 Included" style={{ background: "#EEE0D2" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
               {v.t("Storefront.n02WhatSInIt")}
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
@@ -255,14 +255,14 @@ Logic.prototype.render = function render() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: "40px" }}>
             {(v.included ?? []).map((f, $index) => (<Fragment key={$index}>
               {" "}
-              <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #0A0A0A", paddingTop: "22px" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #17090A", paddingTop: "22px" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
                   {f?.n}
                 </span>
                 <span style={{ fontSize: "26px", fontWeight: "600", letterSpacing: "-0.03em" }}>
                   {f?.t}
                 </span>
-                <span style={{ fontSize: "15px", lineHeight: "1.55", color: "#3A3731" }}>
+                <span style={{ fontSize: "15px", lineHeight: "1.55", color: "#3D2B27" }}>
                   {f?.d}
                 </span>
               </div>
@@ -270,15 +270,15 @@ Logic.prototype.render = function render() {
             </Fragment>))}
           </div>
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center", paddingTop: "16px" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5A5650", marginRight: "8px" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".08em", textTransform: "uppercase", color: "#5E4A43", marginRight: "8px" }}>
               {v.t("Storefront.connected")}
             </span>
             {(v.chain ?? []).map((c, $index) => (<Fragment key={$index}>
               <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-                <span style={{ background: "#ECE8E1", borderRadius: "999px", padding: "8px 14px", fontSize: "14px" }}>
+                <span style={{ background: "#FFF7ED", borderRadius: "999px", padding: "8px 14px", fontSize: "14px" }}>
                   {c?.t}
                 </span>
-                <span style={{ color: "#FF6A00" }}>
+                <span style={{ color: "#F97316" }}>
                   {c?.a}
                 </span>
               </span>

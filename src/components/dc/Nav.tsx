@@ -54,8 +54,8 @@ class Logic extends DCLogic {
     const a = this.props.active ?? 'home',
       dark = this.props.dark ?? false,
       s = this.state;
-    const fg = dark ? '#F4F4F2' : '#0A0A0A',
-      muted = dark ? '#B8B3AA' : '#5A5650';
+    const fg = dark ? '#FFF7ED' : '#17090A',
+      muted = dark ? '#CBB7A8' : '#5E4A43';
     const heroMode = (this.props.heroCta ?? false) && s.w > 1120 && !s.sc;
     return {
       fg,
@@ -64,12 +64,12 @@ class Logic extends DCLogic {
       compact: s.sc,
       justify: heroMode ? 'flex-start' : 'space-between',
       topPe: heroMode ? 'none' : 'auto',
-      topBg: heroMode ? 'transparent' : dark ? 'linear-gradient(#0B0B0C,rgba(11,11,12,0))' : 'linear-gradient(#ECE8E1,rgba(236,232,225,0))',
-      pillBg: dark ? 'rgba(28,28,30,.6)' : 'rgba(255,255,255,.45)',
-      pillBd: dark ? 'rgba(255,255,255,.08)' : 'rgba(10,10,10,.08)',
-      cBg: dark ? 'rgba(20,20,22,.82)' : 'rgba(244,241,236,.86)',
-      ctaBg: dark ? '#F4F4F2' : '#0A0A0A',
-      ctaFg: dark ? '#0A0A0A' : '#F4F4F2',
+      topBg: heroMode ? 'transparent' : dark ? 'linear-gradient(#14080A,rgba(20,8,10,0))' : 'linear-gradient(#FFF7ED,rgba(255,247,237,0))',
+      pillBg: dark ? 'rgba(42,19,21,.6)' : 'rgba(255,255,255,.45)',
+      pillBd: dark ? 'rgba(255,255,255,.08)' : 'rgba(23,9,10,.08)',
+      cBg: dark ? 'rgba(36,16,17,.82)' : 'rgba(255,238,219,.86)',
+      ctaBg: dark ? '#FFF7ED' : '#17090A',
+      ctaFg: dark ? '#17090A' : '#FFF7ED',
       // On Life the CTA opens the web app; Life Private is booked from the pricing section.
       ctaHref: a === 'life' ? APP_URL : this.props.href("@cal"),
       ctaNew: a !== 'life',
@@ -82,15 +82,15 @@ class Logic extends DCLogic {
         return {
           t: p[1],
           href: p[2],
-          bg: on ? dark ? '#F4F4F2' : '#0A0A0A' : 'transparent',
-          c: on ? dark ? '#0A0A0A' : '#F4F4F2' : fg
+          bg: on ? dark ? '#FFF7ED' : '#17090A' : 'transparent',
+          c: on ? dark ? '#17090A' : '#FFF7ED' : fg
         };
       }),
       menu: this.PAGES.map((p, k) => ({
         n: String(k + 1).padStart(2, '0'),
         t: p[1],
         href: p[2],
-        c: p[0] === a ? '#FF6A00' : '#F4F4F2'
+        c: p[0] === a ? '#F97316' : '#FFF7ED'
       })),
       // Links vs. "Menü" is decided in CSS (.rn-wide / .rn-narrow in globals.css), so the
       // server render (w = 1400) doesn't flash the desktop links on phones before mount.
@@ -103,8 +103,8 @@ class Logic extends DCLogic {
         return {
           t: l.toUpperCase(),
           go: () => this.props.switchLocale(l),
-          bg: on ? dark ? '#F4F4F2' : '#0A0A0A' : 'transparent',
-          c: on ? dark ? '#0A0A0A' : '#F4F4F2' : fg
+          bg: on ? dark ? '#FFF7ED' : '#17090A' : 'transparent',
+          c: on ? dark ? '#17090A' : '#FFF7ED' : fg
         };
       }),
       langsMenu: ['de', 'en'].map(l => {
@@ -112,8 +112,8 @@ class Logic extends DCLogic {
         return {
           t: l.toUpperCase(),
           go: () => this.props.switchLocale(l),
-          bg: on ? '#F4F4F2' : 'transparent',
-          c: on ? '#0A0A0A' : '#B8B3AA'
+          bg: on ? '#FFF7ED' : 'transparent',
+          c: on ? '#17090A' : '#CBB7A8'
         };
       }),
       open: s.open,
@@ -157,7 +157,7 @@ Logic.prototype.render = function render() {
               </div>
               {v.showStatus ? (<>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: `${v.muted ?? ''}` }}>
-                  <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FF6A00" }} />
+                  <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#F97316" }} />
                   {v.t("RideffNav.takingOnSelectClients")}
                 </div>
               </>) : null}
@@ -204,7 +204,7 @@ Logic.prototype.render = function render() {
                   </button>
                 </Fragment>))}
               </div>
-              <a className="rn-cta2" href={v.ctaHref} target={v.ctaNew ? "_blank" : undefined} rel={v.ctaNew ? "noopener" : undefined} style={{ background: "#FF6A00", color: "#0A0A0A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
+              <a className="rn-cta2" href={v.ctaHref} target={v.ctaNew ? "_blank" : undefined} rel={v.ctaNew ? "noopener" : undefined} style={{ background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "11px 18px", fontSize: "12px", fontWeight: "700", letterSpacing: ".06em", textTransform: "uppercase", textDecoration: "none", marginLeft: "6px" }}>
                 {v.ctaT2}
               </a>
             </div>
@@ -214,10 +214,10 @@ Logic.prototype.render = function render() {
       </div>
       {v.open ? (<>
         {" "}
-        <div id="rn-menu" role="dialog" aria-modal="true" aria-label={v.t("RideffNav.menu")} data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#0B0B0C", color: "#F4F4F2", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
+        <div id="rn-menu" role="dialog" aria-modal="true" aria-label={v.t("RideffNav.menu")} data-lenis-prevent="1" style={{ position: "fixed", inset: "0", zIndex: "90", background: "#14080A", color: "#FFF7ED", display: "flex", flexDirection: "column", padding: "22px clamp(20px,3vw,40px) 32px", overflow: "auto", fontFamily: "var(--font-sans)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <img src={opt("/images/rideff-mark.png", 640)} alt="RIDEFF" style={{ height: "24px", width: "auto", display: "block" }} />
-            <button onClick={v.toggle} style={{ background: "none", border: "1px solid #3A3A3C", color: "#F4F4F2", borderRadius: "999px", padding: "10px 18px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
+            <button onClick={v.toggle} style={{ background: "none", border: "1px solid #4F2C2C", color: "#FFF7ED", borderRadius: "999px", padding: "10px 18px", font: "500 14px var(--font-sans)", cursor: "pointer" }}>
               {v.t("RideffNav.close")}
             </button>
           </div>
@@ -225,7 +225,7 @@ Logic.prototype.render = function render() {
             {(v.menu ?? []).map((m, $index) => (<Fragment key={$index}>
               {" "}
               <a href={m?.href} style={{ display: "flex", alignItems: "baseline", gap: "18px", fontSize: "clamp(32px,5vw,60px)", fontWeight: "600", letterSpacing: "-0.04em", lineHeight: "1.12", color: `${m?.c ?? ''}`, textDecoration: "none" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", fontWeight: "400", letterSpacing: ".06em", color: "#8C877E" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", fontWeight: "400", letterSpacing: ".06em", color: "#927A6D" }}>
                   {m?.n}
                 </span>
                 {m?.t}{" "}
@@ -233,14 +233,14 @@ Logic.prototype.render = function render() {
               {" "}
             </Fragment>))}
           </div>
-          <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontSize: "14px", color: "#B8B3AA" }}>
-            <a href="https://wa.me/4917632572420" style={{ color: "#B8B3AA", textDecoration: "none" }}>
+          <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", fontSize: "14px", color: "#CBB7A8" }}>
+            <a href="https://wa.me/4917632572420" style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffNav.whatsAppRialto")}
             </a>
-            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {v.t("RideffNav.book15Min")}
             </a>
-            <a href="mailto:hallo@rideff.com" style={{ color: "#B8B3AA", textDecoration: "none" }}>
+            <a href="mailto:hallo@rideff.com" style={{ color: "#CBB7A8", textDecoration: "none" }}>
               {"hallo@rideff.com"}
             </a>
             <span>
@@ -248,7 +248,7 @@ Logic.prototype.render = function render() {
             </span>
             <div style={{ display: "flex", gap: "6px" }}>
               {(v.langsMenu ?? []).map((g, $index) => (<Fragment key={$index}>
-                <button className="rn-lang" onClick={g?.go} style={{ border: "1px solid #3A3A3C", cursor: "pointer", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
+                <button className="rn-lang" onClick={g?.go} style={{ border: "1px solid #4F2C2C", cursor: "pointer", borderRadius: "999px", padding: "6px 12px", font: "500 12px var(--font-mono)", letterSpacing: ".06em", background: `${g?.bg ?? ''}`, color: `${g?.c ?? ''}` }}>
                   {g?.t}
                 </button>
               </Fragment>))}

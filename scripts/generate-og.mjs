@@ -9,10 +9,11 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import React from 'react';
 import { ImageResponse } from 'next/og.js';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const font = (p) => fs.readFileSync(path.join(root, 'node_modules/geist/dist/fonts', p));
 const fonts = [
   { name: 'Geist', data: font('geist-sans/Geist-SemiBold.ttf'), weight: 600, style: 'normal' },
@@ -27,7 +28,7 @@ for (const lang of ['de', 'en']) {
   const img = new ImageResponse(
     h(
       'div',
-      { style: { width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '64px 72px', background: '#ECE8E1', color: '#0A0A0A', fontFamily: 'Geist' } },
+      { style: { width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '64px 72px', background: '#FFF7ED', color: '#17090A', fontFamily: 'Geist' } },
       h('img', { src: mark, width: 96, height: 48 }),
       h(
         'div',
@@ -36,9 +37,9 @@ for (const lang of ['de', 'en']) {
           'div',
           { style: { display: 'flex', flexDirection: 'column', fontSize: 92, fontWeight: 600, letterSpacing: '-0.05em', lineHeight: 0.96 } },
           h('span', null, lines.join(' ')),
-          h('span', { style: { color: '#FF6A00' } }, m.keepsItRunning),
+          h('span', { style: { color: '#F97316' } }, m.keepsItRunning),
         ),
-        h('div', { style: { fontFamily: 'Geist Mono', fontSize: 22, letterSpacing: '0.08em', color: '#5A5650', textTransform: 'uppercase' } }, 'rideff.com · Eichstätt'),
+        h('div', { style: { fontFamily: 'Geist Mono', fontSize: 22, letterSpacing: '0.08em', color: '#5E4A43', textTransform: 'uppercase' } }, 'rideff.com · Eichstätt'),
       ),
     ),
     { width: 1200, height: 630, fonts },

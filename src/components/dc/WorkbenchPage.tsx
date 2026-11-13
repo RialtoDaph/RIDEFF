@@ -12,7 +12,7 @@ class Logic extends DCLogic {
     tab: 0,
     cyc: 0
   };
-  SCREENS = [[this.props.t("Workbench.today"), this.props.t("Workbench.everythingForThisShiftOnOne"), [[this.props.t("Workbench.morningShift"), '08:00 – 14:00', this.props.t("Workbench.now"), '#FF9A50'], [this.props.t("Workbench.openChecklist"), this.props.t("Workbench.n6Of9Done"), '67%', '#B8B3AA'], [this.props.t("Workbench.deliveryExpected"), '10:30', this.props.t("Workbench.soon"), '#B8B3AA'], [this.props.t("Workbench.teamMeeting"), this.props.t("Workbench.fri1500"), this.props.t("Workbench.fri"), '#B8B3AA'], [this.props.t("Workbench.messageFromRialto"), this.props.t("Workbench.newFeatureLive"), this.props.t("Workbench.new"), '#FF9A50']]], [this.props.t("Workbench.shifts"), this.props.t("Workbench.planSwapAndConfirmNoGroup"), [[this.props.t("Workbench.monLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.monJonas"), '14:00 – 20:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.tueMira"), this.props.t("Workbench.swapRequested"), this.props.t("Workbench.ask"), '#FF9A50'], [this.props.t("Workbench.wedLena"), '08:00 – 14:00', 'OK', '#B8B3AA'], [this.props.t("Workbench.thuOpen"), this.props.t("Workbench.needsCover"), this.props.t("Workbench.open"), '#FF9A50']]], [this.props.t("Workbench.tasks"), this.props.t("Workbench.checklistsWithPhotosAndNotesAttached"), [[this.props.t("Workbench.openUp"), 'Done by Lena · 07:58', '✓', '#FF9A50'], [this.props.t("Workbench.checkStock"), this.props.t("Workbench.doneByJonas"), '✓', '#FF9A50'], [this.props.t("Workbench.cleanStation2"), this.props.t("Workbench.photoAttached"), '✓', '#FF9A50'], [this.props.t("Workbench.orderSupplies"), 'Due 12:00', '–', '#B8B3AA'], [this.props.t("Workbench.closeDown"), 'Due 20:00', '–', '#B8B3AA']]], [this.props.t("Workbench.chat"), this.props.t("Workbench.oneThreadPerTopicNotOne"), [[this.props.t("Workbench.shiftSwapTue"), 'Mira: can anyone take it?', '2', '#FF9A50'], [this.props.t("Workbench.delivery"), 'Jonas: arrived, all good', '', '#B8B3AA'], [this.props.t("Workbench.newMenu"), this.props.t("Workbench.photosUploaded"), '5', '#FF9A50'], [this.props.t("Workbench.holidayPlan"), 'Lena: August?', '', '#B8B3AA'], [this.props.t("Workbench.general"), this.props.t("Workbench.haveAGoodWeekend"), '', '#B8B3AA']]]];
+  SCREENS = [[this.props.t("Workbench.today"), this.props.t("Workbench.everythingForThisShiftOnOne"), [[this.props.t("Workbench.morningShift"), '08:00 – 14:00', this.props.t("Workbench.now"), '#FDBA74'], [this.props.t("Workbench.openChecklist"), this.props.t("Workbench.n6Of9Done"), '67%', '#CBB7A8'], [this.props.t("Workbench.deliveryExpected"), '10:30', this.props.t("Workbench.soon"), '#CBB7A8'], [this.props.t("Workbench.teamMeeting"), this.props.t("Workbench.fri1500"), this.props.t("Workbench.fri"), '#CBB7A8'], [this.props.t("Workbench.messageFromRialto"), this.props.t("Workbench.newFeatureLive"), this.props.t("Workbench.new"), '#FDBA74']]], [this.props.t("Workbench.shifts"), this.props.t("Workbench.planSwapAndConfirmNoGroup"), [[this.props.t("Workbench.monLena"), '08:00 – 14:00', 'OK', '#CBB7A8'], [this.props.t("Workbench.monJonas"), '14:00 – 20:00', 'OK', '#CBB7A8'], [this.props.t("Workbench.tueMira"), this.props.t("Workbench.swapRequested"), this.props.t("Workbench.ask"), '#FDBA74'], [this.props.t("Workbench.wedLena"), '08:00 – 14:00', 'OK', '#CBB7A8'], [this.props.t("Workbench.thuOpen"), this.props.t("Workbench.needsCover"), this.props.t("Workbench.open"), '#FDBA74']]], [this.props.t("Workbench.tasks"), this.props.t("Workbench.checklistsWithPhotosAndNotesAttached"), [[this.props.t("Workbench.openUp"), 'Done by Lena · 07:58', '✓', '#FDBA74'], [this.props.t("Workbench.checkStock"), this.props.t("Workbench.doneByJonas"), '✓', '#FDBA74'], [this.props.t("Workbench.cleanStation2"), this.props.t("Workbench.photoAttached"), '✓', '#FDBA74'], [this.props.t("Workbench.orderSupplies"), 'Due 12:00', '–', '#CBB7A8'], [this.props.t("Workbench.closeDown"), 'Due 20:00', '–', '#CBB7A8']]], [this.props.t("Workbench.chat"), this.props.t("Workbench.oneThreadPerTopicNotOne"), [[this.props.t("Workbench.shiftSwapTue"), 'Mira: can anyone take it?', '2', '#FDBA74'], [this.props.t("Workbench.delivery"), 'Jonas: arrived, all good', '', '#CBB7A8'], [this.props.t("Workbench.newMenu"), this.props.t("Workbench.photosUploaded"), '5', '#FDBA74'], [this.props.t("Workbench.holidayPlan"), 'Lena: August?', '', '#CBB7A8'], [this.props.t("Workbench.general"), this.props.t("Workbench.haveAGoodWeekend"), '', '#CBB7A8']]]];
   NOTES = [[this.props.t("Workbench.shift"), this.props.t("Workbench.miraSwappedTueThu")], [this.props.t("Workbench.tasks"), this.props.t("Workbench.n3Of4OpeningTasksDone")], [this.props.t("Workbench.checkIn"), this.props.t("Workbench.jonasCheckedIn")], [this.props.t("Workbench.chat"), this.props.t("Workbench.newPhotoInDelivery")]];
   componentDidMount() {
     this.t = setInterval(() => this.setState(s => ({
@@ -30,8 +30,8 @@ class Logic extends DCLogic {
       notes: notes.map((n, k) => ({
         k: n[0],
         t: n[1],
-        bg: k === 0 ? '#FF6A00' : '#1C1C1E',
-        fg: k === 0 ? '#0A0A0A' : '#F4F4F2',
+        bg: k === 0 ? '#F97316' : '#2A1315',
+        fg: k === 0 ? '#17090A' : '#FFF7ED',
         delay: k * 80 + 'ms',
         key: s.cyc + '-' + k
       })),
@@ -72,35 +72,35 @@ Logic.prototype.render = function render() {
   const v = { ...this.props, ...this.renderVals() };
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#E4DED4;color:#0A0A0A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#FF6A00}@keyframes rdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}" }} />
+      <style dangerouslySetInnerHTML={{ __html: "body{margin:0;background:#EEE0D2;color:#17090A;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:#F97316}@keyframes rdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}" }} />
       <Nav active="build" />
       <div data-screen-label="Hero" style={{ padding: "140px clamp(20px,3vw,40px) 80px", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,460px),1fr))", gap: "56px", alignItems: "center" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "26px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5A5650" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: ".1em", textTransform: "uppercase", color: "#5E4A43" }}>
             {v.t("Workbench.home")}{" "}
             <a href={v.href("/build")}>
               {v.t("Workbench.build")}
             </a>
             {" / "}
-            <span style={{ color: "#0A0A0A" }}>
+            <span style={{ color: "#17090A" }}>
               {v.t("Workbench.teamApps")}
             </span>
             {" · 02.2"}
           </div>
           <h1 style={{ margin: "0", fontSize: "clamp(41px,5.2vw,82px)", lineHeight: ".94", letterSpacing: "-0.05em", fontWeight: "600", textWrap: "balance" }}>
             {v.t("Workbench.teamAppsBuiltAroundHowYour")}{" "}
-            <span style={{ color: "#FF6A00" }}>
+            <span style={{ color: "#F97316" }}>
               {v.t("Workbench.works")}
             </span>
           </h1>
-          <p style={{ margin: "0", maxWidth: "480px", fontSize: "19px", lineHeight: "1.5", color: "#3A3731", textWrap: "pretty" }}>
+          <p style={{ margin: "0", maxWidth: "480px", fontSize: "19px", lineHeight: "1.5", color: "#3D2B27", textWrap: "pretty" }}>
             {v.t("Workbench.shiftsTasksChecklistsAndChatIn")}
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#0A0A0A", color: "#F4F4F2", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
+            <a href={v.href("@cal")} target="_blank" rel="noopener" style={{ background: "#17090A", color: "#FFF7ED", borderRadius: "999px", padding: "15px 24px", fontWeight: "600", fontSize: "15px" }}>
               {v.t("Workbench.bringYourTeamSChaos")}
             </a>
-            <a href="#wb-inside" style={{ border: "1px solid #0A0A0A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
+            <a href="#wb-inside" style={{ border: "1px solid #17090A", borderRadius: "999px", padding: "15px 24px", fontWeight: "500", fontSize: "15px" }}>
               {v.t("Workbench.seeInsideTheApp")}
             </a>
           </div>
@@ -109,7 +109,7 @@ Logic.prototype.render = function render() {
               <b style={{ fontSize: "28px", letterSpacing: "-0.03em" }}>
                 {"1"}
               </b>
-              <span style={{ fontSize: "14px", color: "#5A5650" }}>
+              <span style={{ fontSize: "14px", color: "#5E4A43" }}>
                 {v.t("Workbench.appWholeTeam")}
               </span>
             </div>
@@ -117,7 +117,7 @@ Logic.prototype.render = function render() {
               <b style={{ fontSize: "28px", letterSpacing: "-0.03em" }}>
                 {"iOS"}
               </b>
-              <span style={{ fontSize: "14px", color: "#5A5650" }}>
+              <span style={{ fontSize: "14px", color: "#5E4A43" }}>
                 {v.t("Workbench.androidWeb")}
               </span>
             </div>
@@ -125,7 +125,7 @@ Logic.prototype.render = function render() {
               <b style={{ fontSize: "28px", letterSpacing: "-0.03em" }}>
                 {"Growth"}
               </b>
-              <span style={{ fontSize: "14px", color: "#5A5650" }}>
+              <span style={{ fontSize: "14px", color: "#5E4A43" }}>
                 {v.t("Workbench.includedFrom")}
               </span>
             </div>
@@ -135,16 +135,16 @@ Logic.prototype.render = function render() {
           <div style={{ position: "absolute", inset: "0", borderRadius: "28px", overflow: "hidden", opacity: ".9" }}>
             <ImageSlot src={opt("/images/site-cafe.jpg")} alt={v.t("Workbench.teamAtWorkPhoto")} shape="rounded" radius={28} />
           </div>
-          <div style={{ position: "relative", width: "290px", height: "580px", borderRadius: "44px", background: "#0A0A0A", padding: "14px", boxSizing: "border-box", boxShadow: "0 40px 80px rgba(10,10,10,.3)", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "8px 14px 4px", color: "#F4F4F2", fontSize: "12px", fontWeight: "600" }}>
+          <div style={{ position: "relative", width: "290px", height: "580px", borderRadius: "44px", background: "#17090A", padding: "14px", boxSizing: "border-box", boxShadow: "0 40px 80px rgba(23,9,10,.3)", display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "8px 14px 4px", color: "#FFF7ED", fontSize: "12px", fontWeight: "600" }}>
               <span>
                 {"08:02"}
               </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "#8C877E" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "#927A6D" }}>
                 {"RIDEFF TEAM"}
               </span>
             </div>
-            <div style={{ padding: "6px 12px 10px", color: "#F4F4F2", fontSize: "24px", fontWeight: "600", letterSpacing: "-0.02em" }}>
+            <div style={{ padding: "6px 12px 10px", color: "#FFF7ED", fontSize: "24px", fontWeight: "600", letterSpacing: "-0.02em" }}>
               {v.t("Workbench.goodMorningLena")}
             </div>
             {(v.notes ?? []).map((n, $index) => (<Fragment key={$index}>
@@ -164,7 +164,7 @@ Logic.prototype.render = function render() {
       </div>
       <div data-screen-label="01 What it does" style={{ padding: "100px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "56px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
             {v.t("Workbench.n01WhatItDoes")}
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
@@ -177,14 +177,14 @@ Logic.prototype.render = function render() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: "40px" }}>
           {(v.features ?? []).map((f, $index) => (<Fragment key={$index}>
             {" "}
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #0A0A0A", paddingTop: "22px" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5A5650" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid #17090A", paddingTop: "22px" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#5E4A43" }}>
                 {f?.n}
               </span>
               <span style={{ fontSize: "28px", fontWeight: "600", letterSpacing: "-0.03em" }}>
                 {f?.t}
               </span>
-              <span style={{ fontSize: "15px", lineHeight: "1.55", color: "#3A3731" }}>
+              <span style={{ fontSize: "15px", lineHeight: "1.55", color: "#3D2B27" }}>
                 {f?.d}
               </span>
             </div>
@@ -192,28 +192,28 @@ Logic.prototype.render = function render() {
           </Fragment>))}
         </div>
       </div>
-      <div id="wb-inside" data-screen-label="02 Inside" style={{ background: "#ECE8E1" }}>
+      <div id="wb-inside" data-screen-label="02 Inside" style={{ background: "#FFF7ED" }}>
         {" "}
         <div style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "64px", alignItems: "center" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
               {v.t("Workbench.n02InsideTheApp")}
             </div>
             <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", textWrap: "balance" }}>
               {v.t("Workbench.tapThroughIt")}
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #D3CCC0" }}>
+            <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid #E6D0B9" }}>
               {(v.tabs ?? []).map((t, $index) => (<Fragment key={$index}>
                 {" "}
-                <button onClick={t?.go} style={{ display: "grid", gridTemplateColumns: "40px minmax(0,1fr)", gap: "16px", textAlign: "left", padding: "20px 0", background: "none", border: "none", borderBottom: "1px solid #D3CCC0", cursor: "pointer", fontFamily: "var(--font-sans)", color: "#0A0A0A", opacity: `${t?.op ?? ''}` }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00", paddingTop: "6px" }}>
+                <button onClick={t?.go} style={{ display: "grid", gridTemplateColumns: "40px minmax(0,1fr)", gap: "16px", textAlign: "left", padding: "20px 0", background: "none", border: "none", borderBottom: "1px solid #E6D0B9", cursor: "pointer", fontFamily: "var(--font-sans)", color: "#17090A", opacity: `${t?.op ?? ''}` }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316", paddingTop: "6px" }}>
                     {t?.n}
                   </span>
                   <span style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <span style={{ fontSize: "22px", fontWeight: "600", letterSpacing: "-0.02em" }}>
                       {t?.t}
                     </span>
-                    <span style={{ fontSize: "15px", color: "#3A3731" }}>
+                    <span style={{ fontSize: "15px", color: "#3D2B27" }}>
                       {t?.d}
                     </span>
                   </span>
@@ -223,18 +223,18 @@ Logic.prototype.render = function render() {
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: "300px", height: "600px", borderRadius: "46px", background: "#0A0A0A", padding: "14px", boxSizing: "border-box", boxShadow: "0 40px 80px rgba(10,10,10,.22)", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ padding: "10px 12px 6px", color: "#F4F4F2", fontSize: "22px", fontWeight: "600", letterSpacing: "-0.02em" }}>
+            <div style={{ width: "300px", height: "600px", borderRadius: "46px", background: "#17090A", padding: "14px", boxSizing: "border-box", boxShadow: "0 40px 80px rgba(23,9,10,.22)", display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ padding: "10px 12px 6px", color: "#FFF7ED", fontSize: "22px", fontWeight: "600", letterSpacing: "-0.02em" }}>
                 {v.screenTitle}
               </div>
               {(v.screenRows ?? []).map((r, $index) => (<Fragment key={$index}>
                 {" "}
-                <div style={{ background: "#1C1C1E", borderRadius: "14px", padding: "13px 14px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px", color: "#F4F4F2", animation: "rdIn .4s both", animationDelay: `${r?.delay ?? ''}` }}>
+                <div style={{ background: "#2A1315", borderRadius: "14px", padding: "13px 14px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px", color: "#FFF7ED", animation: "rdIn .4s both", animationDelay: `${r?.delay ?? ''}` }}>
                   <span style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                     <span style={{ fontSize: "14px", fontWeight: "500" }}>
                       {r?.a}
                     </span>
-                    <span style={{ fontSize: "12px", color: "#8C877E" }}>
+                    <span style={{ fontSize: "12px", color: "#927A6D" }}>
                       {r?.b}
                     </span>
                   </span>
@@ -250,7 +250,7 @@ Logic.prototype.render = function render() {
       </div>
       <div data-screen-label="03 Who" style={{ padding: "120px clamp(20px,3vw,40px)", maxWidth: "1480px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FF6A00" }}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "#F97316" }}>
             {v.t("Workbench.n03MadeFor")}
           </div>
           <h2 style={{ margin: "0", fontSize: "clamp(31px,3.8vw,56px)", lineHeight: "1", letterSpacing: "-0.045em", fontWeight: "600", maxWidth: "900px", textWrap: "balance" }}>
@@ -267,7 +267,7 @@ Logic.prototype.render = function render() {
               <span style={{ fontSize: "20px", fontWeight: "600", letterSpacing: "-0.02em" }}>
                 {w?.t}
               </span>
-              <span style={{ fontSize: "14px", color: "#3A3731", lineHeight: "1.5" }}>
+              <span style={{ fontSize: "14px", color: "#3D2B27", lineHeight: "1.5" }}>
                 {w?.d}
               </span>
             </div>

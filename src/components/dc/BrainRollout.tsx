@@ -4,7 +4,7 @@ import { startAreaEvent } from '@/lib/analytics';
 
 // Same six colors as the particle field in the Build hero. `level` follows the area picker on the pricing page.
 const AREAS = [
-  { name: 'Build.mapCustomers', color: '#FF9E47', level: 0 },
+  { name: 'Build.mapCustomers', color: '#FB923C', level: 0 },
   { name: 'Build.mapSales', color: '#61CC80', level: 1 },
   { name: 'Build.mapTeam', color: '#54B0E6', level: 1 },
   { name: 'Build.mapOperations', color: '#9E8CF2', level: 1 },
@@ -64,39 +64,39 @@ const glow = (color: string) => {
 const ease = (x: number) => x * x * (3 - 2 * x);
 
 const CSS = `
-.bt-panel{position:relative;border:1px solid #232325;border-radius:22px;background:#0C0C0D;overflow:hidden}
-.bt-panel::before{content:"";position:absolute;left:50%;top:0;width:min(1100px,130%);height:440px;transform:translateX(-50%);background:radial-gradient(closest-side at 32% 50%,rgba(84,176,230,.12),transparent),radial-gradient(closest-side at 68% 45%,rgba(158,140,242,.12),transparent),radial-gradient(closest-side at 50% 72%,rgba(255,158,71,.1),transparent);filter:blur(34px);pointer-events:none;animation:btAurora 24s ease-in-out infinite alternate}
+.bt-panel{position:relative;border:1px solid #341919;border-radius:22px;background:#190B0B;overflow:hidden}
+.bt-panel::before{content:"";position:absolute;left:50%;top:0;width:min(1100px,130%);height:440px;transform:translateX(-50%);background:radial-gradient(closest-side at 32% 50%,rgba(84,176,230,.12),transparent),radial-gradient(closest-side at 68% 45%,rgba(158,140,242,.12),transparent),radial-gradient(closest-side at 50% 72%,rgba(251,146,60,.1),transparent);filter:blur(34px);pointer-events:none;animation:btAurora 24s ease-in-out infinite alternate}
 .bt-tree{position:relative;padding:clamp(30px,3.8vw,52px) clamp(14px,2.4vw,32px) clamp(26px,3vw,40px)}
 .bt-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.bt-brain{position:relative;display:flex;align-items:center;justify-content:center;width:88px;height:88px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 50% 35%,#231C16,#101011 72%);color:#F4F4F2;font-size:30px;animation:btBreath 7s ease-in-out infinite}
-.bt-brain::before{content:"";position:absolute;inset:-2px;border-radius:50%;padding:2px;background:conic-gradient(#FF9E47,#61CC80,#54B0E6,#9E8CF2,#E0B842,#EB7AAB,#FF9E47);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:btSpin 26s linear infinite}
+.bt-brain{position:relative;display:flex;align-items:center;justify-content:center;width:88px;height:88px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 50% 35%,#2E1516,#1e0d0e 72%);color:#FFF7ED;font-size:30px;animation:btBreath 7s ease-in-out infinite}
+.bt-brain::before{content:"";position:absolute;inset:-2px;border-radius:50%;padding:2px;background:conic-gradient(#FB923C,#61CC80,#54B0E6,#9E8CF2,#E0B842,#EB7AAB,#FB923C);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:btSpin 26s linear infinite}
 .bt-brain>b{position:absolute;left:calc(100% + 24px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:17px;font-weight:500;letter-spacing:-0.02em}
 .bt-grid{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:64px}
-.bt-area{--soft:color-mix(in srgb,var(--c) 55%,transparent);display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;padding:0;border:none;background:none;cursor:pointer;font:500 16px var(--font-sans);letter-spacing:-0.02em;color:#6B675F;transition:color .9s}
-.bt-node{display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;border:1.5px solid #3A3A3C;background:#0E0E0F;color:#4A4A4C;font-size:20px;transition:border-color .9s,color .9s,box-shadow .9s,transform .5s}
+.bt-area{--soft:color-mix(in srgb,var(--c) 55%,transparent);display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;padding:0;border:none;background:none;cursor:pointer;font:500 16px var(--font-sans);letter-spacing:-0.02em;color:#78625A;transition:color .9s}
+.bt-node{display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;border:1.5px solid #4F2C2C;background:#1B0C0D;color:#67393B;font-size:20px;transition:border-color .9s,color .9s,box-shadow .9s,transform .5s}
 .bt-area:hover .bt-node{transform:translateY(-3px);border-color:var(--c)}
 .bt-area:focus-visible{outline:none}
-.bt-area:focus-visible .bt-node{outline:2px solid #F4F4F2;outline-offset:3px}
-.bt-area[data-state="in"]{color:#B8B3AA}
+.bt-area:focus-visible .bt-node{outline:2px solid #FFF7ED;outline-offset:3px}
+.bt-area[data-state="in"]{color:#CBB7A8}
 .bt-area[data-state="in"] .bt-node{border-color:var(--soft);color:var(--soft)}
-.bt-area[data-state="on"]{color:#F4F4F2}
+.bt-area[data-state="on"]{color:#FFF7ED}
 .bt-area[data-state="on"] .bt-node{border-color:var(--c);color:var(--c);box-shadow:0 0 34px color-mix(in srgb,var(--c) 34%,transparent),inset 0 0 18px color-mix(in srgb,var(--c) 16%,transparent)}
-.bt-detail{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);border-top:1px solid #1C1C1E}
+.bt-detail{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);border-top:1px solid #2A1315}
 .bt-tasks,.bt-plan{display:flex;flex-direction:column;gap:14px;min-width:0;padding:clamp(18px,2.2vw,28px) clamp(16px,2.4vw,32px);animation:btIn .9s ease both}
-.bt-plan{border-left:1px solid #1C1C1E}
-.bt-kicker{font:400 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#8C877E}
+.bt-plan{border-left:1px solid #2A1315}
+.bt-kicker{font:400 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#927A6D}
 .bt-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.bt-task{display:flex;align-items:center;box-sizing:border-box;min-height:56px;padding:10px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:color-mix(in srgb,var(--c) 9%,#0E0E0F);font-size:14px;line-height:1.25;color:#F4F4F2;animation:btIn .9s ease both}
+.bt-task{display:flex;align-items:center;box-sizing:border-box;min-height:56px;padding:10px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:color-mix(in srgb,var(--c) 9%,#1B0C0D);font-size:14px;line-height:1.25;color:#FFF7ED;animation:btIn .9s ease both}
 .bt-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
 .bt-actions a{border-radius:999px;padding:12px 20px;font:600 14px var(--font-sans);white-space:nowrap}
 @keyframes btSpin{to{transform:rotate(360deg)}}
-@keyframes btBreath{50%{box-shadow:0 0 0 14px rgba(244,233,220,.035),0 0 70px rgba(158,140,242,.26),0 0 100px rgba(255,158,71,.18)}}
+@keyframes btBreath{50%{box-shadow:0 0 0 14px rgba(244,233,220,.035),0 0 70px rgba(158,140,242,.26),0 0 100px rgba(251,146,60,.18)}}
 @keyframes btAurora{from{transform:translateX(-53%) scale(1)}to{transform:translateX(-47%) scale(1.1)}}
 @keyframes btIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (max-width:1099px){
   .bt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px;margin-top:56px}
   .bt-detail{grid-template-columns:minmax(0,1fr)}
-  .bt-plan{border-left:none;border-top:1px solid #1C1C1E}
+  .bt-plan{border-left:none;border-top:1px solid #2A1315}
 }
 @media (max-width:560px){
   .bt-list{grid-template-columns:minmax(0,1fr)}
@@ -188,7 +188,7 @@ export default function BrainRollout({ t, contactHref, pricingHref }: { t: (key:
       ctx.globalCompositeOperation = 'source-over';
       ctx.globalAlpha = 1;
       ctx.lineWidth = 1;
-      ctx.strokeStyle = '#2E2E30';
+      ctx.strokeStyle = '#462324';
       paths.forEach((p) => trace(ctx, p, 0, p.total));
       paths.forEach((p, k) => {
         const target = live[k] ? 1 : 0;
@@ -261,16 +261,16 @@ export default function BrainRollout({ t, contactHref, pricingHref }: { t: (key:
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,440px),1fr))', gap: '40px', alignItems: 'end' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '.1em', textTransform: 'uppercase', color: '#8C877E' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '.1em', textTransform: 'uppercase', color: '#927A6D' }}>
             {'(06) '}
-            <span style={{ color: '#F4F4F2' }}>{t('Build.mapLabel')}</span>
+            <span style={{ color: '#FFF7ED' }}>{t('Build.mapLabel')}</span>
           </div>
           <h2 style={{ margin: '0', fontSize: 'clamp(31px,3.8vw,56px)', lineHeight: '1', letterSpacing: '-0.045em', fontWeight: '600', textWrap: 'balance' }}>
             {t('Build.mapHeadline')}{' '}
-            <span style={{ color: '#FF6A00' }}>{t('Build.mapHeadlineAccent')}</span>
+            <span style={{ color: '#F97316' }}>{t('Build.mapHeadlineAccent')}</span>
           </h2>
         </div>
-        <p style={{ margin: '0', fontSize: '17px', lineHeight: '1.55', color: '#B8B3AA', maxWidth: '520px' }}>{t('Build.mapBody')}</p>
+        <p style={{ margin: '0', fontSize: '17px', lineHeight: '1.55', color: '#CBB7A8', maxWidth: '520px' }}>{t('Build.mapBody')}</p>
       </div>
       <div ref={panelRef} className="bt-panel">
         <div ref={treeRef} className="bt-tree">
@@ -290,7 +290,7 @@ export default function BrainRollout({ t, contactHref, pricingHref }: { t: (key:
         </div>
         <div className="bt-detail" aria-live="polite">
           {plan < 0 ? (
-            <div className="bt-tasks"><span style={{ fontSize: '16px', color: '#B8B3AA' }}>{t('Build.mapPickPrompt')}</span></div>
+            <div className="bt-tasks"><span style={{ fontSize: '16px', color: '#CBB7A8' }}>{t('Build.mapPickPrompt')}</span></div>
           ) : (
             <>
               <div key={focus} className="bt-tasks" style={{ '--c': AREAS[focus].color } as CSSProperties}>
@@ -307,12 +307,12 @@ export default function BrainRollout({ t, contactHref, pricingHref }: { t: (key:
                 <span className="bt-kicker">{t('Build.mapStartWith')}</span>
                 <span style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <b style={{ fontSize: '26px', fontWeight: '600', letterSpacing: '-0.03em' }}>{PLANS[plan].name.startsWith('Build.') ? t(PLANS[plan].name) : PLANS[plan].name}</b>
-                  <span style={{ fontSize: '14px', color: '#B8B3AA' }}>{t(PLANS[plan].price)}</span>
-                  <span style={{ fontSize: '12px', lineHeight: '1.4', color: '#8C877E' }}>{t('Build.mapIllustrative')}</span>
+                  <span style={{ fontSize: '14px', color: '#CBB7A8' }}>{t(PLANS[plan].price)}</span>
+                  <span style={{ fontSize: '12px', lineHeight: '1.4', color: '#927A6D' }}>{t('Build.mapIllustrative')}</span>
                 </span>
                 <div className="bt-actions">
-                  <a href={contactHref} style={{ background: '#FF6A00', color: '#0A0A0A' }}>{t('Build.mapCta')}</a>
-                  <a href={pricingHref} style={{ border: '1px solid #3A3A3C', color: '#F4F4F2', fontWeight: '500' }}>{t('Build.mapPrices')}</a>
+                  <a href={contactHref} style={{ background: '#F97316', color: '#17090A' }}>{t('Build.mapCta')}</a>
+                  <a href={pricingHref} style={{ border: '1px solid #4F2C2C', color: '#FFF7ED', fontWeight: '500' }}>{t('Build.mapPrices')}</a>
                 </div>
               </div>
             </>
