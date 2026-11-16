@@ -49,15 +49,15 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
 .back .wm{position:absolute;right:calc(-14 * var(--mm));bottom:calc(-14 * var(--mm));width:calc(52 * var(--mm));aspect-ratio:665/332;background:var(--peach);-webkit-mask:url('{MARKURL}') center/contain no-repeat;mask:url('{MARKURL}') center/contain no-repeat}
-.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(25 * var(--mm))}
-.back .sig{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(17 * var(--mm));height:auto;display:block}
+.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(23 * var(--mm))}
+.back .sig{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(15 * var(--mm));height:auto;display:block}
 .back .line{position:absolute;left:calc(7 * var(--mm));top:calc(23 * var(--mm));font-size:calc(3.3 * var(--mm));font-weight:500;letter-spacing:-.005em;color:var(--muted);white-space:nowrap}
 .back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
-.back h3{margin:0;font-weight:600;font-size:calc(5.4 * var(--mm));white-space:nowrap;letter-spacing:-.02em;line-height:1.05}
+.back h3{margin:0;font-weight:600;font-size:calc(5.8 * var(--mm));white-space:nowrap;letter-spacing:-.02em;line-height:1.05}
 .back .role{margin-top:calc(1.8 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
-.back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(19 * var(--mm)) 1fr;row-gap:calc(1.9 * var(--mm));align-items:baseline}
+.back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(19 * var(--mm)) 1fr;row-gap:calc(2.6 * var(--mm));align-items:baseline}
 .back dt{font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#927a6d}
-.back dd{margin:0;font-size:calc(3.5 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
+.back dd{margin:0;font-size:calc(4 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
 .back .call{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));background:var(--peach);color:var(--burgundy);border-radius:calc(1.2 * var(--mm));padding:calc(1.5 * var(--mm)) calc(2.4 * var(--mm));font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.1em;text-transform:uppercase;line-height:1.4;text-align:right}
 .back .call b{display:block;font-weight:600;color:var(--orange-ink)}
 """
