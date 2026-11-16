@@ -64,7 +64,7 @@ def card(side, bleed=False):
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
 <div class="tag"><h2>Your business<br>gets a <em>brain.</em></h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
     else:
-        inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator · DE EN ID</div></div>
+        inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
     return f'<div class="{cls}">{inner}</div>'
 
