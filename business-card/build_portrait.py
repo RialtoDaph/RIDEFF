@@ -15,12 +15,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .pc.pf{background:var(--night);color:var(--paper)}
 .pc.pb{background:var(--paper);color:var(--ink)}
 .glow{right:calc(-30 * var(--mm));top:calc(-24 * var(--mm));width:calc(72 * var(--mm));height:calc(72 * var(--mm));border-radius:50%;background:radial-gradient(circle,rgba(127,29,29,.75),rgba(127,29,29,0) 68%)}
-.logo{left:calc(6 * var(--mm));top:calc(6 * var(--mm));height:calc(12 * var(--mm));width:auto;display:block}
-.hl{left:calc(6 * var(--mm));right:calc(6 * var(--mm));top:calc(28 * var(--mm))}
+.logo{left:50%;transform:translateX(-50%);top:calc(7 * var(--mm));height:calc(11 * var(--mm));width:auto;display:block}
+.hl{left:0;right:0;top:calc(24.5 * var(--mm));text-align:center}
 .hl h2{margin:0;font-weight:400;font-size:calc(3.9 * var(--mm));line-height:1.2;white-space:nowrap;color:#cbb7a8;letter-spacing:-.02em}
-.hl h2 b{display:block;margin-top:calc(1.5 * var(--mm));font-weight:600;font-size:calc(7.5 * var(--mm));line-height:1.05;letter-spacing:-.025em;background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{left:calc(6 * var(--mm));bottom:calc(6 * var(--mm));font-family:var(--mono);text-transform:uppercase;font-size:calc(2.2 * var(--mm));letter-spacing:.12em;line-height:1.7;color:#cbb7a8}
-.qrt{right:calc(6 * var(--mm));bottom:calc(6 * var(--mm));width:calc(21 * var(--mm));height:calc(21 * var(--mm));background:var(--paper);border-radius:calc(1.4 * var(--mm));padding:calc(1.6 * var(--mm))}
+.hl h2 b{display:block;margin-top:calc(1.5 * var(--mm));font-weight:600;font-size:calc(7.2 * var(--mm));line-height:1.05;letter-spacing:-.025em;background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{left:0;right:0;bottom:calc(8 * var(--mm));text-align:center;font-family:var(--mono);text-transform:uppercase;font-size:calc(2.2 * var(--mm));letter-spacing:.18em;line-height:1.2;color:#cbb7a8;white-space:nowrap}
+.sub .d{color:#f97316;margin:0 .35em}
+.qrt{left:50%;transform:translateX(-50%);bottom:calc(15 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);border-radius:calc(1.4 * var(--mm));padding:calc(1.5 * var(--mm))}
 .qrt svg{display:block;width:100%;height:100%}
 .wm{right:calc(-40 * var(--mm));bottom:calc(-6 * var(--mm));width:calc(100 * var(--mm));aspect-ratio:665/332;background:#ffeadb;-webkit-mask:url('MARK') center/contain no-repeat;mask:url('MARK') center/contain no-repeat}
 .nm{left:calc(6 * var(--mm));top:calc(7 * var(--mm))}
@@ -39,7 +40,7 @@ def pcard(side, bleed=False):
     if side == "front":
         inner = (f'<div class="abs glow"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
                  '<div class="abs hl"><h2>We drive you through<b>the AGE<br>of AI</b></h2></div>'
-                 '<div class="abs sub">Agents<br>Apps<br>Web</div>'
+                 '<div class="abs sub">Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
     else:
         inner = ('<div class="abs wm"></div><div class="in"><div class="abs nm"><h3>Rialto<br>Daphino<br>Effendy</h3><div class="role">Founder &amp; Operator</div></div>'
