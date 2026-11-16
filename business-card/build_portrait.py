@@ -45,7 +45,7 @@ def pcard(side, bleed=False):
                  '<div class="abs sub">Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
     else:
-        inner = ('<div class="abs wm"></div><div class="in"><div class="abs nm"><h3>Rialto<br>Daphino<br>Effendy</h3><div class="role">Founder &amp; Operator</div></div>'
+        inner = ('<div class="abs wm"></div><div class="in"><div class="abs nm" style="top:calc(13.5 * var(--mm))"><h3 style="line-height:1"><span style="font-size:calc(10 * var(--mm));display:block;letter-spacing:-.035em">Rialto</span><span style="font-size:calc(4.9 * var(--mm));display:block;margin-top:calc(1.2 * var(--mm));font-weight:500">Daphino Effendy</span></h3><div class="role">Founder &amp; Operator</div></div>'
                  '<div class="abs div"><i></i></div>'
                  '<dl class="abs ct"><div><dt>WhatsApp</dt><dd>+49 176 32572420</dd></div><div><dt>E-Mail</dt><dd>hallo@rideff.com</dd></div><div><dt>Web</dt><dd>rideff.com</dd></div></dl></div>')
     return f'<div class="{cls}">{inner}</div>'
