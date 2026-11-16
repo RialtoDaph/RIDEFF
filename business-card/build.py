@@ -41,7 +41,8 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .mark{position:absolute;left:calc(7 * var(--mm));top:calc(7 * var(--mm));height:calc(16 * var(--mm));width:auto;display:block}
 .front .tag{position:absolute;left:calc(7 * var(--mm));bottom:calc(7 * var(--mm));right:calc(7 * var(--mm))}
 .front h2{margin:0;font-weight:600;font-size:calc(4.4 * var(--mm));line-height:1.2;letter-spacing:-.02em;color:var(--paper)}
-.front h2 em{font-style:normal;color:var(--orange);font-size:1.4em;line-height:1.15;letter-spacing:-.02em}
+.front h2 em.ai{font-size:1em;line-height:inherit}.front h2 .bigline{display:block;font-size:1.4em;line-height:1.15;letter-spacing:-.02em}.front h2 em{font-style:normal;color:var(--orange);font-size:1.4em;line-height:1.15;letter-spacing:-.02em}
+.front h2.soft{color:#cbb7a8;font-weight:400}.front h2.soft b{display:block;font-weight:600;font-size:1.4em;line-height:1.15;letter-spacing:-.02em;color:var(--paper)}.front h2 em.grad{background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
 .front .mono{margin-top:calc(3 * var(--mm));font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#cbb7a8}
 .front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(12 * var(--mm));width:calc(21 * var(--mm));height:calc(21 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .url{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(21 * var(--mm));text-align:center;font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;color:#cbb7a8;line-height:1.2}
 .front .qr svg{display:block;width:100%;height:100%}
@@ -59,11 +60,16 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .back .call b{display:block;font-weight:600;color:var(--orange-ink)}
 """
 
-def card(side, bleed=False):
+H2 = {
+ "v1": '<h2>Driving you through<span class="bigline">the age of <em class="ai">AI.</em></span></h2>',
+ "v2": '<h2 class="soft">Driving you through<br><b>the age of AI.</b></h2>',
+ "v3": '<h2>Driving you through<br><em class="grad">the age of AI.</em></h2>',
+}
+def card(side, bleed=False, v=None):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div><div class="url">rideff.com</div>
-<div class="tag"><h2>Driving you through<br><em>the age of AI.</em></h2><div class="mono">Agents · Apps · Web</div></div></div>"""
+<div class="tag">{H2[v] if v else '<h2>Driving you through<br><em>the age of AI.</em></h2>'}<div class="mono">Agents · Apps · Web</div></div></div>"""
     else:
         inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
@@ -117,3 +123,9 @@ figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-tran
 """
 (root/'preview.html').write_text(page(GF, body, extra))
 print("ok")
+
+vb = "".join(f'<figure>{card("front", False, k)}<figcaption>{n}</figcaption></figure>' for k,n in [("v1","1 · Hanya \"AI\" oranye"),("v2","2 · Kontras bobot huruf"),("v3","3 · Gradasi oranye ke amber")])
+vextra = extra + ".vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}"
+(root/'variants.html').write_text(page(GF, f'<main class="wrap"><header><p class="eyebrow">Perbandingan slogan depan</p><h1>Tiga versi</h1></header><section class="vgrid">{vb}</section></main>', vextra))
+for k in ("v1","v2","v3"):
+    (root/f"_front-{k}.html").write_text(page("", card("front", False, k), local+mono+"body{margin:0;width:100vw}"))
