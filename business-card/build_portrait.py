@@ -54,7 +54,7 @@ def divider_tree():
 def pcard(side, bleed=False):
     cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}"
     if side == "front":
-        inner = (f'<div class="abs glow"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
+        inner = (f'<div class="abs" style="inset:0;background:radial-gradient(120% 70% at 50% -10%,#5c1416 0%,#2b0e10 45%,#14080a 80%)"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
                  '<div class="abs hl"><h2>We drive you through<b><s>the</s> <span>AGE</span> <s>of</s> <span>AI</span></b></h2></div>'
                  '<div class="abs sub">Systems<span class="d">·</span>Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  '<div class="abs urlt">rideff.com</div>'
