@@ -3,6 +3,13 @@ root = pathlib.Path(__file__).resolve().parent
 mark = base64.b64encode((root.parent/'public/images/rideff-mark.png').read_bytes()).decode()
 MARK = f"data:image/png;base64,{mark}"
 
+import qrcode
+_q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=0)
+_q.add_data("https://rideff.com"); _q.make(fit=True)
+_m = _q.get_matrix(); _n = len(_m)
+_path = "".join(f"M{x} {y}h1v1h-1z" for y,r in enumerate(_m) for x,v in enumerate(r) if v)
+QR = f'<svg viewBox="0 0 {_n} {_n}" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path d="{_path}" fill="#14080a"/></svg>'
+
 CSS = """
 :root{--night:#14080a;--night-2:#2a1315;--burgundy:#7f1d1d;--orange:#f97316;--orange-ink:#c2410c;--peach:#ffe4c7;--paper:#fff7ed;--ink:#17090a;--muted:#5e4a43;--line:#e6d0b9;
 --bg:#efe3d4;--fg:#17090a;--sub:#5e4a43;--surface:#fffcf7;
@@ -22,6 +29,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front h2{margin:0;font-weight:600;font-size:calc(6.6 * var(--mm));line-height:1.08;letter-spacing:-.02em;color:var(--paper)}
 .front h2 em{font-style:normal;color:var(--orange)}
 .front .mono{margin-top:calc(3.2 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:#cbb7a8}
+.front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .qr svg{display:block;width:100%;height:100%}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
 .back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
@@ -37,8 +45,8 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 def card(side, bleed=False):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
-        inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><span class="pil">Eichstätt · DE</span>
-<div class="tag"><h2>Your business<br>gets a <em>brain.</em></h2><div class="mono">AI systems · Apps · Web</div></div></div>"""
+        inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
+<div class="tag"><h2>Your business<br>gets a <em>brain.</em></h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
     else:
         inner = """<div class="in"><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator · DE EN ID</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd><dt>Erstgespräch</dt><dd>15 Min · kostenlos</dd></dl></div>"""
