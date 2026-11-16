@@ -4,11 +4,25 @@ mark = base64.b64encode((root.parent/'public/images/rideff-mark.png').read_bytes
 MARK = f"data:image/png;base64,{mark}"
 
 import qrcode
-_q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=0)
+_q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H, border=0)
 _q.add_data("https://rideff.com"); _q.make(fit=True)
 _m = _q.get_matrix(); _n = len(_m)
-_path = "".join(f"M{x} {y}h1v1h-1z" for y,r in enumerate(_m) for x,v in enumerate(r) if v)
-QR = f'<svg viewBox="0 0 {_n} {_n}" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path d="{_path}" fill="#14080a"/></svg>'
+def _finder(x, y):
+    return (f'<rect x="{x}" y="{y}" width="7" height="7" rx="1.2" fill="#14080a"/>'
+            f'<rect x="{x+1}" y="{y+1}" width="5" height="5" rx=".6" fill="#fff7ed"/>'
+            f'<rect x="{x+2}" y="{y+2}" width="3" height="3" rx=".5" fill="#c2410c"/>')
+_cw, _ch = 9, 5  # knocked-out centre (modules) for the logo
+_cx, _cy = (_n-_cw)//2, (_n-_ch)//2
+_dots = []
+for y in range(_n):
+    for x in range(_n):
+        if not _m[y][x]: continue
+        if (x<7 and y<7) or (x>=_n-7 and y<7) or (x<7 and y>=_n-7): continue
+        if _cx<=x<_cx+_cw and _cy<=y<_cy+_ch: continue
+        _dots.append(f'<circle cx="{x+.5}" cy="{y+.5}" r=".47"/>')
+QR = (f'<svg viewBox="0 0 {_n} {_n}" xmlns="http://www.w3.org/2000/svg"><g fill="#14080a">{"".join(_dots)}</g>'
+      + _finder(0,0) + _finder(_n-7,0) + _finder(0,_n-7)
+      + f'<image href="{MARK}" x="{_cx+.4}" y="{_cy+.6}" width="{_cw-.8}" height="{(_cw-.8)/2}"/></svg>')
 
 CSS = """
 :root{--night:#14080a;--night-2:#2a1315;--burgundy:#7f1d1d;--orange:#f97316;--orange-ink:#c2410c;--peach:#ffe4c7;--paper:#fff7ed;--ink:#17090a;--muted:#5e4a43;--line:#e6d0b9;
@@ -32,10 +46,12 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .qr svg{display:block;width:100%;height:100%}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
+.back .wm{position:absolute;right:calc(-26 * var(--mm));bottom:calc(-13 * var(--mm));width:calc(92 * var(--mm));aspect-ratio:665/332;background:var(--peach);-webkit-mask:url('{MARKURL}') center/contain no-repeat;mask:url('{MARKURL}') center/contain no-repeat}
+.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(25 * var(--mm))}
 .back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
 .back h3{margin:0;font-weight:600;font-size:calc(7 * var(--mm));letter-spacing:-.02em;line-height:1.05}
 .back .role{margin-top:calc(1.8 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
-.back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(21 * var(--mm)) 1fr;row-gap:calc(1.9 * var(--mm));align-items:baseline}
+.back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(19 * var(--mm)) 1fr;row-gap:calc(1.9 * var(--mm));align-items:baseline}
 .back dt{font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#927a6d}
 .back dd{margin:0;font-size:calc(3.5 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
 .back .call{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));background:var(--peach);color:var(--burgundy);border-radius:calc(1.2 * var(--mm));padding:calc(1.5 * var(--mm)) calc(2.4 * var(--mm));font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.1em;text-transform:uppercase;line-height:1.4;text-align:right}
@@ -48,9 +64,11 @@ def card(side, bleed=False):
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
 <div class="tag"><h2>Your business<br>gets a <em>brain.</em></h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
     else:
-        inner = """<div class="in"><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator · DE EN ID</div></div>
-<dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd><dt>Erstgespräch</dt><dd>15 Min · kostenlos</dd></dl></div>"""
+        inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator · DE EN ID</div></div>
+<dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
     return f'<div class="{cls}">{inner}</div>'
+
+CSS = CSS.replace("{MARKURL}", MARK)
 
 def page(fontlink, body, extra=""):
     return f"<!doctype html><html lang=\"de\"><head><meta charset=\"utf-8\"><title>RIDEFF Visitenkarte</title>{fontlink}<style>{CSS}{extra}</style></head><body>{body}</body></html>"
