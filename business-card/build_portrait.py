@@ -22,7 +22,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .hl h2 b span,.hl h2 b s{background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hl h2 b s{text-decoration:none;font-size:.58em;font-weight:500;letter-spacing:-.01em}
 .sub{left:0;right:0;bottom:calc(8 * var(--mm));text-align:center;font-family:var(--mono);text-transform:uppercase;font-size:calc(2.1 * var(--mm));letter-spacing:.12em;line-height:1.2;color:#cbb7a8;white-space:nowrap}
-.urlt{left:0;right:0;bottom:calc(36.6 * var(--mm));text-align:center;font-family:var(--mono);font-size:calc(2.1 * var(--mm));letter-spacing:.14em;padding-left:.14em;line-height:1.2;color:#cbb7a8}
+.urlt{left:0;right:0;bottom:calc(35.6 * var(--mm));text-align:center;font-family:var(--mono);font-size:calc(1.85 * var(--mm));letter-spacing:.14em;padding-left:.14em;line-height:1.2;color:#cbb7a8}
 .sub .d{color:#f97316;margin:0 .35em}
 .qrt{left:50%;transform:translateX(-50%);bottom:calc(15 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);border-radius:calc(1.4 * var(--mm));padding:calc(1.5 * var(--mm))}
 .qrt svg{display:block;width:100%;height:100%}
