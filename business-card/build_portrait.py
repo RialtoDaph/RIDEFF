@@ -42,26 +42,28 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 
 
 def circuit_svg():
-    """Abstract PCB-style trace bundles hugging the card margins (45-degree jogs, graded opacity, colored pads)."""
+    """Abstract circuit: rounded-corner traces that fade out, soft glow underlay, glowing nodes. Stays in the margins."""
     pal = ['#FF9E47', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB']
-    ops = [.55, .34, .2]
-    d = 1.5
+    paths = [
+        # (path d, gradient start, gradient end, node (x, y, color))
+        ("M-2 10 H6 Q9 10 9 13 V24 Q9 27 6 27 H3.4 Q1.4 27 1.4 29 V54", (-2, 10), (1.4, 54), (1.4, 54, pal[2])),
+        ("M57 6 H53 Q51 6 51 8 V50 Q51 52 53 52 H57", (57, 6), (51, 50), None),
+        ("M-2 71 H4 Q6.2 71 6.2 73.2 V79 Q6.2 82 9.2 82 H17", (-2, 71), (17, 82), (17, 82, pal[1])),
+        ("M57 64 H51.5 Q49 64 49 66.5 V77 Q49 80 46 80 H39", (57, 64), (39, 80), (39, 80, pal[5])),
+        ("M57 20 H49.6 Q47.6 20 47.6 18 V12", (57, 20), (47.6, 12), (47.6, 12, pal[3])),
+    ]
+    defs = '<filter id="cg" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation=".7"/></filter>'
     out = ''
-    def bundle(base, mirror=False, n=3, padcols=None):
-        nonlocal out
-        for k in range(n):
-            pts = [((55 - (x + k * d)) if mirror else (x + k * d), y) for x, y in base]
-            path = 'M' + ' L'.join(f'{x:.2f} {y:.2f}' for x, y in pts)
-            out += f'<path d="{path}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]}" stroke-width=".24" stroke-linejoin="round"/>'
-            ex, ey = pts[-1]
-            col = (padcols or pal)[k % 6]
-            out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".55" fill="{col}" fill-opacity="{min(1, ops[k] + .35):.2f}"/>'
-            out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".95" fill="none" stroke="{col}" stroke-opacity="{ops[k] * .8:.2f}" stroke-width=".18"/>'
-    bundle([(0.4, -2), (0.4, 16), (2.4, 18), (2.4, 40)], False, 2, [pal[0], pal[2]])
-    bundle([(0.4, -2), (0.4, 30), (2.4, 32), (2.4, 52)], True, 1, [pal[3]])
-    bundle([(0.4, 87), (0.4, 76), (2.4, 74), (2.4, 66)], False, 1, [pal[1]])
-    bundle([(0.4, 87), (0.4, 80), (2.4, 78), (2.4, 70)], True, 2, [pal[5], pal[4]])
-    return f'<svg viewBox="0 0 55 85" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block" xmlns="http://www.w3.org/2000/svg">{out}</svg>'
+    for i, (d, (x1, y1), (x2, y2), node) in enumerate(paths):
+        defs += (f'<linearGradient id="cf{i}" gradientUnits="userSpaceOnUse" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}">'
+                 '<stop offset="0" stop-color="#f97316" stop-opacity=".85"/><stop offset=".55" stop-color="#f97316" stop-opacity=".45"/>'
+                 '<stop offset="1" stop-color="#f97316" stop-opacity=".05"/></linearGradient>')
+        out += f'<path d="{d}" fill="none" stroke="url(#cf{i})" stroke-width="1.5" stroke-linecap="round" filter="url(#cg)" opacity=".5"/>'
+        out += f'<path d="{d}" fill="none" stroke="url(#cf{i})" stroke-width=".26" stroke-linecap="round"/>'
+        if node:
+            nx, ny, col = node
+            out += f'<circle cx="{nx}" cy="{ny}" r="1.7" fill="{col}" fill-opacity=".28" filter="url(#cg)"/><circle cx="{nx}" cy="{ny}" r=".5" fill="{col}"/>'
+    return f'<svg viewBox="0 0 55 85" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block" xmlns="http://www.w3.org/2000/svg"><defs>{defs}</defs>{out}</svg>'
 
 def divider_tree():
     cols = ['#FF9E47','#61CC80','#54B0E6','#9E8CF2','#E0B842','#EB7AAB']
