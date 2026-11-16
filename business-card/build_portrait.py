@@ -40,6 +40,34 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 """.replace('MARK', MARK)
 
 
+
+def circuit_svg():
+    """Abstract PCB-style trace bundles hugging the card margins (45-degree jogs, graded opacity, colored pads)."""
+    pal = ['#FF9E47', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB']
+    ops = [.55, .34, .2]
+    d = 1.5
+    out = ''
+    def bundle(base, mirror=False, n=3, padcols=None):
+        nonlocal out
+        for k in range(n):
+            pts = [((55 - (x + k * d)) if mirror else (x + k * d), y) for x, y in base]
+            path = 'M' + ' L'.join(f'{x:.2f} {y:.2f}' for x, y in pts)
+            out += f'<path d="{path}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]}" stroke-width=".24" stroke-linejoin="round"/>'
+            ex, ey = pts[-1]
+            col = (padcols or pal)[k % 6]
+            out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".55" fill="{col}" fill-opacity="{min(1, ops[k] + .35):.2f}"/>'
+            out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".95" fill="none" stroke="{col}" stroke-opacity="{ops[k] * .8:.2f}" stroke-width=".18"/>'
+    bundle([(0.4, -2), (0.4, 13), (2.4, 15), (2.4, 50)], False, 3, pal[0:3])
+    bundle([(0.4, -2), (0.4, 24), (2.4, 26), (2.4, 57)], True, 3, pal[3:6])
+    bundle([(0.4, 87), (0.4, 75), (2.4, 73), (2.4, 63)], False, 3, pal[2:5])
+    bundle([(0.4, 87), (0.4, 78), (2.4, 76), (2.4, 66)], True, 3, [pal[5], pal[0], pal[1]])
+    # top bundle running horizontally above the logo
+    for k in range(2):
+        y = 2.2 + k * 1.4
+        out += f'<path d="M-2 {y:.2f} L12 {y:.2f} L{14 + 0:.2f} {y - 2:.2f}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]:.2f}" stroke-width=".24" stroke-linejoin="round"/>'
+        out += f'<path d="M57 {y + 1.4:.2f} L43 {y + 1.4:.2f} L41 {y - .6:.2f}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]:.2f}" stroke-width=".24" stroke-linejoin="round"/>'
+    return f'<svg viewBox="0 0 55 85" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block" xmlns="http://www.w3.org/2000/svg">{out}</svg>'
+
 def divider_tree():
     cols = ['#FF9E47','#61CC80','#54B0E6','#9E8CF2','#E0B842','#EB7AAB']
     xs = [21.5 + (k - 2.5) * 5.2 for k in range(6)]
@@ -54,7 +82,7 @@ def divider_tree():
 def pcard(side, bleed=False):
     cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}"
     if side == "front":
-        inner = (f'<div class="abs" style="inset:0;background:radial-gradient(120% 70% at 50% -10%,#5c1416 0%,#2b0e10 45%,#14080a 80%)"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
+        inner = (f'<div class="abs" style="inset:0;background:radial-gradient(120% 70% at 50% -10%,#5c1416 0%,#2b0e10 45%,#14080a 80%)"></div><div class="in">{circuit_svg()}<img class="abs logo" src="{MARK}" alt="RIDEFF">'
                  '<div class="abs hl"><h2>We drive you through<b><s>the</s> <span>AGE</span> <s>of</s> <span>AI</span></b></h2></div>'
                  '<div class="abs sub">Systems<span class="d">·</span>Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  '<div class="abs urlt">rideff.com</div>'
