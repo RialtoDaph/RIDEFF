@@ -44,7 +44,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front h2 em.ai{font-size:1em;line-height:inherit}.front h2 .bigline{display:block;font-size:1.4em;line-height:1.15;letter-spacing:-.02em}.front h2 em{font-style:normal;color:var(--orange);font-size:1.4em;line-height:1.15;letter-spacing:-.02em}
 .front h2.soft{color:#cbb7a8;font-weight:400}.front h2.soft b{display:block;font-weight:600;font-size:1.4em;line-height:1.15;letter-spacing:-.02em;color:var(--paper)}.front h2 b.grad{background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}.front h2 em.grad{background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
 .front .mono{margin-top:calc(3 * var(--mm));font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#cbb7a8}
-.front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(12 * var(--mm));width:calc(21 * var(--mm));height:calc(21 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .url{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(21 * var(--mm));text-align:center;font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;color:#cbb7a8;line-height:1.2}
+.front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(21 * var(--mm));height:calc(21 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .url{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(21 * var(--mm));text-align:center;font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;color:#cbb7a8;line-height:1.2}
 .front .qr svg{display:block;width:100%;height:100%}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
@@ -70,7 +70,7 @@ H2 = {
 def card(side, bleed=False, v=None):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
-        inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div><div class="url">rideff.com</div>
+        inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
 <div class="tag">{H2[v] if v else '<h2 class="soft">Driving you through<br><b class="grad">the age of AI.</b></h2>'}<div class="mono">Agents · Apps · Web</div></div></div>"""
     else:
         inner = """<div class="in"><img class="sig" src="{MARK}" alt="RIDEFF"><div class="rule"></div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
