@@ -38,6 +38,18 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 
 """.replace('MARK', MARK)
 
+
+def divider_tree():
+    cols = ['#FF9E47','#61CC80','#54B0E6','#9E8CF2','#E0B842','#EB7AAB']
+    xs = [21.5 + (k - 2.5) * 5.2 for k in range(6)]
+    t = '<line x1="21.5" y1="1" x2="21.5" y2="2" stroke="#f97316" stroke-width=".3"/>'
+    t += f'<line x1="{xs[0]}" y1="2" x2="{xs[-1]}" y2="2" stroke="#e6d0b9" stroke-width=".3"/>'
+    for k, x in enumerate(xs):
+        t += f'<line x1="{x}" y1="2" x2="{x}" y2="3.3" stroke="#e6d0b9" stroke-width=".3"/><circle cx="{x}" cy="3.7" r=".6" fill="{cols[k]}"/>'
+    t += '<circle cx="21.5" cy=".7" r=".8" fill="#FF6B0A"/>'
+    return ('<div class="abs" style="left:calc(6 * var(--mm));right:calc(6 * var(--mm));bottom:calc(42 * var(--mm));height:calc(5 * var(--mm))">'
+            f'<svg viewBox="0 0 43 5" style="width:100%;height:100%;display:block;overflow:visible" xmlns="http://www.w3.org/2000/svg">{t}</svg></div>')
+
 def pcard(side, bleed=False):
     cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}"
     if side == "front":
@@ -46,8 +58,7 @@ def pcard(side, bleed=False):
                  '<div class="abs sub">Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
     else:
-        inner = ('<div class="abs wm"></div><div class="in"><div class="abs nm" style="top:calc(10.5 * var(--mm))"><h3 style="line-height:1"><span style="font-size:calc(10 * var(--mm));display:block;letter-spacing:-.035em">Rialto</span><span style="font-size:calc(4.9 * var(--mm));display:block;margin-top:calc(1.2 * var(--mm));font-weight:500">Daphino Effendy</span></h3><div class="role">Founder &amp; Operator</div></div>'
-                 '<div class="abs div"><i></i></div>'
+        inner = ('<div class="abs wm"></div><div class="in"><div class="abs nm" style="top:calc(10.5 * var(--mm))"><h3 style="line-height:1"><span style="font-size:calc(10 * var(--mm));display:block;letter-spacing:-.035em">Rialto</span><span style="font-size:calc(4.9 * var(--mm));display:block;margin-top:calc(1.2 * var(--mm));font-weight:500">Daphino Effendy</span></h3><div class="role">Founder &amp; Operator</div></div>' + divider_tree() +
                  '<dl class="abs ct"><div><dt>WhatsApp</dt><dd>+49 176 32572420</dd></div><div><dt>E-Mail</dt><dd>hallo@rideff.com</dd></div><div><dt>Web</dt><dd>rideff.com</dd></div></dl></div>')
     return f'<div class="{cls}">{inner}</div>'
 
