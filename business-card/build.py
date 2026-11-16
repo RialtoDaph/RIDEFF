@@ -49,7 +49,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
 .back .wm{position:absolute;right:calc(-14 * var(--mm));bottom:calc(-14 * var(--mm));width:calc(52 * var(--mm));aspect-ratio:665/332;background:var(--peach);-webkit-mask:url('{MARKURL}') center/contain no-repeat;mask:url('{MARKURL}') center/contain no-repeat}
-.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(20.6 * var(--mm))}
+.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(25 * var(--mm))}
 .back .sig{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(17 * var(--mm));height:auto;display:block}
 .back .line{position:absolute;left:calc(7 * var(--mm));top:calc(23 * var(--mm));font-size:calc(3.3 * var(--mm));font-weight:500;letter-spacing:-.005em;color:var(--muted);white-space:nowrap}
 .back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
@@ -73,7 +73,7 @@ def card(side, bleed=False, v=None):
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div><div class="url">rideff.com</div>
 <div class="tag">{H2[v] if v else '<h2 class="soft">Driving you through<br><b class="grad">the age of AI.</b></h2>'}<div class="mono">Agents · Apps · Web</div></div></div>"""
     else:
-        inner = """<div class="in"><img class="sig" src="{MARK}" alt="RIDEFF"><div class="rule"></div><div class="line">Lighter today. Ready for tomorrow.</div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
+        inner = """<div class="in"><img class="sig" src="{MARK}" alt="RIDEFF"><div class="rule"></div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
     inner = inner.replace('{MARK}', MARK)
     return f'<div class="{cls}">{inner}</div>'
