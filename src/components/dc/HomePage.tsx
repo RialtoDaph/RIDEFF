@@ -497,7 +497,7 @@ class Logic extends DCLogic {
         dur: k === s.i ? this.DUR + 'ms' : '0ms',
         op: k === s.i ? 1 : 0.6,
         zoom: k === s.i ? 'scale(1.08)' : 'scale(1)',
-        img: [opt("/images/rialto-understand-v2.jpg"), opt("/images/tic-backoffice.png"), opt("/images/rialto-run-v2.jpg")][k],
+        img: [opt("/images/portal-client.png"), opt("/images/tic-backoffice.png"), opt("/images/portal-admin.png")][k],
         go: () => {
           this.setState({
             i: k
@@ -752,9 +752,31 @@ Logic.prototype.render = function render() {
           </div>
           <div ref={v.cardRef} style={{ position: "relative", marginTop: `${v.cardTop ?? ''}`, height: `${v.cardH ?? ''}`, borderRadius: "28px", overflow: "hidden", background: `${v.bg ?? ''}`, transition: "background .6s" }}>
             {" "}
-            <div style={{ position: "absolute", inset: "0", opacity: `${v.op0 ?? ''}`, transform: `${v.tf0 ?? ''}`, filter: `${v.fl0 ?? ''}`, transition: `${v.tr0 ?? ''}` }}>
+            <div style={{ position: "absolute", inset: "0", opacity: `${v.op0 ?? ''}`, transform: `${v.tf0 ?? ''}`, filter: `${v.fl0 ?? ''}`, transition: `${v.tr0 ?? ''}`, background: "radial-gradient(ellipse at 45% 60%,#210F10,#14080A 70%)" }}>
               {" "}
-              <img loading="lazy" decoding="async" src={opt("/images/rialto-understand-v2.jpg")} alt={v.t("Home.rialtoWithANotebook")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 14s ease-in-out infinite alternate" }} />
+              <div style={{ position: "absolute", left: "12%", right: "4%", top: "22px", border: "1px solid #2E1517", borderRadius: "16px", background: "rgba(29,13,13,.8)", fontFamily: "var(--font-mono)", fontSize: "clamp(12px,1.05vw,16px)", color: "#FFF7ED", overflow: "hidden" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 18px", color: "#78625A", fontSize: "12px" }}>
+                  <span>{"● ● ● rialto@rideff · ~/call"}</span>
+                  <span style={{ color: "#FDBA74" }}>{"● 15 MIN"}</span>
+                </div>
+                <div style={{ padding: "4px 18px 18px", display: "flex", flexDirection: "column", gap: "6px" }}>
+                  <span><span style={{ color: "#78625A" }}>{"$"}</span>{" call --first --free"}</span>
+                  <span><span style={{ color: "#F97316" }}>{"✓"}</span>{" capture: 6 areas"}</span>
+                  <span><span style={{ color: "#F97316" }}>{"✓"}</span>{" audit: repeatable work found"}</span>
+                  <span><span style={{ color: "#F97316" }}>{"✓"}</span>{" offer: fixed price"}</span>
+                </div>
+              </div>
+              <div style={{ position: "absolute", left: "12%", right: "4%", top: "45%", border: "1px solid #2E1517", borderRadius: "16px", background: "rgba(29,13,13,.8)", padding: "10px 18px", fontFamily: "var(--font-mono)", fontSize: "12px", color: "#FFF7ED", display: "flex", flexDirection: "column", gap: "6px" }}>
+                {[["inquiries", 38, "5 h"], ["offers", 30, "4 h"], ["invoices", 22, "3 h"]].map(([n, w, h]) => (
+                  <div key={String(n)} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <span style={{ width: "74px", color: "#78625A" }}>{n}</span>
+                    <span style={{ flex: "1", height: "6px", borderRadius: "3px", background: "#2E1517" }}>
+                      <span style={{ display: "block", width: `${w}%`, height: "100%", borderRadius: "3px", background: "linear-gradient(90deg,#F97316,#FDBA74)" }} />
+                    </span>
+                    <span style={{ color: "#FDBA74" }}>{h}</span>
+                  </div>
+                ))}
+              </div>
               {" "}
               <div className="hc-chip" style={{ position: "absolute", left: "30%", top: "30%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 5s ease-in-out infinite" }}>
                 <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
@@ -772,7 +794,7 @@ Logic.prototype.render = function render() {
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#FFF7ED", boxShadow: "0 0 0 4px rgba(255,238,219,.35)" }} />
               </div>
               {" "}
-              <div className="hc-chip" style={{ position: "absolute", left: "18%", top: "58%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 6s ease-in-out 1.2s infinite" }}>
+              <div className="hc-chip" style={{ position: "absolute", left: "18%", top: "60%", display: "flex", alignItems: "center", pointerEvents: "none", animation: "rdFloat 6s ease-in-out 1.2s infinite" }}>
                 <div className="hc-chip-box" style={{ display: "flex", alignItems: "center", gap: "12px", background: "rgba(255,238,219,.92)", backdropFilter: "blur(10px)", borderRadius: "14px", padding: "8px 18px 8px 8px", whiteSpace: "nowrap" }}>
                   <span style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#17090A", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
                     {"✎"}
@@ -878,9 +900,17 @@ Logic.prototype.render = function render() {
               {" "}
             </div>
             {" "}
-            <div style={{ position: "absolute", inset: "0", opacity: `${v.op2 ?? ''}`, transform: `${v.tf2 ?? ''}`, filter: `${v.fl2 ?? ''}`, transition: `${v.tr2 ?? ''}` }}>
+            <div style={{ position: "absolute", inset: "0", opacity: `${v.op2 ?? ''}`, transform: `${v.tf2 ?? ''}`, filter: `${v.fl2 ?? ''}`, transition: `${v.tr2 ?? ''}`, background: "radial-gradient(ellipse at 55% 60%,#210F10,#14080A 70%)" }}>
               {" "}
-              <img loading="lazy" decoding="async" src={opt("/images/rialto-run-v2.jpg")} alt={v.t("Home.rialtoAtHisDesk")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", animation: "rdKen 12s ease-in-out infinite alternate" }} />
+              <div style={{ position: "absolute", left: "12%", right: "4%", top: "22px", border: "1px solid #2E1517", borderRadius: "16px", background: "rgba(29,13,13,.8)", fontFamily: "var(--font-mono)", color: "#78625A", fontSize: "12px", display: "flex", justifyContent: "space-between", padding: "12px 18px" }}>
+                <span>{"● ● ● rialto@rideff · ~/live"}</span>
+                <span style={{ color: "#FDBA74" }}>{"● LIVE"}</span>
+              </div>
+              <div style={{ position: "absolute", left: "12%", right: "4%", bottom: "0", height: "34%", display: "flex", alignItems: "flex-end", gap: "6px", pointerEvents: "none", opacity: 0.22 }}>
+                {[38, 44, 40, 52, 48, 46, 58, 50, 62, 100, 70, 56, 60, 66, 74, 68].map((h, i) => (
+                  <span key={i} style={{ flex: "1", height: `${h}%`, borderRadius: "4px 4px 0 0", background: i === 9 ? "#FDBA74" : "#F97316" }} />
+                ))}
+              </div>
               {" "}
               <div style={{ position: "absolute", left: "12%", top: "20%", width: "min(340px,50%)", display: "flex", flexDirection: "column", gap: "8px", pointerEvents: "none" }}>
                 {(v.runFeed ?? []).map((f, $index) => (<Fragment key={$index}>
@@ -941,7 +971,21 @@ Logic.prototype.render = function render() {
                   {" "}
                   <div style={{ position: "absolute", left: "0", top: "0", height: "3px", width: `${t?.w ?? ''}`, background: "#F97316", transition: `width ${t?.dur ?? ''} linear` }} />
                   {" "}
-                  <img loading="lazy" decoding="async" src={t?.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block", opacity: `${t?.op ?? ''}`, transition: "opacity .4s,transform .6s", transform: `${t?.zoom ?? ''}` }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: "0", background: "radial-gradient(ellipse at 55% 60%,#210F10,#14080A 70%)", opacity: `${t?.op ?? ''}`, transition: "opacity .4s,transform .6s", transform: `${t?.zoom ?? ''}`, fontFamily: "var(--font-mono)", fontSize: "7px", lineHeight: 1.5, color: "#FFF7ED", textAlign: "left" }}>
+                    <div style={{ position: "absolute", left: "16%", right: "6%", top: "9px", border: "1px solid #2E1517", borderRadius: "6px", background: "rgba(29,13,13,.8)", padding: "4px 6px", whiteSpace: "nowrap", overflow: "hidden" }}>
+                      <div style={{ color: "#78625A" }}>{["● ● ● ~/call", "● ● ● ~/your-business", "● ● ● ~/live"][$index]}</div>
+                      {[["$ call --first", "✓ capture", "✓ audit"], ["$ deploy --agents", "✓ chief agent", "✓ 6 areas"], ["03:00 backup", "08:02 inquiry", "09:30 invoice"]][$index].map((l, j) => (
+                        <div key={j} style={{ color: j === 0 && $index < 2 ? "#FFF7ED" : "#FDBA74" }}>{l}</div>
+                      ))}
+                    </div>
+                    <div style={{ position: "absolute", left: "16%", right: "6%", bottom: "28px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", height: "14px" }}>
+                      {$index === 1 ? ["#F97316", "#FDBA74", "#61CC80", "#F97316", "#FDBA74"].map((c, j) => (
+                        <span key={j} style={{ width: "7px", height: "7px", borderRadius: "50%", border: `1.5px solid ${c}`, boxShadow: `0 0 6px ${c}` }} />
+                      )) : [38, 52, 44, 62, 100, 70, 58, 74].map((h, j) => (
+                        <span key={j} style={{ width: "5px", height: `${h}%`, borderRadius: "1px 1px 0 0", background: "#F97316", opacity: 0.6 }} />
+                      ))}
+                    </div>
+                  </div>
                   <span style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg,rgba(23,9,10,0) 40%,rgba(23,9,10,.55))" }} />
                   <span style={{ position: "absolute", left: "8px", top: "10px", fontFamily: "var(--font-mono)", fontSize: "11px", color: "#FFF7ED" }}>
                     {t?.n}
