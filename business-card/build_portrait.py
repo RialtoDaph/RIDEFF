@@ -18,7 +18,9 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .logo{left:50%;transform:translateX(-50%);top:calc(7 * var(--mm));height:calc(11 * var(--mm));width:auto;display:block}
 .hl{left:0;right:0;top:calc(28 * var(--mm));text-align:center}
 .hl h2{margin:0;font-weight:400;font-size:calc(3.9 * var(--mm));line-height:1.2;white-space:nowrap;color:#cbb7a8;letter-spacing:-.02em}
-.hl h2 b{display:block;margin-top:calc(1.5 * var(--mm));font-weight:600;font-size:calc(5.9 * var(--mm));line-height:1.1;white-space:nowrap;letter-spacing:-.025em;background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl h2 b{display:block;margin-top:calc(1.5 * var(--mm));font-weight:600;font-size:calc(7.2 * var(--mm));line-height:1.1;white-space:nowrap;letter-spacing:-.025em;background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl h2 b span,.hl h2 b s{background:linear-gradient(90deg,#f97316,#fbb040);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl h2 b s{text-decoration:none;font-size:.58em;font-weight:500;letter-spacing:-.01em}
 .sub{left:0;right:0;bottom:calc(8 * var(--mm));text-align:center;font-family:var(--mono);text-transform:uppercase;font-size:calc(2.2 * var(--mm));letter-spacing:.18em;line-height:1.2;color:#cbb7a8;white-space:nowrap}
 .sub .d{color:#f97316;margin:0 .35em}
 .qrt{left:50%;transform:translateX(-50%);bottom:calc(15 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);border-radius:calc(1.4 * var(--mm));padding:calc(1.5 * var(--mm))}
@@ -39,7 +41,7 @@ def pcard(side, bleed=False):
     cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}"
     if side == "front":
         inner = (f'<div class="abs glow"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
-                 '<div class="abs hl"><h2>We drive you through<b>the AGE of AI</b></h2></div>'
+                 '<div class="abs hl"><h2>We drive you through<b><s>the</s> <span>AGE</span> <s>of</s> <span>AI</span></b></h2></div>'
                  '<div class="abs sub">Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
     else:
