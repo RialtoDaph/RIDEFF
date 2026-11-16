@@ -57,15 +57,10 @@ def circuit_svg():
             col = (padcols or pal)[k % 6]
             out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".55" fill="{col}" fill-opacity="{min(1, ops[k] + .35):.2f}"/>'
             out += f'<circle cx="{ex:.2f}" cy="{ey:.2f}" r=".95" fill="none" stroke="{col}" stroke-opacity="{ops[k] * .8:.2f}" stroke-width=".18"/>'
-    bundle([(0.4, -2), (0.4, 13), (2.4, 15), (2.4, 50)], False, 3, pal[0:3])
-    bundle([(0.4, -2), (0.4, 24), (2.4, 26), (2.4, 57)], True, 3, pal[3:6])
-    bundle([(0.4, 87), (0.4, 75), (2.4, 73), (2.4, 63)], False, 3, pal[2:5])
-    bundle([(0.4, 87), (0.4, 78), (2.4, 76), (2.4, 66)], True, 3, [pal[5], pal[0], pal[1]])
-    # top bundle running horizontally above the logo
-    for k in range(2):
-        y = 2.2 + k * 1.4
-        out += f'<path d="M-2 {y:.2f} L12 {y:.2f} L{14 + 0:.2f} {y - 2:.2f}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]:.2f}" stroke-width=".24" stroke-linejoin="round"/>'
-        out += f'<path d="M57 {y + 1.4:.2f} L43 {y + 1.4:.2f} L41 {y - .6:.2f}" fill="none" stroke="#f97316" stroke-opacity="{ops[k]:.2f}" stroke-width=".24" stroke-linejoin="round"/>'
+    bundle([(0.4, -2), (0.4, 16), (2.4, 18), (2.4, 40)], False, 2, [pal[0], pal[2]])
+    bundle([(0.4, -2), (0.4, 30), (2.4, 32), (2.4, 52)], True, 1, [pal[3]])
+    bundle([(0.4, 87), (0.4, 76), (2.4, 74), (2.4, 66)], False, 1, [pal[1]])
+    bundle([(0.4, 87), (0.4, 80), (2.4, 78), (2.4, 70)], True, 2, [pal[5], pal[4]])
     return f'<svg viewBox="0 0 55 85" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block" xmlns="http://www.w3.org/2000/svg">{out}</svg>'
 
 def divider_tree():
