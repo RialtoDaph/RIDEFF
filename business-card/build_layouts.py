@@ -22,7 +22,7 @@ def px(**k): return ";".join(f"{a.replace('_','-')}:calc({v} * var(--mm))" for a
 L1 = f'''<div class="L"><div class="a glow"></div>
 <img class="a lg" src="{MARK}" style="{px(top=8,height=11)};left:50%;transform:translateX(-50%)">
 <div class="a" style="left:0;right:0;{px(top=26)};text-align:center"><div class="s" style="{px(font_size=3.9)}">We drive you through</div>
-<div class="g" style="{px(font_size=7.2, margin_top=1.6)};line-height:1.05">the age<br>of AI.</div></div>
+<div class="g" style="{px(font_size=7.2, margin_top=1.6)};line-height:1.05">the AGE<br>of AI</div></div>
 <div class="a mono" style="left:0;right:0;{px(top=55)};text-align:center">Agents · Apps · Web</div>
 {q(19, px(bottom=6)+";left:50%;transform:translateX(-50%)")}</div>'''
 
@@ -31,7 +31,7 @@ L2 = f'''<div class="L"><div class="a glow"></div>
 <img class="a lg" src="{MARK}" style="{px(left=6,top=6,height=8)}">
 <div class="a" style="{px(left=6,right=6,top=22)};line-height:1.04">
 <div class="w" style="{px(font_size=7)}">We drive</div><div class="w" style="{px(font_size=7)}">you through</div>
-<div class="g" style="{px(font_size=9.6)};margin-top:.1em">the age</div><div class="g" style="{px(font_size=9.6)}">of AI.</div></div>
+<div class="g" style="{px(font_size=9.6)};margin-top:.1em">the AGE</div><div class="g" style="{px(font_size=9.6)}">of AI</div></div>
 <div class="a mono" style="{px(left=6,bottom=6)};line-height:1.7">Agents<br>Apps<br>Web</div>
 {q(17, px(right=6,bottom=6))}</div>'''
 
@@ -39,7 +39,7 @@ L2 = f'''<div class="L"><div class="a glow"></div>
 L3 = f'''<div class="L"><div class="a glow"></div>
 <img class="a lg" src="{MARK}" style="{px(left=6,top=7,width=43)};height:auto">
 <div class="a" style="{px(left=6,right=6,top=37)}"><div class="s" style="{px(font_size=3.9)}">We drive you through</div>
-<div class="g" style="{px(font_size=6.6, margin_top=1.4)};line-height:1.05">the age<br>of AI.</div></div>
+<div class="g" style="{px(font_size=6.6, margin_top=1.4)};line-height:1.05">the AGE<br>of AI</div></div>
 {q(19, px(left=6,bottom=6))}
 <div class="a mono" style="{px(right=6,bottom=6)};text-align:right;line-height:1.7">Agents<br>Apps<br>Web</div></div>'''
 
@@ -48,14 +48,14 @@ L4 = f'''<div class="L"><div class="a" style="left:0;right:0;top:0;{px(height=37
 <div class="a mk" style="color:#14080a;{px(left=6,top=7,height=14)}"></div>
 <div class="a mono" style="{px(right=6,top=7)};text-align:right;line-height:1.7;color:rgba(20,8,10,.75)">Agents<br>Apps<br>Web</div>
 <div class="a" style="{px(left=6,right=6,top=43)}"><div class="s" style="{px(font_size=3.9)}">We drive you through</div>
-<div class="g" style="{px(font_size=7, margin_top=1.4)};line-height:1.05">the age<br>of AI.</div></div>
+<div class="g" style="{px(font_size=7, margin_top=1.4)};line-height:1.05">the AGE<br>of AI</div></div>
 {q(19, px(right=6,bottom=6))}</div>'''
 
 # 5 editorial vertical caption
 L5 = f'''<div class="L"><div class="a glow"></div>
 <img class="a lg" src="{MARK}" style="{px(left=6,top=6,height=12)}">
 <div class="a" style="{px(left=6,right=6,top=29)}"><div class="s" style="{px(font_size=3.9)}">We drive you through</div>
-<div class="g" style="{px(font_size=7.5, margin_top=1.5)};line-height:1.05">the age<br>of AI.</div></div>
+<div class="g" style="{px(font_size=7.5, margin_top=1.5)};line-height:1.05">the AGE<br>of AI</div></div>
 <div class="a mono" style="{px(right=6,top=6)};writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap">Agents · Apps · Web</div>
 {q(21, px(left=6,bottom=6))}</div>'''
 

@@ -38,7 +38,7 @@ def pcard(side, bleed=False):
     cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}"
     if side == "front":
         inner = (f'<div class="abs glow"></div><div class="in"><img class="abs logo" src="{MARK}" alt="RIDEFF">'
-                 '<div class="abs hl"><h2>We drive you through<b>the age<br>of AI.</b></h2></div>'
+                 '<div class="abs hl"><h2>We drive you through<b>the AGE<br>of AI</b></h2></div>'
                  '<div class="abs sub">Agents<br>Apps<br>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
     else:
