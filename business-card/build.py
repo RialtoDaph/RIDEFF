@@ -38,7 +38,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .bleed .in{inset:calc(3 * var(--mm))}
 .front{background:var(--night);color:var(--paper)}
 .front::before{content:"";position:absolute;right:calc(-30 * var(--mm));top:calc(-34 * var(--mm));width:calc(80 * var(--mm));height:calc(80 * var(--mm));border-radius:50%;background:radial-gradient(circle,rgba(127,29,29,.75),rgba(127,29,29,0) 68%)}
-.front .mark{position:absolute;left:calc(7 * var(--mm));top:calc(7 * var(--mm));height:calc(12 * var(--mm));width:auto;display:block}
+.front .mark{position:absolute;left:calc(7 * var(--mm));top:calc(7 * var(--mm));height:calc(16 * var(--mm));width:auto;display:block}
 .front .tag{position:absolute;left:calc(7 * var(--mm));bottom:calc(7 * var(--mm));right:calc(7 * var(--mm))}
 .front h2{margin:0;font-weight:600;font-size:calc(4.9 * var(--mm));line-height:1.15;letter-spacing:-.02em;color:var(--paper)}
 .front h2 em{font-style:normal;color:var(--orange)}
@@ -62,7 +62,7 @@ def card(side, bleed=False):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
-<div class="tag"><h2>Drives you through<br>the <em>age of AI.</em></h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
+<div class="tag"><h2><em>Driving you</em> through<br>the age of AI.</h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
     else:
         inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
