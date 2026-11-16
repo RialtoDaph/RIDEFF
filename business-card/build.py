@@ -42,7 +42,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .tag{position:absolute;left:calc(7 * var(--mm));bottom:calc(7 * var(--mm));right:calc(7 * var(--mm))}
 .front h2{margin:0;font-weight:600;font-size:calc(4.9 * var(--mm));line-height:1.15;letter-spacing:-.02em;color:var(--paper)}
 .front h2 em{font-style:normal;color:var(--orange)}
-.front .mono{margin-top:calc(3.2 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:#cbb7a8}
+.front .mono{margin-top:calc(3 * var(--mm));font-family:var(--mono);font-size:calc(2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#cbb7a8}
 .front .qr{position:absolute;right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);padding:calc(1.6 * var(--mm));border-radius:calc(1.4 * var(--mm))}.front .qr svg{display:block;width:100%;height:100%}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
