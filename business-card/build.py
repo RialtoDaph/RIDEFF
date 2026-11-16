@@ -47,9 +47,9 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
 .back{background:var(--paper);color:var(--ink)}
 .back .wm{position:absolute;right:calc(-26 * var(--mm));bottom:calc(-13 * var(--mm));width:calc(92 * var(--mm));aspect-ratio:665/332;background:var(--peach);-webkit-mask:url('{MARKURL}') center/contain no-repeat;mask:url('{MARKURL}') center/contain no-repeat}
-.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(25 * var(--mm))}
+.back .rule{position:absolute;left:calc(7 * var(--mm));width:calc(10 * var(--mm));height:calc(.6 * var(--mm));background:var(--orange);top:calc(23 * var(--mm))}
 .back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
-.back h3{margin:0;font-weight:600;font-size:calc(7 * var(--mm));letter-spacing:-.02em;line-height:1.05}
+.back h3{margin:0;font-weight:600;font-size:calc(5.4 * var(--mm));white-space:nowrap;letter-spacing:-.02em;line-height:1.05}
 .back .role{margin-top:calc(1.8 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
 .back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(19 * var(--mm)) 1fr;row-gap:calc(1.9 * var(--mm));align-items:baseline}
 .back dt{font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#927a6d}
@@ -62,9 +62,9 @@ def card(side, bleed=False):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
         inner = f"""<div class="in"><img class="mark" src="{MARK}" alt="RIDEFF"><div class="qr">{QR}</div>
-<div class="tag"><h2>One <em>real system</em><br>behind your<br>whole business.</h2><div class="mono">Understand · Build · Run</div></div></div>"""
+<div class="tag"><h2>One <em>real system</em><br>behind your<br>whole business.</h2><div class="mono">AI agents · Apps · Web</div></div></div>"""
     else:
-        inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator</div></div>
+        inner = """<div class="wm"></div><div class="in"><div class="rule"></div><div class="name"><h3>Rialto Daphino Effendy</h3><div class="role">Founder &amp; Operator</div></div>
 <dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd></dl></div>"""
     return f'<div class="{cls}">{inner}</div>'
 
