@@ -1,0 +1,31 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>RIDEFF Visitenkarte</title><style>
+:root{--night:#14080a;--night-2:#2a1315;--burgundy:#7f1d1d;--orange:#f97316;--orange-ink:#c2410c;--peach:#ffe4c7;--paper:#fff7ed;--ink:#17090a;--muted:#5e4a43;--line:#e6d0b9;
+--bg:#efe3d4;--fg:#17090a;--sub:#5e4a43;--surface:#fffcf7;
+--font:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0607;--fg:#fff7ed;--sub:#cbb7a8;--surface:#1e0d0e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0607;--fg:#fff7ed;--sub:#cbb7a8;--surface:#1e0d0e;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
+.card{--mm:calc(100cqw / 85);container-type:inline-size;position:relative;width:100%;aspect-ratio:85/55;overflow:hidden;font-family:var(--font);-webkit-font-smoothing:antialiased}
+.card.bleed{--mm:calc(100cqw / 91);aspect-ratio:91/61}
+.in{position:absolute;inset:0}
+.bleed .in{inset:calc(3 * var(--mm))}
+.front{background:var(--night);color:var(--paper)}
+.front::before{content:"";position:absolute;right:calc(-30 * var(--mm));top:calc(-34 * var(--mm));width:calc(80 * var(--mm));height:calc(80 * var(--mm));border-radius:50%;background:radial-gradient(circle,rgba(127,29,29,.75),rgba(127,29,29,0) 68%)}
+.front .mark{position:absolute;left:calc(7 * var(--mm));top:calc(7 * var(--mm));height:calc(12 * var(--mm));width:auto;display:block}
+.front .tag{position:absolute;left:calc(7 * var(--mm));bottom:calc(7 * var(--mm));right:calc(7 * var(--mm))}
+.front h2{margin:0;font-weight:600;font-size:calc(6.6 * var(--mm));line-height:1.08;letter-spacing:-.02em;color:var(--paper)}
+.front h2 em{font-style:normal;color:var(--orange)}
+.front .mono{margin-top:calc(3.2 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:#cbb7a8}
+.front .pil{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));font-family:var(--mono);font-size:calc(2.3 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--peach);opacity:.8}
+.back{background:var(--paper);color:var(--ink)}
+.back .name{position:absolute;left:calc(7 * var(--mm));top:calc(7.5 * var(--mm))}
+.back h3{margin:0;font-weight:600;font-size:calc(7 * var(--mm));letter-spacing:-.02em;line-height:1.05}
+.back .role{margin-top:calc(1.8 * var(--mm));font-family:var(--mono);font-size:calc(2.5 * var(--mm));letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
+.back dl{position:absolute;left:calc(7 * var(--mm));right:calc(7 * var(--mm));bottom:calc(7 * var(--mm));margin:0;display:grid;grid-template-columns:calc(21 * var(--mm)) 1fr;row-gap:calc(1.9 * var(--mm));align-items:baseline}
+.back dt{font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.12em;text-transform:uppercase;color:#927a6d}
+.back dd{margin:0;font-size:calc(3.5 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
+.back .call{position:absolute;right:calc(7 * var(--mm));top:calc(8 * var(--mm));background:var(--peach);color:var(--burgundy);border-radius:calc(1.2 * var(--mm));padding:calc(1.5 * var(--mm)) calc(2.4 * var(--mm));font-family:var(--mono);font-size:calc(2.2 * var(--mm));letter-spacing:.1em;text-transform:uppercase;line-height:1.4;text-align:right}
+.back .call b{display:block;font-weight:600;color:var(--orange-ink)}
+@font-face{font-family:'Geist';src:url('file:///home/user/RIDEFF/src/fonts/Geist-Regular.woff2') format('woff2');font-weight:400;}@font-face{font-family:'Geist';src:url('file:///home/user/RIDEFF/src/fonts/Geist-Medium.woff2') format('woff2');font-weight:500;}@font-face{font-family:'Geist';src:url('file:///home/user/RIDEFF/src/fonts/Geist-SemiBold.woff2') format('woff2');font-weight:600;}@font-face{font-family:'Geist';src:url('file:///home/user/RIDEFF/src/fonts/Geist-Bold.woff2') format('woff2');font-weight:400;}@font-face{font-family:'Geist Mono';src:url('file:///home/user/RIDEFF/src/fonts/GeistMono-Medium.woff2') format('woff2');font-weight:400 500;}@font-face{font-family:'Geist Mono';src:url('file:///home/user/RIDEFF/src/fonts/GeistMono-Regular.woff2') format('woff2');font-weight:400 500;}body{margin:0;width:100vw}</style></head><body><div class="card back bleed"><div class="in"><div class="name"><h3>Rialto Effendy</h3><div class="role">Founder &amp; Operator · DE EN ID</div></div>
+<dl><dt>WhatsApp</dt><dd>+49 176 32572420</dd><dt>E-Mail</dt><dd>hallo@rideff.com</dd><dt>Web</dt><dd>rideff.com</dd><dt>Erstgespräch</dt><dd>15 Min · kostenlos</dd></dl></div></div></body></html>
