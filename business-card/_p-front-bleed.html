@@ -69,6 +69,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .ct dt{font-family:var(--mono);text-transform:uppercase;font-size:calc(2.1 * var(--mm));letter-spacing:.12em;padding-left:.12em;color:#927a6d}
 .ct dd{margin:0;font-size:calc(4 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
 
+.pc.pb .pt{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.6}
 .pc.pk{background:#14080a;color:#fff7ed}
 .pk .pt{position:absolute;inset:0;width:100%;height:100%;display:block}
 .pk .nm{left:0;right:0;top:calc(35.5 * var(--mm));text-align:center}
@@ -89,7 +90,7 @@ function mixc(a,b,t){return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2
 function draw(cv){
  var b=+cv.getAttribute('data-bleed')||0, ppm=650/55;
  cv.width=Math.round((55+2*b)*ppm); cv.height=Math.round((85+2*b)*ppm);
- var c=cv.getContext('2d'); c.globalCompositeOperation='lighter'; var R=rng(11);
+ var light=cv.getAttribute('data-mode')==='light'; var c=cv.getContext('2d'); c.globalCompositeOperation=light?'source-over':'lighter'; var R=rng(11);
  function dot(x,y,r,col,a){var px=(x+b)*ppm,py=(y+b)*ppm,rr=r*ppm,g=c.createRadialGradient(px,py,0,px,py,rr);
   var k=Math.round(col[0])+','+Math.round(col[1])+','+Math.round(col[2]);
   g.addColorStop(0,'rgba('+k+','+a+')');g.addColorStop(.45,'rgba('+k+','+a*.5+')');g.addColorStop(1,'rgba('+k+',0)');
@@ -98,21 +99,21 @@ function draw(cv){
   var q=rad*Math.cbrt(R())/Math.sqrt(l);dot(cx+x*q,cy+y*q,rmin+R()*(rmax-rmin),typeof col==='function'?col():col,a*(0.5+0.5*(z+1)/2))}}
  function seg(x1,y1,x2,y2,n,colf,j,rmin,rmax,a){for(var i=0;i<n;i++){var t=R();dot(x1+(x2-x1)*t+(R()-.5)*j,y1+(y2-y1)*t+(R()-.5)*j,rmin+R()*(rmax-rmin),colf(t),a)}}
  // ambient dust
- for(var i=0;i<280;i++){var gx=R()*55,gy=R()*35;dot(gx,gy,.1+R()*.2,[200,185,170],.22+R()*.2)}
- var cx=27.5, cy=8.6, hy=20.5;
+ for(var i=0;i<(light?420:280);i++){var gx=R()*55,gy=R()*(light?85:35);dot(gx,gy,.1+R()*.2,light?[150,125,105]:[200,185,170],.22+R()*.2)}
+ var cx=27.5, cy=light?11:8.6, hy=light?36:20.5, ay0=light?58:27.2, ty0=light?80:32.5, sp=light?8.3:7.4;
  // glows
  dot(cx,cy,7,OR,.16);
- var hubs=[];for(var k=0;k<6;k++){hubs.push([cx+(k-2.5)*7.4, hy+(k%2?.7:-.7)]); dot(hubs[k][0],hubs[k][1],4.2,COLS[k],.12)}
+ var hubs=[];for(var k=0;k<6;k++){hubs.push([cx+(k-2.5)*sp, hy+(k%2?.7:-.7)]); dot(hubs[k][0],hubs[k][1],4.2,COLS[k],.12)}
  // chief
  ball(cx,cy,2.1,520,OR,.12,.3,.95);
  // chief -> hubs, hub -> agents -> tools
  hubs.forEach(function(h,k){
   seg(cx,cy,h[0],h[1],210,function(t){return mixc(OR,COLS[k],t*0.8+R()*.2)},.35,.1,.24,.7);
   ball(h[0],h[1],1.45,190,COLS[k],.11,.26,.95);
-  for(var j=0;j<3;j++){var ax=h[0]+(j-1)*2.35, ay=27.2;
+  for(var j=0;j<3;j++){var ax=h[0]+(j-1)*(light?2.7:2.35), ay=ay0;
    seg(h[0],h[1],ax,ay,60,function(t){return COLS[k]},.18,.08,.18,.6);
    ball(ax,ay,.55,46,COLS[k],.09,.2,.9);
-   seg(ax,ay,ax,32.5,34,function(t){return COLS[k]},.14,.07,.15,.5)}
+   seg(ax,ay,ax,ty0,light?60:34,function(t){return COLS[k]},.14,.07,.15,.5)}
  });
 }
 function go(){var a=document.querySelectorAll('canvas.pt');for(var i=0;i<a.length;i++)draw(a[i])}

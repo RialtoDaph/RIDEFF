@@ -36,6 +36,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .ct dt{font-family:var(--mono);text-transform:uppercase;font-size:calc(2.1 * var(--mm));letter-spacing:.12em;padding-left:.12em;color:#927a6d}
 .ct dd{margin:0;font-size:calc(4 * var(--mm));font-weight:500;letter-spacing:-.005em;white-space:nowrap}
 
+.pc.pb .pt{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.6}
 .pc.pk{background:#14080a;color:#fff7ed}
 .pk .pt{position:absolute;inset:0;width:100%;height:100%;display:block}
 .pk .nm{left:0;right:0;top:calc(35.5 * var(--mm));text-align:center}
@@ -58,7 +59,7 @@ function mixc(a,b,t){return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2
 function draw(cv){
  var b=+cv.getAttribute('data-bleed')||0, ppm=650/55;
  cv.width=Math.round((55+2*b)*ppm); cv.height=Math.round((85+2*b)*ppm);
- var c=cv.getContext('2d'); c.globalCompositeOperation='lighter'; var R=rng(11);
+ var light=cv.getAttribute('data-mode')==='light'; var c=cv.getContext('2d'); c.globalCompositeOperation=light?'source-over':'lighter'; var R=rng(11);
  function dot(x,y,r,col,a){var px=(x+b)*ppm,py=(y+b)*ppm,rr=r*ppm,g=c.createRadialGradient(px,py,0,px,py,rr);
   var k=Math.round(col[0])+','+Math.round(col[1])+','+Math.round(col[2]);
   g.addColorStop(0,'rgba('+k+','+a+')');g.addColorStop(.45,'rgba('+k+','+a*.5+')');g.addColorStop(1,'rgba('+k+',0)');
@@ -67,21 +68,21 @@ function draw(cv){
   var q=rad*Math.cbrt(R())/Math.sqrt(l);dot(cx+x*q,cy+y*q,rmin+R()*(rmax-rmin),typeof col==='function'?col():col,a*(0.5+0.5*(z+1)/2))}}
  function seg(x1,y1,x2,y2,n,colf,j,rmin,rmax,a){for(var i=0;i<n;i++){var t=R();dot(x1+(x2-x1)*t+(R()-.5)*j,y1+(y2-y1)*t+(R()-.5)*j,rmin+R()*(rmax-rmin),colf(t),a)}}
  // ambient dust
- for(var i=0;i<280;i++){var gx=R()*55,gy=R()*35;dot(gx,gy,.1+R()*.2,[200,185,170],.22+R()*.2)}
- var cx=27.5, cy=8.6, hy=20.5;
+ for(var i=0;i<(light?420:280);i++){var gx=R()*55,gy=R()*(light?85:35);dot(gx,gy,.1+R()*.2,light?[150,125,105]:[200,185,170],.22+R()*.2)}
+ var cx=27.5, cy=light?11:8.6, hy=light?36:20.5, ay0=light?58:27.2, ty0=light?80:32.5, sp=light?8.3:7.4;
  // glows
  dot(cx,cy,7,OR,.16);
- var hubs=[];for(var k=0;k<6;k++){hubs.push([cx+(k-2.5)*7.4, hy+(k%2?.7:-.7)]); dot(hubs[k][0],hubs[k][1],4.2,COLS[k],.12)}
+ var hubs=[];for(var k=0;k<6;k++){hubs.push([cx+(k-2.5)*sp, hy+(k%2?.7:-.7)]); dot(hubs[k][0],hubs[k][1],4.2,COLS[k],.12)}
  // chief
  ball(cx,cy,2.1,520,OR,.12,.3,.95);
  // chief -> hubs, hub -> agents -> tools
  hubs.forEach(function(h,k){
   seg(cx,cy,h[0],h[1],210,function(t){return mixc(OR,COLS[k],t*0.8+R()*.2)},.35,.1,.24,.7);
   ball(h[0],h[1],1.45,190,COLS[k],.11,.26,.95);
-  for(var j=0;j<3;j++){var ax=h[0]+(j-1)*2.35, ay=27.2;
+  for(var j=0;j<3;j++){var ax=h[0]+(j-1)*(light?2.7:2.35), ay=ay0;
    seg(h[0],h[1],ax,ay,60,function(t){return COLS[k]},.18,.08,.18,.6);
    ball(ax,ay,.55,46,COLS[k],.09,.2,.9);
-   seg(ax,ay,ax,32.5,34,function(t){return COLS[k]},.14,.07,.15,.5)}
+   seg(ax,ay,ax,ty0,light?60:34,function(t){return COLS[k]},.14,.07,.15,.5)}
  });
 }
 function go(){var a=document.querySelectorAll('canvas.pt');for(var i=0;i<a.length;i++)draw(a[i])}
@@ -96,6 +97,11 @@ def pcard(side, bleed=False):
                  '<div class="abs hl"><h2>We drive you through<b><s>the</s> <span>AGE</span> <s>of</s> <span>AI</span></b></h2></div>'
                  '<div class="abs sub">Agents<span class="d">·</span>Apps<span class="d">·</span>Web</div>'
                  f'<div class="abs qrt">{QR}</div></div>')
+    elif side == "backl":
+        cls = "pc pb" + (" bleed" if bleed else "")
+        inner = (f'<canvas class="pt" data-mode="light" data-bleed="{3 if bleed else 0}"></canvas><div class="in"><div class="abs nm" style="top:calc(13.5 * var(--mm))"><h3 style="line-height:1"><span style="font-size:calc(10 * var(--mm));display:block;letter-spacing:-.035em">Rialto</span><span style="font-size:calc(4.9 * var(--mm));display:block;margin-top:calc(1.2 * var(--mm));font-weight:500">Daphino Effendy</span></h3><div class="role">Founder &amp; Operator</div></div>'
+                 '<div class="abs div"><i></i></div>'
+                 '<dl class="abs ct"><div><dt>WhatsApp</dt><dd>+49 176 32572420</dd></div><div><dt>E-Mail</dt><dd>hallo@rideff.com</dd></div><div><dt>Web</dt><dd>rideff.com</dd></div></dl></div>')
     elif side == "backp":
         cls = "pc pk" + (" bleed" if bleed else "")
         inner = (f'<canvas class="pt" data-bleed="{3 if bleed else 0}"></canvas><div class="in">'
@@ -110,16 +116,16 @@ def pcard(side, bleed=False):
                  '<dl class="abs ct"><div><dt>WhatsApp</dt><dd>+49 176 32572420</dd></div><div><dt>E-Mail</dt><dd>hallo@rideff.com</dd></div><div><dt>Web</dt><dd>rideff.com</dd></div></dl></div>')
     return f'<div class="{cls}">{inner}</div>'
 
-for name, side, bleed in [("front","front",False),("back","back",False),("front-bleed","front",True),("back-bleed","back",True),("backp","backp",False),("backp-bleed","backp",True)]:
+for name, side, bleed in [("front","front",False),("back","back",False),("front-bleed","front",True),("back-bleed","back",True),("backp","backp",False),("backp-bleed","backp",True),("backl","backl",False),("backl-bleed","backl",True)]:
     (root/f"_p-{name}.html").write_text(page("", pcard(side,bleed)+PT_JS, local+mono+CSS+"body{margin:0;width:100vw}"))
 
 body = f'''<main class="wrap"><header><p class="eyebrow">Visitenkarte · hochkant · 55 × 85 mm</p><h1>RIDEFF</h1></header>
-<section class="cards"><figure>{pcard("front")}<figcaption>Vorderseite</figcaption></figure><figure>{pcard("backp")}<figcaption>Rückseite · Partikel</figcaption></figure><figure>{pcard("back")}<figcaption>Rückseite · Creme</figcaption></figure></section></main>{PT_JS}'''
+<section class="cards"><figure>{pcard("front")}<figcaption>Vorderseite</figcaption></figure><figure>{pcard("backl")}<figcaption>Rückseite · Partikel, transparent</figcaption></figure><figure>{pcard("backp")}<figcaption>Rückseite · Partikel, dunkel</figcaption></figure><figure>{pcard("back")}<figcaption>Rückseite · Creme</figcaption></figure></section></main>{PT_JS}'''
 extra = CSS + """
-.wrap{max-width:1000px;margin:0 auto;padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:32px}
+.wrap{max-width:1100px;margin:0 auto;padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:32px}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin:0 0 6px}
 h1{margin:0;font-size:clamp(32px,6vw,48px);letter-spacing:-.03em;font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px}
 figure{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
 figure .pc{border-radius:10px;box-shadow:0 18px 40px rgba(23,9,10,.28)}
 figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
