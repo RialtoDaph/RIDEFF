@@ -1077,7 +1077,7 @@ Logic.prototype.render = function render() {
             {v.t("Home.n01Thesis")}
           </div>
           <div onMouseMove={v.tiltMove} onMouseLeave={v.tiltLeave} style={{ position: "relative", aspectRatio: "4/5", maxWidth: "520px", borderRadius: "22px", overflow: "hidden", transition: "transform .25s ease-out", willChange: "transform", boxShadow: "0 40px 80px -40px rgba(23,9,10,.45)" }}>
-            <img loading="lazy" decoding="async" src={opt("/images/rialto-about-v3.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img loading="lazy" decoding="async" src={opt("/images/rialto-home.jpg")} alt={v.t("Home.rialtoFounderOfRIDEFF")} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             <span data-glare="1" style={{ position: "absolute", inset: "0", borderRadius: "22px", pointerEvents: "none", opacity: "0", transition: "opacity .3s", zIndex: "2", mixBlendMode: "soft-light" }} />
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "#5E4A43" }}>
