@@ -25,7 +25,14 @@ class Logic extends DCLogic {
     fName: '',
     fContact: '',
     need: null,
-    clock: ''
+    clock: '',
+    slots: null,
+    slotsErr: false,
+    slotDay: null,
+    slotTime: null,
+    bk: 'idle',
+    bkErr: '',
+    bkDone: null
   };
   DUR = 5000;
   P = [{
@@ -240,8 +247,17 @@ class Logic extends DCLogic {
     });
   };
   chipsRef = React.createRef();
+  /** Free 15-minute slots from Cal.com (via /api/cal/slots). */
+  loadSlots = () => {
+    fetch('/api/cal/slots').then(r => (r.ok ? r.json() : Promise.reject(new Error('slots')))).then(j => this.setState(st => ({
+      slots: j.days,
+      slotsErr: false,
+      slotDay: st.slotDay && j.days[st.slotDay] ? st.slotDay : Object.keys(j.days).sort()[0] ?? null
+    }))).catch(() => this.setState({ slotsErr: true }));
+  };
   componentDidMount() {
     this.setState({ mounted: true });
+    this.loadSlots();
     this.measure();
     window.addEventListener('resize', this.measure);
     setTimeout(this.measure, 300);
@@ -403,27 +419,60 @@ class Logic extends DCLogic {
       p = this.P[s.i],
       d = this.D[s.d];
     const need = [this.props.t("Home.aISystem"), this.props.t("Home.teamApp"), this.props.t("Home.websiteShop"), 'RIDEFF Life', this.props.t("Home.notSureYet")];
-    // Days depend on the visitor's date: computed after mount (static HTML has none).
-    if (!this._days && this.state.mounted) {
-      const out = [],
-        base = Date.now();
-      for (let i = 1; i <= 9 && out.length < 5; i++) {
-        const x = new Date(base + i * 86400000);
-        const wd = x.getDay();
-        if (wd !== 0 && wd !== 6) out.push(x);
-      }
-      this._days = out;
-    }
-    const days = this._days || [];
     const WD = [this.props.t("Home.sun"), this.props.t("Home.mon"), this.props.t("Home.tue"), this.props.t("Home.wed"), this.props.t("Home.thu"), this.props.t("Home.fri"), this.props.t("Home.sat")],
       MO = [this.props.t("Home.jan"), this.props.t("Home.feb"), this.props.t("Home.mar"), this.props.t("Home.apr"), this.props.t("Home.may"), this.props.t("Home.jun"), this.props.t("Home.jul"), this.props.t("Home.aug"), this.props.t("Home.sep"), this.props.t("Home.oct"), this.props.t("Home.nov"), this.props.t("Home.dec")],
-      TIMES = ['09:30', '13:00', '16:30'];
-    const sd = days[s.slotDay ?? -1],
-      slot = sd && s.slotTime != null ? `${WD[sd.getDay()]} ${sd.getDate()} ${MO[sd.getMonth()]}, ${TIMES[s.slotTime]} CET` : null;
+      dayDate = k => {
+        const [y, m, d] = k.split('-').map(Number);
+        return new Date(y, m - 1, d, 12);
+      };
+    const dayKeys = Object.keys(s.slots ?? {}).sort().slice(0, 5);
+    const times = s.slots?.[s.slotDay] ?? [];
+    const picked = times.find(x => x.start === s.slotTime);
+    const sd = picked ? dayDate(s.slotDay) : null;
+    const slotLabel = sd ? `${WD[sd.getDay()]} ${sd.getDate()} ${MO[sd.getMonth()]}, ${picked.time}` : null;
+    const slot = slotLabel ? slotLabel + ' CET' : null;
     const msg = this.props.t('common.waIntro', { name: s.fName || '…', contact: s.fContact || '…', need: s.need || this.props.t('common.waNotSure') }) + (slot ? this.props.t('common.waSlot', { slot }) : '');
+    const waHref = 'https://wa.me/4917632572420?text=' + encodeURIComponent(msg);
+    const fail = text => this.setState({ bk: 'idle', bkErr: text });
+    const book = async () => {
+      if (s.bk === 'sending') return;
+      const t = this.props.t;
+      const name = (s.fName || '').trim(),
+        contact = (s.fContact || '').trim();
+      if (!name) return fail(t('common.bookNeedName'));
+      if (!contact) return fail(t('common.bookNeedContact'));
+      if (!picked) return fail(t('common.bookNeedSlot'));
+      // Cal.com needs an e-mail address for the confirmation. A phone number goes to WhatsApp instead.
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact)) {
+        fail(t('common.bookViaWhatsApp'));
+        window.open(waHref, '_blank', 'noopener');
+        return;
+      }
+      this.setState({ bk: 'sending', bkErr: '' });
+      try {
+        const r = await fetch('/api/cal/book', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ name, email: contact, start: picked.start, need: s.need || '', locale: this.props.locale })
+        });
+        if (r.ok) return this.setState({ bk: 'done', bkDone: { slot: slotLabel, email: contact } });
+        const j = await r.json().catch(() => ({}));
+        if (j.error === 'taken') {
+          this.setState({ slotTime: null });
+          this.loadSlots();
+          return fail(t('common.bookTaken'));
+        }
+        if (j.error === 'name') return fail(t('common.bookNeedName'));
+        if (j.error === 'email') return fail(t('common.bookNeedContact'));
+        return fail(t('common.bookFailed'));
+      } catch {
+        return fail(t('common.bookFailed'));
+      }
+    };
     return {
-      slotDays: days.map((d, k) => {
-        const on = s.slotDay === k;
+      slotDays: dayKeys.map(k => {
+        const d = dayDate(k),
+          on = s.slotDay === k;
         return {
           wd: WD[d.getDay()],
           day: d.getDate(),
@@ -432,23 +481,29 @@ class Logic extends DCLogic {
           bd: on ? '#F97316' : '#3D1F20',
           go: () => this.setState({
             slotDay: k,
-            slotTime: s.slotTime ?? 0
+            slotTime: null,
+            bkErr: ''
           })
         };
       }),
-      slotTimes: TIMES.map((t, k) => {
-        const on = s.slotTime === k;
+      slotTimes: times.map(x => {
+        const on = s.slotTime === x.start;
         return {
-          t,
+          t: x.time,
           bg: on ? '#FFF7ED' : 'transparent',
           fg: on ? '#17090A' : '#FFF7ED',
           bd: on ? '#FFF7ED' : '#3D1F20',
           go: () => this.setState({
-            slotTime: k,
-            slotDay: s.slotDay ?? 0
+            slotTime: x.start,
+            bkErr: ''
           })
         };
       }),
+      slotsNote: s.slotsErr || s.slots && !dayKeys.length ? this.props.t('common.bookNoSlots') : s.slots ? '' : this.props.t('common.bookLoading'),
+      bkErr: s.bkErr,
+      bkSending: s.bk === 'sending',
+      bkDone: s.bk === 'done' ? s.bkDone : null,
+      book,
       caseOpen: !!s.caseOpen,
       openCase: () => {
         this.setState({
@@ -684,7 +739,7 @@ class Logic extends DCLogic {
           })
         };
       }),
-      waHref: 'https://wa.me/4917632572420?text=' + encodeURIComponent(msg),
+      waHref,
     };
   }
 }
@@ -1620,9 +1675,21 @@ Logic.prototype.render = function render() {
                 </Fragment>))}
               </div>
             </div>
-            <a href={v.waHref} style={{ marginTop: "8px", textAlign: "center", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "16px 22px", fontWeight: "600", fontSize: "15px" }} className="hv-e9a718d">
-              {v.t("Home.bookMyFreeSlot")}
-            </a>
+            {v.bkDone ? (<div role="status" style={{ marginTop: "8px", display: "flex", flexDirection: "column", gap: "6px", borderRadius: "16px", border: "1px solid #F97316", padding: "18px 20px" }}>
+              <b style={{ fontSize: "17px" }}>
+                {v.t("common.bookDoneTitle")}
+              </b>
+              <span style={{ fontSize: "14px", color: "#CBB7A8" }}>
+                {v.t("common.bookDoneBody", { slot: v.bkDone.slot, email: v.bkDone.email })}
+              </span>
+            </div>) : (<>
+              {v.bkErr || v.slotsNote ? (<span role="alert" style={{ fontSize: "13px", color: v.bkErr ? "#FDBA74" : "#927A6D" }}>
+                {v.bkErr || v.slotsNote}
+              </span>) : null}
+              <button type="button" onClick={v.book} disabled={v.bkSending} style={{ marginTop: "8px", textAlign: "center", border: "none", cursor: v.bkSending ? "progress" : "pointer", opacity: v.bkSending ? ".7" : "1", font: "600 15px var(--font-sans)", background: "#F97316", color: "#17090A", borderRadius: "999px", padding: "16px 22px" }} className="hv-e9a718d">
+                {v.bkSending ? v.t("common.bookSending") : v.t("Home.bookMyFreeSlot")}
+              </button>
+            </>)}
             <span style={{ fontSize: "12px", color: "#78625A" }}>
               {v.t("Home.noPitchNoObligationYourDetails")}
             </span>

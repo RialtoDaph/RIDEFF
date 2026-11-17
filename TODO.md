@@ -47,7 +47,7 @@ Chat and voice run on **ElevenLabs Agents** once the env vars are set; without t
 
 ## 4. Owner decisions and assets
 
-- [ ] **Cal.com**: the 15-min first call links to `CAL_URL` in `src/lib/site.ts` (Home and Contact booking rows). Still open: the Life Private link. The Home "(08) Start a project" day/slot picker and the Contact form currently hand the chosen slot to WhatsApp (prefilled text). Back them with the Cal.com API (or the inline embed, brand colour `#FF6A00`).
+- [ ] **Cal.com**: the 15-min first call links to `CAL_URL` in `src/lib/site.ts` (Home and Contact booking rows). Still open: the Life Private link. The Home "(08) Start a project" widget now reads free slots from Cal.com and books for real (`src/lib/cal.ts`, `/api/cal/slots`, `/api/cal/book`, public endpoints, no API key). With an e-mail address it books; with a phone number it opens WhatsApp with the slot. The Contact form still hands its message to WhatsApp.
 - [ ] **Route slugs** (`src/i18n/routing.ts`): `/verstehen`, `/bauen`, `/bauen/web-shops`, `/bauen/team-apps`, `/betreiben`, `/projekte`, `/preise`, `/ueber-mich`, `/kontakt` + English equivalents under `/en` — confirm.
 - [ ] **Life app URL**: CTAs point to the temporary `https://rideff-life.vercel.app`. Sign-up goes to `<app>/signup?plan=…&lang=…`, demo to `<app>/demo` (`NEXT_PUBLIC_LIFE_DEMO_URL` overrides). Once `app.rideff.com` is live, set `NEXT_PUBLIC_LIFE_APP_URL=https://app.rideff.com` in Vercel (or change the default in `src/lib/site.ts`) and redeploy.
 - [ ] **Portal**: `NEXT_PUBLIC_PORTAL_URL` once `portal.rideff.com` (separate repo) is live.
