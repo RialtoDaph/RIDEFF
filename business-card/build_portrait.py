@@ -42,27 +42,38 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 
 
 def circuit_svg():
-    """Abstract circuit: rounded-corner traces that fade out, soft glow underlay, glowing nodes. Stays in the margins."""
-    pal = ['#FF9E47', '#61CC80', '#54B0E6', '#9E8CF2', '#E0B842', '#EB7AAB']
-    paths = [
-        # (path d, gradient start, gradient end, node (x, y, color))
-        ("M-2 10 H6 Q9 10 9 13 V24 Q9 27 6 27 H3.4 Q1.4 27 1.4 29 V54", (-2, 10), (1.4, 54), (1.4, 54, pal[2])),
-        ("M57 6 H53 Q51 6 51 8 V50 Q51 52 53 52 H57", (57, 6), (51, 50), None),
-        ("M-2 71 H4 Q6.2 71 6.2 73.2 V79 Q6.2 82 9.2 82 H17", (-2, 71), (17, 82), (17, 82, pal[1])),
-        ("M57 64 H51.5 Q49 64 49 66.5 V77 Q49 80 46 80 H39", (57, 64), (39, 80), (39, 80, pal[5])),
-        ("M57 20 H49.6 Q47.6 20 47.6 18 V12", (57, 20), (47.6, 12), (47.6, 12, pal[3])),
-    ]
-    defs = '<filter id="cg" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation=".7"/></filter>'
+    """Faint microchip behind the logo: package outline, inner die, pins, and fan-out traces running to the card edges."""
+    o = '#f97316'
     out = ''
-    for i, (d, (x1, y1), (x2, y2), node) in enumerate(paths):
-        defs += (f'<linearGradient id="cf{i}" gradientUnits="userSpaceOnUse" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}">'
-                 '<stop offset="0" stop-color="#f97316" stop-opacity=".85"/><stop offset=".55" stop-color="#f97316" stop-opacity=".45"/>'
-                 '<stop offset="1" stop-color="#f97316" stop-opacity=".05"/></linearGradient>')
-        out += f'<path d="{d}" fill="none" stroke="url(#cf{i})" stroke-width="1.5" stroke-linecap="round" filter="url(#cg)" opacity=".5"/>'
-        out += f'<path d="{d}" fill="none" stroke="url(#cf{i})" stroke-width=".26" stroke-linecap="round"/>'
-        if node:
-            nx, ny, col = node
-            out += f'<circle cx="{nx}" cy="{ny}" r="1.7" fill="{col}" fill-opacity=".28" filter="url(#cg)"/><circle cx="{nx}" cy="{ny}" r=".5" fill="{col}"/>'
+    defs = ('<linearGradient id="tl" gradientUnits="userSpaceOnUse" x1="8.6" y1="0" x2="-2" y2="0">'
+            f'<stop offset="0" stop-color="{o}" stop-opacity=".36"/><stop offset="1" stop-color="{o}" stop-opacity=".06"/></linearGradient>'
+            '<linearGradient id="tr" gradientUnits="userSpaceOnUse" x1="46.4" y1="0" x2="57" y2="0">'
+            f'<stop offset="0" stop-color="{o}" stop-opacity=".36"/><stop offset="1" stop-color="{o}" stop-opacity=".06"/></linearGradient>')
+    # package + die
+    out += f'<rect x="11" y="3" width="33" height="22" rx="2" fill="{o}" fill-opacity=".035" stroke="{o}" stroke-opacity=".30" stroke-width=".22"/>'
+    out += f'<rect x="12.7" y="4.7" width="29.6" height="18.6" rx="1.2" fill="none" stroke="{o}" stroke-opacity=".15" stroke-width=".16"/>'
+    out += f'<circle cx="13.9" cy="5.9" r=".45" fill="{o}" fill-opacity=".35"/>'
+    # top and bottom pins
+    for i in range(13):
+        x = 13.3 + i * 2.37
+        out += f'<rect x="{x - .3:.2f}" y=".5" width=".6" height="2.5" fill="{o}" fill-opacity=".26"/>'
+        out += f'<rect x="{x - .3:.2f}" y="25" width=".6" height="1.8" fill="{o}" fill-opacity=".26"/>'
+    # side pins with fan-out traces
+    n = 9
+    for i in range(n):
+        y = 5.2 + i * 2.1
+        out += f'<rect x="8.6" y="{y - .3:.2f}" width="2.4" height=".6" fill="{o}" fill-opacity=".26"/>'
+        out += f'<rect x="44" y="{y - .3:.2f}" width="2.4" height=".6" fill="{o}" fill-opacity=".26"/>'
+        dy = (i - 4) * 1.9
+        y2 = y + dy
+        d = abs(dy)
+        lx1, lx2 = 6.2, 6.2 - d
+        out += f'<path d="M8.6 {y:.2f} H{lx1} L{lx2:.2f} {y2:.2f} H-2" fill="none" stroke="url(#tl)" stroke-width=".2" stroke-linejoin="round"/>'
+        rx1, rx2 = 55 - lx1, 55 - lx2
+        out += f'<path d="M46.4 {y:.2f} H{rx1} L{rx2:.2f} {y2:.2f} H57" fill="none" stroke="url(#tr)" stroke-width=".2" stroke-linejoin="round"/>'
+    # a few via dots on the traces
+    for (vx, vy) in [(3.2, 12), (2.2, 19.5), (52.0, 9.5), (50.2, 22)]:
+        out += f'<circle cx="{vx}" cy="{vy}" r=".4" fill="none" stroke="{o}" stroke-opacity=".3" stroke-width=".16"/>'
     return f'<svg viewBox="0 0 55 85" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block" xmlns="http://www.w3.org/2000/svg"><defs>{defs}</defs>{out}</svg>'
 
 def divider_tree():
