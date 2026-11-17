@@ -23,6 +23,8 @@ export const LIMITS = {
   whatsapp: { perIp: 5, perSession: 2, windowMs: 60 * 60_000 },
   // perSession = per e-mail address: no mail bombing of one inbox.
   newsletter: { perIp: 5, perSession: 2, windowMs: 60 * 60_000 },
+  // perSession = per e-mail address: a real booking sends mail to both sides.
+  booking: { perIp: 6, perSession: 3, windowMs: 60 * 60_000 },
 } satisfies Record<string, Limit>;
 
 const hits = new Map<string, number[]>();

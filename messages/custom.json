@@ -339,6 +339,50 @@
     "calcNote": {
       "de": "Ihre Zahlen, einfach gerechnet: Stunden × 4,33 Wochen × Stundenwert.",
       "en": "Your numbers, plain maths: hours × 4.33 weeks × hourly value."
+    },
+    "bookLoading": {
+      "en": "Loading times …",
+      "de": "Termine werden geladen …"
+    },
+    "bookNoSlots": {
+      "en": "Couldn't load free times right now. Book on Cal.com directly or message on WhatsApp.",
+      "de": "Gerade keine freien Termine zu laden. Buchen Sie direkt über Cal.com oder schreiben Sie auf WhatsApp."
+    },
+    "bookNeedName": {
+      "en": "Please enter your name.",
+      "de": "Bitte geben Sie Ihren Namen an."
+    },
+    "bookNeedContact": {
+      "en": "Please enter your email or WhatsApp number.",
+      "de": "Bitte geben Sie Ihre E-Mail oder WhatsApp-Nummer an."
+    },
+    "bookNeedSlot": {
+      "en": "Please pick a day and a time.",
+      "de": "Bitte wählen Sie Tag und Uhrzeit."
+    },
+    "bookSending": {
+      "en": "Booking …",
+      "de": "Wird gebucht …"
+    },
+    "bookTaken": {
+      "en": "That time was just taken. Please pick another.",
+      "de": "Dieser Termin ist gerade vergeben. Bitte wählen Sie einen anderen."
+    },
+    "bookFailed": {
+      "en": "That didn't work. Please book on Cal.com or message on WhatsApp.",
+      "de": "Das hat nicht geklappt. Bitte buchen Sie über Cal.com oder schreiben Sie auf WhatsApp."
+    },
+    "bookDoneTitle": {
+      "en": "Call booked ✓",
+      "de": "Termin gebucht ✓"
+    },
+    "bookDoneBody": {
+      "en": "{slot} (CET). The confirmation is on its way to {email}.",
+      "de": "{slot} (MEZ). Die Bestätigung kommt per E-Mail an {email}."
+    },
+    "bookViaWhatsApp": {
+      "en": "With a phone number we book over WhatsApp: your message is ready.",
+      "de": "Mit Telefonnummer buchen wir über WhatsApp: Ihre Nachricht ist vorbereitet."
     }
   },
   "nana": {
