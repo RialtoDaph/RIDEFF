@@ -26,7 +26,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .sub .d{color:#f97316;margin:0 .35em}
 .qrt{left:50%;transform:translateX(-50%);bottom:calc(15 * var(--mm));width:calc(19 * var(--mm));height:calc(19 * var(--mm));background:var(--paper);border-radius:calc(1.4 * var(--mm));padding:calc(1.5 * var(--mm))}
 .qrt svg{display:block;width:100%;height:100%}
-.wm{left:50%;transform:translateX(-50%);bottom:calc(-14 * var(--mm));width:calc(96 * var(--mm));aspect-ratio:665/332;background:#ffeadb;-webkit-mask:url('MARK') center/contain no-repeat;mask:url('MARK') center/contain no-repeat}
+.wm{left:50%;transform:translateX(-50%) rotate(-14deg);transform-origin:50% 50%;bottom:calc(-10 * var(--mm));width:calc(104 * var(--mm));aspect-ratio:665/332;background:#ffeadb;-webkit-mask:url('MARK') center/contain no-repeat;mask:url('MARK') center/contain no-repeat}
 .nm{left:0;right:0;top:calc(7 * var(--mm));text-align:center}
 .nm h3{margin:0;font-weight:600;font-size:calc(7.4 * var(--mm));line-height:1.04;letter-spacing:-.03em}
 .role{margin-top:calc(3 * var(--mm));font-family:var(--mono);text-transform:uppercase;font-size:calc(2.3 * var(--mm));letter-spacing:.14em;padding-left:.14em;color:var(--orange-ink)}
