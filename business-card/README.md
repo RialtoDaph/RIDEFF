@@ -1,13 +1,13 @@
 # RIDEFF business card
 
-Vertical card, 55 x 85 mm (printer option: Standard 85 x 55 mm, Vertikal).
+Vertical card, 55 x 85 mm (printer option: Standard 85 x 55 mm, Vertikal). The printer's editor shows 5.8 x 8.8 cm, i.e. 1.5 mm bleed on every side.
 
 ## Files to upload to the printer
 
 | Side | File | Size |
 |---|---|---|
-| Front (Vorderseite) | `rideff-card-portrait-front-bleed2.png` | 59 x 89 mm incl. 2 mm bleed, ~600 dpi |
-| Back (Rückseite) | `rideff-card-portrait-back-bleed2.png` | 59 x 89 mm incl. 2 mm bleed, ~600 dpi |
+| Front (Vorderseite) | `rideff-card-portrait-front-print.png` | 58 x 88 mm incl. 1.5 mm bleed, ~600 dpi |
+| Back (Rückseite) | `rideff-card-portrait-back-print.png` | 58 x 88 mm incl. 1.5 mm bleed, ~600 dpi |
 
 `rideff-card-portrait-front.png` / `-back.png` are the trimmed 55 x 85 mm previews (300 dpi). Everything in `archive/` is superseded; do not upload it.
 

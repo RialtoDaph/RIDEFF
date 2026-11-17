@@ -7,8 +7,8 @@ const jobs = [
   // name, css px width, css px height, device scale factor, output
   ['front',        650, 1004, 1, 'rideff-card-portrait-front.png'],
   ['back',         650, 1004, 1, 'rideff-card-portrait-back.png'],
-  ['front-bleed2', 697, 1051, 2, 'rideff-card-portrait-front-bleed2.png'],
-  ['back-bleed2',  697, 1051, 2, 'rideff-card-portrait-back-bleed2.png'],
+  ['front-print',  685, 1040, 2, 'rideff-card-portrait-front-print.png'],
+  ['back-print',   685, 1040, 2, 'rideff-card-portrait-back-print.png'],
 ];
 (async () => {
   const b = await chromium.launch();

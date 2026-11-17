@@ -11,7 +11,8 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font)}
 .pc{--mm:calc(100cqw / 55);container-type:inline-size;position:relative;width:100%;aspect-ratio:55/85;overflow:hidden;font-family:var(--font);-webkit-font-smoothing:antialiased}
 .pc.bleed{--mm:calc(100cqw / 61);aspect-ratio:61/91}
 .pc.bleed.b2{--mm:calc(100cqw / 59);aspect-ratio:59/89}
-.pc .in{position:absolute;inset:0}.pc.bleed .in{inset:calc(3 * var(--mm))}.pc.bleed.b2 .in{inset:calc(2 * var(--mm))}
+.pc.bleed.b15{--mm:calc(100cqw / 58);aspect-ratio:58/88}
+.pc .in{position:absolute;inset:0}.pc.bleed .in{inset:calc(3 * var(--mm))}.pc.bleed.b2 .in{inset:calc(2 * var(--mm))}.pc.bleed.b15 .in{inset:calc(1.5 * var(--mm))}
 .pc .abs{position:absolute}
 .pc.pf{background:var(--night);color:var(--paper)}
 .pc.pb{background:var(--paper);color:var(--ink)}
@@ -89,7 +90,7 @@ def divider_tree():
             f'<svg viewBox="0 0 43 5" style="width:100%;height:100%;display:block;overflow:visible" xmlns="http://www.w3.org/2000/svg">{t}</svg></div>')
 
 def pcard(side, bleed=False):
-    cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}{' b2' if (bleed is not True and bleed == 2) else ''}"
+    cls = f"pc {'pf' if side=='front' else 'pb'}{' bleed' if bleed else ''}{' b2' if (bleed is not True and bleed == 2) else ''}{' b15' if (bleed is not True and bleed == 1.5) else ''}"
     if side == "front":
         inner = (f'<div class="abs" style="inset:0;background:radial-gradient(120% 70% at 50% -10%,#5c1416 0%,#2b0e10 45%,#14080a 80%)"></div><div class="in">{circuit_svg()}<img class="abs logo" src="{MARK}" alt="RIDEFF">'
                  '<div class="abs hl"><h2>We drive you through<b><s>the</s> <span>AGE</span> <s>of</s> <span>AI</span></b></h2></div>'
@@ -101,8 +102,8 @@ def pcard(side, bleed=False):
                  '<dl class="abs ct"><div><dt>Phone</dt><dd>+49 176 32572420</dd></div><div><dt>Email</dt><dd>hallo@rideff.com</dd></div><div><dt>Instagram</dt><dd>@rialtorideff</dd></div></dl></div>')
     return f'<div class="{cls}">{inner}</div>'
 
-for name, side, bleed in [("front","front",False),("back","back",False),("front-bleed","front",True),("back-bleed","back",True),("front-bleed2","front",2),("back-bleed2","back",2)]:
-    (root/f"_p-{name}.html").write_text(page("", pcard(side,bleed), local+mono+CSS+"body{margin:0;width:100vw}"))
+for name, side, bleed in [("front","front",False),("back","back",False),("front-bleed","front",True),("back-bleed","back",True),("front-bleed2","front",2),("back-bleed2","back",2),("front-print","front",1.5),("back-print","back",1.5)]:
+    (root/f"_p-{name}.html").write_text(page("", pcard(side,bleed), local+mono+CSS+"body{margin:0;width:100vw}.pc.bleed.b15{height:100vh;aspect-ratio:auto}"))
 
 body = f'''<main class="wrap"><header><p class="eyebrow">Visitenkarte · hochkant · 55 × 85 mm</p><h1>RIDEFF</h1></header>
 <section class="cards"><figure>{pcard("front")}<figcaption>Vorderseite</figcaption></figure><figure>{pcard("back")}<figcaption>Rückseite</figcaption></figure></section></main>'''
