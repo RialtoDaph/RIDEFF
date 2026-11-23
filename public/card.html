@@ -21,9 +21,10 @@
   .scene { width:100%; perspective:1400px; }
   .card { position:relative; display:block; width:100%; cursor:pointer; aspect-ratio:1317/2000; outline-offset:6px;
           -webkit-transform-style:preserve-3d; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1);
-          -webkit-tap-highlight-color:transparent; filter:drop-shadow(0 24px 40px rgba(255,106,0,.16)); }
+          -webkit-tap-highlight-color:transparent; }
   .card.flipped { transform:rotateY(180deg); }
-  .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#120A0A; }
+  .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#120A0A;
+          box-shadow:0 26px 50px -18px rgba(255,106,0,.32); }
   .face.back { transform:rotateY(180deg); background:#FFF6EA; visibility:hidden; transition:visibility 0s .45s; }
   .card.flipped .back { visibility:visible; }
   .face.front { transition:visibility 0s .45s; }
