@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rialto Daphino Effendy · RIDEFF</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Rialto Daphino Effendy · RIDEFF">
+<meta property="og:image" content="/card/front.jpg">
+<link rel="icon" href="/images/favicon.png">
+<style>
+  :root { --bg:#120A0A; --ink:#fff; --line:#3D1F20; --orange:#FF6A00; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; gap:14px; padding:20px 16px 32px;
+         background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { width:100%; max-width:380px; }
+  .scene { width:100%; perspective:1400px; }
+  .card { position:relative; display:block; width:100%; padding:0; border:0; background:none; cursor:pointer; aspect-ratio:1317/2000;
+          transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1); -webkit-tap-highlight-color:transparent; }
+  .card.flipped { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#FFF6EA; }
+  .face.back { transform:rotateY(180deg); background:#120A0A; }
+  .face img { width:100%; height:100%; display:block; object-fit:cover; }
+  .hint { text-align:center; color:#CBB7A8; font-size:13px; margin:12px 0 0; }
+  @media (prefers-reduced-motion:reduce) { .card { transition:none; } }
+  .btn { display:block; text-align:center; text-decoration:none; font-weight:700; border-radius:14px; padding:16px; margin-top:12px; font-size:16px; }
+  .primary { background:var(--orange); color:#000; margin-top:20px; }
+  .ghost { border:1px solid var(--line); color:var(--ink); }
+  .btn:active { opacity:.8; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .grid .btn { margin-top:12px; font-size:15px; padding:14px 8px; }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="scene">
+      <button class="card" id="card" type="button" aria-pressed="false" aria-label="Flip the card">
+        <span class="face front"><img src="/card/front.jpg" alt="Rialto Daphino Effendy, Founder &amp; Operator, RIDEFF"></span>
+        <span class="face back"><img src="/card/back.jpg" alt="RIDEFF: We drive you through the age of AI. rideff.com"></span>
+      </button>
+    </div>
+    <p class="hint">Tap the card to flip it</p>
+
+    <a class="btn primary" href="/">Open website: rideff.com →</a>
+    <div class="grid">
+      <a class="btn ghost" href="tel:+4917632572420">Call</a>
+      <a class="btn ghost" href="mailto:hallo@rideff.com">Email</a>
+      <a class="btn ghost" href="https://wa.me/4917632572420">WhatsApp</a>
+      <a class="btn ghost" href="https://instagram.com/rialtorideff">Instagram</a>
+    </div>
+    <a class="btn ghost" href="/card.vcf">Save contact</a>
+  </main>
+  <script>
+    var c = document.getElementById('card');
+    c.addEventListener('click', function () {
+      var on = c.classList.toggle('flipped');
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>
