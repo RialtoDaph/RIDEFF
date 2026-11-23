@@ -20,6 +20,56 @@ type Common = {
   onError: (message: string) => void;
 };
 
+/**
+ * Client tools the Nana agent can call (declared in src/lib/nana/agent-config.ts,
+ * same names). They run in the visitor's browser and reuse the public booking
+ * routes, so rate limits and the "only book what Cal.com offers" check apply.
+ * Return values are short strings: the agent reads them out.
+ */
+function nanaTools(locale: Locale) {
+  type Days = Record<string, { start: string; time: string }[]>;
+  const getDays = async (): Promise<Days | null> => {
+    try {
+      const res = await fetch('/api/cal/slots');
+      return res.ok ? ((await res.json()) as { days: Days }).days : null;
+    } catch {
+      return null;
+    }
+  };
+  return {
+    // Next free times of the 15-minute first call, Berlin time.
+    check_free_slots: async (): Promise<string> => {
+      const days = await getDays();
+      if (!days) return 'unavailable: tell the visitor that Rialto will send a time personally, or they can use the Book a call button.';
+      const dates = Object.keys(days).sort().slice(0, 3);
+      if (!dates.length) return 'none: no free times in the next days. Offer the Book a call button or WhatsApp.';
+      return dates.map((d) => `${d}: ${days[d].slice(0, 4).map((s) => s.time).join(', ')}`).join('\n') + '\n(Berlin time, 24-hour format)';
+    },
+    // Books one of the offered times. The visitor must have confirmed name, email and time.
+    book_first_call: async (p: { name?: string; email?: string; date?: string; time?: string; need?: string }): Promise<string> => {
+      const days = await getDays();
+      const slot = days?.[p.date ?? '']?.find((s) => s.time === p.time);
+      if (!days) return 'unavailable: booking is not possible right now. Offer the Book a call button.';
+      if (!slot) return 'taken: that time is no longer free. Call check_free_slots again and offer new times.';
+      try {
+        const res = await fetch('/api/cal/book', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ name: p.name ?? '', email: p.email ?? '', start: slot.start, need: p.need ?? '', locale }),
+        });
+        if (res.ok) return `booked: ${p.date} at ${p.time} Berlin time. A confirmation email goes to ${p.email}.`;
+        const { error } = (await res.json().catch(() => ({}))) as { error?: string };
+        if (error === 'email') return 'invalid_email: the email address was not valid. Ask the visitor to spell it again.';
+        if (error === 'taken') return 'taken: that time was just booked. Call check_free_slots again.';
+        if (error === 'rate_limited') return 'rate_limited: too many attempts. Offer the Book a call button.';
+        return 'failed: booking did not work. Offer the Book a call button.';
+      } catch {
+        return 'failed: booking did not work. Offer the Book a call button.';
+      }
+    },
+  };
+}
+
 export async function startVoice(
   o: Common & {
     token: string;
@@ -39,6 +89,7 @@ export async function startVoice(
     livekitUrl: o.livekitUrl,
     textOnly: false,
     stripAudioTags: true,
+    clientTools: nanaTools(o.locale),
     overrides: { agent: { language: o.locale, ...(o.firstMessage ? { firstMessage: o.firstMessage } : {}) } },
     dynamicVariables: { page: o.page, locale: o.locale, chat_context: o.chatContext, session_id: o.sessionId },
     onConnect: ({ conversationId }) => o.onConnect(conversationId),
@@ -61,6 +112,7 @@ export async function startTextChat(
     connectionType: 'websocket',
     textOnly: true,
     stripAudioTags: true,
+    clientTools: nanaTools(o.locale),
     // No spoken-style greeting in the chat: Nana's greeting is already on screen.
     overrides: { agent: { language: o.locale, firstMessage: '' }, conversation: { textOnly: true } },
     dynamicVariables: { page: o.page, locale: o.locale, chat_context: '', session_id: o.sessionId },
