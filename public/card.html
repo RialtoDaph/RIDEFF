@@ -15,14 +15,17 @@
          background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
   .wrap { width:100%; max-width:380px; }
   .scene { width:100%; perspective:1400px; }
-  .card { position:relative; display:block; width:100%; padding:0; border:0; background:none; cursor:pointer; aspect-ratio:1317/2000;
-          transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1); -webkit-tap-highlight-color:transparent; }
+  .card { position:relative; display:block; width:100%; cursor:pointer; aspect-ratio:1317/2000; outline-offset:6px;
+          -webkit-transform-style:preserve-3d; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1); -webkit-tap-highlight-color:transparent; }
   .card.flipped { transform:rotateY(180deg); }
   .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#FFF6EA; }
-  .face.back { transform:rotateY(180deg); background:#120A0A; }
+  .face.back { transform:rotateY(180deg); background:#120A0A; visibility:hidden; transition:visibility 0s .45s; }
+  .card.flipped .back { visibility:visible; }
+  .face.front { transition:visibility 0s .45s; }
+  .card.flipped .front { visibility:hidden; }
   .face img { width:100%; height:100%; display:block; object-fit:cover; }
   .hint { text-align:center; color:#CBB7A8; font-size:13px; margin:12px 0 0; }
-  @media (prefers-reduced-motion:reduce) { .card { transition:none; } }
+  @media (prefers-reduced-motion:reduce) { .card, .face { transition:none !important; } }
   .btn { display:block; text-align:center; text-decoration:none; font-weight:700; border-radius:14px; padding:16px; margin-top:12px; font-size:16px; }
   .primary { background:var(--orange); color:#000; margin-top:20px; }
   .ghost { border:1px solid var(--line); color:var(--ink); }
@@ -34,10 +37,10 @@
 <body>
   <main class="wrap">
     <div class="scene">
-      <button class="card" id="card" type="button" aria-pressed="false" aria-label="Flip the card">
+      <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip the card">
         <span class="face front"><img src="/card/front.jpg" alt="Rialto Daphino Effendy, Founder &amp; Operator, RIDEFF"></span>
         <span class="face back"><img src="/card/back.jpg" alt="RIDEFF: We drive you through the age of AI. rideff.com"></span>
-      </button>
+      </div>
     </div>
     <p class="hint">Tap the card to flip it</p>
 
@@ -52,9 +55,13 @@
   </main>
   <script>
     var c = document.getElementById('card');
-    c.addEventListener('click', function () {
+    function flip() {
       var on = c.classList.toggle('flipped');
       c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+    c.addEventListener('click', flip);
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
     });
   </script>
 </body>
