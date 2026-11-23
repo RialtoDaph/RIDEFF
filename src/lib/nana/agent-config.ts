@@ -64,10 +64,18 @@ RIDEFF Life, prices include VAT, cancel monthly, 14 days free without a card:
 - Life Private: from €68 per month plus €449 setup, starts with a call
 
 # Next steps you can offer
-- A free 15-minute call with Rialto (the "Book a call with Rialto" button, or the contact page).
+- A free 15-minute call with Rialto, which you can book for them (see below).
 - Writing to Rialto on WhatsApp.
 - At the end, the visitor can get a summary to send to Rialto on WhatsApp.
-You cannot book appointments or send messages yourself.
+You cannot send messages yourself.
+
+# Booking the free 15-minute call
+You have two tools: check_free_slots and book_first_call. Only offer to book once the visitor wants a call with Rialto.
+1. Call check_free_slots and offer at most two or three of the returned times, spoken naturally ("morgen um 10 Uhr"). Never invent a time that the tool did not return. Times are Berlin time.
+2. Once they choose a time, ask for their email address. Have them spell it, then read it back letter by letter ("a, n, n, a, at, ...") and wait for a clear yes. A wrong address means no confirmation mail.
+3. Say the full booking back in one sentence (name, day, time, email) and only call book_first_call after the visitor confirms. Pass the date as YYYY-MM-DD and the time as HH:MM exactly as check_free_slots returned them.
+4. If the result starts with "booked", confirm briefly and say a confirmation email is on its way. If it starts with "taken", offer new times from a fresh check_free_slots. For any other result do not retry in a loop: apologise briefly and point to the "Book a call with Rialto" button or WhatsApp.
+Never say a call is booked unless the tool result says "booked".
 
 # Earlier chat
 If the visitor already typed with you on the website before this call, that chat is between the markers below (otherwise it is empty). Continue from it: do not greet again or introduce yourself again, and do not ask for anything they already told you there.
@@ -75,7 +83,40 @@ If the visitor already typed with you on the website before this call, that chat
 {{chat_context}}
 </chat>`;
 
-const FIRST_DE = 'Guten Tag, RIDEFF Front Desk, Sie sprechen mit Nana. Mit wem spreche ich, bitte?';
+/**
+ * Client tools: executed in the visitor's browser by nanaTools() in
+ * src/components/nana/elevenlabs-client.ts (names must match).
+ */
+const TOOLS = [
+  {
+    type: 'client',
+    name: 'check_free_slots',
+    description: 'Look up the next free times for the free 15-minute first call with Rialto (Berlin time). Call this before offering any time.',
+    expects_response: true,
+    response_timeout_secs: 15,
+  },
+  {
+    type: 'client',
+    name: 'book_first_call',
+    description:
+      'Book the free 15-minute first call with Rialto at a time returned by check_free_slots. Only call after the visitor confirmed their name, email address and the time.',
+    expects_response: true,
+    response_timeout_secs: 20,
+    parameters: {
+      type: 'object',
+      required: ['name', 'email', 'date', 'time'],
+      properties: {
+        name: { type: 'string', description: 'Full name of the visitor.' },
+        email: { type: 'string', description: 'Email address, spelled out and confirmed by the visitor.' },
+        date: { type: 'string', description: 'Day as YYYY-MM-DD, exactly as check_free_slots returned it.' },
+        time: { type: 'string', description: 'Time as HH:MM (24-hour, Berlin), exactly as check_free_slots returned it.' },
+        need: { type: 'string', description: 'What they need, in a few words (optional).' },
+      },
+    },
+  },
+];
+
+const FIRST_DE ='Guten Tag, RIDEFF Front Desk, Sie sprechen mit Nana. Mit wem spreche ich, bitte?';
 const FIRST_EN = 'Good day, RIDEFF Front Desk, you are speaking with Nana. May I ask who I am speaking with?';
 
 const MODELS = ['eleven_flash_v2_5', 'eleven_turbo_v2_5', 'eleven_multilingual_v2', 'eleven_v3_conversational', 'eleven_v4', 'eleven_v4_turbo'] as const;
@@ -108,7 +149,7 @@ export function agentPayload() {
       agent: {
         first_message: FIRST_DE,
         language: 'de',
-        prompt: { prompt: PROMPT },
+        prompt: { prompt: PROMPT, tools: TOOLS },
         dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de', chat_context: '', session_id: '' } },
       },
       // German needs a multilingual voice model.
