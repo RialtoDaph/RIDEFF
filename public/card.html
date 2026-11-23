@@ -9,14 +9,19 @@
 <meta property="og:image" content="/card/orange.jpg">
 <link rel="icon" href="/images/favicon.png">
 <style>
-  :root { --bg:#120A0A; --ink:#fff; --line:#3D1F20; --orange:#FF6A00; }
+  :root { --bg:#120A0A; --ink:#fff; --mute:#CBB7A8; --line:#3D1F20; --orange:#FF6A00; --amber:#FFB347;
+          --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
   * { box-sizing:border-box; }
-  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; gap:14px; padding:20px 16px 32px;
-         background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:24px 16px 40px;
+         background:radial-gradient(520px 380px at 50% -40px, #3a170b 0%, transparent 70%), var(--bg);
+         color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
   .wrap { width:100%; max-width:380px; }
+
+  /* card + 3D flip */
   .scene { width:100%; perspective:1400px; }
   .card { position:relative; display:block; width:100%; cursor:pointer; aspect-ratio:1317/2000; outline-offset:6px;
-          -webkit-transform-style:preserve-3d; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1); -webkit-tap-highlight-color:transparent; }
+          -webkit-transform-style:preserve-3d; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1);
+          -webkit-tap-highlight-color:transparent; filter:drop-shadow(0 24px 40px rgba(255,106,0,.16)); }
   .card.flipped { transform:rotateY(180deg); }
   .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#120A0A; }
   .face.back { transform:rotateY(180deg); background:#FFF6EA; visibility:hidden; transition:visibility 0s .45s; }
@@ -24,17 +29,47 @@
   .face.front { transition:visibility 0s .45s; }
   .card.flipped .front { visibility:hidden; }
   .face img { width:100%; height:100%; display:block; object-fit:cover; }
-  .hint { text-align:center; color:#CBB7A8; font-size:13px; margin:12px 0 0; }
-  @media (prefers-reduced-motion:reduce) { .card, .face { transition:none !important; } }
-  .btn { display:block; text-align:center; text-decoration:none; font-weight:700; border-radius:14px; padding:16px; margin-top:12px; font-size:16px; }
-  .primary { background:var(--orange); color:#000; margin-top:20px; }
-  .ghost { border:1px solid var(--line); color:var(--ink); }
-  .btn:active { opacity:.8; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .grid .btn { margin-top:12px; font-size:15px; padding:14px 8px; }
+  .hint { text-align:center; color:var(--mute); font:11px var(--mono); letter-spacing:.14em; text-transform:uppercase; margin:16px 0 0; opacity:.8; }
+
+  /* website link (no box) */
+  .site { display:block; text-align:center; text-decoration:none; margin:34px 0 6px; padding:6px 0; -webkit-tap-highlight-color:transparent; }
+  .eyebrow { display:block; font:11px var(--mono); letter-spacing:.3em; color:var(--mute); margin-bottom:8px; }
+  .site-text { display:inline-flex; align-items:center; gap:10px; font-size:30px; font-weight:800; letter-spacing:-.02em;
+               background:linear-gradient(90deg,var(--orange),var(--amber)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .site-text svg { width:26px; height:26px; stroke:var(--amber); animation:nudge 1.6s ease-in-out infinite; }
+  .rule { display:block; height:2px; width:58%; margin:12px auto 0; border-radius:2px;
+          background:linear-gradient(90deg,transparent,var(--orange),var(--amber),transparent); transition:width .3s; }
+  .site:hover .rule, .site:active .rule { width:82%; }
+  @keyframes nudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(6px); } }
+
+  /* section label */
+  .label { display:flex; align-items:center; gap:12px; margin:34px 0 18px; font:11px var(--mono); letter-spacing:.3em; color:var(--mute); }
+  .label::before, .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--line)); }
+  .label::after { background:linear-gradient(270deg,transparent,var(--line)); }
+
+  /* round icon buttons */
+  .icons { display:flex; justify-content:center; gap:26px; }
+  .ico { display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--ink); text-decoration:none; -webkit-tap-highlight-color:transparent; }
+  .ico i { display:grid; place-items:center; width:62px; height:62px; border-radius:50%; border:1px solid var(--line);
+           background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.01)); transition:transform .2s, border-color .2s, background .2s; }
+  .ico svg { width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .ico span { font:11px var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
+  .ico:hover i, .ico:active i { transform:translateY(-3px); border-color:var(--orange); background:linear-gradient(160deg,rgba(255,106,0,.28),rgba(255,106,0,.05)); }
+  .ico:hover svg, .ico:active svg { color:var(--amber); }
+  @media (prefers-reduced-motion:reduce) { .card, .face { transition:none !important; } .site-text svg { animation:none; } }
 </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><g transform="translate(7.2 7.2) scale(.4)"><path stroke-width="4.2" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-add" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  </svg>
+
   <main class="wrap">
     <div class="scene">
       <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip the card">
@@ -42,16 +77,27 @@
         <span class="face front"><img src="/card/orange.jpg" alt="RIDEFF: We drive you through the age of AI. rideff.com"></span>
       </div>
     </div>
-    <p class="hint">Tap the card to flip it</p>
+    <p class="hint">Tap the card to flip</p>
 
-    <a class="btn primary" href="/">Open website: rideff.com →</a>
-    <div class="grid">
-      <a class="btn ghost" href="tel:+4917632572420">Call</a>
-      <a class="btn ghost" href="mailto:hallo@rideff.com">Email</a>
-      <a class="btn ghost" href="https://wa.me/4917632572420">WhatsApp</a>
-      <a class="btn ghost" href="https://instagram.com/rialtorideff">Instagram</a>
+    <a class="site" href="/">
+      <span class="eyebrow">WEBSITE</span>
+      <span class="site-text">Visit rideff.com <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+      <span class="rule"></span>
+    </a>
+
+    <div class="label">CONTACT</div>
+    <div class="icons">
+      <a class="ico" href="tel:+4917632572420"><i><svg><use href="#i-phone"/></svg></i><span>Call</span></a>
+      <a class="ico" href="https://wa.me/4917632572420"><i><svg><use href="#i-wa"/></svg></i><span>WhatsApp</span></a>
+      <a class="ico" href="mailto:hallo@rideff.com"><i><svg><use href="#i-mail"/></svg></i><span>Email</span></a>
     </div>
-    <a class="btn ghost" href="/card.vcf">Save contact</a>
+
+    <div class="label">FOLLOW</div>
+    <div class="icons">
+      <a class="ico" href="https://www.linkedin.com/search/results/people/?keywords=Rialto%20Daphino%20Effendy"><i><svg><use href="#i-in"/></svg></i><span>LinkedIn</span></a>
+      <a class="ico" href="https://instagram.com/rialtorideff"><i><svg><use href="#i-ig"/></svg></i><span>Instagram</span></a>
+      <a class="ico" href="/card.vcf"><i><svg><use href="#i-add"/></svg></i><span>Save</span></a>
+    </div>
   </main>
   <script>
     var c = document.getElementById('card');
