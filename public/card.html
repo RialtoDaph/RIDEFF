@@ -14,8 +14,15 @@
   body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; gap:14px; padding:20px 16px 32px;
          background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
   .wrap { width:100%; max-width:380px; }
-  .card { width:100%; aspect-ratio:1317/2000; border-radius:24px; overflow:hidden; background:#FFF6EA; }
-  .card img { width:100%; height:100%; display:block; object-fit:cover; }
+  .scene { width:100%; perspective:1400px; }
+  .card { position:relative; display:block; width:100%; padding:0; border:0; background:none; cursor:pointer; aspect-ratio:1317/2000;
+          transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,.2,.2,1); -webkit-tap-highlight-color:transparent; }
+  .card.flipped { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; border-radius:24px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:#FFF6EA; }
+  .face.back { transform:rotateY(180deg); background:#120A0A; }
+  .face img { width:100%; height:100%; display:block; object-fit:cover; }
+  .hint { text-align:center; color:#CBB7A8; font-size:13px; margin:12px 0 0; }
+  @media (prefers-reduced-motion:reduce) { .card { transition:none; } }
   .btn { display:block; text-align:center; text-decoration:none; font-weight:700; border-radius:14px; padding:16px; margin-top:12px; font-size:16px; }
   .primary { background:var(--orange); color:#000; margin-top:20px; }
   .ghost { border:1px solid var(--line); color:var(--ink); }
@@ -26,7 +33,13 @@
 </head>
 <body>
   <main class="wrap">
-    <div class="card"><img src="/card/front.jpg" alt="Rialto Daphino Effendy, Founder &amp; Operator, RIDEFF"></div>
+    <div class="scene">
+      <button class="card" id="card" type="button" aria-pressed="false" aria-label="Flip the card">
+        <span class="face front"><img src="/card/front.jpg" alt="Rialto Daphino Effendy, Founder &amp; Operator, RIDEFF"></span>
+        <span class="face back"><img src="/card/back.jpg" alt="RIDEFF: We drive you through the age of AI. rideff.com"></span>
+      </button>
+    </div>
+    <p class="hint">Tap the card to flip it</p>
 
     <a class="btn primary" href="/">Open website: rideff.com →</a>
     <div class="grid">
@@ -37,5 +50,12 @@
     </div>
     <a class="btn ghost" href="/card.vcf">Save contact</a>
   </main>
+  <script>
+    var c = document.getElementById('card');
+    c.addEventListener('click', function () {
+      var on = c.classList.toggle('flipped');
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
