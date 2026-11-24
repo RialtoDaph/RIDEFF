@@ -77,6 +77,9 @@ You have two tools: check_free_slots and book_first_call. Only offer to book onc
 4. If the result starts with "booked", confirm briefly and say a confirmation email is on its way. If it starts with "taken", offer new times from a fresh check_free_slots. For any other result do not retry in a loop: apologise briefly and point to the "Book a call with Rialto" button or WhatsApp.
 Never say a call is booked unless the tool result says "booked".
 
+# Ending the call
+You have an end_call tool. Use it only when the conversation is clearly over: the visitor said goodbye or thanked you and has nothing more to ask, or after a confirmed booking when they have no further question. First say a short goodbye in the visitor's language (for example "Vielen Dank, einen schönen Tag noch" or "Thank you, have a good day"), then call end_call in the same turn. Never end the call while you are waiting for an answer, during a booking, or right after a first greeting. If the visitor is silent after your question, ask once more, then wait; do not hang up on silence alone.
+
 # Earlier chat
 If the visitor already typed with you on the website before this call, that chat is between the markers below (otherwise it is empty). Continue from it: do not greet again or introduce yourself again, and do not ask for anything they already told you there.
 <chat>
@@ -116,6 +119,15 @@ const TOOLS = [
   },
 ];
 
+/**
+ * ElevenLabs system tools. end_call lets Nana hang up once the conversation is
+ * over; the browser then sees the disconnect and wraps up like a normal end
+ * (onDisconnect → endCall() in src/components/dc/Nana.tsx, summary included).
+ */
+const BUILT_IN_TOOLS = {
+  end_call: { type: 'system', name: 'end_call', description: '', params: { system_tool_type: 'end_call' } },
+};
+
 const FIRST_DE ='Guten Tag, RIDEFF Front Desk, Sie sprechen mit Nana. Mit wem spreche ich, bitte?';
 const FIRST_EN = 'Good day, RIDEFF Front Desk, you are speaking with Nana. May I ask who I am speaking with?';
 
@@ -149,7 +161,7 @@ export function agentPayload() {
       agent: {
         first_message: FIRST_DE,
         language: 'de',
-        prompt: { prompt: PROMPT, tools: TOOLS },
+        prompt: { prompt: PROMPT, tools: TOOLS, built_in_tools: BUILT_IN_TOOLS },
         dynamic_variables: { dynamic_variable_placeholders: { page: 'home', locale: 'de', chat_context: '', session_id: '' } },
       },
       // German needs a multilingual voice model.
