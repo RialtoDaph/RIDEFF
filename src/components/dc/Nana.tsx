@@ -299,8 +299,17 @@ class Logic extends DCLogic {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ sessionId: this.sid, locale: this.props.locale, page: this.page() })
       });
-      data = res.ok ? await res.json() : res.status === 429 ? { provider: 'limited' } : null;
-    } catch (e) {}
+      data = res.ok ? await res.json() : res.status === 429 ? { provider: 'limited' } : { provider: 'error' };
+    } catch (e) {
+      data = { provider: 'error' };
+    }
+    // The session could not be created (ElevenLabs key or network): say so instead of
+    // opening a silent "live" call with an empty script.
+    if (data && data.provider === 'error') {
+      this.ringOff();
+      this.stopMic();
+      return this.setState(s => ({ mode: 'chat', call: 'idle', msgs: [...s.msgs, { from: 'sys', t: this.props.t("nana.callFailed") }] }));
+    }
     if (data && data.provider === 'limited') {
       this.ringOff();
       this.stopMic();
