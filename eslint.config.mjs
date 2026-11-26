@@ -6,6 +6,11 @@ const config = [
   ...nextTs,
   { ignores: ['.next/**', 'node_modules/**', 'rideff_handoff/**', 'next-env.d.ts'] },
   {
+    // Node CommonJS tooling (scripts/reels): require() is the module system there.
+    files: ['scripts/**/*.cjs'],
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
+  {
     // 1:1 ports of the handoff prototypes (scripts/dc-port): keep the original logic
     // untouched rather than restyling it; type checking is off in these files.
     files: ['src/components/dc/**'],
