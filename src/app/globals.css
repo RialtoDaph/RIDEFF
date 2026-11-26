@@ -598,3 +598,28 @@ html.lenis body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Touch devices: small links and buttons keep their look but get a 44px tap
+   area, so phones hit them as reliably as a mouse does on desktop. The extra
+   area is an invisible pseudo-element, so layout does not change. Elements
+   with their own class or positioning are left alone. */
+@media (pointer: coarse) {
+  a:not([class]):not([style*="position"]),
+  button:not([class]):not([style*="position"]),
+  .cs-back,
+  .sf-tabs button {
+    position: relative;
+  }
+  a:not([class]):not([style*="position"])::after,
+  button:not([class]):not([style*="position"])::after,
+  .cs-back::after,
+  .sf-tabs button::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 50%;
+    height: max(100%, 44px);
+    transform: translateY(-50%);
+  }
+}

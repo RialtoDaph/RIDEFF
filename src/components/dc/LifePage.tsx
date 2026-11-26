@@ -1089,7 +1089,7 @@ Logic.prototype.render = function render() {
           <div style={{ position: "relative", height: "clamp(420px,40vw,520px)", perspective: "1400px", order: "0" }}>
             {" "}
             {(v.vChips ?? []).map((c, $index) => (<Fragment key={$index}>
-              <span style={{ position: "absolute", left: `${c?.x ?? ''}`, top: `${c?.y ?? ''}`, transform: `translate(-50%,-50%) scale(${c?.s ?? ''})`, opacity: `${c?.op ?? ''}`, background: "#3B211D", border: "1px solid #5E3A31", borderRadius: "999px", padding: "9px 15px", fontSize: "13px", whiteSpace: "nowrap", zIndex: "1" }}>
+              <span style={{ position: "absolute", left: `clamp(64px, ${c?.x ?? '50%'}, calc(100% - 64px))`, top: `${c?.y ?? ''}`, transform: `translate(-50%,-50%) scale(${c?.s ?? ''})`, opacity: `${c?.op ?? ''}`, background: "#3B211D", border: "1px solid #5E3A31", borderRadius: "999px", padding: "9px 15px", fontSize: "13px", whiteSpace: "nowrap", zIndex: "1" }}>
                 {c?.t}
               </span>
             </Fragment>))}
