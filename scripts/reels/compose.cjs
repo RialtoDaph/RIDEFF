@@ -51,7 +51,8 @@ function composeReel({ cut, out, ...o }) {
   cues.forEach((c, i) => {
     const s = shots.find((x) => x.id === c.shot).start + c.from;
     const e = shots.find((x) => x.id === c.shot).start + c.to;
-    chains.push(`[${i + 1}:v]format=rgba,fade=t=in:st=${s}:d=0.2:alpha=1,fade=t=out:st=${e - 0.2}:d=0.2:alpha=1[o${i}]`);
+    const fadeIn = s > 0 ? `fade=t=in:st=${s}:d=0.2:alpha=1,` : ''; // from: 0 means visible on frame 0
+    chains.push(`[${i + 1}:v]format=rgba,${fadeIn}fade=t=out:st=${e - 0.2}:d=0.2:alpha=1[o${i}]`);
     chains.push(`[b${i}][o${i}]overlay=0:0:format=auto[b${i + 1}]`);
   });
   chains.push(`[b${cues.length}]format=yuv420p[vout]`);

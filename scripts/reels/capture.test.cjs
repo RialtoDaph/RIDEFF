@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { chromium } = require('playwright');
-const { execFileSync } = require('node:child_process');
+const { execFileSync, spawnSync } = require('node:child_process');
 const { SHOTS, frameCount } = require('./timeline.cjs');
 const { startServer } = require('./serve.cjs');
 const { newContext, captureShot } = require('./capture.cjs');
@@ -98,6 +98,14 @@ for (const id of ['slat', 'proof', 'nana', 'cta']) {
     assert.doesNotMatch(seen, /€/, `euro price visible during ${id}`);
   });
 }
+
+test('slat shot keeps moving to the last frame (Run page scrolls after the transition)', () => {
+  // ffmpeg prints the ssim summary on stderr
+  const r = spawnSync('ffmpeg', ['-hide_banner', '-i', path.join(outDir, 'slat', '00090.png'), '-i', path.join(outDir, 'slat', '00119.png'),
+    '-lavfi', 'ssim', '-f', 'null', '-'], { encoding: 'utf8' });
+  const all = Number(/All:([\d.]+)/.exec(r.stderr)[1]);
+  assert.ok(all < 0.999, `frame 90 and 119 are (nearly) identical, the shot is frozen (ssim ${all})`);
+});
 
 test('slat shot ends on the Run page (transition actually happened)', async () => {
   // runs after slat captured above; nana/cta navigated away, so re-check via a fresh slat capture

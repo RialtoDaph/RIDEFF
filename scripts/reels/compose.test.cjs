@@ -57,3 +57,12 @@ test('short cut subsamples master frames: first and last map to first and last, 
   let prev = -1;
   for (let i = 0; i < 60; i++) { const k = mapIndex(i, 90, 60); assert.ok(k >= prev); prev = k; }
 });
+
+test('frame 0 already shows the hook text (it is the cover/thumbnail)', async () => {
+  const out = path.join(dir, 'full.mp4');
+  await composeReel({ cut: 'full', out, ...opts });
+  const png = path.join(dir, 'frame0.png');
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', out, '-frames:v', '1', png]);
+  const txt = execFileSync('ffmpeg', ['-v', 'error', '-i', png, '-vf', 'crop=1080:360:0:1250,signalstats,metadata=print:key=lavfi.signalstats.YMAX:file=-', '-f', 'null', '-'], { encoding: 'utf8' });
+  assert.ok(Number(/YMAX=(\d+)/.exec(txt)[1]) > 200, 'no white headline text in frame 0');
+});

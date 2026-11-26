@@ -7,7 +7,7 @@ const FONTS = path.resolve(__dirname, '..', '..', 'src', 'fonts');
 const font = (file) => fs.readFileSync(path.join(FONTS, file)).toString('base64');
 
 const MARGIN_X = 96;
-const MARGIN_BOTTOM = 220;
+const MARGIN_BOTTOM = 320; // clear of Instagram's caption/username zone (about the lowest 300 px)
 const MARGIN_TOP = 250; // clear of the platform's top UI
 
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>');

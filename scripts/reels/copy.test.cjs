@@ -10,7 +10,7 @@ const { renderOverlay, closeOverlay } = require('./overlay.cjs');
 
 const dur = (shots, id) => { const s = shots.find((x) => x.id === id); return s ? s.end - s.start : null; };
 const MARGIN_X = 96;
-const MARGIN_BOTTOM = 220;
+const MARGIN_BOTTOM = 320; // Instagram caption/username zone covers about the lowest 300 px
 
 test('there is exactly one cue per master shot, in order', () => {
   assert.deepStrictEqual(CUES.map((c) => c.shot), SHOTS.map((s) => s.id));

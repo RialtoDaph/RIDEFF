@@ -1,4 +1,5 @@
 'use strict';
+const net = require('node:net');
 const { spawn } = require('node:child_process');
 const path = require('node:path');
 
@@ -17,8 +18,16 @@ async function waitUp(url, ms) {
   throw new Error(`server did not answer 200 at ${url} within ${ms} ms`);
 }
 
+const inUse = (port) =>
+  new Promise((resolve) => {
+    const c = net.connect(port, '127.0.0.1');
+    c.once('connect', () => { c.destroy(); resolve(true); });
+    c.once('error', () => resolve(false));
+  });
+
 // Runs the production server (`next start`); requires a prior `npm run build`.
 async function startServer() {
+  if (await inUse(PORT)) throw new Error(`port ${PORT} is already in use (a stale server would serve an old build)`);
   // Credit guard: without these keys Nana answers from its mock, so no ElevenLabs credits can be spent.
   const env = { ...process.env };
   for (const k of Object.keys(env)) if (/^(ELEVENLABS_|NANA_)/.test(k)) delete env[k];
@@ -43,4 +52,4 @@ async function startServer() {
   };
 }
 
-module.exports = { startServer };
+module.exports = { startServer, PORT };

@@ -35,9 +35,11 @@ const ACTIONS = {
   morph: { path: '/en/build', scroll: (p) => ({ stage: scrollProgress(p) }) },
   slat: {
     path: '/en/build',
-    step: async (page, i) => {
+    step: async (page, i, n) => {
       if (i === 6) await page.getByRole('button', { name: 'Menu' }).click();
       if (i === 36) await page.locator('#rn-menu a[href="/en/run"]').click();
+      // The transition has settled by frame 84; then the Run page scrolls so the shot never goes static.
+      if (i >= 84) await setScroll(page, { abs: ((i - 84) / (n - 1 - 84)) * 700 });
     },
   },
   proof: { path: '/en/build/web-shops', scroll: (p) => ({ abs: 250 + p * 1650 }) },
