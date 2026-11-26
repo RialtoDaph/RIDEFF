@@ -19,8 +19,12 @@ async function waitUp(url, ms) {
 
 // Runs the production server (`next start`); requires a prior `npm run build`.
 async function startServer() {
+  // Credit guard: without these keys Nana answers from its mock, so no ElevenLabs credits can be spent.
+  const env = { ...process.env };
+  for (const k of Object.keys(env)) if (/^(ELEVENLABS_|NANA_)/.test(k)) delete env[k];
   const child = spawn('npx', ['next', 'start', '-p', String(PORT)], {
     cwd: ROOT,
+    env,
     stdio: 'ignore',
     detached: true,
   });

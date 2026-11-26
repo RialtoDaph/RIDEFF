@@ -69,3 +69,49 @@ test('morph shot writes frameCount(morph) PNGs and no ElevenLabs request was mad
   assert.strictEqual(n, frameCount(shot('morph')));
   assert.strictEqual(ctx.blockedCount(), 0);
 });
+
+// Visible leaf text, sampled every 10th frame, must never contain placeholder brackets or a euro sign.
+const visibleText = () => page.evaluate(() =>
+  [...document.querySelectorAll('body *')]
+    .filter((el) => {
+      const r = el.getBoundingClientRect();
+      const st = getComputedStyle(el);
+      return el.children.length === 0 && r.width > 0 && r.bottom > 0 && r.top < innerHeight && st.visibility !== 'hidden';
+    })
+    .map((el) => el.textContent)
+    .join(' '));
+
+async function captureChecked(id) {
+  let seen = '';
+  const n = await captureShot(page, shot(id), outDir, server.url, {
+    onFrame: async (i) => { if (i % 10 === 0) seen += ' ' + (await visibleText()); },
+  });
+  return { n, seen };
+}
+
+for (const id of ['slat', 'proof', 'nana', 'cta']) {
+  test(`${id} shot writes frameCount PNGs with no placeholder text or euro price`, async () => {
+    const { n, seen } = await captureChecked(id);
+    assert.strictEqual(n, frameCount(shot(id)));
+    assert.strictEqual(fs.readdirSync(path.join(outDir, id)).length, n);
+    assert.doesNotMatch(seen, PLACEHOLDER, `placeholder visible during ${id}`);
+    assert.doesNotMatch(seen, /€/, `euro price visible during ${id}`);
+  });
+}
+
+test('slat shot ends on the Run page (transition actually happened)', async () => {
+  // runs after slat captured above; nana/cta navigated away, so re-check via a fresh slat capture
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'reels-slat-'));
+  await captureShot(page, shot('chaos'), dir, server.url);
+  await captureShot(page, shot('slat'), dir, server.url);
+  assert.match(page.url(), /\/en\/run$/);
+});
+
+test('nana shot runs in preview mode and nothing reached ElevenLabs', async () => {
+  await captureShot(page, shot('nana'), outDir, server.url);
+  assert.match(await page.locator('body').innerText(), /preview/i);
+  assert.strictEqual(await page.getByLabel('Message to Nana').inputValue(), '', 'question was not sent');
+  assert.match(await page.locator('body').innerText(), /Can you build my shop\?/);
+  assert.match(await page.locator('body').innerText(), /15-minute call/);
+  assert.strictEqual(ctx.blockedCount(), 0);
+});
