@@ -59,3 +59,10 @@ Scattered, Platform, Inbound, Agents, Apps) is the centerpiece, because its stor
 - Hook price figures ("3,000-8,000 EUR") are still "typical ranges" in
   TODO.md. Default hook has **no price figure**; use one only if the owner confirms.
 - Exact fonts/label styling: reuse site tokens (orange `#FF6A00`, dark `#14080A`).
+
+## Build notes (as built)
+- Capture viewport is 810x1440 css px at 4/3 scale (= 1080x1920): width in 760..900 keeps the full 26000 particles
+  and uses the site's larger centred particle layout. Frames come from a Playwright virtual clock.
+- Music is a synthesized 120 BPM beat (every shot boundary of both cuts is on a beat).
+- The CTA backdrop is the dark particle hero (stage "Apps"), dimmed and blurred; bottom overlays sit on a dark scrim.
+- Run it: see `scripts/reels/README.md`.
