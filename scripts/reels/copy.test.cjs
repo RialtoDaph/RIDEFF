@@ -3,6 +3,7 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const { SHOTS, shortCut } = require('./timeline.cjs');
 const { CUES } = require('./copy.cjs');
 const { renderOverlay, closeOverlay } = require('./overlay.cjs');
@@ -73,5 +74,28 @@ test('renderOverlay writes a transparent 1080x1920 PNG whose text box fits the s
     }
   } finally {
     await closeOverlay();
+  }
+});
+
+// Alpha of one pixel of a PNG, via ffmpeg (no PNG decoder in node core).
+const alphaAt = (png, x, y) => execFileSync('ffmpeg', ['-v', 'error', '-i', png, '-vf', `crop=1:1:${x}:${y},format=rgba`, '-f', 'rawvideo', '-'])[3];
+
+test('bottom overlays carry a dark scrim so they stay readable on the light Storefront page; top ones do not', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'reels-scrim-'));
+  try {
+    for (const c of CUES) {
+      const out = path.join(dir, `${c.shot}.png`);
+      await renderOverlay(c, out);
+      if (c.pos === 'top') {
+        assert.strictEqual(alphaAt(out, 40, 1900), 0, `${c.shot}: top cue must not darken the bottom`);
+      } else {
+        assert.ok(alphaAt(out, 40, 1900) >= 200, `${c.shot}: bottom edge not dark enough`);
+        assert.ok(alphaAt(out, 40, 1300) >= 120, `${c.shot}: text zone not dark enough`);
+        assert.strictEqual(alphaAt(out, 40, 600), 0, `${c.shot}: scrim must not reach the particle area`);
+      }
+    }
+  } finally {
+    await closeOverlay();
+    fs.rmSync(dir, { recursive: true, force: true });
   }
 });
