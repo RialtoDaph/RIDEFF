@@ -51,6 +51,7 @@ Nana is mounted once in the layout (`src/components/nana/NanaMount.tsx`), so a r
 - Source of truth: `rideff_handoff/i18n/rideff-en-de.json` (English source → German, formal "Sie").
 - `npm run i18n` (`scripts/gen-messages.mjs`) generates `messages/en.json` and `messages/de.json`: one namespace per page, camelCase keys from the English text, `{x}` → ICU arguments. It also writes `src/i18n/keymap.json`.
 - `messages/custom.json`: strings that are not in the handoff (meta tags, 404, newsletter, Journal article, Nana errors and labels), `{de, en}` per key. It also overrides handoff strings where the owner decided differently, e.g. the free first call is **15 minutes** (handoff: 30) in `RideffNana.*` and `Pricing.*`.
+- Price strings are overridden by key in `custom.json` / `no-emdash.json`. The key names still carry the old numbers (e.g. `Home.core149Mo` now shows €249). Do not rename them: components reference them literally.
 - `/demo`: `messages/demo-source.json` (German → English, made once from the demo string tables by `scripts/extract-demo-strings.mjs`) becomes the `Demo` namespace.
 - Each page sends only its own namespaces to the browser (`src/components/site/Messages.tsx`).
 

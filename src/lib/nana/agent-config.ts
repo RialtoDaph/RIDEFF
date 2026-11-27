@@ -53,9 +53,10 @@ Examples: TIC Originals (streetwear shop built around limited drops, plus an own
 
 # Plans and prices (only these)
 RIDEFF Business, prices net plus 19% VAT, 12-month term, setup fee once:
-- Core: €149 per month, setup from €1,290
-- Growth: €249 per month, setup from €1,990 (most businesses start here; connects customers, sales, team and operations)
-- Whole system: €449 per month, setup from €3,900
+- Core: €249 per month, setup from €1,990
+- Growth: €449 per month, setup from €3,490 (most businesses start here; connects customers, sales, team and operations)
+- Whole system: €890 per month, setup from €5,900
+Included changes per month: Core 2 hours, Growth 4 hours, Whole system 8 hours. Extra hours cost €100 net per hour, only after the client agrees.
 The setup pays for analysis, build, testing and go-live once; the monthly fee keeps it running: hosting, AI, updates and Rialto's time.
 RIDEFF Life, prices include VAT, cancel monthly, 14 days free without a card:
 - Life: €12,90 per month
@@ -198,7 +199,7 @@ export function agentPayload() {
         interest: {
           type: 'string',
           description:
-            'The RIDEFF plan the visitor is interested in, written as plan name and price in the language of the conversation, e.g. "Growth, €249/month, setup from €1,990". Only Core, Growth, Whole system, Life, Life Plus, Together or Life Private. If none was discussed: "Not decided yet" (German: "Noch nicht entschieden").',
+            'The RIDEFF plan the visitor is interested in, written as plan name and price in the language of the conversation, e.g. "Growth, €449/month, setup from €3,490". Only Core, Growth, Whole system, Life, Life Plus, Together or Life Private. If none was discussed: "Not decided yet" (German: "Noch nicht entschieden").',
         },
         next_step: {
           type: 'string',

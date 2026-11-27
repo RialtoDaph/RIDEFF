@@ -94,7 +94,7 @@ function offers(locale: Locale) {
       serviceType: de ? 'KI-Systeme, Team-Apps, Websites und Shops für kleine Betriebe' : 'AI systems, team apps, websites and shops for small businesses',
       provider: { '@id': ID.business },
       areaServed: { '@type': 'Country', name: 'Deutschland' },
-      offers: [biz('Core', 149, 1290), biz('Growth', 249, 1990), biz(de ? 'Gesamtsystem' : 'Whole system', 449, 3900)],
+      offers: [biz('Core', 249, 1990), biz('Growth', 449, 3490), biz(de ? 'Gesamtsystem' : 'Whole system', 890, 5900)],
     },
     {
       '@type': 'Service',

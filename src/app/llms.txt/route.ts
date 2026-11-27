@@ -30,9 +30,10 @@ export function GET() {
 ## Prices
 
 RIDEFF Business (net plus 19% VAT, 12-month term, one-off setup):
-- Core: €149/month, setup from €1,290
-- Growth: €249/month, setup from €1,990 (most businesses start here)
-- Whole system: €449/month, setup from €3,900
+- Core: €249/month, setup from €1,990
+- Growth: €449/month, setup from €3,490 (most businesses start here)
+- Whole system: €890/month, setup from €5,900
+- Included changes per month: Core 2 h, Growth 4 h, Whole system 8 h; extra hours €100/hour net
 
 RIDEFF Life, a personal assistant for money, time, goals and family (incl. VAT, cancel monthly, 14 days free without a card):
 - Life €12.90/month, Life Plus €19.90/month, Together €29.90/month (up to 4 people), Life Private from €68/month plus €449 setup

@@ -21,8 +21,8 @@
       "en": "Not now · type instead"
     },
     "mostBusinessesStartWithGrowth249": {
-      "de": "Die meisten Betriebe starten mit Growth: 249 € im Monat, Einrichtung ab 1.990 €. Kreuzen Sie im Konfigurator auf dieser Seite Ihre Bereiche an, er zeigt das passende Paket live.",
-      "en": "Most businesses start with Growth: €249 a month, setup from €1,990. Tick your areas in the configurator on this page and it shows the right plan live."
+      "de": "Die meisten Betriebe starten mit Growth: 449 € im Monat, Einrichtung ab 3.490 €. Kreuzen Sie im Konfigurator auf dieser Seite Ihre Bereiche an, er zeigt das passende Paket live.",
+      "en": "Most businesses start with Growth: €449 a month, setup from €3,490. Tick your areas in the configurator on this page and it shows the right plan live."
     },
     "theSetupPaysForAnalysisBuild": {
       "de": "Die Einrichtung bezahlt Analyse, Aufbau, Test und Livegang, einmalig. Die Monatsgebühr hält alles am Laufen: Hosting, KI, Updates und Rialtos Zeit.",
@@ -37,16 +37,16 @@
       "en": "RIDEFF Life is a personal assistant: morning briefing, money, time and goals, based on your own data. 14 days free."
     },
     "growthConnectsCustomersSalesTeamAnd": {
-      "de": "Growth verbindet Kunden, Vertrieb, Team und Betrieb. 249 € im Monat plus Einrichtung ab 1.990 €.",
-      "en": "Growth connects customers, sales, team and operations. €249 a month plus setup from €1,990."
+      "de": "Growth verbindet Kunden, Vertrieb, Team und Betrieb. 449 € im Monat plus Einrichtung ab 3.490 €.",
+      "en": "Growth connects customers, sales, team and operations. €449 a month plus setup from €3,490."
     },
     "happyToSetThatUpPick": {
       "de": "Gern, wählen Sie einen Termin mit Rialto oder schreiben Sie ihm auf WhatsApp.",
       "en": "Happy to set that up. Pick a time with Rialto, or message him on WhatsApp."
     },
     "mostCafesStartWithGrowth249": {
-      "de": "Die meisten Cafés starten mit Growth: 249 € im Monat, Einrichtung ab 1.990 €.",
-      "en": "Most cafés start with Growth: €249 a month, setup from €1,990."
+      "de": "Die meisten Cafés starten mit Growth: 449 € im Monat, Einrichtung ab 3.490 €.",
+      "en": "Most cafés start with Growth: €449 a month, setup from €3,490."
     },
     "hiIMNanaAskMe": {
       "de": "Hallo, ich bin Nana. Fragen Sie mich zu Paketen, Zeitplänen oder dazu, was RIDEFF für Sie bauen kann, per Text oder per Sprache.",
@@ -57,8 +57,8 @@
       "en": "I’m still a preview, so I can’t answer that yet. Rialto can. Want to talk to him?"
     },
     "growth249MonthSetupFrom1": {
-      "de": "Growth · 249 €/Monat, Einrichtung ab 1.990 €",
-      "en": "Growth · €249/month, setup from €1,990"
+      "de": "Growth · 449 €/Monat, Einrichtung ab 3.490 €",
+      "en": "Growth · €449/month, setup from €3,490"
     },
     "thanksForCallingHereSA": {
       "de": "Danke für Ihren Anruf. Hier ist eine Zusammenfassung. Senden Sie sie per WhatsApp an Rialto, er übernimmt ab da.",
@@ -159,8 +159,8 @@
       "en": "Me, Rialto, based in Eichstätt. I worked in export and import, social media and e-commerce before building RIDEFF. You talk to the person who builds your system, and a backup team steps in when I am away."
     },
     "growthConnectsFourAreasUsuallyCustomers": {
-      "de": "Growth verbindet vier Bereiche, meist Kunden, Vertrieb, Team und Betrieb, für 249 € im Monat plus Einrichtung ab 1.990 €. Soll ich ein Gespräch mit Rialto buchen?",
-      "en": "Growth connects four areas, usually customers, sales, team and operations, for €249 a month plus setup from €1,990. Want me to book a call with Rialto?"
+      "de": "Growth verbindet vier Bereiche, meist Kunden, Vertrieb, Team und Betrieb, für 449 € im Monat plus Einrichtung ab 3.490 €. Soll ich ein Gespräch mit Rialto buchen?",
+      "en": "Growth connects four areas, usually customers, sales, team and operations, for €449 a month plus setup from €3,490. Want me to book a call with Rialto?"
     },
     "iVeStoodWhereYouStand": {
       "de": "Ich stand genau da, wo Sie stehen: Daten in fünf Tools, Entscheidungen aus dem Bauch.",
@@ -511,8 +511,8 @@
       "en": "The setup pays for analysing and building your system. It is real work, done once. The monthly fee keeps it running: hosting, AI, updates, backups and my time for changes and support."
     },
     "weTalkFirstEitherWeAdd": {
-      "de": "Wir sprechen zuerst. Entweder kommt für diesen Monat etwas Zeit dazu, oder ein größeres Paket ist sinnvoller. Ihre Wahl.",
-      "en": "We talk first. Either we add a bit of time for that month, or moving up a plan makes more sense. Your choice."
+      "de": "Wir sprechen zuerst. Stunden über Ihr Paket hinaus kosten 100 € netto pro Stunde und werden erst berechnet, wenn Sie zugestimmt haben. Kommt das öfter vor, schauen wir, ob ein größeres Paket besser passt. Ihre Wahl.",
+      "en": "We talk first. Extra hours beyond your plan cost €100 net per hour and are only billed once you have said yes. If it keeps happening, we look at whether a bigger plan fits better. Your choice."
     },
     "yesPayYearlyAndGet2": {
       "de": "Ja, bei jährlicher Zahlung gibt es 2 Monate geschenkt.",

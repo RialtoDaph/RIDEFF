@@ -6,7 +6,7 @@ import { useLocale } from "next-intl";
 type T = (key: string, values?: Record<string, string | number>) => string;
 
 /** Growth, per month, net. The plan the comparison is made against. */
-const GROWTH = 249;
+const GROWTH = 449;
 const WEEKS_PER_MONTH = 4.33;
 
 const CSS = `
