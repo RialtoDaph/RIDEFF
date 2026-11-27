@@ -664,16 +664,16 @@ class Logic extends DCLogic {
         name: 'Core',
         tag: this.props.t("Home.startHere"),
         for: this.props.t("Home.oneAreaConnectedUsuallyCustomersAnd"),
-        price: eur(149, this.props.locale),
-        setup: eur(1290, this.props.locale),
+        price: eur(249, this.props.locale),
+        setup: eur(1990, this.props.locale),
         items: [this.props.t("Home.websiteOrCoreSystem"), this.props.t("Home.aIInboxForInquiries"), this.props.t("Home.clientPortal"), this.props.t("Home.hostingBackupsUpdates")]
       }, {
         n: '02',
         name: 'Growth',
         tag: this.props.t("Home.mostChosen"),
         for: this.props.t("Home.customersSalesTeamAndOperationsIn"),
-        price: eur(249, this.props.locale),
-        setup: eur(1990, this.props.locale),
+        price: eur(449, this.props.locale),
+        setup: eur(3490, this.props.locale),
         items: [this.props.t("Home.everythingInCore"), this.props.t("Home.teamApp"), this.props.t("Home.automatedOffersFollowUps"), this.props.t("Home.monthlyReport")],
         dark: true
       }, {
@@ -681,8 +681,8 @@ class Logic extends DCLogic {
         name: this.props.t("Home.wholeSystem"),
         tag: this.props.t("Home.fullBrain"),
         for: this.props.t("Home.everyAreaConnectedFinanceAndMarketing"),
-        price: eur(449, this.props.locale),
-        setup: eur(3900, this.props.locale),
+        price: eur(890, this.props.locale),
+        setup: eur(5900, this.props.locale),
         items: [this.props.t("Home.everythingInGrowth"), this.props.t("Home.financeInvoicingFlows"), this.props.t("Home.marketingAutomation"), this.props.t("Home.prioritySupport")]
       }].map(x => ({
         ...x,

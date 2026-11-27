@@ -32,24 +32,24 @@ class Logic extends DCLogic {
     name: 'Core',
     tag: this.props.t("Pricing.startHere"),
     for: this.props.t("Pricing.oneAreaConnectedUsuallyCustomersAnd"),
-    mo: 149,
-    setup: 1290,
+    mo: 249,
+    setup: 1990,
     items: [this.props.t("Pricing.websiteOrCoreSystem"), this.props.t("Pricing.aIInboxForInquiries"), this.props.t("Pricing.clientPortal"), this.props.t("Pricing.hostingBackupsUpdates")]
   }, {
     n: '02',
     name: 'Growth',
     tag: this.props.t("Pricing.mostChosen"),
     for: this.props.t("Pricing.customersSalesTeamAndOperationsIn"),
-    mo: 249,
-    setup: 1990,
+    mo: 449,
+    setup: 3490,
     items: [this.props.t("Pricing.everythingInCore"), this.props.t("Pricing.teamApp"), this.props.t("Pricing.automatedOffersFollowUps"), this.props.t("Pricing.monthlyReport")]
   }, {
     n: '03',
     name: this.props.t("Pricing.wholeSystem"),
     tag: this.props.t("Pricing.fullBrain"),
     for: this.props.t("Pricing.everyAreaConnectedFinanceAndMarketing"),
-    mo: 449,
-    setup: 3900,
+    mo: 890,
+    setup: 5900,
     items: [this.props.t("Pricing.everythingInGrowth"), this.props.t("Pricing.financeInvoicingFlows"), this.props.t("Pricing.marketingAutomation"), this.props.t("Pricing.prioritySupport")]
   }];
   LIFE = [{
@@ -154,7 +154,7 @@ class Logic extends DCLogic {
     d: this.props.t("Pricing.rialtoConnectsYourOwnSources"),
     l: 3
   }];
-  BD_B = [[this.props.t("Pricing.eUHostingDatabase"), 18, this.props.t("Pricing.serversInFrankfurtDatabaseFileStorage")], [this.props.t("Pricing.aIUsage"), 22, this.props.t("Pricing.everyAIAnswerSummaryAndReport")], [this.props.t("Pricing.updatesFixesSecurity"), 25, this.props.t("Pricing.keepingEverythingCurrentPatchedAndWorking")], [this.props.t("Pricing.supportMyHours"), 30, this.props.t("Pricing.changesQuestionsAndChatWithMe")], [this.props.t("Pricing.backupsMonitoring"), 5, this.props.t("Pricing.dailyBackupsAndAlertsBeforeYou")]];
+  BD_B = [[this.props.t("Pricing.eUHostingDatabase"), 10, this.props.t("Pricing.serversInFrankfurtDatabaseFileStorage")], [this.props.t("Pricing.aIUsage"), 17, this.props.t("Pricing.everyAIAnswerSummaryAndReport")], [this.props.t("Pricing.updatesFixesSecurity"), 25, this.props.t("Pricing.keepingEverythingCurrentPatchedAndWorking")], [this.props.t("Pricing.supportMyHours"), 43, this.props.t("Pricing.changesQuestionsAndChatWithMe")], [this.props.t("Pricing.backupsMonitoring"), 5, this.props.t("Pricing.dailyBackupsAndAlertsBeforeYou")]];
   BD_L = [[this.props.t("Pricing.eUHostingDatabase"), 20, this.props.t("Pricing.yourDataStaysInFrankfurt")], [this.props.t("Pricing.aIUsage"), 35, this.props.t("Pricing.briefingsResearchAndBrainstormsRunOn")], [this.props.t("Pricing.newFeatures"), 25, this.props.t("Pricing.lifeKeepsGettingBetterWhileYou")], [this.props.t("Pricing.support"), 12, this.props.t("Pricing.aRealPersonWhenSomethingFeels")], [this.props.t("Pricing.paymentFees"), 8, this.props.t("Pricing.cardSEPAAndKlarnaCostA")]];
   BDCOL = [['#17090A', '#FFF7ED'], ['#F97316', '#17090A'], ['#FDBA74', '#17090A'], ['#FDBA74', '#17090A'], ['#D3B9A0', '#17090A']];
   PH_B = [[this.props.t("Pricing.firstCall"), this.props.t("Pricing.day1"), this.props.t("Pricing.n30MinutesWeTalkAboutHow"), 0], [this.props.t("Pricing.analysis"), this.props.t("Pricing.week12"), this.props.t("Pricing.iMapYourToolsStepsAnd"), 20], [this.props.t("Pricing.build"), this.props.t("Pricing.week25"), this.props.t("Pricing.iBuildYourSystemAndConnect"), 55], [this.props.t("Pricing.test"), this.props.t("Pricing.week56"), this.props.t("Pricing.yourTeamUsesItForReal"), 15], [this.props.t("Pricing.live"), this.props.t("Pricing.week6"), this.props.t("Pricing.switchOverDataMovedTeamShown"), 10]];
@@ -172,7 +172,7 @@ class Logic extends DCLogic {
   }, {
     t: this.props.t("Pricing.limits"),
     ph: true,
-    rows: [[this.props.t("Pricing.domains"), '1', '1', '3'], [this.props.t("Pricing.emailMailboxes"), '3', '10', '25'], [this.props.t("Pricing.changesPerMonth"), '2 h', '5 h', '10 h'], [this.props.t("Pricing.supportReply"), this.props.t("Pricing.n2WorkDays"), this.props.t("Pricing.nextWorkDay"), this.props.t("Pricing.sameDay")], [this.props.t("Pricing.teamAppUsers"), '–', '15', this.props.t("Pricing.unlimited")], [this.props.t("Pricing.backupHistory"), this.props.t("Pricing.n30Days"), this.props.t("Pricing.n90Days"), this.props.t("Pricing.n180Days")]]
+    rows: [[this.props.t("Pricing.domains"), '1', '1', '3'], [this.props.t("Pricing.emailMailboxes"), '3', '10', '25'], [this.props.t("Pricing.changesPerMonth"), '2 h', '4 h', '8 h'], [this.props.t("Pricing.extraHours"), this.props.t("Pricing.extraHourRate"), this.props.t("Pricing.extraHourRate"), this.props.t("Pricing.extraHourRate")], [this.props.t("Pricing.supportReply"), this.props.t("Pricing.n2WorkDays"), this.props.t("Pricing.nextWorkDay"), this.props.t("Pricing.sameDay")], [this.props.t("Pricing.teamAppUsers"), '–', '15', this.props.t("Pricing.unlimited")], [this.props.t("Pricing.backupHistory"), this.props.t("Pricing.n30Days"), this.props.t("Pricing.n90Days"), this.props.t("Pricing.n180Days")]]
   }];
   TL = [{
     t: this.props.t("Pricing.inTheApp"),

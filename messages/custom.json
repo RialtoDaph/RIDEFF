@@ -168,12 +168,12 @@
     },
     "pricing": {
       "title": {
-        "de": "Preise ab 149 € im Monat · RIDEFF",
-        "en": "Pricing from €149 a month · RIDEFF"
+        "de": "Preise ab 249 € im Monat · RIDEFF",
+        "en": "Pricing from €249 a month · RIDEFF"
       },
       "description": {
-        "de": "Business ab 149 €/Monat netto plus Einrichtung, Life ab 12,90 € inkl. MwSt. Alle Pakete, Konfigurator und Vergleich.",
-        "en": "Business from €149/month net plus setup, Life from €12,90 incl. VAT. All plans, a configurator and a full comparison."
+        "de": "Business ab 249 €/Monat netto plus Einrichtung, Life ab 12,90 € inkl. MwSt. Alle Pakete, Konfigurator und Vergleich.",
+        "en": "Business from €249/month net plus setup, Life from €12.90 incl. VAT. All plans, a configurator and a full comparison."
       }
     },
     "about": {
@@ -567,6 +567,14 @@
     "anchorLabel": {
       "en": "First, the other side of the sum",
       "de": "Erst die Gegenrechnung"
+    },
+    "extraHours": {
+      "de": "Zusätzliche Stunden",
+      "en": "Extra hours"
+    },
+    "extraHourRate": {
+      "de": "100 € / h",
+      "en": "€100 / h"
     }
   },
   "Run": {
@@ -617,6 +625,18 @@
     "seePricing": {
       "en": "See pricing →",
       "de": "Preise ansehen →"
+    },
+    "n24900Mo": {
+      "de": "449,00 € / Monat",
+      "en": "€449.00 / mo"
+    },
+    "n249Paid": {
+      "de": "449 € · bezahlt",
+      "en": "€449 · paid"
+    },
+    "n1990Paid": {
+      "de": "3.490 € · bezahlt",
+      "en": "€3,490 · paid"
     }
   },
   "RideffNav": {
@@ -745,6 +765,26 @@
     "lifeLine": {
       "de": "Nicht für den Betrieb, sondern für Sie privat?",
       "en": "Not for the business, but for you personally?"
+    },
+    "core149Mo": {
+      "de": "Core · 249 € / Monat",
+      "en": "Core · €249 / mo"
+    },
+    "growth249Mo": {
+      "de": "Growth · 449 € / Monat",
+      "en": "Growth · €449 / mo"
+    },
+    "wholeSystem449Mo": {
+      "de": "Gesamtsystem · 890 € / Monat",
+      "en": "Whole system · €890 / mo"
+    },
+    "n249Mo": {
+      "de": "449 € / Monat",
+      "en": "€449 / mo"
+    },
+    "core149Growth249WholeSystem": {
+      "de": "Core 249 €, Growth 449 €, Gesamtsystem 890 € pro Monat, plus einmalige Einrichtung ab 1.990 €. Nettopreise zzgl. 19 % MwSt., 12 Monate Laufzeit. Die genaue Einrichtung wird nach dem Erstgespräch angeboten.",
+      "en": "Core €249, Growth €449, Whole system €890 per month, plus a one-off setup from €1,990. Net prices plus 19% VAT, 12-month term. The exact setup is quoted after the first call."
     }
   },
   "Contact": {
@@ -827,12 +867,12 @@
       "en": "Whole system"
     },
     "mapCorePrice": {
-      "de": "149 € / Monat · Einrichtung ab 1.290 €",
-      "en": "€149 a month · setup from €1,290"
-    },
-    "mapGrowthPrice": {
       "de": "249 € / Monat · Einrichtung ab 1.990 €",
       "en": "€249 a month · setup from €1,990"
+    },
+    "mapGrowthPrice": {
+      "de": "449 € / Monat · Einrichtung ab 3.490 €",
+      "en": "€449 a month · setup from €3,490"
     },
     "mapPrices": {
       "de": "Preise ansehen",
@@ -911,8 +951,8 @@
       "en": "Handle reviews"
     },
     "mapWholePrice": {
-      "de": "449 € / Monat · Einrichtung ab 3.900 €",
-      "en": "€449 a month · setup from €3,900"
+      "de": "890 € / Monat · Einrichtung ab 5.900 €",
+      "en": "€890 a month · setup from €5,900"
     },
     "caseSummaryPlaceholderWhatTICOriginals": {
       "de": "TIC Originals ist ein Modelabel aus Deutschland und wollte einen eigenen Shop statt gemieteter Plattformen. Ich habe Shop und Inhaber-Dashboard auf einer Datenbank gebaut: Produkte, Lager, Bestellungen, Rabattcodes und Rechnungen an einem Ort. Die Website ist live, der Verkauf startet mit dem nächsten Drop.",
@@ -1033,6 +1073,14 @@
     "closeBody": {
       "en": "You tell me how your business runs today. I tell you honestly what is worth doing and what is not.",
       "de": "Sie erzählen, wie Ihr Betrieb heute läuft. Ich sage Ihnen ehrlich, was sich lohnt und was nicht."
+    },
+    "n249Mo": {
+      "de": "449 € / Monat",
+      "en": "€449 / mo"
+    },
+    "from1990": {
+      "de": "ab 3.490 €",
+      "en": "from €3,490"
     }
   },
   "Life": {

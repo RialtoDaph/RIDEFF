@@ -211,7 +211,7 @@ Voice call · 1 Nov 2026 · 0:42
 A system for my café
 
 *Interested in*
-Growth — €249/month, setup from €1,990
+Growth — €449/month, setup from €3,490
 
 *Next step*
 Pick a time for a free 30-min call with Rialto
@@ -225,9 +225,9 @@ _Sent from Nana on rideff_
 
 | Plan | Price |
 |---|---|
-| Core | €149/mo, setup from €1,290 |
-| Growth | €249/mo, setup from €1,990 |
-| Whole system | €449/mo, setup from €3,900 |
+| Core | €249/mo, setup from €1,990 |
+| Growth | €449/mo, setup from €3,490 |
+| Whole system | €890/mo, setup from €5,900 |
 | Life | €12,90 |
 | Life Plus | €19,90 |
 | Together | €29,90 |
